@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<title>Функция COUNTIF (СЧЁТЕСЛИ) в Excel: как пользоваться на примерах</title>
+	<meta name="description" content="COUNTIF — это функция Excel для подсчета ячеек в диапазоне, соответствующих одному условию. COUNTIF (СЧЁТЕСЛИ) можно использовать для подсчета ячеек,">
+	<link rel="canonical" href="/funktsiya-countif-v-excel">
+	<meta property="og:locale" content="ru_RU">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Функция COUNTIF (СЧЁТЕСЛИ) в Excel: как пользоваться на примерах">
+	<meta property="og:description" content="COUNTIF — это функция Excel для подсчета ячеек в диапазоне, соответствующих одному условию. COUNTIF (СЧЁТЕСЛИ) можно использовать для подсчета ячеек,">
+	<meta property="og:url" content="/funktsiya-countif-v-excel">
+	<meta property="og:site_name" content="Excel-jet">
+	<meta property="article:published_time" content="2024-09-28T22:21:17+00:00">
+	<meta property="og:image" content="/image44/exceljet_countif.png">
+	<meta name="author" content="А. Днепров">
+
+
+<style id="wp-block-library-theme-inline-css" type="text/css">.wp-block-audio :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio :where(figcaption){color:#ffffffa6}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed :where(figcaption){color:#ffffffa6}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:#ffffffa6}:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table :where(figcaption){color:#ffffffa6}.wp-block-video :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video :where(figcaption){color:#ffffffa6}.wp-block-video{margin:0 0 1em}:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}</style>
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 19.5px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36.5px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--normal: 22px;--wp--preset--font-size--huge: 49.5px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="google-fonts-css" href="https://fonts.googleapis.com/css?family=Roboto%3A400%2C400i%2C700&#038;subset=cyrillic&#038;display=swap" media="all">
+<link rel="stylesheet" id="yelly-style-css" href="/css/style.min.css" media="all">
+
+<style>.pseudo-clearfy-link { color: #008acf; cursor: pointer;}.pseudo-clearfy-link:hover { text-decoration: none;}</style>
+<link rel="preload" href="/fonts/icomoon.ttf" as="font" crossorigin>
+    <style>.scrolltop{width:50px}.scrolltop:before{content:"\21d1"}.entry-content a, .entry-content a:visited, .spanlink, .comment-reply-link, .pseudo-link, .widget_calendar a, .widget_recent_comments a, .child-categories ul li a{color:#0000ff}.child-categories ul li a{border-color:#0000ff}a:hover, a:focus, a:active, .spanlink:hover, .top-menu ul li>span:hover, .main-navigation ul li a:hover, .main-navigation ul li span:hover, .footer-navigation ul li a:hover, .footer-navigation ul li span:hover, .comment-reply-link:hover, .pseudo-link:hover, .child-categories ul li a:hover{color:#1e73be}.top-menu>ul>li>a:before, .top-menu>ul>li>span:before{background:#1e73be}.child-categories ul li a:hover, .post-box--no-thumb a:hover{border-color:#1e73be}.post-box--card:hover{box-shadow: inset 0 0 0 1px #1e73be}.post-box--card:hover{-webkit-box-shadow: inset 0 0 0 1px #1e73be}@media (min-width: 768px){body{background-attachment: scroll}}body{font-size:17px;}@media (max-width: 991px){.widget-area{display: block; margin: 0 auto}}</style>
+    <!-- Yandex.RTB -->
+<script>window.yaContextCb=window.yaContextCb||[]</script>
+<script src="https://yandex.ru/ads/system/context.js" async></script>	
+</head>
+<body class="post-template-default single single-post postid-7072 single-format-standard wp-embed-responsive sidebar-right">
+<div id="page" class="site">
+    <a class="skip-link screen-reader-text" href="#content">Перейти к контенту</a>
+
+    
+    
+    <div class="search-screen-overlay js-search-screen-overlay"></div>
+    <div class="search-screen js-search-screen">
+        
+<form role="search" method="get" class="search-form" action="/">
+    <label>
+        <span class="screen-reader-text">Search for:</span>
+        <input type="search" class="search-field" placeholder="Поиск..." value="" name="s">
+    </label>
+    <button type="submit" class="search-submit"></button>
+</form>    </div>
+
+    
+
+<header id="masthead" class="site-header full" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="site-header-inner fixed">
+
+        <div class="humburger js-humburger">
+<span></span><span></span><span></span>
+</div>
+
+        
+<div class="site-branding">
+
+    <div class="site-branding__body"><div class="site-title"><a href="/">Excel-jet</a></div></div>
+</div>
+<!-- .site-branding -->
+
+    
+    <nav id="site-navigation" class="main-navigation full">
+        <div class="main-navigation-inner fixed">
+            <div class="menu-menyu-container"><ul id="header_menu" class="menu">
+<li id="menu-item-6695" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-has-children menu-item-6695">
+<a href="/excel">Excel</a>
+<ul class="sub-menu">
+	<li id="menu-item-6709" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-6709"><a href="/excel/functions">Функции</a></li>
+</ul>
+</li>
+<li id="menu-item-6697" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6697"><a href="/microsoft-word">Word</a></li>
+<li id="menu-item-6696" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6696"><a href="/powerpoint">PowerPoint</a></li>
+<li id="menu-item-6698" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6698"><a href="/outlook">Outlook</a></li>
+</ul></div>        </div>
+    </nav><!-- #site-navigation -->
+
+    
+<div class="header-search"><span class="search-icon js-search-icon"></span></div>    </div>
+</header><!-- #masthead -->
+
+
+
+    
+    
+    <div id="content" class="site-content fixed">
+
+        
+        <div class="site-content-inner">
+    
+        
+        <div id="primary" class="content-area" itemscope itemtype="http://schema.org/Article">
+            <main id="main" class="site-main">
+
+                
+<article id="post-7072" class="article-post post-7072 post type-post status-publish format-standard  category-functions">
+
+    
+        
+        <header class="entry-header"><h1 class="entry-title" itemprop="headline">Функция COUNTIF в Excel</h1></header>
+        
+        
+        
+    
+    
+    <div class="entry-meta">
+<span class="entry-time"><span class="entry-label">Время чтения</span> 7 мин.</span><span class="entry-date"><span class="entry-label">Опубликовано</span> <time itemprop="datePublished" datetime="2024-09-29">29.09.2024</time></span>
+</div>
+	<div class="entry-content" itemprop="articleBody">
+		<p>COUNTIF — это функция Excel для подсчета ячеек в диапазоне, соответствующих одному условию. COUNTIF (СЧЁТЕСЛИ) можно использовать для подсчета ячеек, содержащих даты, числа и текст. Критерий, используемый в COUNTIF, поддерживает логические операторы (&gt;,&lt;,&lt;&gt;,=) и подстановочные знаки (*,?) для частичного совпадения.</p>
+<div class="table-of-contents open">
+<div class="table-of-contents__header"><span class="table-of-contents__hide js-table-of-contents-hide">Содержание</span></div>
+<ol class="table-of-contents__list js-table-of-contents-list">
+<li class="level-1"><a href="#chto-delaet-funktsiya-countif-v-excel">Что делает функция COUNTIF в Excel?</a></li>
+<li class="level-1"><a href="#vozvraschaemoe-znachenie">Возвращаемое значение</a></li>
+<li class="level-1"><a href="#argumenty">Аргументы</a></li>
+<li class="level-1"><a href="#sintaksis">Синтаксис</a></li>
+<li class="level-1"><a href="#primechaniya-po-ispolzovaniyu">Примечания по использованию</a></li>
+<li class="level-2"><a href="#sintaksis-2">Синтаксис</a></li>
+<li class="level-2"><a href="#primenenie-kriteriev">Применение критериев</a></li>
+<li class="level-2"><a href="#bazovyy-primer">Базовый пример</a></li>
+<li class="level-2"><a href="#dvoynye-kavychki-v-kriteriyah">Двойные кавычки (&#171;&#187;) в критериях</a></li>
+<li class="level-2"><a href="#znachenie-iz-drugoy-yacheyki">Значение из другой ячейки</a></li>
+<li class="level-2"><a href="#ne-ravno">Не равно</a></li>
+<li class="level-2"><a href="#pustye-yacheyki">Пустые ячейки</a></li>
+<li class="level-2"><a href="#daty">Даты</a></li>
+<li class="level-2"><a href="#podstanovochnye-znaki">Подстановочные знаки</a></li>
+<li class="level-2"><a href="#or">OR</a></li>
+<li class="level-2"><a href="#ogranicheniya">Ограничения</a></li>
+<li class="level-2"><a href="#primechaniya">Примечания</a></li>
+</ol>
+</div>
+<h2 id="chto-delaet-funktsiya-countif-v-excel">Что делает функция COUNTIF в Excel?</h2>
+<p>Функция COUNTIF в Excel подсчитывает ячейки, соответствующие критериям.</p>
+<h2 id="vozvraschaemoe-znachenie">Возвращаемое значение</h2>
+<p>Число, обозначающее подсчитанные ячейки.</p>
+<h2 id="argumenty">Аргументы</h2>
+<ul>
+<li>range — диапазон ячеек для подсчета.</li>
+<li>criteria — критерии, определяющие, какие ячейки следует подсчитывать.</li>
+</ul>
+<h2 id="sintaksis">Синтаксис</h2>
+<p>=COUNTIF(range, criteria)</p>
+<h2 id="primechaniya-po-ispolzovaniyu">Примечания по использованию</h2>
+<p>Функция COUNTIF подсчитывает ячейки в диапазоне, которые соответствуют заданному условию, называемому критериями. СЧЕТЕСЛИ — это распространенная и широко используемая функция в Excel, которую можно использовать для подсчета ячеек, содержащих даты, числа и текст.</p>
+<blockquote><p>Обратите внимание, что COUNTIF может применять только одно условие.</p></blockquote>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" fetchpriority="high" decoding="async" class="alignnone" src="/image44/exceljet_countif.png" alt="" width="700" height="400"><meta itemprop="width" content="700">
+<meta itemprop="height" content="400"></span></p>
+<h3 id="sintaksis-2">Синтаксис</h3>
+<p>Общий синтаксис COUNTIF выглядит следующим образом:</p>
+<p><code>=COUNTIF(range,criteria)</code></p>
+<p>Функция СЧЕТЕСЛИ принимает два аргумента: диапазон и критерий. Диапазон — это диапазон ячеек, к которым применяется условие. Критерий — это условие применения, а также любые необходимые логические операторы.</p>
+<h3 id="primenenie-kriteriev">Применение критериев</h3>
+<p>Функция СЧЕТЕСЛИ поддерживает логические операторы (&gt;,&lt;,&lt;&gt;,&lt;=,&gt;=) и подстановочные знаки (*,?) для частичного сопоставления. Сложная часть использования функции СЧЕТЕСЛИ — это синтаксис, используемый для применения критериев.</p>
+<p>COUNTIFS входит в группу из восьми функций , которые разделяют логические критерии на две части: диапазон и критерии. Из-за такой конструкции каждое условие требует отдельного аргумента диапазона и критерия , а операторы в критериях должны быть заключены в двойные кавычки (&#171;&#187;). В таблице ниже показаны примеры синтаксиса, необходимого для общих критериев:</p>
+<table>
+<thead>
+<tr>
+<th>Цель</th>
+<th>Критерии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Клетки больше 75</td>
+<td>&#171;&gt;75&#187;</td>
+</tr>
+<tr>
+<td>Ячейки равны 100</td>
+<td>100 или «100»</td>
+</tr>
+<tr>
+<td>Ячейки меньше или равны 100</td>
+<td>&#171;&lt;=100&#187;</td>
+</tr>
+<tr>
+<td>Ячейки, равные «красному»</td>
+<td>&#171;красный&#187;</td>
+</tr>
+<tr>
+<td>Ячейки, не равные «красному»</td>
+<td>&#171;&lt;&gt;красный&#187;</td>
+</tr>
+<tr>
+<td>Ячейки пустые &#171;&#187;</td>
+<td>&#171;&#187;</td>
+</tr>
+<tr>
+<td>Ячейки, которые не пусты</td>
+<td>&#171;&lt;&gt;&#187;</td>
+</tr>
+<tr>
+<td>Ячейки, начинающиеся с «X»</td>
+<td>&#171;Икс*&#187;</td>
+</tr>
+<tr>
+<td>Ячейки меньше A1</td>
+<td>&#171;&lt;&#171;&amp;A1</td>
+</tr>
+<tr>
+<td>Клеток меньше, чем сегодня</td>
+<td>&#171;&lt;&#171;&amp;СЕГОДНЯ()</td>
+</tr>
+</tbody>
+</table>
+<p>Обратите внимание, что последние два примера включают объединение с символом амперсанда (&amp;). Каждый раз, когда вы используете значение из другой ячейки или используете результат формулы в критериях с логическим оператором, например «&lt;», вам необходимо выполнить объединение. Это связано с тем, что Excel необходимо сначала оценить ссылки на ячейки и формулы, чтобы получить значение, прежде чем это значение можно будет присоединить к оператору.</p>
+<h3 id="bazovyy-primer">Базовый пример</h3>
+<p>На листе, показанном выше, в ячейках G5, G6 и G7 используются следующие формулы:</p>
+<p><code>=COUNTIF(D5:D12,"&gt;100") // подсчитайте продажи за 100<br>
+=COUNTIF(B5:B12,"jim") // имя графы = "jim"<br>
+=COUNTIF(C5:C12,"ca") // состояние подсчета = "ca"</code></p>
+<p>Обратите внимание: COUNTIF не чувствителен к регистру, «CA» и «ca» обрабатываются одинаково.</p>
+<h3 id="dvoynye-kavychki-v-kriteriyah">Двойные кавычки (&#171;&#187;) в критериях</h3>
+<p>Обычно текстовые значения необходимо заключать в двойные кавычки («»), а числа — нет. Однако если логический оператор включен в число, число и оператор должны быть заключены в кавычки, как показано во втором примере ниже:</p>
+<p><code>=COUNTIF(A1:A10,100) // количество ячеек равно 100<br>
+=COUNTIF(A1:A10,"&gt;32") // количество ячеек больше, чем 32<br>
+=COUNTIF(A1:A10,"jim") // количество ячеек равно "jim"</code></p>
+<h3 id="znachenie-iz-drugoy-yacheyki">Значение из другой ячейки</h3>
+<p>Значение из другой ячейки можно включить в критерии с помощью конкатенации. В приведенном ниже примере СЧЕТЕСЛИ вернет количество значений в A1:A10, которые меньше значения в ячейке B1. Обратите внимание, что оператор «меньше» (текстовый) заключен в кавычки.</p>
+<p><code>=COUNTIF(A1:A10,"&lt;"&amp;B1) // количество ячеек меньше, чем B1</code></p>
+<h3 id="ne-ravno">Не равно</h3>
+<p>Чтобы создать критерий «не равно», используйте оператор «&lt;&gt;» , заключенный в двойные кавычки («»). Например, формула ниже будет подсчитывать ячейки, не равные «красному» в диапазоне A1:A10:</p>
+<p><code>=COUNTIF(A1:A10,"&lt;&gt;red") // not "red"</code></p>
+<h3 id="pustye-yacheyki">Пустые ячейки</h3>
+<p>COUNTIF может подсчитывать пустые или непустые ячейки. В приведенных ниже формулах учитываются пустые, а не пустые ячейки в диапазоне A1:A10:</p>
+<p><code>=COUNTIF(A1:A10,"&lt;&gt;") // not blank<br>
+=COUNTIF(A1:A10,"") // blank</code></p>
+<p>Примечание. Имейте в виду, что COUNTIF обрабатывает формулы, возвращающие пустую строку («»), как не пустые.</p>
+<h3 id="daty">Даты</h3>
+<p>Самый простой способ использовать СЧЕТЕСЛИ с датами — это обратиться к действительной дате в другой ячейке с помощью ссылки на ячейку. Например, чтобы подсчитать ячейки в A1:A10, содержащие дату, большую, чем дата в B1, вы можете использовать такую ​​формулу:</p>
+<p><code>=COUNTIF(A1:A10, "&gt;"&amp;B1) // не учитывайте даты, превышающие A1</code></p>
+<p>Обратите внимание, что мы должны объединить оператор с датой в B1. Чтобы использовать более расширенные критерии даты (т. е. все даты в данном месяце или все даты между двумя датами), вам нужно переключиться на функцию СЧЁТЕСЛИ, которая может обрабатывать несколько критериев.</p>
+<p>Самый безопасный способ жестко запрограммировать дату в COUNTIF — использовать функцию DATE. Это гарантирует, что Excel поймет дату. Чтобы подсчитать ячейки в A1:A10, содержащие дату меньше 1 апреля 2020 г., вы можете использовать подобную формулу.</p>
+<p><code>=COUNTIF(A1:A10,"&lt;"&amp;DATE(2020,4,1)) // дата меньше, чем 1-Apr-2020</code></p>
+<h3 id="podstanovochnye-znaki">Подстановочные знаки</h3>
+<p>В критериях можно использовать подстановочные знаки: вопросительный знак (?), звездочку (*) или тильду (~ ). Знак вопроса (?) соответствует любому одному символу, а звездочка (*) соответствует нулю или более символам любого типа. Например, чтобы подсчитать ячейки в A1:A5, содержащие текст «яблоко» где угодно, вы можете использовать такую ​​формулу:</p>
+<p><code>=COUNTIF(A1:A5,"*apple*") // ячейки, содержащие "apple"</code></p>
+<p>Чтобы подсчитать ячейки в формате A1:A5, содержащие любые 3 текстовых символа, вы можете использовать:</p>
+<p><code>=COUNTIF(A1:A5,"???") // ячейки, содержащие любые 3 символа</code></p>
+<p>Тильда (~) — это escape-символ, соответствующий буквальным подстановочным знакам. Например, чтобы посчитать буквальный вопросительный знак (?), звездочку (*) или тильду (~), добавьте тильду перед подстановочным знаком (т. е. ~?, ~*, ~~).</p>
+<h3 id="or">OR</h3>
+<p>Функция СЧЕТЕСЛИ предназначена для применения только одного условия. Однако для подсчета ячеек, содержащих «это OR то», вы можете использовать константу массива и функцию СУММ следующим образом:</p>
+<p><code>=SUM(COUNTIF(range,{"red","blue"})) // red or blue</code></p>
+<p>Приведенная выше формула будет подсчитывать ячейки в диапазоне , содержащие «красный» или «синий». По сути, СЧЁТЕСЛИ возвращает два значения в массиве (одно для «красного» и одно для «синего»), а функция СУММ возвращает сумму.</p>
+<h3 id="ogranicheniya">Ограничения</h3>
+<p>Функция СЧЕТЕСЛИ имеет некоторые ограничения, о которых следует знать:</p>
+<ul>
+<li>COUNTIF поддерживает только одно условие.</li>
+<li>Требует фактического диапазона для аргумента диапазона; вы не можете предоставить массив. Это означает, что вы не можете изменять значения в диапазоне перед применением критериев.</li>
+<li>Не учитывает регистр.</li>
+</ul>
+<p>Самый распространенный способ обойти вышеуказанные ограничения — использовать функцию  SUMPRODUCT. В текущей версии Excel есть еще один вариант — использовать новые функции BYROW и BYCOL .</p>
+<h3 id="primechaniya">Примечания</h3>
+<ul>
+<li>Текстовые строки в критериях должны быть заключены в двойные кавычки (&#171;&#187;), например &#171;apple&#187;, &#171;&gt;32&#187;, &#171;app*&#187;.</li>
+<li>Ссылки на ячейки в критериях не заключаются в кавычки, т.е. «&lt;»&amp;A1.</li>
+<li>Подстановочные знаки? и * могут использоваться в критериях. Знак вопроса соответствует любому символу, а звездочка соответствует любой последовательности символов (ноль или более).</li>
+<li>Чтобы сопоставить буквальный вопросительный знак (?) или звездочку (*), используйте тильду (~), например (~?, ~*).</li>
+<li>COUNTIF в экселе требует диапазона, вы не можете заменить массив.</li>
+<li>СЧЕТЕСЛИ возвращает неправильные результаты при использовании строк длиной более 255 символов.</li>
+<li>Функция вернет ошибку #ЗНАЧ при ссылке на другую закрытую книгу.</li>
+</ul>	</div>
+<!-- .entry-content -->
+
+</article>
+
+
+
+
+
+
+
+
+
+<div class="social-buttons">
+<span class="social-button social-button--vkontakte main" data-social="vkontakte"><span>Поделиться в ВКонтакте</span></span><span class="social-button social-button--telegram " data-social="telegram"></span><span class="social-button social-button--odnoklassniki " data-social="odnoklassniki"></span><span class="social-button social-button--whatsapp " data-social="whatsapp"></span><span class="social-button social-button--viber " data-social="viber"></span>
+</div>
+
+<!--noindex-->
+<div class="author-box">
+    <div class="author-info">
+        <div class="author-box__ava">
+                    </div>
+
+        <div class="author-box__body">
+            <div class="author-box__author">
+                Автор А. Днепров            </div>
+            <div class="author-box__description">
+                <p>Обучаю основам работы с офисными программами.</p>
+            </div>
+
+            
+        </div>
+    </div>
+</div>
+<!--/noindex-->
+    <meta itemprop="author" content="А. Днепров">
+<meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-countif-v-excel" content="Функция COUNTIF в Excel">
+    <meta itemprop="dateModified" content="2024-09-29">
+<div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+<div class="related-posts">
+<div class="related-posts__header">Вам также может понравиться</div>
+<div class="post-cards post-cards--vertical">
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/funktsiya-left-excel">Функция LEFT в Excel</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/funktsiya-indirect-v-excel">Функция INDIRECT в Excel</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/funktsiya-hstack-v-excel">Функция HSTACK в Excel</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/funktsiya-fieldvalue-v-excel">Функция FIELDVALUE в Excel</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/funktsiya-networkdays-v-excel">Функция NETWORKDAYS в Excel</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/funktsiya-lambda-v-excel">Функция LAMBDA в Excel</a></div>
+    </div>
+</div>
+</div>
+            </main><!-- #main -->
+        </div>
+<!-- #primary -->
+
+        
+    
+
+    </div>
+<!--.site-content-inner-->
+
+    
+</div>
+<!--.site-content-->
+
+    
+    
+
+<div class="site-footer-container">
+
+    
+
+    <footer id="colophon" class="site-footer full" itemscope itemtype="http://schema.org/WPFooter">
+        <div class="site-footer-inner fixed">
+
+            
+            
+<div class="footer-bottom">
+    <div class="footer-info">
+        <div class="footer-copyright">© 2024 Самоучитель справочник по офисным программам. <a href="/o-nas" rel="nofollow">О нас | Контакты</a> | <a href="/map" rel="nofollow">Карта сайта</a>
+</div>
+        <div class="footer-under-copyright"></div>
+	        </div>
+
+    </div>
+        </div>
+    </footer><!--.site-footer-->
+</div>
+
+
+            <button type="button" class="scrolltop js-scrolltop" data-mob="on"></button>
+    
+                    <div class="top-line js-top-line">
+            <div class="top-line-inner fixed">
+
+                <div class="top-line__title">Функция COUNTIF в Excel</div>
+<div class="top-line__like"><span class="btn-fb-like btn-top-like social-button--vkontakte" data-social="vkontakte"><span>Поделиться в ВКонтакте</span></span></div>
+<div class="top-line__post">
+<div class="top-line__post_thumbnail"><a href="/risovanie-liniy"></a></div>
+<div class="top-line__post_title"><a href="/risovanie-liniy">3.2 Рисование линий</a></div>
+</div>            </div>
+        </div>
+    
+</div>
+<!-- #page -->
+
+<script>var pseudo_links = document.querySelectorAll(".pseudo-clearfy-link");for (var i=0;i<pseudo_links.length;i++ ) { pseudo_links[i].addEventListener("click", function(e){   window.open( e.target.getAttribute("data-uri") ); }); }</script><script>document.addEventListener("copy", (event) => {var pagelink = "\nИсточник: /funktsiya-countif-v-excel";event.clipboardData.setData("text", document.getSelection() + pagelink);event.preventDefault();});</script><script type="text/javascript" id="yelly-scripts-js-extra">
+/* <![CDATA[ */
+var settings_array = {"rating_text_average":"среднее","rating_text_from":"из","lightbox_display":"1"};
+var wps_ajax = {"url":"\/wp-admin\/admin-ajax.php","nonce":"e4ca9d4bd8"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="/js/scripts.min.js" id="yelly-scripts-js"></script>
+
+
+
+<div class="image-hover-social-buttons" style="display: none;">
+<div class="social-button social-button--vkontakte js-share-link" data-uri="https://vk.com/share.php?url=%2Ffunktsiya-countif-v-excel"></div>
+<div class="social-button social-button--telegram js-share-link" data-uri="https://t.me/share/url?url=%2Ffunktsiya-countif-v-excel&text=%D0%A4%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F+COUNTIF+%D0%B2+Excel"></div>
+<div class="social-button social-button--odnoklassniki js-share-link" data-uri="https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&service=odnoklassniki&st.shareUrl=%2Ffunktsiya-countif-v-excel"></div>
+<div class="social-button social-button--whatsapp js-share-link" data-uri="whatsapp://send?url=%2Ffunktsiya-countif-v-exceltext=%D0%A4%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F+COUNTIF+%D0%B2+Excel"></div>
+<div class="social-button social-button--viber js-share-link" data-uri="viber://forward?url=%2Ffunktsiya-countif-v-exceltext=%D0%A4%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F+COUNTIF+%D0%B2+Excel"></div>
+</div>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(93345646, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/93345646" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>
