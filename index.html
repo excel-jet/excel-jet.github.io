@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<title>Excel-jet - Самоучитель справочник по офисным программам</title>
+	<meta name="description" content="Самоучитель справочник по офисным программам">
+	<link rel="canonical" href="/">
+	<meta property="og:locale" content="ru_RU">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Excel-jet - Самоучитель справочник по офисным программам">
+	<meta property="og:description" content="Самоучитель справочник по офисным программам">
+	<meta property="og:url" content="/">
+	<meta property="og:site_name" content="Excel-jet">
+
+<style id="wp-block-library-theme-inline-css" type="text/css">.wp-block-audio :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio :where(figcaption){color:#ffffffa6}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed :where(figcaption){color:#ffffffa6}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:#ffffffa6}:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table :where(figcaption){color:#ffffffa6}.wp-block-video :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video :where(figcaption){color:#ffffffa6}.wp-block-video{margin:0 0 1em}:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}</style>
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 19.5px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36.5px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--normal: 22px;--wp--preset--font-size--huge: 49.5px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="google-fonts-css" href="https://fonts.googleapis.com/css?family=Roboto%3A400%2C400i%2C700&#038;subset=cyrillic&#038;display=swap" media="all">
+<link rel="stylesheet" id="yelly-style-css" href="/css/style.min.css" media="all">
+
+<style>.pseudo-clearfy-link { color: #008acf; cursor: pointer;}.pseudo-clearfy-link:hover { text-decoration: none;}</style>
+<link rel="preload" href="/fonts/icomoon.ttf" as="font" crossorigin>
+    <style>.scrolltop{width:50px}.scrolltop:before{content:"\21d1"}.entry-content a, .entry-content a:visited, .spanlink, .comment-reply-link, .pseudo-link, .widget_calendar a, .widget_recent_comments a, .child-categories ul li a{color:#0000ff}.child-categories ul li a{border-color:#0000ff}a:hover, a:focus, a:active, .spanlink:hover, .top-menu ul li>span:hover, .main-navigation ul li a:hover, .main-navigation ul li span:hover, .footer-navigation ul li a:hover, .footer-navigation ul li span:hover, .comment-reply-link:hover, .pseudo-link:hover, .child-categories ul li a:hover{color:#1e73be}.top-menu>ul>li>a:before, .top-menu>ul>li>span:before{background:#1e73be}.child-categories ul li a:hover, .post-box--no-thumb a:hover{border-color:#1e73be}.post-box--card:hover{box-shadow: inset 0 0 0 1px #1e73be}.post-box--card:hover{-webkit-box-shadow: inset 0 0 0 1px #1e73be}@media (min-width: 768px){body{background-attachment: scroll}}body{font-size:17px;}@media (max-width: 991px){.widget-area{display: block; margin: 0 auto}}</style>
+    <!-- Yandex.RTB -->
+<script>window.yaContextCb=window.yaContextCb||[]</script>
+<script src="https://yandex.ru/ads/system/context.js" async></script>	
+</head>
+<body class="home blog wp-embed-responsive sidebar-right">
+<div id="page" class="site">
+    <a class="skip-link screen-reader-text" href="#content">Перейти к контенту</a>
+
+    
+    
+    <div class="search-screen-overlay js-search-screen-overlay"></div>
+    <div class="search-screen js-search-screen">
+        
+<form role="search" method="get" class="search-form" action="/">
+    <label>
+        <span class="screen-reader-text">Search for:</span>
+        <input type="search" class="search-field" placeholder="Поиск..." value="" name="s">
+    </label>
+    <button type="submit" class="search-submit"></button>
+</form>    </div>
+
+    
+
+<header id="masthead" class="site-header full" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="site-header-inner fixed">
+
+        <div class="humburger js-humburger">
+<span></span><span></span><span></span>
+</div>
+
+        
+<div class="site-branding">
+
+    <div class="site-branding__body"><h1 class="site-title">Excel-jet</h1></div>
+</div>
+<!-- .site-branding -->
+
+    
+    <nav id="site-navigation" class="main-navigation full">
+        <div class="main-navigation-inner fixed">
+            <div class="menu-menyu-container"><ul id="header_menu" class="menu">
+<li id="menu-item-6695" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-6695">
+<a href="/excel">Excel</a>
+<ul class="sub-menu">
+	<li id="menu-item-6709" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6709"><a href="/excel/functions">Функции</a></li>
+</ul>
+</li>
+<li id="menu-item-6697" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6697"><a href="/microsoft-word">Word</a></li>
+<li id="menu-item-6696" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6696"><a href="/powerpoint">PowerPoint</a></li>
+<li id="menu-item-6698" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6698"><a href="/outlook">Outlook</a></li>
+</ul></div>        </div>
+    </nav><!-- #site-navigation -->
+
+    
+<div class="header-search"><span class="search-icon js-search-icon"></span></div>    </div>
+</header><!-- #masthead -->
+
+
+
+    
+    
+    <div id="content" class="site-content fixed">
+
+        
+        <div class="site-content-inner">
+    <div id="primary" class="content-area">
+        <main id="main" class="site-main">
+
+            
+<div class="post-cards post-cards--vertical">
+
+	
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-left-excel">Функция LEFT в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция LEFT в Excel извлекает заданное количество символов из левой части предоставленной текстовой строки. Например, LEFT(&#171;apple&#187;,3) возвращает &#171;app&#187;. Что делает функция LEFT в Excel? Функция LEFT в Excel извлекает текст слева от строки. Возвращаемое значение Один или несколько символов. Аргументы text — текст, из которого извлекаются символы. num_chars — [необязательный] Количество символов для извлечения, начиная с левой [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-left-excel" content="Функция LEFT в Excel">
+    <meta itemprop="dateModified" content="2024-10-21">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-indirect-v-excel">Функция INDIRECT в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция INDIRECT (ДВССЫЛ) в Excel возвращает допустимую ссылку на ячейку из заданной текстовой строки. ДВССЫЛ полезен, когда вы хотите собрать текстовое значение, которое можно использовать в качестве допустимой ссылки. Что делает Функция INDIRECT в Excel ? Функция INDIRECT в Excel создает ссылку из текста. Возвращаемое значение Действительная ссылка на рабочий лист. Аргументы ref_text — ссылка, представленная [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-indirect-v-excel" content="Функция INDIRECT в Excel">
+    <meta itemprop="dateModified" content="2024-10-21">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__thumbnail"><a href="/kak-sdelat-massovuyu-zamenu-formul"><div class="post-card__icon"><img width="311" height="230" src="/wp-content/uploads/2023/04/2408fadbc9163d5aa4994580cfc152cd.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" itemprop="image" decoding="async" fetchpriority="high"></div>
+<div class="post-card__meta"><div class="post-card__meta-right">
+<span class="post-card__date"><time itemprop="datePublished" datetime="2024-10-19">19.10.2024</time></span><span class="post-card__author" itemprop="author">А. Днепров</span>
+</div></div></a></div>
+<div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/kak-sdelat-massovuyu-zamenu-formul">Как сделать массовую замену формул</a></span></div>
+    
+            <meta itemprop="articleBody" content="Скопированные формулы повторяют имеющиеся, но ссылаются не на те ячейки, которые нам нужны. Это происходит из-за того, что в одном листе (Форма2) для расчета показателя за год используется всего одна ячейка, а в другом листе (Форма1) &#8212; 5 ячеек. Т.е. в части ссылок на лист &#171;Форма2&#187; ссылки при копировании автоматически идут на нужные ячейки, а [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/kak-sdelat-massovuyu-zamenu-formul" content="Как сделать массовую замену формул">
+    <meta itemprop="dateModified" content="2024-10-19">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/kak-udalit-lishnie-i-pustye-stranitsy-v-excel">Как удалить лишние и пустые страницы в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="В этом руководстве мы узнаем, как проверить количество открытых в данный момент страниц Microsoft Excel и как их удалить. Итак, давайте сделаем это с помощью примера. Предположим, у нас есть некоторые случайные данные в нашей таблице Excel, как показано на рисунке ниже. Теперь для работы с этими данными нам нужна только одна страница, давайте посмотрим, сколько страниц [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/kak-udalit-lishnie-i-pustye-stranitsy-v-excel" content="Как удалить лишние и пустые страницы в Excel">
+    <meta itemprop="dateModified" content="2024-10-19">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__thumbnail"><a href="/preobrazovanie-teksta-v-tablitsu"><div class="post-card__icon"><img width="345" height="122" src="/wp-content/uploads/2023/04/7a0043c9bf012cc129b22376cfebb2a9.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" itemprop="image" decoding="async"></div>
+<div class="post-card__meta"><div class="post-card__meta-right">
+<span class="post-card__date"><time itemprop="datePublished" datetime="2024-10-19">19.10.2024</time></span><span class="post-card__author" itemprop="author">А. Днепров</span>
+</div></div></a></div>
+<div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/preobrazovanie-teksta-v-tablitsu">Преобразование текста в таблицу</a></span></div>
+    
+            <meta itemprop="articleBody" content="Как в Ворде уже набранный текст преобразовать в таблицу? &nbsp; Если в процессе набора текста вы видите, что его целесообразней отобразить в виде таблицы, это легко можно сделать, не прибегая к перенабору текста или монотонному копипаст. Выделите текст, который должен быть преобразован в таблицу. На вкладке Вставка группы Таблицы нажимаем на кнопку Таблица, из выпадающего [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/preobrazovanie-teksta-v-tablitsu" content="Преобразование текста в таблицу">
+    <meta itemprop="dateModified" content="2024-10-19">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/kak-delat-skrinshoty-s-vysokim-razresheniem-v-windows">Как делать скриншоты с высоким разрешением в Windows 11/10</a></span></div>
+    
+            <meta itemprop="articleBody" content="Создание скриншотов &#8212; это удобный способ документировать информацию и делиться ею, которую вы хотите сделать видимой для других. По умолчанию в ОС Windows предусмотрено несколько вариантов создания скриншотов с высоким разрешением. К ним относятся сочетания клавиш, инструмент обрезки и т.д. Сказав это, вы, возможно, заметили, что после захвата изображения / экрана с вашего компьютера под управлением Windows 11/10 [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/kak-delat-skrinshoty-s-vysokim-razresheniem-v-windows" content="Как делать скриншоты с высоким разрешением в Windows 11/10">
+    <meta itemprop="dateModified" content="2024-10-19">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-hstack-v-excel">Функция HSTACK в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция HSTACK в Excel объединяет массивы по горизонтали в один массив. Каждый последующий массив добавляется справа от предыдущего массива. Что делает функция HSTACK в Excel? Функция HSTACK в Excel объединяет диапазоны или массивы по горизонтали. Возвращаемое значение Один комбинированный диапазон или массив Аргументы array1 — первый массив или диапазон для объединения. array2 &#8212; [необязательный] Второй массив или [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-hstack-v-excel" content="Функция HSTACK в Excel">
+    <meta itemprop="dateModified" content="2024-10-19">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__thumbnail"><a href="/osobennosti-raboty-s-mnogostranichny"><div class="post-card__icon"><img width="213" height="230" src="/wp-content/uploads/2023/04/6f8f9694c11ee322ff9d3675b0b8ba07.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" itemprop="image" decoding="async"></div>
+<div class="post-card__meta"><div class="post-card__meta-right">
+<span class="post-card__date"><time itemprop="datePublished" datetime="2024-10-19">19.10.2024</time></span><span class="post-card__author" itemprop="author">А. Днепров</span>
+</div></div></a></div>
+<div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/osobennosti-raboty-s-mnogostranichny">13.1 Особенности работы с многостраничными документами</a></span></div>
+    
+            <meta itemprop="articleBody" content="Широкое распространение устройств для записи компакт-дисков позволяет распространять большие документы в электронном виде. При этом чаще всего используются форматы файлов HTML и PDF. Первый формат используется в Интернете, и выше рассказывалось, как создать такой документ. Очень удобен формат PDF. Документы в этом формате можно просмотреть программой Acrobat Reader. С помощью CorelDRAW 10 вы легко создадите [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/osobennosti-raboty-s-mnogostranichny" content="13.1 Особенности работы с многостраничными документами">
+    <meta itemprop="dateModified" content="2024-10-19">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__thumbnail"><a href="/kak-sdelat-izmeneniya-vnutri-yacheyki-p"><div class="post-card__icon"><img width="345" height="93" src="/wp-content/uploads/2023/04/f6550fd3bdfdfdbe500536441d5d252e.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" itemprop="image" decoding="async" loading="lazy"></div>
+<div class="post-card__meta"><div class="post-card__meta-right">
+<span class="post-card__date"><time itemprop="datePublished" datetime="2024-10-19">19.10.2024</time></span><span class="post-card__author" itemprop="author">А. Днепров</span>
+</div></div></a></div>
+<div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/kak-sdelat-izmeneniya-vnutri-yacheyki-p">Как сделать изменения внутри ячейки. Принудительный перенос</a></span></div>
+    
+            <meta itemprop="articleBody" content="Бывают случаи, когда автоматический перенос происходит не в том месте, в котором Вам бы хотелось, либо вы допустили ошибку/описку. Чтобы исправить это досадное недоразумение, поступим так. Для того, чтобы сделать изменения в уже заполненной ячейке, нужно активизировать нужную ячейку и &#8212; либо щелкнуть по ней два раза (курсор появится внутри ячейки) &#8212; либо зайти в [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/kak-sdelat-izmeneniya-vnutri-yacheyki-p" content="Как сделать изменения внутри ячейки. Принудительный перенос">
+    <meta itemprop="dateModified" content="2024-10-19">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-fieldvalue-v-excel">Функция FIELDVALUE в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция FIELDVALUE в Excel извлекает заданное значение поля из типа данных. Поле указывается по имени и предоставляется в виде текстового значения. Что делает функция FIELDVALUE в Excel? Функция FIELDVALUE в Excel извлекает значение поля из типа данных. Возвращаемое значение Значение поля для данного типа данных Аргументы value — тип данных со значениями полей. field_name — имя [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-fieldvalue-v-excel" content="Функция FIELDVALUE в Excel">
+    <meta itemprop="dateModified" content="2024-10-19">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/kak-sozdat-tablitsu-rashodov-i-dohodov-v-excel">Как создать таблицу расходов и доходов в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Менеджер расходов представляет собой приложение или программное обеспечение, которое используется для ведения учета притока и оттока денежных средств. Он используется для управления вашими ежедневными расходами. В этом примере мы создадим отслеживание расходов с использованием Microsoft Excel, которое будет автоматизировано на основе того, что введено в отслеживание, оно также покажет, сколько денег осталось в каждой категории, [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/kak-sozdat-tablitsu-rashodov-i-dohodov-v-excel" content="Как создать таблицу расходов и доходов в Excel">
+    <meta itemprop="dateModified" content="2024-10-18">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-networkdays-v-excel">Функция NETWORKDAYS в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция NETWORKDAYS (ЧИСТРАБДНИ) в Excel вычисляет количество рабочих дней между двумя датами. ЧИСТРАБДНИ автоматически исключают выходные дни (суббота и воскресенье) и при необходимости могут исключать список праздников, представленных в виде дат. Что делает функция NETWORKDAYS в Excel? Функция NETWORKDAYS в Excel получает количество рабочих дней между двумя датами. Возвращаемое значение Число, обозначающее дни. Аргументы start_date — дата [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-networkdays-v-excel" content="Функция NETWORKDAYS в Excel">
+    <meta itemprop="dateModified" content="2024-10-18">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-lambda-v-excel">Функция LAMBDA в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция LAMBDA в Excel позволяет создавать пользовательские функции, которые можно повторно использовать в книге без VBA или макросов. Что делает функция LAMBDA в Excel? Функция LAMBDA в Excel создает пользовательскую функцию. Возвращаемое значение Как определено формулой. Аргументы parameter — входное значение функции. calculation — расчет, выполняемый как результат функции. Должно быть, последний аргумент. Синтаксис =LAMBDA(parameter, [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-lambda-v-excel" content="Функция LAMBDA в Excel">
+    <meta itemprop="dateModified" content="2024-10-18">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-right-excel">Функция RIGHT в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция RIGHT в Excel извлекает заданное количество символов с правой стороны предоставленной текстовой строки. Например, RIGHT (&#171;apple&#187;, 3) возвращает &#171;ple&#187;. Что делает функция RIGHT в Excel? Функция RIGHT в Excel извлекает текст справа от строки. Возвращаемое значение Один или несколько символов. Аргументы text — текст, из которого нужно извлечь символы справа. num_chars — [необязательный] Количество символов для [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-right-excel" content="Функция RIGHT в Excel">
+    <meta itemprop="dateModified" content="2024-10-18">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__thumbnail"><a href="/glava-kontseptsiya-sistemy-spredpriyati"><div class="post-card__icon"><img width="1" height="1" src="/wp-content/uploads/2023/04/b5fbe0a0befc71a4e47c1006c74d949f.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" itemprop="image" decoding="async" loading="lazy"></div>
+<div class="post-card__meta"><div class="post-card__meta-right">
+<span class="post-card__date"><time itemprop="datePublished" datetime="2024-10-17">17.10.2024</time></span><span class="post-card__author" itemprop="author">А. Днепров</span>
+</div></div></a></div>
+<div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/glava-kontseptsiya-sistemy-spredpriyati">Глава 1. Концепция системы 1С:Предприятие 8.0</a></span></div>
+    
+            <meta itemprop="articleBody" content="  1.1. Платформа и конфигурация    Система программ «1С: Предприятие 8.0» включает в себя платформу и прикладные решения, разработанные на ее основе, для автоматизации деятельности организаций и частных лиц. Сама платформа не является программным продуктом для использования конечными пользователями, которые обычно работают с одним из многих прикладных решений (конфигураций), разработанных на данной платформе. Такой подход позволяет автоматизировать [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/glava-kontseptsiya-sistemy-spredpriyati" content="Глава 1. Концепция системы 1С:Предприятие 8.0">
+    <meta itemprop="dateModified" content="2024-10-17">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__thumbnail"><a href="/poleznye-nastroyki-redaktora"><div class="post-card__icon"><img width="330" height="230" src="/wp-content/uploads/2023/04/8e79eae3668ea25a59c1780794cdf579.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" itemprop="image" decoding="async" loading="lazy"></div>
+<div class="post-card__meta"><div class="post-card__meta-right">
+<span class="post-card__date"><time itemprop="datePublished" datetime="2024-10-17">17.10.2024</time></span><span class="post-card__author" itemprop="author">А. Днепров</span>
+</div></div></a></div>
+<div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/poleznye-nastroyki-redaktora">14.8 Полезные настройки редактора</a></span></div>
+    
+            <meta itemprop="articleBody" content="Графический редактор CorelDRAW 10 имеет множество настроек, позволяющих значительно изменить внешний вид рабочего окна программы. Также можно настроить некоторые особенности работы в редакторе. При рассмотрении некоторых возможностей редактора описывались диалоги их настройки. Теперь вашему вниманию предлагаются другие, достаточно полезные, настройки CorelDRAW 10. Для настройки всех возможностей CorelDRAW 10 следует выбрать команду меню Tools/ Options (Сервис/Параметры). [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/poleznye-nastroyki-redaktora" content="14.8 Полезные настройки редактора">
+    <meta itemprop="dateModified" content="2024-10-17">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/registratsiya">Регистрация</a></span></div>
+    
+            <meta itemprop="articleBody" content="В связи с частыми атаками на сайт мы отменили регистрацию. Для предоставления доступа к учебным материалам ждем от вас скрин купона в развернутом виде на нашу электронную почту: support@learn-excel.ru или на номер WhatsApp +79500219352 (если пишете на WhatsApp, то, кроме скрина купона, укажите еще и адрес вашей электронной почты).В течении 48 часов мы вас сами [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/registratsiya" content="Регистрация">
+    <meta itemprop="dateModified" content="2024-10-17">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/sozdanie-risunkov-dlya-interneta">12. Создание рисунков для ИНТЕРНЕТА</a></span></div>
+    
+            <meta itemprop="articleBody" content="12.1 Вставка обьектов ИНТЕРНЕТА 12.2 Создание анимированных кнопок 12.3 Публикация документов в ИНТЕРНЕТЕ">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/sozdanie-risunkov-dlya-interneta" content="12. Создание рисунков для ИНТЕРНЕТА">
+    <meta itemprop="dateModified" content="2024-10-17">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/kak-sozdat-turnirnuyu-tablitsu-v-excel">Как создать турнирную таблицу в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Вот полное руководство о том, как создать турнирные таблицы на вашем ПК с Windows 11/10. Турнирная таблица &#8212; это древовидная диаграмма, на которой показаны серии игр и раундов, которые будут разыграны во время турнира. Вы можете создавать турнирные сетки различных типов, таких как жеребьевка с двойным выбыванием, жеребьевка с одиночным выбыванием, круговая жеребьевка, чередующиеся пары, [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/kak-sozdat-turnirnuyu-tablitsu-v-excel" content="Как создать турнирную таблицу в Excel">
+    <meta itemprop="dateModified" content="2024-10-17">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-reduce-v-excel">Функция REDUCE в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция REDUCE в Excel применяет пользовательскую функцию LAMBDA к каждому элементу заданного массива и суммирует результаты до одного значения. Что делает функция REDUCE в Excel? Функция REDUCE в Excel позволяет уменьшить массив. Возвращаемое значение Одно значение. Аргументы initial_value &#8212; [необязательный] Начальное значение аккумулятора. array &#8212; Массив, который нужно уменьшить. lambda — применяемая пользовательская функция LAMBDA. Синтаксис = REDUCE [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-reduce-v-excel" content="Функция REDUCE в Excel">
+    <meta itemprop="dateModified" content="2024-10-16">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-iseven-v-excel">Функция ISEVEN в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция ISEVEN в Excel возвращает TRUE, если значение является четным числом, и FALSE, если значение является нечетным числом. ISEVEN вернет ошибку #VALUE, если значение не является числовым. Что делает функция ISEVEN в Excel? Функция ISEVEN в Excel проверяет, является ли значение четным. Возвращаемое значение Логическое значение (TRUE или FALSE). Аргументы value — числовое значение для проверки. [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-iseven-v-excel" content="Функция ISEVEN в Excel">
+    <meta itemprop="dateModified" content="2024-10-16">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/kak-sbrosit-nastroyki-microsoft-word-do-znacheniy-po-umolchaniyu">Как сбросить настройки Microsoft Word до значений по умолчанию</a></span></div>
+    
+            <meta itemprop="articleBody" content="Вот как восстановить настройки Word по умолчанию: Если у вас возникли проблемы с Microsoft Word, возможно, потребуется перезагрузить программу. Сброс настроек Microsoft Word обычно является последним средством после неудачных других действий по устранению неполадок. Microsoft Word &#8212; один из лучших текстовых процессоров, который можно использовать на компьютерах и мобильных устройствах. Программа переполнена функциями, поэтому неудивительно, что люди [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/kak-sbrosit-nastroyki-microsoft-word-do-znacheniy-po-umolchaniyu" content="Как сбросить настройки Microsoft Word до значений по умолчанию">
+    <meta itemprop="dateModified" content="2024-10-16">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-sumproduct-v-excel">Функция SUMPRODUCT в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция SUMPRODUCT в Excel умножает диапазоны или массивы и возвращает сумму произведений. Это звучит скучно, но СУММПРОИЗВ — невероятно универсальная функция, которую можно использовать для подсчета и суммирования, как COUNTIFS или SUMIFS, но с большей гибкостью. Внутри SUMPRODUCT можно легко использовать другие функции для дальнейшего расширения функциональности. Цель Умножить, затем суммировать массивы. Возвращаемое значение Результат перемножения и суммирования массивов [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-sumproduct-v-excel" content="Функция SUMPRODUCT в Excel">
+    <meta itemprop="dateModified" content="2024-10-16">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-price-v-excel">Функция PRICE в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция PRICE (ЦЕНА) в Excel возвращает цену за номинальную стоимость 100 долларов США ценной бумаги, по которой выплачиваются периодические проценты. Что делает функция PRICE в Excel? Функция PRICE в Excel возвращает цену за номинальную стоимость 100 долларов США – периодические проценты. Возвращаемое значение Цена облигации. Аргументы sd – дата исполнения ценной бумаги. md – дата погашения ценной [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-price-v-excel" content="Функция PRICE в Excel">
+    <meta itemprop="dateModified" content="2024-10-16">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__thumbnail"><a href="/glava-spravochnaya-informatsiya-sistemy"><div class="post-card__icon"><img width="1" height="1" src="/wp-content/uploads/2023/04/c379dfe75e85993f964bc849476fc188.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" itemprop="image" decoding="async" loading="lazy"></div>
+<div class="post-card__meta"><div class="post-card__meta-right">
+<span class="post-card__date"><time itemprop="datePublished" datetime="2024-10-16">16.10.2024</time></span><span class="post-card__author" itemprop="author">А. Днепров</span>
+</div></div></a></div>
+<div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/glava-spravochnaya-informatsiya-sistemy">Глава 2. Справочная информация системы</a></span></div>
+    
+            <meta itemprop="articleBody" content="Когда пользователь запускает только что купленную программу, то справочная система должна рассказать ему о том, каковы возможности программы и как правильно начать с ней работать. Наличие удобной и исчерпывающей справочной системы делает программу удобной и привлекательной для начинающих пользователей, так как в любой момент времени пользователь имеет возможность получить справку о конкретном объекте программы.    В [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/glava-spravochnaya-informatsiya-sistemy" content="Глава 2. Справочная информация системы">
+    <meta itemprop="dateModified" content="2024-10-16">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__thumbnail"><a href="/kak-ukrasit-tekst-v-word"><div class="post-card__icon"><img width="345" height="143" src="/wp-content/uploads/2023/04/2b74f9f1a5ee35754e3b6b7ee28df56d.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" itemprop="image" decoding="async" loading="lazy"></div>
+<div class="post-card__meta"><div class="post-card__meta-right">
+<span class="post-card__date"><time itemprop="datePublished" datetime="2024-10-16">16.10.2024</time></span><span class="post-card__author" itemprop="author">А. Днепров</span>
+</div></div></a></div>
+<div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/kak-ukrasit-tekst-v-word">Как украсить текст в Word 2007</a></span></div>
+    
+            <meta itemprop="articleBody" content="Я пишу большую сказку для своего ребёнка и хочу выделить отдельные заголовки разделов каким-то способом. Просто раскраска цветом мне не нравится. Что вы можете посоветовать? &nbsp; Самый простой способ для обеспечения графического разнообразия текста &#8212; это использование различных шрифтов и стилей оформления. &nbsp; Стандартный набор шрифтов, установленный в системе, может быть значительно расширен за счет [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/kak-ukrasit-tekst-v-word" content="Как украсить текст в Word 2007">
+    <meta itemprop="dateModified" content="2024-10-16">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/kak-ispravit-problemu-polnogo-zapolneniya-google-diska-esli-net-faylov">Как исправить проблему полного заполнения Google Диска, если нет файлов</a></span></div>
+    
+            <meta itemprop="articleBody" content="Квота Google Диска содержит обзор того, сколько места в хранилище GD Cloud вы израсходовали. Однако могут возникать исключения, например, Google Диск заполнен, но на нем нет файлов. Иногда из-за квоты может отображаться, что вы используете гораздо больше места для хранения, чем ожидалось. Полное сообщение гласит: хранилище вашей учетной записи Google Drive было заполнено, пожалуйста, удалите другой файл [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/kak-ispravit-problemu-polnogo-zapolneniya-google-diska-esli-net-faylov" content="Как исправить проблему полного заполнения Google Диска, если нет файлов">
+    <meta itemprop="dateModified" content="2024-10-15">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-weekday-v-excel">Функция WEEKDAY в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция WEEKDAY в Excel принимает дату и возвращает число от 1 до 7, представляющее день недели. По умолчанию WEEKDAY возвращает 1 для воскресенья и 7 для субботы, но это можно настроить. Вы можете использовать функцию ДЕНЬНЕД внутри других формул, чтобы проверить день недели. Что делает функция WEEKDAY в Excel? Функция WEEKDAY в Excel позволяет получить день [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-weekday-v-excel" content="Функция WEEKDAY в Excel">
+    <meta itemprop="dateModified" content="2024-10-15">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/fayl-ne-udalos-otkryt-v-zaschischennom-rezhime-excel-word-chto-delat">Файл не удалось открыть в защищенном режиме [Excel, Word]: что делать</a></span></div>
+    
+            <meta itemprop="articleBody" content="Если отключение защищенного режима не помогает это исправить, используйте программу для восстановления файлов. Файл не удалось открыть в защищенном режиме? вот одна досадная ошибка, которая поражает документы MS Word и Excel. Вы можете устранить проблему, полностью отключив эту функцию. Однако это не рекомендуется из соображений безопасности. Вместо этого попробуйте обновить драйверы и немного изменить настройки программного обеспечения. Ищете [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/fayl-ne-udalos-otkryt-v-zaschischennom-rezhime-excel-word-chto-delat" content="Файл не удалось открыть в защищенном режиме [Excel, Word]: что делать">
+    <meta itemprop="dateModified" content="2024-10-15">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-if-v-excel">Функция IF в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция IF (ЕСЛИ) в Excel выполняет логическую проверку и возвращает одно значение для результата TRUE, а другое — для результата FALSE. Например, чтобы «сдать» баллы выше 70: = ЕСЛИ (A1&gt; 70, «Пройдено», «Не пройдено»). С помощью вложенных функций IF можно проверить более одного условия. Функцию ЕСЛИ можно комбинировать с логическими функциями, такими как AND и OR, [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-if-v-excel" content="Функция IF в Excel">
+    <meta itemprop="dateModified" content="2024-10-15">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-bycol-v-excel">Функция BYCOL в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция BYCOL в Excel применяет функцию LAMBDA к каждому столбцу в заданном массиве и возвращает один результат для каждого столбца в виде единого массива. В показанном примере данными является именованный диапазон C5:H9. Примечание. BYCOL — это бета-функция, доступная только через канал Insiders Excel 365 . Что делает функция BYCOL в Excel ? Функция BYCOL в Excel позволяет применить функцию LAMBDA [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-bycol-v-excel" content="Функция BYCOL в Excel">
+    <meta itemprop="dateModified" content="2024-10-15">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__thumbnail"><a href="/rezhimy-prosmotra-dokumenta"><div class="post-card__icon"><img width="64" height="17" src="/wp-content/uploads/2023/04/99f55cc3910b8b64433d7780dfe8b033.gif" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" itemprop="image" decoding="async" loading="lazy"></div>
+<div class="post-card__meta"><div class="post-card__meta-right">
+<span class="post-card__date"><time itemprop="datePublished" datetime="2024-10-15">15.10.2024</time></span><span class="post-card__author" itemprop="author">А. Днепров</span>
+</div></div></a></div>
+<div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/rezhimy-prosmotra-dokumenta">Режимы просмотра документа</a></span></div>
+    
+            <meta itemprop="articleBody" content="Выбор режима просмотра документа можно осуществить при помощи команд меню &#171;Вид&#187; или четырех кнопок, расположенных в левой нижней части окна. &nbsp; &nbsp; По порядку слева направо: Обычный режим просмотра &#8212; наиболее удобный режим для работы с текстом. Режим просмотра Вэб-документа позволяет работать с текстом, графикой, встроенным звуком, анимацией, другими эффектами, реализуемыми для Web. Режим разметки [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/rezhimy-prosmotra-dokumenta" content="Режимы просмотра документа">
+    <meta itemprop="dateModified" content="2024-10-15">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__thumbnail"><a href="/glava-redaktirovanie-i-analiz-dannyh"><div class="post-card__icon"><img width="151" height="230" src="/wp-content/uploads/2023/04/43d1ad3c8fd7ea56961fe2a0981a265e.gif" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" itemprop="image" decoding="async" loading="lazy"></div>
+<div class="post-card__meta"><div class="post-card__meta-right">
+<span class="post-card__date"><time itemprop="datePublished" datetime="2024-10-14">14.10.2024</time></span><span class="post-card__author" itemprop="author">А. Днепров</span>
+</div></div></a></div>
+<div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/glava-redaktirovanie-i-analiz-dannyh">Глава 8. Редактирование и анализ данных с помощью запросов</a></span></div>
+    
+            <meta itemprop="articleBody" content="Редактирование и анализ данных с помощью запросов В первой части книги мы познакомили вас с одним из важнейших объектов базы данных Access — запросами. При этом рассматривался только один вид запросов — запросы на выборку данных из таблиц. Microsoft Access, однако, позволяет не только выбирать нужные данные, но и изменять их с помощью специальных запросов. [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/glava-redaktirovanie-i-analiz-dannyh" content="Глава 8. Редактирование и анализ данных с помощью запросов">
+    <meta itemprop="dateModified" content="2024-10-14">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__thumbnail"><a href="/funktsiya-vpr"><div class="post-card__icon"><img width="201" height="230" src="/wp-content/uploads/2023/04/27684271160944927a1bf8fc12bf108c.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" itemprop="image" decoding="async" loading="lazy"></div>
+<div class="post-card__meta"><div class="post-card__meta-right">
+<span class="post-card__date"><time itemprop="datePublished" datetime="2024-10-14">14.10.2024</time></span><span class="post-card__author" itemprop="author">А. Днепров</span>
+</div></div></a></div>
+<div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-vpr">Функция «ВПР»</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция ВПР позволяет найти данные в исходной таблице и вывести их в любой ячейке новой таблицы. Основные условия работы данной функции: Наличие одинаковых элементов в сопоставляемых таблицах (например, код товара, фамилия сотрудника и т.д.). Сопоставляемые данные в исходной таблице должны быть отсортированы по возрастанию. Например: Как мы видим, данные в исходной таблице расположены по алфавиту. [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-vpr" content="Функция «ВПР»">
+    <meta itemprop="dateModified" content="2024-10-14">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsii-row-i-column-v-excel-s-primerami">Функции ROW() и COLUMN() в Excel с примерами</a></span></div>
+    
+            <meta itemprop="articleBody" content="В этой статье мы собираемся ознакомиться с подробностями о функциях строк, ROWS, COLUMN, COLUMNS в Excel и их использовании. Функция ROW() Функция ROW() в основном возвращает номер строки для ссылки. Синтаксис: =ROW([reference]) Пример : =ROW(G100); //Возвращает 100 в качестве выходных данных, поскольку G100 находится в 100-й строке листа Excel Если мы не введем аргумент внутри [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsii-row-i-column-v-excel-s-primerami" content="Функции ROW() и COLUMN() в Excel с примерами">
+    <meta itemprop="dateModified" content="2024-10-14">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/kak-preobrazovat-stroku-v-chislo-v-excel-s-pomoschyu-vba">Как преобразовать строку в число в Excel с помощью VBA</a></span></div>
+    
+            <meta itemprop="articleBody" content="Числовые значения определяются типами данных, такими как integer или byte. Эти типы данных используются для оптимизации обработки и выделения памяти в Excel. В этом руководстве мы собираемся показать вам, как преобразовать строку в число в Excel VBA. Скачать готовый шаблон Типы данных в VBA Как и в некоторых других языках программирования, VBA использует типы данных для определения [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/kak-preobrazovat-stroku-v-chislo-v-excel-s-pomoschyu-vba" content="Как преобразовать строку в число в Excel с помощью VBA">
+    <meta itemprop="dateModified" content="2024-10-14">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__thumbnail"><a href="/podshivki-v-autocad"><div class="post-card__icon"><img width="1" height="1" src="/wp-content/uploads/2023/04/492af20e112e14856bf49d5de71b0ee3.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" itemprop="image" decoding="async" loading="lazy"></div>
+<div class="post-card__meta"><div class="post-card__meta-right">
+<span class="post-card__date"><time itemprop="datePublished" datetime="2024-10-14">14.10.2024</time></span><span class="post-card__author" itemprop="author">А. Днепров</span>
+</div></div></a></div>
+<div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/podshivki-v-autocad">Подшивки в autocad</a></span></div>
+    
+            <meta itemprop="articleBody" content="Когда у Вас при работе над проектом набирается много листов, да к тому же расположенные в разных файлах, для удобства навигации по проекту, его публикации и архивирования следует использовать подшивки. В настоящем уроке самостоятельного изучения autocad рассмотрим процесс создания подшивки autocad. Перед созданием подшивки для проекта, структурируйте файлы проекта следующим образом: &nbsp; соберите файлы проекта [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/podshivki-v-autocad" content="Подшивки в autocad">
+    <meta itemprop="dateModified" content="2024-10-14">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-byrow-v-excel">Функция BYROW в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция Excel BYROW применяет функцию LAMBDA к каждой строке данного массива и возвращает один результат для каждой строки в одном массиве. В показанном примере данными является именованный диапазон C5:H9. Примечание. BYROW — это бета-функция, доступная только через канал Insiders Excel 365. Цель Применить функцию к строке. Возвращаемое значение Один результат в строке. Аргументы array &#8212; Массив или массив для обработки. lambda — лямбда-функция, применяемая [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-byrow-v-excel" content="Функция BYROW в Excel">
+    <meta itemprop="dateModified" content="2024-10-13">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-ifna-v-excel">Функция IFNA в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция IFNA в Excel — это простой способ перехватывать и обрабатывать ошибки #N/A, не перехватывая другие ошибки. Функция IFNA возвращает пользовательский результат, если формула генерирует ошибку #N/A, и нормальный результат, если ошибка не обнаружена. Что делает функция IFNA в Excel? Функция IFNA в Excel перехватывает и обрабатывает ошибки #N/A. Возвращаемое значение Значение, указанное для ошибок [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-ifna-v-excel" content="Функция IFNA в Excel">
+    <meta itemprop="dateModified" content="2024-10-13">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/kak-skryt-i-otobrazit-stolbtsy-v-google-tablitsah">Как скрыть и отобразить столбцы в Google Таблицах</a></span></div>
+    
+            <meta itemprop="articleBody" content="Google Sheets &#8212; это мощный инструмент для работы с электронными таблицами, который позволяет упорядочивать и анализировать данные. Одной из хороших функций Google Sheets является возможность скрывать и не показывать столбцы, что облегчает фокусировку на конкретных данных. Поэтому мы обсудим, как скрыть и отобразить столбцы в Google Таблицах. Почему я не могу скрыть столбцы в Google таблицах? Может [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/kak-skryt-i-otobrazit-stolbtsy-v-google-tablitsah" content="Как скрыть и отобразить столбцы в Google Таблицах">
+    <meta itemprop="dateModified" content="2024-10-13">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+</div>
+	<nav class="navigation pagination">
+		<div class="screen-reader-text">Навигация по записям</div>
+		<div class="nav-links">
+<span aria-current="page" class="page-numbers current">1</span>
+<a class="page-numbers" href="/page/2">2</a>
+<span class="page-numbers dots">&hellip;</span>
+<a class="page-numbers" href="/page/18">18</a>
+<a class="next page-numbers" href="/page/2">Далее</a>
+</div>
+	</nav>
+		</main><!-- #main -->
+	</div>
+<!-- #primary -->
+
+    
+
+    </div>
+<!--.site-content-inner-->
+
+    
+</div>
+<!--.site-content-->
+
+    
+    
+
+<div class="site-footer-container">
+
+    
+
+    <footer id="colophon" class="site-footer full" itemscope itemtype="http://schema.org/WPFooter">
+        <div class="site-footer-inner fixed">
+
+            
+            
+<div class="footer-bottom">
+    <div class="footer-info">
+        <div class="footer-copyright">© 2024 Самоучитель справочник по офисным программам. <a href="/o-nas" rel="nofollow">О нас | Контакты</a> | <a href="/map" rel="nofollow">Карта сайта</a>
+</div>
+        <div class="footer-under-copyright"></div>
+	        </div>
+
+    </div>
+        </div>
+    </footer><!--.site-footer-->
+</div>
+
+
+            <button type="button" class="scrolltop js-scrolltop" data-mob="on"></button>
+    
+    
+</div>
+<!-- #page -->
+
+<script>var pseudo_links = document.querySelectorAll(".pseudo-clearfy-link");for (var i=0;i<pseudo_links.length;i++ ) { pseudo_links[i].addEventListener("click", function(e){   window.open( e.target.getAttribute("data-uri") ); }); }</script><script>document.addEventListener("copy", (event) => {var pagelink = "\nИсточник: ";event.clipboardData.setData("text", document.getSelection() + pagelink);event.preventDefault();});</script><script type="text/javascript" id="yelly-scripts-js-extra">
+/* <![CDATA[ */
+var settings_array = {"rating_text_average":"среднее","rating_text_from":"из","lightbox_display":"1"};
+var wps_ajax = {"url":"\/wp-admin\/admin-ajax.php","nonce":"e4ca9d4bd8"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="/js/scripts.min.js" id="yelly-scripts-js"></script>
+
+
+
+<div class="image-hover-social-buttons" style="display: none;">
+<div class="social-button social-button--vkontakte js-share-link" data-uri="https://vk.com/share.php?url=%2Fkak-skryt-i-otobrazit-stolbtsy-v-google-tablitsah"></div>
+<div class="social-button social-button--telegram js-share-link" data-uri="https://t.me/share/url?url=%2Fkak-skryt-i-otobrazit-stolbtsy-v-google-tablitsah&text=%D0%9A%D0%B0%D0%BA+%D1%81%D0%BA%D1%80%D1%8B%D1%82%D1%8C+%D0%B8+%D0%BE%D1%82%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%B8%D1%82%D1%8C+%D1%81%D1%82%D0%BE%D0%BB%D0%B1%D1%86%D1%8B+%D0%B2+Google+%D0%A2%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0%D1%85"></div>
+<div class="social-button social-button--odnoklassniki js-share-link" data-uri="https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&service=odnoklassniki&st.shareUrl=%2Fkak-skryt-i-otobrazit-stolbtsy-v-google-tablitsah"></div>
+<div class="social-button social-button--whatsapp js-share-link" data-uri="whatsapp://send?url=%2Fkak-skryt-i-otobrazit-stolbtsy-v-google-tablitsahtext=%D0%9A%D0%B0%D0%BA+%D1%81%D0%BA%D1%80%D1%8B%D1%82%D1%8C+%D0%B8+%D0%BE%D1%82%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%B8%D1%82%D1%8C+%D1%81%D1%82%D0%BE%D0%BB%D0%B1%D1%86%D1%8B+%D0%B2+Google+%D0%A2%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0%D1%85"></div>
+<div class="social-button social-button--viber js-share-link" data-uri="viber://forward?url=%2Fkak-skryt-i-otobrazit-stolbtsy-v-google-tablitsahtext=%D0%9A%D0%B0%D0%BA+%D1%81%D0%BA%D1%80%D1%8B%D1%82%D1%8C+%D0%B8+%D0%BE%D1%82%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%B8%D1%82%D1%8C+%D1%81%D1%82%D0%BE%D0%BB%D0%B1%D1%86%D1%8B+%D0%B2+Google+%D0%A2%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0%D1%85"></div>
+</div>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(93345646, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/93345646" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>

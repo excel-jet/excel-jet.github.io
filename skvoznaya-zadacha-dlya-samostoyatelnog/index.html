@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<title>Сквозная задача для самостоятельного решения (пояснения к каждому практическому заданию) &#8212; learn-office</title>
+	<meta name="description" content="Итак, пришло время закрепить изученный материал на сквозном практическом примере. Каждое задание в нем снабжено подсказкой по выполнению или ссылкой на">
+	<link rel="canonical" href="/skvoznaya-zadacha-dlya-samostoyatelnog">
+	<meta property="og:locale" content="ru_RU">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Сквозная задача для самостоятельного решения (пояснения к каждому практическому заданию) &#8212; learn-office">
+	<meta property="og:description" content="Итак, пришло время закрепить изученный материал на сквозном практическом примере. Каждое задание в нем снабжено подсказкой по выполнению или ссылкой на">
+	<meta property="og:url" content="/сквозная-задача-для-самостоятельног">
+	<meta property="og:site_name" content="Excel-jet">
+	<meta property="article:published_time" content="2024-08-17T23:51:49+00:00">
+	<meta property="og:image" content="/image07/3d4863947187173289c6f96807294bdb.jpg">
+	<meta property="og:image:width" content="1">
+	<meta property="og:image:height" content="1">
+	<meta property="og:image:type" content="image/jpeg">
+	<meta name="author" content="А. Днепров">
+
+
+<style id="wp-block-library-theme-inline-css" type="text/css">.wp-block-audio :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio :where(figcaption){color:#ffffffa6}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed :where(figcaption){color:#ffffffa6}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:#ffffffa6}:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table :where(figcaption){color:#ffffffa6}.wp-block-video :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video :where(figcaption){color:#ffffffa6}.wp-block-video{margin:0 0 1em}:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}</style>
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 19.5px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36.5px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--normal: 22px;--wp--preset--font-size--huge: 49.5px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="google-fonts-css" href="https://fonts.googleapis.com/css?family=Roboto%3A400%2C400i%2C700&#038;subset=cyrillic&#038;display=swap" media="all">
+<link rel="stylesheet" id="yelly-style-css" href="/css/style.min.css" media="all">
+
+<style>.pseudo-clearfy-link { color: #008acf; cursor: pointer;}.pseudo-clearfy-link:hover { text-decoration: none;}</style>
+<link rel="preload" href="/fonts/icomoon.ttf" as="font" crossorigin>
+    <style>.scrolltop{width:50px}.scrolltop:before{content:"\21d1"}.entry-content a, .entry-content a:visited, .spanlink, .comment-reply-link, .pseudo-link, .widget_calendar a, .widget_recent_comments a, .child-categories ul li a{color:#0000ff}.child-categories ul li a{border-color:#0000ff}a:hover, a:focus, a:active, .spanlink:hover, .top-menu ul li>span:hover, .main-navigation ul li a:hover, .main-navigation ul li span:hover, .footer-navigation ul li a:hover, .footer-navigation ul li span:hover, .comment-reply-link:hover, .pseudo-link:hover, .child-categories ul li a:hover{color:#1e73be}.top-menu>ul>li>a:before, .top-menu>ul>li>span:before{background:#1e73be}.child-categories ul li a:hover, .post-box--no-thumb a:hover{border-color:#1e73be}.post-box--card:hover{box-shadow: inset 0 0 0 1px #1e73be}.post-box--card:hover{-webkit-box-shadow: inset 0 0 0 1px #1e73be}@media (min-width: 768px){body{background-attachment: scroll}}body{font-size:17px;}@media (max-width: 991px){.widget-area{display: block; margin: 0 auto}}</style>
+    <!-- Yandex.RTB -->
+<script>window.yaContextCb=window.yaContextCb||[]</script>
+<script src="https://yandex.ru/ads/system/context.js" async></script>	
+</head>
+<body class="post-template-default single single-post postid-2695 single-format-standard wp-embed-responsive sidebar-right">
+<div id="page" class="site">
+    <a class="skip-link screen-reader-text" href="#content">Перейти к контенту</a>
+
+    
+    
+    <div class="search-screen-overlay js-search-screen-overlay"></div>
+    <div class="search-screen js-search-screen">
+        
+<form role="search" method="get" class="search-form" action="/">
+    <label>
+        <span class="screen-reader-text">Search for:</span>
+        <input type="search" class="search-field" placeholder="Поиск..." value="" name="s">
+    </label>
+    <button type="submit" class="search-submit"></button>
+</form>    </div>
+
+    
+
+<header id="masthead" class="site-header full" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="site-header-inner fixed">
+
+        <div class="humburger js-humburger">
+<span></span><span></span><span></span>
+</div>
+
+        
+<div class="site-branding">
+
+    <div class="site-branding__body"><div class="site-title"><a href="/">Excel-jet</a></div></div>
+</div>
+<!-- .site-branding -->
+
+    
+    <nav id="site-navigation" class="main-navigation full">
+        <div class="main-navigation-inner fixed">
+            <div class="menu-menyu-container"><ul id="header_menu" class="menu">
+<li id="menu-item-6695" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-6695">
+<a href="/excel">Excel</a>
+<ul class="sub-menu">
+	<li id="menu-item-6709" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6709"><a href="/excel/functions">Функции</a></li>
+</ul>
+</li>
+<li id="menu-item-6697" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6697"><a href="/microsoft-word">Word</a></li>
+<li id="menu-item-6696" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6696"><a href="/powerpoint">PowerPoint</a></li>
+<li id="menu-item-6698" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6698"><a href="/outlook">Outlook</a></li>
+</ul></div>        </div>
+    </nav><!-- #site-navigation -->
+
+    
+<div class="header-search"><span class="search-icon js-search-icon"></span></div>    </div>
+</header><!-- #masthead -->
+
+
+
+    
+    
+    <div id="content" class="site-content fixed">
+
+        
+        <div class="site-content-inner">
+    
+        
+        <div id="primary" class="content-area" itemscope itemtype="http://schema.org/Article">
+            <main id="main" class="site-main">
+
+                
+<article id="post-2695" class="article-post post-2695 post type-post status-publish format-standard has-post-thumbnail  category-excel">
+
+    
+        
+        <header class="entry-header"><h1 class="entry-title" itemprop="headline">Сквозная задача для самостоятельного решения (пояснения к каждому практическому заданию)</h1></header>
+        
+        
+        
+    
+    
+    <div class="entry-meta">
+<span class="entry-time"><span class="entry-label">Время чтения</span> 24 мин.</span><span class="entry-date"><span class="entry-label">Опубликовано</span> <time itemprop="datePublished" datetime="2024-08-18">18.08.2024</time></span>
+</div>
+	<div class="entry-content" itemprop="articleBody">
+		<p>Итак, пришло время закрепить изученный материал на сквозном практическом примере. Каждое задание в нем снабжено подсказкой по выполнению или ссылкой на тот раздел данной книги, в котором изложен теоретический материал по данной теме. Вполне возможно, что подсказки Вам уже и не понадобятся, и Вы успешно самостоятельно решите все проблемы, пользуясь приведенными ссылками только при крайней необходимости. </p>
+<p>&nbsp;</p>
+<p>    1. Для начала представим, что Вы только что установили программу «1С:Бухгалтерия 8.0» на свой компьютер, и теперь Вам необходимо создать новую информационную базу, в которой и будет вестись дальнейшая работа.    Нажмите на кнопку «Добавить» в диалоге «Запуск 1С:Предприятия». В диалоге «Добавление информационной базы» поставьте переключатель в положение «Создание новой информационной базы». Перейдите к следующему этапу регистрации, нажав на кнопку «Далее &gt;». Для того чтобы создать пустую ИБ, необходимо на этом этапе установить переключатель в положение «Создать пустую информационную базу». Нажмите на кнопку «Далее &gt;» и укажите в качестве названия ИБ строку: «Наша бухгалтерия». В качестве типа расположения ИБ оставьте переключатель в положении «На данном компьютере или на компьютере в локальной сети» <img decoding="async" src="/image07/3d4863947187173289c6f96807294bdb.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    На следующем этапе укажите:    ● Каталог информационной базы: С:БазыБухгалтерия    ● Язык (Страна): Русский (Россия) </p>
+<p>&nbsp;</p>
+<p>    Нажмите на кнопку «Готово», чтобы завершить упражнение (см. Главу 1.4). </p>
+<p>&nbsp;</p>
+<p>    2. Запускаем программу с новой базой.    Выделив курсором нашу базу в списке, нажимаем кнопку «1С:Предприятие». При первом запуске программа предложит выполнить начальное заполнение базы, следует проделать эту процедуру (см. Гл.12.1). Из предложенных классификаторов заполним изначально только Классификатор «Документы, удостоверяющие личность» и «Классификатор единиц измерения» <img decoding="async" src="/image20/b7174f488f5f2f880f0189173b26304c.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p> <img decoding="async" src="/image17/a15b5e5621c042e3c1f3619b264f2c4d.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    3. Введем сведения о нашем предприятии    Открываем пункт меню «Предприятие – Организации» и переходим к редактированию имеющегося там элемента. <img decoding="async" src="/image12/6b6eeba72ad96af22f93413726dec5e2.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Чтобы ввести банковские реквизиты, в строке «осн. банковский счет» воспользуемся кнопкой выбора и в открывшемся справочнике «Банковские счета» вводом новой строки добавим свой счет (при выборе банка также воспользуемся вводом новой строки в справочнике «Банки», а затем выберем введенный банк двойным щелчком мыши в нужное поле): <img decoding="async" src="/image18/aa7ea00eacfa0844f5b1a6932c0c8c4d.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p> <img decoding="async" src="/image19/b14cff3cd2ecb69960709fb6c13b4162.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Далее вводим основные сведения об организации в нижней части окна карточки организации на закладке «Основные»: <img decoding="async" src="/image24/de1eb495ba95176910602acdf7e2bb67.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    На закладке «Контактная информация» вводим следующие данные: <img decoding="async" src="/image06/37405b05ec9dd26d7350f7cfa867e14c.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    На закладке «Коды» введем пока только код ОКАТО – 45286560000 и наименование организационно правовой формы – общество с ограниченной ответственностью, а на закладке «Фонды» – регистрационный номер в ПФР – 087-204-250665. Подробно порядок ввода сведений об организации разбирался нами в гл. 4.2. </p>
+<p>&nbsp;</p>
+<p>    4. Далее необходимо задать нашу учетную политику для целей бухгалтерского и налогового учета.    Для этого откроем сначала меню «Предприятие – Учетная политика – Учетная политика (бухгалтерский учет), вводом новой строки откроем новую запись, заполним и сохраним ее, нажав „ОК“ с датой 16.01.2006. В результате в регистре сведений „Учетная политика (бухгалтерский учет)“ появится новая запись: <img decoding="async" src="/image27/f3e25dbaf017932620d2e4d0ada0d9b3.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Действуя аналогичным образом, зададим нашу учетную политику для налогового учета (меню «Предприятие – Учетная политика – Учетная политика (налоговый учет)»: <img decoding="async" src="/image21/bf6f218550ad54fb9105d6a098ebd0b7.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p> <img decoding="async" src="/image17/98893ebfab6ef1db0238082616ac3345.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p> <img decoding="async" src="/image23/ccb9ac901a21cc73c5a799ec441cda29.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p> <img decoding="async" src="/image22/cb06795b1ef76a2853ad2f8012d31a6b.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Теперь пришло время заполнить справочники информацией, которая понадобится нам в дальнейшем при вводе операций и документов. По ходу дальнейшей работы мы, конечно же, будем дополнять справочники новыми элементами, но определенные вещи можно внести в справочники уже сейчас.    (Порядок работы со справочниками был подробно описан нами в гл.5.). </p>
+<p>&nbsp;</p>
+<p>    5. В справочник «Подразделения организации» внесите элементы: Администрация, Бухгалтерия, Производственный отдел.    Справочник «Номенклатурные группы» заполните элементами: Белье постельное, Спецодежда медицинская, Спецодежда строительная, Чехлы для автомобилей.    Справочник «Подразделения организации» открывается из меню «Предприятие», Справочник «Номенклатурные группы» – из меню «Основная деятельность – Товары(материалы, продукция, услуги)». Причем в последнем уже имеется некий служебный элемент «Основная номенклатурная группа», его следует переименовать в «Белье постельное» и вводом новой строки добавить остальные элементы.    Сравните полученный результат: <img decoding="async" src="/image02/1479044b1bea89368134f588fc7f0a24.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    6. Заполним справочник «Номенклатура».    Справочник открывается из меню «Основная деятельность – Товары(материалы, продукция, услуги)». Начальное деление на группы (Продукция, Товары, Услуги и т.д.) в справочнике уже заложено. Откроем папку «Продукция» и создадим внутри нее еще несколько групп, в которые затем будут внесены наши номенклатурные позиции: <img decoding="async" src="/image10/5888c9a0500e3ac8d36acb9c60467841.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Теперь содержимое этих групп следует заполнить следующими элементами: <img decoding="async" src="/image08/43b5bc047ceca901518a3228cda60eba.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Введем вместе первый элемент из этой таблицы.    Открываем группу «Спецодежда» и вводом новой строки вводим в нее первый элемент – «Халат медицинский белый» <img decoding="async" src="/image26/ed57449db91760c984e83b0b3783a3d2.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Аналогично вводятся остальные элементы номенклатуры (похожие элементы удобно вводить копированием).    Затем нужно заполнить справочник «Типы цен номенклатуры» (меню «Основная деятельность – Товары (материалы, продукция, услуги)», введя туда элементы Плановая себестоимость и Отпускная цена. <img decoding="async" src="/image09/512a25f96bcffb3040660372356b19f9.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Цены для номенклатуры в программе устанавливаются с помощью документа «Установка цен номенклатуры» (меню «Основная деятельность – Товары (материалы, продукция, услуги)». Сначала одним документом зададим для всех номенклатурных позиций плановую себестоимость (строки табличной части в документе заполняются вводом новой строки), затем аналогично введем второй документ, в котором для тех же позиций определим отпускную цену. <img decoding="async" src="/image01/0a6e850ca9cba0457ceb319b06576489.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p> <img decoding="async" src="/image09/52e82bfc01a9cc4e3e7824b47b3a8122.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Второй документ удобно вводить копирование первого, изменив при вводе тип цены и цены в табличной части документа.    Обратите внимание на дату документа (16.01.2006), для удобства работы рекомендуем установить эту дату в качестве рабочей (меню «Сервис – Параметры – Общие»). </p>
+<p>&nbsp;</p>
+<p>    7. Заполним справочник «Физические лица».    Ввести информацию о работниках в справочник можно двумя способами – непосредственно в форму справочника «Физические лица» или в процессе ввода приказа о приеме на работу. Используем первый способ и материал, изложенный в гл. 5.14. Для этого откроем меню «Зарплата – Физические лица» и вводом новой строки внесем данные о сотрудниках предприятия. При этом данные об НДФЛ вводятся в отдельном окне, открывающемся с помощью кнопки «НДФЛ» на панели справочника, дата начала действия вычетов – 01.01.2006 г. <img decoding="async" src="/image03/1a02d84c6896770004df8762c6dd7f3c.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Рассмотрим полученный результат на примере Климова Андрея Викторовича: <img decoding="async" src="/image08/47dfe1ea67f3b8956519fed06ef65aab.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    В результате заполнения в справочнике «Физические лица» должно появиться шесть строк, отсортированные в алфавитном порядке (по наименованию) они будут выглядеть так: <img decoding="async" src="/image03/1b4b135b14ce4132c362b4dcb9fe91af.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    8. Заполним справочник «Склады».    В нашей организации планируется вести учет МПЗ в разрезе мест хранения. Для этого в меню «Сервис – Настройки параметров учета» на закладке «Аналитический учет МПЗ» необходимо для бухгалтерского и налогового учета установить флажки «Вести складской учет»: <img decoding="async" src="/image23/d481eed086d20990a8584c4d5fb7dfe7.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    В нашей организации будут использоваться три склада – Склад материалов (оптовый), Склад готовой продукции (оптовый, тип цен – плановая себестоимость) и Основной склад (оптовый). Для ввода этих данный откроем справочник «Склады (места хранения)» из меню «Основная деятельность» и вводом новой строки заполним его нужной информацией: <img decoding="async" src="/image03/1cbac98602b57e3b0ff651a9e7b380f1.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    9. Заполним справочник «Статьи затрат».    В справочник, открыв его из меню «Основная деятельность», необходимо ввести те статьи затрат, которые будут использоваться в дальнейшем для организации аналитического учета на счетах 20, 23, 25, 25, 44 и т.д. <img decoding="async" src="/image14/7ee4a23da4889fe99f826b90d2d46c79.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    10. Теперь пришло время расстроить параметры пользователей, ведь с базой в нашей организации будут работать несколько пользователей, и их работу надо как-то разграничить.    Чтобы заполнить список пользователей, необходимо запустить программу в режиме «Конфигуратор». Список пользователей открывается из меню «Администрирование». Подробно данный материал рассматривался нами в гл.13.1.    Вводом новой строки добавим в список пользователей следующие строки, указав на закладке «Права» для каждого вводимого пользователя доступные ему роли:    ● Климов – доступная роль «полные права»    ● Динес – доступная роль «полные права»    ● Салихов – доступная роль «полные права»    ● Таранюк В.О. – доступная роль «полные права»    В результате список пользователей будет выглядеть так: <img decoding="async" src="/image04/24539dbb8732dfc0205519c2afab1b9d.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Закроем программу в режиме «Конфигуратор» и запустим ее снова в режиме «1С:Предприятие» для дальнейшей работы. </p>
+<p>&nbsp;</p>
+<p>    11. Заполним справочник «Контрагенты».    Данный справочник открывается из меню «Основная деятельность». Подробно о работе с этим справочником мы говорили в гл.5.8. Сделаем справочник «Контрагенты» многоуровневым, разбив всех контрагентов на группы: <img decoding="async" src="/image14/7df778ed8d616c36adb84be3c9bfb777.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Теперь, открыв нужную папку и воспользовавшись вводом новой строки, заполним наши группы конкретными контрагентами:    Группа «Учредители»:    ● НПО «Челнок»    Полное наименование: научно-производственное объединение «Челнок»    Юридический адрес: 345112 Москва, ул. Круговая, 27    Фактический адрес: тот же    ИНН: 7705123456    КПП: 770501001    Расчетный счет: 40703210100000000845    Банк: Экономбанк    Корр. счет: 30102410500000136545    БИК: 044645604    Договор: основной (вид договора – прочее) <img decoding="async" src="/image05/2bd7cc2811b70625efe25ea70a147a11.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p> <img decoding="async" src="/image25/e24f55b50e053fe78ba5343009916f3d.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    ● Климов А.В.    Полное наименование: Климов Андрей Викторович    Договор: основной (вид договора – прочие)    ● Динес К.Л.    Полное наименование: Динес Кира Леонидовна    Договор: основной (вид договора – прочее)    ● Салихов Р.Т.    Полное наименование: Салихов Руслан Тимурович    Договор: основной (вид договора – прочее) </p>
+<p>&nbsp;</p>
+<p>    Группа «Поставщики»:    ● Текстиль Плюс    Полное наименование: ЗАО «Текстиль Плюс»    Юридический адрес: 345462 Москва, ул. Лавровая, 207    Фактический адрес: тот же    ИНН: 7706123886    КПП: 770601001    Расчетный счет: 40707210100000000112    Банк: Экономбанк    Корр. счет: 30102410500000136545    БИК: 044645604    Договор: №2-м (договор с поставщиком) </p>
+<p>&nbsp;</p>
+<p>    ● Фурнитурная фабрика №2    Полное наименование: ОАО «Фурнитурная фабрика №2»    Юридический адрес: 445652 Москва, ул.Грибова, 17    Фактический адрес: тот же    ИНН: 7705124451    КПП: 770501001    Расчетный счет: 40708960100000000222    Банк: КБ ОАО «Альфа-Банк»    Корр. счет: 50102410500000487945    БИК: 047464214    Договор: № 5-м (договор с поставщиком) </p>
+<p>&nbsp;</p>
+<p>    ● База хозтоваров    Полное наименование: ООО «База хозтоваров»    ИНН: 7704577875    КПП: 77041001    Расчетный счет: 40708780000000111565    Банк: СБ «Сбербанк России»    Корр. счет: 40107750000014454646    БИК: 044750411    Договор: № 6-м (договор с поставщиком) </p>
+<p>&nbsp;</p>
+<p>    Группа «Покупатели»:    ● Магазин «Батрак»    Полное наименование: ООО Магазин «Батрак»    Юридический адрес: 345112 Москва, ул. Селина, 45    Фактический адрес: тот же    ИНН: 7705128876    КПП: 770501001    Расчетный счет: 40703330100000000979    Банк: СБ «Сбербанк России»    Корр. счет: 4010775000001445    БИК: 0447504111    Договор: № 7-тв (договор с покупателем)    ● Медицинский центр «36,6»    Полное наименование: ЗАО Медицинский центр «36,6»    Юридический адрес: 345112 Москва, ул. Кудряшова, 81    Фактический адрес: тот же    ИНН: 7705129996    КПП: 770501001    Расчетный счет: 40703210100000000445    Банк: Экономбанк    Корр. счет: 30102410500000136545    БИК: 044645604    Договор: № 4-тв (договор с покупателем)    ● Магазин «Автомир»    Полное наименование: ЗАО Магазин «Автомир»    ИНН: 7704123778    КПП: 770401001    Расчетный счет: 40703210100000000825    Банк: КБ ОАО «Альфа-Банк»    Корр. счет: 50102410500000487945    БИК: 0474642104    Договор: № 2-тв (договор с покупателем) </p>
+<p>&nbsp;</p>
+<p>    12. Заполним справочник «Статьи движения денежных средств». В дальнейшем он будет использоваться нами как аналитика на счетах 50 , 51, а также при автоматическом формировании «Отчета о движении денежных средств» (форма №4).    Справочник может быть открыт из меню «Банк и касса». Вводом новой строки заполняем его необходимыми элементами и приводим его, отсортировав по коду, к виду: <img decoding="async" src="/image01/07875d3aa978aea99b457d270689c38a.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    13. Первая операция, которую нам необходимо зарегистрировать – это формирование уставного капитала. Организация «Спецтекстиль» была зарегистрирована 16.01.2006 года с уставным капиталом 400 000 руб. При формировании уставного капитала следует учесть следующие вклады учредителей:    ● Климов А.В. – денежный вклад 150 000 руб.    ● Динес К.Л. – денежный вклад 100 000 руб.    ● Салихов Р.Т. – компьютер (10 000 руб.) и денежный вклад 40 000 руб.    ● НПО «Челнок» – швейные машинки (60 000 руб.)    ткани (40 000 руб.)    Формирование уставного капитала отражается проводкой Д75 – К80 с аналитикой по каждому учредителю. Операция вводится вручную (см. гл. 6.1). При вводе проводок удобно использовать режим копирования, каждый раз меняя только учредителя и сумму. Дата операции – 16.01.2006. Для удобства работы в дальнейшем , эту дату следует задать в качестве рабочей даты программы.    Полученный результат должен иметь вид: <img decoding="async" src="/image14/7cb2e3d30435606a1d6f3c3d7a0ab552.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Сформируем отчет «Оборотно-сальдовая ведомость (меню „Отчеты“), чтобы убедиться в правильности введенной информации: <img decoding="async" src="/image19/ae2b495dfe4baeddf79cf5fdd88ea7d9.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    14. 16 января директор Климов А.В. и главный бухгалтер Динес К.Л. внесли свои денежные вклады в уставный капитал в кассу организации. </p>
+<p>&nbsp;</p>
+<p>    Для ввода этих операций используем документ «Приходный кассовый ордер» из меню «Банк и касса». При вводе нового документа автоматически устанавливается операция «Оплата от покупателя», которую надо изменить на «Прочий приход денежных средств» (используем кнопку «Операция» на панели инструментов документа). Так же не забудем заполнить закладку «Печать» в документе, что даст возможность правильно и полно отразить введенные данные в печатной форме документа: <img decoding="async" src="/image16/908443c51561dbea1670c5b34b7ddc11.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p> <img decoding="async" src="/image05/2dafc74aa8e08adffba6709c4d97236c.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Используя режим копирования документов в журнале, введите еще один ПКО, отражающий денежный вклад Динес К.Л. </p>
+<p>&nbsp;</p>
+<p>    15. Этим же днем (16 января) нужно оформить поступление взноса в уставный капитал от Салихова Р.Т. (в части компьютера).    Зарегистрируем поступление компьютера в качестве вклада в уставный капитал (Д08.04-К75.01). Так как в качестве аналитики на счете 08.04 прикреплен справочник «Номенклатура», то необходимо внести компьютер в группу «Оборудование (объекты основных средств»« этого справочника: <img decoding="async" src="/image01/07201e789274554f950af6757d8e88ac.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Теперь зарегистрируем ручную операцию, в которой на закладке «Бухгалтерский учет» введем проводку Д08.04-К75.01 с необходимой аналитикой, а на закладке «налоговый учет» воспользуемся кнопкой «Заполнить». При этом в колонке «Вид учета» необходимо установить значение «ПР» (постоянная разница), так как основное средство, полученное от учредителя – физического лица как вклад в уставный капитал, к налоговому учету в соответствии с главой 25 НК РФ не принимается. <img decoding="async" src="/image12/6d4a5c96e7f22ec267c83c022d5cb6dd.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p> <img decoding="async" src="/image23/d43d0291c26935f16ef15a54066475c9.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p> <img decoding="async" src="/image08/442384be7e4b072e9571ffc212cf3e0a.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Перед тем, как вводить компьютер в эксплуатацию, заполним еще два справочника, информация из которых нам понадобится в ближайшее время: справочник «События с основными средствами» и справочник «Способы отражения расходов по амортизации (погашению стоимости)» (меню «ОС и НМА»): <img decoding="async" src="/image27/f326ecd29796addf0cf25d498a101736.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Теперь можно ввести компьютер в эксплуатацию (Д01.01 – К08.04). Данную операцию введем с использованием документа «Принятие к учету ОС» (меню «ОС и НМА»). <img decoding="async" src="/image11/5c91d30f60af892f4e3f6067decf7838.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    При заполнении табличной части на закладке «Основные средства» придется добавить компьютер в справочник «Основные средства» с минимальным набором параметров (остальные будут вводиться позже): <img decoding="async" src="/image11/5c4251e9f7c6383be1181d2532ff6e8a.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    На закладке «Общие сведения» следует указать: <img decoding="async" src="/image14/7e37a5fdacb10ccd17b673f7085139d9.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    На закладках «Бухгалтерский учет» и «Налоговый учет» следует ввести следующие данные: <img decoding="async" src="/image18/a2f1dff57a1eae13b25b7885292ad438.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p> <img decoding="async" src="/image24/d8f4d8a4c9237b96d313f0dcd6d0a0b2.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Нажатием кнопки <img decoding="async" src="/image19/ac933a7928481a36e8036b9dd4e6349d.jpg" alt="" border="1">    в нижней части документа можно сформировать и распечатать унифицированную печатную форму, а с помощью кнопок <img decoding="async" src="/image17/9845c646539e14508d00bd2cf7fe8164.jpg" alt="" border="1">    – просмотреть сформированные по бухгалтерскому и налоговому учету проводки. </p>
+<p>&nbsp;</p>
+<p>    16. Действуя аналогичным образом, примите 16 января в качестве вклада в уставный капитал две швейных машинки от НПО «Челнок» и введите их в эксплуатацию.    ● Стоимость Швейной машинки-1 – 32000 руб., Швейной машинки-2 – 28000 руб.    ● Группа учета ОС – Машины и оборудование (кроме офисного)    ● Амортизационная группа – четвертая    ● Способ расчета амортизации – в дебет счета 20 (подразделение: производственный отдел, статья затрат: амортизация ОС. Добавить в справочник вводом новой строки).    ● В целях бухгалтерского учета: начислять амортизацию линейным способом, срок использования – 72 месяца, подразделение – производственный отдел, МОЛ – Егорова Е.В., способ поступления – вклад в уставный капитал.    ● В целях налогового учета – начислять амортизацию линейным способом, срок полезного использования – 72 месяца.    Для выполнения этого задания необходимо полностью повторить действия, проделанные в предыдущем задании. То есть надо внести обе швейные машинки в справочник «Номенклатура», затем оприходовать их ручной операцией (Д08.01-К75.01, не забыв про закладку «Налоговый учет»). Затем, используя документ «Принятие к учету ОС», ввести каждую машинку по отдельности в эксплуатацию (по ходу добавив их в справочник «Основные средства».    Сформировав отчет «Оборотно–сальдовая ведомость», мы должны получить следующий результат: <img decoding="async" src="/image07/3e122a0616675eef52f40d532121ced7.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Чтобы выяснить, чьи вклады уставный капитал остались непогашенными, сформируем отчет «Оборотно-сальдовая ведомость» по счету 75.1: <img decoding="async" src="/image16/8e617fbf58e167dc5cdf7ac67e5e8904.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Из отчета видно, что частичная задолженность по вкладам в УК осталась у НПО «Челнок» (ткани на 40000 руб.) и Салихова Р.Т (денежный вклад на 40000 руб.). </p>
+<p>&nbsp;</p>
+<p>    17. Денежные вклады в уставный капитал необходимо сдать на расчетный счет, чтобы не нарушать установленный лимит наличности в кассе. Используя документ «Расходный кассовый ордер» оформите эту операцию 16 января на сумму 230000 руб. Сформируйте банковскую выписку за этот день, чтобы убедиться, что деньги на расчетный счет зачислены.    Вызовем на экран документ «Расходный кассовый ордер» и выберем для его заполнения операцию «Взнос наличными в банк»: <img decoding="async" src="/image17/958d5a8a611070a6995bc6d8acfc7bf3.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    После этого проставим в документ сумму, укажем статью ДДС «Сдача наличных в банк», выберем наш расчетный счет и на второй закладке укажем, что деньги сдает Динес Кира Леонидовна в качестве вклада в уставный капитал организации. Проведем документ и просмотрим сформированные им проводки.    Обработку «Выписка банка» открываем через меню «Банк и касса». Выставив реквизиты шапки документа, нажимаем кнопку «Заполнить». Убеждаемся, что 230 000 руб. зачислены на наш расчетный счет: <img decoding="async" src="/image02/0d4014da0bb87f48027efc95ee0029ac.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    18. Сформируем отчет «Кассовая книга», чтобы убедиться в правильности введенных за 16 января кассовых операциях.    Отчет вызываем из меню «Банк и касса», установив период – с 16.01 по 16.01 нажимаем кнопку «Сформировать». Сравним полученный результат: <img decoding="async" src="/image07/3e8c01548c126532ff160345200e0750.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    19. Сегодня 19 января. Измените рабочую дату программы. Выпуск продукции мы еще не начали, но первый покупатель у нас уже есть. Выпишите Счет покупателю (магазин «Батрак» желает приобрести по 30 штук строительных комбинезонов и спецовок).    Рабочую дату меняем через пункт меню «Сервис – Параметры».    Открываем документ «Счет на оплату покупателю» (меню «Основная деятельность – Продажа»). В шапке документа выбираем контрагента и договор. Используя кнопку «Цены и валюта» выбираем тип цены в документ – отпускная цена, НДС сверху. После этого вводом новой строки в табличную часть документа добавляем нужную номенклатуру. Сравним полученный результат: <img decoding="async" src="/image22/c980d246c993e2d085c57846b9e92e51.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Распечатываем счет и отдаем его потенциальному покупателю. Документ сохраняем в базе, нажав «ОК». </p>
+<p>&nbsp;</p>
+<p>    20. Примем 19 января от учредителя НПО «Челнок» остаток вклада в уставный капитал в части тканей. От учредителя поступило 200 м. Смесовой ткани по цене 80 руб. за погонный метр и 200 м. Обивочной ткани по цене 120 руб. за погонный метр.    Начнем с того, что внесем указанные материалы в справочник «Номенклатура» в группу «Материалы». <img decoding="async" src="/image20/b7d0a857212e7465c3ccaba922db21d1.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Данную операцию оформим ручным вводом проводок. Закладку «Налоговый учет» заполним автоматически по кнопке «Заполнить»: <img decoding="async" src="/image19/b16a4a1348e01cca1a4c8ab50659b19f.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p> <img decoding="async" src="/image21/c2a7d8046ad258d26212a5550acc0468.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    21. 19 января был внесен последний вклад в уставный капитал Салиховым Р.Т. (денежный вклад в размере 40 000 руб.). Оформите поступление этих денег в кассу и отразите их сдачу на расчетный счет предприятия.    При вводе ПКО удобно воспользоваться копированием уже введенных ПКО по вкладам в уставный капитал от учредителей (ПКО №1 или №2), исправив в них только фамилию учредителя и сумму.    Сдачу этих денег на расчетный счет отражаем аналогично заданию 17. Можно также использовать копирование документа РКО №1.    После ввода этих документов сформируем отчет «Оборотно-сальдовая ведомость», чтобы убедиться, что все вклады учредителями внесены. <img decoding="async" src="/image12/6bdbc08a07eebaba16f0f5067838d1a8.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    22. Сегодня 23 января. Смените рабочую дату программы.    Сегодня покупатель Магазин «Батрак» оплатил наш счет. Зарегистрируйте операцию оплаты. </p>
+<p>&nbsp;</p>
+<p>    Откроем журнал «Счета покупателю» (меню «Основная деятельность – Продажа»), выделим строку с нашим счетом от 19 января и воспользуемся кнопкой «Ввести на основании» для ввода документа «Платежное поручение входящее». В открывшемся документе заполним недостающие данные (Расчетный счет плательщика, статья движения денежных средств – поступление от покупателя). Установим флажок «Оплачено» с сегодняшней датой и проведем документ: <img decoding="async" src="/image12/672b15f25778bbb40ec3b2eb70ac02a8.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    После проведения убедимся, что документом сформированы нужные проводки, причем программа самостоятельно определили полученную сумму как аванс (счет 62.2), так как мы продукцию еще покупателю не отгружали: <img decoding="async" src="/image21/bf7070b9873a17c1c140e4e163026539.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Сформировав документ «Выписка» за 23 января, убедимся в зачислении оплаты покупателя на наш расчетный счет: <img decoding="async" src="/image03/16ec96a7af9d8b4933401d8b2ae24c00.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    23. Поскольку с полученного аванса необходимо выделить НДС, оформим Счет – фактуру на аванс.    Откроем меню «Основная деятельность – Ведение книги продаж – Регистрация счет-фактуры на аванс». Выставив интервал – январь 2006 года, воспользуемся кнопкой «Заполнить», а после автоматического заполнения табличной части – кнопкой «Выполнить». В результате в базу будет введен документ «Счет-фактура на аванс». <img decoding="async" src="/image24/d67b2f0522bef20cd49b94c6d7da1d99.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    24. Сегодня 24 января. Продукция, оплаченная магазином «Батрак», готова. Оформите передачу готовой продукции на склад.    Откроем меню «Основная деятельность – Производство – Отчет производства за смену» и вводом новой строки введем новый документ. В шапке документа укажем, что продукция помещается на Склад готовой продукции, поступила она из подразделения Производственный отдел, номенклатурная группа – Спецодежда строительная. В табличную часть документа вводом новой строки (или подбором) вводим Комбинезоны строительные (плановая цена – 500 руб.) и Спецовки строительные (плановая цена – 480 руб.). Количество выпущенной продукции – по 300 штук каждого наименования: <img decoding="async" src="/image10/5a29e14c34a5a1d8e1461f7c1a91c2a3.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    При проведении документом будут сформированы проводки: <img decoding="async" src="/image10/56d3d69f28fe61b88d508e019506f044.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    25. Необходимо списать в производство истраченные на выпуск продукции материалы – по 1,5 м. ткани смесовой на каждую спецовку и по 2 м. той же ткани на каждый комбинезон.    Откроем документ «Требование – накладная» (меню «Основная деятельность – Производство»). Заполним закладки «Материалы» и «Счета учета затрат» следующими данными: <img decoding="async" src="/image21/bd3c4d6e430ca626fea1af9993cd8fbf.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p> <img decoding="async" src="/image23/cd8c81a00600b179ccc6077ec8d9ddfa.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    26. Сегодня 25 января. Покупатель приехал за товаром. Необходимо оформить отгрузку оплаченной по счету продукции, выписать накладную и счет фактуру по этой операции.    Сменим рабочую дату на 25 января. Для ввода факта отгрузки продукции используем режим ввода на основании (за документ основание примем Счет на оплату): <img decoding="async" src="/image12/65f906d2f7d3204e478528060fe5b7e5.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    По кнопке «Печать» можно распечатать нужный вариант печатной формы (например, накладную ТОРГ-12). Используя поле «Ввести счет-фактуру» в левом нижнем углу документа, зарегистрируем Счет-фактуру по этой операции.    При проведении документа «Реализация товаров и услуг» будут автоматически сформированы проводки по списанию продукции, учету предоплаты и получению выручки с выделением с нее НДС. <img decoding="async" src="/image19/ad33b797c8bef63ca565cee017f3012a.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    27. Сформируем отчет «Оборотно-сальдовая ведомость», чтобы определить, правильно ли учтен НДС.    При формировании отчета период выберем – январь, а с помощью кнопки «Настройки» установим разворот информации по субсчетам: <img decoding="async" src="/image15/86cc9fb982eb308e5d63b1cb8d4bae54.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Как видим, кредитовое сальдо счета 68.08 вдвое превышает дебетовое сальдо счета 90.03, так как нами были зарегистрированы две счет-фактуры (одна на аванс). В конце месяца ситуация будет скорректирована запись счет–фактуры на аванс в Книгу покупок. </p>
+<p>&nbsp;</p>
+<p>    28. Подошел к концу первый месяц работы нашей фирмы. Необходимо начислить зарплату нашим сотрудникам.    Сначала необходимо оформить приказ о приеме на работу с 16 января всех наших сотрудников, введенных ранее в справочник «Физические лица». Для этого откроем справочник «Работники» (меню «Зарплата») и, используя пункт меню «Действия», начнем вводить документ «Приказ о приеме на работу». По ходу заполнения табличной части документа списком сотрудников придется добавлять информацию в справочник «Должности»: <img decoding="async" src="/image17/986edf627880963c136eaf038a8f3898.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    На закладке «Начисления» введем суммы ежемесячных окладов сотрудников: <img decoding="async" src="/image28/fe318b8d5b9d931599580114fba91b59.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Теперь можно ввести документ «Начисление зарплаты», заполнив его табличную часть автоматически по кнопке «Заполнить». Дата документа – 31 января. Закладка НДФЛ будет также автоматически заполнена рассчитанными суммами налога с учетом стандартных вычетов, заданных нами ранее в справочнике «Физические лица». <img decoding="async" src="/image26/ebcd6f363bd9c6f22e6a3f6cea0e22e3.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p> <img decoding="async" src="/image16/954fc268edd28487116aac12d01727e9.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Далее необходимо ввести документ «Расчет ЕСН» (меню «Зарплата»). Дата документа – 31 января. Табличную часть заполняем автоматически по кнопке «Заполнить и рассчитать»: <img decoding="async" src="/image20/b4b9c20f57213029e7b14dfb2c62aff2.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Для отражения расчетов по зарплате в бухгалтерских регистрах, необходимо ввести документ «Отражение зарплаты в учете» (меню «Зарплата»). При проведении будут сформированы необходимые проводки: <img decoding="async" src="/image24/db0e8acf27015468646b58331c5c3b4f.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    29. Месяц подошел к концу. Сформируем Книгу покупок и Книгу продаж.    Проведем датой 31 января документ «Формирование записей в книгу продаж» (меню «Основная деятельность – Ведение книги продаж». В документе для автоматического заполнения воспользуемся кнопкой «Заполнить»: <img decoding="async" src="/image09/51f5dc2c4db764c57f150938659ee335.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Сформируем отчет «Книга продаж» («Основная деятельность – Ведение книги продаж»), убедимся, что в него попали обе счет-фактуры: <img decoding="async" src="/image21/bff3c82af0f4505ede9c4d792e37f238.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Для отражения счет-фактуры на аванс в Книге покупок введем документ «Формирование записей в книгу покупок» (меню «Основная деятельность-Формирование книги покупок»), где вводом новой строки в табличной части на закладке «Вычет НДС с авансов» заполним нужные данные: <img decoding="async" src="/image03/1b3fef53628549a58c668e5e1b97e9ce.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    При проведении документа будут сформированы проводки по зачету НДС с аванса: <img decoding="async" src="/image14/7e75ca693e407dbbc40888d2cce0c4a9.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Нужная строка появится в отчете «Книга покупок», сформированном за январь месяц: <img decoding="async" src="/image24/d585a71a2d44c052d271bfbba4c71864.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    В сформированном же теперь на конец месяца отчете «Оборотно-сальдовая ведомость» кредитовый остаток по счету 68.02 совпадает с дебетовым остатком по счету 90.03: <img decoding="async" src="/image09/4fd8573e1354e914e76cef5e0430e273.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    30. Для завершения периода и формирования отчетности необходимо провести документ «Закрытие месяца».    Для начала зададим порядок подразделений при закрытии счетов. Откроем меню «Предприятие – Учетная политика – Установка порядка подразделений при закрытии счетов»: <img decoding="async" src="/image25/deece858b1d7020508924f93f9d80e08.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Теперь зададим метод распределения косвенных расходов (меню «Предприятие – Учетная политика»). Вводом новой строки введем новый документ, в котором зададим как базу распределения косвенных расходов объем выпуска продукции (счет затрат, подразделение и статью затрат можно не указывать, тогда данная настройка будет действовать для всех используемых счетов косвенных затрат, всех подразделений и всех статей затрат): <img decoding="async" src="/image03/18307d002b6850afb7f55e6616d0bbac.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Теперь откроем документ «Закрытие месяца» (меню «Основная деятельность») и проведем его с датой 31 января. <img decoding="async" src="/image16/8cff95913500d3160e99d84771f5453a.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    При проведении документа будут сформированы все необходимые проводки (см. гл.9.7). Обратим внимание, что проводок по начислению амортизации мы не получили. Это объясняется тем, что все наши основные средства были введены в эксплуатацию в этом месяце и, следовательно, амортизация по ним начнет начисляться только со следующего месяца. <img decoding="async" src="/image10/547ed48bd38673e74ce33a5afb9219e0.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Сформируем отчет «Оборотно-сальдовая ведомость» за январь, чтобы убедиться, что все необходимые счета закрыты, нигде не образовалось отрицательное (красное) сальдо: <img decoding="async" src="/image02/14dc17c7cdb11e85fb143430a9c7900a.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Используя регламентированную отчетность, сформируем баланс ООО «Спецтекстиль» за январь месяц: <img decoding="async" src="/image11/6091d05bb9fb48c76285e64b1b0ec2eb.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p> <img decoding="async" src="/image25/e5c1123a216a08ebddab40cf3718b0c4.jpg" alt="" border="1"></p>
+<!-- toc empty -->	</div>
+<!-- .entry-content -->
+
+</article>
+
+
+
+
+
+
+
+
+
+<div class="social-buttons">
+<span class="social-button social-button--vkontakte main" data-social="vkontakte"><span>Поделиться в ВКонтакте</span></span><span class="social-button social-button--telegram " data-social="telegram"></span><span class="social-button social-button--odnoklassniki " data-social="odnoklassniki"></span><span class="social-button social-button--whatsapp " data-social="whatsapp"></span><span class="social-button social-button--viber " data-social="viber"></span>
+</div>
+
+<!--noindex-->
+<div class="author-box">
+    <div class="author-info">
+        <div class="author-box__ava">
+                    </div>
+
+        <div class="author-box__body">
+            <div class="author-box__author">
+                Автор А. Днепров            </div>
+            <div class="author-box__description">
+                <p>Обучаю основам работы с офисными программами.</p>
+            </div>
+
+            
+        </div>
+    </div>
+</div>
+<!--/noindex-->
+    <meta itemprop="author" content="А. Днепров">
+<meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/skvoznaya-zadacha-dlya-samostoyatelnog" content="Сквозная задача для самостоятельного решения (пояснения к каждому практическому заданию)">
+    <meta itemprop="dateModified" content="2024-08-18">
+<div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+<div class="related-posts">
+<div class="related-posts__header">Вам также может понравиться</div>
+<div class="post-cards post-cards--vertical">
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/kak-sdelat-massovuyu-zamenu-formul"><img width="311" height="230" src="/image04/2408fadbc9163d5aa4994580cfc152cd.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" fetchpriority="high"></a></div>
+<div class="post-card__title"><a href="/kak-sdelat-massovuyu-zamenu-formul">Как сделать массовую замену формул</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/kak-udalit-lishnie-i-pustye-stranitsy-v-excel">Как удалить лишние и пустые страницы в Excel</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/preobrazovanie-teksta-v-tablitsu"><img width="345" height="122" src="/image14/7a0043c9bf012cc129b22376cfebb2a9.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/preobrazovanie-teksta-v-tablitsu">Преобразование текста в таблицу</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/kak-delat-skrinshoty-s-vysokim-razresheniem-v-windows">Как делать скриншоты с высоким разрешением в Windows 11/10</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/osobennosti-raboty-s-mnogostranichny"><img width="213" height="230" src="/image13/6f8f9694c11ee322ff9d3675b0b8ba07.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/osobennosti-raboty-s-mnogostranichny">13.1 Особенности работы с многостраничными документами</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/kak-sdelat-izmeneniya-vnutri-yacheyki-p"><img width="345" height="93" src="/image27/f6550fd3bdfdfdbe500536441d5d252e.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/kak-sdelat-izmeneniya-vnutri-yacheyki-p">Как сделать изменения внутри ячейки. Принудительный перенос</a></div>
+    </div>
+</div>
+</div>
+            </main><!-- #main -->
+        </div>
+<!-- #primary -->
+
+        
+    
+
+    </div>
+<!--.site-content-inner-->
+
+    
+</div>
+<!--.site-content-->
+
+    
+    
+
+<div class="site-footer-container">
+
+    
+
+    <footer id="colophon" class="site-footer full" itemscope itemtype="http://schema.org/WPFooter">
+        <div class="site-footer-inner fixed">
+
+            
+            
+<div class="footer-bottom">
+    <div class="footer-info">
+        <div class="footer-copyright">© 2024 Самоучитель справочник по офисным программам. <a href="/o-nas" rel="nofollow">О нас | Контакты</a> | <a href="/map" rel="nofollow">Карта сайта</a>
+</div>
+        <div class="footer-under-copyright"></div>
+	        </div>
+
+    </div>
+        </div>
+    </footer><!--.site-footer-->
+</div>
+
+
+            <button type="button" class="scrolltop js-scrolltop" data-mob="on"></button>
+    
+                    <div class="top-line js-top-line">
+            <div class="top-line-inner fixed">
+
+                <div class="top-line__title">Сквозная задача для самостоятельного решения (пояснения к каждому практическому заданию)</div>
+<div class="top-line__like"><span class="btn-fb-like btn-top-like social-button--vkontakte" data-social="vkontakte"><span>Поделиться в ВКонтакте</span></span></div>
+<div class="top-line__post">
+<div class="top-line__post_thumbnail"><a href="/kak-izmenit-gotovyy-grafik-tip-ishod"><img width="100" height="74" src="/image24/d7116794c39e85e388da4e7f042feaa5.jpg" class="attachment-yelly_square size-yelly_square wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="top-line__post_title"><a href="/kak-izmenit-gotovyy-grafik-tip-ishod">Как изменить готовый график (тип, исходные данные)</a></div>
+</div>            </div>
+        </div>
+    
+</div>
+<!-- #page -->
+
+<script>var pseudo_links = document.querySelectorAll(".pseudo-clearfy-link");for (var i=0;i<pseudo_links.length;i++ ) { pseudo_links[i].addEventListener("click", function(e){   window.open( e.target.getAttribute("data-uri") ); }); }</script><script>document.addEventListener("copy", (event) => {var pagelink = "\nИсточник: /skvoznaya-zadacha-dlya-samostoyatelnog";event.clipboardData.setData("text", document.getSelection() + pagelink);event.preventDefault();});</script><script type="text/javascript" id="yelly-scripts-js-extra">
+/* <![CDATA[ */
+var settings_array = {"rating_text_average":"среднее","rating_text_from":"из","lightbox_display":"1"};
+var wps_ajax = {"url":"\/wp-admin\/admin-ajax.php","nonce":"e4ca9d4bd8"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="/js/scripts.min.js" id="yelly-scripts-js"></script>
+
+
+
+<div class="image-hover-social-buttons" style="display: none;">
+<div class="social-button social-button--vkontakte js-share-link" data-uri="https://vk.com/share.php?url=%2Fskvoznaya-zadacha-dlya-samostoyatelnog"></div>
+<div class="social-button social-button--telegram js-share-link" data-uri="https://t.me/share/url?url=%2Fskvoznaya-zadacha-dlya-samostoyatelnog&text=%D0%A1%D0%BA%D0%B2%D0%BE%D0%B7%D0%BD%D0%B0%D1%8F+%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B0+%D0%B4%D0%BB%D1%8F+%D1%81%D0%B0%D0%BC%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE+%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F+%28%D0%BF%D0%BE%D1%8F%D1%81%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F+%D0%BA+%D0%BA%D0%B0%D0%B6%D0%B4%D0%BE%D0%BC%D1%83+%D0%BF%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%BC%D1%83+%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D1%8E%29"></div>
+<div class="social-button social-button--odnoklassniki js-share-link" data-uri="https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&service=odnoklassniki&st.shareUrl=%2Fskvoznaya-zadacha-dlya-samostoyatelnog"></div>
+<div class="social-button social-button--whatsapp js-share-link" data-uri="whatsapp://send?url=%2Fskvoznaya-zadacha-dlya-samostoyatelnogtext=%D0%A1%D0%BA%D0%B2%D0%BE%D0%B7%D0%BD%D0%B0%D1%8F+%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B0+%D0%B4%D0%BB%D1%8F+%D1%81%D0%B0%D0%BC%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE+%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F+%28%D0%BF%D0%BE%D1%8F%D1%81%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F+%D0%BA+%D0%BA%D0%B0%D0%B6%D0%B4%D0%BE%D0%BC%D1%83+%D0%BF%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%BC%D1%83+%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D1%8E%29"></div>
+<div class="social-button social-button--viber js-share-link" data-uri="viber://forward?url=%2Fskvoznaya-zadacha-dlya-samostoyatelnogtext=%D0%A1%D0%BA%D0%B2%D0%BE%D0%B7%D0%BD%D0%B0%D1%8F+%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B0+%D0%B4%D0%BB%D1%8F+%D1%81%D0%B0%D0%BC%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE+%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F+%28%D0%BF%D0%BE%D1%8F%D1%81%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F+%D0%BA+%D0%BA%D0%B0%D0%B6%D0%B4%D0%BE%D0%BC%D1%83+%D0%BF%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%BC%D1%83+%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D1%8E%29"></div>
+</div>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(93345646, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/93345646" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>
