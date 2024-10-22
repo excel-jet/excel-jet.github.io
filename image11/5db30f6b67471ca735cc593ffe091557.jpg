@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>404 - Страница не найдена</title>
+	<meta charset="UTF-8" />
+	<meta name=viewport content="width=device-width, initial-scale=1">
+	<style>
+		html,body {height:100%;margin:0;padding:0}
+		body {color:#444;font-family:Arial,sans-serif}
+		h1 {font-size:170px;margin:0}
+		h2 {font-size:25px;font-weight:400}
+		p {font-size:14px;line-height:20px}
+		.container {width:500px;height:100%;display:table;margin:auto;text-align:center}
+		.container > div {display:table-cell;vertical-align:middle}
+	</style>
+</head>
+
+<body>
+
+<div class="container">
+	<div>
+		<h1>404</h1>
+		<h2>Страница не найдена</h2>
+<p>Запрашиваемая вами страница не найдена, либо произошла ошибка. Вернитесь <a href="javascript:history.back()">назад</a>, или кликните по ссылке <a href="/">SoftRoad.ru</a> для перехода на главную страницу сайта.</p>
+	</div>
+</div>
+
+</body>
+</html>
