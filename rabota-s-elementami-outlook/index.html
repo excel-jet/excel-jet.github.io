@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<title>Работа с элементами Outlook &#8212; learn-office</title>
+	<meta name="description" content="Выше мы рассматривали работу с элементами Outlook только внутри самого приложения. Но бывают случаи, когда необходимо работать с информацией Outlook вне">
+	<link rel="canonical" href="/rabota-s-elementami-outlook">
+	<meta property="og:locale" content="ru_RU">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Работа с элементами Outlook &#8212; learn-office">
+	<meta property="og:description" content="Выше мы рассматривали работу с элементами Outlook только внутри самого приложения. Но бывают случаи, когда необходимо работать с информацией Outlook вне">
+	<meta property="og:url" content="/работа-с-элементами-outlook">
+	<meta property="og:site_name" content="Excel-jet">
+	<meta property="article:published_time" content="2024-07-10T08:28:41+00:00">
+	<meta property="og:image" content="/image19/b2305eb45bee011604eb8c928c618716.jpg">
+	<meta property="og:image:width" content="514">
+	<meta property="og:image:height" content="393">
+	<meta property="og:image:type" content="image/jpeg">
+	<meta name="author" content="А. Днепров">
+
+
+<style id="wp-block-library-theme-inline-css" type="text/css">.wp-block-audio :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio :where(figcaption){color:#ffffffa6}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed :where(figcaption){color:#ffffffa6}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:#ffffffa6}:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table :where(figcaption){color:#ffffffa6}.wp-block-video :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video :where(figcaption){color:#ffffffa6}.wp-block-video{margin:0 0 1em}:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}</style>
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 19.5px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36.5px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--normal: 22px;--wp--preset--font-size--huge: 49.5px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="google-fonts-css" href="https://fonts.googleapis.com/css?family=Roboto%3A400%2C400i%2C700&#038;subset=cyrillic&#038;display=swap" media="all">
+<link rel="stylesheet" id="yelly-style-css" href="/css/style.min.css" media="all">
+
+<style>.pseudo-clearfy-link { color: #008acf; cursor: pointer;}.pseudo-clearfy-link:hover { text-decoration: none;}</style>
+<link rel="preload" href="/fonts/icomoon.ttf" as="font" crossorigin>
+    <style>.scrolltop{width:50px}.scrolltop:before{content:"\21d1"}.entry-content a, .entry-content a:visited, .spanlink, .comment-reply-link, .pseudo-link, .widget_calendar a, .widget_recent_comments a, .child-categories ul li a{color:#0000ff}.child-categories ul li a{border-color:#0000ff}a:hover, a:focus, a:active, .spanlink:hover, .top-menu ul li>span:hover, .main-navigation ul li a:hover, .main-navigation ul li span:hover, .footer-navigation ul li a:hover, .footer-navigation ul li span:hover, .comment-reply-link:hover, .pseudo-link:hover, .child-categories ul li a:hover{color:#1e73be}.top-menu>ul>li>a:before, .top-menu>ul>li>span:before{background:#1e73be}.child-categories ul li a:hover, .post-box--no-thumb a:hover{border-color:#1e73be}.post-box--card:hover{box-shadow: inset 0 0 0 1px #1e73be}.post-box--card:hover{-webkit-box-shadow: inset 0 0 0 1px #1e73be}@media (min-width: 768px){body{background-attachment: scroll}}body{font-size:17px;}@media (max-width: 991px){.widget-area{display: block; margin: 0 auto}}</style>
+    <!-- Yandex.RTB -->
+<script>window.yaContextCb=window.yaContextCb||[]</script>
+<script src="https://yandex.ru/ads/system/context.js" async></script>	
+</head>
+<body class="post-template-default single single-post postid-2630 single-format-standard wp-embed-responsive sidebar-right">
+<div id="page" class="site">
+    <a class="skip-link screen-reader-text" href="#content">Перейти к контенту</a>
+
+    
+    
+    <div class="search-screen-overlay js-search-screen-overlay"></div>
+    <div class="search-screen js-search-screen">
+        
+<form role="search" method="get" class="search-form" action="/">
+    <label>
+        <span class="screen-reader-text">Search for:</span>
+        <input type="search" class="search-field" placeholder="Поиск..." value="" name="s">
+    </label>
+    <button type="submit" class="search-submit"></button>
+</form>    </div>
+
+    
+
+<header id="masthead" class="site-header full" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="site-header-inner fixed">
+
+        <div class="humburger js-humburger">
+<span></span><span></span><span></span>
+</div>
+
+        
+<div class="site-branding">
+
+    <div class="site-branding__body"><div class="site-title"><a href="/">Excel-jet</a></div></div>
+</div>
+<!-- .site-branding -->
+
+    
+    <nav id="site-navigation" class="main-navigation full">
+        <div class="main-navigation-inner fixed">
+            <div class="menu-menyu-container"><ul id="header_menu" class="menu">
+<li id="menu-item-6695" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-6695">
+<a href="/excel">Excel</a>
+<ul class="sub-menu">
+	<li id="menu-item-6709" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6709"><a href="/excel/functions">Функции</a></li>
+</ul>
+</li>
+<li id="menu-item-6697" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6697"><a href="/microsoft-word">Word</a></li>
+<li id="menu-item-6696" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6696"><a href="/powerpoint">PowerPoint</a></li>
+<li id="menu-item-6698" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6698"><a href="/outlook">Outlook</a></li>
+</ul></div>        </div>
+    </nav><!-- #site-navigation -->
+
+    
+<div class="header-search"><span class="search-icon js-search-icon"></span></div>    </div>
+</header><!-- #masthead -->
+
+
+
+    
+    
+    <div id="content" class="site-content fixed">
+
+        
+        <div class="site-content-inner">
+    
+        
+        <div id="primary" class="content-area" itemscope itemtype="http://schema.org/Article">
+            <main id="main" class="site-main">
+
+                
+<article id="post-2630" class="article-post post-2630 post type-post status-publish format-standard has-post-thumbnail  category-excel">
+
+    
+        
+        <header class="entry-header"><h1 class="entry-title" itemprop="headline">Работа с элементами Outlook</h1></header>
+        
+        
+        
+    
+    
+    <div class="entry-meta">
+<span class="entry-time"><span class="entry-label">Время чтения</span> 22 мин.</span><span class="entry-date"><span class="entry-label">Опубликовано</span> <time itemprop="datePublished" datetime="2024-07-10">10.07.2024</time></span>
+</div>
+	<div class="entry-content" itemprop="articleBody">
+		<p>Выше мы рассматривали работу  с  элементами Outlook только внутри самого приложения. Но бывают случаи, когда необходимо работать с информацией Outlook вне данной среды, например в другом приложении, которое не поддерживает формат Outlook, или на другом компьютере. Для этого нужны дополнительные средства сохранения информации либо в стандартных форматах, либо в форматах приложений, в которых будут использоваться элементы Outlook.</p>
+<p>Outlook располагает достаточно гибкой и широкой системой сохранения, импорта и экспорта информации, а также довольно простыми приемами переноса информации из Outlook в другие приложения Microsoft Office XP. Эти дополнительные возможности при работе с элементами Outlook и будут рассмотрены в данной главе.</p>
+<p> Сохранение элемента </p>
+<p>Прежде всего, рассмотрим сохранение элемента Outlook. Итак, откройте папку  Входящие  (Inbox), выделите элемент, например сообщение тест (см. рис. 9.30), и выберите команду &gt; Файл &gt; сохранить как. .. После чего укажите папку, в которой будет сохранен элемент, и введите его имя в поле  Имя файла  (File Name). Следующим, основным, моментом в сохранении элемента в виде отдельного файла является выбор формата в раскрывающемся списке  Тип файла  (File Type). Существует пять стандартных типов файла, в которые Outlook может преобразовывать элементы (рис. 17.1):</p>
+<ul>
+<li>только текст (Text Only);</li>
+<li>RTF (Reach Text Format);</li>
+<li>HTML;</li>
+<li>vCard и iCalendar;</li>
+<li>формат сообщения (Message Format);</li>
+<li>шаблон Outlook (Outlook Template).</li>
+</ul>
+<p>Данные форматы поддерживаются всеми элементами Outlook, поэтому для каждого формата на примере отдельного элемента Outlook будут демонстрироваться процедуры сохранения в файл.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" decoding="async" src="/image19/b2305eb45bee011604eb8c928c618716.jpg" width="514" height="393" alt=""><meta itemprop="width" content="514">
+<meta itemprop="height" content="393"></span></p>
+<p> Рис. 17.1.  Диалоговое окно  Сохранение элемента  с раскрывающимся списком  Тип файла </p>
+<div class="table-of-contents open">
+<div class="table-of-contents__header"><span class="table-of-contents__hide js-table-of-contents-hide">Содержание</span></div>
+<ol class="table-of-contents__list js-table-of-contents-list">
+<li class="level-1"><a href="#tolko-tekst">Только текст</a></li>
+<li class="level-1"><a href="#html">HTML</a></li>
+<li class="level-1"><a href="#vcard-i-icalendar">vCard и iCalendar</a></li>
+<li class="level-1"><a href="#format-soobscheniya">Формат сообщения</a></li>
+<li class="level-1"><a href="#shablon-outlook">Шаблон Outlook</a></li>
+<li class="level-1"><a href="#tablitsa-tipov">Таблица типов</a></li>
+<li class="level-1"><a href="#eksport-elementov">Экспорт элементов</a></li>
+<li class="level-1"><a href="#import-elementov">Импорт элементов</a></li>
+<li class="level-1"><a href="#avtomaticheskaya-arhivatsiya">Автоматическая архивация</a></li>
+<li class="level-1"><a href="#ruchnaya-arhivatsiya">&#171;Ручная&#187; архивация</a></li>
+<li class="level-1"><a href="#neskolko-kommentariev">Несколько комментариев.</a></li>
+<li class="level-1"><a href="#razarhivirovanie">Разархивирование</a></li>
+</ol>
+</div>
+<h2 id="tolko-tekst">Только текст</h2>
+<p>Этот формат имеет стандартное расширение txt, которое способно воспринимать большинство приложений Windows (например, Блокнот). Кроме того, файлы в этом формате могут быть прочитаны и отредактированы в DOS-приложениях или сеансе DOS.</p>
+<p>Выбирая данный формат, пользователь сохраняет только текстовую информацию, содержащуюся во всех полях сообщения (а не только в поле  Примечание),  таким образом, нетекстовая информация (рисунки, вставленные файлы, цветовое выделение и т. д.) будет утеряна.</p>
+<p>Замечание</p>
+<p>При сохранении элемента Outlook создается новый файл. При этом могут быть утеряны некоторые данные сообщения, но само сообщение остается в папке  Входящие,  и,  в  случае необходимости, вы можете восстановить полную информационную картину.</p>
+<p>На рис. 17.2 отображен созданный файл, открытый приложением  Блокнот  (NotePad).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" decoding="async" src="/image06/3220b91b2f29f77c57a88ca36c2b3015.jpg" width="500" height="397" alt=""><meta itemprop="width" content="500">
+<meta itemprop="height" content="397"></span></p>
+<p> Рис. 17.2.  Открытый файл Tecт.txt </p>
+<p>Парный данному формату — формат RTF (Reach Text Format), который в отличие от ТХТ, сохраняет форматирование текстовой информации элемента Outlook, но, так же как и ТХТ, не сохраняет графику.</p>
+<h2 id="html">HTML</h2>
+<p>Формат HTML является весьма распространенным. Файлы в этом формате могут быть открыты Web-редакторами и Web-браузерами, такими как Internet Explorer или Netscape Communicator, а также любым приложением Microsoft Office XP.</p>
+<p>Данный формат позволяет сохранять не только текстовую информацию всех полей сообщения, но и их графическое форматирование (за исключением встроенных бордюров Outlook и файлов). Более того, этот формат запоминает гиперссылки элемента. В  главе 11  мы уже рассматривали создание простого HTML-файла и его размещение на Web-сайте пользователя. Здесь же приведена операция сохранения календаря Outlook в формате HTML, после чего его можно разместить на сайте, тем самым в любой точке планеты любой пользователь (и вы в частности) будет иметь оперативный доступ к информации вашего расписания  (см. раздел 11.6.1 &#171;Создание простейшей Web-страницы&#187;). </p>
+<p> Пример 17.1. Сохранение календаря как Web-страницы </p>
+<p>{Перейдите в представление календаря}</p>
+<p>&gt; Файл &gt; Сохранить как Web-страницу&#8230; (рис. 17.2)</p>
+<p>Начало := <u> 01.07.2001 </u></p>
+<p>Конец := <u> 31.07.2001 </u></p>
+<p>Включить сведения о встрече</p>
+<p>Название календаря := <u> Usarov George &#8212; Calendar </u></p>
+<p>Имя файла := С:Мои документыcalendar.html</p>
+<p>Открыть сохраненную Web-страницу в обозревателе</p>
+<p>Сохранить</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image01/0294f4c849a2aece383fcad7e88fcb2d.jpg" width="480" height="295" alt=""><meta itemprop="width" content="480">
+<meta itemprop="height" content="295"></span></p>
+<p> Рис. 17.3.  Диалоговое окно  Сохранение в виде веб-страницы </p>
+<p>Результат сохранения календаря пользователя в виде Web-страницы (на месяц), открытой в браузере Microsoft Internet Explorer.</p>
+<p>В случае опубликования вашей страницы на Web-сервере советую задавать подобным файлам англоязычные имена.</p>
+<p>Замечание</p>
+<p>Хоть здесь и рассмотрено сохранение целого представления, Outlook может сохранять в данном формате и отдельные элементы.</p>
+<h2 id="vcard-i-icalendar">vCard и iCalendar</h2>
+<p>Файлы с расширением txt и html всемирно распространены и являются своего рода стандартами хранения текстовой и гипертекстовой информации соответственно. Но при таком подходе нет однозначного отождествления файла с соответствующим элементом, поэтому, как определить сторонней программе — контакт этот файл или встреча? А ведь Outlook далеко не единственное (хотя, на мой взгляд, одно из лучших) приложение (Lotus, The Bat, Netscape Messenger и т. д.), работающее с контактной информацией или информацией, подобной встречам  Календаря. </p>
+<p>Outlook, как, в принципе, и другие приложения, предоставляет пользователю возможность сохранения информации в унифицированных форматах, работу с которыми должны поддерживать все приложения, работающие с контактной или календарной информацией. Использование подобных форматов влечет за собой сужение информации элементов, но в то же время они позволяют быстро и с минимальной потерей данных осуществлять обмен информацией между разными приложениями.</p>
+<p>Унифицированным форматом для элементов  Контакт  являются файлы vCard. Для сохранения контакта в данном формате выделите его и повторите действия, показанные в следующем примере.</p>
+<p> Пример 17.2. Сохранение контакта в формате vCard </p>
+<p>&gt; Файл &gt; Сохранить как&#8230;</p>
+<p>Имя файла := &lt;  Имя файла&gt; </p>
+<p>Тип файла Формат vCard</p>
+<p>Сохранить</p>
+<p>Для элементов папки  Календарь  ситуация аналогична, только в данном случае в списке  Тип файла  следует выбрать  vCalendar или iCalendar. </p>
+<h2 id="format-soobscheniya">Формат сообщения</h2>
+<p>Сохранение элемента в формате сообщения (.MSG) позволяет создать его полную автономную копию. То есть пользователю не требуется загружать Outlook для просмотра данного сообщения, . достаточно в Проводнике Windows дважды щелкнуть по имени файла — и откроется полноценная версия элемента, с которым можно работать, как будто вы находитесь в приложении Outlook (кстати, неявно он все равно запускается).</p>
+<p>Более того, этот формат является универсальным для всех элементов Outlook. Иными словами, если вы сохранили элемент  Заметка  (Note) в формате сообщения, при последующем открытии созданного файла вам откроется форма заметки, причем все ее информационные поля сохранят свои значения.</p>
+<p>Сохранение отдельных элементов в данном формате позволяет быстро и надежно переносить информацию Outlook с одного компьютера на другой.</p>
+<h2 id="shablon-outlook">Шаблон Outlook</h2>
+<p> Шаблон  (Template) — это специальный документ, используемый в качестве образца для создания новых документов. Пользователям Word достаточно легко понять процесс создания и применения шаблонов, поскольку данный текстовый процессор всегда использует некоторый шаблон при создании нового документа. Однако надеюсь, что и для пользователей Outlook это не составит труда.</p>
+<p>Простейшим примером шаблона в Outlook является форма. Действительно, форма — это специальный документ, по образцу которого создаются новые элементы. Но, помимо использования встроенных форм (шаблонов), пользователь может упростить и/или стандартизировать процедуру создания новых элементов по образцу собственного шаблона.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image03/182c1a79754985d04d75c9942f746bac.jpg" width="484" height="574" alt=""><meta itemprop="width" content="484">
+<meta itemprop="height" content="574"></span></p>
+<p> Рис. 17.4.  Шаблон Outlook (Сообщение) </p>
+<p>Рассмотрим следующий пример. Допустим, что менеджер издательства при создании сообщений писателям о выплате гонорара хочет придерживаться единого стилевого оформления. Причем заметьте, что при достаточно частом периоде повторения в сообщении меняется информация только об имени писателя и сумме гонорара, а сам контекст един и не изменяем. У данной задачи есть два решения:</p>
+<ol>
+<li>Запомнить все настройки сообщения (цветовая схема, шрифт, текст примечания, состояние отметки и т. д.) и при создании нового сообщения настраивать его аналогично предыдущему.</li>
+<li>Создать сообщение, указав общий для всех последующих сообщений набор параметров, и сохранить его в формате шаблона.</li>
+</ol>
+<p>Не буду останавливаться на рассмотрении недостатка первого решения. Здесь же отмечу, что, если вы выбрали второй вариант, вам достаточно будет дважды щелкнуть по файлу шаблона в Проводнике Windows, и новое сообщение для писателя будет создано.</p>
+<p>На рис. 17.4 изображен приблизительный вариант подобного шаблона. Подчеркнутый текст требует изменения.</p>
+<p>Замечание</p>
+<p>По умолчанию Outlook предлагает сохранить новый шаблон не в папке Мои документы, а в папке шаблонов Outlook.</p>
+<p> Импорт и экспорт элементов </p>
+<p>Выше мы рассмотрели простейшие способы сохранения элементов Outlook в виде файлов, имеющих стандартные типы. Но иногда необходимо перенести информацию из Outlook в другое приложение с наименьшей потерей информации или в приложение, вообще не. поддерживающее работу со стандартными форматами. Как быть в этом случае?</p>
+<p>Outlook может решить и эту проблему. Посредством специальных конверторов элемент может быть сохранен в формате определенного приложения с наименьшей потерей информации. Набор конверторов Outlook достаточно широк и охватывает практически все популярные приложения управления информацией. Процесс конвертирования элемента Outlook в элемент другого приложения называется  экспортом  (Export), и наоборот, конвертирование из приложения в Outlook —  импортом  (Import).</p>
+<h2 id="tablitsa-tipov">Таблица типов</h2>
+<p>В табл. 17.1 приведены типы файлов, которые могут быть экспортированы и импортированы при использовании Outlook. Подробно о процедурах импорта и экспорта будет рассказано далее в этой главе.</p>
+<table class="table_common zebra" width="700">
+<tbody>
+<tr>
+<td><strong>Программа </strong></td>
+<td width="100"><strong>Расширение </strong></td>
+<td width="100"><strong>Импорт </strong></td>
+<td width="100"><strong>Экспорт </strong></td>
+</tr>
+<tr>
+<td>Microsoft Schedule+ 1 .0</td>
+<td>cal</td>
+<td>Да</td>
+<td>Нет</td>
+</tr>
+<tr>
+<td>Microsoft Schedule+ 7x</td>
+<td>scd</td>
+<td>Да</td>
+<td>Нет</td>
+</tr>
+<tr>
+<td>Microsoft Schedule Plus Interchange</td>
+<td>sc2</td>
+<td>Да</td>
+<td>Нет</td>
+</tr>
+<tr>
+<td>Microsoft Mail File</td>
+<td>mmf</td>
+<td>Да</td>
+<td>Нет</td>
+</tr>
+<tr>
+<td>Microsoft Outlook Personal Folders file</td>
+<td>pst</td>
+<td>Да</td>
+<td>Да</td>
+</tr>
+<tr>
+<td>Microsoft Outlook Personal Address Book</td>
+<td>pab</td>
+<td>Да</td>
+<td>Да</td>
+</tr>
+<tr>
+<td>Microsoft Internet Mail (IE 3.02)</td>
+<td>pst</td>
+<td>Да</td>
+<td>Нет</td>
+</tr>
+<tr>
+<td>Microsoft Outlook Express</td>
+<td></td>
+<td>Да</td>
+<td>Нет</td>
+</tr>
+<tr>
+<td>ACT! 2.0, 3.0, or 4.0 for Windows</td>
+<td>dbf</td>
+<td>Да</td>
+<td>Нет</td>
+</tr>
+<tr>
+<td>ECCO3.0, 3.01,3.02, or 4.00</td>
+<td>eco</td>
+<td>Да</td>
+<td>Нет</td>
+</tr>
+<tr>
+<td>Eudora Light (1.54 or 3.0.1)</td>
+<td></td>
+<td>Да</td>
+<td>Нет</td>
+</tr>
+<tr>
+<td>Eudora Pro 2.2, 3.0, or 3.0.1</td>
+<td></td>
+<td>Да</td>
+<td>Нет</td>
+</tr>
+<tr>
+<td>Netscape Mail 2.02, 3.0, or 3.01</td>
+<td></td>
+<td>Да</td>
+<td>Нет</td>
+</tr>
+<tr>
+<td>Netscape Messenger 4.0</td>
+<td></td>
+<td>Да</td>
+<td>Нет</td>
+</tr>
+<tr>
+<td>Lotus Organizer 2.1, 97, 97GS/4.1, and 5.0</td>
+<td>org — org5</td>
+<td>Да</td>
+<td>Нет</td>
+</tr>
+<tr>
+<td>Comma Separated Values (MS-DOS)</td>
+<td>CSV</td>
+<td>Да</td>
+<td>Да</td>
+</tr>
+<tr>
+<td>Comma Separated Values (Windows)</td>
+<td>CSV</td>
+<td>Да</td>
+<td>Да</td>
+</tr>
+<tr>
+<td>Tab Separated Values (MS-DOS)</td>
+<td>txt</td>
+<td>Да</td>
+<td>Да</td>
+</tr>
+<tr>
+<td>Tab Separated Values (Windows)</td>
+<td>Ut</td>
+<td>Да</td>
+<td>Да</td>
+</tr>
+<tr>
+<td>(calendar</td>
+<td>ics</td>
+<td>Да</td>
+<td>Нет</td>
+</tr>
+<tr>
+<td>Vcalendar</td>
+<td>vcs</td>
+<td>Да</td>
+<td>Нет</td>
+</tr>
+<tr>
+<td>Vcard</td>
+<td>vcf</td>
+<td>Да</td>
+<td>Нет</td>
+</tr>
+<tr>
+<td>Microsoft Access</td>
+<td>mdb</td>
+<td>Да</td>
+<td>Да</td>
+</tr>
+<tr>
+<td>Microsoft Excel</td>
+<td>xls</td>
+<td>Да</td>
+<td>Да</td>
+</tr>
+<tr>
+<td>Microsoft FoxPro</td>
+<td>dbf</td>
+<td>Да</td>
+<td>Да</td>
+</tr>
+<tr>
+<td>DBASE</td>
+<td>dbf</td>
+<td>Да</td>
+<td>Да</td>
+</tr>
+</tbody>
+</table>
+<p> Таблица 1 7, 1.  Типы файлов, поддерживаемые Outlook </p>
+<p>По умолчанию для некоторых приложений конверторы не устанавливаются, и при попытке экспортировать элемент в данный формат появится соответствующее предупреждение. Если вы с ним согласитесь, недостающий компонент будет установлен.</p>
+<p>Если Outlook не имеет конвертора в формат какого-либо приложения А, то можно проявить смекалку и конвертировать вначале в стороннее приложение В, которое поддерживает необходимый формат. И уже средствами этого приложения конвертировать в требуемое приложение. Например, Outlook не поддерживает формат приложения Lotus 1-2-3, но, воспользовавшись приложением Excel, которое поддерживает работу с Lotus, можно добиться требуемого результата.</p>
+<h2 id="eksport-elementov">Экспорт элементов</h2>
+<p>Давайте рассмотрим конкретный пример экспорта информации. Характерным случаем в данной ситуации является перенос списка контактов из Outlook в другие приложения Microsoft Office (Excel или Access) для более специфической работы над ними средствами именно этого приложения. Допустим, что в нашем случае им будет являться Excel.</p>
+<p> Пример 17.3. Экспорт элементов Outlook </p>
+<p>&gt; Файл &gt; Импорт и экспорт&#8230;(Запустится мастер импорта и экспорта (рис. 17.5)</p>
+<p>Выберите нужное действие Экспорт в файл Далее</p>
+<p>Создать файл следующего типа Microsoft Excel Далее (рис. 17.6)</p>
+<p>Выберите папку для экспорта Контакты Далее</p>
+<p>Обзор</p>
+<p>Папка  &lt;Имя папки&gt; </p>
+<p>Имя файла := <u> Контакты </u></p>
+<p>Далее</p>
+<p>Экспорт &#171;Контакты&#187; из папки &#171;Контакты&#187;</p>
+<p>Соответствие полей&#8230;</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image08/446ff3c70877153293bcf1673d3412b2.jpg" width="441" height="330" alt=""><meta itemprop="width" content="441">
+<meta itemprop="height" content="330"></span></p>
+<p> Рис. 17.5.  Мастер импорта и экспорта</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image14/7dc3b3d7d80eecff2ae829abe4428367.jpg" width="441" height="330" alt=""><meta itemprop="width" content="441">
+<meta itemprop="height" content="330"></span></p>
+<p> Рис. 17.6.  Диалоговое окно  Экспорт в файл </p>
+<p>Прервем формальное рассмотрение работы Мастера экспорта и импорта, чтобы подробнее остановиться на работе с диалоговым окном  Соответствие полей  (Map Custom Fields). В левом списке (Из) отображаются все поля контакта. Используя кнопки &lt;Назад и Далее&gt;,  можно просмотреть все контакты, точнее все значения полей для контактов. Правый список (В) отображает поля (и их порядок), которые будут показаны в таблице Excel. По умолчанию будут указаны все поля. Естественно, что это не всегда устраивает пользователя, поскольку большинство полей контакта могут быть не заполнены, и все равно они будут отображаться и занимать место.</p>
+<p>Для изменения отображения полей нажмите кнопку  Очистить  (Clear Map), таким образом все поля из правого списка будут удалены. Для восстановления всех полей нажмите кнопку  По умолчанию  (Default Map). Теперь, когда правый список пуст, давайте добавим необходимые для отображения поля. Для этого выделите один из них в левом списке и, удерживая нажатой левую кнопку мыши, перетащите его в правый список. Перенесите таким образом все необходимые поля. Для удаления поля из списка нужно проделать обратную процедуру: перенести поле из правого списка в левый. Порядок, в котором поля помещаются в правый блок, определяет расположение информации в экспортируемом файле. Позицию поля, вставляемого в правый список, можно менять путем перемещения этого поля по списку.</p>
+<p>После указания полей в диалоговом окне  Соответствие полей  нажмите кнопку ОК, и вы автоматически вернетесь в режим работы Мастера экспорта. Осталось нажать кнопку  Готово,  после чего появится диалоговое окно  Импорт и экспорт,  демонстрирующее процесс конвертирования элемента. После преобразования элемента это диалоговое окно исчезнет, следовательно, Мастер завершил свою работу. Теперь можно открыть созданный файл и убедиться в правильности и точности заданных в Мастере правил преобразований.</p>
+<p><strong> Замечание </strong></p>
+<p>Помимо-преобразования элементов в формат некоторого приложения, можно выбрать формат  Текст с разделителями  (Separated Values). Данный формат очень прост и удобен, поскольку, как было сказано выше, большинство программ поддерживает текстовый формат, а использование разделителей (запятые или метки табуляции) позволяет сторонним приложениям самостоятельно преобразовывать данный формат к своему типу. Так, например, Outlook не может экспортировать элементы в Microsoft Word, но конвертирование элементов в формат  Текст с разделителями  позволяет текстовому процессору прочитать созданный файл и преобразовать его к более удобному виду уже собственными средствами.</p>
+<h2 id="import-elementov">Импорт элементов</h2>
+<p><strong>Импорт</strong> —  обратная экспорту процедура, т. е. данные из некоторого файла перемещаются в базу Outlook. Давайте проверим обратное преобразование файла Контакты.хls в папку Outlook. Для этого создайте специальную папку, например ИмпортКонтакты, в которую будет помещена информация из файла Excel.</p>
+<p> Пример 17.4. Импорт элементов </p>
+<p>&gt;Файл &gt; Импорт и экспорт&#8230; (Запустится мастер импорта и экспорта)</p>
+<p>Выберите нужное действие Импорт из другой программы или файла</p>
+<p>Далее</p>
+<p>Выберите файл для импорта Microsoft Excel</p>
+<p>Далее</p>
+<p>Обзор</p>
+<p>Папка &lt;Имя  папки&gt; </p>
+<p>Файл Контакты, xls</p>
+<p>ОК</p>
+<p>разрешить создание дубликатов (рис. 17.7) Далее</p>
+<p>Выберите папку назначения ИмпортКонтакт Далее</p>
+<p>Импорт &#171;Контакты&#187; в папку &#171;ИмпортКонтакты&#187;</p>
+<p>Готово</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image15/8a37a172bf125a3cdaeea10af45e6b68.jpg" width="441" height="330" alt=""><meta itemprop="width" content="441">
+<meta itemprop="height" content="330"></span></p>
+<p> Рис. 17.7.  Диалоговое окно  Импорт файла </p>
+<p>Несколько замечаний к данному примеру.</p>
+<p>Во-первых, если папка, в которую вы будете импортировать файл, уже содержит аналогичную информацию, следует подумать, прежде чем выбирать один из трех переключателей D диалоговом окне  Импорт файла: </p>
+<ul>
+<li> заменять дубликаты при импорте  (Replace duplicate with items imported). Это значение следует выбрать, если данные в импортируемом файле более свежие, чем в папке Outlook;</li>
+<li> разрешить создание дубликатов  (Allow duplicates to be created). Это значение устанавливается по умолчанию. В этом случае после процедуры импорта можно открыть папку и изменить или удалить копии данных вручную. Режим наиболее безопасный, но, в то же время, на окончательную обработку информации уходит в несколько раз больше времени;</li>
+<li> не импортировать дубликаты  (Do not import duplicates). Значение следует выбирать, если некоторые данные в папке более важны, чем данные, содержащиеся в импортируемом файле.</li>
+</ul>
+<p>Именно поэтому мы и создали специальную папку, поскольку, если вы установили при экспорте контактов те же поля, то при импорте файла в папку  Контакты  можно было либо потерять информацию, либо получить в два раза больше контактов за счет копий.</p>
+<p>Во-вторых, так же, как и в случае экспорта, пользователь может выбрать поля таблицы Excel, которые должны импортироваться. Помимо кнопки  Соответствие полей,  необходимой для изменения отображения полей, в том же диалоговом окне есть кнопка  Назначение  (Change Destination). Нажатие этой кнопки вызовет диалоговое окно  Выбор папки  (Select Folder), в-котором можно изменить папку назначения для импортируемой информации.</p>
+<p>После того как файл импортировался, можно посмотреть результат, открыв папку ИмпортКонтакт.</p>
+<p> Архивирование элементов </p>
+<p>Содержимое личных папок Outlook увеличивается по мере создания элементов аналогично скоплению бумаг на столе. Собственный рабочий стол иногда приводится в порядок: просматриваются и откладываются на хранение документы, имеющие важное значение, но используемые не очень часто; менее важные бумаги (например, газеты и журналы) выбрасываются в зависимости от их давности или укладываются в большие коробки и забываются до лучших времен. В Outlook же старые элементы передаются в файл архива.</p>
+<p> В разделе &#171;Вкладка  Автоархивация&#187;  мы немного коснулись вопроса архивации элементов, но не достаточно полно описали, зачем необходима архивация, в чем преимущества периодического архивирования и т. д. Здесь же, помимо ответов на данные вопросы, мы более подробно рассмотрим процедуру автоматической архивации, &#171;ручной&#187; архивации, а также процедуру разархивирования элементов.</p>
+<p>Начнем с ответов на поставленные выше вопросы:</p>
+<ol>
+<li>Архивация необходима в качестве профилактической меры, предупреждающей засорение папок ненужными элементами и устаревшей информацией, которая замедляет работу и осложняет поиск необходимых данных.</li>
+<li>Архивация не уничтожает элементы (хотя возможна и эта опция), а лишь перемещает их в другое место до тех пор, пока они вам вновь не потребуются.</li>
+<li>В случае неисправной работы Outlook или переноса информации с одного компьютера на другой необходимые элементы легко извлекаются из архива.</li>
+</ol>
+<p>Перейдем теперь непосредственно к процессу архивирования элементов. Существует две стандартные процедуры: автоматическая архивация и &#171;ручная&#187;.</p>
+<h2 id="avtomaticheskaya-arhivatsiya">Автоматическая архивация</h2>
+<p>Параметры автоматической архивации устанавливаются в диалоговом окне  Автоархивация  (AutoArchive).</p>
+<p> Пример 17.5. Автоархивация элементов </p>
+<p>&gt;Сервис &gt;Параметры&#8230; Дополнительно</p>
+<p>Автоархивация&#8230; (рис. 17.8)</p>
+<p>По умолчанию автоархивация элементов Outlook производится каждые 14 дней. Пользователь может установить любую периодичность этого процесса, а также вообще отменить его, сняв флажок.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image25/e398e31ebb6d6869f4f1fb6101830441.jpg" width="456" height="489" alt=""><meta itemprop="width" content="456">
+<meta itemprop="height" content="489"></span></p>
+<p> Рис. 17.8.  Диалоговое окно  Автоархивация </p>
+<p>Установка флажка  Запрос перед автоархивацией  (Prompt before AutoArchive runs) приведет к появлению специального диалогового окна, каждый раз уведомляющего о начале автоархивации.</p>
+<p>По умолчанию Outlook удаляет, а не архивирует просроченные сообщения электронной почты. Если вы хотите архивировать, а не удалять их — сбросьте соответствующий флажок.</p>
+<p>Также по умолчанию все архивные элементы Outlook сохраняет в специальном файле, расположенном в папке C:WindowsLocal SettingsApplication DataMicrosoftOutlookarchive.pst. Описывая работу Outlook, можно сказать, что при архивации он создает резервные копии существующих элементов в том месте, где они не будут перегружать текущие массивы информации. Если вы хотите создать новый архив или просто разместить его в другом месте, нажмите кнопку  Обзор&#8230;  и введите новое имя файла-архива.</p>
+<p>Также в разделе  Используемые по умолчанию настройки для папки архива (Default Folder Settings for archiving) вы можете указать дату окончательного удаления элементов из архива, а также указать Outlook на автоматическое удаление, а не на архивирование устаревших элементов.</p>
+<p><strong> Замечание </strong></p>
+<p>При архивировании текущая структура папки сохраняется в новом файле архива. Если у папки, в которую помещаются элементы, есть родительская папка, такая же папка будет создана и в файле архива, но ее элементы не будут скопированы в архив. Таким образом, структуры папок в файле архива и  Личных папках  идентичны.</p>
+<p>&nbsp;</p>
+<p><strong> Совет </strong></p>
+<p>При архивировании всех элементов Outlook объем архива будет довольно быстро увеличиваться. Во избежание разрастания файла архива советуем вам периодически удалять ненужные элементы (и из папки  Удаленные). </p>
+<p>После сохранения параметров диалогового окна  Автоархивация  необходимо указать, какие папки и элементы будут подвергаться автоматической архивации. Установка свойств автоархивации папки была подробно рассмотрена  в разделе 7.3.4 &#171;Вкладка  Автоархивация&#187;,  здесь же приведем лишь список значений для интервалов автоархивации, устанавливаемый по умолчанию для каждой папки Outlook, а также способ определения даты для отсчета этого интервала.</p>
+<table class="table_common zebra" width="700">
+<tbody>
+<tr>
+<td width="150"><strong>Тип элемента </strong></td>
+<td width="150"><strong>Интервал </strong></td>
+<td><strong>Дата архивации </strong></td>
+</tr>
+<tr>
+<td>Сообщение</td>
+<td>2 месяца</td>
+<td>Дата отправки или получения (более поздняя из двух) или дата/время последнего изменения</td>
+</tr>
+<tr>
+<td>Встреча</td>
+<td>6 месяцев</td>
+<td>Дата встречи или дата/время последнего изменения (более поздняя из двух)</td>
+</tr>
+<tr>
+<td>Задача</td>
+<td>6 месяцев</td>
+<td>Дата выполнения или дата/время последнего изменения. Задачи, не помеченные как выполненные, не подлежат автоархивации. Задачи, назначенные другим пользователям, архивируются, если они помечены как выполненные</td>
+</tr>
+<tr>
+<td>Заметка</td>
+<td>3 месяца</td>
+<td>Дата/время последнего изменения</td>
+</tr>
+<tr>
+<td>Запись в дневнике</td>
+<td>6 месяцев</td>
+<td>Дата создания записи или дата/время ее последнего изменения</td>
+</tr>
+<tr>
+<td>Контакт</td>
+<td>Нет</td>
+<td>Не архивируется</td>
+</tr>
+</tbody>
+</table>
+<p> Таблица 17.2.  Интервалы и дата архивации элементов </p>
+<p><strong> Замечание </strong></p>
+<p>По умолчанию автоархивация не активизируется для элементов папок  Входящие, Черновики, Заметки и Контакты. </p>
+<p>Свойства автоархивации, заданные для папки Outlook, обычно выполняются для всех ее элементов. Но в случае, если вы не хотите архивировать некото рый элемент, даже по прошествии долгого времени (например, историческое в вашей жизни сообщение) можно указать специальную опцию, запрещающую автоархивацию указанного элемента.</p>
+<p> Пример 17.6. Запрет на автоархивацию элемента </p>
+<p>{Откройте элемент}</p>
+<p>&gt; Файл &gt; Свойства&#8230;</p>
+<p>Не автоархивировать</p>
+<p>ОК</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image25/e3f5b168594163b92e5a27313421a3be.jpg" width="418" height="450" alt=""><meta itemprop="width" content="418">
+<meta itemprop="height" content="450"></span></p>
+<p> Рис. 17.9.  Диалоговое окно Свойства</p>
+<h2 id="ruchnaya-arhivatsiya">&#171;Ручная&#187; архивация</h2>
+<p>Если параметры автоархивации отключены или нужно архивировать элемент раньше указанного срока, можно воспользоваться ручной архивацией.</p>
+<p> Пример 17.7. &#171;Ручная&#187; архивация </p>
+<p>&gt;Файл &gt; Архивировать&#8230; (рис. 17.10)</p>
+<p>Архивировать эту папку и все вложенные папки &lt;Папка&gt; </p>
+<p>Архивировать элементы, созданные до &lt;Дата&gt; </p>
+<p>(Снять) Включить элементы с флажком &#171;Не архивировать&#187;</p>
+<p>ок</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image08/45775902140c88f43a459d7f62172af2.jpg" width="419" height="393" alt=""><meta itemprop="width" content="419">
+<meta itemprop="height" content="393"></span></p>
+<p> Рис. 17.10.  Диалоговое окно  Архивация </p>
+<h2 id="neskolko-kommentariev">Несколько комментариев.</h2>
+<ul>
+<li>Выбор переключателя  Архивировать все папки согласно настройкам автоархивации  (Archive all Folders according to their AutoArchive settings) приведет к немедленной архивации, игнорируя установленные сроки автоматического выполнения.</li>
+<li>По умолчанию Outlook перемещает архивированные вручную элементы в тот же файл, что и элементы, архивированные автоматически. Создать новый или выбрать другой файл можно, нажав кнопку  Обзор&#8230;. </li>
+</ul>
+<h2 id="razarhivirovanie">Разархивирование</h2>
+<p>Выше говорилось об архивации элементов Outlook, но иногда необходим обратный процесс — извлечение некоторой информации из файла архива (разархивирование). По сути, этот процесс напоминает импортирование файла  (см. раздел 17.2.3 &#171;Импорт элементов&#187;). </p>
+<p> Пример 17.8. Разархивирование элементов </p>
+<p>&gt;Файл &gt; Импорт и экспорт&#8230;</p>
+<p>Выберите нужное действие Импорт из другой программы или файла</p>
+<p>Далее&gt;</p>
+<p>Выберите файл для импорта Файл личных папок</p>
+<p>Далее&gt;</p>
+<p>Импортировать из файла := &lt;Файл (.PST)&gt; </p>
+<p>не импортировать дубликаты</p>
+<p>Далее&gt;</p>
+<p>Импортировать из папки Архивные папки</p>
+<p>Включить вложенные папки</p>
+<p>Импортировать в такую же папку в Личные папки</p>
+<p>Готово</p>
+<p>Несколько комментариев к приведенному примеру.</p>
+<ul>
+<li>Для извлечения из архива не всех, а только конкретных элементов нажмите кнопку  Обзор&#8230;,  появится одноименное диалоговое окно, аналогичное окну  Фильтр,  работа с которым рассматривалась  в главе 16 &#171;Поисковая система Outlook&#187;, </li>
+<li>Для разархивации элементов в специальную папку ее необходимо сначала создать, а потом выбрать в раскрывающемся списке  Импортировать в такую же папку в,  либо, находясь в ней, установить переключатель  Импортировать в текущую папку. </li>
+</ul>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image04/24e5bdc83f22db1aa2658ef10678785b.jpg" width="441" height="330" alt=""><meta itemprop="width" content="441">
+<meta itemprop="height" content="330"></span></p>
+<p> Рис. 17.11.  Диалоговое окно  Импорт личных папок, шаг Импортировать из файла </p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image05/314ab4050cc7ac7c34abcf2d00af06f8.jpg" width="441" height="330" alt=""><meta itemprop="width" content="441">
+<meta itemprop="height" content="330"></span></p>
+<p> Рис. 17.12.  Диалоговое окно  Импорт личных папок, шаг Импортировать из папки </p>
+<p>Хотя процедуры архивирования и разархивирования очень похожи на процедуры экспорта и импорта информации, между ними все же есть различия. В первом случае исходные элементы копируются в файл архива и затем удаляются из текущей папки. В случае экспортирования исходные элементы копируются в файл экспорта, но из текущей папки не удаляются. Кроме того, архивировать можно только в файлы одного типа — файлы личных папок, а экспортировать — в файлы разных типов.</p>
+<p> Папка  Удаленные  </p>
+<p>Говоря об архивировании и удалении элементов, нельзя не рассказать о работе с папкой  Удаленные  (Delete Items). Данная папка предназначена для промежуточного хранения ненужных элементов любого типа. Другими словами, удаленный элемент не удаляется безвозвратно, а перемещается в папку  Удаленные,  из которой в случае необходимости его можно вернуть в исходную папку. В данном случае просматривается полная аналогия с Корзиной в операционной системе Windows.</p>
+<p>Окончательная очистка папки  Удаленные  показана на следующем примере.</p>
+<p> Пример 17.9. Очистка папки  Удаленные </p>
+<p>&gt;Сервис &gt; Очистить папку &#171;Удаленные&#187; или</p>
+<p>{ Выделите папку &#171;Удаленные&#187;}</p>
+<p>Очистить папку &#171;Удаленные&#187;</p>
+<p>Кроме этого, пользователь может установить автоматическую очистку папки  Удаленные  при выходе из приложения Outlook.</p>
+<p> Пример 17.10. Автоматическая очистка папки  Удаленные </p>
+<p>&gt;Сервис &gt; Параметры.. Дополнительно</p>
+<p>Очищать папку &#171;Удаленные&#187; при выходе</p>
+<p>ОК</p>
+<p>Перемещение элементов в папку  Удаленные  зависит от пользователя. Но редко когда пользователь удаляет элемент сразу при получении или отправке — должно пройти время или случиться какое-либо событие, требующее сбора и удаления ненужной информации (например, нехватка места на винчестере компьютера). Причем, как правило, это относится к папкам почты, поскольку именно они содержат наибольшее количество элементов. Outlook 2002 предоставляет пользователю специальный сервис, помогающий в разрешении данной проблемы.</p>
+<p> Пример 17.11. Очистка почтового ящика </p>
+<p>&gt; Сервис &gt; Очистка почтового ящика&#8230; (рис. 17.13)</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image01/08af24d09475d00c2a354cbc23583998.jpg" width="422" height="407" alt=""><meta itemprop="width" content="422">
+<meta itemprop="height" content="407"></span></p>
+<p> Рис. 17.13.  Диалоговое окно  Очистка почтового ящика </p>
+<p>Диалоговое окно  Очистка почтового ящика  позволяет пользователю определить размер .папок Outlook, найти элементы, удовлетворяющие условиям давности, а также удалить их или заархивировать. Но все по порядку.</p>
+<p>В первом разделе пользователь, нажав на кнопку  Щелкните  (Click Here), увидит размер (в Кбайт), занимаемый каждой папкой Outlook, причем как корневых, так и вложенных (рис. 17.14).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image22/c816b344a3d1733d2b7dbc33ea98035e.jpg" width="378" height="295" alt=""><meta itemprop="width" content="378">
+<meta itemprop="height" content="295"></span></p>
+<p> Рис. 17.14.  Диалоговое окно  Размер папки </p>
+<p>Далее, выбрав соответствующий переключатель и установив необходимые параметры, пользователь может найти почтовые элементы Outlook, подлежащие удалению или архивации. Нажав кнопку  Найти  (Find), вы увидите диалоговое окно расширенного поиска  (см. главу 16 &#171;Поисковая система Outlook&#187;).  Для удаления всех найденных элементов выполните следующую программу.</p>
+<p> Пример 17.12. Удаление найденных элементов </p>
+<p>&gt; Правка &gt; Выделить все</p>
+<p> &gt;  Правка &gt; Удалить</p>
+<p>Оставшиеся два раздела в диалоговом окне  Очистка почтового ящика (Mailbox Cleanup) отвечают за уже рассмотренные параметры: автоархивация и удаление.</p>
+<p>Замечание</p>
+<p>Особый интерес и удобство в использовании диалогового окна Очистка почтового ящика появляются в случае работы Outlook в сети. В данном случае при хранении информации на сервере Microsoft Exchange размер почтового</p>
+<p>ящика клиента лимитирован администратором и возможностями сервера. А следовательно, пользователю приходится подстраиваться под общую схему работы сервера и архивировать или удалять элементы для получения новых сообщений. Кстати, в случае, если вы подходите к порогу переполнения почтового ящика на сервере, Microsoft Exchange любезно уведомляет вас об этом специальным (важным) сообщением.</p>
+<p> Резюме </p>
+<p>В данной главе были рассмотрены дополнительные возможности в работе с элементами Outlook, а именно:</p>
+<ul>
+<li> Сохранение.  Процедура сохранения элементов в виде отдельных файлов разных форматов, позволяющая переносить информацию между разными приложениями, с компьютера на компьютер и даже публиковать в Интернете.</li>
+<li> Импорт и экспорт.  Процедуры импорта и экспорта данных из файла и в файл стороннего приложения. Выбор полей экспортирования и режимов и мпортирования.</li>
+<li> Архивирование.  Автоматическая и ручная архивация элементов Outlook. Настройка параметров архивации. Разархивирование.</li>
+<li> Папка  Удаленные.  Автоматическая очистка папки  Удаленные.  Очистка почтового ящика.</li>
+</ul>
+<p>&nbsp;</p>	</div>
+<!-- .entry-content -->
+
+</article>
+
+
+
+
+
+
+
+
+
+<div class="social-buttons">
+<span class="social-button social-button--vkontakte main" data-social="vkontakte"><span>Поделиться в ВКонтакте</span></span><span class="social-button social-button--telegram " data-social="telegram"></span><span class="social-button social-button--odnoklassniki " data-social="odnoklassniki"></span><span class="social-button social-button--whatsapp " data-social="whatsapp"></span><span class="social-button social-button--viber " data-social="viber"></span>
+</div>
+
+<!--noindex-->
+<div class="author-box">
+    <div class="author-info">
+        <div class="author-box__ava">
+                    </div>
+
+        <div class="author-box__body">
+            <div class="author-box__author">
+                Автор А. Днепров            </div>
+            <div class="author-box__description">
+                <p>Обучаю основам работы с офисными программами.</p>
+            </div>
+
+            
+        </div>
+    </div>
+</div>
+<!--/noindex-->
+    <meta itemprop="author" content="А. Днепров">
+<meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/rabota-s-elementami-outlook" content="Работа с элементами Outlook">
+    <meta itemprop="dateModified" content="2024-07-10">
+<div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+<div class="related-posts">
+<div class="related-posts__header">Вам также может понравиться</div>
+<div class="post-cards post-cards--vertical">
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/kak-sdelat-massovuyu-zamenu-formul"><img width="311" height="230" src="/image04/2408fadbc9163d5aa4994580cfc152cd.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/kak-sdelat-massovuyu-zamenu-formul">Как сделать массовую замену формул</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/kak-udalit-lishnie-i-pustye-stranitsy-v-excel">Как удалить лишние и пустые страницы в Excel</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/preobrazovanie-teksta-v-tablitsu"><img width="345" height="122" src="/image14/7a0043c9bf012cc129b22376cfebb2a9.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/preobrazovanie-teksta-v-tablitsu">Преобразование текста в таблицу</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/kak-delat-skrinshoty-s-vysokim-razresheniem-v-windows">Как делать скриншоты с высоким разрешением в Windows 11/10</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/osobennosti-raboty-s-mnogostranichny"><img width="213" height="230" src="/image13/6f8f9694c11ee322ff9d3675b0b8ba07.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/osobennosti-raboty-s-mnogostranichny">13.1 Особенности работы с многостраничными документами</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/kak-sdelat-izmeneniya-vnutri-yacheyki-p"><img width="345" height="93" src="/image27/f6550fd3bdfdfdbe500536441d5d252e.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/kak-sdelat-izmeneniya-vnutri-yacheyki-p">Как сделать изменения внутри ячейки. Принудительный перенос</a></div>
+    </div>
+</div>
+</div>
+            </main><!-- #main -->
+        </div>
+<!-- #primary -->
+
+        
+    
+
+    </div>
+<!--.site-content-inner-->
+
+    
+</div>
+<!--.site-content-->
+
+    
+    
+
+<div class="site-footer-container">
+
+    
+
+    <footer id="colophon" class="site-footer full" itemscope itemtype="http://schema.org/WPFooter">
+        <div class="site-footer-inner fixed">
+
+            
+            
+<div class="footer-bottom">
+    <div class="footer-info">
+        <div class="footer-copyright">© 2024 Самоучитель справочник по офисным программам. <a href="/o-nas" rel="nofollow">О нас | Контакты</a> | <a href="/map" rel="nofollow">Карта сайта</a>
+</div>
+        <div class="footer-under-copyright"></div>
+	        </div>
+
+    </div>
+        </div>
+    </footer><!--.site-footer-->
+</div>
+
+
+            <button type="button" class="scrolltop js-scrolltop" data-mob="on"></button>
+    
+                    <div class="top-line js-top-line">
+            <div class="top-line-inner fixed">
+
+                <div class="top-line__title">Работа с элементами Outlook</div>
+<div class="top-line__like"><span class="btn-fb-like btn-top-like social-button--vkontakte" data-social="vkontakte"><span>Поделиться в ВКонтакте</span></span></div>
+<div class="top-line__post">
+<div class="top-line__post_thumbnail"><a href="/kak-nayti-obedinennye-yacheyki-v-excel"></a></div>
+<div class="top-line__post_title"><a href="/kak-nayti-obedinennye-yacheyki-v-excel">Как найти объединенные ячейки в Excel</a></div>
+</div>            </div>
+        </div>
+    
+</div>
+<!-- #page -->
+
+<script>var pseudo_links = document.querySelectorAll(".pseudo-clearfy-link");for (var i=0;i<pseudo_links.length;i++ ) { pseudo_links[i].addEventListener("click", function(e){   window.open( e.target.getAttribute("data-uri") ); }); }</script><script>document.addEventListener("copy", (event) => {var pagelink = "\nИсточник: /rabota-s-elementami-outlook";event.clipboardData.setData("text", document.getSelection() + pagelink);event.preventDefault();});</script><script type="text/javascript" id="yelly-scripts-js-extra">
+/* <![CDATA[ */
+var settings_array = {"rating_text_average":"среднее","rating_text_from":"из","lightbox_display":"1"};
+var wps_ajax = {"url":"\/wp-admin\/admin-ajax.php","nonce":"e4ca9d4bd8"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="/js/scripts.min.js" id="yelly-scripts-js"></script>
+
+
+
+<div class="image-hover-social-buttons" style="display: none;">
+<div class="social-button social-button--vkontakte js-share-link" data-uri="https://vk.com/share.php?url=%2Frabota-s-elementami-outlook"></div>
+<div class="social-button social-button--telegram js-share-link" data-uri="https://t.me/share/url?url=%2Frabota-s-elementami-outlook&text=%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0+%D1%81+%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D0%BC%D0%B8+Outlook"></div>
+<div class="social-button social-button--odnoklassniki js-share-link" data-uri="https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&service=odnoklassniki&st.shareUrl=%2Frabota-s-elementami-outlook"></div>
+<div class="social-button social-button--whatsapp js-share-link" data-uri="whatsapp://send?url=%2Frabota-s-elementami-outlooktext=%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0+%D1%81+%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D0%BC%D0%B8+Outlook"></div>
+<div class="social-button social-button--viber js-share-link" data-uri="viber://forward?url=%2Frabota-s-elementami-outlooktext=%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0+%D1%81+%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D0%BC%D0%B8+Outlook"></div>
+</div>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(93345646, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/93345646" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>
