@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="robots" content="max-image-preview:large, noindex,follow">
+
+	<title>Архивы Функции - Страница 3 из 5 - Excel-jet</title>
+	<link rel="canonical" href="/excel/functions">
+	<meta property="og:locale" content="ru_RU">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Архивы Функции - Страница 3 из 5 - Excel-jet">
+	<meta property="og:description" content="Все основные рабочие функции и формулы Excel с подробными пояснениями и примерами.">
+	<meta property="og:url" content="/excel/functions">
+	<meta property="og:site_name" content="Excel-jet">
+
+
+<style id="wp-block-library-theme-inline-css" type="text/css">.wp-block-audio :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio :where(figcaption){color:#ffffffa6}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed :where(figcaption){color:#ffffffa6}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:#ffffffa6}:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table :where(figcaption){color:#ffffffa6}.wp-block-video :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video :where(figcaption){color:#ffffffa6}.wp-block-video{margin:0 0 1em}:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}</style>
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 19.5px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36.5px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--normal: 22px;--wp--preset--font-size--huge: 49.5px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="google-fonts-css" href="https://fonts.googleapis.com/css?family=Roboto%3A400%2C400i%2C700&#038;subset=cyrillic&#038;display=swap" media="all">
+<link rel="stylesheet" id="yelly-style-css" href="/css/style.min.css" media="all">
+
+<style>.pseudo-clearfy-link { color: #008acf; cursor: pointer;}.pseudo-clearfy-link:hover { text-decoration: none;}</style>
+<link rel="preload" href="/fonts/icomoon.ttf" as="font" crossorigin>
+    <style>.scrolltop{width:50px}.scrolltop:before{content:"\21d1"}.entry-content a, .entry-content a:visited, .spanlink, .comment-reply-link, .pseudo-link, .widget_calendar a, .widget_recent_comments a, .child-categories ul li a{color:#0000ff}.child-categories ul li a{border-color:#0000ff}a:hover, a:focus, a:active, .spanlink:hover, .top-menu ul li>span:hover, .main-navigation ul li a:hover, .main-navigation ul li span:hover, .footer-navigation ul li a:hover, .footer-navigation ul li span:hover, .comment-reply-link:hover, .pseudo-link:hover, .child-categories ul li a:hover{color:#1e73be}.top-menu>ul>li>a:before, .top-menu>ul>li>span:before{background:#1e73be}.child-categories ul li a:hover, .post-box--no-thumb a:hover{border-color:#1e73be}.post-box--card:hover{box-shadow: inset 0 0 0 1px #1e73be}.post-box--card:hover{-webkit-box-shadow: inset 0 0 0 1px #1e73be}@media (min-width: 768px){body{background-attachment: scroll}}body{font-size:17px;}@media (max-width: 991px){.widget-area{display: block; margin: 0 auto}}</style>
+    <!-- Yandex.RTB -->
+<script>window.yaContextCb=window.yaContextCb||[]</script>
+<script src="https://yandex.ru/ads/system/context.js" async></script>	
+</head>
+<body class="archive paged category category-functions category-7 wp-embed-responsive paged-3 category-paged-3 sidebar-right">
+<div id="page" class="site">
+    <a class="skip-link screen-reader-text" href="#content">Перейти к контенту</a>
+
+    
+    
+    <div class="search-screen-overlay js-search-screen-overlay"></div>
+    <div class="search-screen js-search-screen">
+        
+<form role="search" method="get" class="search-form" action="/">
+    <label>
+        <span class="screen-reader-text">Search for:</span>
+        <input type="search" class="search-field" placeholder="Поиск..." value="" name="s">
+    </label>
+    <button type="submit" class="search-submit"></button>
+</form>    </div>
+
+    
+
+<header id="masthead" class="site-header full" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="site-header-inner fixed">
+
+        <div class="humburger js-humburger">
+<span></span><span></span><span></span>
+</div>
+
+        
+<div class="site-branding">
+
+    <div class="site-branding__body"><div class="site-title"><a href="/">Excel-jet</a></div></div>
+</div>
+<!-- .site-branding -->
+
+    
+    <nav id="site-navigation" class="main-navigation full">
+        <div class="main-navigation-inner fixed">
+            <div class="menu-menyu-container"><ul id="header_menu" class="menu">
+<li id="menu-item-6695" class="menu-item menu-item-type-taxonomy menu-item-object-category current-category-ancestor current-menu-ancestor current-menu-parent current-category-parent menu-item-has-children menu-item-6695">
+<a href="/excel">Excel</a>
+<ul class="sub-menu">
+	<li id="menu-item-6709" class="menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item menu-item-6709"><a href="/excel/functions" aria-current="page">Функции</a></li>
+</ul>
+</li>
+<li id="menu-item-6697" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6697"><a href="/microsoft-word">Word</a></li>
+<li id="menu-item-6696" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6696"><a href="/powerpoint">PowerPoint</a></li>
+<li id="menu-item-6698" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6698"><a href="/outlook">Outlook</a></li>
+</ul></div>        </div>
+    </nav><!-- #site-navigation -->
+
+    
+<div class="header-search"><span class="search-icon js-search-icon"></span></div>    </div>
+</header><!-- #masthead -->
+
+
+
+    
+    
+    <div id="content" class="site-content fixed">
+
+        
+        <div class="site-content-inner">
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main">
+
+            
+            
+                <header class="page-header">
+                                        <h1 class="page-title">Функции Excel</h1>                    
+                    
+                                    </header><!-- .page-header -->
+
+                
+<div class="post-cards post-cards--vertical">
+
+	
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-cumprinc-v-excel">Функция CUMPRINC в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция CUMPRINC (ОБЩДОХОД) в Excel — это финансовая функция, которая возвращает совокупную основную сумму, выплаченную по кредиту между начальным и конечным периодами. Вы можете использовать CUMPRINC для расчета и проверки общей суммы основной суммы, выплаченной по кредиту, или основной суммы, выплаченной между любыми двумя периодами оплаты. Что делает функция CUMPRINC в Excel? Функция CUMPRINC в [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-cumprinc-v-excel" content="Функция CUMPRINC в Excel">
+    <meta itemprop="dateModified" content="2024-09-23">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-concatenate-v-excel">Функция CONCATENATE в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция CONCATENATE (СЦЕПИТЬ) в Excel объединяет до 30 значений и возвращает результат в виде текста. В Excel 2019 и более поздних версиях функции CONCAT и TEXTJOIN являются лучшими и более гибкими альтернативами. Что делает функция CONCATENATE в Excel? Функция CONCATENATE в Excel объединяет текст вместе. Возвращаемое значение Текст объединен. Аргументы text1 — первое текстовое значение, которое нужно объединить. text2 — [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-concatenate-v-excel" content="Функция CONCATENATE в Excel">
+    <meta itemprop="dateModified" content="2024-09-23">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-text-v-excel">Функция TEXT в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция TEXT (ТЕКСТ) в Excel возвращает число в заданном числовом формате в виде текста. Вы можете использовать функцию для встраивания форматированных чисел в текст. Что делает функция TEXT в Excel? Функция TEXT (ТЕКСТ) в Excel преобразует числа в текст в числовом формате. Возвращаемое значение Число как текст в заданном формате. Аргументы value &#8212; Число для преобразования. [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-text-v-excel" content="Функция TEXT в Excel">
+    <meta itemprop="dateModified" content="2024-09-22">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-stockhistory-v-excel">Функция STOCKHISTORY в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция STOCKHISTORY в Excel извлекает историческую информацию о ценах на акции на основе заданного символа и диапазона дат. Основная цель STOCKHISTORY — получить историю финансового инструмента с течением времени. Результатом является массив значений, которые распределяются на листе по нескольким ячейкам. Что делает функция STOCKHISTORY в Excel? Функция STOCKHISTORY в Excel извлекает информацию о цене акций. Возвращаемое [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-stockhistory-v-excel" content="Функция STOCKHISTORY в Excel">
+    <meta itemprop="dateModified" content="2024-09-22">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-na-v-excel">Функция NA в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция NA (НД) в Excel возвращает ошибку #N/A, что означает «недоступно» или «нет доступных значений». Вы можете использовать функцию NA для отображения ошибки #N/A, когда информация отсутствует. Что делает функция NA в Excel? Функция NA в Excel создает ошибку #N/A. Возвращаемое значение Ошибка #N/A. Синтаксис = N/A() Примечания по использованию Функция NA возвращает ошибку #N/A, что означает «недоступно» [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-na-v-excel" content="Функция NA в Excel">
+    <meta itemprop="dateModified" content="2024-09-22">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-log10-v-excel">Функция LOG10 в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция LOG10 в Excel возвращает логарифм числа по основанию 10. Например, LOG10(100) возвращает 2, а LOG10(1000) возвращает 3. Что делает функция LOG10 в Excel? Функция LOG10 в Excel возвращает логарифм числа по основанию 10. Возвращаемое значение Логарифм Аргументы number — число, для которого требуется логарифм. Синтаксис =LOG10(number) Примечания по использованию Функция ЛОГ позволяет получить логарифм по [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-log10-v-excel" content="Функция LOG10 в Excel">
+    <meta itemprop="dateModified" content="2024-09-21">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-rand-v-excel">Функция RAND в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция RAND (СЛЧИС) в Excel возвращает случайное число от 0 до 1. Например, =RAND() сгенерирует число типа 0,422245717. RAND выполняет перерасчет при открытии или изменении рабочего листа. Что делает функция RAND в Excel? Функция RAND в Excel помогает получить случайное число от 0 до 1. Возвращаемое значение Число от 1 до 0. Синтаксис =RAND() Примечания [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-rand-v-excel" content="Функция RAND в Excel">
+    <meta itemprop="dateModified" content="2024-09-21">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-geomean-v-excel">Функция GEOMEAN в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция GEOMEAN (СРГЕОМ) в Excel возвращает среднее геометрическое для набора числовых значений. Среднее геометрическое можно использовать для расчета средней нормы прибыли с переменными ставками. Что делает функция GEOMEAN в Excel? Функция GEOMEAN в Excel возвращает среднее геометрическое. Возвращаемое значение Расчетное среднее. Аргументы number1 — первое значение или ссылка. number2 — [необязательно] Второе значение или ссылка. Синтаксис [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-geomean-v-excel" content="Функция GEOMEAN в Excel">
+    <meta itemprop="dateModified" content="2024-09-20">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-vstack-v-excel">Функция VSTACK в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция VSTACK в Excel объединяет массивы по вертикали в один массив. Каждый последующий массив добавляется в конец предыдущего массива. Что делает функция VSTACK в Excel? Функция VSTACK в Excel объединяет диапазоны или массивы по вертикали. Возвращаемое значение Один комбинированный диапазон или массив. Аргументы array1 — первый массив или диапазон для объединения. array2 &#8212; [необязательный] Второй массив или [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-vstack-v-excel" content="Функция VSTACK в Excel">
+    <meta itemprop="dateModified" content="2024-09-20">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-isodd-v-excel">Функция ISODD в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция ISODD в Excel возвращает TRUE, если значение является нечетным числом, и FALSE, если значение является четным числом. ISODD вернет ошибку #VALUE, если значение не является числовым. Что делает функция ISODD в Excel? Функция ISODD в Excel проверяет, является ли значение нечетным. Возвращаемое значение Логическое значение (TRUE или FALSE). Аргументы value — числовое значение для проверки. [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-isodd-v-excel" content="Функция ISODD в Excel">
+    <meta itemprop="dateModified" content="2024-09-20">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-now-v-excel">Функция NOW в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция NOW (ТДАТА) в Excel возвращает текущую дату и время, которые постоянно обновляются при изменении или открытии листа. Функция ТДАТА не принимает аргументов. Вы можете отформатировать значение, возвращаемое NOW, как дату или как дату со временем, применив числовой формат. Что делает функция NOW в Excel? Функция NOW в Excel возвращает текущую дату и время. Синтаксис = [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-now-v-excel" content="Функция NOW в Excel">
+    <meta itemprop="dateModified" content="2024-09-20">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-stdev-v-excel">Функция STDEV в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция STDEV (СТАНДОТКЛОН) в Excel возвращает стандартное отклонение для данных, представляющих выборку. Чтобы рассчитать стандартное отклонение для всей совокупности, используйте STDEVP или STDEV.P. Что делает функция STDEV в Excel? Функция STDEV в Excel возвращает стандартное отклонение в выборке. Возвращаемое значение Расчетное стандартное отклонение Аргументы number1 — первый номер или ссылка в образце. number2 — [необязательно] [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-stdev-v-excel" content="Функция STDEV в Excel">
+    <meta itemprop="dateModified" content="2024-09-19">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-trim-v-excel">Функция TRIM в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция TRIM в Excel удаляет из текста лишние пробелы, оставляя только один пробел между словами и не допуская пробелов в начале или конце текста. Что делает функция TRIM в Excel? Функция TRIM в Excel удаляет лишние пробелы из текста. Возвращаемое значение Текст с удаленными лишними пробелами. Аргументы text — текст, из которого нужно удалить лишнее пространство. [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-trim-v-excel" content="Функция TRIM в Excel">
+    <meta itemprop="dateModified" content="2024-09-19">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-abs-v-excel-absolyutnoe-znachenie-chisla">Функция ABS в Excel &#8212; абсолютное значение числа</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция ABS в Excel возвращает абсолютное значение числа. ABS преобразует отрицательные числа в положительные числа, а положительные числа не затрагиваются. Что делает функция Функция ABS в Excel? Функция ABS в Excel находит абсолютное значение числа. Возвращаемое значение Положительное число. Аргументы number — число, для которого необходимо получить абсолютное значение. Синтаксис =ABS(number) Примечания по использованию Функция ABS [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-abs-v-excel-absolyutnoe-znachenie-chisla" content="Функция ABS в Excel &#8212; абсолютное значение числа">
+    <meta itemprop="dateModified" content="2024-09-18">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-map-v-excel">Функция MAP в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция MAP в Excel «сопоставляет» пользовательскую функцию LAMBDA с каждым значением в предоставленном массиве. LAMBDA применяется к каждому значению, а результатом MAP является массив результатов тех же размеров, что и исходный массив. Что делает функция MAP в Excel? Функция MAP в Excel сопоставляет массив с пользовательской функцией. Возвращаемое значение Массив результатов. Аргументы array1 — Массив, который будет [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-map-v-excel" content="Функция MAP в Excel">
+    <meta itemprop="dateModified" content="2024-09-18">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-fv-excel">Функция FV в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция FV (БС) в Excel — это финансовая функция, которая возвращает будущую стоимость инвестиций. Вы можете использовать функцию FV, чтобы получить будущую стоимость инвестиций, предполагая периодические постоянные выплаты с постоянной процентной ставкой. Что делает функция FV в Excel? Функция FV в Excel помогает получить будущую стоимость инвестиций. Возвращаемое значение Будущая стоимость. Аргументы rate &#8212; Процентная [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-fv-excel" content="Функция FV в Excel">
+    <meta itemprop="dateModified" content="2024-09-17">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-xlookup-v-excel">Функция XLOOKUP в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция XLOOKUP в Excel — это современная и гибкая замена старых функций, таких как VLOOKUP, HLOOKUP и LOOKUP. XLOOKUP поддерживает приблизительное и точное совпадение, подстановочные знаки (* ?) для частичных совпадений и поиск в вертикальных или горизонтальных диапазонах. Что делает функция XLOOKUP в Excel? Функция XLOOKUP в Excel ищет значения в диапазоне или массиве. Возвращаемое [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-xlookup-v-excel" content="Функция XLOOKUP в Excel">
+    <meta itemprop="dateModified" content="2024-09-17">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-roman-v-excel">Функция ROMAN в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция ROMAN (РИМСКОЕ) в Excel преобразует число в римскую цифру в виде текста. Например, формула =ROMAN(4) возвращает IV. Что делает функция ROMAN в Excel? Функция ROMAN в Excel преобразует числа в римские цифры. Возвращаемое значение Римская цифра в тексте. Аргументы number — число (арабские цифры), которое вы хотите преобразовать в римские цифры. form – [необязательно] Тип [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-roman-v-excel" content="Функция ROMAN в Excel">
+    <meta itemprop="dateModified" content="2024-09-16">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-rank-v-excel">Функция RANK в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция RANK (РАНГ) в Excel возвращает ранг числового значения по сравнению со списком других числовых значений. РАНГ может ранжировать значения от наибольшего к наименьшему (т. е. самые высокие продажи), а также от наименьшего к наибольшему (т. е. самое быстрое время). Функция RANK в Excel возвращает числа по диапазону чисел. Возвращаемое значение Число, обозначающее ранг. Аргументы [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-rank-v-excel" content="Функция RANK в Excel">
+    <meta itemprop="dateModified" content="2024-09-16">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-effect-v-excel">Функция EFFECT в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция EFFECT (ЭФФЕКТ) в Excel возвращает эффективную годовую процентную ставку с учетом номинальной процентной ставки и количества периодов начисления сложных процентов в году. Эффективная годовая процентная ставка — это процентная ставка, фактически полученная в результате начисления сложных процентов. Что делает функция EFFECT в Excel? Функция EFFECT (ЭФФЕКТ) в Excel возвращает эффективную годовую процентную ставку. Возвращаемое [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-effect-v-excel" content="Функция EFFECT в Excel">
+    <meta itemprop="dateModified" content="2024-09-16">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-or-v-excel">Функция OR в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция OR (ИЛИ) в Excel возвращает TRUE, если какой-либо заданный аргумент имеет значение TRUE, и возвращает FALSE, если все предоставленные аргументы оцениваются как FALSE. Например, чтобы проверить A1 на наличие «x» или «y», используйте =OR(A1=&#187;x&#187;,A1=&#187;y&#187;). Функцию ИЛИ можно использовать в качестве логической проверки внутри функции IF, чтобы избежать вложенных IF, и ее можно комбинировать с функцией  AND. Что делает функция OR [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-or-v-excel" content="Функция OR в Excel">
+    <meta itemprop="dateModified" content="2024-09-16">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-clean-v-excel">Функция CLEAN в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция CLEAN (ПЕЧСИМВ) в Excel принимает текстовую строку и возвращает текст, «очищенный» от разрывов строк и других непечатаемых символов. Что делает функция CLEAN в Excel? Функция CLEAN в Excel удаляет непечатаемые символы из текста. Возвращаемое значение Текст с непечатаемыми символами удален. Аргументы text &#8212; Текст для очистки. Синтаксис =CLEAN(text) Примечания по использованию Функция ПЕЧСИМВ принимает текстовую [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-clean-v-excel" content="Функция CLEAN в Excel">
+    <meta itemprop="dateModified" content="2024-09-16">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-sequence-v-excel">Функция SEQUENCE в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция SEQUENCE (ПОСЛЕДОВАТЕЛЬНОСТЬ) в Excel создает список последовательных чисел в массиве. Массив может быть одномерным или двумерным, определяемым аргументами строк и столбцов. Что делает функция SEQUENCE в Excel? Функция SEQUENCE (ПОСЛЕДОВАТЕЛЬНОСТЬ) в Excel получает массив списка последовательных чисел. Возвращаемое значение Массив последовательных значений Аргументы rows — количество возвращаемых строк. columns — [необязательный] Количество возвращаемых столбцов. start &#8212; [необязательный] [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-sequence-v-excel" content="Функция SEQUENCE в Excel">
+    <meta itemprop="dateModified" content="2024-09-16">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-unique-v-excel">Функция UNIQUE в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция UNIQUE в Excel возвращает список уникальных значений в списке или диапазоне. Значениями могут быть текст, числа, даты, время и т. д. Что делает функция UNIQUE в Excel? Функция UNIQUE в Excel извлекает уникальные значения из диапазона. Возвращаемое значение Массив уникальных значений. Аргументы array — диапазон или массив, из которого можно извлечь уникальные значения. by_col — [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-unique-v-excel" content="Функция UNIQUE в Excel">
+    <meta itemprop="dateModified" content="2024-09-15">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-search-v-excel">Функция SEARCH в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция SEARCH в Excel возвращает расположение одной текстовой строки внутри другой. ПОИСК возвращает позицию искомого_текста внутри внутреннего_текста  в виде числа. SEARCH поддерживает подстановочные знаки и не чувствителен к регистру. Цель Получить расположение подстроки в строке. Возвращаемое значение Число, представляющее расположение подстроки. Аргументы find_text — подстрока для поиска. within_text — текст для поиска. start_num &#8212; [необязательный] Начальная позиция. Необязательно, по умолчанию 1. Синтаксис =SEARCH(find_text, within_text [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-search-v-excel" content="Функция SEARCH в Excel">
+    <meta itemprop="dateModified" content="2024-09-15">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-weeknum-v-excel">Функция WEEKNUM в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция WEEKNUM (НОМНЕДЕЛИ) в Excel принимает дату и возвращает номер недели (1–54), соответствующий неделе года. Функция WEEKNUM начинает отсчет с недели, содержащей 1 января. По умолчанию недели начинаются с воскресенья, но это можно изменить. Что делает функция WEEKNUM (НОМ НЕДЕЛИ) в Excel? Функция WEEKNUM (НОМ НЕДЕЛИ) в Excel позволяет получить номер недели для заданной даты. [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-weeknum-v-excel" content="Функция WEEKNUM в Excel">
+    <meta itemprop="dateModified" content="2024-09-15">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-rounddown-v-excel">Функция ROUNDDOWN в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция ROUNDDOWN (ОКРУГЛВНИЗ) в Excel возвращает число, округленное в меньшую сторону до заданного количества знаков. В отличие от стандартного округления, при котором округляются только числа меньше 5, функция ОКРУГЛВНИЗ округляет все числа в меньшую сторону. Что делает функция ROUNDDOWN в Excel? Функция ROUNDDOWN в Excel округляет до заданного количества цифр. Возвращаемое значение Округленное число. Аргументы number [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-rounddown-v-excel" content="Функция ROUNDDOWN в Excel">
+    <meta itemprop="dateModified" content="2024-09-14">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-small-v-excel">Функция SMALL в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция SMALL в Excel возвращает числовое значение на основе его позиции в списке при сортировке по значению в порядке возрастания. Другими словами, SMALL может возвращать «n-е наименьшее» значение (1-е наименьшее значение, 2-е наименьшее значение, 3-е наименьшее значение и т. д.) из набора числовых данных. Что делает функция SMALL в Excel? Функция SMALL в Excel позволяет получить [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-small-v-excel" content="Функция SMALL в Excel">
+    <meta itemprop="dateModified" content="2024-09-13">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-iserr-v-excel">Функция ISERR в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция ISERR в Excel возвращает TRUE для любого типа ошибки, кроме ошибки #N/A. Вы можете использовать функцию ISERR вместе с функцией IF, чтобы проверить наличие ошибки и отобразить пользовательское сообщение или выполнить другой расчет, если он обнаружен. Цель Проверка на любую ошибку, кроме #N/A Возвращаемое значение Логическое значение (TRUE или FALSE) Аргументы value — значение для [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-iserr-v-excel" content="Функция ISERR в Excel">
+    <meta itemprop="dateModified" content="2024-09-13">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-exact-v-excel">Функция EXACT в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция EXACT в Excel сравнивает две текстовые строки, принимая во внимание символы верхнего и нижнего регистра, и возвращает TRUE, если они совпадают, и FALSE, если нет. EXACT чувствителен к регистру. Что делает функция EXACT в Excel? Функция EXACT в Excel сравнивает две текстовые строки. Возвращаемое значение Логическое значение (TRUE или FALSE) Аргументы text1 — первая текстовая [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-exact-v-excel" content="Функция EXACT в Excel">
+    <meta itemprop="dateModified" content="2024-09-12">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-mid-v-excel">Функция MID в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция MID в Excel извлекает заданное количество символов из середины предоставленной текстовой строки. Например, =MID(&#171;apple&#187;,2,3) возвращает &#171;человек&#187;. Что делает функция MID в Excel? Функция MID в Excel извлекает текст из строки. Возвращаемое значение Персонажи извлечены. Аргументы text &#8212; текст, из которого нужно извлечь. start_num — расположение первого символа для извлечения. num_chars — количество символов для извлечения. Синтаксис =MID(текст, [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-mid-v-excel" content="Функция MID в Excel">
+    <meta itemprop="dateModified" content="2024-09-12">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-proper-v-excel">Функция PROPER в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция PROPER (ПРОПНАЧ) в Excel записывает каждое слово в заданной текстовой строке с заглавной буквы. Числа, знаки препинания и пробелы не затрагиваются. Что делает функция PROPER в Excel? Функция PROPER в Excel начинает с заглавной буквы каждое слово. Возвращаемое значение Текст в правильном регистре. Аргументы text — текст, который необходимо преобразовать в правильный регистр. Синтаксис =PROPER(text) [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-proper-v-excel" content="Функция PROPER в Excel">
+    <meta itemprop="dateModified" content="2024-09-11">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-day-v-excel">Функция DAY в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция DAY (ДЕНЬ) в Excel возвращает день месяца в виде числа от 1 до 31 от заданной даты. Вы можете использовать функцию DAY, чтобы извлечь номер дня из даты в ячейку. Вы также можете использовать функцию ДЕНЬ, чтобы извлечь и передать значение дня в другую функцию, например функцию DATE. Что делает функция DAY в Excel? [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-day-v-excel" content="Функция DAY в Excel">
+    <meta itemprop="dateModified" content="2024-09-11">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-floor-v-excel">Функция FLOOR в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция FLOOR (ОКРВНИЗ) в Excel округляет заданное число до ближайшего заданного кратного. FLOOR работает аналогично функции MROUND, но она всегда округляет в меньшую сторону. Что делает функция FLOOR в Excel? Функция FLOOR в Excel округляет число до ближайшего указанного кратного. Возвращаемое значение Округленное число. Аргументы number – число, которое необходимо округлить. significance — кратное значение, [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-floor-v-excel" content="Функция FLOOR в Excel">
+    <meta itemprop="dateModified" content="2024-09-11">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-countblank-v-excel">Функция COUNTBLANK в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция COUNTBLANK в Excel возвращает количество пустых ячеек в диапазоне. Ячейки, содержащие текст, числа, ошибки, пробелы и т. д., не учитываются. Формулы, возвращающие пустые строки (&#171;&#187;), считаются пустыми. Что делает функция COUNTBLANK в Excel? Функция COUNTBLANK в Excel ведет подсчет ячеек, которые пусты. Возвращаемое значение Число, представляющее пустые ячейки Аргументы range &#8212; диапазон, в котором подсчитываются пустые ячейки. Синтаксис =COUNTBLANK(range) [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-countblank-v-excel" content="Функция COUNTBLANK в Excel">
+    <meta itemprop="dateModified" content="2024-09-09">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-textsplit-v-excel">Функция TEXTSPLIT в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция TEXTSPLIT в Excel разбивает текст по заданному разделителю на массив, который распределяется по нескольким ячейкам. ТЕКСТПЛИТ может разбивать текст на строки или столбцы. Что делает функция TEXTSPLIT в Excel? Разделить текстовую строку с помощью разделителя Возвращаемое значение Текст в нескольких ячейках Аргументы text — текстовая строка, которую нужно разделить. col_delimiter — Символ(ы) для разделения столбцов. row_delimiter — [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-textsplit-v-excel" content="Функция TEXTSPLIT в Excel">
+    <meta itemprop="dateModified" content="2024-09-09">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-averageifs-v-excel">Функция AVERAGEIFS в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция в AVERAGEIFS (СРЗНСЕСЛИ) в Excel возвращает среднее значение ячеек, соответствующих нескольким условиям, называемым критериями. Для определения критериев AVERAGEIFS поддерживает логические операторы (&gt;,&lt;,&lt;&gt;,=) и подстановочные знаки (*,?,~) и может использоваться с ячейками, содержащими даты, числа и текст. Что делает функция Excel в AVERAGEIFS? Функция Excel в AVERAGEIFS возвращает среднее знаечение ячейки, соответствующие нескольким критериям. Возвращаемое [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-averageifs-v-excel" content="Функция AVERAGEIFS в Excel">
+    <meta itemprop="dateModified" content="2024-09-09">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-countifs-excel">Функция COUNTIFS (СЧЁТЕСЛИМН) в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция COUNTIFS в Excel возвращает количество ячеек, которые соответствуют нескольким условиям, называемым критериями. Для определения критериев СЧЁТЕСЛИМН поддерживает логические операторы (&gt;,&lt;,&lt;&gt;,=) и подстановочные знаки (*,?,~) и может использоваться для подсчета ячеек, содержащих даты, числа и текст. Что делает функция COUNTIFS в Excel? Функция COUNTIFS (СЧЁТЕСЛИМН) в Excel подсчитывает ячейки, соответствующие нескольким критериям. Возвращаемое значение Количество [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-countifs-excel" content="Функция COUNTIFS (СЧЁТЕСЛИМН) в Excel">
+    <meta itemprop="dateModified" content="2024-09-09">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-time-v-excel">Функция TIME в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция TIME (ВРЕМЯ) в Excel — это встроенная функция, которая позволяет создавать время с отдельными компонентами часов, минут и секунд. Функция ВРЕМЯ полезна, когда вы хотите собрать правильное время в другой формуле. Что делает функция TIME в Excel? Функция TIME в Excel создает время с часами, минутами и секундами. Возвращаемое значение Десятичное число, обозначающее определенное [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-time-v-excel" content="Функция TIME в Excel">
+    <meta itemprop="dateModified" content="2024-09-09">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--thumbnail-no post-card--thumbnail-meta" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="post-card__title" itemprop="name"><span itemprop="headline"><a href="/funktsiya-subtotal-v-excel">Функция SUBTOTAL в Excel</a></span></div>
+    
+            <meta itemprop="articleBody" content="Функция SUBTOTAL (ПРОМЕЖУТОЧНЫЕ ИТОГИ) в Excel предназначена для выполнения определенного вычисления в диапазоне ячеек, игнорируя ячейки, которые не должны быть включены. SUBTOTAL может возвращать SUM, AVERAGE, COUNT, MAX и другие значения, а функция SUBTOTAL может включать или исключать значения в скрытых строках. Что делает функция SUBTOTAL в Excel? Функция SUBTOTAL в Excel позволяет получить промежуточный [&hellip;]">
+            <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/funktsiya-subtotal-v-excel" content="Функция SUBTOTAL в Excel">
+    <meta itemprop="dateModified" content="2024-09-08">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+    </div>
+
+</div>
+                
+	<nav class="navigation pagination">
+		<div class="screen-reader-text">Навигация по записям</div>
+		<div class="nav-links">
+<a class="prev page-numbers" href="/excel/functions/page/2">Назад</a>
+<a class="page-numbers" href="/excel/functions/">1</a>
+<a class="page-numbers" href="/excel/functions/page/2">2</a>
+<span aria-current="page" class="page-numbers current">3</span>
+<a class="page-numbers" href="/excel/functions/page/4">4</a>
+<a class="page-numbers" href="/excel/functions/page/5">5</a>
+<a class="next page-numbers" href="/excel/functions/page/4">Далее</a>
+</div>
+	</nav>
+                
+            
+		</main><!-- #main -->
+	</div>
+<!-- #primary -->
+
+    
+
+    </div>
+<!--.site-content-inner-->
+
+    
+</div>
+<!--.site-content-->
+
+    
+    
+
+<div class="site-footer-container">
+
+    
+
+    <footer id="colophon" class="site-footer full" itemscope itemtype="http://schema.org/WPFooter">
+        <div class="site-footer-inner fixed">
+
+            
+            
+<div class="footer-bottom">
+    <div class="footer-info">
+        <div class="footer-copyright">© 2024 Самоучитель справочник по офисным программам. <a href="/o-nas" rel="nofollow">О нас | Контакты</a> | <a href="/map" rel="nofollow">Карта сайта</a>
+</div>
+        <div class="footer-under-copyright"></div>
+	        </div>
+
+    </div>
+        </div>
+    </footer><!--.site-footer-->
+</div>
+
+
+            <button type="button" class="scrolltop js-scrolltop" data-mob="on"></button>
+    
+    
+</div>
+<!-- #page -->
+
+<script>var pseudo_links = document.querySelectorAll(".pseudo-clearfy-link");for (var i=0;i<pseudo_links.length;i++ ) { pseudo_links[i].addEventListener("click", function(e){   window.open( e.target.getAttribute("data-uri") ); }); }</script><script>document.addEventListener("copy", (event) => {var pagelink = "\nИсточник: /excel/functions/page/3";event.clipboardData.setData("text", document.getSelection() + pagelink);event.preventDefault();});</script><script type="text/javascript" id="yelly-scripts-js-extra">
+/* <![CDATA[ */
+var settings_array = {"rating_text_average":"среднее","rating_text_from":"из","lightbox_display":"1"};
+var wps_ajax = {"url":"\/wp-admin\/admin-ajax.php","nonce":"e4ca9d4bd8"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="/js/scripts.min.js" id="yelly-scripts-js"></script>
+
+
+
+<div class="image-hover-social-buttons" style="display: none;">
+<div class="social-button social-button--vkontakte js-share-link" data-uri="https://vk.com/share.php?url=%2Ffunktsiya-subtotal-v-excel"></div>
+<div class="social-button social-button--telegram js-share-link" data-uri="https://t.me/share/url?url=%2Ffunktsiya-subtotal-v-excel&text=%D0%A4%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F+SUBTOTAL+%D0%B2+Excel"></div>
+<div class="social-button social-button--odnoklassniki js-share-link" data-uri="https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&service=odnoklassniki&st.shareUrl=%2Ffunktsiya-subtotal-v-excel"></div>
+<div class="social-button social-button--whatsapp js-share-link" data-uri="whatsapp://send?url=%2Ffunktsiya-subtotal-v-exceltext=%D0%A4%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F+SUBTOTAL+%D0%B2+Excel"></div>
+<div class="social-button social-button--viber js-share-link" data-uri="viber://forward?url=%2Ffunktsiya-subtotal-v-exceltext=%D0%A4%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F+SUBTOTAL+%D0%B2+Excel"></div>
+</div>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(93345646, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/93345646" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>
