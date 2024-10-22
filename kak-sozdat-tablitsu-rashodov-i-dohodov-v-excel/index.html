@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<title>Учет расходов и доходов в Excel: как создать таблицу отслеживания бюджета</title>
+	<meta name="description" content="Менеджер расходов представляет собой приложение или программное обеспечение, которое используется для ведения учета притока и оттока денежных средств. Он">
+	<link rel="canonical" href="/kak-sozdat-tablitsu-rashodov-i-dohodov-v-excel">
+	<meta property="og:locale" content="ru_RU">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Учет расходов и доходов в Excel: как создать таблицу отслеживания бюджета">
+	<meta property="og:description" content="Менеджер расходов представляет собой приложение или программное обеспечение, которое используется для ведения учета притока и оттока денежных средств. Он">
+	<meta property="og:url" content="/kak-sozdat-tablitsu-rashodov-i-dohodov-v-excel">
+	<meta property="og:site_name" content="Excel-jet">
+	<meta property="article:published_time" content="2024-10-18T20:43:09+00:00">
+	<meta property="og:image" content="/image42/fig1.png">
+	<meta name="author" content="А. Днепров">
+
+
+<style id="wp-block-library-theme-inline-css" type="text/css">.wp-block-audio :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio :where(figcaption){color:#ffffffa6}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed :where(figcaption){color:#ffffffa6}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:#ffffffa6}:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table :where(figcaption){color:#ffffffa6}.wp-block-video :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video :where(figcaption){color:#ffffffa6}.wp-block-video{margin:0 0 1em}:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}</style>
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 19.5px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36.5px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--normal: 22px;--wp--preset--font-size--huge: 49.5px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="google-fonts-css" href="https://fonts.googleapis.com/css?family=Roboto%3A400%2C400i%2C700&#038;subset=cyrillic&#038;display=swap" media="all">
+<link rel="stylesheet" id="yelly-style-css" href="/css/style.min.css" media="all">
+
+<style>.pseudo-clearfy-link { color: #008acf; cursor: pointer;}.pseudo-clearfy-link:hover { text-decoration: none;}</style>
+<link rel="preload" href="/fonts/icomoon.ttf" as="font" crossorigin>
+    <style>.scrolltop{width:50px}.scrolltop:before{content:"\21d1"}.entry-content a, .entry-content a:visited, .spanlink, .comment-reply-link, .pseudo-link, .widget_calendar a, .widget_recent_comments a, .child-categories ul li a{color:#0000ff}.child-categories ul li a{border-color:#0000ff}a:hover, a:focus, a:active, .spanlink:hover, .top-menu ul li>span:hover, .main-navigation ul li a:hover, .main-navigation ul li span:hover, .footer-navigation ul li a:hover, .footer-navigation ul li span:hover, .comment-reply-link:hover, .pseudo-link:hover, .child-categories ul li a:hover{color:#1e73be}.top-menu>ul>li>a:before, .top-menu>ul>li>span:before{background:#1e73be}.child-categories ul li a:hover, .post-box--no-thumb a:hover{border-color:#1e73be}.post-box--card:hover{box-shadow: inset 0 0 0 1px #1e73be}.post-box--card:hover{-webkit-box-shadow: inset 0 0 0 1px #1e73be}@media (min-width: 768px){body{background-attachment: scroll}}body{font-size:17px;}@media (max-width: 991px){.widget-area{display: block; margin: 0 auto}}</style>
+    <!-- Yandex.RTB -->
+<script>window.yaContextCb=window.yaContextCb||[]</script>
+<script src="https://yandex.ru/ads/system/context.js" async></script>	
+</head>
+<body class="post-template-default single single-post postid-6304 single-format-standard wp-embed-responsive sidebar-right">
+<div id="page" class="site">
+    <a class="skip-link screen-reader-text" href="#content">Перейти к контенту</a>
+
+    
+    
+    <div class="search-screen-overlay js-search-screen-overlay"></div>
+    <div class="search-screen js-search-screen">
+        
+<form role="search" method="get" class="search-form" action="/">
+    <label>
+        <span class="screen-reader-text">Search for:</span>
+        <input type="search" class="search-field" placeholder="Поиск..." value="" name="s">
+    </label>
+    <button type="submit" class="search-submit"></button>
+</form>    </div>
+
+    
+
+<header id="masthead" class="site-header full" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="site-header-inner fixed">
+
+        <div class="humburger js-humburger">
+<span></span><span></span><span></span>
+</div>
+
+        
+<div class="site-branding">
+
+    <div class="site-branding__body"><div class="site-title"><a href="/">Excel-jet</a></div></div>
+</div>
+<!-- .site-branding -->
+
+    
+    <nav id="site-navigation" class="main-navigation full">
+        <div class="main-navigation-inner fixed">
+            <div class="menu-menyu-container"><ul id="header_menu" class="menu">
+<li id="menu-item-6695" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-6695">
+<a href="/excel">Excel</a>
+<ul class="sub-menu">
+	<li id="menu-item-6709" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6709"><a href="/excel/functions">Функции</a></li>
+</ul>
+</li>
+<li id="menu-item-6697" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6697"><a href="/microsoft-word">Word</a></li>
+<li id="menu-item-6696" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6696"><a href="/powerpoint">PowerPoint</a></li>
+<li id="menu-item-6698" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6698"><a href="/outlook">Outlook</a></li>
+</ul></div>        </div>
+    </nav><!-- #site-navigation -->
+
+    
+<div class="header-search"><span class="search-icon js-search-icon"></span></div>    </div>
+</header><!-- #masthead -->
+
+
+
+    
+    
+    <div id="content" class="site-content fixed">
+
+        
+        <div class="site-content-inner">
+    
+        
+        <div id="primary" class="content-area" itemscope itemtype="http://schema.org/Article">
+            <main id="main" class="site-main">
+
+                
+<article id="post-6304" class="article-post post-6304 post type-post status-publish format-standard  category-excel">
+
+    
+        
+        <header class="entry-header"><h1 class="entry-title" itemprop="headline">Как создать таблицу расходов и доходов в Excel</h1></header>
+        
+        
+        
+    
+    
+    <div class="entry-meta">
+<span class="entry-time"><span class="entry-label">Время чтения</span> 10 мин.</span><span class="entry-date"><span class="entry-label">Опубликовано</span> <time itemprop="datePublished" datetime="2024-10-18">18.10.2024</time></span>
+</div>
+	<div class="entry-content" itemprop="articleBody">
+		<p>Менеджер расходов представляет собой приложение или программное обеспечение, которое используется для ведения учета притока и оттока денежных средств. Он используется для управления вашими ежедневными расходами.</p>
+<p>В этом примере мы создадим отслеживание расходов с использованием Microsoft Excel, которое будет автоматизировано на основе того, что введено в отслеживание, оно также покажет, сколько денег осталось в каждой категории, и будет меняться на основе месяца, выбранного в выпадающем меню.</p>
+<h2>Этапы внедрения</h2>
+<p>Шаг 1: Сначала мы откроем приложение Microsoft Excel и определим следующие столбцы: Месяц, Дата, Описание, категория, Доход, дебеты, баланс. Вы можете определить свои собственные столбцы в соответствии с вашими требованиями.</p>
+<figure style="width: 593px" class="wp-caption alignnone"><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" fetchpriority="high" decoding="async" src="/image42/fig1.png" alt="" width="593" height="432"><meta itemprop="width" content="593">
+<meta itemprop="height" content="432"></span><figcaption class="wp-caption-text">Рис. 1 – Столбцы отслеживания расходов</figcaption></figure>
+<p>Теперь мы превратим эти столбцы в таблицы со всеми чередующимися строками. Для этого мы выделим все столбцы и перейдем к стилю форматирования как таблицы на вкладке Главная в Excel и выберем любой из понравившихся вам видов форматирования таблицы. Ниже приведен скриншот, соответствующий этому.<br>
+Главная &gt; Форматировать в виде таблицы</p>
+<figure style="width: 660px" class="wp-caption alignnone"><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" decoding="async" src="/image42/fig2-660x293.jpg" alt="" width="660" height="293"><meta itemprop="width" content="660">
+<meta itemprop="height" content="293"></span><figcaption class="wp-caption-text">Рис. 2 – Формат в виде таблицы</figcaption></figure>
+<p>Как только вы выберете свой дизайн табличного представления, появится запрос, в котором вам нужно установить флажок “В моей таблице есть заголовки”, который создаст столбцы таблицы в качестве заголовка заголовка таблицы. Нажмите на кнопку &#171;ОК&#187;.</p>
+<figure style="width: 296px" class="wp-caption alignnone"><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" decoding="async" src="/image42/fig3.png" alt="" width="296" height="208"><meta itemprop="width" content="296">
+<meta itemprop="height" content="208"></span><figcaption class="wp-caption-text">Рис. 3 – Флажок Заголовки таблицы</figcaption></figure>
+<p>После того, как вы нажмете кнопку OK, будут созданы таблицы с заголовками. И вы получите таблицу с заголовком ваших столбцов.</p>
+<figure style="width: 642px" class="wp-caption alignnone"><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image42/fig4.png" alt="" width="642" height="457"><meta itemprop="width" content="642">
+<meta itemprop="height" content="457"></span><figcaption class="wp-caption-text">Рис. 4 – Таблица расходов</figcaption></figure>
+<p>Шаг 2: На этом шаге мы добавим необходимые формулы и форматирование чисел в столбцы таблицы, чтобы автоматизировать большую часть работы для нас.</p>
+<p>Сначала мы добавим начальную дату и, используя ее, добавим формулы в нашу таблицу. Для этого сначала мы добавим случайную дату в столбец date и нажмем кнопку enter.</p>
+<figure style="width: 435px" class="wp-caption alignnone"><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image42/fig5.png" alt="" width="435" height="195"><meta itemprop="width" content="435">
+<meta itemprop="height" content="195"></span><figcaption class="wp-caption-text">Рис. 5 – Столбец даты</figcaption></figure>
+<p>После этого мы изменим формат даты. Вы можете использовать любой формат, который вам нравится, для этого мы выберем столбец даты (здесь это столбец B), щелкнем по нему правой кнопкой мыши и откроем формат ячеек, там мы перейдем в категорию даты и выберем формат даты.<br>
+Столбец B &gt; Щелкните правой кнопкой мыши&gt; Формат ячеек&gt; Дата&gt; Тип</p>
+<figure style="width: 569px" class="wp-caption alignnone"><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image42/fig6.png" alt="" width="569" height="390"><meta itemprop="width" content="569">
+<meta itemprop="height" content="390"></span><figcaption class="wp-caption-text">Рис. 6 – Параметр форматирования даты</figcaption></figure>
+<p>Теперь на вкладке Формат ячеек мы выберем категорию в качестве даты и выберем тип даты.</p>
+<figure style="width: 660px" class="wp-caption alignnone"><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image42/fig7-660x616.jpg" alt="" width="660" height="616"><meta itemprop="width" content="660">
+<meta itemprop="height" content="616"></span><figcaption class="wp-caption-text">Рис. 7 – Ячейки формата даты</figcaption></figure>
+<p>Далее мы настроим формулу в столбце Месяц, чтобы извлекать только номер месяца из столбца Дата. Для того, чтобы сделать это, мы напишем = МЕСЯЦ ([@Date]) внутри столбца месяц. Формула автоматически заполнит остальные строки месяца номером месяца из столбца &#171;Дата&#187;. Всякий раз, когда мы будем вводить новую дату в столбце &#171;Дата&#187;, она автоматически обновит номер месяца в соответствии с датой.<br>
+=МЕСЯЦ ([@Дата])</p>
+<figure style="width: 533px" class="wp-caption alignnone"><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image42/fig8.png" alt="" width="533" height="451"><meta itemprop="width" content="533">
+<meta itemprop="height" content="451"></span><figcaption class="wp-caption-text">Рис. 8 – Автоматическое заполнение месяца в соответствии с датой</figcaption></figure>
+<p>Шаг 3: Далее мы добавим выпадающее меню над столбцом категории, чтобы мы могли выбрать категорию расходов. Для этого мы выделим весь столбец категории, а затем, удерживая клавишу ctrl. нажмите и снимите флажок с заголовка столбца, затем на вкладке Данные мы выберем проверку данных, которая присутствует внутри инструментов обработки данных.</p>
+<figure style="width: 660px" class="wp-caption alignnone"><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image42/fig9-660x343.png" alt="" width="660" height="343"><meta itemprop="width" content="660">
+<meta itemprop="height" content="343"></span><figcaption class="wp-caption-text">Рис. 9 – Столбец категории</figcaption></figure>
+<p>Как только вы нажмете на опцию проверки данных, откроется вкладка проверки данных, там внутри критерии проверки, в разделе Разрешить вы должны выбрать Список, который используется для создания выпадающего списка, а меню списка следует вводить внутри раздела Источник через запятую, excel создаст список для нас.</p>
+<figure style="width: 578px" class="wp-caption alignnone"><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image42/fig10.png" alt="" width="578" height="401"><meta itemprop="width" content="578">
+<meta itemprop="height" content="401"></span><figcaption class="wp-caption-text">Рис. 10 – Запрос на проверку данных</figcaption></figure>
+<p>Вы можете добавить список меню в соответствии с вашими собственными расходами. Сюда мы добавим доход, ипотеку, коммунальные услуги, продукты, топливо покупки и тусовки. После добавления нажмите на кнопку OK, Excel создаст выпадающий список для всех выбранных ячеек, и будет создано выпадающее меню.</p>
+<figure style="width: 660px" class="wp-caption alignnone"><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image42/fig112-660x201.png" alt="" width="660" height="201"><meta itemprop="width" content="660">
+<meta itemprop="height" content="201"></span><figcaption class="wp-caption-text">Рис. 11 – Меню категорий</figcaption></figure>
+<p>После этого мы отформатируем столбцы Доходов, дебетов и Баланса в виде столбцов валюты. Для этого сначала мы выделим эти столбцы, затем на вкладке Главная перейдем в раздел номера и выберем валюту, любую валюту, которую вы хотите. В этом случае мы выберем валюту индийских рупий.</p>
+<figure style="width: 660px" class="wp-caption alignnone"><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image42/fig12-660x306.png" alt="" width="660" height="306"><meta itemprop="width" content="660">
+<meta itemprop="height" content="306"></span><figcaption class="wp-caption-text">Рис. 12 – Столбцы доходов, дебетов и баланса</figcaption></figure>
+<p>Шаг 4: На этом шаге мы сложим формулу, чтобы получить текущий баланс. Для этого нам нужно добавить начальный баланс в наше приложение для отслеживания расходов. Мы добавим 10000 рупий в качестве баланса и определим Описание для этого в качестве нашего начального баланса, а затем определим формулу для получения текущего баланса.</p>
+<figure style="width: 660px" class="wp-caption alignnone"><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image42/fig13-660x110.jpg" alt="" width="660" height="110"><meta itemprop="width" content="660">
+<meta itemprop="height" content="110"></span><figcaption class="wp-caption-text">Рис. 13 – Начальный баланс</figcaption></figure>
+<p>Теперь мы определим формулу в следующей ячейке под балансом (ячейка G3), чтобы автоматизировать текущий баланс. Формула, которая будет использоваться, =SUM(G2 + [@Доход]-[@Дебеты]).<br>
+=СУММА (G2 + [@Доход]-[@Дебеты])</p>
+<figure style="width: 660px" class="wp-caption alignnone"><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image42/fig14-660x128.png" alt="" width="660" height="128"><meta itemprop="width" content="660">
+<meta itemprop="height" content="128"></span><figcaption class="wp-caption-text">Рис. 14 – Формулы для текущего баланса</figcaption></figure>
+<p>Нам нужно добавить формулу во весь столбец, для этого мы сначала выделим столбец G3 и нажмем клавишу Ctrl + C, чтобы скопировать формулу, затем мы выделим весь столбец G и отменяем выбор заголовка и ячеек начального баланса из столбца G (здесь это ячейки G1 и G2), удерживая клавишу Ctrl, а затем вставим формулу с помощью клавиши Ctrl + V, excel вставит ее во весь столбец.</p>
+<p>Как только мы вставим его, Excel автоматически заполнит начальный баланс в размере 10000 рупий во всей колонке G так же, как и в столбце месяц, но по мере обновления ваших расходов и доходов он рассчитает текущий баланс.</p>
+<figure style="width: 660px" class="wp-caption alignnone"><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image42/fig15-660x113.jpg" alt="" width="660" height="113"><meta itemprop="width" content="660">
+<meta itemprop="height" content="113"></span><figcaption class="wp-caption-text">Рис. 15 – Автоматическое обновление баланса</figcaption></figure>
+<p>Шаг 5: На этом шаге мы создадим индикатор выполнения, который будет показывать, сколько мы потратили в каждой категории и какой доход нам нужен в каждой категории. Для этого нам нужно добавить все категории в отдельный столбец, который мы хотим отслеживать.</p>
+<figure style="width: 609px" class="wp-caption alignnone"><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image42/fig16.png" alt="" width="609" height="199"><meta itemprop="width" content="609">
+<meta itemprop="height" content="199"></span><figcaption class="wp-caption-text">Рис. 16 – Столбцы отслеживания</figcaption></figure>
+<p>Далее нам нужно добавить столбец &#171;Итого&#187; в ячейку J1 и добавить номер месяца, на котором мы хотим сосредоточиться, в столбец I1 (здесь это январь, поэтому мы добавим номер месяца a1).</p>
+<figure style="width: 553px" class="wp-caption alignnone"><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image42/fig17.png" alt="" width="553" height="206"><meta itemprop="width" content="553">
+<meta itemprop="height" content="206"></span><figcaption class="wp-caption-text">Рис. 17 – Столбец итогов и номер месяца в I1</figcaption></figure>
+<p>После этого нам нужно добавить формулу SUMIFS(sum_range, criteria_range1, criteria1, [criteria_range2, criteria2], &#8230;) для всех столбцов, которые мы хотим отслеживать. Нам нужно написать SUMIFS() отдельно для столбца доходов и расходов.</p>
+<p>Сначала мы пишем SUMIFS() для столбца Доходов, чтобы отслеживать его отдельно от расходов. Мы будем использовать следующую формулу. (Примечание: Пожалуйста, имейте в виду, что вы будете использовать формулу в соответствии со столбцами, которые вам нужно определить)<br>
+=SUMIFS(таблица 1[[#Все],[Доход]], таблица 1[[#Все], [Месяц]], I1, таблица 1 [[#Все], [Категория]], I2)</p>
+<figure style="width: 1080px" class="wp-caption alignnone"><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image42/fig18.png" alt="" width="1080" height="100"><meta itemprop="width" content="1080">
+<meta itemprop="height" content="100"></span><figcaption class="wp-caption-text">Рис. 18 – SUMIFS () для дохода</figcaption></figure>
+<p>Теперь мы добавим формулу SUMIFS () для наших категорий расходов. Для отслеживания расходов мы будем использовать следующую формулу.<br>
+=SUMIFS(таблица 1[[#Все],[Дебеты]], таблица 1[[#Все], [Месяц]], $ I $ 1, таблица 1 [[#Все], [Категория]], I3)</p>
+<figure style="width: 660px" class="wp-caption alignnone"><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image42/fig19-660x70.png" alt="" width="660" height="70"><meta itemprop="width" content="660">
+<meta itemprop="height" content="70"></span><figcaption class="wp-caption-text">Рис. 19 – SUMIFS() для категорий расходов</figcaption></figure>
+<p>После добавления этой формулы мы просто перетащим формулу во все столбцы наших категорий, которые мы хотим отслеживать. т. Е. Ипотека, коммунальные услуги, продукты, топливо и развлечения и тусовки. Это обновит все расходы в соответствии с месяцами.</p>
+<figure style="width: 660px" class="wp-caption alignnone"><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image42/fig20-660x157.jpg" alt="" width="660" height="157"><meta itemprop="width" content="660">
+<meta itemprop="height" content="157"></span><figcaption class="wp-caption-text">Рис. 20 – Отслеживание расходов</figcaption></figure>
+<p>Мы видим, что ипотека, топливо и продукты указаны как 0, поскольку мы не добавили никаких расходов в эти категории. Теперь, чтобы улучшить его, мы изменим тип этих столбцов отслеживания на валюты (здесь, в индийских рупиях). Для этого мы выделим все эти столбцы, а затем на вкладке &#171;Главная&#187; перейдем в раздел &#171;Количество&#187; и изменим тип на &#171;валюты&#187;.</p>
+<figure style="width: 660px" class="wp-caption alignnone"><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image42/fig21-660x285.png" alt="" width="660" height="285"><meta itemprop="width" content="660">
+<meta itemprop="height" content="285"></span><figcaption class="wp-caption-text">Рис. 21 – Изменение типа отслеживаемых столбцов</figcaption></figure>
+<p>Шаг 6: На этом шаге мы разработаем индикатор выполнения, который покажет нам, какой доход мы будем иметь и сколько у нас осталось потратить в каждой категории. И снова мы будем разрабатывать доходы отдельно, а категории расходов отдельно.</p>
+<p>Индикатор выполнения для доходов</p>
+<p>Сначала мы выберем столбец со значением дохода. На вкладке Главная мы выберем Условное форматирование в разделе Стиль. И, выбрав Столбцы данных, мы выберем зеленые столбцы для дохода.</p>
+<figure style="width: 660px" class="wp-caption alignnone"><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image42/fig22-660x276.png" alt="" width="660" height="276"><meta itemprop="width" content="660">
+<meta itemprop="height" content="276"></span><figcaption class="wp-caption-text">Рис. 22 – Индикаторы выполнения</figcaption></figure>
+<p>Мы растянем его немного дольше для получения хороших визуальных эффектов. Теперь нам нужно определить для него правила. Для этого мы снова перейдем к условному форматированию, а затем выберем Управление правилами.</p>
+<figure style="width: 660px" class="wp-caption alignnone"><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image42/fig23-660x241.png" alt="" width="660" height="241"><meta itemprop="width" content="660">
+<meta itemprop="height" content="241"></span><figcaption class="wp-caption-text">Рис. 23 – Вкладка &#171;Правило менеджера&#187;</figcaption></figure>
+<p>Нам нужно обновить наше существующее правило, которое по умолчанию создается Excel. Мы просто дважды щелкаем, чтобы открыть его, и обновляем минимальное и максимальное значение, а также устанавливаем его тип и номер. Это сделает отслеживаемым наш индикатор выполнения.</p>
+<figure style="width: 660px" class="wp-caption alignnone"><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image42/fig24-660x317.jpg" alt="" width="660" height="317"><meta itemprop="width" content="660">
+<meta itemprop="height" content="317"></span><figcaption class="wp-caption-text">Рис. 24 – Правила по умолчанию – ПАНЕЛЬ ДАННЫХ</figcaption></figure>
+<p>Мы установим минимальное значение равным 0, а максимальное &#8212; 45000, после обновления этих значений мы нажмем OK и применим наши правила.</p>
+<figure style="width: 427px" class="wp-caption alignnone"><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image42/fig25.png" alt="" width="427" height="611"><meta itemprop="width" content="427">
+<meta itemprop="height" content="611"></span><figcaption class="wp-caption-text">Рис. 25 – Правила управления</figcaption></figure>
+<p>После этого мы закончим с доходами, и это будет выглядеть примерно так.</p>
+<figure style="width: 465px" class="wp-caption alignnone"><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image41/1_fig25.png" alt="" width="465" height="206"><meta itemprop="width" content="465">
+<meta itemprop="height" content="206"></span><figcaption class="wp-caption-text">Рис. 26 – Отслеживание доходов</figcaption></figure>
+<p>То же самое мы должны сделать для всех наших расходов отдельно. Вы можете настроить минимальное и максимальное значения в соответствии с вашими требованиями.</p>
+<p>Здесь мы будем отслеживать расходы красным цветом с минимальным и максимальным значением для следующих ипотечных кредитов (0,8000), коммунальных услуг (0,5000), продуктов питания (0,5000), топлива (0,2000), развлечений и тусовок (0,3000). Как только мы повторим те же шаги для нашего all-expense, мы получим что-то вроде этого.</p>
+<figure style="width: 458px" class="wp-caption alignnone"><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image42/fig27.png" alt="" width="458" height="167"><meta itemprop="width" content="458">
+<meta itemprop="height" content="167"></span><figcaption class="wp-caption-text">Рис. 27 – Отслеживание расходов</figcaption></figure>
+<p>Шаг 7: На этом шаге мы попытаемся улучшить наш дизайн. Мы добавим границы в нашу таблицу отслеживания. Для этого мы выделим всю таблицу расходов, перетащим ее вниз и создадим столбец (здесь это столбцы H и K) эквивалентной длины. Вы можете найти его ниже на рисунке.</p>
+<figure style="width: 507px" class="wp-caption alignnone"><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image42/fig28.png" alt="" width="507" height="238"><meta itemprop="width" content="507">
+<meta itemprop="height" content="238"></span><figcaption class="wp-caption-text">Рис. 28 – Граница таблицы отслеживания</figcaption></figure>
+<p>Двигаясь дальше, мы выделим всю таблицу и сделаем все границы. Для этого мы переходим на вкладку &#171;Главная&#187;, а затем в разделе &#171;Шрифт&#187; выбираем опцию &#171;Границы&#187; и выбираем &#171;Все границы&#187;, это создаст границы по всей нашей таблице.</p>
+<figure style="width: 660px" class="wp-caption alignnone"><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image42/fig29-660x252.png" alt="" width="660" height="252"><meta itemprop="width" content="660">
+<meta itemprop="height" content="252"></span><figcaption class="wp-caption-text">Рис. 29 – Отслеживание всех границ таблицы</figcaption></figure>
+<p>Как только мы сделаем это, мы выделим ячейки вокруг нашей границы, которые мы оставили на предыдущем шаге, для этого нам нужно выделить эти ячейки вручную, нажав и удерживая клавишу ctrl и выделив ячейки.</p>
+<figure style="width: 660px" class="wp-caption alignnone"><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image42/fig30-660x171.png" alt="" width="660" height="171"><meta itemprop="width" content="660">
+<meta itemprop="height" content="171"></span><figcaption class="wp-caption-text">Рис. 30 – Выделение ячеек</figcaption></figure>
+<p>Как только мы выделим все ячейки вокруг нашей таблицы, мы зальем их каким-нибудь сплошным цветом. Для этого мы переходим на вкладку &#171;Главная&#187;, а затем в разделе &#171;Шрифт&#187; заливаем цветом.</p>
+<figure style="width: 660px" class="wp-caption alignnone"><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image42/fig31-660x242.png" alt="" width="660" height="242"><meta itemprop="width" content="660">
+<meta itemprop="height" content="242"></span><figcaption class="wp-caption-text">Рис. 31 – Заполнение ячеек</figcaption></figure>
+<h3>Итог</h3>
+<p>Здесь мы протестируем наше приложение Expense Manager. Мы заполняем некоторые расходы за январь месяц, а затем изменим номер месяца в таблице отслеживания хода выполнения и заполним за февраль месяц.</p>
+<!-- toc empty -->	</div>
+<!-- .entry-content -->
+
+</article>
+
+
+
+
+
+
+
+
+
+<div class="social-buttons">
+<span class="social-button social-button--vkontakte main" data-social="vkontakte"><span>Поделиться в ВКонтакте</span></span><span class="social-button social-button--telegram " data-social="telegram"></span><span class="social-button social-button--odnoklassniki " data-social="odnoklassniki"></span><span class="social-button social-button--whatsapp " data-social="whatsapp"></span><span class="social-button social-button--viber " data-social="viber"></span>
+</div>
+
+<!--noindex-->
+<div class="author-box">
+    <div class="author-info">
+        <div class="author-box__ava">
+                    </div>
+
+        <div class="author-box__body">
+            <div class="author-box__author">
+                Автор А. Днепров            </div>
+            <div class="author-box__description">
+                <p>Обучаю основам работы с офисными программами.</p>
+            </div>
+
+            
+        </div>
+    </div>
+</div>
+<!--/noindex-->
+    <meta itemprop="author" content="А. Днепров">
+<meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/kak-sozdat-tablitsu-rashodov-i-dohodov-v-excel" content="Как создать таблицу расходов и доходов в Excel">
+    <meta itemprop="dateModified" content="2024-10-18">
+<div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+<div class="related-posts">
+<div class="related-posts__header">Вам также может понравиться</div>
+<div class="post-cards post-cards--vertical">
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/kak-sdelat-massovuyu-zamenu-formul"><img width="311" height="230" src="/image04/2408fadbc9163d5aa4994580cfc152cd.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/kak-sdelat-massovuyu-zamenu-formul">Как сделать массовую замену формул</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/kak-udalit-lishnie-i-pustye-stranitsy-v-excel">Как удалить лишние и пустые страницы в Excel</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/preobrazovanie-teksta-v-tablitsu"><img width="345" height="122" src="/image14/7a0043c9bf012cc129b22376cfebb2a9.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/preobrazovanie-teksta-v-tablitsu">Преобразование текста в таблицу</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/kak-delat-skrinshoty-s-vysokim-razresheniem-v-windows">Как делать скриншоты с высоким разрешением в Windows 11/10</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/osobennosti-raboty-s-mnogostranichny"><img width="213" height="230" src="/image13/6f8f9694c11ee322ff9d3675b0b8ba07.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/osobennosti-raboty-s-mnogostranichny">13.1 Особенности работы с многостраничными документами</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/kak-sdelat-izmeneniya-vnutri-yacheyki-p"><img width="345" height="93" src="/image27/f6550fd3bdfdfdbe500536441d5d252e.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/kak-sdelat-izmeneniya-vnutri-yacheyki-p">Как сделать изменения внутри ячейки. Принудительный перенос</a></div>
+    </div>
+</div>
+</div>
+            </main><!-- #main -->
+        </div>
+<!-- #primary -->
+
+        
+    
+
+    </div>
+<!--.site-content-inner-->
+
+    
+</div>
+<!--.site-content-->
+
+    
+    
+
+<div class="site-footer-container">
+
+    
+
+    <footer id="colophon" class="site-footer full" itemscope itemtype="http://schema.org/WPFooter">
+        <div class="site-footer-inner fixed">
+
+            
+            
+<div class="footer-bottom">
+    <div class="footer-info">
+        <div class="footer-copyright">© 2024 Самоучитель справочник по офисным программам. <a href="/o-nas" rel="nofollow">О нас | Контакты</a> | <a href="/map" rel="nofollow">Карта сайта</a>
+</div>
+        <div class="footer-under-copyright"></div>
+	        </div>
+
+    </div>
+        </div>
+    </footer><!--.site-footer-->
+</div>
+
+
+            <button type="button" class="scrolltop js-scrolltop" data-mob="on"></button>
+    
+                    <div class="top-line js-top-line">
+            <div class="top-line-inner fixed">
+
+                <div class="top-line__title">Как создать таблицу расходов и доходов в Excel</div>
+<div class="top-line__like"><span class="btn-fb-like btn-top-like social-button--vkontakte" data-social="vkontakte"><span>Поделиться в ВКонтакте</span></span></div>
+<div class="top-line__post">
+<div class="top-line__post_thumbnail"><a href="/kak-vypolnit-filtratsiyu-s-pomoschyu-formuly-v-excel"><img width="100" height="100" src="/image29/how-to-filter-by-using-a-formula-in-excel-100x100.png" class="attachment-yelly_square size-yelly_square wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="top-line__post_title"><a href="/kak-vypolnit-filtratsiyu-s-pomoschyu-formuly-v-excel">Как выполнить фильтрацию с помощью формулы в Excel</a></div>
+</div>            </div>
+        </div>
+    
+</div>
+<!-- #page -->
+
+<script>var pseudo_links = document.querySelectorAll(".pseudo-clearfy-link");for (var i=0;i<pseudo_links.length;i++ ) { pseudo_links[i].addEventListener("click", function(e){   window.open( e.target.getAttribute("data-uri") ); }); }</script><script>document.addEventListener("copy", (event) => {var pagelink = "\nИсточник: /kak-sozdat-tablitsu-rashodov-i-dohodov-v-excel";event.clipboardData.setData("text", document.getSelection() + pagelink);event.preventDefault();});</script><script type="text/javascript" id="yelly-scripts-js-extra">
+/* <![CDATA[ */
+var settings_array = {"rating_text_average":"среднее","rating_text_from":"из","lightbox_display":"1"};
+var wps_ajax = {"url":"\/wp-admin\/admin-ajax.php","nonce":"e4ca9d4bd8"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="/js/scripts.min.js" id="yelly-scripts-js"></script>
+
+
+
+<div class="image-hover-social-buttons" style="display: none;">
+<div class="social-button social-button--vkontakte js-share-link" data-uri="https://vk.com/share.php?url=%2Fkak-sozdat-tablitsu-rashodov-i-dohodov-v-excel"></div>
+<div class="social-button social-button--telegram js-share-link" data-uri="https://t.me/share/url?url=%2Fkak-sozdat-tablitsu-rashodov-i-dohodov-v-excel&text=%D0%9A%D0%B0%D0%BA+%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C+%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D1%83+%D1%80%D0%B0%D1%81%D1%85%D0%BE%D0%B4%D0%BE%D0%B2+%D0%B8+%D0%B4%D0%BE%D1%85%D0%BE%D0%B4%D0%BE%D0%B2+%D0%B2+Excel"></div>
+<div class="social-button social-button--odnoklassniki js-share-link" data-uri="https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&service=odnoklassniki&st.shareUrl=%2Fkak-sozdat-tablitsu-rashodov-i-dohodov-v-excel"></div>
+<div class="social-button social-button--whatsapp js-share-link" data-uri="whatsapp://send?url=%2Fkak-sozdat-tablitsu-rashodov-i-dohodov-v-exceltext=%D0%9A%D0%B0%D0%BA+%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C+%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D1%83+%D1%80%D0%B0%D1%81%D1%85%D0%BE%D0%B4%D0%BE%D0%B2+%D0%B8+%D0%B4%D0%BE%D1%85%D0%BE%D0%B4%D0%BE%D0%B2+%D0%B2+Excel"></div>
+<div class="social-button social-button--viber js-share-link" data-uri="viber://forward?url=%2Fkak-sozdat-tablitsu-rashodov-i-dohodov-v-exceltext=%D0%9A%D0%B0%D0%BA+%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C+%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D1%83+%D1%80%D0%B0%D1%81%D1%85%D0%BE%D0%B4%D0%BE%D0%B2+%D0%B8+%D0%B4%D0%BE%D1%85%D0%BE%D0%B4%D0%BE%D0%B2+%D0%B2+Excel"></div>
+</div>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(93345646, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/93345646" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>

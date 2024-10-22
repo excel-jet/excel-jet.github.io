@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<title>5 способов как разделить текст в Excel: на несколько ячеек, по столбцам и строкам</title>
+	<meta name="description" content="В этом руководстве мы собираемся показать вам, как разделить текст в Excel с помощью разделителя. Скачать готовый шаблон У нас есть образец данных,">
+	<link rel="canonical" href="/kak-razdelit-tekst-v-excel-5-sposobami">
+	<meta property="og:locale" content="ru_RU">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="5 способов как разделить текст в Excel: на несколько ячеек, по столбцам и строкам">
+	<meta property="og:description" content="В этом руководстве мы собираемся показать вам, как разделить текст в Excel с помощью разделителя. Скачать готовый шаблон У нас есть образец данных,">
+	<meta property="og:url" content="/kak-razdelit-tekst-v-excel-5-sposobami">
+	<meta property="og:site_name" content="Excel-jet">
+	<meta property="article:published_time" content="2024-08-15T09:31:20+00:00">
+	<meta property="og:image" content="/image30/how-to-split-text-by-delimiter-in-excel-01.png">
+	<meta name="author" content="А. Днепров">
+
+
+<style id="wp-block-library-theme-inline-css" type="text/css">.wp-block-audio :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio :where(figcaption){color:#ffffffa6}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed :where(figcaption){color:#ffffffa6}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:#ffffffa6}:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table :where(figcaption){color:#ffffffa6}.wp-block-video :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video :where(figcaption){color:#ffffffa6}.wp-block-video{margin:0 0 1em}:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}</style>
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 19.5px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36.5px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--normal: 22px;--wp--preset--font-size--huge: 49.5px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="google-fonts-css" href="https://fonts.googleapis.com/css?family=Roboto%3A400%2C400i%2C700&#038;subset=cyrillic&#038;display=swap" media="all">
+<link rel="stylesheet" id="yelly-style-css" href="/css/style.min.css" media="all">
+
+<style>.pseudo-clearfy-link { color: #008acf; cursor: pointer;}.pseudo-clearfy-link:hover { text-decoration: none;}</style>
+<link rel="preload" href="/fonts/icomoon.ttf" as="font" crossorigin>
+    <style>.scrolltop{width:50px}.scrolltop:before{content:"\21d1"}.entry-content a, .entry-content a:visited, .spanlink, .comment-reply-link, .pseudo-link, .widget_calendar a, .widget_recent_comments a, .child-categories ul li a{color:#0000ff}.child-categories ul li a{border-color:#0000ff}a:hover, a:focus, a:active, .spanlink:hover, .top-menu ul li>span:hover, .main-navigation ul li a:hover, .main-navigation ul li span:hover, .footer-navigation ul li a:hover, .footer-navigation ul li span:hover, .comment-reply-link:hover, .pseudo-link:hover, .child-categories ul li a:hover{color:#1e73be}.top-menu>ul>li>a:before, .top-menu>ul>li>span:before{background:#1e73be}.child-categories ul li a:hover, .post-box--no-thumb a:hover{border-color:#1e73be}.post-box--card:hover{box-shadow: inset 0 0 0 1px #1e73be}.post-box--card:hover{-webkit-box-shadow: inset 0 0 0 1px #1e73be}@media (min-width: 768px){body{background-attachment: scroll}}body{font-size:17px;}@media (max-width: 991px){.widget-area{display: block; margin: 0 auto}}</style>
+    <!-- Yandex.RTB -->
+<script>window.yaContextCb=window.yaContextCb||[]</script>
+<script src="https://yandex.ru/ads/system/context.js" async></script>	
+</head>
+<body class="post-template-default single single-post postid-4131 single-format-standard wp-embed-responsive sidebar-right">
+<div id="page" class="site">
+    <a class="skip-link screen-reader-text" href="#content">Перейти к контенту</a>
+
+    
+    
+    <div class="search-screen-overlay js-search-screen-overlay"></div>
+    <div class="search-screen js-search-screen">
+        
+<form role="search" method="get" class="search-form" action="/">
+    <label>
+        <span class="screen-reader-text">Search for:</span>
+        <input type="search" class="search-field" placeholder="Поиск..." value="" name="s">
+    </label>
+    <button type="submit" class="search-submit"></button>
+</form>    </div>
+
+    
+
+<header id="masthead" class="site-header full" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="site-header-inner fixed">
+
+        <div class="humburger js-humburger">
+<span></span><span></span><span></span>
+</div>
+
+        
+<div class="site-branding">
+
+    <div class="site-branding__body"><div class="site-title"><a href="/">Excel-jet</a></div></div>
+</div>
+<!-- .site-branding -->
+
+    
+    <nav id="site-navigation" class="main-navigation full">
+        <div class="main-navigation-inner fixed">
+            <div class="menu-menyu-container"><ul id="header_menu" class="menu">
+<li id="menu-item-6695" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-6695">
+<a href="/excel">Excel</a>
+<ul class="sub-menu">
+	<li id="menu-item-6709" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6709"><a href="/excel/functions">Функции</a></li>
+</ul>
+</li>
+<li id="menu-item-6697" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6697"><a href="/microsoft-word">Word</a></li>
+<li id="menu-item-6696" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6696"><a href="/powerpoint">PowerPoint</a></li>
+<li id="menu-item-6698" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6698"><a href="/outlook">Outlook</a></li>
+</ul></div>        </div>
+    </nav><!-- #site-navigation -->
+
+    
+<div class="header-search"><span class="search-icon js-search-icon"></span></div>    </div>
+</header><!-- #masthead -->
+
+
+
+    
+    
+    <div id="content" class="site-content fixed">
+
+        
+        <div class="site-content-inner">
+    
+        
+        <div id="primary" class="content-area" itemscope itemtype="http://schema.org/Article">
+            <main id="main" class="site-main">
+
+                
+<article id="post-4131" class="article-post post-4131 post type-post status-publish format-standard  category-excel">
+
+    
+        
+        <header class="entry-header"><h1 class="entry-title" itemprop="headline">Как разделить текст в Excel 5 способами</h1></header>
+        
+        
+        
+    
+    
+    <div class="entry-meta">
+<span class="entry-time"><span class="entry-label">Время чтения</span> 6 мин.</span><span class="entry-date"><span class="entry-label">Опубликовано</span> <time itemprop="datePublished" datetime="2024-08-15">15.08.2024</time></span>
+</div>
+	<div class="entry-content" itemprop="articleBody">
+		<p>В этом руководстве мы собираемся показать вам, как разделить текст в Excel с помощью разделителя.</p>
+<p><a href="/image30/how-to-split-text-by-delimiter-in-excel.zip" target="_blank" rel="noopener">Скачать готовый шаблон</a></p>
+<p>У нас есть образец данных, который содержит объединенные значения, разделенные символами “|”. Важно, чтобы данные включали определенный символ-разделитель между каждым фрагментом данных, чтобы упростить разделение текста.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" fetchpriority="high" decoding="async" class="alignnone size-full wp-image-234269" src="/image30/how-to-split-text-by-delimiter-in-excel-01.png" alt="" width="580" height="201"><meta itemprop="width" content="580">
+<meta itemprop="height" content="201"></span></p>
+<div class="table-of-contents open">
+<div class="table-of-contents__header"><span class="table-of-contents__hide js-table-of-contents-hide">Содержание</span></div>
+<ol class="table-of-contents__list js-table-of-contents-list">
+<li class="level-1"><a href="#funktsiya-preobrazovaniya-teksta-v-stolbtsy">Функция преобразования текста в столбцы для разделения текста</a></li>
+<li class="level-1"><a href="#ispolzovanie-formul-dlya-razdeleniya-teksta">Использование формул для разделения текста</a></li>
+<li class="level-2"><a href="#sintaksis">Синтаксис</a></li>
+<li class="level-2"><a href="#kak-eto-rabotaet">Как это работает</a></li>
+<li class="level-1"><a href="#flash-fill">Flash Fill</a></li>
+<li class="level-1"><a href="#moschnyy-zapros">Мощный запрос</a></li>
+<li class="level-1"><a href="#vba">VBA</a></li>
+<li class="level-2"><a href="#tekst-v-stolbtsy-s-pomoschyu-vba">Текст в столбцы с помощью VBA</a></li>
+<li class="level-3"><a href="#kod">Код:</a></li>
+<li class="level-2"><a href="#funktsiya-razdeleniya">Функция разделения</a></li>
+<li class="level-3"><a href="#kod-2">Код:</a></li>
+</ol>
+</div>
+<h2 id="funktsiya-preobrazovaniya-teksta-v-stolbtsy">Функция преобразования текста в столбцы для разделения текста</h2>
+<p>При разделении текста в Excel разбиение текста на столбцы является одним из наиболее распространенных методов. Функцию разбиения текста на столбцы можно использовать во всех версиях Excel. Эта функция может разделять текст по определенному количеству символов или разделителю.</p>
+<ol>
+<li>Начните с выбора ваших данных. Вы можете использовать более одной ячейки в столбце.</li>
+<li>Нажмите Данные&gt; Текст в столбцы на ленте.</li>
+<li>На первом шаге мастера у вас есть 2 варианта на выбор &#8212; это методы нарезки. Поскольку наши данные в этом примере разделены разделителями, наш выбор будет разделен разделителями.</li>
+<li>Нажмите Далее , чтобы продолжить</li>
+<li>Выберите разделители, подходящие для ваших данных, или выберите длину символа и нажмите Далее.</li>
+<li>Выберите соответствующие типы данных для столбцов и целевой ячейки. Пожалуйста, обратите внимание, что если целевая ячейка совпадает с ячейкой, в которой находятся ваши данные, исходные данные будут перезаписаны.</li>
+<li>Нажмите Готово , чтобы увидеть результат.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" decoding="async" class="alignnone wp-image-234270 size-full" src="/image30/how-to-split-text-by-delimiter-in-excel-02.png" alt="" width="1315" height="894"><meta itemprop="width" content="1315">
+<meta itemprop="height" content="894"></span></p>
+<h2 id="ispolzovanie-formul-dlya-razdeleniya-teksta">Использование формул для разделения текста</h2>
+<p>В Excel есть множество текстовых формул, которые можно использовать для определения разделителей и анализа данных. При использовании формул для этого Excel автоматически обновляет проанализированные значения при обновлении источника.</p>
+<p>Формула, используемая в этом примере, использует функцию динамического массива Microsoft 365, которая позволяет вам заполнить несколько ячеек без использования формул массива. Если вы видите формулу ПОСЛЕДОВАТЕЛЬНОСТИ, вы можете использовать этот метод.</p>
+<h3 id="sintaksis">Синтаксис</h3>
+<p>= ОБРЕЗАТЬ (СЕРЕДИНА(ЗАМЕНИТЬ( текст, разделитель, REPT( “ “, LEN( текст))),(ПОСЛЕДОВАТЕЛЬНОСТЬ (1, количество столбцов) &#8212; 1) * LEN (текст) + 1,LEN(текст)))</p>
+<h3 id="kak-eto-rabotaet">Как это работает</h3>
+<p>Формула сначала заменяет каждый символ-разделитель пробелами. (см. SUBSTITUTE) Количество пробелов будет равно количеству символов в исходной строке, что является достаточным количеством пробелов для разделения каждого блока строки (см. REPT и LEN).</p>
+<p>Функция SEQUENCE генерирует массив чисел, начинающихся с 1, вплоть до максимального количества столбцов. Умножение этих последовательных чисел на длину исходной строки возвращает номера символов, указывающие начало каждого блока.</p>
+<p>Этот подход использует функцию MID для разбора каждого блока строк с заданным начальным номером символа и количеством возвращаемых символов. Поскольку разделители заменены пробелами, каждый анализируемый блок включает эти пробелы вокруг фактической строки. Затем функция TRIM удаляет эти пробелы.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" decoding="async" class="alignnone wp-image-234271 size-full" src="/image30/how-to-split-text-by-delimiter-in-excel-03.png" alt="" width="1316" height="419"><meta itemprop="width" content="1316">
+<meta itemprop="height" content="419"></span></p>
+<h2 id="flash-fill">Flash Fill</h2>
+<p>Flash Fill &#8212; это инструмент Excel, который может определять шаблон при вводе данных. Распространенным примером является разделение или слияние имени и фамилии. Допустим, столбец A содержит комбинации имени и фамилии. Если вы введете соответствующее имя в той же строке для столбца B, Excel покажет вам предварительный просмотр для остальной части столбца.</p>
+<p>Пожалуйста, обратите внимание, что флэш-заливка доступна только для Excel 2013 и более новых версий.</p>
+<p>Вы можете увидеть то же поведение со строками, использующими разделители для разделения данных. Просто выберите ячейку в соседнем столбце и начните вводить текст. Иногда Excel отображает предварительный просмотр. Если нет, нажмите Ctrl + E, как показано ниже, чтобы разделить текст.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" class="alignnone size-full wp-image-234267" src="/image30/how-to-split-text-by-delimiter-in-excel-flash-fill.gif" alt="" width="744" height="336"><meta itemprop="width" content="744">
+<meta itemprop="height" content="336"></span></p>
+<h2 id="moschnyy-zapros">Мощный запрос</h2>
+<p>Power Query &#8212; это мощная функция не только для разделения текста, но и для управления данными в целом. Power Query поставляется с собственным инструментом разделения текста, который позволяет вам разделять текст несколькими способами, например, по разделителям, количеству символов или регистру букв.</p>
+<p>Если вы используете Excel 2016 или новее, включая Microsoft 365, вы можете найти параметры Power Query в разделе &#171;Получение и преобразование&#187; вкладки &#171;Данные &#171;. Пользователям Excel 2010 и 2013 следует загрузить и установить Power Query в качестве надстройки.</p>
+<ol>
+<li>Выделите ячейки, содержащие текст.</li>
+<li>Выберите Данные &gt; из листа. Если данных нет в таблице Excel, Excel сначала преобразует их в таблицу Excel.</li>
+<li>Как только откроется окно Power Query, найдите разделенный столбец на вкладке Преобразование и щелкните, чтобы просмотреть параметры.</li>
+<li>Выберите подход, который соответствует вашему расположению данных. В данных в нашем примере используется разделитель, поскольку данные разделяются символом “|”.</li>
+<li>Power Query покажет символ-разделитель. Если вы не видите ожидаемый разделитель, выберите из списка или введите его самостоятельно.</li>
+<li>Нажмите OK , чтобы разделить текст.</li>
+<li>Если ваши данные содержат заголовки в первой строке, как в нашем примере, нажмите Преобразовать &gt; Использовать первую строку в качестве заголовков, чтобы сохранить их в качестве заголовков.</li>
+<li>Если вы удовлетворены результатом, нажмите кнопку Главная&gt; Закрыть и загрузить, чтобы переместить разделенные данные в вашу книгу.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" class="alignnone size-full wp-image-234272" src="/image30/how-to-split-text-by-delimiter-in-excel-04.png" alt="" width="1866" height="523"><meta itemprop="width" content="1866">
+<meta itemprop="height" content="523"></span></p>
+<h2 id="vba">VBA</h2>
+<p>VBA &#8212; это последний вариант разделения текста, который мы хотим показать в этой статье. Вы можете использовать VBA двумя способами разделения текста:</p>
+<ol>
+<li>Вызвав функцию преобразования текста в столбцы с помощью VBA,</li>
+<li>Использование функции Split в VBA для создания массива вложенных строк и использование цикла для распределения вложенных строк по соседним ячейкам в одной строке.</li>
+</ol>
+<h3 id="tekst-v-stolbtsy-s-pomoschyu-vba">Текст в столбцы с помощью VBA</h3>
+<p>Следующий код позволяет разделить данные из выбранных ячеек на соседние столбцы. Обратите внимание, что каждый поддерживаемый разделитель указан в качестве аргумента, который вы можете включить или отключить, присвоив ему значение True или False. Вкратце, True означает, что вы хотите установить этот аргумент в качестве разделителя, а False означает игнорировать этот символ.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" class="alignnone size-full wp-image-234273" src="/image30/how-to-split-text-by-delimiter-in-excel-05.png" alt="" width="1313" height="632"><meta itemprop="width" content="1313">
+<meta itemprop="height" content="632"></span></p>
+<p>Простой способ сгенерировать код VBA для разделения текста &#8212; записать макрос. Запустите раздел записи с помощью кнопки &#171;Записать макрос&#187; на вкладке &#171;Разработчик &#187; и используйте функцию &#171;Разбиение текста на столбцы&#187;&#8230;&#8230;&#8230;&#8230;. Как только запись будет остановлена, Excel сохранит код того, что вы сделали во время записи.</p>
+<h4 id="kod">Код:</h4>
+<p>Вложите VBATextToColumns_Multiple()<br>
+Затемните MyRange как диапазон<br>
+Установите MyRange = Selection &#8216;Для работы со статическим диапазоном, замените выделение с помощью объекта Range, например, Range(“B6:B12”)</p>
+<p>MyRange.TextToColumns _<br>
+Назначение:=MyRange(1, 1).Смещение(, 1), _<br>
+Тип данных:=xlDelimited, _<br>
+TextQualifier:=xlDoubleQuote, _<br>
+Последовательный предел:=False, _<br>
+Табуляция:=True, _<br>
+Точка с запятой:=False, _<br>
+Запятая:=False, _<br>
+Пробел:=False, _<br>
+Другое:=True, _<br>
+OtherChar:=&#187;|&#187;<br>
+Конец Субмарина</p>
+<h3 id="funktsiya-razdeleniya">Функция разделения</h3>
+<p>Функция разделения может быть полезна, если вы хотите сохранить разделенные блоки в массиве. Вы можете использовать этот метод только для разделения из-за ограничения с одним разделителем. Следующий код перебирает каждую ячейку в выбранном столбце, разделяет и сохраняет текст с помощью разделителя “|” и использует другой цикл для заполнения значений массива в ячейках. Конечный столбец целиком.Команда автозаполнения регулирует ширину столбца.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" class="alignnone size-full wp-image-234274" src="/image30/how-to-split-text-by-delimiter-in-excel-06.png" alt="" width="1313" height="599"><meta itemprop="width" content="1313">
+<meta itemprop="height" content="599"></span></p>
+<h4 id="kod-2">Код:</h4>
+<p>Sub SplitText()<br>
+Затемнить stringArray() как строку, ячейку как диапазон, i как целое число<br>
+для каждой ячейки в выделении &#8216;Для работы со статическим диапазоном замените выделение с помощью объекта Range, например, Range(“B6:B12”)<br>
+stringArray = Split(Cell, &#171;|&#187;) &#8216;Измените разделитель символом, соответствующим вашим данным<br>
+, для i = 0 на UBound(stringArray)<br>
+ячейка.Смещение (, i + 1) = stringArray(i)<br>
+ячейка.Смещение (, i + 1).Целая колонка.Автозаполнение &#8216;Это для ширины столбца и необязательно.<br>
+Далее я<br>
+заканчиваю подраздел Next</p>	</div>
+<!-- .entry-content -->
+
+</article>
+
+
+
+
+
+
+
+
+
+<div class="social-buttons">
+<span class="social-button social-button--vkontakte main" data-social="vkontakte"><span>Поделиться в ВКонтакте</span></span><span class="social-button social-button--telegram " data-social="telegram"></span><span class="social-button social-button--odnoklassniki " data-social="odnoklassniki"></span><span class="social-button social-button--whatsapp " data-social="whatsapp"></span><span class="social-button social-button--viber " data-social="viber"></span>
+</div>
+
+<!--noindex-->
+<div class="author-box">
+    <div class="author-info">
+        <div class="author-box__ava">
+                    </div>
+
+        <div class="author-box__body">
+            <div class="author-box__author">
+                Автор А. Днепров            </div>
+            <div class="author-box__description">
+                <p>Обучаю основам работы с офисными программами.</p>
+            </div>
+
+            
+        </div>
+    </div>
+</div>
+<!--/noindex-->
+    <meta itemprop="author" content="А. Днепров">
+<meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/kak-razdelit-tekst-v-excel-5-sposobami" content="Как разделить текст в Excel 5 способами">
+    <meta itemprop="dateModified" content="2024-08-15">
+<div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+<div class="related-posts">
+<div class="related-posts__header">Вам также может понравиться</div>
+<div class="post-cards post-cards--vertical">
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/kak-sdelat-massovuyu-zamenu-formul"><img width="311" height="230" src="/image04/2408fadbc9163d5aa4994580cfc152cd.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/kak-sdelat-massovuyu-zamenu-formul">Как сделать массовую замену формул</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/kak-udalit-lishnie-i-pustye-stranitsy-v-excel">Как удалить лишние и пустые страницы в Excel</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/preobrazovanie-teksta-v-tablitsu"><img width="345" height="122" src="/image14/7a0043c9bf012cc129b22376cfebb2a9.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/preobrazovanie-teksta-v-tablitsu">Преобразование текста в таблицу</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/kak-delat-skrinshoty-s-vysokim-razresheniem-v-windows">Как делать скриншоты с высоким разрешением в Windows 11/10</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/osobennosti-raboty-s-mnogostranichny"><img width="213" height="230" src="/image13/6f8f9694c11ee322ff9d3675b0b8ba07.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/osobennosti-raboty-s-mnogostranichny">13.1 Особенности работы с многостраничными документами</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/kak-sdelat-izmeneniya-vnutri-yacheyki-p"><img width="345" height="93" src="/image27/f6550fd3bdfdfdbe500536441d5d252e.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/kak-sdelat-izmeneniya-vnutri-yacheyki-p">Как сделать изменения внутри ячейки. Принудительный перенос</a></div>
+    </div>
+</div>
+</div>
+            </main><!-- #main -->
+        </div>
+<!-- #primary -->
+
+        
+    
+
+    </div>
+<!--.site-content-inner-->
+
+    
+</div>
+<!--.site-content-->
+
+    
+    
+
+<div class="site-footer-container">
+
+    
+
+    <footer id="colophon" class="site-footer full" itemscope itemtype="http://schema.org/WPFooter">
+        <div class="site-footer-inner fixed">
+
+            
+            
+<div class="footer-bottom">
+    <div class="footer-info">
+        <div class="footer-copyright">© 2024 Самоучитель справочник по офисным программам. <a href="/o-nas" rel="nofollow">О нас | Контакты</a> | <a href="/map" rel="nofollow">Карта сайта</a>
+</div>
+        <div class="footer-under-copyright"></div>
+	        </div>
+
+    </div>
+        </div>
+    </footer><!--.site-footer-->
+</div>
+
+
+            <button type="button" class="scrolltop js-scrolltop" data-mob="on"></button>
+    
+                    <div class="top-line js-top-line">
+            <div class="top-line-inner fixed">
+
+                <div class="top-line__title">Как разделить текст в Excel 5 способами</div>
+<div class="top-line__like"><span class="btn-fb-like btn-top-like social-button--vkontakte" data-social="vkontakte"><span>Поделиться в ВКонтакте</span></span></div>
+<div class="top-line__post">
+<div class="top-line__post_thumbnail"><a href="/rabota-s-neskolkimi-obektami"></a></div>
+<div class="top-line__post_title"><a href="/rabota-s-neskolkimi-obektami">5. Работа с несколькими обьектами</a></div>
+</div>            </div>
+        </div>
+    
+</div>
+<!-- #page -->
+
+<script>var pseudo_links = document.querySelectorAll(".pseudo-clearfy-link");for (var i=0;i<pseudo_links.length;i++ ) { pseudo_links[i].addEventListener("click", function(e){   window.open( e.target.getAttribute("data-uri") ); }); }</script><script>document.addEventListener("copy", (event) => {var pagelink = "\nИсточник: /kak-razdelit-tekst-v-excel-5-sposobami";event.clipboardData.setData("text", document.getSelection() + pagelink);event.preventDefault();});</script><script type="text/javascript" id="yelly-scripts-js-extra">
+/* <![CDATA[ */
+var settings_array = {"rating_text_average":"среднее","rating_text_from":"из","lightbox_display":"1"};
+var wps_ajax = {"url":"\/wp-admin\/admin-ajax.php","nonce":"e4ca9d4bd8"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="/js/scripts.min.js" id="yelly-scripts-js"></script>
+
+
+
+<div class="image-hover-social-buttons" style="display: none;">
+<div class="social-button social-button--vkontakte js-share-link" data-uri="https://vk.com/share.php?url=%2Fkak-razdelit-tekst-v-excel-5-sposobami"></div>
+<div class="social-button social-button--telegram js-share-link" data-uri="https://t.me/share/url?url=%2Fkak-razdelit-tekst-v-excel-5-sposobami&text=%D0%9A%D0%B0%D0%BA+%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%B8%D1%82%D1%8C+%D1%82%D0%B5%D0%BA%D1%81%D1%82+%D0%B2+Excel+5+%D1%81%D0%BF%D0%BE%D1%81%D0%BE%D0%B1%D0%B0%D0%BC%D0%B8"></div>
+<div class="social-button social-button--odnoklassniki js-share-link" data-uri="https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&service=odnoklassniki&st.shareUrl=%2Fkak-razdelit-tekst-v-excel-5-sposobami"></div>
+<div class="social-button social-button--whatsapp js-share-link" data-uri="whatsapp://send?url=%2Fkak-razdelit-tekst-v-excel-5-sposobamitext=%D0%9A%D0%B0%D0%BA+%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%B8%D1%82%D1%8C+%D1%82%D0%B5%D0%BA%D1%81%D1%82+%D0%B2+Excel+5+%D1%81%D0%BF%D0%BE%D1%81%D0%BE%D0%B1%D0%B0%D0%BC%D0%B8"></div>
+<div class="social-button social-button--viber js-share-link" data-uri="viber://forward?url=%2Fkak-razdelit-tekst-v-excel-5-sposobamitext=%D0%9A%D0%B0%D0%BA+%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%B8%D1%82%D1%8C+%D1%82%D0%B5%D0%BA%D1%81%D1%82+%D0%B2+Excel+5+%D1%81%D0%BF%D0%BE%D1%81%D0%BE%D0%B1%D0%B0%D0%BC%D0%B8"></div>
+</div>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(93345646, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/93345646" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>
