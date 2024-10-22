@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<title>Глава 7. Новые возможности Microsoft Access &#8212; learn-office</title>
+	<meta name="description" content="Новые возможности Microsoft Access 2002 В настоящее время информационные технологии бурно развиваются, и за последний год произошло немало революционных">
+	<link rel="canonical" href="/glava-novye-vozmozhnosti-microsoft-access">
+	<meta property="og:locale" content="ru_RU">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Глава 7. Новые возможности Microsoft Access &#8212; learn-office">
+	<meta property="og:description" content="Новые возможности Microsoft Access 2002 В настоящее время информационные технологии бурно развиваются, и за последний год произошло немало революционных">
+	<meta property="og:url" content="/glava-novye-vozmozhnosti-microsoft-access">
+	<meta property="og:site_name" content="Excel-jet">
+	<meta property="article:published_time" content="2024-06-11T18:44:37+00:00">
+	<meta property="og:image" content="/image15/8709bb14186f4f4c5f9f227ecb302e24.gif">
+	<meta property="og:image:width" content="312">
+	<meta property="og:image:height" content="186">
+	<meta property="og:image:type" content="image/gif">
+	<meta name="author" content="А. Днепров">
+
+
+<style id="wp-block-library-theme-inline-css" type="text/css">.wp-block-audio :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio :where(figcaption){color:#ffffffa6}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed :where(figcaption){color:#ffffffa6}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:#ffffffa6}:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table :where(figcaption){color:#ffffffa6}.wp-block-video :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video :where(figcaption){color:#ffffffa6}.wp-block-video{margin:0 0 1em}:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}</style>
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 19.5px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36.5px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--normal: 22px;--wp--preset--font-size--huge: 49.5px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="google-fonts-css" href="https://fonts.googleapis.com/css?family=Roboto%3A400%2C400i%2C700&#038;subset=cyrillic&#038;display=swap" media="all">
+<link rel="stylesheet" id="yelly-style-css" href="/css/style.min.css" media="all">
+
+<style>.pseudo-clearfy-link { color: #008acf; cursor: pointer;}.pseudo-clearfy-link:hover { text-decoration: none;}</style>
+<link rel="preload" href="/fonts/icomoon.ttf" as="font" crossorigin>
+    <style>.scrolltop{width:50px}.scrolltop:before{content:"\21d1"}.entry-content a, .entry-content a:visited, .spanlink, .comment-reply-link, .pseudo-link, .widget_calendar a, .widget_recent_comments a, .child-categories ul li a{color:#0000ff}.child-categories ul li a{border-color:#0000ff}a:hover, a:focus, a:active, .spanlink:hover, .top-menu ul li>span:hover, .main-navigation ul li a:hover, .main-navigation ul li span:hover, .footer-navigation ul li a:hover, .footer-navigation ul li span:hover, .comment-reply-link:hover, .pseudo-link:hover, .child-categories ul li a:hover{color:#1e73be}.top-menu>ul>li>a:before, .top-menu>ul>li>span:before{background:#1e73be}.child-categories ul li a:hover, .post-box--no-thumb a:hover{border-color:#1e73be}.post-box--card:hover{box-shadow: inset 0 0 0 1px #1e73be}.post-box--card:hover{-webkit-box-shadow: inset 0 0 0 1px #1e73be}@media (min-width: 768px){body{background-attachment: scroll}}body{font-size:17px;}@media (max-width: 991px){.widget-area{display: block; margin: 0 auto}}</style>
+    <!-- Yandex.RTB -->
+<script>window.yaContextCb=window.yaContextCb||[]</script>
+<script src="https://yandex.ru/ads/system/context.js" async></script>	
+</head>
+<body class="post-template-default single single-post postid-1261 single-format-standard wp-embed-responsive sidebar-right">
+<div id="page" class="site">
+    <a class="skip-link screen-reader-text" href="#content">Перейти к контенту</a>
+
+    
+    
+    <div class="search-screen-overlay js-search-screen-overlay"></div>
+    <div class="search-screen js-search-screen">
+        
+<form role="search" method="get" class="search-form" action="/">
+    <label>
+        <span class="screen-reader-text">Search for:</span>
+        <input type="search" class="search-field" placeholder="Поиск..." value="" name="s">
+    </label>
+    <button type="submit" class="search-submit"></button>
+</form>    </div>
+
+    
+
+<header id="masthead" class="site-header full" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="site-header-inner fixed">
+
+        <div class="humburger js-humburger">
+<span></span><span></span><span></span>
+</div>
+
+        
+<div class="site-branding">
+
+    <div class="site-branding__body"><div class="site-title"><a href="/">Excel-jet</a></div></div>
+</div>
+<!-- .site-branding -->
+
+    
+    <nav id="site-navigation" class="main-navigation full">
+        <div class="main-navigation-inner fixed">
+            <div class="menu-menyu-container"><ul id="header_menu" class="menu">
+<li id="menu-item-6695" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-6695">
+<a href="/excel">Excel</a>
+<ul class="sub-menu">
+	<li id="menu-item-6709" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6709"><a href="/excel/functions">Функции</a></li>
+</ul>
+</li>
+<li id="menu-item-6697" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6697"><a href="/microsoft-word">Word</a></li>
+<li id="menu-item-6696" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6696"><a href="/powerpoint">PowerPoint</a></li>
+<li id="menu-item-6698" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6698"><a href="/outlook">Outlook</a></li>
+</ul></div>        </div>
+    </nav><!-- #site-navigation -->
+
+    
+<div class="header-search"><span class="search-icon js-search-icon"></span></div>    </div>
+</header><!-- #masthead -->
+
+
+
+    
+    
+    <div id="content" class="site-content fixed">
+
+        
+        <div class="site-content-inner">
+    
+        
+        <div id="primary" class="content-area" itemscope itemtype="http://schema.org/Article">
+            <main id="main" class="site-main">
+
+                
+<article id="post-1261" class="article-post post-1261 post type-post status-publish format-standard has-post-thumbnail  category-excel">
+
+    
+        
+        <header class="entry-header"><h1 class="entry-title" itemprop="headline">Глава 7. Новые возможности Microsoft Access</h1></header>
+        
+        
+        
+    
+    
+    <div class="entry-meta">
+<span class="entry-time"><span class="entry-label">Время чтения</span> 39 мин.</span><span class="entry-date"><span class="entry-label">Опубликовано</span> <time itemprop="datePublished" datetime="2024-06-11">11.06.2024</time></span>
+</div>
+	<div class="entry-content" itemprop="articleBody">
+		<p>Новые возможности Microsoft Access 2002 </p>
+<p>В настоящее время информационные технологии бурно развиваются, и за последний год произошло немало революционных изменений в этой области. Поддержка больших объемов данных и интеграция с Интернетом уже стали нормой. Microsoft Access на сегодняшний день является лучшей настольной СУБД, отвечающей современным требованиям к программному обеспечению такого рода: с одной стороны Access предоставляет удобный интерфейс, с другой — мощные средства по представлению и обработке данных с применением самых последних достижений в области информационных технологий.</p>
+<p>В этой главе мы рассмотрим основные новшества очередной версии Access. Хочется отметить, что по сравнению с предыдущей версией Access 2000 изменений в Access 2002 не так много и что добавлены не совершенно новые средства, а лишь недостающие. Возможно, каких-то кардинальных изменений в Access следует ожидать в будущей версии пакета Microsoft Office.</p>
+<p>Замечание</p>
+<p>Однако уже на сегодняшний день разработчикам доступен широкий спектр возможностей по применению Office в реализации бизнес-решений, в том числе и совместно с новой серией продуктов Microsoft, получившей название &#171;платформа.NET&#187; (подробную информацию о взаимодействии приложений Microsoft Office и .NET можно найти на Web-узле Microsoft).</p>
+<p>Нужно сказать, что содержание пакета Microsoft Office еще в предыдущем выпуске было очень хорошо продумано, и, кажется, уже тогда включало все необходимое для эффективной работы как отдельного пользователя так и компании в целом. Тем не менее компания Microsoft предложила важные усовершенствования в новой версии.</p>
+<p>Основные новшества находятся на уровне всего комплекта Microsoft Office. Среди них:</p>
+<ul>
+<li>появление средств альтернативного ввода (кроме применения мыши и клавиатуры теперь ввод данных и выбор команд можно выполнять голосом, появилось распознавание рукописного текста);</li>
+<li>новый внешний вид единого интерфейса;</li>
+<li>увеличение степени интеграции с Интернетом путем ввода широкой поддержки формата XML;</li>
+<li>расширенные возможности многоязыковой поддержки.</li>
+</ul>
+<p>Все это переводит новую версию Microsoft Office на новый уровень эффективности при применении в профессиональной деятельности. Поэтому он получил название Office XP от английского  eXPereince, что означает &#171;профессиональный&#187;.</p>
+<p> Новая политика лицензирования </p>
+<p>В самом начале главы хочется сказать пару слов о новой политике лицензирования, с которой придется познакомиться всем пользователям, решившим установить новую версию продукта Microsoft на своем компьютере. В целях борьбы с пиратством компания Microsoft предприняла попытку использовать новые технологии в системе лицензирования своих продуктов. Теперь практически все стратегически важные продукты этой компании будут снабжены средством так называемой &#171;активации&#187;, которую пользователю необходимо выполнить, чтобы воспользоваться возможностями нового продукта в полном объеме. Активация продукта состоит из нескольких шагов:</p>
+<ol>
+<li>Ввод ключа продукта (Product Key), указанного на упаковке (раньше на этом процедура регистрации заканчивалась).</li>
+<li>Генерация и отображение на экране 50-значного идентификационного номера установки (Installation ID), однозначно идентифицирующего конфигурацию данного компьютера на основе сведений о серийных номерах всех основных компонентов компьютера — процессора, системной платы, оперативной памяти, дисков и т. п.</li>
+<li>Предложение активировать продукт.</li>
+</ol>
+<p>Активацию продукта можно выполнить через Интернет либо по телефону, позвонив по указанному номеру в региональное представительство компании (российское представительство — это Московский Информационный центр Microsoft), чтобы передать идентификационный номер установки и получить 42-разрядный ключ активации (Activation Key). Если активация не будет выполнена сразу, в распоряжении пользователя будет всего 50 запусков продукта в полноценном режиме. После исчерпания этого количества запусков программа перейдет в режим &#171;ограниченной функциональности&#187;, в котором будет практически невозможно сделать ничего полезного, и нельзя будет сохранить открытый документ.</p>
+<p>Мастер активации продукта входит в состав продукта и делает процедуру активации простой и удобной. Однако само по себе требование активации влечет за собой определенные технические сложности: ведь активизировать придется не только каждую копию продукта, устанавливаемую на разные компьютеры, но и, скорее всего, каждую переустановку продукта на один компьютер. Повторная активация разрешена Microsoft, но она будет проходить не в автоматическом режиме. Этот вопрос нужно будет решать в индивидуальном порядке. В то же время Microsoft обещает, что при модернизации компьютера (одновременной замене не более трех узлов) повторная активация не потребуется, и число таких модернизаций неограничено. В случае, когда частая переустановка программного обеспечения требуется ввиду особенностей бизнеса, например при развертывании информационной выставки, компания Microsoft предлагает использовать демонстрационные версии своих продуктов с ограничением по времени действия или воспользоваться предлагаемыми 50 запусками в режиме полной функциональности, разрешенными до момента активации продукта.</p>
+<p> Среда разработки и использования приложений </p>
+<p>В этом разделе рассмотрены новые особенности Access 2002, относящиеся к внешнему виду приложения и изменениям в его интерфейсе.</p>
+<p> Новый вид рабочей области </p>
+<p>Несколько изменился вид меню и панелей инструментов, а также других элементов интерфейса. Теперь элементы интерфейса отображаются отчетливее, с использованием более приятной для глаз цветовой гаммы, что делает работу пользователя еще удобнее.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" decoding="async" src="/image15/8709bb14186f4f4c5f9f227ecb302e24.gif" width="312" height="186" alt=""><meta itemprop="width" content="312">
+<meta itemprop="height" content="186"></span></p>
+<p> Рис. 7.1. Внешний вид приложения Access 2002</p>
+<p>Сравните внешний вид рабочей области новой версии Access 2002 (рис. 7.1) с тем, как она выглядела в Access 2000 (рис. 7.2).</p>
+<p>К обычному главному окну приложения Access, меню, панелям инструментов и окну базы данных добавилась новая панель, располагающаяся справа на экране, предоставляющая быстрый доступ к часто требующимся в процессе работы задачам. (Подобную панель теперь можно увидеть также в Word и других приложениях Office.) По умолчанию отображается панель  Создание файла (New File), но есть возможность в этой части рабочей области отобразить также панели  Поиск (Search) и  Буфер обмена (Clipboard). Все эти панели по очереди отображаются в одном окне. Выбрать любую из них можно с помощью кнопок со стрелками, отображающихся в верхней части текущей панели. Ширину панелей можно очень легко регулировать с помощью мыши.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" decoding="async" src="/image16/8fa4dafe9f2119681c2e6ae9dcc2064e.gif" width="427" height="429" alt=""><meta itemprop="width" content="427">
+<meta itemprop="height" content="429"></span></p>
+<p> Рис. 7.2. Внешний вид приложения Access 2000</p>
+<p>Панель  Создание файла отображается с помощью команды меню  Файл, Создать</p>
+<p>(File, New). С помощью этой панели можно быстро выполнить команды:</p>
+<ul>
+<li>создать пустую базу данных или проект Access;</li>
+<li>создать проект Access на основе новых или существующих данных на сервере SQL;</li>
+<li>создать базу данных, проект Access или Web-страницу на основе существующего файла или шаблона или с помощью мастера;</li>
+<li>открыть одну из ранее открывавшихся в Access баз данных и проектов;</li>
+<li>открыть любую базу данных или проект Access;</li>
+<li>создать папку Web или открыть справку Access.</li>
+</ul>
+<p>Еще одна полезная панель для работы с файлами отображается с помощью кнопки  Найти (Search) на панели инструментов  База данных (Database). Эта панель предназначена для быстрого поиска баз данных Access, документов и прочих файлов, созданных в приложениях Office. Данная панель предоставляет пользователю два режима поиска:  Обычный поиск (Basic Search) и  Расширенный поиск (Advanced Search) (рис. 7.3). Переключение между режимами поиска осуществляется очень просто: с помощью гиперссылки в нижней части панели.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image15/88245f207dae13b1bc9bc2476ba83c3b.gif" width="214" height="505" alt=""><meta itemprop="width" content="214">
+<meta itemprop="height" content="505"></span></p>
+<p> Поиск</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image13/76e0664111c271dd09adf3732f2f6fec.gif" width="214" height="560" alt=""><meta itemprop="width" content="214">
+<meta itemprop="height" content="560"></span></p>
+<p> Расширенный режим</p>
+<p> Рис. 7.3. Панель  Поиск в обычном и расширенном режиме</p>
+<p>В режиме Обычного поиска можно найти любой документ Microsoft Office, Web-страницу или элемент Outlook, в том числе содержащий указанный текст, в любой заданной папке или на всех ресурсах компьютера, включая папки Outlook и папки Web. Пока выполняется процесс поиска, вы можете продолжать работу. Найденные файлы отображаются на панели поиска в виде списка, каждый элемент которого снабжается контекстным меню, с помощью которого с найденным файлом можно выполнить то или иное действие в зависимости от его типа (рис. 7.4).</p>
+<p>В режиме Расширенного поиска можно искать документы Office, Web-страницы и элементы Outlook с заданными условиями на их свойства, например: имя файла, дату создания, дату модификации, имя автора и пр. Например, чтобы найти все файлы, содержащие в имени файла имя Veronica, на панели расширенного поиска в списке  Свойство (Property) выделите элемент  Имя файла (File name), в списке Условие (Condition) выделите элемент  содержит (includes), в поле  Значение (Value) введите имя veronica и нажмите кнопку  Добавить (Add). В списке условий появится элемент  Имя файла содержит Veronica (File name includes Veronica). Теперь можно, например, таким же образом ввести еще одно или несколько дополнительных условий на всякие свойства файла, предварительно выбрав переключатель И (And) или  Или (Or). После этого нужно нажать кнопку  Найти (Search), и список найденных файлов отобразится на панели.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image15/84df57a7ace1060430d2fba701d53152.gif" width="210" height="459" alt=""><meta itemprop="width" content="210">
+<meta itemprop="height" content="459"></span></p>
+<p> Условия</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image04/25f568f6f88c360ff1851cf9d0c81ce6.gif" width="213" height="303" alt=""><meta itemprop="width" content="213">
+<meta itemprop="height" content="303"></span></p>
+<p> Результат поиска</p>
+<p> Рис. 7.4. Условия и результат поиска</p>
+<p>Панель  Буфер обмена (Clipboard) отображается с помощью команды  Правка, Буфер обмена Office (Edit, Office Clipboard) или нажатием два раза подряд комбинации клавиш &lt;Ctrl&gt;+&lt;C&gt;. С помощью этой панели удобно работать с содержимым буфера обмена, в который можно скопировать и одновременно хранить в нем до 24 элементов. Эти элементы можно вставлять в открытую базу данных в произвольном порядке и любом количестве. Их также можно удалить из буфера обмена с помощью контекстного меню элемента на панели (рис. 7.5).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image02/0e8323e100bc634d63c535153d0bbc7e.gif" width="210" height="459" alt=""><meta itemprop="width" content="210">
+<meta itemprop="height" content="459"></span></p>
+<p> Рис. 7.5. Панель  Буфер обмена</p>
+<p> Средства альтернативного ввода </p>
+<p>К интерфейсу пользователя добавились революционно новые возможности ввода информации в дополнение к вводу с помощью клавиатуры и мыши: теперь выбирать команды меню, кнопки на панелях инструментов, элементы диалоговых окон, т. е. выполнять управляющие действия, можно с помощью голоса, произнося соответствующие команды. Голосом можно также диктовать текст, не пользуясь для ввода клавиатурой и мышью.</p>
+<p>Замечание</p>
+<p>Диктование и команды голосом не поддерживаются в режиме Конструктора таблиц, запросов и диаграмм в проектах Access (файлах формата ADP). В настоящее время распознавание речи поддерживается только для английского языка, а также для упрощенного китайского и японского языков. Чтобы воспользоваться этим средством, необхвдимо иметь звуковую карту, поддерживающую возможность подключения микрофона.</p>
+<p>Применение средств распознавания речи предъявляет следующие требования к программному и аппаратному обеспечению компьютера:</p>
+<ul>
+<li>хороший микрофон ближнего действия (надевающийся на голову вместе с наушниками), имеющий возможность усиления принимаемого тихого сигнала (рекомендуется микрофон, подключающийся через порт USB);</li>
+<li>процессор с тактовой частотой минимум 400 МГц;</li>
+<li>оперативная память объемом не менее 128 Мбайт;</li>
+<li>операционная система Windows 98 или выше либо Windows NT 4.0 или выше;</li>
+<li>программа Microsoft Internet Explorer 5 или выше.</li>
+</ul>
+<p>Новая версия Access предоставляет еще одну альтернативную возможность ввода,, а именно, ввод рукописного текста с помощью специальных устройств, таких как графический планшет и PC-планшет, или же с помощью мыши. Введенный рукописный текст преобразуется в форму печатного текста. В приложениях Word и Outlook предусмотрена также возможность сохранения рукописного текста в первоначальном виде.</p>
+<p>Чтобы настроить средства голосового ввода:</p>
+<ol>
+<li>Откройте панель управления Windows.</li>
+<li>Дважды щелкните по ярлыку  Речь (Speech).</li>
+</ol>
+<p>Чтобы настроить средства ввода рукописного текста:</p>
+<ol>
+<li>Откройте панель управления Windows.</li>
+<li>Дважды щелкните по ярлыку  Службы ввода текста  (Text Services).</li>
+</ol>
+<p>К окнам настройки этих двух языковых средств можно также добраться другим способом:</p>
+<ol>
+<li>Щелкните правой кнопкой мыши по значку раскладки клавиатуры, отображающемуся в правой части Панели задач Windows.</li>
+<li>В появившемся контекстном меню выберите команду  Настройка (Settings).</li>
+</ol>
+<p>Если после установки Microsoft Office 2002 вы еще ни разу не пользовались средствами распознавания речи, то когда вы впервые выберете команду  Сервис, Речь (Tools, Speech) в любом из приложений Office, появится первое диалоговое окно Мастера настройки данного средства. В этом окне будут даны следующие инструкции и указания:</p>
+<ol>
+<li>Первым делом требуется настроить микрофон.</li>
+<li>Затем рекомендуется пройти тренировку произношения текста.</li>
+<li>После того как вы убедитесь, что конфигурация компьютера включает необходимые устройства для работы со звуком (необходимы звуковая карта и микрофон), можно переходить непосредственно к настройке и испытанию данного средства. Нажмите кнопку  Далее (Next).</li>
+</ol>
+<p>Замечание</p>
+<p>Если Мастер настройки средств распознавания речи по каким-либо причинам не запустился автоматически, вы можете настроить это средство самостоятельно, открыв окно свойств распознавания речи с помощью ярлыка  Речь (Speech) на панели управления Windows, затем сначала вызвать Мастер настройки микрофона с помощью кнопки  Настроить микрофон (Configure Microphone), а потом вызвать Мастер тренировки произношения с помощью кнопки  Тренировка (Train Profile).</p>
+<p>Чтобы настроить уровень звука и положение микрофона с помощью мастера, потребуется всего лишь произнести пару фраз, отображаемых в диалоговом окне с соответствующими пояснениями. Убедитесь, что вы находитесь в тихой обстановке, без посторонних шумов, которые могут помешать распознаванию речи, Затем произойдет переход к тренировке произношения текста: в диалоговом окне мастера будет отображаться текст, который нужно прочитать, чтобы компьютер &#171;настроился&#187; на ваше произношение и смог распознать вашу речь. Прочитываемый текст по мере восприятия его компьютером будет постепенно закрашиваться (рис. 7.6).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image14/7fdb015016c67d4a80925246ed1b10f4.gif" width="404" height="455" alt=""><meta itemprop="width" content="404">
+<meta itemprop="height" content="455"></span></p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image22/cac3f7110d2a7925253c6f3475ee4fd2.gif" width="367" height="473" alt=""><meta itemprop="width" content="367">
+<meta itemprop="height" content="473"></span></p>
+<p> Рис. 7.6. Мастер тренировки произношения текста</p>
+<p>Если в процессе чтения вы допустите ошибку, повторите чтение невоспринятой части текста и продолжайте чтение. Не делайте больших пауз между словами, целые фразы лучше воспринимаются компьютером, чем отдельные слова. Когда вы закончите тренировку произношения, появится заключительное диалоговое окно мастера, сообщающее о том, что продолжить тренировку можно позже в любое время, чтобы повысить процент правильно распознаваемой речи. Нажмите кнопку  Готово (Finish). Отобразится панель  Язык (Language), содержащая элементы для управления процессом голосового ввода (рис. 7.7), и откроется окно Internet Explorer с видеодемонстрацией использования средства распознавания речи Microsoft Office.</p>
+<p>Панель  Язык впоследствии будет открываться при выборе команды  Сервис, Речь. Ее также можно отобразить, щелкнув правой кнопкой мыши по значку раскладки клавиатуры, находящемуся в правой части Панели задач Windows, и выбрав команду  Показать панель Язык (Show the Language bar). Панель Язык можно свернуть с по мощью маленькой кнопки свертки в ее правом верхнем углу. Тогда на панели задач Windows появится значок микрофона, щелчком по которому его можно включить или выключить.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image10/5a4660972ddc987ba231da274ce815c4.gif" width="215" height="98" alt=""><meta itemprop="width" content="215">
+<meta itemprop="height" content="98"></span></p>
+<p> Рис. 7.7. Панель  Язык</p>
+<p>На панели  Язык есть несколько кнопок.</p>
+<ul>
+<li>Чтобы начать работу с голосом, нажмите кнопку  Микрофон  (Microphone) для включения микрофона.</li>
+<li>Если нужно выбирать команды меню, кнопки панелей инструментов или элементы диалоговых окон с помощью голоса, нажмите кнопку  Команда голосом  (Voice Command).</li>
+<li>Если необходимо диктовать текст для ввода, нажмите кнопку  Диктование  (Dictation).</li>
+</ul>
+<p>Замечание</p>
+<p>Помните, что параллельно с вводом с помощью голоса вы можете использовать мышь и клавиатуру, например, чтобы исправить или отформатировать введенный текст.</p>
+<p>На этой же панели есть кнопка  Рукописный ввод (Handwriting), с помощью которой можно выбрать команды для управления рукописным вводом, например открыть окно  Планшет (Writing Pad), в котором можно писать текст с помощью мыши.</p>
+<p>В зависимости от текущего языка раскладки клавиатуры на панели  Язык будет отображаться большее или меньшее количество кнопок, соответствующее доступным возможностям распознавания для данного языка. Чтобы испытать эти средства в полном объеме, переключитесь на английскую раскладку клавиатуры.</p>
+<p> Надежность </p>
+<p>В Access 2002 улучшена функция сжатия и восстановления баз данных, так что базы данных с испорченными формами или отчетами теперь могут быть восстановлены в большем числе случаев, чем раньше.</p>
+<p>В новой версии Access улучшено средство восстановления разорванных ссылок с помощью более мощного механизма поиска и диагностики в случае, когда ссылка не может быть восстановлена автоматически.</p>
+<p> Отмена и повтор нескольких операций </p>
+<p>В новой версии Access появилась возможность отмены и повтора нескольких действий, выполняемых в режиме Конструктора следующих объектов:</p>
+<ul>
+<li>таблиц и запросов в базах данных в формате MDB;</li>
+<li>представлений, хранимых процедур, функций в проектах в формате ADP;</li>
+<li>форм, отчетов, страниц доступа к данным, макросов и модулей.</li>
+</ul>
+<p>Однако стек отменяемых операций не сохраняется при переключении между разными режимами представления для следующих объектов:</p>
+<ul>
+<li>таблиц в базах данных в формате MDB;</li>
+<li>представлений, хранимых процедур, функций в проектах в формате ADP;</li>
+<li>страниц доступа к данным.</li>
+</ul>
+<p>Заметим, что возможности отмены операций в режимах Таблицы (Datasheet) и Формы (Form View) не изменились.</p>
+<p> Работа с помощью клавиатуры </p>
+<p>В новой версии Access появились новые клавиши и их комбинации, делающие работу пользователя еще более удобной и быстрой. Они перечислены в табл. 7.1.</p>
+<table class="table_common" width="600">
+<tbody>
+<tr class="header">
+<td width="150">Клавиши</td>
+<td>Назначение</td>
+</tr>
+<tr class="one">
+<td>&lt;F7&gt;</td>
+<td>Переключение в режим просмотра программного кода из режима Конструктора формы или отчета, когда фокус находится в окне Конструктора или в окне свойств</td>
+</tr>
+<tr class="two">
+<td>&lt;F4&gt;</td>
+<td>Отображение окна свойств в режиме Конструктора</td>
+</tr>
+<tr class="one">
+<td>&lt;Shift&gt; &lt;F7&gt;</td>
+<td>Возврат фокуса в окно Конструктора из окна свойств</td>
+</tr>
+<tr class="two">
+<td>&lt;Ctrl&gt;+&#187;&gt;&#187; или &lt;Ctrl&gt;+&#187;.&#187; (точка) &lt;Ctrl&gt;+&#187;&lt;&#187; или &lt;Ctrl&gt;+&#187;,&#187; (запятая)</td>
+<td>Переключение между режимами просмотра при работе с таблицами, запросами, формами, отчетами, страницами доступа к данным, представлениями или хранимыми процедурами. Переключение между режимами происходит циклически: к следующему режиму с помощью комбинации клавиш &lt;Ctrl&gt;+&#187;&gt;&#187; и к предыдущему — с помощью комбинации клавиш &lt;Ctrl&gt;+&#187;&lt;&#171;</td>
+</tr>
+<tr class="one">
+<td>&lt;F8&gt;</td>
+<td>Отображение окна Список полей (Field List) или просто перемещение фокуса в это окно в режиме Конструктора формы, отчета или страницы доступа к данным</td>
+</tr>
+<tr class="two">
+<td>Выделение поля в окне Список полей и нажатие клавиши &lt;Enter&gt;</td>
+<td>Поместить выделенное поле на форму или отчет в режиме Конструктора</td>
+</tr>
+<tr class="one">
+<td>&lt;Ctrl&gt;+&lt;Tab&gt;</td>
+<td>Перемещение фокуса от раздела формы/отчета к подразделу</td>
+</tr>
+</tbody>
+</table>
+<p> Таблица 7.1. Новые комбинации клавиш</p>
+<p>Добавлены новые размеры 500% и 1000% в список  Масштаб (Zoom) возможных масштабов просмотра документа перед печатью в представлении  Предварительный просмотр (Print Preview)</p>
+<p> Новый формат базы данных </p>
+<p>В новой версии Access вы можете по-прежнему работать с базами данных, сохраненными в формате Access 2000, открывать и изменять объекты в них, благодаря чему вы сможете разделять работу с этой базой данных с пользователями прежней версии Access или же преобразовывать свои приложения в формат новой версии Access. Новый формат обеспечивает лучшую поддержку новых свойств и изменений, которые могут быть сделаны в будущих версиях Access.</p>
+<p>Замечание</p>
+<p>Репликация между базами данных в разных форматах работает некорректно. При репликации в новом формате файлов изменения структуры базы данных могут быть корректными только в основной (родительской) реплике (Master), но не в обычных (дочерних) репликах.</p>
+<p>Если в процессе преобразования приложения из формата Access 95, 97 или 2000 в формат Access 2002 будут обнаружены какие-либо ошибки, Access создаст таблицу со списком этих ошибок и информацией о них. Это облегчит решение проблем, возникших в процессе преобразования.</p>
+<p> Новая справочная система </p>
+<p>Справочная система Microsoft Office претерпела некоторые изменения. Получение справки стало еще более удобным. Теперь вопрос Мастеру ответов вы можете задать, введя его в поле со списком  Введите вопрос (Ask a Question), расположенное непосредственно в правой части стандартного меню приложения Office, в том числе и Access.</p>
+<p>При открытии окна справочной системы в приложении новой версии Office отображается главная страница справки, так называемый  Справочный центр (Help Center). На этой странице находятся ссылки на часто требующиеся разделы справки. Само оформление главной страницы справки стало более компактным и информативным. Закладка на нее расположена на верхнем уровне содержания, что упрощает ее поиск и улучшает внешний вид вкладки  Содержание (Content) при открытии справочной системы, поскольку при этом не происходит автоматического развертывания разделов глубокого уровня, как это было в предыдущей версии Office.</p>
+<p> Новые примеры приложений </p>
+<p>Содержимое примеров приложений Access (базы данных (Northwind.mdb) и ее клиент-серверной версии —проекта (NorthwindSC.adp)) в целом не изменилось. В новом примере проекта проиллюстрировано применение ставшего доступным расширенного набора свойств данных, хранящихся на SQL Server 2000. Кроме того, примеры приложений поставляются в формате предыдущей версии Access 2000.</p>
+<p>Однако появилась хоть и незначительная, но очень приятная деталь: теперь открыть эти примеры можно с помощью команд меню Access  Справка, Примеры баз данных, Учебная база данных &#171;Борей&#187; (Help, Sample Databases, Northwind Sample Database) и  Справка, Примеры баз данных, Учебный проект Access &#171;Борей&#187; (Help, Sample Databases, Northwind Sample Access Project). Теперь не нужно помнить длинного пути к папке примеров приложений Office, в которой хранятся соответствующие файлы, и вы уже не спутаете их с копиями этих примеров в списке последних открытых баз данных в Access.</p>
+<p> Представление данных в виде сводных таблиц и сводных диаграмм </p>
+<p>Одним из ключевых новшеств Access 2002 является появление новых представлений данных: теперь таблицы и запросы баз данных Access (файлов MDB) и таблицы, представления, хранимые процедуры и функции проектов (файлов ADP), а также формы можно просмотреть в режиме Сводная таблица или Сводная диаграмма. Эта возможность позволяет быстро и легко реализовать комплексные решения для анализа данных. О ней рассказано  в гл. 8.</p>
+<p>Сводные таблицы и сводные диаграммы можно сохранить в виде страниц доступа к данным, чтобы предоставить информацию всем, кто имеет программу просмотра Microsoft Internet Explorer 5 или выше.</p>
+<p>Теперь формы Access в представлении сводной таблицы и сводной диаграммы можно использовать в качестве вложенной формы в составных формах, точно таким же способом, как раньше можно было использовать для этого формы в представлении режим Таблицы.</p>
+<p>Разработчики могут оценить удобство новой возможности программирования форм в представлениях сводной таблицы и сводной диаграммы. Появились новые события, инициируемые этими представлениями, которые можно обработать.</p>
+<p> Новые возможности работы с формами и отчетами </p>
+<p>В формах Access появились новые события, для которых разработчики могут задать процедуры обработки, чтобы расширить функционачьность своего приложения.</p>
+<ul>
+<li>Событие  Отмена (OnUndo) уровня формы возникает, когда пользователь отменяет все изменения, сделанные в форме.</li>
+<li>Событие  Выход из записи (OnRecordExit) уровня формы возникает, когда пользователь переходит от текущей записи к следующей. Это событие может существенно упростить процесс обновления подчиненных форм в зависимости от состояния основной формы.</li>
+<li>События  Внесены изменения (OnDirty) и  Отмена (OnUndo) уровня элемента управления полностью аналогичны одноименным событиям уровня формы.</li>
+</ul>
+<p>У форм и отчетов Access появилось несколько новых свойств.</p>
+<ul>
+<li>Добавился параметр, позволяющий установить использование заданного значка приложения для отображения также в формах и отчетах. Этот параметр устанавливается в диалоговом окне, отображающемся после выполнения команды  Сервис, Параметры запуска (Tools, Start up).</li>
+<li>У отчетов Access теперь появились новые свойства:  Модальное окно  (Modal),  Всплывающее окно (PopUp),  Тип границы (BorderStyle),  Автоматический размер (AutoResize),  Выравнивание по центру (AutoCenter),  Кнопки размеров окна (MinMaxButtons),  Кнопка закрытия (CloseButton),  Кнопка оконного меню (ControlBox), полностью аналогичные одноименным свойствам форм Access.</li>
+<li>К методу OpenReport (Открыть отчет) объекта DoCmd (Выполнить команду) теперь добавлен аргумент view (режим), позволяющий задать представление для открываемого отчета, так же, как это можно было раньше сделать только для формы.</li>
+<li>У метода OpenForm (Открыть форму) объекта DoCmd (Выполнить команду) появился новый необязательный аргумент OpenArgs (Аргументы открытия) типа Variant. Этот аргумент позволяет в момент открытия формы передать в программу управления формой произвольную строку, содержащую некоторую полезную информацию, которая может быть впоследствии обработана, например в обработчике события Open (Открытие) или одноименном макросе.</li>
+<li>У форм, отчетов и элементов управления теперь есть свойство  Допускается перемещение  (Moveable), позволяющее разрешить или запретить перемещение соответствующего объекта по экрану.</li>
+</ul>
+<p>У форм и отчетов Access появился новый метод Move, позволяющий программным способом перемещать их по экрану.</p>
+<p>В новой версии усовершенствовано отображение подчиненных форм и отчетов в режиме Конструктора внутри основной формы или отчета. Теперь работать с полосами прокрутки стало удобнее. Кроме того, вы можете полностью просмотреть подчиненную форму/отчет, отображенную в режиме Конструктора внутри основной формы/отчета, открыв ее в отдельном окне: для этого выделите подчиненную форму/отчет и выберите команду  Вид, Подчиненная форма в новом окне/Подчиненный отчет в новом окне (View, Subform/Subreport in New Window) или одноименную команду контекстного меню.</p>
+<p> Публикация данных в корпоративной сети и Интернете </p>
+<p>Публикация данных в корпоративной сети и Интернете становится необходимостью во многих приложениях баз данных. В Access 2002 усовершенствована и расширена поддержка форматов представления данных в Web.</p>
+<ul>
+<li id="current_tab">Компьютерная литература</li>
+<li>Статьи</li>
+<li>Расширенный поиск</li>
+</ul>
+<h2>Оглавление:</h2>
+<ul>
+<li>Windows XP</li>
+<li>Office XP</li>
+</ul>
+<ul>
+<li>Access 2002</li>
+<li>Excel 2002</li>
+<li>Front Page 2002</li>
+<li>Outlook 2002</li>
+<li>IE 6.0</li>
+<li>Project 2002</li>
+<li>Word 2003</li>
+</ul>
+<ul>
+<li>Adobe Acrobat</li>
+<li>Руководство HTML</li>
+</ul>
+<p>    Cамоучитель MS Access 2002 → <a href="https://taurion.ru/access/7">Новые возможности Microsoft Access 2002</a> → <a href="/glava-novye-vozmozhnosti-microsoft-access">Публикация данных на разных языках</a>  <iframe id="aswift_0" name="aswift_0" width="1097" height="90" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen="allowfullscreen"></iframe> Публикация данных на разных языках </p>
+<p>Новые средства поддержки многоязычных данных предоставляют более широкие возможности. Благодаря этому распространение информации по всему миру становится более доступным.</p>
+<p>Теперь в таблицах, формах и отчетах может присутствовать текст сразу на нескольких языках: на английском, на других европейских языках, на азиатских языках, включая японский и китайский. Все это становится доступным автоматически, если в вашей операционной системе установлена поддержка соответствующих шрифтов.</p>
+<p>В новой версии добавлена возможность сохранения объектов Access в следующих форматах: Unicode, RTF, HTML, текстовом и в формате файла Excel. Например, если у вас есть отчет, основанный на таблице, содержащей многоязычный текст, его можно экспортировать в формат RTF, чтобы потом эти данные можно было корректно отобразить в редакторе Word. Поддерживается также программный способ использования этого средства.</p>
+<p>Усовершенствованы средства проверки орфографии в Access. Добавлена вкладка  Орфография (Spelling) в диалоговое окно, отображаемое командой  Сервис, Параметры (Tools, Options). С ее помощью можно установить необходимые параметры проверки правописания, такие как текущий язык и имя пользовательского словаря, а также некоторые особые языковые свойства.</p>
+<p>В окно  Параметры (Options) добавлена вкладка  Международные (International), позволяющая настроить параметры сложных иероглифических языков, например изменить направление чтения — вместо типичного направления &#171;слева направо&#187; (left-to-right) задать направление &#171;справа налево&#187; (right-to-left).</p>
+<p>Добавлено свойство IMEMode для настройки средства ввода. Но чтобы оно корректно работало, нужно установить средство Input Method Editors (IMEs). Свойство IMEMode доступно в режимах Конструктора форм и таблиц, для определенных типов данных и для определенных элементов управления.</p>
+<p> Поддержка формата XML </p>
+<p>Кроме того, что формат XML (Extensible Markup Language) уже является стандартной технологией обмена информацией в Web, он стремительно становится наиболее предпочтительной технологией обмена данными между бизнес-приложениями.</p>
+<p>В новой версии Access 2002 предоставляются мощные и вместе с тем интуитивно понятные средства коллективного использования данных XML, независимо от различий применяемых платформ, форматов данных, протоколов, схем и бизнес-правил. С помощью привычного интерфейса Access теперь можно легко создать данные и схемы данных XML на основе данных и структур данных Jet или SQL Server.</p>
+<p>В Access появилась возможность также использовать данные XML, полученные из других приложений, в формах, отчетах и страницах доступа к данным. Представьте, что ваши данные распределены по разным источникам данных: внутренним серверам SQL, электронным таблицам Excel и другим источникам. Если использовать в качестве формата обмена данных между этими источниками формат XML, можно создать серию запросов Access, соединяющих такую информацию воедино, и сохранить их в виде представлений, которые можно затем использовать при разработке форм и отчетов.</p>
+<p>Преобразование данных из формата XML в Jet и SQL Server и обратно можно выполнить не только с помощью пользовательского интерфейса Access, но и программным путем.</p>
+<p>В новой версии Access есть методы, позволяющие легко управлять представлением данных путем создания и применения страниц стилей и шаблонов схем. Приложение Access предоставляет простой и стандартный способ для описания и получения разнообразных структурированных данных XML для и из любых приложений. Например, с помощью Access можно создать схему с описанием структуры ваших данных и отправить эту схему своим партнерам, чтобы они могли точно узнать, в каком виде ожидать от вас этих данных, и использовать эту информацию для оформления своих документов.</p>
+<p> Новые возможности страниц доступа к данным </p>
+<p>Страницы доступа к данным, созданные в предыдущей версии Access 2000, можно просматривать и изменять в новой версии Access 2002, вместе с которой устанавливается новая версия Web-компонентов.</p>
+<p>При открытии страницы, созданной в Access 2000, в режиме Конструктора в новой версии Access 2002 автоматически происходит преобразование ее в новый формат.</p>
+<p>Если страница доступа к данным создана в Access 2002, т. е. в новом формате, становится доступно гораздо больше новых возможностей. Однако в этом случае в Access 2000 ее нельзя будет изменить в режиме Конструктора, хотя можно будет просмотреть в режиме Просмотра страницы, при условии, что на компьютере установлена новая версия Web-компонентов Microsoft Office 2002 Web Components.</p>
+<p>Если на компьютере не установлена необходимая версия программы просмотра Интернета или новая версия Web-компонентов, то при открытии страницы, созданной в Access 2002, отобразится соответствующее сообщение с помощью специального сценария, выполняемого при загрузке страницы.</p>
+<p> Режим Конструктора страниц доступа к данным </p>
+<p>Как уже было сказано, в режиме Конструктора страниц доступа к данным теперь поддерживается возможность многократной отмены и повтора выполненных операций.</p>
+<p>Еще можно выделить сразу несколько элементов на странице и настроить их размеры, расстояния по вертикали и горизонтали, выравнивание и прочие свойства. Настройка размеров теперь может быть выполнена более точно, в процессе изменения размера пользователь может увидеть его реальное текущее значение. Размеры элементов можно автоматически выровнять по сетке или изменить так, чтобы размер соответствовал размеру содержимого. Однако, чтобы эти новые возможности стали доступны, необходимо установить версию Internet Explorer 5.5.</p>
+<p>В Microsoft Word реализована возможность вставки на страниц HTML в виде связанных объектов страниц доступа к данным, на просмотр которых можно переключаться.</p>
+<p>В окне  Список полей (Filed List) в режиме Конструктора страниц доступа к данным теперь можно выделить сразу несколько элементов и перетащить их на страницу с помощью мыши.</p>
+<p>Улучшена поддержка создания так называемых &#171;рамочных&#187; (другими словами, контейнерных) страниц, а именно появились следующие возможности:</p>
+<ul>
+<li>интуитивно воспринимаемое оформление раскрывающихся и сворачивающихся областей с подчиненными данными;</li>
+<li>автоматическое выравнивание с отступами уровней группировки;</li>
+<li>новая команда контекстного меню  Свойства уровня группы  (Group Level Properties);</li>
+<li>автоматическое форматирование заголовков и примечаний групп в соответствии с параметрами, установленными на вкладке  Страницы  (Pages) диалогового окна, открываемого командой  Сервис, Параметры (Tools, Options).</li>
+</ul>
+<p>Теперь и &#171;рамочные&#187; страницы могут быть обновляемыми. Настройка возможности обновления выполняется с помощью свойств уровня группировки:  AllowEdits. </p>
+<p> AllowAdditions и AllowDelctions (разрешить изменение, добавление и удаление записей)  1 . Установка соответствующего значения в  Истина (True) разрешает изменение, добавление или удаление записей с помощью данной страницы.</p>
+<p>С помощью нового средства &#171;автосуммирование&#187; легко создать итоговый раздел: выделите на странице элемент, по которому нужно подвести итог, и нажмите кнопку  Автосумма  (AutoSum) на панели инструментов. В разделе на уровень выше появится поле, отображающее итоговую сумму.</p>
+<p>Появились собственные контекстные меню у страницы, элементов, разделов страницы, уровней группировки и новые команды для отображения окон их свойств.</p>
+<p>Можно создавать собственные элементы навигации по записям, назначив специальное имя класса (свойство  ClassNarae) элементу HTML практически любого типа. Например, специальное имя MsoNavNext можно задать в качестве имени класса или добавить (через пробел) к существующему имени класса для элемента HTML типа  Надпись (Label), чтобы превратить ее в специальный элемент Далее (Next) для перехода на следующую запись. Подобные действия можно применить, чтобы получить элементы для свертки/разворачивания сгруппированной части страницы.</p>
+<p>Если страница доступа к данным создана в новом формате Access 2002, в этом случае, если перетащить на страницу какую-нибудь таблицу из окна Список полей при включенном переключателе  Мастера (Control Wizards) на панели элементов, появится диалоговое окно  Мастер макета (Layout Wizard), в котором будут доступны новые варианты представлений таблицы на странице:  ленточный (Tabular),  сводная диаграмма (PivotChart) и  электронная таблица (Office Spreadsheet). В предыдущей версии были доступны лишь варианты представлений в виде списка полей (в  столбец (Columnar)) и сводной таблицы  (сводная таблица (PivotTable)).</p>
+<p>В новой версии Access Web-компонент  Электронная таблица Office (Spreadsheet) может быть привязан к источнику данных.</p>
+<p>Теперь удобнее создавать взаимосвязанные страницы с помощью гиперссылок. При создании гиперссылки в режиме Конструктора автоматически создается фильтр на основе первичного ключа, имеющегося на странице набора записей, и, если это</p>
+<p>Названия свойств страниц доступа к данным, к сожалению, не локализованы возможно, задается относительный адрес вместо абсолютного. Изменить значение свойства, задающего фильтр для отбора записей на присоединенной с помощью гиперссылки странице, можно с помощью поля  ServerFilter (Серверный фильтр) на вкладке  Привязка (Anchor) в окне свойств гиперссылки.</p>
+<p>Теперь поля типа гиперссылка в базах данных Microsoft Jet и SQL Server 2000 при размещении их на странице доступа к данным преобразуются в действующие гиперссылки.</p>
+<p>Средство просмотра структуры данных, доступное теперь с помощью кнопки  Структура данных (Data Outline) на панели инструментов в режиме Конструктора страницы доступа к данным, позволяет настраивать свойства модели данных, отображаемых на странице, например изменять соотношение между уровнями группировки.</p>
+<p>Теперь можно превратить любой связанный элемент в элемент, задающий фильтр для сгруппированных записей, просто щелкнув по нему правой кнопкой мыши и выбрав команду контекстного меню  Элемент управления фильтра группы (Group Filter Control).</p>
+<p>В новой версии Access появилась возможность сохранять формы и отчеты в виде страниц доступа к данным. Причем, в отличие от экспорта в формат HTML, который позволяет получить статические документы, новое средство позволяет получить полноценные обновляемые страницы доступа к данным. Чтобы преобразовать форму или отчет в страницу доступа к данным, откройте ее/его в режиме Конструктора и выберите команду  Файл, Сохранить как (File, Save As). В появившемся диалоговом окне введите имя новой страницы и выберите в раскрывающемся списке возможных типов сохраняемого объекта элемент  Страница доступа к данным (Data Access Page), нажмите кнопку ОК. В следующем диалоговом окне потребуется указать папку и имя файла HTML, в котором будет храниться созданная страница.</p>
+<p>Замечание</p>
+<p>Если после такого преобразования формы вы захотите запретить возможность изменения, добавления и удаления записей с помощью полученной страницы доступа к данным, просто задайте значение  Ложь (False) для свойств  AllowEdits, AllowAdditions и AllowDeletions уровня группировки страницы. Чтобы отобразить диалоговое окно свойств, откройте страницу в режиме Конструктора, щелкните правой кнопкой мыши и выберите команду  Свойства уровня группы (Group Level Properties).</p>
+<p> Расширенный набор свойств </p>
+<p>В режиме Конструктора страниц доступа к данным теперь доступен более широкий набор свойств баз данных новой версии Microsoft Jet и SQL Server 2000. При этом некоторые маловажные свойства и свойства форматирования CSS (Cascading Style Sheet) были удалены, чтобы на их месте был предоставлен доступ к большему количеству полезных свойств.</p>
+<p>Специфические свойства элемента ActiveX теперь можно настроить непосредственно в окне свойств элемента.</p>
+<p>В окне свойств теперь поддерживаются Построители, например для таких свойств, как параметры подключения, выбор цвета и масштаб.</p>
+<p>На страницу теперь можно добавить элемент, позволяющий выделять записи. Для этого щелкните правой кнопкой по разделу, выберите команду контекстного меню  Свойства уровня группы (Group Level Properties) и установите значение  Истина (True) для свойства  Область выделения записи (RecordSelector).</p>
+<p>По умолчанию находящиеся рядом записи отображаются на странице с чередованием цвета фона. Можно изменить это оформление с помощью окна свойств уровня группировки.</p>
+<p> Распространение страниц </p>
+<p>Разрабатывая страницы доступа к данным, вы наверняка планируете впоследствии переместить их в другое место, на сервер Web или послать по электронной почте. В Access 2002 есть некоторые усовершенствования, касающиеся распространения страниц.</p>
+<p>Например, теперь можно указать относительный путь к базе данных Access в свойствах подключения. Однако это будет работать лишь в случае открытия страницы с помощью файловой системы, но не через HTTP.</p>
+<p>Можно реализовать такое решение, когда все страницы подключаются к источнику данных через специальные файлы, хранящие параметры подключения либо в формате Office Data Connection (ODC), либо Universal Data Link (UDL). Такой файл можно указать в качестве свойства  Файл подключения (ConnectionFile) страницы доступа к данным. Когда страница открывается, происходит поиск указанного файла подключения, а затем устанавливается соединение с параметрами, описанными в этом файле. Можно указать файл подключения, используемый при создании всех новых страниц, на вкладке  Страницы (Pages) диалогового окна, отображаемого с помощью команды  Сервис, Параметры (Tools, Options). Там же можно указать папку, которая по умолчанию будет использована для сохранения новых страниц.</p>
+<p>Ссылку на файл страницы в базе данных можно изменить программным путем или с помощью окна свойств страницы, отображаемого с помощью команды контекстного меню при выделении страницы доступа к данным в окне базы данных.</p>
+<p>В Access 2002 стала возможной публикация страниц доступа к данным на Web-сервере, такая, что не возникает необходимости использования для доступа к ним библиотеки Remote Access Objects, установленной на этом сервере. Это упрощает публикацию данных, предназначенных только для чтения на сервере с выходом в Интернет через брандмауэр (firewall). Реализовать эту возможность можно, указав для страницы источник данных в формате XML с помощью ее новых свойств:  Использование данных XML (UseXMLData) и  Местоположение данных XML (XMLDataTarget).</p>
+<p>Новые возможности Access 2002 позволяют работать со страницами доступа к данным в автономном режиме (off-line), т. е. без постоянного подключения к источнику данных. (Например, это требуется при работе с базой данных на переносном компьютере.) В данном режиме приложения могут работать с реплицироданными данными SQL Server и Jet или с файлами данных в формате XML. Это средство полностью интегрировано с моделью синхронизации Microsoft Internet Explorer  (см. гл. 12 и 18).</p>
+<p> Доступ к корпоративным базам данных </p>
+<p>В этом разделе рассмотрены новые возможности Access 2002 и некоторых других приложений производства компании Microsoft, которые используются совместно с Access для работы с корпоративными базами данных.</p>
+<p> Хранение документов на Exchange Server 2000 </p>
+<p>Файлы и документы Microsoft Office теперь можно хранить на Exchange Server 2000 (новой версии сервера обмена данными). Как и обычные документы, их можно создавать, открывать и сохранять с помощью команд  Создать, Открыть и Сохранить (New, Open и Save) меню  Файл (File) в приложениях Office.</p>
+<p> Интеграция проектов Access 2002 с SQL Server 2000 </p>
+<p>Появилась новая версия SQL Server 2000 (а также ограниченной версии сервера MSDE2000), и интеграция с ней в Microsoft Access 2002 стала еще лучше.</p>
+<p>&nbsp;</p>
+<p> Расширенный набор свойств проекта Access 2002 </p>
+<p>Теперь базы данных новой версии SQL Server поддерживают расширенный набор свойств, доступный в проектах Access 2002. Например, в проектах Access 2002 теперь можно просматривать связи • в базе данных, правила проверки целостности (называемые также ограничениями), формат текста и подчиненные таблицы, которые раньше можно было видеть только в обычных базах данных Access. Новые свойства теперь доступны в режиме Конструктора для таблиц, представлений, хранимых процедур и функций проекта Access 2002, подобно тому, как раньше были доступны свойства объектов лишь в обычных базах данных Access 2000. Среди новых свойств можно назвать ширины столбцов, шрифты, маски ввода. Наличие расширенного набора свойств объектов проекта Access 2002 облегчает процедуру переноса бизнес-приложений из архитектуры баз данных Access в клиент-серверную архитектуру проектов Access, подключенных к SQL Server.</p>
+<p> Использование функций SQL Server 2000 </p>
+<p>Кроме хранимых процедур, в базах данных новой версии SQL Server 2000 теперь можно создавать и  функции. Функция подобна параметризованному запросу Microsoft Jet, ее можно использовать вместо хранимой процедуры, когда требуется вычислить результирующий набор записей, или использовать в любом месте, где могло быть применено представление. Чтобы создать функцию, используйте ярлык  Создание функции в режиме конструктора (Create function in designer) на странице объектов  Запросы (Queries) или выберите команду  Вставка, Запрос (Insert, Query) и пункт  Конструктор встроенной функции (Design In-Line Function). Функции можно использовать как источники набора записей для форм, отчетов, страниц доступа к данным, комбинированных списков и т. п.</p>
+<p> Новые возможности источников набора записей </p>
+<p>Представления и хранимые процедуры, а также функции теперь объединены в набор объектов, расположенных на одной странице, доступной с помощью одного ярлыка  Запросы (Queries) на панели объектов в окне проекта Access 2002. Для хранимых процедур и функций, в общем, для любых источников набора записей в виде инструкций SQL, теперь можно задавать параметры, так же как раньше можно было задавать параметры в запросах обычных баз данных MDB.</p>
+<p>Теперь обновлять данные можно непосредственно в представлениях и функциях, внося изменения прямо в табличное представление. В этом случае возможны любые изменения данных, аначогичные допустимым изменениям в запросах обычных баз данных формата MDB.</p>
+<p>Теперь можно использовать набор записей в качестве источника данных для списков и полей со списками. Кроме того, можно использовать даже неподключенный набор записей для всех объектов проекта ADP, которые имеют свойство  Источник записей (RecordSource) или  Источник строк (RowSource).</p>
+<p> Мастер связанных таблиц </p>
+<p>Связанные таблицы теперь можно помещать и в базы данных новой версии SQL Server 2000. Мастер связанных таблиц в проектах Access 2002 позволяет устанавливать связь с таблицами из других баз данных SQL Server, баз данных Access (файлов MDB) и прочих источников данных OLE DB.</p>
+<p> Пакетное обновление записей </p>
+<p>В Access 2002 поддерживается так называемое пакетное обновление записей для проектов Access 2002, подключенных к SQL Server 6.5, 7.0 или 2000. Это значит, что все изменения, сделанные в наборе записей, могут быть одновременно отменены или сохранены в источнике данных на сервере, например при закрытии формы, переходе от текущей основной записи, определяющей подчиненный набор записей, к следующей или при выборе команды  Записи, Сохранить все записи (Records, Save All Records). Сохранить или отменить все изменения в наборе записей можно также программным способом. Для этого нужно установить необходимое значение нового свойства  Пакетные транзакции (BatchUpdates) на вкладке Данные (Data) окна свойств формы. Значение этого свойства должно быть задано для главной формы, но не для подчиненных форм. При наличии возможности пакетного обновления записей отпадает необходимость создания формы, не привязанной непосредственно к источнику данных, для временного хранения записей и принятия/отмены изменений во всех записях одновременно.</p>
+<p> Перенос баз данных с одного SQL Server на другой </p>
+<p>Раньше для переноса баз данных SQL Server с одного сервера на другой можно было только присоединить файлы MDF к локальному серверу, чтобы затем работать с ними в Access 2000. Теперь Access 2002 позволяет создать копию файла MDF с локального SQL Server для текущего проекта ADP с помощью команды  Копировать файл базы данных (Copy Database File), чтобы вы могли присоединить этот файл к другому SQL Server. Если вы работаете не с локальным SQL Server и хотите перенести базу данных непосредственно с одного SQL Server на другой, используйте новую команду  Перенести базу данных (Transfer Database). Обе команды находятся в меню  Сервис,-Служебные программы (Tools, Database Utilities).</p>
+<p> Настольная версия SQL Server 2000 </p>
+<p>Чтобы испытать новые возможности проекта Access 2002, интегрированного с SQL Server 2000, можно установить на локальный компьютер настольную версию SQL Server — новое ядро баз данных MSDE2000 (Microsoft SQL Server 2000 Desktop Engine). Дистрибутив этого продукта находится на компакт-диске с дистрибутивом комплекта приложений Office 2002 в отдельной папке MSDE2000. В этой папке находится программа установки — файл Setup.exe.</p>
+<p>Если на компьютере установлена предыдущая версия MSDE 1.0, можно ее удалить, а затем запустить программу установки MSDE2000. Чтобы установить MSDE2000 поверх старой версии MSDE, необходимо дополнительно указать программе установки так называемое  имя экземпляра сервера (instance name). Для этого в командную строку, которая отображается в окне  Выполнить (Run) командой Windows  Пуск, Выполнить (Start, Run), необходимо ввести, например, такую строку:</p>
+<p>D:MSDE2000setup.exe INSTANCENAME=MSOFFICE</p>
+<p>Здесь буквой о обозначено имя дискового устройства, на котором находится папка с дистрибутивом MSDE, a MSOFFICE — это имя экземпляра сервера. Обратите внимание, в имени экземпляра сервера учитывается регистр символов (то есть прописные буквы отличаются от строчных).</p>
+<p>Чтобы создать проект ADP, подключенный к именованному экземпляру сервера SQL Server 2000, в свойствах подключения необходимо добавить к имени сервера имя экземпляра. Например, если на локальный компьютер установлен MSDE2000 с именем экземпляра MSOFFICE, в свойствах подключения в качестве имени сервера нужно указать (local) MSOFFICE.</p>
+<p>В комплект SQL Server 2000 Desktop Edition входит новая версия библиотеки Microsoft Data Access Components (MDAC) 2.6. Если возникают проблемы при подключении к серверам SQL Server 2000, установленным на других компьютерах, установите у себя MSDE2000.</p>
+<p> Изменения в системе защиты SQL Server </p>
+<p>При установке MSDE2000 под Windows NT4 или Windows 2000 по умолчанию используется интегрированная система защиты NT. В этом случае регистрация на сервере с именем системного администратора (SA) не работает. Чтобы разрешить нескольким клиентам подключаться к вашему серверу, используйте новую команду Access  Вид, Свойства сервера (View, Server Properties) и установите в появившемся диалоговом окне флажок  Учетная запись системного администратора (SA) (Enable system administrator (SA) user name). При этом настоятельно рекомендуется задать непустой пароль для данной учетной записи с помощью новой команды  Сервис, Защита, Задать пароль для входа (Tools, Security, Set Login Password), позволяющей изменить пароль для текущей учетной записи.</p>
+<p>Из-за изменений в системе защиты новой версии SQL Server 2000 для проектов Access больше не поддерживаются интерфейс репликации и диалоговое окно SQL Server  Security. Чтобы применить эти средства для базы данных SQL Server, используйте программу Enterprise Manager из комплекта SQL Server 2000.</p>
+<p> Новые средства разработки </p>
+<p>В новой версии пакета Microsoft Office 2002 добавились существенные расширения в объектную модель VBA, хотя в инструментальных средствах разработки приложений Access 2002 не появилось практически ничего нового.</p>
+<p>В редакторе Visual Basic и редакторе сценариев (Scripting Editor) несколько изменился внешний вид интерфейса, теперь интерфейс оформлен в стиле новой версии пакета Microsoft Office 2002.</p>
+<p>Несколько оптимизирована работа в редакторе Visual Basic: теперь можно сохранять модуль без его компиляции, причем в этом случае сохраняются только измененные модули. Если затем скомпилировать проект, весь он будет автоматически сохранен. Это увеличивает продуктивность работы над большим проектом, когда весь проект сохраняется только при необходимости.</p>
+<p> Новые элементы программирования на языке Visual Basic </p>
+<p>В объектную модель Visual Basic для приложений добавлены новые элементы: объекты, свойства, методы и события, расширяющие возможности программирования баз данных. Их подробный список можно найти в справочной системе Access 2002, в разделе &#171;Программирование на Visual Basic, Справочник Visual Basic для Microsoft Access, Что нового?&#187; (Programming in Visual Basic, Microsoft Access Visual Basic Reference, What&#8217;s New).</p>
+<p>Наиболее интересны следующие новшества.</p>
+<ul>
+<li>Теперь предоставлена возможность программной передачи пароля при открытии базы данных. Это позволяет создать собственный интерфейс для задания пароля пользователем или передачи пароля по умолчанию.</li>
+<li>Для любого объекта базы данных Access теперь можно узнать дату его создания и модификации с помощью чтения значений новых свойств DataCreated и DataModified у объекта AccessObject. Например:</li>
+</ul>
+<p> CurrentProject.AllForms(&#171;Заказы&#187;).DataModified </p>
+<ul>
+<li>В объектную модель добавлены новый объект Printer и коллекция объектов Printers для программного управления свойствами печати.</li>
+<li>У элементов управления список и поле со списком появились новые методы Addltem и Removeltem, предназначенные для добавления и удаления элементов списка.</li>
+<li>Новый метод CompactRepair позволяет выполнять программное сжатие и восстановление базы данных.</li>
+<li>Добавлен метод ConvertAccessProject для программного преобразования проекта Access.</li>
+<li>С помощью нового свойства BrokenReferences легко узнать программным путем, есть ли в проекте разорванные ссылки, и не нужно для этого просматривать все имеющиеся ссылки.</li>
+<li>У страниц доступа к данным появились новые события, основные из которых: AfterDelete, Afterlnsert, AfterUpdate, BeforeDelete, Beforelnsert, BeforeUpdate, Dirty, Focus, RecordExit И Undo.</li>
+</ul>
+<p> Выводы </p>
+<p>Пакет Microsoft Office 2002 — существенно обновленный комплект офисных приложений производства компании Microsoft, который необходим для эффективной работы как отдельного пользователя, так и компании в целом. В этой главе мы лишь перечислили наиболее важные новшества Access 2002 по сравнению с предыдущей версией. Этот обзор поможет тем, кто уже хорошо знаком с Access 2000, ускорить освоение новой версии продукта, а всем остальным — узнать, какие средства Access появились недавно и являются самыми современными. Подробнее о новых возможностях Access и их применении можно узнать в следующих главах, посвященных конкретным темам.</p>
+<p>В этой книге мы рассматриваем в основном инструментальные средства Microsoft Access. Разработчики же могут применить гораздо более широкий набор возможностей, освещение которых выходит за рамки нашего обсуждения.</p>
+<!-- toc empty -->	</div>
+<!-- .entry-content -->
+
+</article>
+
+
+
+
+
+
+
+
+
+<div class="social-buttons">
+<span class="social-button social-button--vkontakte main" data-social="vkontakte"><span>Поделиться в ВКонтакте</span></span><span class="social-button social-button--telegram " data-social="telegram"></span><span class="social-button social-button--odnoklassniki " data-social="odnoklassniki"></span><span class="social-button social-button--whatsapp " data-social="whatsapp"></span><span class="social-button social-button--viber " data-social="viber"></span>
+</div>
+
+<!--noindex-->
+<div class="author-box">
+    <div class="author-info">
+        <div class="author-box__ava">
+                    </div>
+
+        <div class="author-box__body">
+            <div class="author-box__author">
+                Автор А. Днепров            </div>
+            <div class="author-box__description">
+                <p>Обучаю основам работы с офисными программами.</p>
+            </div>
+
+            
+        </div>
+    </div>
+</div>
+<!--/noindex-->
+    <meta itemprop="author" content="А. Днепров">
+<meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/glava-novye-vozmozhnosti-microsoft-access" content="Глава 7. Новые возможности Microsoft Access">
+    <meta itemprop="dateModified" content="2024-06-11">
+<div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+<div class="related-posts">
+<div class="related-posts__header">Вам также может понравиться</div>
+<div class="post-cards post-cards--vertical">
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/kak-sdelat-massovuyu-zamenu-formul"><img width="311" height="230" src="/image04/2408fadbc9163d5aa4994580cfc152cd.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/kak-sdelat-massovuyu-zamenu-formul">Как сделать массовую замену формул</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/kak-udalit-lishnie-i-pustye-stranitsy-v-excel">Как удалить лишние и пустые страницы в Excel</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/preobrazovanie-teksta-v-tablitsu"><img width="345" height="122" src="/image14/7a0043c9bf012cc129b22376cfebb2a9.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/preobrazovanie-teksta-v-tablitsu">Преобразование текста в таблицу</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/kak-delat-skrinshoty-s-vysokim-razresheniem-v-windows">Как делать скриншоты с высоким разрешением в Windows 11/10</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/osobennosti-raboty-s-mnogostranichny"><img width="213" height="230" src="/image13/6f8f9694c11ee322ff9d3675b0b8ba07.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/osobennosti-raboty-s-mnogostranichny">13.1 Особенности работы с многостраничными документами</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/kak-sdelat-izmeneniya-vnutri-yacheyki-p"><img width="345" height="93" src="/image27/f6550fd3bdfdfdbe500536441d5d252e.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/kak-sdelat-izmeneniya-vnutri-yacheyki-p">Как сделать изменения внутри ячейки. Принудительный перенос</a></div>
+    </div>
+</div>
+</div>
+            </main><!-- #main -->
+        </div>
+<!-- #primary -->
+
+        
+    
+
+    </div>
+<!--.site-content-inner-->
+
+    
+</div>
+<!--.site-content-->
+
+    
+    
+
+<div class="site-footer-container">
+
+    
+
+    <footer id="colophon" class="site-footer full" itemscope itemtype="http://schema.org/WPFooter">
+        <div class="site-footer-inner fixed">
+
+            
+            
+<div class="footer-bottom">
+    <div class="footer-info">
+        <div class="footer-copyright">© 2024 Самоучитель справочник по офисным программам. <a href="/o-nas" rel="nofollow">О нас | Контакты</a> | <a href="/map" rel="nofollow">Карта сайта</a>
+</div>
+        <div class="footer-under-copyright"></div>
+	        </div>
+
+    </div>
+        </div>
+    </footer><!--.site-footer-->
+</div>
+
+
+            <button type="button" class="scrolltop js-scrolltop" data-mob="on"></button>
+    
+                    <div class="top-line js-top-line">
+            <div class="top-line-inner fixed">
+
+                <div class="top-line__title">Глава 7. Новые возможности Microsoft Access</div>
+<div class="top-line__like"><span class="btn-fb-like btn-top-like social-button--vkontakte" data-social="vkontakte"><span>Поделиться в ВКонтакте</span></span></div>
+<div class="top-line__post">
+<div class="top-line__post_thumbnail"><a href="/kopirovanie-lista-v-novyy-fayl"><img width="100" height="63" src="/image13/71b64e6c7c87787f1fefec24f4a5f376.jpg" class="attachment-yelly_square size-yelly_square wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="top-line__post_title"><a href="/kopirovanie-lista-v-novyy-fayl">Копирование листа в новый файл</a></div>
+</div>            </div>
+        </div>
+    
+</div>
+<!-- #page -->
+
+<script>var pseudo_links = document.querySelectorAll(".pseudo-clearfy-link");for (var i=0;i<pseudo_links.length;i++ ) { pseudo_links[i].addEventListener("click", function(e){   window.open( e.target.getAttribute("data-uri") ); }); }</script><script>document.addEventListener("copy", (event) => {var pagelink = "\nИсточник: /glava-novye-vozmozhnosti-microsoft-access";event.clipboardData.setData("text", document.getSelection() + pagelink);event.preventDefault();});</script><script type="text/javascript" id="yelly-scripts-js-extra">
+/* <![CDATA[ */
+var settings_array = {"rating_text_average":"среднее","rating_text_from":"из","lightbox_display":"1"};
+var wps_ajax = {"url":"\/wp-admin\/admin-ajax.php","nonce":"e4ca9d4bd8"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="/js/scripts.min.js" id="yelly-scripts-js"></script>
+
+
+
+<div class="image-hover-social-buttons" style="display: none;">
+<div class="social-button social-button--vkontakte js-share-link" data-uri="https://vk.com/share.php?url=%2Fglava-novye-vozmozhnosti-microsoft-access"></div>
+<div class="social-button social-button--telegram js-share-link" data-uri="https://t.me/share/url?url=%2Fglava-novye-vozmozhnosti-microsoft-access&text=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+7.+%D0%9D%D0%BE%D0%B2%D1%8B%D0%B5+%D0%B2%D0%BE%D0%B7%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D0%B8+Microsoft+Access"></div>
+<div class="social-button social-button--odnoklassniki js-share-link" data-uri="https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&service=odnoklassniki&st.shareUrl=%2Fglava-novye-vozmozhnosti-microsoft-access"></div>
+<div class="social-button social-button--whatsapp js-share-link" data-uri="whatsapp://send?url=%2Fglava-novye-vozmozhnosti-microsoft-accesstext=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+7.+%D0%9D%D0%BE%D0%B2%D1%8B%D0%B5+%D0%B2%D0%BE%D0%B7%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D0%B8+Microsoft+Access"></div>
+<div class="social-button social-button--viber js-share-link" data-uri="viber://forward?url=%2Fglava-novye-vozmozhnosti-microsoft-accesstext=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+7.+%D0%9D%D0%BE%D0%B2%D1%8B%D0%B5+%D0%B2%D0%BE%D0%B7%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D0%B8+Microsoft+Access"></div>
+</div>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(93345646, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/93345646" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>

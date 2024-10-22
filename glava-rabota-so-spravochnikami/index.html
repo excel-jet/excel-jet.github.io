@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<title>Глава 5. Работа со справочниками &#8212; learn-office</title>
+	<meta name="description" content="Для работы с постоянной и условно постоянной информацией с некоторым множеством значений в системе используются объекты типа «Справочник».    В конкретной">
+	<link rel="canonical" href="/glava-rabota-so-spravochnikami">
+	<meta property="og:locale" content="ru_RU">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Глава 5. Работа со справочниками &#8212; learn-office">
+	<meta property="og:description" content="Для работы с постоянной и условно постоянной информацией с некоторым множеством значений в системе используются объекты типа «Справочник».    В конкретной">
+	<meta property="og:url" content="/глава-5-работа-со-справочниками">
+	<meta property="og:site_name" content="Excel-jet">
+	<meta property="article:published_time" content="2024-10-07T20:18:34+00:00">
+	<meta property="og:image" content="/image19/ae848770190450400bc0356f631c8c6c.jpg">
+	<meta property="og:image:width" content="1">
+	<meta property="og:image:height" content="1">
+	<meta property="og:image:type" content="image/jpeg">
+	<meta name="author" content="А. Днепров">
+
+
+<style id="wp-block-library-theme-inline-css" type="text/css">.wp-block-audio :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio :where(figcaption){color:#ffffffa6}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed :where(figcaption){color:#ffffffa6}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:#ffffffa6}:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table :where(figcaption){color:#ffffffa6}.wp-block-video :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video :where(figcaption){color:#ffffffa6}.wp-block-video{margin:0 0 1em}:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}</style>
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 19.5px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36.5px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--normal: 22px;--wp--preset--font-size--huge: 49.5px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="google-fonts-css" href="https://fonts.googleapis.com/css?family=Roboto%3A400%2C400i%2C700&#038;subset=cyrillic&#038;display=swap" media="all">
+<link rel="stylesheet" id="yelly-style-css" href="/css/style.min.css" media="all">
+
+<style>.pseudo-clearfy-link { color: #008acf; cursor: pointer;}.pseudo-clearfy-link:hover { text-decoration: none;}</style>
+<link rel="preload" href="/fonts/icomoon.ttf" as="font" crossorigin>
+    <style>.scrolltop{width:50px}.scrolltop:before{content:"\21d1"}.entry-content a, .entry-content a:visited, .spanlink, .comment-reply-link, .pseudo-link, .widget_calendar a, .widget_recent_comments a, .child-categories ul li a{color:#0000ff}.child-categories ul li a{border-color:#0000ff}a:hover, a:focus, a:active, .spanlink:hover, .top-menu ul li>span:hover, .main-navigation ul li a:hover, .main-navigation ul li span:hover, .footer-navigation ul li a:hover, .footer-navigation ul li span:hover, .comment-reply-link:hover, .pseudo-link:hover, .child-categories ul li a:hover{color:#1e73be}.top-menu>ul>li>a:before, .top-menu>ul>li>span:before{background:#1e73be}.child-categories ul li a:hover, .post-box--no-thumb a:hover{border-color:#1e73be}.post-box--card:hover{box-shadow: inset 0 0 0 1px #1e73be}.post-box--card:hover{-webkit-box-shadow: inset 0 0 0 1px #1e73be}@media (min-width: 768px){body{background-attachment: scroll}}body{font-size:17px;}@media (max-width: 991px){.widget-area{display: block; margin: 0 auto}}</style>
+    <!-- Yandex.RTB -->
+<script>window.yaContextCb=window.yaContextCb||[]</script>
+<script src="https://yandex.ru/ads/system/context.js" async></script>	
+</head>
+<body class="post-template-default single single-post postid-1042 single-format-standard wp-embed-responsive sidebar-right">
+<div id="page" class="site">
+    <a class="skip-link screen-reader-text" href="#content">Перейти к контенту</a>
+
+    
+    
+    <div class="search-screen-overlay js-search-screen-overlay"></div>
+    <div class="search-screen js-search-screen">
+        
+<form role="search" method="get" class="search-form" action="/">
+    <label>
+        <span class="screen-reader-text">Search for:</span>
+        <input type="search" class="search-field" placeholder="Поиск..." value="" name="s">
+    </label>
+    <button type="submit" class="search-submit"></button>
+</form>    </div>
+
+    
+
+<header id="masthead" class="site-header full" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="site-header-inner fixed">
+
+        <div class="humburger js-humburger">
+<span></span><span></span><span></span>
+</div>
+
+        
+<div class="site-branding">
+
+    <div class="site-branding__body"><div class="site-title"><a href="/">Excel-jet</a></div></div>
+</div>
+<!-- .site-branding -->
+
+    
+    <nav id="site-navigation" class="main-navigation full">
+        <div class="main-navigation-inner fixed">
+            <div class="menu-menyu-container"><ul id="header_menu" class="menu">
+<li id="menu-item-6695" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-6695">
+<a href="/excel">Excel</a>
+<ul class="sub-menu">
+	<li id="menu-item-6709" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6709"><a href="/excel/functions">Функции</a></li>
+</ul>
+</li>
+<li id="menu-item-6697" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6697"><a href="/microsoft-word">Word</a></li>
+<li id="menu-item-6696" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6696"><a href="/powerpoint">PowerPoint</a></li>
+<li id="menu-item-6698" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6698"><a href="/outlook">Outlook</a></li>
+</ul></div>        </div>
+    </nav><!-- #site-navigation -->
+
+    
+<div class="header-search"><span class="search-icon js-search-icon"></span></div>    </div>
+</header><!-- #masthead -->
+
+
+
+    
+    
+    <div id="content" class="site-content fixed">
+
+        
+        <div class="site-content-inner">
+    
+        
+        <div id="primary" class="content-area" itemscope itemtype="http://schema.org/Article">
+            <main id="main" class="site-main">
+
+                
+<article id="post-1042" class="article-post post-1042 post type-post status-publish format-standard has-post-thumbnail  category-excel">
+
+    
+        
+        <header class="entry-header"><h1 class="entry-title" itemprop="headline">Глава 5. Работа со справочниками</h1></header>
+        
+        
+        
+    
+    
+    <div class="entry-meta">
+<span class="entry-time"><span class="entry-label">Время чтения</span> 30 мин.</span><span class="entry-date"><span class="entry-label">Опубликовано</span> <time itemprop="datePublished" datetime="2024-10-07">07.10.2024</time></span>
+</div>
+	<div class="entry-content" itemprop="articleBody">
+		<p>Для работы с постоянной и условно постоянной информацией с некоторым множеством значений в системе используются объекты типа «Справочник».    В конкретной конфигурации создается необходимое количество справочников, для хранения данных об объектах, используемых при автоматизации данной предметной области. Например, это могут быть справочники «Организации», «Товары», «Сотрудники» и т.д.    Кроме того, справочники используются для организации аналитического учета, что позволяет исключить неоднозначность при заполнении реквизитов документов или других справочников. При вводе информации в экранные формы документа минимум этой информации вводится с клавиатуры, а большая часть – выбором из открывающихся справочников.    Как правило справочник может редактироваться в процессе работы – могут вводиться новые элементы, редактироваться или удаляться уже существующие (если это не запрещено конкретному пользователю).    Работа со справочниками осуществляется в двух режимах:    ● в режиме просмотра и редактирования. В этом случае справочник открывается из главного меню программы или с помощью соответствующей пиктограммы на панели инструментов.    ● в режиме выбора элемента справочника. В этом случае справочник открывается с помощью кнопки <img decoding="async" src="/image19/ae848770190450400bc0356f631c8c6c.jpg" alt="" border="1">    или клавиши F4 при вводе нужной информации в документ или другой справочник.    Отличия между этими двумя режимами заключается в том, что в режиме просмотра справочника из главного меню нажатие клавиши ENTER (аналогично двойному щелчку) приведет к открытию текущего элемента справочника для редактирования. Аналогичные действия в режиме выбора из справочника приведут к выбору текущего элемента для вставки его в заполняемый документ. </p>
+<h3></h3>
+<p>    5.1. Окно справочника    Для вызова на экран нужного справочника можно воспользоваться командами главного меню (например, справочник «Контрагенты» открывается из пункта меню «Основная деятельность», справочник «Организации» – из пункта меню «Организации» и т.д.). Если в главном меню есть пункт «Операции», то вызов справочника можно осуществить, выбрав пункт «Операции-Справочники». На экран будет выдан список существующих справочников в алфавитном порядке: <img decoding="async" src="/image07/40c625c6379a49308d0493c05f2b20c5.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Выбрав нужный справочник, следует нажать «ОК». </p>
+<p>&nbsp;</p>
+<p>    Вот как выглядит в общем виде диалоговое окно справочника: <img decoding="async" src="/image15/89e84bf4265b72932ebafcd7544dde3d.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Если справочник имеет иерархическую структуру, окно справочника может содержать дерево групп.    При щелчке по знаку «+» в узле – ветвь раскроется. Закрыть ветвь дерева можно щелчком мыши на знаке «-».    Просмотр дерева можно производить с помощью клавиш цифровой клавиатуры:    «*» – раскрывает сразу все ветви дерева;    «-» – скрывает все ветви дерева текущей группы;    «+» – раскрывает следующий уровень ветвей текущей группы.    Если в меню «Действия» установлен показ в виде иерархического списка или нажата кнопка <img decoding="async" src="/image18/ab12b9076ba87bcee38d877a3795ef65.jpg" alt="" border="1">    на панели инструментов, то в крайней левой колонке табличного поля иерархического справочника выводятся условные знаки, обозначающие тип строки; <img decoding="async" src="/image05/314effbf104a3e726240021ae950038e.jpg" alt="" border="1">    =&gt; Строка является элементом справочника </p>
+<p>&nbsp;</p>
+<p> <img decoding="async" src="/image07/402dd70bf77c777779b0037e1e3fa54d.jpg" alt="" border="1">    =&gt; Строка соответствует группе элементов. Двойной щелчок левой кнопки мыши на этом значке раскрывает группу. </p>
+<p>&nbsp;</p>
+<p> <img decoding="async" src="/image06/366dd856076d0133e787ceba981cec27.jpg" alt="" border="1">    =&gt; Строка содержит название группы, открытой для просмотра. Двойной щелчок левой кнопки мыши на этом значке закрывает группу </p>
+<p>&nbsp;</p>
+<p>    Для одноуровневых справочников, не имеющих иерархической структуры, значки не различаются.    Когда в многоуровневом справочнике режим «Иерархический просмотр» выключен, то показываются все группы и элементы справочника причем вперемешку. Это бывает удобным, если справочник имеет сложную иерархию и Вы не помните точно, в какой группе находится нужный Вам элемент. При включенном иерархическом списке Вам пришлось бы последовательно открывать-закрывать многочисленные папки для поиска нужного элемента, при отключенной же иерархии, когда все элементы видны на экране, сделать это гораздо проще, используя один из вариантов поиска (быстрый или произвольный). При отключенном иерархическом списке все элементы справочника выстраиваются по наименованию (в алфавитном порядке). Сортировку справочника можно изменить. Для этого в пункте меню «Действия» следует выбрать подпункт «Сортировка» и вариант «Упорядочить по: Код». При этом элементы справочника выстраиваются в порядке возрастания их кодов. Такая сортировка бывает полезной при ответе на вопрос о том, какие элементы вводились в справочник раньше, а какие позже, так как при вводе новых элементов справочника код автоматически присваивается на единицу больше последнего.    Работу с элементами справочника можно вести с помощью пункта меню «Действия» окна справочника, либо с помощью пиктограмм панели инструментов справочника: </p>
+<p>&nbsp;</p>
+<p> <img decoding="async" src="/image19/b33d6b36fb5d99d84cc41b1b19089268.jpg" alt="" border="1">    =&gt; Создается новый элемент справочника копированием элемента, выделенного курсором </p>
+<p>&nbsp;</p>
+<p> <img decoding="async" src="/image10/5c17dad74a387565e7cc7bbcf7d0a6fb.jpg" alt="" border="1">    =&gt; Для переноса элемента или группу из одной группы в другую группу справочника нужно установить курсор на строку с тем элементом, который необходимо переместить, затем выбрать пункт «Действия – Переместить в группу» или воспользоваться соответствующей кнопкой. После этого в открывшемся диалоге дерева групп выбрать наименование той группы, куда предполагается перенести элемент. </p>
+<p>&nbsp;</p>
+<p> <img decoding="async" src="/image11/6385b00da7c3191bf717a7f04435baf0.jpg" alt="" border="1">    =&gt; При сетевой работе обновить текущий список справочника можно с помощью кнопки на панели инструментов или нажатием клавиш CTRL+SHIFT+R. </p>
+<p>&nbsp;</p>
+<p> <img decoding="async" src="/image14/7b69611b5274b1ad6432307d22de0112.jpg" alt="" border="1">    =&gt; Для того, чтобы воспользоваться справочной системой программы можно нажать клавишу F1 или нажать кнопку на панели инструментов </p>
+<p>&nbsp;</p>
+<p> <img decoding="async" src="/image23/cef9568d18d19bdba0b631e970782fa8.jpg" alt="" border="1">    =&gt; Текущий элемент справочника открывается для редактирования (аналог клавиши F2). Именно этой кнопкой можно воспользоваться, если справочник открыт в режиме выбора, а в названии (или других реквизитах) обнаружена ошибка. С помощью этой кнопки элемент будет открыт для исправления, после завершения которого клавишей ENTER можно будет выбрать его. </p>
+<p>&nbsp;</p>
+<p> <img decoding="async" src="/image18/a5133434d0d937f748f9cc5ed54f5c98.jpg" alt="" border="1">    =&gt; Установить пометку на удаление (аналог клавиши DEL). </p>
+<h3></h3>
+<p>    5.2. Ввод информации в справочник    Для ввода нового элемента выберите пункт «Действия – Добавить» формы списка справочника или нажмите на клавишу INSERT или можно воспользоваться кнопками на панели инструментов справочника: </p>
+<p>&nbsp;</p>
+<p> <img decoding="async" src="/image27/f801e7d8adbb27e11e469fee785180c4.jpg" alt="" border="1">    Добавить элемент </p>
+<p>&nbsp;</p>
+<p> <img decoding="async" src="/image02/15a6e1bc9da01ece84df7940b4d433b2.jpg" alt="" border="1">    Создать новую группу (CTRL+F9) </p>
+<p>&nbsp;</p>
+<p>    Для того чтобы новый элемент сразу попал в определенную группу, перед вводом элемента нужно предварительно перейти в эту группу.    Если для иерархического справочника отключен показ в виде иерархического списка, ввод нового элемента производиться в текущую группу (ту, которая была выбрана до изменения режима просмотра) или в корневую группу.    Если в форме ввода элемента предусмотрен реквизит «Родитель», то независимо от режима и текущей группы можно указать принадлежность к любой другой группе. <img decoding="async" src="/image27/f69aa445b447081ea911bf1f0795af3b.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    В форме заполняются основные реквизиты «Код» и «Наименование» и другие реквизиты справочника. Если это обусловлено конфигурацией, при вводе элемента его код будет проверяться на уникальность, если он совпадет с одним из кодов, уже имеющихся в справочнике, то будет выдано сообщение «Код не уникален!». В этом случае код должен быть исправлен.    Для записи элемента в справочник следует нажать кнопку «ОК». Для отказа от ввода в справочник нового элемента следует нажать на клавишу «ESC». В случае ввода информации об элементе справочника в отдельном диалоговом окне при этом будет выдан запрос о сохранении изменений, на который в данном случае следует ответить «Нет». <img decoding="async" src="/image25/e59a7a6396d55401457a976c42768d99.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Если для конкретного справочника возможны два варианта ввода нового элемента (непосредственно в списке справочника или в отдельно открывающемся диалоговом окне), то выбор конкретного варианта осуществляется из пункта меню «Действия – Редактировать в диалоге», который представляет собой переключатель. При «нажатом» состоянии пункта ввод осуществляется в диалоге, при «отжатом» – в списке.    Если для справочника имеется возможность организовать в нем иерархическую структуру, то для ввода новой группы следует выбрать пункт меню «Действия – Новая группа» формы списка или воспользоваться кнопкой <img decoding="async" src="/image24/d671dff0e5fa8dbd24fe6b8df6fe9d55.jpg" alt="" border="1">    панели инструментов окна справочника.    Так же, как и при вводе в справочник нового элемента, при вводе новой группы редактирование кода, наименования и других реквизитов группы может осуществляться двумя способами: в списке справочника или в отдельном диалоговом окне. Способ редактирования определяется на этапе конфигурирования. </p>
+<h3></h3>
+<p>    5.3. Редактирование информации в справочнике    Порядок редактирования информации в справочнике отличается в зависимости от того, происходит это в строке списка справочника или в отдельном диалоговом окне: </p>
+<p>&nbsp;</p>
+<p>    ● При редактировании в строке следует установить курсор в нужную строку и сделать двойной щелчок левой кнопкой мыши или нажать клавишу ENTER. Ячейка переключится в режим редактирования. Напомним, что описанные способы не действуют, если справочник открыт в режиме выбора. Двойной щелчок или клавиша ENTER в этом случае как раз и осуществляет выбор из справочника. Для редактирования же элемента справочника, открытого в режиме выбора, следует выбрать пункт «Действие—Изменить» или нажать клавишу F2.Перемещаться по реквизитам редактируемого элемента справочника можно клавишами Tab, Shift+Tab или мышью. Для закрепления результатов редактирования следует нажать клавишу ENTER или кнопку <img decoding="async" src="/image23/ccc3a776740d350555e55e54ca40d0f2.jpg" alt="" border="1">    на панели инструментов окна справочника. Для отказа от редактирования реквизита следует нажать клавишу ESC.    ● Для редактирования элемента справочника в режиме диалога так же следует установить курсор в нужную строку и сделать двойной щелчок левой кнопкой мыши или нажать клавишу ENTER. Откроется диалоговое окно элемента справочника, в которое нужно внести необходимые изменения, а затем нажать либо клавишу «ОК» (произойдет запись информации и окно редактируемого элемента закроется), либо «Записать» (произойдет запись информации, окно редактируемого элемента при этом остается на экране). </p>
+<p>&nbsp;</p>
+<p>    Для некоторых реквизитов справочников необходимо хранить историю изменения их реквизитов. Просмотр истории периодических реквизитов может осуществляться при установке курсора на соответствующий элемент в списке справочника и нажатия на кнопку «Перейти» и выбора соответствующего регистра сведений. <img decoding="async" src="/image03/1609a293ee34deffce64f70bfa730566.jpg" alt="" border="1"> </p>
+<h3></h3>
+<p>    5.4. Подчиненные справочники    Система «1С: Предпрятие» имеет механизм поддержки подчиненных справочников. Этот механизм позволяет связать между собой элементы разных справочников. У подчиненного справочника каждый элемент связан с конкретным элементом справочника – владельца. Если справочник имеет подчиненные справочники, то для открытия нужно воспользоваться пунктом меню «Действия – Перейти» и указать вид подчиненного справочника. <img decoding="async" src="/image11/5e13f7c3865615211573d543ed17961c.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    При открытии подчиненного справочника показывается список элементов, подчиненных тому элементу, на котором в данный момент расположен курсор: <img decoding="async" src="/image11/5cab19b37d493a3e0ab5d6bd234c21e5.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Для иерархических справочников список подчиненных элементов может быть показан только для элементов, не являющимися группами. Если же в момент вызова подчиненного справочника курсор стоял на группе элементов, будет выдано сообщение: <img decoding="async" src="/image03/17767eaecb2c195f9de7bd07e0cd447b.jpg" alt="" border="1"> </p>
+<h3></h3>
+<p>    5.5. Поиск элементов справочника    При большом количестве внесенной в справочник информации часто возникает необходимость поиска в ней нужного в данный момент элемента. Для этого существует несколько способов:    ● Быстрый поиск. Для выполнения быстрого поиска необходимо просто набирать на клавиатуре искомое значение. При обнаружении первого введенного символа он отображается в рамке в нижней части колонки, а курсор устанавливается в ту ячейку списка, первые символы которой совпадают с введенными. Последний введенный символ можно удалить из строки поиска, нажав клавишу Backspase. Если поиск осуществляется в иерархическом справочнике, который представлен в виде иерархического списка, то поиск производится только в текущей группе справочника. Для поиска во всем справочнике следует отключить режим просмотра справочника в виде иерархического списка.    ● Наиболее широкими возможностями обладает режим произвольного поиска. Он позволяет осуществлять поиск по любым значениям и в любом направлении. Произвольный поиск предназначен для поиска в списке конкретного значения одного из существующих в системе типов данных. Чтобы начать поиск, следует выбрать пункт «Правка – Найти» или нажать кнопку <img decoding="async" src="/image26/f038e61bb43cf08be1407a4b266d298a.jpg" alt="" border="1">    на главной панели инструментов программы. Форма диалога зависит от типа данных в колонке, для которой производится поиск. <img decoding="async" src="/image25/dfc04ee86f0a2d2a774f12d71bf1c522.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    ■ Укажите информацию, которую необходимо найти.    ■ Переключатель «Вперед – Назад – Везде» позволяет задать направление поиска.    ■ Опция «По текущей колонке», если она включена, указывает, что поиск будет производиться только в текущей колонке табличной части – той, в которую установлен курсор. При выключенной опции поиск будет производиться во всех колонках слева направо.    ■ Опция «Учитывать регистр», позволяет указать, будут ли различаться при поиске по строковому значению прописные и строчные буквы. Если эта опция включена, одинаковые прописные и строчные буквы будут считаться разными символами.    ■ После выполнения всех необходимых установок следует нажать кнопку «Поиск».    Если значений, указанных в качестве шаблона поиска, в списке несколько, можно продолжить поиск с теми же установками, выбрав пункт «Правка – Найти следующий», «Правка – Найти предыдущий» или воспользоваться кнопками <img decoding="async" src="/image24/dcec44f3fbb6c94d988b9c74682a9e16.jpg" alt="" border="1">    главной панели инструментов программы.    Кроме того, на панели инструментов существует специальное поле выбора для ввода строки поиска, то есть можно выполнить поиск по строке без вызова диалога поиска. Здесь также хранятся несколько предыдущих значений поиска, которые могут быть выбраны кнопкой <img decoding="async" src="/image16/8c88eb7cbffbd8fc6126a7000026c610.jpg" alt="" border="1">    Для использования этого элемента следует ввести в него искомую строчную информацию и нажать клавишу ENTER. Если при очередной попытке найти набранный текст на экран выводится предупреждение «Строка не найдена», то это означает, что в данном направлении нет данных, содержащих указанный текст. </p>
+<h3></h3>
+<p>    5.6. Отбор и сортировка элементов справочника    Для настройки отбора и сортировки списка в командной панели выберите пункт «Действия – Установить отбор и сортировку списка». <img decoding="async" src="/image03/1dc5e38e4002ca16c34e072f574934bd.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Данный пункт меню и кнопка могут быть недоступны, если пользователю не предоставлена возможность устанавливать отбор самостоятельно. </p>
+<p>&nbsp;</p>
+<p>    Закладка «Отбор»    В некоторых списках предусматривается возможность отбора данных по значениям реквизитов. Это позволяет просматривать только те данные, которые имеют определенное значение в реквизите, выбранном для отбора. Отбор данных производится по определенному набору критериев отбора.    Видами отбора называются критерии, которые определяются на этапе конфигурирования, а также зависит от типа списка.    Отбор может проводиться сразу по нескольким видам. Для этого достаточно установить флажок слева от наименования вида отбора.    Для каждого вида выбирается условие отбора. Состав возможных условий определяется типом данных.    В зависимости от выбранного вида условия вводятся значения отбора (может быть указано конкретное значение или интервал значений, а также список возможных значений, при этом в условиях можно выбрать как вхождение в список, так и невхождение в список).    Значением отбора может являться любое из имеющихся значений этого реквизита, например, «Частное лицо». Вид отбора и значение отбора составляют условие отбора. Условие отбора в определенный момент времени может быть только одно.    Заметим, что возможность отбора предусматривается для большинства списков, причем по одному или нескольким реквизитам. Если для списка отборы не предусмотрены, то в меню и в панели инструментов не будет содержаться элементов интерфейса для управления отборами.    Выбранные параметры отбора могут быть сохранены для использования в дальнейшем. Для этого нажмите кнопку «Отборы».    При установке отбора в окне формы списка выводятся только элементы, удовлетворяющие выбранному условию отбора.    Отбор данных в списке может быть установлен несколькими способами. </p>
+<p>&nbsp;</p>
+<p>    Закладка «Сортировка»    На закладке «Сортировка» устанавливается порядок представления отобранных данных.    В списке слева содержатся реквизиты, по которым будет осуществляться сортировка. Направление сортировки (по возрастанию или убыванию) задается кнопкой с двумя стрелками.    Реквизиты переносятся из правого списка.    Если отобрано несколько реквизитов, то порядок их следования в списке влияет на порядок представления информации. Сначала отобранный список будет сортироваться по первому сверху реквизиту, затем каждая группа одинаковых значений будет сортироваться по второму сверху реквизиту, и т.д. </p>
+<h3></h3>
+<p>    5.7. Использование элементов справочника    Как уже говорилось, кроме просмотра и редактирования, справочник может быть открыт для выбора из него нужного элемента. В этом случае справочник открывается с помощью кнопки выбора <img decoding="async" src="/image08/46ad97297bab141a9de314e69c2e4ffa.jpg" alt="" border="1">    или клавиши F4 при вводе реквизита типа «справочник». <img decoding="async" src="/image24/d7fd0f56f3c670f3af510e321c6b9672.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Открытое в режиме выбора окно справочника может иметь несколько другой вид, нежели когда он открыт для просмотра и редактирования. Могут иметь место иной состав и расположение колонок справочника, как правило, отсутствует дерево групп, и так далее.    Несмотря на то, что форма для выбора предназначена в основном для выбора требуемого элемента справочника, в этой форме имеется возможность выполнять те же действия, что и в режиме просмотра и редактирования – добавлять в справочник новые элементы, редактировать реквизиты существующих элементов, переносить элементы в другие группы (если в окне есть дерево групп), и тому подобное. Например, при заполнении документа «Счет на оплату» новому покупателю, справочник «Контрагенты», открытый в режиме выбора, не будет содержать нужной организации, но ее можно будет добавить в справочник непосредственно в режиме выбора, а после записи в справочник – выбрать в документ. Если же счет выписывается на уже имеющегося в базе покупателя, но в открытом для выбора справочнике «Контрагенты» в названии или других реквизитах контрагента обнаружена ошибка, ее можно исправить непосредственно в режиме выбора, а затем выбрать в документ уже исправленное значение.    Выбор элемента из справочника, открытого для выбора, осуществляется следующим образом:    ● Необходимо установить курсор в строку с нужным элементом    ● Нажать клавишу ENTER или кнопку выбора элемента <img decoding="async" src="/image11/600ff442fe2117b46da42c04f9b77b60.jpg" alt="" border="1">    панели инструментов справочника (если она предусмотрена при создании конфигурации). </p>
+<p>&nbsp;</p>
+<p>    Для того, чтобы очистить значение поля, заполненного выбором из справочника, следует:    ● Установить курсор в поле, необходимое очистить    ● Нажать сочетание клавиш SHIFT+F4 или выбрать команду меню «Правка – Очистить». </p>
+<h3></h3>
+<p>    5.8. Справочник «Контрагенты»    Контрагент – это общее понятие, куда включены поставщики и покупатели, организации и частные лица.    В качестве контрагента может выступать организация, имеющая несколько собственных юридических лиц (холдинг). В этом случае в справочник «Контрагенты» заносится головная организация холдинга, а также все юридические лица, входящие в состав холдинга. Для всех контрагентов, входящих в состав холдинга, устанавливается флаг «Входит в холдинг» и указывается головной контрагент – головная организация холдинга. Для головного контрагента флаг «Входит в холдинг» не устанавливается.    Контрагенты могут быть сгруппированы по группам классификатора справочника, например, «Поставщики», «Покупатели» и «Реализаторы». Справочник контрагентов имеет неограниченное количество уровней вложенности.    На закладке «Общие» следует указать: <img decoding="async" src="/image18/a485263b485b31660e413ab1e6418819.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    ● Юр./физ лицо – статус контрагента.    ● Группа контрагентов – принадлежность контрагента группе.    ● ИНН – идентификационный номер контрагента, для отражения в печатных формах документации    ● Входит в холдинг – признак того, что контрагент входит в состав холдинга и для него требуется указать головного контрагента    ● Головной контрагент – головная организация холдинга    Для юридического лица:    ● Полное наименование — наименование контрагента для отражения в печатных формах документации, в реквизит наименование надо написать наименование так, чтобы его было легко найти с помощью быстрого поиска. Например: Федоров ЧП – это наименование, а ЧП «Федоров свидетельство 333» – полное наименование.    ● КПП — код постановки на учет, для отражения в печатных формах документов    ● Код по ОКПО    Для физического лица:    ● ФИО – фамилия, имя и отчество    ● Документ – документ, удостоверяющий личность физического лица. </p>
+<p>&nbsp;</p>
+<p>    На закладке «Контакты»:    В таблице «Адреса и телефоны» представлена контактная информация контрагента. Отображаются как заполненные виды контактной информации для данного контрагента, так и те, которые не заполнены, но введены в справочник «Виды контактной информации» для объектов типа «Контрагент». Для каждого вида контактной информации можно посмотреть историю его изменения, кликнув по кнопке «История» командной панели таблицы.    В таблице «Контактные лица» отображаются контактные лица контрагентов. Список контактных лиц можно редактировать. <img decoding="async" src="/image15/8741ee213ba3f08ceb26def4280b76a1.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Закладка «Счета и договоры»:    На данной закладке редактируются банковские счета контрагента и договоры, заключенные предприятием с контрагентом.    Жирным шрифтом отмечаются основной договор и расчетный счет, которые можно изменить соответствующими кнопками командных панелей «Установить основным». <img decoding="async" src="/image17/9b39aa9b430473cd5b96c3426ddafb7f.jpg" alt="" border="1">   5.9. Справочник «Номенклатура»    Справочник «Номенклатура» предназначен для хранения информации о товарах, комплектах, наборах, продукции, возвратной таре, материалах, услугах, объектах строительства, оборудовании. Жесткого деления на такие категории нет, выделяются лишь услуги и наборы. Категории того, что это возвратная тара, материалы, продукция определяются в момент поступления номенклатуры на предприятие.    При описании объекта номенклатуры в справочной системе помимо названия необходимо определить ряд дополнительных свойств. Часть из них будут в дальнейшем использоваться в качестве значений по умолчанию при подстановках в реквизиты документов, т.е. такие свойства задаются не жестко и могут быть переопределены в любой момент: <img decoding="async" src="/image04/228bdb8dd729bd8e3b6794db3aacd5d8.jpg" alt="" border="1">    ● Краткое наименование. Используется для выбора и быстрого поиска номенклатуры из списка.    ● Полное наименование. Используется, например, для вывода в печатные формы документов. Например: Йоргут «Bio двойная польза» клубника шиповник 480 г – это полное наименование, Bio 2 польза, клубн.шип.480 йогурт – наименование для быстрого поиска.    ● Группа номенклатуры. Ссылка на группу справочника «Номенклатура», к которой принадлежит элемент в том случае, если в справочнике задана иерархическая структура. При ручном изменении родителя происходит переброска элемента из одной группы в другую.    ● Вид номенклатуры. Указатель для включения складского учета.    ● Единица измерения. Каждая позиция номенклатуры характеризуется базовой единицей измерения. Она выбирается из справочника «Классификатор единиц измерения».    ● ГТД, Страна происхождения, Ставка НДС. Реквизиты, значение которых будет использоваться в системе в качестве значения по умолчанию при оформлении, например, счетов-фактур.    У справочника «Номенклатура» есть подчиненные справочники, которые открываются по кнопке «Перейти» в меню справочника:    ● Справочник «Назначения использования» – предназначен для указания назначений использования переданной в эксплуатацию специальной одежды, специальной оснастки и инвентаря.    ● Справочник «Спецификации номенклатуры» – предназначен для хранения спецификаций – состава изделий. В спецификации можно указать несколько наименований продукции (выход спецификации) и список материалов, необходимых для изготовления указанного выхода. </p>
+<h3></h3>
+<p>    5.10. Справочник «Склады (места хранения)»    Справочник «Склады (места хранения)» предназначен для ведения списка мест хранения товаров.    Каждый элемент справочника описывает некоторое физическое место хранения (ангар, площадка, комната и т.д.). Формально товары, хранящиеся на одном складе, могут быть собственностью различных организаций, но для целей управленческого учета разделение остатков на складах происходит только по номенклатурным признакам. <img decoding="async" src="/image26/edf6b32d3d4b75d830560b1f77b24454.jpg" alt="" border="1">    Элементы справочника «Склады (места хранения)» используются практически во всех документах, регистрирующих движение товаров, и определяют место хранения, по которому фактически совершено то или иное движение.    Партионный учет может вестись в разрезе складов или по предприятию в целом.    Способ ведения партионного учета определяется в настройках параметров учета.    В конфигурации разделяются оптовые, розничные склады и неавтоматизированные торговые точки.    Для каждого склада (розничного, оптового и неавтоматизированной торговой точки) может быть задан тип цен, по которым будет осуществляться продажа в розницу («Тип розничных цен «). Тип розничных цен используется для автоматического заполнения цен в документах, осуществляемых продажу товаров в розницу. При изменении розничных цен производится автоматический пересчет остатков товаров по новым розничным ценам.    Следует иметь в виду, что жесткий контроль розничных цен осуществляется только при продаже товаров в неавтоматизированной торговой точке, во всех остальных случаях допускается изменение цен при продаже товаров в розницу.    В справочник «Склады (места хранения)» может быть введено любое количество складов. Информация хотя бы об одном складе должна присутствовать обязательно.    Один из складов следует указать в качестве основного склада в настройках пользователя. Указанный склад будет использоваться по умолчанию при начальной установке значений реквизитов для новых документов. </p>
+<h3></h3>
+<p>    5.11. Справочник «Банки»    В справочник «Банки» заносятся сведения о банках, в которых имеются расчетные счета как у самой компании, так и у контрагентов.    В данный справочник заносится информация о наименовании банка, в котором открыт расчетный счет компании или контрагента, БИК, корреспондентский счет, а также данные о местонахождении банка, телефоны для связи с работниками банка, индекс и почтовый адрес банка.    Справочник имеет многоуровневую, иерархическую структуру. Элементы справочника можно перегруппировать, перенося их из группы в группу. <img decoding="async" src="/image18/a6464e39db3f09be7a077909adeec6ce.jpg" alt="" border="1">    Справочник можно заполнить либо вручную (при небольшом количестве вводимых элементов), либо используя общероссийский классификатор банков. Нажав в окне списка банков кнопку «Добавить банки из классификатора РФ», можно получить доступ к этому классификатору, а при первом нажатии – вызвать окно обновления классификатора банков с диска информационного сопровождения или с сайта «Росбизнесконсалтинг». </p>
+<h3></h3>
+<p>    5.12. Справочник «Валюты»    Данный справочник используется во всех видах учета (бухгалтерском и налоговом).    В справочнике валют изначально имеются две валюты: российский рубль и доллар США. По умолчанию в качестве валюты регламентированного учета (базовой валюты) в конфигурации установлен российский рубль. Для того чтобы начать работать с конфигурацией, необходимо ввести текущий курс доллара по отношению к рублю.    Информация о курсе и кратности валюты хранятся в регистре сведений. По умолчанию в списке указываются значения, установленные на рабочую дату («Сервис – Параметры – Рабочая дата»). Эта дата показывается в списке валют в поле «Дата курса». В любой момент времени пользователь может изменить дату и посмотреть значение курса валют на любую интересующую его дату.    Динамику изменения курса можно посмотреть, открыв форму элемента валюты для любой валюты в списке.    С помощью стандартных клавиш сортировки и отбора можно отсортировать список курсов валют или установить период отображения истории курсов валют.    Новую валюту можно добавить в справочник из общероссийского классификатора валют. Для этого в списке валют имеется специальная кнопка «Подбор из ОКВ». <img decoding="async" src="/image04/283d29508dab54cfba93ee012c251d41.jpg" alt="" border="1">    При этом открывается общероссийский классификатор валют в виде текстового файла, в котором можно найти, выбрать и занести новую валюту в справочник валют.    Новую валюту можно ввести и путем добавления информации в справочник «Валюты». Информация о новой валюте вводится в режиме диалога. При вводе новой валюты заполняются реквизиты Курс и Кратность. <img decoding="async" src="/image28/fe36f5d67d02529e3e0585870fcf9bca.jpg" alt="" border="1">    Реквизиты «Курс» и «Кратность» взаимосвязаны, смысл их использования следующий. Если кратность задана равной единице, то в поле «Курс» вводится количество рублей, соответствующее единице данной валюты (то есть, курс валюты – в привычном понимании). Если курс данной валюты по отношению к рублю очень низкий (точность составляет меньше 4 знаков дробной части), в поле «Кратность» следует указать количество единиц валюты, принятое к котированию (котировочная единица валюты), а в поле «Курс» – сумму в рублях, соответствующую этому количеству единиц валюты.    Например. Курс итальянской лиры составляет 3,4756 рубля за 1000 лир. Тогда в поле «Кратность» указываем 1000 (котировочная единица итальянской лиры), а в поле «Курс» 3,4756.    Для того чтобы в формах печати правильно формировалось наименование валюты прописью, необходимо задать параметры прописи валюты.    Параметры прописи валюты задаются в форме элемента валюты. Для валюты задаются параметры прописи целой и дробной части валюты. В том случае, если дробная часть в печатных формах отображается числом, то можно установить нужное количество разрядов при выводе печатных форм документов.    Например. Если установлено количество разрядов 1 знак, то сумма по документу будет отображена, как 150,2 евро, а если 2 знака, то – 150,20 евро.    Установка текущего курса и изменение истории курса валюты производится в регистре сведений «Курсы валют». Для изменения данных по истории курса валюты необходимо установить курсор в справочнике валют на строку с нужной валютой и открыть форму элемента валюты.    Список курсов валют можно редактировать, вводить новые записи или удалять имеющиеся. Для новой записи необходимо задавать два реквизита: курс и кратность. Для того, чтобы изменить уже заданный курс необходимо установить курсор на строку с нужной записью и ввести новое значение курса и кратности.    Курсы валют можно не только редактировать вручную, но и заполнять автоматически с помощью обработки «Загрузка курсов валют». С помощью данной обработки можно произвести загрузку актуальных курсов валют за определенный период времени. Обработка вызывается из справочника «Валюты» при нажатии на кнопку «Загрузить курсы».    В диалоговом окне обработки можно указать период, за который необходимо загрузить курсы валют. <img decoding="async" src="/image16/9281ea6217e52f52579108f95e336f02.jpg" alt="" border="1">    С помощью кнопки «Подбор» можно подобрать те валюты из справочника «Валюты», по которым необходимо загружать курсы.    С помощью кнопки «Заполнить» можно заполнить список валют всеми валютами, которые зарегистрированы в справочнике «Валюты».    Загрузка курсов производится при нажатии на кнопку «Загрузить». После успешной загрузки информация о курсах валют автоматически записывается в регистр сведения для каждой валюты.    Кнопка «Очистить» очищает список валют и их курсов. </p>
+<h3></h3>
+<p>    5.13. Справочник «Основные средства»    Справочник «Основные средства» предназначен в первую очередь для хранения наиболее общей информации об объектах основных средств, которая характеризует сами объекты и не зависит от того, какой организации принадлежит объект, в каком он состоянии находится в тот или иной момент времени и т.д.    Справочник предназначен для ведения аналитического учета по отдельным объектам на счетах:    – 01 «Основные средства»;    – 02 «Амортизация основных средств»;    – 03 «Доходные вложения в материальные ценности»;    – 83.1 «Прирост стоимости имущества по переоценке»;    – 98.2 «Безвозмездные поступления (ОС)»    – 001 «Арендованные основные средства»;    – 010 «Износ основных средств»;    – 011 «Основные средства, сданные в аренду»;    К основным сведениям, которые следует указать в справочнике, относятся:    ● группа ОС    ● полное наименование    ● изготовитель    ● заводской номер    ● номер паспорта    ● дата выпуска    ● ОКОФ    ● группа учета ОС – следует выбрать категорию, к которой относится данное основное средство. В программе основные средства классифицированы по следующим группам:    √ Здания;    √ Сооружения;    √ Передаточные устройства;    √ Машины и оборудование;    √ Транспортные средства;    √ Инструмент;    √ Инвентарь;    √ Рабочий скот;    √ Продуктивный скот;    √ Многолетние насаждения;    √ Капитальные затраты по улучшению земель;    √ Земельные участки;    √ Объекты природопользования;    √ Прочие основные фонды.    ● Амортизационная группа ОС – следует выбрать категорию, к которой относится данное основное средство в. В программе амортизационные группы основных средств классифицированы по следующим группам:    √ Первая группа (от 1 года до 2 лет включительно)    √ Вторая группа (свыше 2 лет до 3 лет включительно)    √ Третья группа (свыше 3 лет до 5 лет включительно)    √ Четвертая группа (свыше 5 лет до 7 лет включительно)    √ Пятая группа (свыше 7 лет до 10 лет включительно)    √ Шестая группа (свыше 10 лет до 15 лет включительно)    √ Седьмая группа (свыше 15 лет до 20 лет включительно)    √ Восьмая группа (свыше 20 лет до 25 лет включительно)    √ Девятая группа (свыше 25 лет до 30 лет включительно)    √ Десятая группа (свыше 30 лет)    √ Отдельная группа (п.1, ст.322 НК РФ)    ● Подлежит амортизации – определяет, должна ли для данного объекта рассчитываться амортизация. Если флажок «Подлежит амортизации» установлен, то начисление амортизации производится с кредита счета 02 в дебет счета затрат. Если флажок не установлен, то начисление амортизации не производится, а износ, рассчитанный по нормам, один раз в конце года относится в дебет счета 010.    ● Автотранспорт – признак принадлежности к автотранспорту    ● Комментарий    На закладке «Бухгалтерский учет» в карточке основного средства следует указать все данные, которые необходимы для автоматического начисления амортизации в целях бухгалтерского учета (первоначальная стоимость основного средства, срок полезного использования, способ начисления амортизации, счет отнесения затрат по амортизации, дату ввода в эксплуатацию данного основного средства).    На закладке «Налоговый учет» в карточке основного средства следует указать аналогичные данные, необходимые для начисления амортизации в целях налогового учета. <img decoding="async" src="/image03/1ba2731fa838aede9e08b264d44e56b7.jpg" alt="" border="1">    В справочнике имеется возможность группового ввода элементов, например, если нужно ввести данные о десяти одинаковых компьютерах или стольких же одинаковых компьютерных креслах. При этом задаются общие параметры и количество вводимых основных средств, после ввода каждое из однотипных основных средств получает свой уникальный инвентарный номер.    Из карточки основного средства по кнопке «Печать» на экран, а затем на принтер, может быть выведена стандартная унифицированная форма инвентарной карточки «ОС-6». </p>
+<h3></h3>
+<p>    5.14. Справочник «Физические лица»    Справочник «Физические лица» предназначен для хранения информации обо всех физических лицах, являющихся работниками организаций.    В справочнике можно объединять физических лиц в произвольные группы и подгруппы, например, можно выделить такие группы: подотчетные лица, прочие работники, уволенные и т.п.    Редактирование и ввод новой информации о физическом лице производится в отдельном диалоговом окне.    Фамилия, имя и отчество физического лица – реквизиты периодические. При смене фамилии (например, при замужестве), новые данные можно ввести с помощью кнопки    «Подробнее», указав дату, с которой действует изменение. <img decoding="async" src="/image17/98fd6889ac5c7a916eae4862e8004408.jpg" alt="" border="1">    По кнопке «Печать» в карточке физического лица на печать выводится отчет с основными кадровыми данными данного человека. <img decoding="async" src="/image28/feaf72d090e29693ebae87ebb3805d35.jpg" alt="" border="1">    С помощью кнопки «НДФЛ» на панели карточки физического лица можно задать вычеты на самого сотрудника и на его детей, которые будут использоваться в дальнейшем при расчете подоходного налога, а так же ввести данные о полученной на прежнем месте зарплате (если сотрудник принят в середине года). <img decoding="async" src="/image06/34203ab656f9263dba64b1c6978cbfaf.jpg" alt="" border="1"></p>
+<!-- toc empty -->	</div>
+<!-- .entry-content -->
+
+</article>
+
+
+
+
+
+
+
+
+
+<div class="social-buttons">
+<span class="social-button social-button--vkontakte main" data-social="vkontakte"><span>Поделиться в ВКонтакте</span></span><span class="social-button social-button--telegram " data-social="telegram"></span><span class="social-button social-button--odnoklassniki " data-social="odnoklassniki"></span><span class="social-button social-button--whatsapp " data-social="whatsapp"></span><span class="social-button social-button--viber " data-social="viber"></span>
+</div>
+
+<!--noindex-->
+<div class="author-box">
+    <div class="author-info">
+        <div class="author-box__ava">
+                    </div>
+
+        <div class="author-box__body">
+            <div class="author-box__author">
+                Автор А. Днепров            </div>
+            <div class="author-box__description">
+                <p>Обучаю основам работы с офисными программами.</p>
+            </div>
+
+            
+        </div>
+    </div>
+</div>
+<!--/noindex-->
+    <meta itemprop="author" content="А. Днепров">
+<meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/glava-rabota-so-spravochnikami" content="Глава 5. Работа со справочниками">
+    <meta itemprop="dateModified" content="2024-10-07">
+<div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+<div class="related-posts">
+<div class="related-posts__header">Вам также может понравиться</div>
+<div class="post-cards post-cards--vertical">
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/kak-sdelat-massovuyu-zamenu-formul"><img width="311" height="230" src="/image04/2408fadbc9163d5aa4994580cfc152cd.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" fetchpriority="high"></a></div>
+<div class="post-card__title"><a href="/kak-sdelat-massovuyu-zamenu-formul">Как сделать массовую замену формул</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/kak-udalit-lishnie-i-pustye-stranitsy-v-excel">Как удалить лишние и пустые страницы в Excel</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/preobrazovanie-teksta-v-tablitsu"><img width="345" height="122" src="/image14/7a0043c9bf012cc129b22376cfebb2a9.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/preobrazovanie-teksta-v-tablitsu">Преобразование текста в таблицу</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/kak-delat-skrinshoty-s-vysokim-razresheniem-v-windows">Как делать скриншоты с высоким разрешением в Windows 11/10</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/osobennosti-raboty-s-mnogostranichny"><img width="213" height="230" src="/image13/6f8f9694c11ee322ff9d3675b0b8ba07.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/osobennosti-raboty-s-mnogostranichny">13.1 Особенности работы с многостраничными документами</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/kak-sdelat-izmeneniya-vnutri-yacheyki-p"><img width="345" height="93" src="/image27/f6550fd3bdfdfdbe500536441d5d252e.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/kak-sdelat-izmeneniya-vnutri-yacheyki-p">Как сделать изменения внутри ячейки. Принудительный перенос</a></div>
+    </div>
+</div>
+</div>
+            </main><!-- #main -->
+        </div>
+<!-- #primary -->
+
+        
+    
+
+    </div>
+<!--.site-content-inner-->
+
+    
+</div>
+<!--.site-content-->
+
+    
+    
+
+<div class="site-footer-container">
+
+    
+
+    <footer id="colophon" class="site-footer full" itemscope itemtype="http://schema.org/WPFooter">
+        <div class="site-footer-inner fixed">
+
+            
+            
+<div class="footer-bottom">
+    <div class="footer-info">
+        <div class="footer-copyright">© 2024 Самоучитель справочник по офисным программам. <a href="/o-nas" rel="nofollow">О нас | Контакты</a> | <a href="/map" rel="nofollow">Карта сайта</a>
+</div>
+        <div class="footer-under-copyright"></div>
+	        </div>
+
+    </div>
+        </div>
+    </footer><!--.site-footer-->
+</div>
+
+
+            <button type="button" class="scrolltop js-scrolltop" data-mob="on"></button>
+    
+                    <div class="top-line js-top-line">
+            <div class="top-line-inner fixed">
+
+                <div class="top-line__title">Глава 5. Работа со справочниками</div>
+<div class="top-line__like"><span class="btn-fb-like btn-top-like social-button--vkontakte" data-social="vkontakte"><span>Поделиться в ВКонтакте</span></span></div>
+<div class="top-line__post">
+<div class="top-line__post_thumbnail"><a href="/funktsiya-roundup-v-excel"></a></div>
+<div class="top-line__post_title"><a href="/funktsiya-roundup-v-excel">Функция ROUNDUP в Excel</a></div>
+</div>            </div>
+        </div>
+    
+</div>
+<!-- #page -->
+
+<script>var pseudo_links = document.querySelectorAll(".pseudo-clearfy-link");for (var i=0;i<pseudo_links.length;i++ ) { pseudo_links[i].addEventListener("click", function(e){   window.open( e.target.getAttribute("data-uri") ); }); }</script><script>document.addEventListener("copy", (event) => {var pagelink = "\nИсточник: /glava-rabota-so-spravochnikami";event.clipboardData.setData("text", document.getSelection() + pagelink);event.preventDefault();});</script><script type="text/javascript" id="yelly-scripts-js-extra">
+/* <![CDATA[ */
+var settings_array = {"rating_text_average":"среднее","rating_text_from":"из","lightbox_display":"1"};
+var wps_ajax = {"url":"\/wp-admin\/admin-ajax.php","nonce":"e4ca9d4bd8"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="/js/scripts.min.js" id="yelly-scripts-js"></script>
+
+
+
+<div class="image-hover-social-buttons" style="display: none;">
+<div class="social-button social-button--vkontakte js-share-link" data-uri="https://vk.com/share.php?url=%2Fglava-rabota-so-spravochnikami"></div>
+<div class="social-button social-button--telegram js-share-link" data-uri="https://t.me/share/url?url=%2Fglava-rabota-so-spravochnikami&text=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+5.+%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0+%D1%81%D0%BE+%D1%81%D0%BF%D1%80%D0%B0%D0%B2%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B0%D0%BC%D0%B8"></div>
+<div class="social-button social-button--odnoklassniki js-share-link" data-uri="https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&service=odnoklassniki&st.shareUrl=%2Fglava-rabota-so-spravochnikami"></div>
+<div class="social-button social-button--whatsapp js-share-link" data-uri="whatsapp://send?url=%2Fglava-rabota-so-spravochnikamitext=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+5.+%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0+%D1%81%D0%BE+%D1%81%D0%BF%D1%80%D0%B0%D0%B2%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B0%D0%BC%D0%B8"></div>
+<div class="social-button social-button--viber js-share-link" data-uri="viber://forward?url=%2Fglava-rabota-so-spravochnikamitext=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+5.+%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0+%D1%81%D0%BE+%D1%81%D0%BF%D1%80%D0%B0%D0%B2%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B0%D0%BC%D0%B8"></div>
+</div>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(93345646, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/93345646" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>

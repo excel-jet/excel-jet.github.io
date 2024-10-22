@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<title>Глава 15. Интеграция Access с другими компонентами Office — learn-office</title>
+	<meta name="description" content="Интеграция Access 2002 с другими компонентами Office 2002 Хотя СУБД Access является прекрасным инструментом для создания различных приложений, выполняющих">
+	<link rel="canonical" href="/glava-integratsiya-access-s-drugimi-kompone">
+	<meta property="og:locale" content="ru_RU">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Глава 15. Интеграция Access с другими компонентами Office — learn-office">
+	<meta property="og:description" content="Интеграция Access 2002 с другими компонентами Office 2002 Хотя СУБД Access является прекрасным инструментом для создания различных приложений, выполняющих">
+	<meta property="og:url" content="/glava-integratsiya-access-s-drugimi-kompone">
+	<meta property="og:site_name" content="Excel-jet">
+	<meta property="article:published_time" content="2024-06-24T04:49:01+00:00">
+	<meta property="og:image" content="/image19/b1b3c9be1aea137f6c7ec13137da7706.gif">
+	<meta property="og:image:width" content="580">
+	<meta property="og:image:height" content="354">
+	<meta property="og:image:type" content="image/gif">
+	<meta name="author" content="А. Днепров">
+
+
+<style id="wp-block-library-theme-inline-css" type="text/css">.wp-block-audio :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio :where(figcaption){color:#ffffffa6}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed :where(figcaption){color:#ffffffa6}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:#ffffffa6}:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table :where(figcaption){color:#ffffffa6}.wp-block-video :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video :where(figcaption){color:#ffffffa6}.wp-block-video{margin:0 0 1em}:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}</style>
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 19.5px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36.5px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--normal: 22px;--wp--preset--font-size--huge: 49.5px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="google-fonts-css" href="https://fonts.googleapis.com/css?family=Roboto%3A400%2C400i%2C700&#038;subset=cyrillic&#038;display=swap" media="all">
+<link rel="stylesheet" id="yelly-style-css" href="/css/style.min.css" media="all">
+
+<style>.pseudo-clearfy-link { color: #008acf; cursor: pointer;}.pseudo-clearfy-link:hover { text-decoration: none;}</style>
+<link rel="preload" href="/fonts/icomoon.ttf" as="font" crossorigin>
+    <style>.scrolltop{width:50px}.scrolltop:before{content:"\21d1"}.entry-content a, .entry-content a:visited, .spanlink, .comment-reply-link, .pseudo-link, .widget_calendar a, .widget_recent_comments a, .child-categories ul li a{color:#0000ff}.child-categories ul li a{border-color:#0000ff}a:hover, a:focus, a:active, .spanlink:hover, .top-menu ul li>span:hover, .main-navigation ul li a:hover, .main-navigation ul li span:hover, .footer-navigation ul li a:hover, .footer-navigation ul li span:hover, .comment-reply-link:hover, .pseudo-link:hover, .child-categories ul li a:hover{color:#1e73be}.top-menu>ul>li>a:before, .top-menu>ul>li>span:before{background:#1e73be}.child-categories ul li a:hover, .post-box--no-thumb a:hover{border-color:#1e73be}.post-box--card:hover{box-shadow: inset 0 0 0 1px #1e73be}.post-box--card:hover{-webkit-box-shadow: inset 0 0 0 1px #1e73be}@media (min-width: 768px){body{background-attachment: scroll}}body{font-size:17px;}@media (max-width: 991px){.widget-area{display: block; margin: 0 auto}}</style>
+    <!-- Yandex.RTB -->
+<script>window.yaContextCb=window.yaContextCb||[]</script>
+<script src="https://yandex.ru/ads/system/context.js" async></script>	
+</head>
+<body class="post-template-default single single-post postid-854 single-format-standard wp-embed-responsive sidebar-right">
+<div id="page" class="site">
+    <a class="skip-link screen-reader-text" href="#content">Перейти к контенту</a>
+
+    
+    
+    <div class="search-screen-overlay js-search-screen-overlay"></div>
+    <div class="search-screen js-search-screen">
+        
+<form role="search" method="get" class="search-form" action="/">
+    <label>
+        <span class="screen-reader-text">Search for:</span>
+        <input type="search" class="search-field" placeholder="Поиск..." value="" name="s">
+    </label>
+    <button type="submit" class="search-submit"></button>
+</form>    </div>
+
+    
+
+<header id="masthead" class="site-header full" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="site-header-inner fixed">
+
+        <div class="humburger js-humburger">
+<span></span><span></span><span></span>
+</div>
+
+        
+<div class="site-branding">
+
+    <div class="site-branding__body"><div class="site-title"><a href="/">Excel-jet</a></div></div>
+</div>
+<!-- .site-branding -->
+
+    
+    <nav id="site-navigation" class="main-navigation full">
+        <div class="main-navigation-inner fixed">
+            <div class="menu-menyu-container"><ul id="header_menu" class="menu">
+<li id="menu-item-6695" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-6695">
+<a href="/excel">Excel</a>
+<ul class="sub-menu">
+	<li id="menu-item-6709" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6709"><a href="/excel/functions">Функции</a></li>
+</ul>
+</li>
+<li id="menu-item-6697" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6697"><a href="/microsoft-word">Word</a></li>
+<li id="menu-item-6696" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6696"><a href="/powerpoint">PowerPoint</a></li>
+<li id="menu-item-6698" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6698"><a href="/outlook">Outlook</a></li>
+</ul></div>        </div>
+    </nav><!-- #site-navigation -->
+
+    
+<div class="header-search"><span class="search-icon js-search-icon"></span></div>    </div>
+</header><!-- #masthead -->
+
+
+
+    
+    
+    <div id="content" class="site-content fixed">
+
+        
+        <div class="site-content-inner">
+    
+        
+        <div id="primary" class="content-area" itemscope itemtype="http://schema.org/Article">
+            <main id="main" class="site-main">
+
+                
+<article id="post-854" class="article-post post-854 post type-post status-publish format-standard has-post-thumbnail  category-excel">
+
+    
+        
+        <header class="entry-header"><h1 class="entry-title" itemprop="headline">Глава 15. Интеграция Access с другими компонентами Office</h1></header>
+        
+        
+        
+    
+    
+    <div class="entry-meta">
+<span class="entry-time"><span class="entry-label">Время чтения</span> 65 мин.</span><span class="entry-date"><span class="entry-label">Опубликовано</span> <time itemprop="datePublished" datetime="2024-06-24">24.06.2024</time></span>
+</div>
+	<div class="entry-content" itemprop="articleBody">
+		<p>Интеграция Access 2002 с другими компонентами Office 2002</p>
+<p>Хотя СУБД Access является прекрасным инструментом для создания различных приложений, выполняющих обработку данных в связанных таблицах, однако некоторые операции с данными гораздо эффективнее решаются другими приложениями, входящими в семейство Microsoft Office 2002. И при разработке приложения возникает желание <a href="/glava-redaktirovanie-i-analiz-dannyh">создать запросы и формы Access</a>, добавить к ним аналитические возможности Excel, обеспечить редактирование отчетов Access в редакторе Word, связать все это с текущей таблицей контактов Outlook или личным календарем и т. д. То есть, чтобы получить приложение для офиса, удовлетворяющее современным требованиям, необходимо обеспечить совместное функционирование различных приложений Microsoft Office. Оказывается, данное желание вполне осуществимо, и в настоящей главе мы покажем это.</p>
+<p>Основой для организации такого взаимодействия является технология ActiveX. Технология ActiveX предоставляет разработчику два мощных механизма интеграции приложений:</p>
+<ul>
+<li>OLE (Object Linking and Embedding) — механизм, который позволяет связывать или внедрять объекты, созданные другими приложениями Microsoft Office, в формы и отчеты Access.</li>
+<li>Автоматизация (Automation, которая раньше называлась OLE Automation) — технология, позволяющая управлять из приложения Access объектами, которые созданы и поддерживаются другими приложениями Microsoft Office.</li>
+</ul>
+<p>Оба этих механизма являются свойствами COM (Component Object Model) — модели компонентных объектов, которая специфицирует взаимодействие объектов в компонентной архитектуре приложения.</p>
+<p>О том, как используются указанные механизмы и чем они отличаются, и будет рассказано в данной главе.</p>
+<div class="table-of-contents open">
+<div class="table-of-contents__header"><span class="table-of-contents__hide js-table-of-contents-hide">Содержание</span></div>
+<ol class="table-of-contents__list js-table-of-contents-list">
+<li class="level-1"><a href="#zamechanie">Замечание</a></li>
+<li class="level-1"><a href="#s-pomoschyu-klyuchevogo-slova-new">С помощью ключевого слова New.</a></li>
+<li class="level-1"><a href="#s-pomoschyu-funktsii-createobject">С помощью функции CreateObject ( ).</a></li>
+<li class="level-1"><a href="#s-pomoschyu-funktsii-getobject">С помощью функции Getobject ().</a></li>
+<li class="level-1"><a href="#sozdanie-rabochego-lista-tovary-xls">Создание рабочего листа «Товары.xls»</a></li>
+<li class="level-1"><a href="#ierarhiya-obektov-vba-prilozheniya-microsoft">Иерархия объектов VBA приложения Microsoft Excel</a></li>
+<li class="level-1"><a href="#otkrytie-suschestvuyuschego-rabochego-lista">Открытие существующего рабочего листа Excel и работа с ним</a></li>
+<li class="level-1"><a href="#ispolzovanie-imenovannyh-diapazonov-yacheek">Использование именованных диапазонов ячеек</a></li>
+<li class="level-1"><a href="#zakrytie-obektov-workbook-i-application">Закрытие объектов Workbook и Application</a></li>
+<li class="level-1"><a href="#sozdanie-rabochego-lista-excel-s-pomoschyu">Создание рабочего листа Excel с помощью кода автоматизации</a></li>
+<li class="level-1"><a href="#ierarhiya-obektov-vba-prilozheniya-microsoft-2">Иерархия объектов VBA приложения Microsoft Word</a></li>
+<li class="level-1"><a href="#otkrytie-dokumenta-word">Открытие документа Word</a></li>
+<li class="level-1"><a href="#vyvod-dannyh-iz-tablitsy-access-v-dokument">Вывод данных из таблицы Access в документ Word</a></li>
+<li class="level-1"><a href="#sliyanie-dokumentov-dlya-pochtovyh-rassylok">Слияние документов для почтовых рассылок</a></li>
+</ol>
+</div>
+<h2 id="zamechanie">Замечание</h2>
+<p>На самом деле понятия OLE и Automation шире, чем это определено выше, они касаются самых разных приложений, которые поддерживают технологию ActiveX, а не только приложений семейства Microsoft Office, однако в рамках данной книги мы будем рассматривать их именно в таком контексте, как мы определили.</p>
+<p>Итак, в настоящей главе будут затронуты следующие вопросы:</p>
+<ul>
+<li>Использование протокола OLE и связанных с ним моделей построения интегрированных приложений</li>
+<li>Вставка рисунков в Access, демонстрирующая возможности OLE</li>
+<li>Совместное использование Access с Word и Excel</li>
+<li>Общие понятия автоматизации и иллюстрация работы автоматизации внутри комплекта Microsoft Office</li>
+<li>Использование элементов ActiveX</li>
+</ul>
+<p>Связывание и внедрение объектов</p>
+<p>Итак, OLE — это протокол, позволяющий создавать составные документы, которые включают в себя документы, созданные другими приложениями. Документ, который включает в себя другие документы, называется документом-контейнером OLE. В данном случае документами-контейнерами являются формы и отчеты Access. Документы, которые включаются в форму или отчет, называются документами-источниками или объектами OLE. Объектами OLE могут быть документы Word, Excel, рисунки, созданные в одном из графических редакторов, например Paint, видеоролики (файлы с расширением avi), звуковые файлы с расширением wav. Объекты OLE отличаются от объектов Automation, о которых мы будем говорить ниже, тем, что они являются документами, получаемыми с помощью приложения, а не частью его модели объектов.</p>
+<p>Объекты OLE могут быть либо внедрены в документ-контейнер, либо связаны с ним. Приложение, которое поставляет объекты для внедрения и связывания, называется сервером OLE. Внедренный объект представляет собой копию документа-источника, который сохраняется вместе с формой или отчетом. Связанный объект хранится в отдельном файле, и документ-контейнер содержит только указатель на исходный файл объекта. Если кто-либо обновляет исходный файл объекта, то обновляется и представление объекта в составном документе. Коварство связанных объектов заключается в том, что при изменении местоположения исходного файла относительно составного документа, либо при изменении местоположения составного документа таким образом, что исходный файл становится недоступным, связь разрывается. Внедренные объекты всегда доступны, однако частое их использование приводит к непомерному увеличению файла составного документа.</p>
+<p>Выполнив внедрение или связывание объекта OLE, можно легко активизировать из документа Access приложение, которому этот объект принадлежит. Для этого достаточно дважды щелкнуть левой кнопкой мыши по внедренному объекту, после чего объект может быть изменен. Когда же активизированное приложение будет закрыто, в документе-контейнере отразится (а в случае внедрения — сохранится) внесенное изменение.</p>
+<p>Связывание и внедрение объектов OLE сравниваются в табл. 15.1.</p>
+<table class="table_common zebra" width="700">
+<tbody>
+<tr>
+<td>Параметр</td>
+<td>Связывание</td>
+<td>Внедрение</td>
+</tr>
+<tr>
+<td>Число файлов</td>
+<td>Необходимо поддерживать не менее двух файлов: связанного объекта (такого как лист Excel) и составного документа, использующего этот обьект (такого, как Word). Можно установить связь так, что при обновлении исходного файла объекта автоматически обновляется файл составного документа.</td>
+<td>Поддерживать необходимо лишь один файл составного документа, содержащего внедренный объект.</td>
+</tr>
+<tr>
+<td>Создание объектов</td>
+<td>Объект создается копированием его из исходного документа и вставкой связи в документ назначения.</td>
+<td>Объект создается либо копированием и вставкой, либо перетаскиванием с помощью мыши из исходного файла в файл составного документа.</td>
+</tr>
+<tr>
+<td>Обновление объектов</td>
+<td>Один и тот же исходный документ могут использовать несколько составных документов. При изменении исходного документа обновление объекта во всех контейнерах, которые его используют, может происходить автоматически.</td>
+<td>Необходимо отразить изменения внедренного объекта в каждом составном документе.</td>
+</tr>
+<tr>
+<td>Формат, исполь- зуемый в документе-контейнере</td>
+<td>В зависимости от природы самого объекта и возможностей контейнера, можно связывать его в различных форматах. Например, можно связать рабочий лист Excel с документом Word как графический объект, форматированный текст, неформатированный текст, рисунок, растровую картинку.</td>
+<td>Все внедренные объекты появляются в составном документе как графические.</td>
+</tr>
+<tr>
+<td>Поддержка объектов</td>
+<td>Необходимо отслеживать соответствие путей к файлу исходного объекта в составном документе</td>
+<td>Все, что необходимо — это поддерживать документ, содержащий внедренный обьект.</td>
+</tr>
+<tr>
+<td>Размер объекта</td>
+<td>Поскольку исходный документ существует в отдельном файле, составной документ лишь весьма незначительно увеличивает свой размер при связывании его с файлом исходного документа</td>
+<td>Внедренный обьект должен содержать все необходимые данные внутри составного документа, поэтому размер последнего значительно увеличивается при внедрении.</td>
+</tr>
+<tr>
+<td>Управление объектами</td>
+<td>Используйте команду Правка, Связи (Edit, Links). Например, можно установить связь таким образом, чтобы можно было вручную или автоматически обновлять объект, временно блокировать связь, разрывать или восстанавливать ее.</td>
+<td>Большинство объектов можно преобразовать в составном документе так, чтобы они существовали как рисунки. Вернуть их в исходный формат внедренных объектов практически никогда нельзя.</td>
+</tr>
+</tbody>
+</table>
+<p>Таблица 15.1. Сравнение характеристик связывания и внедрения</p>
+<p>Вставка рисунков в формы и отчеты</p>
+<p>В Microsoft Access существует возможность вставки рисунков в формы и отчеты. Использование рисунков может улучшить внешний вид создаваемых форм и отчетов. Например, в отчеты можно включать логотип фирмы, а в форме предоставлять возможность просмотра не только данных о сотрудниках фирмы, но и их фотографий. Для вставки рисунков в формы и отчеты используются специальные элементы управления — свободная и присоединенная рамки объектов (Unbound Object Frame, Bound Object Frame), а также элемент управления Рисунок (Image).</p>
+<p>Способ вставки рисунка зависит от того, как предполагается его использовать.</p>
+<ul>
+<li>Объект OLE можно хранить в одном из полей таблицы Access, например в таблице «Сотрудники» (Employee) базы данных «Борей» хранятся фотографии сотрудников. Можно в полях таблицы Access хранить также документы Word. В таком случае для отображения этих объектов в формах или отчетах следует использовать элемент управления Присоединенная рамка объекта (Bound Object Frame).</li>
+<li>Объекты OLE могут храниться не в таблицах Access, а прямо в форме или отчете. С помощью такого способа в форме или отчете можно, например, сохранить логотип фирмы. В этом случае для отображения объекта OLE следует использовать элемент управления Свободная рамка объекта (Unbound Object Frame) или Рисунок (Image).</li>
+<li>Можно также для добавления рисунка в форму или отчет использовать свойство Рисунок (Picture) этой формы или отчета. Обычно так поступают, когда требуется включить фоновый рисунок (подложку), занимающий часть окна или все окно формы или отчета.</li>
+</ul>
+<p>Чтобы добавить фоновый рисунок в форму:</p>
+<ol>
+<li>Откройте форму в режиме Конструктора.</li>
+<li>В окне свойств формы на вкладке Макет (Format) найдите свойство Рисунок (Picture). В поле ввода этого свойства введите путь и имя файла рисунка. Для этого можно нажать кнопку Построителя и выбрать в окне Выбор рисунка (Insert Picture) необходимый файл рисунка (рис. 15.1).</li>
+</ol>
+<p><strong>Замечание</strong></p>
+<p>Несколько стандартных файлов для фоновых рисунков находятся в папке MICROSOFT OFFICEOFFICEBITMAPSSTYLES.</p>
+<ol start="3">
+<li>Установите значение свойства Тип рисунка (Picture Type). Значений может быть два: Внедренный (Embedded) или Связанный (Linked). Если рисунок внедренный, он сохраняется в файле базы данных (mdb). Связанный рисунок хранится в отдельном файле на диске. О преимуществах и недостатках того и другого способа мы уже говорили выше. Если один и тот же рисунок вставляется во много форм или отчетов, то внедрение его приведет к «распуханию» файла mdb, т. к. храниться будет столько копий рисунка, сколько раз вы его внедряли. Если вы решите сделать его связанным, необходимо заботиться о том, чтобы его случайно не удалили или не переместили.</li>
+<li>С помощью следующих свойств настройте отображение фонового рисунка.
+<ul>
+<li>Свойство Масштабы рисунка (Picture Size Mode) имеет три значения: Фрагмент (Clip), Вписать в рамку (Stretch), По размеру рамки (Zoom). Значение Фрагмент отображает рисунок в его исходном размере. Если размер рисунка превышает размер окна формы, то изображение рисунка обрезается. Значение Вписать в рамку изменяет размер рисунка так, чтобы он соответствовал окну формы. Использование данного значения может привести к искажению изображения рисунка. Значение По размеру рамки изменяет размер рисунка так, чтобы он соответствовал окну формы либо по ширине, либо по высоте. Использование данного значения не приведет ни к обрезанию рисунка, ни к искажению его пропорций.</li>
+</ul>
+</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" decoding="async" src="/image19/b1b3c9be1aea137f6c7ec13137da7706.gif" alt="" width="580" height="354"><meta itemprop="width" content="580">
+<meta itemprop="height" content="354"></span></p>
+<p>Рис. 15.1. Диалоговое окно Выбор рисунка</p>
+<ul>
+<li style="list-style-type: none;">
+<ul>
+<li>Если вставляется рисунок, занимающий не всю форму, свойство Выравнивание рисунка (Picture Alignment) позволяет определить положение его в форме: Сверху слева (Top Left), Сверху справа (Top Right), По центру (Center), Снизу слева (Bottom Left), Снизу справа (Bottom Right), По центру формы (Form Center).</li>
+<li>Свойство Мозаичное заполнение (Picture Tiling) позволяет выводить повторяющееся изображение рисунка.</li>
+</ul>
+</li>
+</ul>
+<p>Пример использования рисунка в качестве фона в форме приведен на рис. 15.2.</p>
+<p>Аналогично вставляется фоновый рисунок в отчет. Пример использования рисунка в качестве фона в отчете приведен на рис. 15.3.</p>
+<p>Рисунок может быть вставлен в форму и в виде элемента управления формы. Для этого можно использовать два типа элементов управления: Рисунок (Image) и Свободная рамка объекта (Unbound Object Frame).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" decoding="async" src="/image26/ed2ad790882e7079ada00e7f46776047.gif" alt="" width="384" height="243"><meta itemprop="width" content="384">
+<meta itemprop="height" content="243"></span></p>
+<p>Рис. 15.2. Использование фонового рисунка в форме Microsoft Access</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image13/711bd37f333c1e30c7297d2dbb0bc622.gif" alt="" width="350" height="376"><meta itemprop="width" content="350">
+<meta itemprop="height" content="376"></span></p>
+<p>Рис. 15.3. Фоновый рисунок в отчете Microsoft Access</p>
+<p>Если не требуется прямое изменение рисунка в форме или отчете, то лучше использовать Рисунок (Picture) (форма будет работать быстрее). Если же предполагается часто изменять рисунок, нужно вставить его с помощью свободной рамки объекта.</p>
+<p>Чтобы вставить элемент управления Рисунок (Image), необходимо:</p>
+<ol>
+<li>Открыть форму в режиме Конструктора формы или отчет в режиме Конструктора отчета.</li>
+<li>Нажать кнопку Рисунок (Image) на панели элементов (кнопка Мастера элементов должна быть нажата, чтобы запустился Мастер рисунков).</li>
+<li>Выбрать в форме или отчете место, в которое помещается рисунок, и щелкнуть на нем левой кнопкой мыши.</li>
+<li>В раскрывшемся окне Вставка рисунка (Insert Picture) выбрать имя файла, содержащего добавляемый рисунок, и нажать кнопку ОК. Будет создан элемент управления, в котором помещается рисунок (рис. 15.4).</li>
+<li>Установить значения свойств, которые влияют на то, как рисунок будет отображаться в форме или отчете. Эти свойства аналогичны соответствующим свойствам формы.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image26/ec3da7214106953f69dc093343cf9883.gif" alt="" width="465" height="502"><meta itemprop="width" content="465">
+<meta itemprop="height" content="502"></span></p>
+<p>Рис. 15.4. Использование элемента Рисунок для вставки рисунка в форму</p>
+<p>Чтобы вставить рисунок в форму или отчет с помощью свободной рамки объекта, необходимо:</p>
+<ol>
+<li>Открыть форму в режиме Конструктора формы или отчет в режиме Конструктора отчета.</li>
+<li>Нажать кнопку Свободная рамка объекта (Unbound Object Frame) на панели элементов.</li>
+<li>Выбрать в форме или отчете место для вставляемого объекта и щелкнуть на нем левой кнопкой мыши. Появится диалоговое окно мастера Вставка объекта (Insert Object). С помощью мастера можно вставить уже готовый рисунок из файла или сначала создать его в соответствующем приложении, а затем вставить. Поэтому дальнейшие шаги могут быть разными.</li>
+</ol>
+<p>Если вам еще предстоит создать рисунок, проделайте следующие операции.</p>
+<ol>
+<li>В диалоговом окне Microsoft Access выбрать переключатель Создать новый (Create New), а затем в списке Тип объекта (Object Type) выбрать приложение, с помощью которого будет создаваться рисунок (рис. 15.5).</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image28/feeeccf22520dfe017dfe6588bb764a7.gif" alt="" width="555" height="255"><meta itemprop="width" content="555">
+<meta itemprop="height" content="255"></span></p>
+<p>Рис. 15.5. Окно Microsoft Access, используемое для вставки рисунка с помощью свободной рамки объекта</p>
+<ol start="2">
+<li>Объект может отображаться в виде значка — это удобно, когда он содержит сведения, которые не должны все время выводиться на экран. В таком случае нужно просто установить флажок В виде значка (Display as Icon).</li>
+<li>Нажать кнопку ОК.</li>
+<li>Создать объект с помощью приложения, выбранного на шаге 1.</li>
+<li>Закончив создание объекта, выбрать команду Закрыть (Close) в меню Файл (File) приложения, чтобы вернуться в Microsoft Access. Microsoft Access создает элемент управления Свободная рамка объекта (Unbound Object Frame) и отображает в ней рисунок.</li>
+</ol>
+<p>Если же файл с рисунком у вас уже готов, чтобы вставить его прямо из файла, вам необходимо:</p>
+<ol>
+<li>В диалоговом окне Microsoft Access выбрать переключатель Создать из файла (Create From File), а затем указать путь к файлу. Если точный путь вы не знаете, используйте кнопку Обзор (Browse) (рис. 15.6).</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image14/7cc98683660844843bd1c7585488d9a1.gif" alt="" width="555" height="255"><meta itemprop="width" content="555">
+<meta itemprop="height" content="255"></span></p>
+<p>Рис. 15.6. Окно Microsoft Access при вставке рисунка из файла в отчет с помощью свободной рамки объекта</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image25/e517547b7e03c482ad8cc6b2a93443b4.gif" alt="" width="372" height="324"><meta itemprop="width" content="372">
+<meta itemprop="height" content="324"></span></p>
+<p>Рис. 15.7. Вставка рисунка Microsoft Paint в отчет с помощью свободной рамки объекта</p>
+<ol start="2">
+<li>Если нужно отобразить объект в виде значка, установить флажок В виде значка (Display As Icon).</li>
+<li>Для нахождения связи с объектом установить флажок Связь (Link). Если флажок сброшен (по умолчанию), объект будет внедрен.</li>
+<li>Нажать кнопку ОК.</li>
+</ol>
+<p>Пример вставки рисунка, созданного с использованием Microsoft Paint, в форму с помощью свободной рамки объекта приведен на рис. 15.7.</p>
+<p>После вставки объекта можно изменять его размеры и пропорции с помощью свойства Установка размеров (Size Mode). В большинстве случаев изменения в свободный объект могут вноситься в режиме Конструктора формы или отчета. Для того чтобы иметь возможность изменять объект в режиме формы, необходимо задать для свойства Доступ (Enabled) свободной рамки объекта значение Да (Yes), а для свойства Блокировка (Locked) — значение Нет (No). Чтобы отредактировать объект, дважды щелкните на нем мышью. Для этого только необходимо, чтобы на вашем компьютере было установлено приложение, в котором может редактироваться файл данного типа. Пример редактирования внедренного точечного рисунка представлен на рис. 15.8.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image06/3ab43e40c7cedc6f92ed502094d74da0.gif" alt="" width="370" height="410"><meta itemprop="width" content="370">
+<meta itemprop="height" content="410"></span></p>
+<p>Рис. 15.8. Пример редактирования точечного рисунка с помощью Microsoft Paint</p>
+<p>Для того чтобы выйти из режима редактирования, достаточно щелкнуть мышью за пределами рисунка.</p>
+<p>В отличие от других элементов управления в форме, которые связаны с записями в таблице-источнике, рисунок в свободной рамке объекта не меняется при перемещении по записям в форме — он связан с самой формой, а не с данными, которые отображаются в форме. Рисунки, которые хранятся в записях таблицы, отображаются в форме с помощью присоединенной рамки объекта.</p>
+<p>Для хранения рисунков и других объектов OLE в таблицах Access используется специальный тип поля: Объект OLE (OLE Object). Элемент управления Присоединенная рамка объекта (Bound Object Frame) создается одним из стандартных способов:</p>
+<ul>
+<li>перемещением с помощью мыши нужного поля из списка полей таблицы-источника. В этом случае будет сразу создан элемент управления, связанный с полем в таблице;</li>
+<li>с помощью кнопки Присоединенная рамка объекта (Bound Object Frame) на панели элементов. В данном случае будет создан элемент управления, для которого нужно сразу установить свойство Данные (RecordSource) — имя поля, содержащего объект OLE (рис. 15.9).</li>
+</ul>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image07/3f81be20154c1fab9de683ad4f765c70.gif" alt="" width="372" height="332"><meta itemprop="width" content="372">
+<meta itemprop="height" content="332"></span></p>
+<p>Рис. 15.9. Создание присоединенной рамки объекта в режиме Формы</p>
+<p>Вставить рисунок в поле таблицы можно как в таблице, открытой в режиме Таблицы, так и в форме. Для этого нужно:</p>
+<ol>
+<li>Открыть таблицу в режиме Таблицы или форму в режиме Формы.</li>
+<li>Перейти на запись, в которую требуется вставить рисунок, и выбрать поле объекта OLE.</li>
+<li>Выполнить команду Объект (Object) из меню Вставка (Insert).</li>
+<li>В диалоговом окне Microsoft Access (см. рис. 15.5) выбрать переключатель Создать новый (Create New), а затем в списке Тип объекта (Object Type) выбрать тип приложения, в котором будет создаваться объект. Если файл с рисунком уже готов, то нужно выбрать переключатель Создать из файла (Create From File), a затем указать путь к файлу.</li>
+<li>Для того чтобы отобразить объект в виде значка, установить флажок В виде значка (Display As Icon).</li>
+<li>Нажать кнопку ОК.</li>
+<li>Если вы создаете новый рисунок, то нужно создать его с помощью приложения выбранного на шаге 4.</li>
+<li>Закончив создание объекта, выбрать команду Закрыть (Close) в меню Файл (File) приложения для возвращения в Microsoft Access.</li>
+</ol>
+<p>Рисунок будет вставлен в запись в таблице. При этом в режиме Формы рисунок или иной объект автоматически будут отображаться на экране. В режиме Таблицы будет отображаться только тип объекта, например Растровый рисунок.</p>
+<p>Вставка графических файлов происходит либо напрямую, либо при помощи отдельных графических фильтров. Эти фильтры устанавливаются при инсталляции Microsoft Access. Для вставки файлов формата Enhanced Metafile (EMF), точечных рисунков Windows (BMP, RLE, DIB), метафайлов Windows (WMF) и значков (ICO) графический фильтр не требуется. Однако такие фильтры необходимы для вставки всех остальных файлов графических.форматов, перечисленных ниже:</p>
+<p>AutoCAD Format 2-D (DXF) Computer Graphics Metafile (CGM)</p>
+<p>CorelDRAW (CDR) Encapsulated PostScript (EPS)</p>
+<p>Graphics Interchange Format (GIF) JPEG File Interchange Format (JPG)</p>
+<p>Kodak Photo CD (PCD) Micrografx Designer/Draw (DRW)</p>
+<p>PC Paintbrush (PCX) Portable Network Graphics (PNG)</p>
+<p>Tagged Image File Format (TIFF) Targa (TGA)</p>
+<p>WordPerfect Graphics (WPG) HG Graphics Language (HGL, PLT) Macintosh PICT (PCT)</p>
+<p>Вставка рабочего листа Excel в форму или отчет</p>
+<p>С помощью таких элементов управления, как Свободная рамка объекта и Присоединенная рамки объекта, в формах и отчетах Access можно отображать не только различные графические объекты, но и листы Microsoft Excel.</p>
+<p>Так же как и рисунок, лист Microsoft Excel можно внедрить в форму или отчет или связать его с ними. При этом вставленный лист автоматически сохраняется в файле базы данных и всегда является доступным. Если обновить такой объект в форме или отчете, он будет изменен только в базе данных. Если лист Microsoft Excel связан, его можно просматривать и вносить изменения в форме или отчете. При этом изменения cохраняются в исходном файле объекта, а не в файле базы данных. Файл объекта можно обновлять независимо от базы данных. Последние изменения будут выведены на экран при следующем открытии формы или отчета. Связывание объектов удобно при работе с очень большими файлами, которые нежелательно включать в файл базы данных, а также с файлами, используемыми в нескольких формах и отчетах. Если связанный файл объекта перемешен, необходимо повторно установить с ним связь.</p>
+<p>Рассмотрим возможность вставки листа Microsoft Excel в форму и отчет Microsoft Access с помощью свободной рамки объекта. Чтобы вставить новый лист Microsoft Excel в форму Microsoft Access, необходимо:</p>
+<ol>
+<li>Открыть форму или отчет в режиме Конструктора.</li>
+<li>Добавить в нее элемент управления Свободная рамка объекта (Unbound Object Frame). При этом в окне Microsoft Access выбрать переключатель Создать новый (Create New), а в списке Тип объекта (Object Type) выбрать Лист Microsoft Excel (Microsoft Excel Worksheet) (рис. 15.10). Если файл XLS уже создан, выберите переключатель Создать из файла (Create From File) и введите путь и имя нужного файла.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image07/40e5ade876a05da4fccdc48aa4630319.gif" alt="" width="555" height="255"><meta itemprop="width" content="555">
+<meta itemprop="height" content="255"></span></p>
+<p>Рис. 15.10. Окно Microsoft Access при вставке нового листа Microsoft Excel в форму Microsoft Access с помощью свободной рамки объекта</p>
+<ol start="3">
+<li>Когда в форме появится элемент управления, в котором отображается пустая таблица Excel, введите в нее данные (это можно сделать прямо в режиме Конструктора) (рис. 15.11). Если вы вставляли готовый файл, то сразу будет отображена таблица Excel (рис. 15.12).</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image20/b9cfa0242962bf1e8ef825d4dde6431e.gif" alt="" width="392" height="418"><meta itemprop="width" content="392">
+<meta itemprop="height" content="418"></span></p>
+<p>Рис. 15.11. Ввод данных на лист Microsoft Excel в режиме Конструктора форм Microsoft Access</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image21/bd674f44efde6fa58ec0cb064425e048.gif" alt="" width="376" height="349"><meta itemprop="width" content="376">
+<meta itemprop="height" content="349"></span></p>
+<p>Рис. 15.12. Использование свободной рамки объекта для вставки существующего листа Microsoft Excel в форму Microsoft Access</p>
+<ol start="4">
+<li>Чтобы сделать доступным изменение данных на листе в режиме Формы, установите значение свойства Доступ (Enabled) для вставленного элемента управления равным Да (Yes), а свойство Блокировка (Locked) — Нет (No).</li>
+</ol>
+<p>Увидеть данные, расположенные на листе Microsoft Excel, можно, открыв форму в режиме Формы. Чтобы иметь возможность изменять или добавлять данные на лист, нужно дважды щелкнуть кнопкой мыши на листе Microsoft Excel в форме (рис. 15.13).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image09/50347c9ae0593cfea58915f5be41156c.gif" alt="" width="498" height="411"><meta itemprop="width" content="498">
+<meta itemprop="height" content="411"></span></p>
+<p>Рис. 15.13. Ввод данных на лист Microsoft Excel в режиме Формы</p>
+<p>При работе с отчетами Microsoft Access следует выполнять аналогичную пошаговую процедуру. Увидеть данные, расположенные на листе Microsoft Excel, можно, открыв отчет в режиме просмотра.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image28/fefb7920f8221edf7fa29c0f51c3952e.gif" alt="" width="524" height="496"><meta itemprop="width" content="524">
+<meta itemprop="height" content="496"></span></p>
+<p>Рис. 15.14. Использование присоединенной рамки объекта для вставки листа Microsoft Excel в форму Microsoft Access</p>
+<p>Рассмотрим теперь возможность вставки листов Microsoft Excel с помощью присоединенной рамки объекта. В этом случае листы Excel будут храниться в записях таблицы Access (более разумным представляется хранить не сами таблицы, а ссылки на них, т. е. не внедрять листы Excel, а связывать их с таблицей Access). Сначала в таблице должно быть создано поле типа Объект OLE (OLE Object), которое будет содержать листы Excel. Затем в форме, отображающей записи этой таблицы, должен быть создан элемент Присоединенная рамка объекта (Bound Object Frame), связанный с этим полем. Вставка листа Microsoft Excel в поле таблицы или формы может быть выполнена с помощью команды меню Вставка, Объект (Insert, Object), как это уже описывалось ранее. На рис. 15.14 и 15.15 представлены примеры вставки листа Microsoft Excel в форму и отчет Access.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image15/837d194eca77df932f6e70b223c4f073.gif" alt="" width="491" height="487"><meta itemprop="width" content="491">
+<meta itemprop="height" content="487"></span></p>
+<p>Рис. 15.15. Использование присоединенной рамки объекта для вставки листов Microsoft Excel в отчет Microsoft Access</p>
+<p>Вставка документов Word в таблицы, формы и отчеты Access</p>
+<p>Использование документов Microsoft Word в таблицах, формах и отчетах Microsoft Access осуществляется аналогично использованию листов Microsoft Excel или рисунков. Документ Microsoft Word рассматривается как объект OLE, который может быть помещен в таблицу или, с помощью свободной или присоединенной рамки объекта, в форму или отчет Microsoft Access.</p>
+<p>Рассмотрим пример, в котором Microsoft Access используется для учета документов Microsoft Word. Для реализации учета документов Word с возможностью их просмотра и редактирования необходимо создать таблицу, в которую должны быть включены поля для порядкового номера документа, названия документа, шифра документа, самого документа и примечаний {табл. 15.2).</p>
+<table class="table_common zebra" width="700">
+<tbody>
+<tr>
+<td><strong>Имя поля </strong></td>
+<td><strong>Тип поля </strong></td>
+<td><strong>Назначение </strong></td>
+</tr>
+<tr>
+<td>«Номер»</td>
+<td>Счетчик (AutoNumber)</td>
+<td>Порядковый номер документа</td>
+</tr>
+<tr>
+<td>«Наименование»</td>
+<td>Текстовый (Text)</td>
+<td>Название документа</td>
+</tr>
+<tr>
+<td>«Код»</td>
+<td>Текстовый (Text)</td>
+<td>Шифр документа</td>
+</tr>
+<tr>
+<td>«Текст»</td>
+<td>Поле объекта OLE (OLE Object)</td>
+<td>Документ</td>
+</tr>
+<tr>
+<td>«Примечание»</td>
+<td>Поле Memo (Memo)</td>
+<td>Примечания</td>
+</tr>
+</tbody>
+</table>
+<p>Таблица 15.2. Поля таблицы и их типы</p>
+<p>Для создания таблицы необходимо:</p>
+<ol>
+<li>Создать в режиме Конструктора таблицу, состоящую из «указанных выше полей (рис. 15.16).</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image01/01881649968d991e3eae2a067997caf3.gif" alt="" width="444" height="489"><meta itemprop="width" content="444">
+<meta itemprop="height" content="489"></span></p>
+<p>Рис. 15.16. Таблица «Учет документов» в окне Конструктора</p>
+<ol start="2">
+<li>Сохранить таблицу под именем «Учет документов».</li>
+<li>Открыть таблицу «Учет документов» в режиме Таблицы.</li>
+<li>Заполнить поля таблицы.</li>
+</ol>
+<p>Для вставки документа Word в качестве объекта OLE требуется установить указатель на нужное поле, выполнить команду Объект (Object) из меню Вставка (Insert), в окне Microsoft Access выбрать переключатель Создать из файла (Create From File) и в поле Файл (File) указать имя и путь к файлу. Так как в нашем примере учитываются уже созданные документы, которые могут изменяться не только из Microsoft Access, необходимо установить связь с этими документами, для чего установите флажок Связь (Link) в окне Microsoft Access. Флажок В виде значка (Dysplay As Icon) в данном случае не устанавливается, т. к. нужно иметь возможность быстрого просмотра документов (рис. 15.17).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image13/725a80400add8d300d0ad928fcf0f3f4.gif" alt="" width="555" height="255"><meta itemprop="width" content="555">
+<meta itemprop="height" content="255"></span></p>
+<p>Рис. 15.17. Окно Microsoft Access при вставке документа Word из файла в таблицу в виде объекта OLE</p>
+<p>В результате создана таблица «Учет документов», приведенная на рис. 15.18.</p>
+<p>После создания таблицы, в которой содержатся данные о документах, необходимо создать форму для удобного просмотра, редактирования и добавления новой информации о документах. Чтобы создать форму, необходимо:</p>
+<ol>
+<li>В окне базы данных раскрыть список форм и нажать на кнопку Создать (New).</li>
+<li>В окне Новая форма (New Form) в поле со списком Выберите таблицу или запрос, на основе которого будет построена форма (Choose the table or query where the object’s data comes from) выбрать таблицу «Учет документов», выбрать Конструктор (Design View) и нажать кнопку ОК.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image16/8c9324116a0849400b5f402da0288495.gif" alt="" width="403" height="292"><meta itemprop="width" content="403">
+<meta itemprop="height" content="292"></span></p>
+<p>Рис. 15.18. Представление данных в таблице «Учет документов» в режиме Таблицы</p>
+<ol start="3">
+<li>Нажать кнопку Список полей (Field List) и перенести поля из списка в форму.</li>
+<li>Отредактировать элементы в форме, изменив при необходимости их размеры и положение в форме. Пример расположения элементов приведен на рис. 15.19.</li>
+<li>Закрыть форму, сохранив ее под именем «Учет документов».</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image16/90409c56e49881624c322ce21ecb4faf.gif" alt="" width="426" height="351"><meta itemprop="width" content="426">
+<meta itemprop="height" content="351"></span></p>
+<p>Рис. 15.19. Расположение элементов в форме «Учет документов»</p>
+<p>Для просмотра содержимого таблицы необходимо открыть форму в режиме Формы (рис. 15.20). Чтобы получить возможность редактирования документа, требуется дважды щелкнуть левой кнопкой мыши на документе в форме. При этом откроется приложение Microsoft Word с выбранным документом.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image25/e43cebe184876cd6331b6152cb983bf1.gif" alt="" width="491" height="305"><meta itemprop="width" content="491">
+<meta itemprop="height" content="305"></span></p>
+<p>Рис. 15.20. Форма «Учет документов» в режиме Формы</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image22/c88f77e3d189b24ae8f874ae6777cc76.gif" alt="" width="474" height="375"><meta itemprop="width" content="474">
+<meta itemprop="height" content="375"></span></p>
+<p>Рис. 15.21. Расположение элементов отчета «Учет документов» в режиме Конструктора</p>
+<p>Для создания отчета необходимо:</p>
+<ol>
+<li>В окне базы данных раскрыть список отчетов и нажать кнопку Создать (New).</li>
+<li>В окне Новый отчет (New Report) в поле со списком Выберите таблицу или запрос, на основе которого будет построен отчет (Choose the table or query where the object’s data comes from) выбрать таблицу «Учет документов», выбрать Конструктор (Design View) и нажать кнопку ОК.</li>
+<li>Нажать кнопку Список полей (Field List) и перенести поля из списка в секцию Область данных (Detail) отчета.</li>
+<li>Отредактировать элементы в отчете, изменив при необходимости их размеры и положение в форме. Пример расположения элементов приведен на рис. 15.21.</li>
+<li>Закрыть отчет, сохранив его под именем «Учет документов».</li>
+</ol>
+<p>Чтобы просмотреть содержимое отчета, необходимо открыть его в режиме просмотра (рис. 15.22).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image07/424bf59eb3deb3fa880d87fa6356f962.gif" alt="" width="485" height="338"><meta itemprop="width" content="485">
+<meta itemprop="height" content="338"></span></p>
+<p>Рис. 15.22. Отчет «Учет документов» в режиме просмотра</p>
+<p>При изменении содержимого документов Word эти изменения будут отображаться в форме и отчете при их следующем открытии.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image28/fe59667230cbf9b90e25bed2288ec3b9.gif" alt="" width="397" height="344"><meta itemprop="width" content="397">
+<meta itemprop="height" content="344"></span></p>
+<p>Рис. 15.23. Представление документа Word в форме в виде значка</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image16/94cca34fdd130841acd23a2f46040b31.gif" alt="" width="482" height="419"><meta itemprop="width" content="482">
+<meta itemprop="height" content="419"></span></p>
+<p>Рис. 15.24. Представление документа Word в отчете в виде значка</p>
+<p>При желании можно вставлять документы Word в виде значка. Для этого в окне Вставка объекта (Insert Object) необходимо устанавливать флажок В виде значка (Display As Icon). В этом случае в форме и отчете не будут отображаться данные документов, а будут указываться только значки, изображающие документы. Для обращения к нужному документу из формы достаточно дважды щелкнуть левой кнопкой мыши на значке соответствующего документа. При этом откроется приложение Microsoft Word с соответствующим документом в окне. Примеры отображения документов в виде значка в форме и отчете приведены, соответственно, на рис. 15.23 и рис. 15.24.</p>
+<p>Автоматизация</p>
+<p><strong> Автоматизация </strong> (ранее известная как OLE-автоматизация — OLE Automation) — это одно из наиболее важных средств технологии ActiveX, позволяющее программно управлять объектами из других приложений. И это основное средство, с помощью которого можно интегрировать функциональные возможности различных приложений.</p>
+<p>Приложения, поддерживающие автоматизацию, делятся на две категории: клиенты автоматизации и серверы автоматизации. Причем некоторые приложения могут быть только клиентами либо только серверами автоматизации, но есть и такие (и к ним относится Microsoft Access), которые могут выступать и в том и в другом качестве.</p>
+<p>Клиенты и серверы автоматизации</p>
+<p>При интеграции двух приложений одно предоставляет свои объекты для использования, а другое использует объекты первого приложения. Приложение, объекты которого доступны для других приложений, называется сервером автоматизации (иногда его еще называют компонентом). Приложение, которое использует объекты другого приложения, называется клиентом (или контроллером) автоматизации. Объекты, которые доступны для других приложений, называют объектами автоматизации.</p>
+<p>Через объекты автоматизации приложение-сервер открывает доступ другим программам к тем своим функциям, которые могут быть им полезны. Например, текстовый редактор может открывать другим программам доступ к проверке орфографии, служба связи — доступ к созданию и отправке сообщений. Это позволяет разработчикам ускорить процесс разработки своих приложений, благодаря использованию готовых функций сервера.</p>
+<p>Объекты приложения-сервера образуют библиотеку объектов, которая может быть подключена к приложению-клиенту путем установки ссылки в проекте VBA (см. разд. <a href="/glava-programmirovanie-v-access">«Установка ссылок на объектные библиотеки»</a> гл. 13). Приложение-клиент использует объекты приложения-сервера путем доступа к их свойствам и методам. При этом он имеет все те возможности, которые есть у сервера автоматизации. Например, Microsoft Excel имеет модель объектов, которая включает такие объекты, как Workbook, Worksheet, Sell и др. К этим объектам можно обращаться из Microsoft Access, а также из других приложений, поддерживающих автоматизацию.</p>
+<p>Чтобы получить представление о работе с технологией автоматизации OLE, нужно разобраться в классификации серверов автоматизации, которые могут быть использованы в написании приложений систем управления базами данных. Существуют пять основных типов серверов автоматизации.</p>
+<ul>
+<li>Полные серверы (full servers) — это самостоятельные приложения, например Microsoft Excel и Microsoft Word, использующие автоматизацию. Данные приложения, подобно Access, предоставляют свои объекты для использования собственной версии VBA. Полные серверы называются также локальными серверами (local servers), поскольку сервер такого типа должен размещаться на том же компьютере, что и приложение клиента автоматизации.</li>
+<li>Серверы автоматизации (automation servers) — это серверы, которые не являются внедряемыми объектами. В качестве примера такого сервера можно привести Microsoft Access. Название Microsoft Access не содержится в списке Тип объекта (Object Type) вкладки Создание (Create New) диалогового окна Объект (Object) меню Вставка (Insert) приложений Microsoft Word или Microsoft Excel. При попытке указать файл базы данных во вкладке Создание из файла (Create From File) элемент управления Упаковщик объектов (Object Packager) пытается создать пакет из файла базы данных.</li>
+<li>Мини-серверы (mini-servers) — это приложения, которые могут быть запущены только из приложений-клиентов автоматизации, например Microsoft Graph (MSGraph9) или Visio Express. Приложение, являющееся мини-сервером, должно представлять собой выполнимый файл (с расширением ехе) и иметь возможность раскрывать окно приложения. Мини-серверы, отображающие объекты конкретного класса, например файлы изображений, видеоклипы и т. д., называются средствами просмотра (viewers).</li>
+<li>Специальные элементы управления OLE (OLE Controls) — это одна из разновидностей мини-серверов. Специальные элементы управления OLE, имеющие расширение файлов осх, кроме методов и свойств, предоставляют для использования другими приложениями еще и события. Они похожи на специальные элементы управления Visual Basic (VBXs). Некоторые элементы управления OLE, подобно VBXs, в режиме выполнения выводятся на экран, другие в режиме выполнения невидимы.</li>
+<li>Элементы управления ActiveX (ActiveX Controls) являются облегченной 32-разрядной версией элементов управления OLE. Такие элементы хранятся в файлах с тем же, что и у элементов OLE, расширением (осх), однако их размер на 30—50% меньше, чем у заменяемых ими элементов OLE. Элементы управления ActiveX являются основой развиваемой в настоящее время фирмой Microsoft технологии ActiveX</li>
+<li>Служебные серверы (process servers) — это подкласс серверов автоматизации, используемых для выполнения функций, которые не взаимодействуют с интерфейсом пользователя. Служебные серверы делятся на внешние (OutOfProc(ess)) и внутренние (InProc(ess)). Внешние серверы — это выполнимые файлы, которые запущены собственным процессом, т. е. имеют отдельную зарезервированную память. К внешним серверам можно отнести полные серверы и мини-серверы. Внутренние серверы используют память совместно с приложением клиента автоматизации. К внутренним серверам относятся специальные элементы управления ActiveX.</li>
+</ul>
+<p>Внешние серверы взаимодействуют с приложением клиента, используя упрощенный механизм удаленного вызова процедур (Lightweight Remote Procedure Calls, или LRPC). В свою очередь, внутренние серверы (OLE DLL) используют вызовы обычных функций Windows. Благодаря этому, внутренние серверы быстрее реагируют на инструкции клиента, чем внешние. Внешний сервер можно’ разместить на удаленном компьютере, а для взаимодействия с ним можно использовать DCOM. Такой внешний сервер называют удаленным объектом автоматизации (Remote Automation Object— RAО).</p>
+<p><strong>Замечание</strong></p>
+<p>Служебные серверы не входят в официальную классификацию серверов автоматизации. Этот термин используется для того, чтобы различать невидимые управляемые служебные объекты сервера, работающие в фоновом режиме, и управляемые объекты, обладающие видимым представлением в режиме выполнения или режиме Конструктора Microsoft Access. Чаще всего служебные серверы используются при создании приложений баз данных, располагающих служебный сервер автоматизации между входным каналом приложения клиента и выходным каналом приложения сервера для обработки запросов приложения сервера или отслеживания ошибок данных входного канала сервера. Такие серверы невидимы для пользователя.</p>
+<p>Одним из преимуществ автоматизации является возможность работы с управляемыми полными серверами и мини-серверами без создания видимого экземпляра сервера автоматизации. Автоматизация запускает приложение самостоятельно, без внешнего вмешательства. Если серверу не указано активизировать окно, он невидим, и в списке задач его имя не содержится.</p>
+<p>Взаимодействие компонентов Office 2002</p>
+<p>Для программного управления объектом автоматизации из любого приложения Microsoft Office необходимо:</p>
+<ol>
+<li>Установить ссылку на библиотеку объектов приложения-сервера автоматизации.</li>
+<li>Создать объект нужного класса.</li>
+<li>Осуществить все необходимые действия над объектом, обращаясь к его свойствам и методам.</li>
+<li>Закрыть объект.</li>
+</ol>
+<p><strong>Замечание</strong></p>
+<p>Можно использовать объекты сервера автоматизации и не устанавливая ссылку на конкретную библиотеку объектов, однако в этом случае программа будет работать медленнее. Это связано с тем, что после установки ссылки на библиотеку, при объявлении объектной переменной, можно указать ее конкретный тип, если же ссылка отсутствует, то для этой переменной придется указать обобщенный тип — Object. (О различии таких объявлений см. разд. «Ссылки на объекты» гл. 13)</p>
+<p>Ниже мы рассмотрим подробнее, как выполнить эти действия из Microsoft Access.</p>
+<p>Использование Microsoft Access в качестве клиента автоматизации</p>
+<p>Чтобы создать объект для использования в операциях автоматизации, нужно сначала создать экземпляр его класса и присвоить ссылку на него объектной переменной. Однако создать можно не любой объект из объектной модели приложения-сервера, а только глобальные объекты (см. разд. «Использование объектов и семейств» гл. 13). Таким глобальным объектом для всех объектных моделей приложений семейства Microsoft-Office является объект Application, который находится на вершине иерархии объектов. Однако есть и другие глобальные объекты, например в Microsoft глобальным объектом является workbook. Это позволяет создавать данный объект непосредственно, не используя ссылку на объект Application. Напомним, что узнать, какие свойства моделей объектов являются глобальными, можно, используя окно просмотра объектов в редакторе VBA. Выберите в раскрывающемся списке Project/Dbrary нужную библиотеку, а затем выберите элемент &lt;globals&gt; в списке Classes.</p>
+<p>Существует несколько способов создания экземпляра класса объекта.</p>
+<h2 id="s-pomoschyu-klyuchevogo-slova-new">С помощью ключевого слова New.</h2>
+<p>Ключевое слово описывает переменную типа Object и одновременно устанавливает ссылку на новый экземпляр класса объекта. Синтаксис оператора VBA, создающего объект автоматизации, в данном случае аналогичен обычному оператору создания нового объекта, только при описании типа объекта необходимо указать имя приложения-сервера. Например,</p>
+<p>Dim objExl As New Excel .Application.</p>
+<p>При использовании ключевого слова New для создания нового экземпляра класса Application запускается соответствующее приложение (например, Word или Excel). Если это приложение уже запущено, то, чтобы не запускать второй экземпляр, лучше использовать для создания нового экземпляра класса функцию GetObject () (см. ниже в этом же списке).</p>
+<p><strong>Замечание</strong></p>
+<p>Чтобы использовать ключевое- слово New для создания экземпляра класса объекта автоматизации, необходимо предварительно добавить ссылку библиотеки объектов приложения сервера в диалоговом окне редактора VBA References (Ссылки).</p>
+<h2 id="s-pomoschyu-funktsii-createobject">С помощью функции CreateObject ( ).</h2>
+<p>Функция CreateObject О создает ссылку на новый экземпляр класса автоматизированного объекта. Значение, возвращаемое этой функцией, должно быть присвоено объектной переменной с помощью оператора Set. Например, названным оператором открывается приложение Word, и ссылка на него присваивается объектной переменной docobj. При этом, даже если Word уже был открыт, будет запущен еще один его экземпляр:</p>
+<p>Set docObj = CreateObject ( &#171;Word. Application&#187; )</p>
+<p>Объектная переменная в данном случае может быть объявлена как object, и тогда ссылку на библиотеку объектов Microsoft Word устанавливать не надо. А может быть объявлена так:</p>
+<p>Dim docObj As Word. Application.</p>
+<p>В этом случае должна быть обязательно установлена ссылка на библиотеку объектов Microsoft Word 10.0 Object Library.</p>
+<p><strong>Замечание</strong></p>
+<p>Если на компьютере установлено несколько версий Microsoft Office, то можно указать номер версии приложения, которое будет использоваться при автоматизации, например Set docObj = CreateObject(«Word.Application.10»).</p>
+<h2 id="s-pomoschyu-funktsii-getobject">С помощью функции Getobject ().</h2>
+<p>Этот способ используется для того, чтобы получить ссылку на уже существующий экземпляр класса, т. е. для доступа к существующим документам, хранящимся в файлах, или для доступа к объекту Application уже запущенного приложения-сервера. Функция Getobject () имеет следующий синтаксис: Set &lt;объектнаяПеременная&gt; = Getobject([&lt;путь&gt;][,&lt;класс&gt;])</p>
+<p>Необязательный аргумент &lt;путь&gt; определяет полный путь к существующему файлу и используется тогда, когда нужно обратиться к объекту, находящемуся в уже существующем файле.</p>
+<p>Аргумент &lt;класс&gt;, как и в других случаях, определяет тип открываемого объекта автоматизации и имеет структуру &lt;имяПриложения&gt;. &lt;типОбъекта&gt;.</p>
+<p>Обязательно должен быть указан хотя бы один из аргументов функции. Если первый аргумент опущен, то второй должен определять объект Application соответствующего приложения, например</p>
+<p>Set objXL = Getobject (,&#187;Excel.Application&#187;).</p>
+<p>Аргумент может быть опущен, если в реестре Windows существует связка расширения файла с объектом приложения. Например, в случае Microsoft Excel файлы xls по умолчанию имеют объектный тип Excel .Workbook. Это означает, что если не указывать аргумент &lt;класс&gt;, то будет создана ссылка на объект Workbook, представленный указанным в первом аргументе файлом.</p>
+<p>После того как создан объект автоматизации Application или другой глобальный объект, через него можно получить доступ ко всем остатьным семействам и объектам соответствующей модели объектов стандартным способом (см. разд. «Использование объектов и семейств» гл. 13) и работать с ними из программы VBA Access точно так же, как и с другими объектами — считывать и устанавливать значения свойств и вызывать методы.</p>
+<p>Совет</p>
+<p>Для того чтобы легче было создавать код для работы с объектами Word или Excel, вспомните о таком замечательном средстве этих приложений, как запись макросов. С помощью записи макросов можно выполнить все необходимые действия, используя интерфейс пользователя, затем просмотреть сгенерированный код VBA и встроить этот код в свою процедуру VBA, только слегка подправив его.</p>
+<p>После того как все необходимые операции с объектами приложения-сервера выполнены, эти объекты следует закрыть, чтобы освободить занимаемую ими память. Большинство объектов поддерживают для этого методы close или Quit. Кроме того, следует освободить объектную переменную, присвоив ей значение Nothing.</p>
+<p>Ниже будет приведено несколько примеров того, как в коде VBA можно управлять объектами Office, в частности будут рассмотрены операции с рабочим листом Microsoft Excel и передача данных в Microsoft Word.</p>
+<p>Операции с объектами Microsoft Excel</p>
+<h2 id="sozdanie-rabochego-lista-tovary-xls">Создание рабочего листа «Товары.xls»</h2>
+<p>Сначала рассмотрим, как можно выполнять операции с рабочим листом Microsoft Excel из программы Access. Для этого нам потребуется файл Товары.хls, содержащий рабочую книгу Excel с единственным рабочим листом «Товары», который представляет собой список товаров из демонстрационной базы данных «Борей». Вы можете использовать готовый файл, находящийся на сопровождающем книгу компакт-диске, либо создать его самим, экспортировав в Excel таблицу «Товары» с помощью команды меню Сервис, Связи с Office, Анализ в MS Excel (Tools, Office Links, Analyze It with Microsoft Excel) (см. разд. «Быстрый экспорт данных в другие приложения Microsoft Office» гл. 3).</p>
+<p>Для того чтобы подготовить файл Товары.xls к дальнейшим экспериментам, выполните следующие действия:</p>
+<ol>
+<li>Откройте файл Товары.xls, запустив Microsoft Excel.</li>
+<li>Выделите ячейки с А4 по D12 в рабочем листе. Выберите команду меню Вставка, Имя, Присвоить (Insert, Name, Define). В диалоговом окне Присвоение имени (Define Name) введите в текстовое поле Имя (Names in workbook) имя диапазона: workRange (рис. 15.25) и щелкните по кнопке ОК. Тем самым создается именованный диапазон, который будет использоваться в последующих примерах.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image18/a8d659b32dab7f8f19f54b12736bacd8.gif" alt="" width="408" height="255"><meta itemprop="width" content="408">
+<meta itemprop="height" content="255"></span></p>
+<p>Рис. 15.25. Создание именованного диапазона в таблице «Товары.xls»</p>
+<ol start="3">
+<li>Выберите в меню Сервис (Tools) команду Надстройки (Adds-Ins) и снимите все флажки в списке Список надстроек (Add-Ins Available) диалогового окна Надстройки (Add-Ins). Удаление надстроек уменьшает время, требующееся для запуска приложения Excel. Чтобы закрыть диалоговое окно, нажмите на кнопку ОК.</li>
+<li>Сохраните изменения, выполнив команду Файл, Сохранить (File, Save) или Файл, Сохранить как (File, Save As).</li>
+<li>Закройте Microsoft Excel.</li>
+</ol>
+<h2 id="ierarhiya-obektov-vba-prilozheniya-microsoft">Иерархия объектов VBA приложения Microsoft Excel</h2>
+<p>Для того чтобы программно работать с объектами Excel, нужно иметь представление об объектной модели Microsoft Excel. Мы не будем здесь подробно описывать эту модель, поскольку она достаточно сложна, представим только ее основные объекты.</p>
+<ul>
+<li>Объект Application является экземпляром собственно Microsoft Excel. Применяя к этому объекту различные методы, можно воспользоваться практически любыми командами меню Excel. Объект Application обладает свойствами ActiveWorkbook иActiveSheet, которые указывают на текущие объекты Workbook (рабочая книга) и Worksheet (рабочий лист). Можно указать Excel.Application в качестве значения аргумента &lt;класс&gt; функций CreateObject () и GetObjectO, а также в операторе Dim objPlMH As New &lt;класс&gt;.</li>
+<li>Основной объект Excel — Workbook (рабочая книга). С помощью этого объекта осуществляется доступ к свойствам и структуре рабочей книги Excel. Объекты workbook — это файлы, которые состоят из нескольких объектов, создаваемых Microsoft Excel: Worksheet (рабочий лист) и Chart (диаграмма). Объекты Worksheet и Chart содержатся В семействах Worksheets и Charts.</li>
+<li>Объекты Worksheet являются подчиненными по отношению к объекту Workbook и обеспечивают доступ к свойствам и структуре рабочих листов книги Excel. Основным объектом взаимодействия приложений Microsoft Access 2002 и Microsoft Excel 2002 является именно объект Worksheet. Имеется возможность перенести информацию из строк и столбцов объекта Recordset приложения Microsoft Access в ячейки объекта Worksheet приложения Microsoft Excel и наоборот. Если в качестве значения аргумента &lt;класс&gt; функции GetObject() либо в операторе Dim оbj Имя As New &lt;класс&gt; указать Excel.Sheet, то по умолчанию откроется первый объект семейства Worksheets — первый рабочий лист (ActiveSheet) объекта Workbook.</li>
+<li>Объекты sheet аналогичны объектам Worksheet, но они входят в семейство Sheets, которое включает в себя как объекты Worksheet, так и объекты Chart, представляющие листы диаграмм в рабочей книге.</li>
+<li>Объект Range — диапазон ячеек рабочего листа Excel. Это могут быть отдельная ячейка, строка, столбец, прямоугольная область рабочего листа или несвязанный (произвольный набор ячеек) или трехмерный диапазон ячеек, включающий ячейки на нескольких рабочих листах. Можно получить либо установить значения диапазона ячеек, определив объект Range. Таких объектов, как ячейка, строка, столбец просто не существует. Именно объект Range со своими свойствами и методами обеспечивает работу как с отдельной ячейкой, так и с их диапазоном. Для ссылки на необходимую группу ячеек можно использовать имя диапазона, состоящего из этих ячеек. Если именованные диапазоны отсутствуют на рабочем листе, можно использовать метод Cells объекта worksheet, чтобы задать координаты ячейки или группы ячеек. Ниже приводятся два способа изменения значения ячейки А1:</li>
+</ul>
+<p>ActiveSheet.Range (&#171;Al&#187;).Value = 7 ActiveSheet.Cells (1,1).Value = 7</p>
+<p>Microsoft Excel предоставляет также многие другие объекты для применения их в качестве объектов приложения сервера, но описанные выше типы являются наиболее часто используемыми в технологии автоматизации с помощью Access VBA.</p>
+<h2 id="otkrytie-suschestvuyuschego-rabochego-lista">Открытие существующего рабочего листа Excel и работа с ним</h2>
+<p>Прежде чем работать с автоматизированными объектами Microsoft Excel, установим ссылку на библиотеку объектов Microsoft Excel. Для этого:</p>
+<ol>
+<li>Запустите Access и, если необходимо, откройте базу данных «Борей». Вызовите редактор VBA, открыв любой модуль.</li>
+<li>Выберите в окне редактора VBA команду меню Сервис, Ссылки (Tools, .References), чтобы открыть диалоговое окно References (Ссылки).</li>
+<li>Установите флажок у элемента Microsoft Excel 10.0 Object Library (рис. 15.26), затем нажмите на кнопку ОК, чтобы закрыть окно References.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image04/2569ff9c3bb1d4e1933bb09cbc66be6f.gif" alt="" width="579" height="501"><meta itemprop="width" content="579">
+<meta itemprop="height" content="501"></span></p>
+<p>Рис. 15.26. Добавление ссылки в редакторе VBA на объектную библиотеку Microsoft Excel 2002</p>
+<p>Команды автоматизации удобно изучать при помощи окна отладки Immediate. Поэтому, выведите данное окно на экран, если оно не отображается. Для этого достаточно нажать соответствующую кнопку на панели инструментов или комбинацию клавиш &lt;Ctrl&gt;+&lt;G&gt;.</p>
+<p>Чтобы программно открыть рабочий лист рабочей книги «Товары»:</p>
+<ol>
+<li>Закройте Excel, если он запущен.</li>
+<li>Создайте новый модуль, выполнив команду меню Insert, Module (Вставка, Модуль).</li>
+<li>Добавьте в раздел описаний следующие описания переменных:</li>
+</ol>
+<p>Private xlaProd As Excel.Application Private xlwProd As Excel.Workbook Private xlsProd As Excel.Worksheet</p>
+<ol start="4">
+<li>Введите в окне отладки следующий оператор (рис. 15.27):</li>
+</ol>
+<p>Set xlwProd = GetObject(CurDir &amp; &#171;Товары.хls&#187;,&#187;Excel.Sheet&#187;)</p>
+<p>При нажатии затем на клавишу &lt;Enter&gt; приложение Microsoft Excel запускается в режиме /automation. Функция CurDir возвращает полное имя текущей папки. Если файл Товары.хls был сохранен где-нибудь в другом месте, измените в предыдущем операторе путь к этому файлу. В зависимости от скорости функционирования компьютера, запуск Excel может продолжаться достаточно долю. Загрузка приложения Excel завершена, когда в строке состояния окна отладки надпись Выполнение (Running) исчезает и появляется надпись Готово (Ready). В результате будет создан экземпляр класса Application Microsoft Excel и переменной xlwProd будет присвоена ссылка на объект Workbook. Обратите внимание, что функция Getobject () открывает скрытый экземпляр приложения Excel, значок Excel не появляется на панели задач и интерактивно обратиться к рабочей книге Excel нельзя.</p>
+<p><strong>Замечание</strong></p>
+<p>В данном операторе аргумент Excel. Sheet является необязательным. Если его не указать, то тип создаваемого объекта будет определен автоматически по расширению файла, указанного в первом аргументе.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image23/ccbdf8dbd82f930c958c664ec2da11f0.gif" alt="" width="472" height="411"><meta itemprop="width" content="472">
+<meta itemprop="height" content="411"></span></p>
+<p>Рис. 15.27. Команды для автоматического запуска приложения Microsoft Excel</p>
+<ol start="5">
+<li>Чтобы убедиться, что рабочая книга открыта и мы можем к ней обратиться, введите в окне отладки следующую команду ?xlwProd.Name</li>
+</ol>
+<p>Свойство Name созданного объекта workbook содержит имя файла Excel: Това-pbi.xls (рис. 15.28).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image19/ad337637502f53d63837337b620ba2c5.gif" alt="" width="472" height="411"><meta itemprop="width" content="472">
+<meta itemprop="height" content="411"></span></p>
+<p>Рис. 15.28. Команды, позволяющие читать и устанавливать значения отдельных ячеек в рабочем листе «Товары»</p>
+<ol start="6">
+<li>Файл Toвapы.xls содержит только один объект Worksheet, поэтому рабочий лист «Товары» является активным рабочим листом — объектом ActiveSheet. Чтобы убедиться в этом, введите в окно отладки команду:</li>
+</ol>
+<p>?xlwProd. ActiveSheet.Name</p>
+<blockquote><p>Свойство Name этого объекта содержит имя рабочего листа: Товары.</p></blockquote>
+<ol start="7">
+<li>Теперь попробуйте обратиться к первой ячейке рабочего листа. Введите ?xlwProd.ActiveSheet.Celled, 1). После короткой паузы появится ожидаемый результат — строка «Код товара». Это заголовок первого столбца таблицы.</li>
+<li>Метод Cells позволяет обратиться к любой ячейке рабочего листа. Введите ?xlwProd. ActiveSheet. Cells (R, С), где R — номер строки, а С — номер столбца заданной ячейки, т. е. ее координаты (рис. 15.28).</li>
+<li>Можно изменить содержимое ячейки, если ввести выражение вида: xlwProd.ActiveSheet.Cells(2,2).Value = «brown rice». Подобно тому как многие объекты Access при введении имени объекта возвращают его значение, метод Cells не требует явного указания свойства Value по умолчанию. Чтобы убедиться в том, что содержимое ячейки изменилось, введите ?xlwProd.ActiveSheet.Cells (3,2), не дописывая выражения .Value.</li>
+</ol>
+<p>Для установления значения ячейки можно также использовать свойство Formula. Преимущество использования свойства Formula состоит в возможности его применения с целью введения формул с использованием «родного» синтаксиса Microsoft Excel, т. е. в виде ссылок на конкретные ячейки, например «=А2+С6».</p>
+<h2 id="ispolzovanie-imenovannyh-diapazonov-yacheek">Использование именованных диапазонов ячеек</h2>
+<p>Если в рабочем листе Excel создан именованный диапазон ячеек, то можно получить значения ячеек, содержащихся в этом диапазоне, если сослаться на свойство Range объекта Worksheet. Сначала посмотрим, какие именованные диапазоны присутствуют в открытом нами объекте. Введите в окно отладки команду (рис. 15.29)</p>
+<p>?xlwProd.Names(1).Name</p>
+<p>Семейство Names представляет все имена, определенные в рабочей книге. В данном случае первый элемент этого семейства содержит имя диапазона: WorkRange.</p>
+<p>Можно посмотреть не только имя, но и что собой представляет этот диапазон. Введите команду</p>
+<p>?xlwProd.Names(1).Value Результат будет: =Товары!$А$4 :$D$12,</p>
+<p>т. е. прямоугольная область А4—D12 на рабочем листе «Товары».</p>
+<p>На рис. 15.29 приведены выражения для управления объектом Range.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image02/157d0d2ecae488f27ffcfbb92db959e2.gif" alt="" width="289" height="156"><meta itemprop="width" content="289">
+<meta itemprop="height" content="156"></span></p>
+<p>Рис. 15.29. Примеры использования именованного диапазона</p>
+<p>Пусть переменная xlsProd ссылается на рабочий лист «Товары». Для этого введите команду:</p>
+<p>Set xlsProd = xlwProd.ActiveSheet.</p>
+<p>Для указания конкретной ячейки внутри именованного объекта Range можно использовать следующий оператор:</p>
+<p>?xlsProd.Range(&#171;WorkRange&#187;).Cells(1,1)</p>
+<p>Здесь используется свойство Range объекта Worksheet для доступа к именованному диапазону, а затем свойство Cells объекта Range — для указания конкретной ячейки в диапазоне. Первая цифра указывает строку, а вторая — столбец.</p>
+<p>Для того чтобы обратиться к объекту, который находится на уровень выше в иерархии объектов модели, можно воспользоваться свойством Parent. На рис. 15.29 представлено, как обратиться к рабочей книге Excel, содержащей текущий рабочий лист, и как установить объектную переменную xlaProd, которая должна ссылаться на объект Application Microsoft Excel:</p>
+<p>Set хlwРабочаяКнига = хlsРабочийЛист.Parent.</p>
+<h2 id="zakrytie-obektov-workbook-i-application">Закрытие объектов Workbook и Application</h2>
+<p>Объект Microsoft Worksheet закрыть нельзя. Для закрытия объекта Excel Workbook может быть использован метод Close, а для выхода из приложения — метод Quit. Следующие операторы закрывают объект Workbook и затем осуществляют выход из приложения сервера автоматизации, освобождая системные ресурсы:</p>
+<p>xlwProd.Close xlaProd.Quit Set xlsProd = Nothing Set xlwProd = Nothing Set xlaProd = Nothing</p>
+<p>Если программно были внесены изменения в рабочем листе, то при закрытии объекта Workbook будет выдан вопрос о необходимости сохранения изменений. Если вы не хотите, чтобы пользователь получил такой вопрос, введите аргумент False для метода Close. Чтобы гарантировать освобождение всех ресурсов, необходимо освободить все использованные объектные переменные.</p>
+<p><strong>Замечание</strong></p>
+<p>После присвоения переменной, указывающей на объект Application значения Nothing, соответствующее приложение не закрывается, хотя память, занятая переменной, освобождается. Поэтому необходимо закрывать приложение с помощью метода Quit перед освобождением соответствующей объектной переменной.</p>
+<h2 id="sozdanie-rabochego-lista-excel-s-pomoschyu">Создание рабочего листа Excel с помощью кода автоматизации</h2>
+<p>Те же действия, что происходят при нажатии кнопки Анализ в MS Excel, можно осуществить при помощи кода автоматизации VBA. Преимуществом такого способа является возможность форматировать созданный объект специально под нужды конкретного приложения. Рассмотрим функцию CreateCustomSheet (), создающую новый объект Worksheet и заполняющую его данными из таблицы «Товары» базы данных Microsoft Access:</p>
+<p>Function CreateCustomSheet() As Integer &#8216;Создание рабочего листа MS Excel из таблицы &#171;Товары&#187; &#8216;Описание локальных переменных &#8216;(Объектные переменные описаны на уровне модуля) Dim сйэБорей As Database &#8216;Текущая база данных Dim rstProd As Recordset &#8216;Объект Recordset Dim intRow As Integer &#8216;Счетчик строк Dim intCol As Integer &#8216;Счетчик столбцов &#8216;Открытие таблицы в текущей базе данных Set dbБорей = CurrentDb() Set rstProd = dbBopeu.OpenRecordset(&#171;Товары&#187;, dbdpenTable) DoCmd.Hourglass True &#8216;Создание нового объекта Excel Workbook Set xlwProd = CreateObject(&#171;Excel.Sheet&#187;) &#187;Создание объекта Application для применения метода Quit Set xlaProd = xlwProd.Parent intRow = 1 intCol = 1 rstProd.MoveFirst &#8216;Переход к первой записи Do Until rstProd.EOF &#8216;Цикл с шагом в одну запись For intCol = 1 То rstProd.Count &#8216;Цикл с шагом в одно поле If (Not IsNull(rstProd(intCol -1))) Then xlwProd.ActiveSheet.Cells(intRow, intCol).Value = CStr(rstProd(intCol -I}} End If Next intCol rstProd.MoveNext intRow = intRow + 1 Loop For intCol = 1 To xlwProd.ActiveSheet.Columns.Count &#8216;Форматирование каждого столбца рабочего листа xlwProd.ActiveSheet.Columns(intCol).Font.Size = 8 xlsCust.ActiveSheet.Columns(intCol).AutoFit If intCol = 8 Then &#8216;Выравнивание по левому краю числовых и &#8216;смешанных почтовых кодов xlwProd.ActiveSheet.Columns(intCol).HorizontalAlignment = _xlLeft End If Next intCol DoCmd.Hourglass False xlwProd.SaveAs (CurDir &amp; &#171;Товары_2.xls&#187;) xlaProd.Quit End Function</p>
+<p>Тип данных, возвращаемых выражением rstProd(intCol-l), следует специально изменить с variant на string при помощи функции cstr(), иначе Microsoft Excel вместо нужной величины отобразит в соответствующем столбце #н/д (#N/A#). Если объект Recordset содержит поля, типы которых отличны от Text, то для определения типа данных в столбце используйте соответствующую функцию СТуре().</p>
+<p>Константа xlLeft, присвоенная в качестве значения свойству HorizontalAlignment восьмого столбца, представляет собой встроенную константу Excel, определяемую в тот момент, когда устанавливается ссылка на объектную библиотеку Microsoft Excel 10.0 Object Library. Выделение элемента Constants (Константы) в списке Модули/ Классы окна просмотра объектов при подключенной библиотеке Excel отображает константы xlConst. На рис. 15.30 приведено числовое значение константы xlLeft, которая является одной из констант для задания значения свойства HorizontalAlignment.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image22/c7896a0950075d7f435abf33e5028829.gif" alt="" width="472" height="411"><meta itemprop="width" content="472">
+<meta itemprop="height" content="411"></span></p>
+<p>Рис. 15.30. Значения встроенных констант xlConst в окне Object Browser Access</p>
+<p>Ввод оператора ? CreateCustomSheet () в окне отладки запускает функцию, которую мы рассматривали выше. На рис. 15.31 приведена рабочая книга «ToBapы_2.xls» с рабочим листом, созданным при помощи функции CreateCustomSheet () и открытым в Microsoft Excel.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image14/7e5188fa222d52abdfb43a59563506c2.gif" alt="" width="429" height="314"><meta itemprop="width" content="429">
+<meta itemprop="height" content="314"></span></p>
+<p>Рис. 15.31. Часть рабочего листа Excel, созданного из таблицы «Товары»</p>
+<p>Обмен данными с Microsoft Word в системе автоматизации</p>
+<p>В настоящем разделе будут рассмотрены несколько примеров управления объектами Microsoft Word из процедур VBA: открытие и печать документа, слияние документов для почтовых рассылок и заполнение полей в документе Word данными из БД Microsoft Access.</p>
+<h2 id="ierarhiya-obektov-vba-prilozheniya-microsoft-2">Иерархия объектов VBA приложения Microsoft Word</h2>
+<p>Так же как и при использовании объектной модели Microsoft Excel, познакомимся сначала с некоторыми объектами объектной модели Microsoft Word.</p>
+<ul>
+<li>Объект Application — ссылается на активное приложение Microsoft Word. Через этот объект можно получить доступ ко всем остальным объектам модели. Объект Application имеет свойства ActiveDocument и ActiveWindow, которые представляют собой активный документ и активное окно соответственно. Можно указать Word.Application в качестве значения аргумента &lt;класс&gt; функций CreateObject() и GetObject() И В операторе Dim &lt;объектнаяПеременная&gt; As New &lt;класс&gt;.</li>
+<li>Объект Document — является глобальным объектом и, так же как и объект Application, может использоваться в коде автоматизации в качестве значения аргумента &lt;класс&gt; функций CreateObject() и GetObject() и в операторе Dim &lt;объектнаяПеременная&gt; As New &lt;класс&gt;. Семейство Documents представляет собой набор всех документов, открытых в Word.</li>
+<li>Объект Selection — представляет собой выделенную область в окне документа Word или точку вставки. Каждый документ может иметь только одну область выделения, и только одна область выделения открытых документов может быть активна в некоторый момент времени. Это означает, что всегда существует только один объект Selection. Объект Selection подчинен объекту Application, a создается при применении метода Select к объекту Document.</li>
+<li>Семейство windows объекта Application представляет собой набор всех окон приложения Word.</li>
+<li>Семейство Bookmarks подчинено объекту Document, и каждый объект этого семейства представляет собой закладку в документе.</li>
+<li>Объект Range представляет собой непрерывную область текста в документе Word. Диапазоны, как и закладки, используются для идентификации текста в документе, однако, в отличие от закладок, диапазоны существуют только во время выполнения процедур VBA. Диапазоны не зависят от области выделения в документе. Можно работать с диапазоном, не затрагивая области выделения. Диапазонов в документе может быть несколько.</li>
+</ul>
+<h2 id="otkrytie-dokumenta-word">Открытие документа Word</h2>
+<p>Для того чтобы открыть документ Word, можно использовать любой из перечисленных ранее способов создания экземпляров класса объекта автоматизации. Ниже приводятся примеры процедур VBA для открытия документа. В первой используется функция CreateObject (), а во второй — GetObject(). Для проверки кода этих процедур вы можете, так же как и при работе с объектами приложения Excel, использовать окно отладки.</p>
+<p>Sub OpenDocument() Dim wda As Word.Application Set wda = CreateObject(&#171;Word.Application&#187;) With wda .Visible = True .Documents.Open &#171;C:DocLetter.doc&#187; End With &#8216;операции над документом wda.Quit Wda.Nothing End Sub</p>
+<p>В данном случае независимо от того, запущен ли уже Word, программа запустит еще один его экземпляр и в нем откроет файл Letter.doc. После того как все операции с документом закончены, нужно закрыть Word, для чего используйте метод Quit. Если при этом документ был изменен, то приложение Word выдаст сообщение, спрашивающее о том, нужно ли сохранить изменения. При этом программа приостанавливает выполнение и ждет указания пользователя. Таких ситуаций следует избегать.</p>
+<p>Если все изменения делались программно, то лучше сначала закрыть документ, выполнив команду</p>
+<p>wda.ActiveDocuments.Close False</p>
+<p>Окно документа будет закрыто, при этом все изменения будут сохранены. Если же нужно, чтобы пользователь мог посмотреть сделанные программой изменения и при необходимости что-то откорректировать, можно не закрывать приложение в программе, а предоставить сделать это пользователю.</p>
+<p>В следующей процедуре для открытия документа используется функция Getobject (). То есть сначала делается попытка проверить, не запущен ли уже Word. Если он еще не запущен, будет сгенерирована ошибка (код ошибки: 429). Программа перехватит эту ошибку и использует функцию CreateObject(), чтобы запустить Word. Если Word уже запущен, то новый документ будет открыт в этом же экземпляре приложения. Затем документ выводится на печать, после чего закрывается либо документ, либо приложение в зависимости от значения флага (modeFlag). Значение флага показывает, запускался ли экземпляр Word, или документ был добавлен к другим открытым документам:</p>
+<p>Sub OpenPrintDocument() Dim wda As Word.Application Dim modeFlag As Boolean On Error GoTo ErrStartWord modeFlag = True &#8216;устанавливаем флаг операции Set wda = GetObjectf, &#171;Word.Application&#187;) With wda .Visible = True .Documents.Open &#171;C:DocLetter.doc&#187; .ActiveDocument.Printout Do While .BackgroundPrintingStatus &lt;&gt; 0 DoEvents &#171;ждем, пока документ напечатается Loop If modeFlag Then .ActiveDocument.Close &#8216;закрываем только документ Else .Quit &#8216;закрываем все приложение End If End With Set wda = Nothing Exit Sub ErrStartWord: If Err.Number = 429 Then &#8216; Word не запущен Set wda = CreateObject(&#171;Word.Application&#187;) modeFlag = False &#8216;сбрасываем флаг Resume Next &#8216;возвращаемся к оператору, следующему за &#8216;тем, который вызвал ошибку Else &#8216;выдаем диалоговое окно с сообщением и номером ошибки MsgBox Err.Description &amp; &#187; &#187; &amp; Err.Number, vblnformation Exit Sub &#8216; выходим из процедуры End If End Sub</p>
+<h2 id="vyvod-dannyh-iz-tablitsy-access-v-dokument">Вывод данных из таблицы Access в документ Word</h2>
+<p>Такая операция может быть полезна, когда требуется автоматически внести данные в один из типовых документов: служебную записку, письмо, договор и т. д. Не всегда такие документы можно сформировать, используя отчеты Access. Например:</p>
+<ul>
+<li>требуется оформить договор, который, как правило, представляет собой довольно длинный текстовый документ, в который нужно вставить несколько чисел или строк;</li>
+<li>нужно обеспечить возможность ручного редактирования текста документа;</li>
+<li>документ должен быть сохранен в виде текстового файла (отчет Access может быть только напечатан).</li>
+</ul>
+<p>В качестве примера рассмотрим документ Word, который находится в файле Contract.doc на компакт-диске. Документ представляет собой текст договора и содержит несколько полей формы, которые должны быть заполнены данными из таблицы Access. (Подробно о полях формы можно пропитать, например, в кн.: Ф. Новиков, А. Яценко. Microsoft Office 2000 в целом. «БХВ—Санкт-Петербург», 1999.) Откройте этот файл, запустив Word. На рис. 15.32 показаны начало документа и поля, которые должны быть заполнены. Кроме того, представлена стандартная панель инструментов Формы (Forms), с помощью которой эти поля были созданы.</p>
+<p><strong>Замечание</strong></p>
+<p>Чтобы вывести на экран эту панель инструментов, щелкните правой кнопкой мыши в области панелей инструментов и выберите из списка элемент Формы (Forms).</p>
+<p>Чтобы вставить такое поле в документ, нужно:</p>
+<ol>
+<li>Установить курсор (точку ввода) в то место, где должно начинаться поле, и нажать кнопку Текстовое поле (Text Form Field). Поле будет вставлено в документ в точке ввода.</li>
+<li>Дважды щелкнуть на этом поле. Откроется диалоговое окно Параметры текстового поля (Text Form Field Options), в котором требуется заполнить, по крайней мере, одно поле: Закладка (Bookmark).</li>
+<li>Ввести имя закладки и нажать кнопку ОК.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image26/eb4b4182f57f0ea10420c3ab0108a6bf.gif" alt="" width="580" height="435"><meta itemprop="width" content="580">
+<meta itemprop="height" content="435"></span></p>
+<p>Рис. 15.32. Документ Word, содержащий поля для вставки</p>
+<p>Рассмотрим программу, которая открывает файл Contract.doc и автоматически заполняет поля договора. Такая программа может быть связана, например, с кнопкой в форме «Заказы клиентов» (Customer Orders) и обрабатывает нажатие данной кнопки. При нажатии на кнопку должен сформироваться договор с тем клиентом, который отображается в текущей записи формы. Для простоты будем считать, что номер договора будет равен номеру текущего заказа (выделенного в подчиненной форме).</p>
+<p>Private Sub CreateContract_Click() Dim wda As Word.Application Dim wdd As Word.Document Dim intPrint As Integer On Error GoTo ErrStartWord Set wdd = GetObject(&#171;C:DocContract.doc&#187;) Set wda = wdd.Parent wda.Visible = True wdd.Bookmarks(&#171;ContractNumber&#187;).Select wda.Selection.TypeText Text:=[Подчиненная форма заказов 1].Form![КодЗаказа] wdd.Bookmarks(&#171;ContractDate&#187;).Select With wda .Selection.TypeText Text:=Date .Selection.GoTo Name:=&#187;CustemerName&#187; .Selection.TypeText Text:=[Название] .Selection.GoTo Name:=&#187;CustomerAddress&#187; .Selection.TypeText Text:=[Страна] &#8216; заполнение остальных полей intPrint = MsgBox(&#171;Печатать договор?&#187;, vbYesNo + vbQuestion) If intPrint = vbYes Then wdd.Printout Do While .BackgroundPrintingStatus &lt;&gt; 0 DoEvents Loop End If .ActiveDocument.Close False If .Windows.Count = 0 Then .Quit End If End With Set wdd = Nothing Set wda = Nothing Exit Sub ErrStartWord: MsgBox Err.Description &amp; &#187; &#187; &amp; Err.Number, vblnformation Exit Sub End Sub</p>
+<p>В данной программе с помощью функции Getobject() создается объект Document. Если при этом Word не запущен, то одновременно создается скрытый экземпляр объекта Application Word. Если Word уже запущен, то новый документ добавляется к уже открытым документам.</p>
+<p>Далее показаны два способа нахождения нужной закладки в документе. В первом случае используется семейство Bookmarks. Вызвав метод Select нужного элемента этого семейства, можно создать объект Selection, а в документе при этом выделяется требуемое поле.</p>
+<p>Во втором случае к объекту Selection (вспомните, что он может означать не только выделенную область, но и точку ввода) применяется метод Goto, которому в качестве значения аргумента Name передается имя нужной закладки.</p>
+<p>После того как все поля заполнены, договор выводится на печать. Но предварительно пользователь получает сообщение, требующее подтвердить необходимость печати. Документ печатается только если пользователь подтвердит это.</p>
+<p>Потом документ закрывается и далее проверяется, открыты ли еще какие-либо документы (используется свойство Count семейства windows). Если других открытых документов нет, то приложение тоже закрывается. В конце процедуры освобождаются обе объектные переменные.</p>
+<p>Если в организации отсутствует приложение Access для автоматизации различных деловых процедур, то создавать типовые бланки документов можно более простыми средствами, например, умело используя средства самого редактора Microsoft Word. Однако, когда такое приложение имеется и в базе данных Access хранится большинство нужной информации, было бы просто нерационально вводить вручную в текст документа значения полей. Рассмотренный пример объясняет, как можно этого избежать.</p>
+<h2 id="sliyanie-dokumentov-dlya-pochtovyh-rassylok">Слияние документов для почтовых рассылок</h2>
+<p>Следующий пример связан с эффектным решением еще одной типовой задачи — созданием серийных документов. Это могут быть письма с одинаковым содержанием, но адресованные разным лицам, или типовые бланки, которые должны оформляться в большом количестве. Задача сводится к тому, что должны существовать шаблон такого документа и некоторая база данных. Требуется создать необходимое количество экземпляров такого документа, вставив в каждый экземпляр существующие данные. Если источником данных является таблица Access или запрос, задача решается просто — достаточно выделить эту таблицу (запрос) в списке в окне базы данных и выполнить команду меню Сервис, Связи с Office, Слияние с MS Word (Tools, Office Links, Merge it With MS Word). Однако может оказаться, что данные для вставки в бланк или письмо определяются достаточно сложно, например представляют собой набор записей — Recordset. Тогда можно создать все бланки программно.</p>
+<p>Сейчас мы создадим приглашение сотрудникам фирмы «Борей» на некоторое мероприятие. Мероприятие торжественное и важное, поэтому мы хотим напечатать приглашение на красивом бланке.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image25/e88c6075004dd48efadc6ec920b4e844.gif" alt="" width="512" height="484"><meta itemprop="width" content="512">
+<meta itemprop="height" content="484"></span></p>
+<p>Рис. 15.33. Шаблон документа для слияния с данными из Access</p>
+<p>Шаблон документа должен быть приготовлен заранее. Рассмотрим, как это можно сделать.</p>
+<ol>
+<li>Создайте красивый бланк, пользуясь средством Microsoft Clip Gallery или любой другой библиотекой картинок, рамочек и т. д. (Можно использовать шаблон, присутствующий на компакт-диске, — файл Приглашение.dot). Это будет основной документ для слияния.</li>
+<li>Теперь нужно установить связь с источником данных. В программе мы будем использовать в качестве источника данных временную таблицу Access, т. е. таблицу, которая существует только при работе процедуры VBA. Однако для установления связи нужно создать такую таблицу в базе данных. Создайте новую таблицу и определите следующие поля таблицы: «Фамилия», «Имя», «Обращение», «Должность». Назовите ее «СписокПриглашенных».</li>
+<li>Откройте файл Приглашение-dot и выполните команду меню Сервис, Письма и рассылки, Мастер слияния (Tools, Letters and Mailing, Mail Merge Wizard). Будет запущен Мастер слияния, который в новой версии Microsoft Word реализован в виде панели задач, расположенной слева на экране (рис. 15.34)</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image28/fd5614306dd155ea5460dab82ec6c3b5.gif" alt="" width="520" height="506"><meta itemprop="width" content="520">
+<meta itemprop="height" content="506"></span></p>
+<p>Рис. 15.34. Панель Мастера слияния</p>
+<ol start="4">
+<li>Далее следуйте указаниям мастера. На первом шаге выберите тип документа — Письма (Letter) и нажмите кнопку Далее (Next), чтобы перейти к следующему шагу.</li>
+<li>На втором шаге выберите переключатель Текущий документ (Use The current document).</li>
+<li>На третьем шаге нужно указать источник данных. Оставьте значение поля Выбор получателей (Select Recipient) по умолчанию — Использование списка (Use an existing List) и нажмите на ссылку Обзор (Browse). Появится стандартное диалоговое окно для выбора файла.</li>
+<li>Найдите в этом окне файл «Борей.MDB» и нажмите кнопку Открыть (Open). Появится диалоговое окно со списком таблиц.</li>
+<li>Выберите в нем таблицу «СписокПриглашенных». Появится диалоговое окно, в котором будет отображено содержимое исходной таблицы (рис. 15.35). Закройте это окно.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image15/8923f48cb293ae459057759f3c4f5743.gif" alt="" width="498" height="363"><meta itemprop="width" content="498">
+<meta itemprop="height" content="363"></span></p>
+<p>Рис. 15.35. Диалоговое окно с содержимым таблицы «СписокПриглашенных»</p>
+<ol start="9">
+<li>Теперь на экране отображается панель инструментов Слияние (Mail Merge). Установите курсор в левый верхний угол документа и нажмите кнопку Добавить поля слияния (Insert Merge Fields). Появляется одноименное диалоговое окно со списком всех полей в источнике данных. Выберите в списке поле «Обращение» и нажмите кнопку Вставить (Insert). Аналогично вставьте остальные поля (см. рис. 15.34). Поля слияния являются одним из видов полей Word и выглядят в основном документе как заключенные в угловые кавычки названия соответствующих полей источника данных.</li>
+<li>Сохраните документ в виде шаблона (файл с расширением dot) и закройте.</li>
+</ol>
+<p>Рассмотрим теперь программу, которая будет выполнять слияние документа Word с данными из таблицы Access. В этой программе мы покажем, как объект Document создается из шаблона документа. Предположим, что у нас есть форма, в которой отображаются отобранные записи о тех сотрудниках, которым мы хотим разослать приглашения. На форме есть кнопка, при нажатии на которую должны формироваться и печататься все экземпляры приглашений. Процедура обработки нажатия этой кнопки выглядит следующим образом:</p>
+<p>Private Sub MergeDocument_Click() Dim wda As Word.Application Dim rst As Recordset, rstNew As Recordset Dim db As Database Dim tdf As TableDef Dim i As Integer Set db = CurrentDb() &#8216; Создаем новую таблицу Set tdf = db.CreateTableDef(&#171;СписокПриглашенных&#187;) With tdf &#8216; Создаем поля таблицы и добавляем их в семейство Fields .Fields.Append .CreateField(&#171;Фамилия&#187;, dbText) .Fields.Append . CreateFieldC&#8217;HMH&#187;, dbText) .Fields.Append .CreateField(&#171;Обращение&#187;, dbText) .FieIds.Append .CreateField(&#171;Должность&#187;, dbText) &#8216; Добавляем таблицу в семейство TableDefs db.TableDefs.Append tdf End With &#8216; копируем записи из формы в созданную таблицу Set rst = Me.RecordsetClone rst.MoveFirst Set rstNew = db.OpenRecordset(&#171;СписокПриглашенных&#187;) Do While Not rst.EOF rstNew.AddNew For i = 0 To rst.Fields.Count &#8212; 1 rstNew.Fields(i) = rst.Fields(i) Next i rstNew.Update rst.MoveNext Loop &#8216; создаем объект Application Word On Error GoTo err_StartWord Set wda = GetObject(, &#171;Word.Application&#187;) wda.Visible = True &#8216; открываем документ на основе шаблона &#8212; он добавляется в семейство Documents wda.Documents.Add &#171;C: Docnj»iMiaEieHHe.dot&#187; &#8216; выполняем слияние основного документа и данных из источника With wda.ActiveDocument.MailMerge .Destination = wdSendToNewDocument .Execute End With &#8216; печатаем приглашения wda.ActiveDocument.Printout Do While wda.BackgroundPrintingStatus &lt;&gt; 0 DoEvents Loop &#8216; сохраняем получившийся документ wda.ActiveDocument.SaveAs &#171;C:DocMailMergeDoc.doc&#187; &#8216; закрываем окно с новым документом wda.ActiveWindow.Close False &#8216; закрываем, не сохраняя, окно с первоначальным документом wda.Documents (1).Close False &#8216; если нет больше открытых документов, то закрываем Word If wda.Documents.Count = 0 Then wda.Quit End If &#8216; Удаляем временную таблицу db.TableDefs.Delete &#171;СписокПриглашенных&#187; db.Close Set wda = Nothing Set rst = Nothing Set rstNew = Nothing Exit Sub err_StartWord: If Err = 429 Then &#8216; Word не запущен Set wdd = CreateObject(&#171;Word.Application&#187;) Resume Next Else MsgBox Err.Description &amp; &#187; &#187; &amp; Err.Number, vblnformation Exit Sub End If End Sub</p>
+<p>Сначала создается таблица «СписокПриглашенных» с той же структурой, которая была создана вручную. Затем все данные, отображаемые в форме, записываются в эту таблицу. Все операции с данными выполняются с использованием объектов DАО. Объект Application Word создается с помощью функции GetObject() или CreateObject () в зависимости от того, запущен ли уже Word. Для создания нового документа на основе шаблона используется метод Add семейства Documents. При слиянии основного документа с записями в таблице создается новый документ. Для этого устанавливается значение свойства Destination объекта MailMerge равным константе wdSendToNewDocument. Этот документ уже не содержит поля слияния, а является просто текстовым документом, который можно сохранить в виде файла, задав его имя. Перед сохранением в файле документ выводится на печать. После этого нужно аккуратно закрыть сначала новый документ, потом основной документ, к которому присоединен источник данных, и потом, если нужно, сам Word.</p>
+<p>Использование Access в качестве сервера автоматизации</p>
+<p>Все примеры предыдущих разделов демонстрировали работу Microsoft Access в качестве клиента автоматизации. Но это приложение является одновременно и сервером автоматизации, т. е. Access может предоставлять объекты своей объектной модели для использования другим приложениям. Это значит, что другие приложения Microsoft Office могут программно управлять объектами Access. Ниже приведен пример, когда из приложения Excel открывается база данных Access и данные из таблицы экспортируются в активный лист рабочей книги Excel.</p>
+<p>Dim objAccess As Access.Application Dim db As Database Dim rst As Recordset Dim i As Integer, j As Integer Set objAccess = GetObject(&#171;D:XBopeu.mdb&#187;) Set db = objAccess.CurrentDb Set rst = db.OpenRecordset(&#171;Квартальные обороты по товарам&#187;) &#8216; заполняем 1-ю строку заголовками столбцов таблицы For i = 1 То rst.Fields.Count &#8212; 1 Cells(1, i) = rst.Fields(i).name Next i &#8216; переносим все остальные строки таблицы j = 2 rst.-MoveFirst Do Until rst.EOF For i = 1 To rst.Fields.Count &#8212; 1 Cells (j, i) = IlfdsNull (rst. Fields (i) ), 0, rst. Fields (i) ) Next i j = j + 1 rst.moveNext Loop objAccess.Close Set obAccess = Nothing</p>
+<p>Перед тем как создавать эту функцию, необходимо создать две ссылки в редакторе VBA Excel: на библиотеки Microsoft Access 10.0 Object Library и Microsoft DАО 3.6 Object Library. Создав объект Access .Application, можно получить доступ ко всём остальным объектам Access: таблицам, формам, отчетам. В данной программе сначала создается объект Recordset из нужной таблицы, а затем в цикле создается строка заголовков полей и переносятся все данные. На рис. 15.36 представлена результирующая таблица запроса «Квартальные обороты по товарам» и результат ее экспорта в Excel.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image09/4fcca3bbb3df0cadf9f81ff3ad5751e2.gif" alt="" width="522" height="470"><meta itemprop="width" content="522">
+<meta itemprop="height" content="470"></span></p>
+<p>Рис. 15.36. Таблица «Доходы за квартал» и результат ее экспорта в Excel</p>
+<p>В качестве сервера автоматизации Microsoft Access применяется обычно для создания мастеров, генерирующих приложения баз данных в Access, при этом можно использовать функции CreateFormf), CreateControl(), CreateReportControl().</p>
+<p>Использование элементов ActiveX в приложении</p>
+<p>Функциональные возможности Access могут быть расширены не только за счет использования объектов других приложений — серверов автоматизации. Мини-приложение может быть просто встроено в приложение Access. Такими мини-приложениями являются элементы ActiveX. Элементы ActiveX представляют собой программный компонент, реализованный в виде отдельного файла. Но самостоятельными приложениями элементы ActiveX не являются — они выполняются только в том приложении, которое позволяет встраивать и использовать их, являясь для них контейнером. Вне приложения-контейнера ни один элемент управления ActiveX невозможно запустить на выполнение и требовать каких-либо результатов.</p>
+<p>Существует большое количество элементов ActiveX. В этой главе мы познакомимся с одним из них, который включен в стандартную поставку Microsoft Office и используется очень часто. Это элемент Календарь (Calendar). Другие элементы ActiveX можно найти в Microsoft Office 2002 для разработчиков и прочих средствах разработки, в том числе и от других производителей.</p>
+<p><strong>Замечание</strong></p>
+<p>Если вы включили в свое приложение элементы ActiveX, необходимо следить за тем, чтобы эти элементы были установлены на всех компьютерах, на которых будет использоваться ваше приложение.</p>
+<p>Добавление элемента управления Календарь в форму</p>
+<p>Элемент управления Календарь может быть включен в форму для того, чтобы пользователь мог выбрать значение поля типа Дата/Время, а не вводить дату вручную.</p>
+<p>Чтобы включить элемент управления Календарь в форму:</p>
+<ol>
+<li>Откройте форму в режиме Конструктора.</li>
+<li>Выберите команду меню Вставка, Элемент ActiveX (Insert, ActiveX Controls), при этом откроется диалоговое окно Вставка элемента ActiveX (Insert ActiveX Controls) со списком всех зарегистрированных в системе элементов ActiveX.</li>
+<li>Выберите в списке (рис. 15.37) строку Элемент управления Календарь 10.0 (Calendar Control 10.0) и нажмите кнопку ОК.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image22/c90431d0713158868156993c7a56191a.gif" alt="" width="420" height="282"><meta itemprop="width" content="420">
+<meta itemprop="height" content="282"></span></p>
+<p>Рис. 15.37. Диалоговое окно Вставка элемента ActiveX</p>
+<p>Далее можно настроить этот элемент, используя его свойства. В отличие от других элементов управления, в данном случае свойства имеют:</p>
+<ul>
+<li>элемент управления ActiveX формы (окно свойств то же самое, что у других элементов управления и у самой формы);</li>
+<li>объект Календарь, который реализуется этим элементом управления.</li>
+</ul>
+<p>В нашем примере создайте новую форму в режиме Конструктора. Добавьте в нее i описанным выше способом элемент управления Календарь. Откройте диалоговое окно свойств элемента ActiveX. Обратите внимание на свойство Класс (Class), определяющее класс элемента ActiveX. Значение этого свойства установилось автоматически: MSCAL.Calendar.7. Определите имя элемента: ocxCalendar и размеры ‘ примерно 8×6 см.</p>
+<p>Чтобы посмотреть свойства объекта Календарь:</p>
+<ol>
+<li>Поместите указатель мыши на календарь и щелкните правой кнопкой мыши, чтобы получить контекстное меню для элемента управления формы.</li>
+<li>В появившемся меню щелчком выберите строку Объект Календарь (Calendar Control Object), при этом откроется объектное меню (рис. 15.38). Выберите в этом меню команду Свойства (Properties). Появится диалоговое окно свойств объекта Календарь.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image06/32a9caeb8bb5f54274071c7cc7d2975c.gif" alt="" width="369" height="386"><meta itemprop="width" content="369">
+<meta itemprop="height" content="386"></span></p>
+<p>Рис. 15.38. Контекстное меню для элементов управления ActiveX</p>
+<ol start="3">
+<li>По умолчанию окно свойств раскрывается на вкладке Общие (General), где можно установить некоторые обшие свойства элемента управления Календарь. Раскройте вкладку Шрифты (Fonts) диалогового окна Свойства: Календарь.</li>
+<li>Для элемента DayFont из списка Свойства (Property Name) на вкладке Шрифт (Font) установите шрифт Arial Cyr, в группе Аттрибуты (Font Style) установите флажок полужирный (Bold), установите размер шрифта «10» и нажмите на кнопку Применить (Apply). Размеры столбцов элемента Календарь ограничивают размер шрифта в DayFont величиной 9,75 пунктов (рис. 15.39).</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image26/f254117eb9e3ae6e5dd930180e2c1d0e.gif" alt="" width="461" height="353"><meta itemprop="width" content="461">
+<meta itemprop="height" content="353"></span></p>
+<p>Рис. 15.39. Вкладка Шрифт диалогового окна Свойства: Календарь</p>
+<ol start="5">
+<li>Повторите процесс выбора шрифта, описанный на предыдущем шаге, для свойств GridFont (шрифт — Arial Cyr, начертание — полужирный, размер — 9) и TitleFont (шрифт — Arial Cyr, начертание — полужирный, размер — 12).</li>
+<li>Раскройте вкладку Цвет (Colors) диалогового окна свойств. Эта вкладка предоставляет возможность изменить на любой из 16 стандартных цветов (или системных цветов Windows) цвета фона (Backcolor), шрифта названий дней (DayFontColor), шрифта дат (GridFontColor), шрифта заголовка (TitleFontColor) и линий сетки (GridLinesColor) (рис. 15.40).</li>
+<li>Нажмите кнопку ОК, чтобы закрыть окно свойств объекта. Откройте окно свойств формы. Установите Отсутствуют (Neither) в качестве значения свойства Полосы прокрутки (ScrollBars) и Нет (No) как значение свойств Кнопки перехода (NavigationButtons) и Область выделения (RecordSelectors).</li>
+<li>Переключите форму с встроенным календарем в режим формы. Вид элемента управления Календарь в режиме Формы приведен на рис. 15.41. Чтобы изменить год или месяц, можно использовать раскрывающиеся списки в заголовке календаря.</li>
+<li>Вернитесь в режим Конструктора. Теперь мы рассмотрим, как можно использовать методы элемента Календарь.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image22/c6d8465bf1fa436cb084c716d6cc755d.gif" alt="" width="541" height="467"><meta itemprop="width" content="541">
+<meta itemprop="height" content="467"></span></p>
+<p>Рис. 15.40. Вкладка Цвет диалогового окна Свойства: Календарь</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image13/72a889f7075dee295b6a671ff18835f6.gif" alt="" width="420" height="385"><meta itemprop="width" content="420">
+<meta itemprop="height" content="385"></span></p>
+<p>Рис. 15.41. Форма с элементом управления Календарь с раскрывающимися списками месяца и года</p>
+<p><strong>Замечание</strong></p>
+<p>Чтобы познакомиться со всеми свойствами, методами и событиями любого элемента ActiveX, встроенного в форму, откройте окно свойств этого объекта и нажмите кнопку Справка (Help).</p>
+<ol start="10">
+<li>Справа от календаря расположите вертикально шесть кнопок. Назовите их так, как показано на рис. 15.42: «Следующая неделя», «Предыдущая неделя», «Следующий месяц», «Предыдущий месяц», «Следующий год», «Предыдущий год».</li>
+<li>Ниже календаря создайте текстовое поле. В этом поле будет отображаться дата, выбранная в календаре. Присвойте свойству Имя (Name) этого поля значение Дата, а свойству Значение по умолчанию (Default Value) — значение =Date ().</li>
+<li>Теперь напишем несколько процедур обработки событий. Во-первых, нужно, чтобы при открытии формы на календаре отображалась текущая дата. Для этого необходимо создать процедуру обработки события Загрузка (Load) формы. Ниже приводится текст этой процедуры.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image22/c8b4d3fa6a18f487c97884ba4bdc9ee2.gif" alt="" width="398" height="447"><meta itemprop="width" content="398">
+<meta itemprop="height" content="447"></span></p>
+<p>Рис. 15.42. Окончательный вид формы, содержащей элемент управления Календарь в режиме Конструктора</p>
+<p>Private Sub Form_Load() Календарь.Object.Value = Date End Sub</p>
+<ol start="13">
+<li>При выборе даты в календаре должно меняться значение поля «Дата». Поэтому нужно написать процедуру обработки события ПослеОбновления (AfterUpdate) элемента управления Календарь. Как и предыдущая, эта процедура состоит из одного оператора. Однако в ней показано, что для ссылки на значение элемента Календарь необязательно используется свойство value.</li>
+</ol>
+<p>Private Sub Календарь_АfterUpdate() &#8216;обновление поля &#171;Дата&#187; txtDate = Format(Календарь.Object.Value, &#171;dd/mm/yy&#187;) End Sub</p>
+<ol start="13">
+<li>Еще шесть процедур должны обрабатывать событие НажатиеКнопки (Click) для каждой из шести кнопок. В этих процедурах используются шесть методов объекта Календарь:</li>
+</ol>
+<p>Private Sub Предыдущая_неделя_С11сК() Календарь.Obj ect.PreviousWeek End Sub Private Sub Предыдущий_год_С11сК() Календарь.Obj ect.NextYear End Sub Private Sub Предьщущий_месяц_С1ick () Календарь.Obj ect.PreviousMonth End Sub Private Sub Следующая_неделя_С11сk() Календарь.Object.NextWeek End Sub Private Sub Следующий_год_С11сК() Календарь . Object. NextYear End Sub Private Sub Следующий_месяц_С11сК() Календарь.Object.NextMonth End Sub</p>
+<ol start="13">
+<li>Поскольку год и месяц теперь можно переключать с помощью кнопок, вы можете убрать из заголовка календаря раскрывающиеся списки, для чего откройте вкладку Общие (General) диалогового окна свойств объекта и снимите флажок Выбор месяца и года (Month/Year Selectors).</li>
+<li>Сохраните форму, дав ей имя «Календарь». Окончательный вид формы представлен на рис. 15.43.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image27/fb3b8118e00b964aebe2291e74085abb.gif" alt="" width="469" height="455"><meta itemprop="width" content="469">
+<meta itemprop="height" content="455"></span></p>
+<p>Рис. 15.43. Окончательный вид формы с элементом управления Календарь</p>
+<p>Подключение специальных элементов управления в реестр Windows</p>
+<p>Чтобы элементы ActiveX можно было использовать в приложениях Microsoft Access, сведения о них должны быть внесены в реестр Windows. В противном случае они просто отсутствуют в списке диалогового окна Вставка элемента ActiveX (Insert ActiveX Controls). Этот процесс называется подключением, или регистрацией. Во время процесса установки большая часть элементов ActiveX создает требуемые разделы в реестре Windows. На рис. 15.44 приведены разделы реестра для элемента управления Календарь.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image27/f660a58bdbf5841ff18aab0f9d01a0e2.gif" alt="" width="511" height="252"><meta itemprop="width" content="511">
+<meta itemprop="height" content="252"></span></p>
+<p>Рис. 15.44. Разделы специального элемента управления Календарь в реестре Windows</p>
+<p>Однако многие свободно распространяемые элементы ActiveX не имеют в своем составе программы установки, поэтому следует подключить их самостоятельно.</p>
+<p>Чтобы внести в реестр сведения о специальном элементе управления автоматизации для Microsoft Access или других приложений:</p>
+<ol>
+<li>Выберите команду Сервис, Элементы ActiveX (Tools, ActiveX Controls), чтобы открыть диалоговое окно Элементы ActiveX (ActiveX Controls). Затем нажмите кнопку Подключить (Register), что приведет к открытию диалогового окна Добавление элемента ActiveX (Add ActiveX Control).</li>
+<li>Найдите файл, соответствующий элементу ActiveX (обычно он имеет расширения осх или dll), который необходимо подключить (рис. 15.45), и нажмите кнопку ОК. После этого вновь подключенный элемент должен появиться в списке Доступные элементы управления (Available Controls) диалогового окна Элементы ActiveX.</li>
+</ol>
+<p>При удалении элемента ActiveX с жесткого диска рекомендуется также удалить соответствующий раздел из реестра. Для удаления раздела из реестра выделите имя специального элемента управления в списке Доступные элементы диалогового окна Элементы ActiveX, затем нажмите на кнопку Отключить (Unregister).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image21/bf20814b7a61f811d17ac0e96f582e2f.gif" alt="" width="580" height="354"><meta itemprop="width" content="580">
+<meta itemprop="height" content="354"></span></p>
+<p>Рис. 15.45. Выделение файла с расширением осх для подключения</p>
+<p>Выводы</p>
+<p>Эта глава является завершающей во второй части нашей книги. Мы постарались по возможности полно показать все функции и свойства Access, которые можно использовать для создания типового приложения, по крайней мере, настолько, насколько позволял задуманный объем книги. В следующей части мы познакомим вас с особенностями разработки распределенных многопользовательских приложений, проектами Access, а также с теми средствами, которые можно использовать для их распространения и поддержки.</p>	</div>
+<!-- .entry-content -->
+
+</article>
+
+
+
+
+
+
+
+
+
+<div class="social-buttons">
+<span class="social-button social-button--vkontakte main" data-social="vkontakte"><span>Поделиться в ВКонтакте</span></span><span class="social-button social-button--telegram " data-social="telegram"></span><span class="social-button social-button--odnoklassniki " data-social="odnoklassniki"></span><span class="social-button social-button--whatsapp " data-social="whatsapp"></span><span class="social-button social-button--viber " data-social="viber"></span>
+</div>
+
+<!--noindex-->
+<div class="author-box">
+    <div class="author-info">
+        <div class="author-box__ava">
+                    </div>
+
+        <div class="author-box__body">
+            <div class="author-box__author">
+                Автор А. Днепров            </div>
+            <div class="author-box__description">
+                <p>Обучаю основам работы с офисными программами.</p>
+            </div>
+
+            
+        </div>
+    </div>
+</div>
+<!--/noindex-->
+    <meta itemprop="author" content="А. Днепров">
+<meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/glava-integratsiya-access-s-drugimi-kompone" content="Глава 15. Интеграция Access с другими компонентами Office">
+    <meta itemprop="dateModified" content="2024-06-24">
+<div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+<div class="related-posts">
+<div class="related-posts__header">Вам также может понравиться</div>
+<div class="post-cards post-cards--vertical">
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/kak-sdelat-massovuyu-zamenu-formul"><img width="311" height="230" src="/image04/2408fadbc9163d5aa4994580cfc152cd.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/kak-sdelat-massovuyu-zamenu-formul">Как сделать массовую замену формул</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/kak-udalit-lishnie-i-pustye-stranitsy-v-excel">Как удалить лишние и пустые страницы в Excel</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/preobrazovanie-teksta-v-tablitsu"><img width="345" height="122" src="/image14/7a0043c9bf012cc129b22376cfebb2a9.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/preobrazovanie-teksta-v-tablitsu">Преобразование текста в таблицу</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/kak-delat-skrinshoty-s-vysokim-razresheniem-v-windows">Как делать скриншоты с высоким разрешением в Windows 11/10</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/osobennosti-raboty-s-mnogostranichny"><img width="213" height="230" src="/image13/6f8f9694c11ee322ff9d3675b0b8ba07.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/osobennosti-raboty-s-mnogostranichny">13.1 Особенности работы с многостраничными документами</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/kak-sdelat-izmeneniya-vnutri-yacheyki-p"><img width="345" height="93" src="/image27/f6550fd3bdfdfdbe500536441d5d252e.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/kak-sdelat-izmeneniya-vnutri-yacheyki-p">Как сделать изменения внутри ячейки. Принудительный перенос</a></div>
+    </div>
+</div>
+</div>
+            </main><!-- #main -->
+        </div>
+<!-- #primary -->
+
+        
+    
+
+    </div>
+<!--.site-content-inner-->
+
+    
+</div>
+<!--.site-content-->
+
+    
+    
+
+<div class="site-footer-container">
+
+    
+
+    <footer id="colophon" class="site-footer full" itemscope itemtype="http://schema.org/WPFooter">
+        <div class="site-footer-inner fixed">
+
+            
+            
+<div class="footer-bottom">
+    <div class="footer-info">
+        <div class="footer-copyright">© 2024 Самоучитель справочник по офисным программам. <a href="/o-nas" rel="nofollow">О нас | Контакты</a> | <a href="/map" rel="nofollow">Карта сайта</a>
+</div>
+        <div class="footer-under-copyright"></div>
+	        </div>
+
+    </div>
+        </div>
+    </footer><!--.site-footer-->
+</div>
+
+
+            <button type="button" class="scrolltop js-scrolltop" data-mob="on"></button>
+    
+                    <div class="top-line js-top-line">
+            <div class="top-line-inner fixed">
+
+                <div class="top-line__title">Глава 15. Интеграция Access с другими компонентами Office</div>
+<div class="top-line__like"><span class="btn-fb-like btn-top-like social-button--vkontakte" data-social="vkontakte"><span>Поделиться в ВКонтакте</span></span></div>
+<div class="top-line__post">
+<div class="top-line__post_thumbnail"><a href="/sohranenie-dokumenta-na-diske-i-ego-z"><img width="100" height="70" src="/image01/00bb57a457e0ee94a715d60a0d453ae6.jpg" class="attachment-yelly_square size-yelly_square wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="top-line__post_title"><a href="/sohranenie-dokumenta-na-diske-i-ego-z">6.1 Сохранение документа на диске и его загрузка в CorelDRAW</a></div>
+</div>            </div>
+        </div>
+    
+</div>
+<!-- #page -->
+
+<script>var pseudo_links = document.querySelectorAll(".pseudo-clearfy-link");for (var i=0;i<pseudo_links.length;i++ ) { pseudo_links[i].addEventListener("click", function(e){   window.open( e.target.getAttribute("data-uri") ); }); }</script><script>document.addEventListener("copy", (event) => {var pagelink = "\nИсточник: /glava-integratsiya-access-s-drugimi-kompone";event.clipboardData.setData("text", document.getSelection() + pagelink);event.preventDefault();});</script><script type="text/javascript" id="yelly-scripts-js-extra">
+/* <![CDATA[ */
+var settings_array = {"rating_text_average":"среднее","rating_text_from":"из","lightbox_display":"1"};
+var wps_ajax = {"url":"\/wp-admin\/admin-ajax.php","nonce":"e4ca9d4bd8"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="/js/scripts.min.js" id="yelly-scripts-js"></script>
+
+
+
+<div class="image-hover-social-buttons" style="display: none;">
+<div class="social-button social-button--vkontakte js-share-link" data-uri="https://vk.com/share.php?url=%2Fglava-integratsiya-access-s-drugimi-kompone"></div>
+<div class="social-button social-button--telegram js-share-link" data-uri="https://t.me/share/url?url=%2Fglava-integratsiya-access-s-drugimi-kompone&text=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+15.+%D0%98%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B0%D1%86%D0%B8%D1%8F+Access+%D1%81+%D0%B4%D1%80%D1%83%D0%B3%D0%B8%D0%BC%D0%B8+%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0%D0%BC%D0%B8+Office"></div>
+<div class="social-button social-button--odnoklassniki js-share-link" data-uri="https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&service=odnoklassniki&st.shareUrl=%2Fglava-integratsiya-access-s-drugimi-kompone"></div>
+<div class="social-button social-button--whatsapp js-share-link" data-uri="whatsapp://send?url=%2Fglava-integratsiya-access-s-drugimi-komponetext=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+15.+%D0%98%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B0%D1%86%D0%B8%D1%8F+Access+%D1%81+%D0%B4%D1%80%D1%83%D0%B3%D0%B8%D0%BC%D0%B8+%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0%D0%BC%D0%B8+Office"></div>
+<div class="social-button social-button--viber js-share-link" data-uri="viber://forward?url=%2Fglava-integratsiya-access-s-drugimi-komponetext=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+15.+%D0%98%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B0%D1%86%D0%B8%D1%8F+Access+%D1%81+%D0%B4%D1%80%D1%83%D0%B3%D0%B8%D0%BC%D0%B8+%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0%D0%BC%D0%B8+Office"></div>
+</div>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(93345646, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/93345646" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>

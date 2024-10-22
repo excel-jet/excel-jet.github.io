@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<title>Глава 9. Создание составных форм &#8212; learn-office</title>
+	<meta name="description" content="Создание составных форм Формы являются основным объектом, который обеспечивает пользователю удобный доступ к данным, поэтому им уделено большое внимание в">
+	<link rel="canonical" href="/glava-sozdanie-sostavnyh-form">
+	<meta property="og:locale" content="ru_RU">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Глава 9. Создание составных форм &#8212; learn-office">
+	<meta property="og:description" content="Создание составных форм Формы являются основным объектом, который обеспечивает пользователю удобный доступ к данным, поэтому им уделено большое внимание в">
+	<meta property="og:url" content="/glava-sozdanie-sostavnyh-form">
+	<meta property="og:site_name" content="Excel-jet">
+	<meta property="article:published_time" content="2024-09-27T08:05:04+00:00">
+	<meta property="og:image" content="/image22/cc6d3f6d67ff753816f5bddcf329e1a6.gif">
+	<meta property="og:image:width" content="472">
+	<meta property="og:image:height" content="46">
+	<meta property="og:image:type" content="image/gif">
+	<meta name="author" content="А. Днепров">
+
+
+<style id="wp-block-library-theme-inline-css" type="text/css">.wp-block-audio :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio :where(figcaption){color:#ffffffa6}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed :where(figcaption){color:#ffffffa6}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:#ffffffa6}:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table :where(figcaption){color:#ffffffa6}.wp-block-video :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video :where(figcaption){color:#ffffffa6}.wp-block-video{margin:0 0 1em}:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}</style>
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 19.5px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36.5px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--normal: 22px;--wp--preset--font-size--huge: 49.5px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="google-fonts-css" href="https://fonts.googleapis.com/css?family=Roboto%3A400%2C400i%2C700&#038;subset=cyrillic&#038;display=swap" media="all">
+<link rel="stylesheet" id="yelly-style-css" href="/css/style.min.css" media="all">
+
+<style>.pseudo-clearfy-link { color: #008acf; cursor: pointer;}.pseudo-clearfy-link:hover { text-decoration: none;}</style>
+<link rel="preload" href="/fonts/icomoon.ttf" as="font" crossorigin>
+    <style>.scrolltop{width:50px}.scrolltop:before{content:"\21d1"}.entry-content a, .entry-content a:visited, .spanlink, .comment-reply-link, .pseudo-link, .widget_calendar a, .widget_recent_comments a, .child-categories ul li a{color:#0000ff}.child-categories ul li a{border-color:#0000ff}a:hover, a:focus, a:active, .spanlink:hover, .top-menu ul li>span:hover, .main-navigation ul li a:hover, .main-navigation ul li span:hover, .footer-navigation ul li a:hover, .footer-navigation ul li span:hover, .comment-reply-link:hover, .pseudo-link:hover, .child-categories ul li a:hover{color:#1e73be}.top-menu>ul>li>a:before, .top-menu>ul>li>span:before{background:#1e73be}.child-categories ul li a:hover, .post-box--no-thumb a:hover{border-color:#1e73be}.post-box--card:hover{box-shadow: inset 0 0 0 1px #1e73be}.post-box--card:hover{-webkit-box-shadow: inset 0 0 0 1px #1e73be}@media (min-width: 768px){body{background-attachment: scroll}}body{font-size:17px;}@media (max-width: 991px){.widget-area{display: block; margin: 0 auto}}</style>
+    <!-- Yandex.RTB -->
+<script>window.yaContextCb=window.yaContextCb||[]</script>
+<script src="https://yandex.ru/ads/system/context.js" async></script>	
+</head>
+<body class="post-template-default single single-post postid-1524 single-format-standard wp-embed-responsive sidebar-right">
+<div id="page" class="site">
+    <a class="skip-link screen-reader-text" href="#content">Перейти к контенту</a>
+
+    
+    
+    <div class="search-screen-overlay js-search-screen-overlay"></div>
+    <div class="search-screen js-search-screen">
+        
+<form role="search" method="get" class="search-form" action="/">
+    <label>
+        <span class="screen-reader-text">Search for:</span>
+        <input type="search" class="search-field" placeholder="Поиск..." value="" name="s">
+    </label>
+    <button type="submit" class="search-submit"></button>
+</form>    </div>
+
+    
+
+<header id="masthead" class="site-header full" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="site-header-inner fixed">
+
+        <div class="humburger js-humburger">
+<span></span><span></span><span></span>
+</div>
+
+        
+<div class="site-branding">
+
+    <div class="site-branding__body"><div class="site-title"><a href="/">Excel-jet</a></div></div>
+</div>
+<!-- .site-branding -->
+
+    
+    <nav id="site-navigation" class="main-navigation full">
+        <div class="main-navigation-inner fixed">
+            <div class="menu-menyu-container"><ul id="header_menu" class="menu">
+<li id="menu-item-6695" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-6695">
+<a href="/excel">Excel</a>
+<ul class="sub-menu">
+	<li id="menu-item-6709" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6709"><a href="/excel/functions">Функции</a></li>
+</ul>
+</li>
+<li id="menu-item-6697" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6697"><a href="/microsoft-word">Word</a></li>
+<li id="menu-item-6696" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6696"><a href="/powerpoint">PowerPoint</a></li>
+<li id="menu-item-6698" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6698"><a href="/outlook">Outlook</a></li>
+</ul></div>        </div>
+    </nav><!-- #site-navigation -->
+
+    
+<div class="header-search"><span class="search-icon js-search-icon"></span></div>    </div>
+</header><!-- #masthead -->
+
+
+
+    
+    
+    <div id="content" class="site-content fixed">
+
+        
+        <div class="site-content-inner">
+    
+        
+        <div id="primary" class="content-area" itemscope itemtype="http://schema.org/Article">
+            <main id="main" class="site-main">
+
+                
+<article id="post-1524" class="article-post post-1524 post type-post status-publish format-standard has-post-thumbnail  category-excel">
+
+    
+        
+        <header class="entry-header"><h1 class="entry-title" itemprop="headline">Глава 9. Создание составных форм</h1></header>
+        
+        
+        
+    
+    
+    <div class="entry-meta">
+<span class="entry-time"><span class="entry-label">Время чтения</span> 79 мин.</span><span class="entry-date"><span class="entry-label">Опубликовано</span> <time itemprop="datePublished" datetime="2024-09-27">27.09.2024</time></span>
+</div>
+	<div class="entry-content" itemprop="articleBody">
+		<p>Создание составных форм </p>
+<p>Формы являются основным объектом, который обеспечивает пользователю удобный доступ к данным, поэтому им уделено большое внимание в настоящей книге,-В первой части мы показали несколько способов создания форм и детально описали основной инструмент разработки форм — Конструктор. Вы убедились, какое многообразие возможностей предоставляет этот инструмент для того, чтобы формы получились удобные и красивые. Однако  в гл. 5 &#171;Создание форм для ввода данных&#187;  мы рассмотрели лишь самые основные вопросы, относящиеся к работе с формами и элементами управления. Здесь мы поговорим об этом более подробно и обсудим более сложные вопросы, касающиеся создания и оформления составных форм — многотабличных и многостраничных, и рассмотрим применение элементов управления всех типов. Материал этой главы является продолжением гл. 5,  поэтому рекомендуется ознакомиться с ней прежде, чем переходить к дальнейшему изучению. Часть материала о внедрении рисунков и других объектов в форму вынесена  в <a href="https://taurion.ru/access/15">гл. 15</a> Мы будем еще раз возвращаться к формам  в гл. <a href="https://taurion.ru/access/11">11</a> и <a href="https://taurion.ru/access/13">13</a> при рассмотрении программирования в формах и отчетах с помощью макросов и процедур VBA.</p>
+<p>Итак, в данной главе будут рассматриваться следующие вопросы:</p>
+<ul>
+<li>Обзор основных элементов управления в формах и отчетах</li>
+<li>Примеры использования основных элементов управления</li>
+<li>Создание составных форм, построенных на базе связанных таблиц и включающих подчиненные формы</li>
+<li>Способы создания многостраничных форм с применением разделителя страниц и набора вкладок</li>
+<li>Использование всплывающих форм и диалоговых окон</li>
+<li>Создание вычисляемых полей и применение выражений для определения свойств формы и ее элементов управления</li>
+<li>Рекомендации по оформлению форм</li>
+</ul>
+<p> Панель элементов </p>
+<p> Панель элементов  (Toolbox) является основным инструментом для добавления элементов управления в форму в режиме Конструктора. Панель инструментов (Toolbox) представлена на рис. 9.1.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" decoding="async" src="/image22/cc6d3f6d67ff753816f5bddcf329e1a6.gif" width="472" height="46" alt=""><meta itemprop="width" content="472">
+<meta itemprop="height" content="46"></span></p>
+<p> Рис. 9.1.  Панель элементов</p>
+<p>Отображение панели элементов на экране выполняется одним из трех способов:</p>
+<ul>
+<li>выберите команду  Вид, Панель элементов  (View, Toolbox);</li>
+<li>нажмите кнопку  Панель элементов  (Toolbox) на панели инструментов  Конструктор форм  (Form Design);</li>
+<li>щелкните правой кнопкой мыши по любой панели инструментов и выберите в контекстном меню команду  Панель элементов  (Toolbox).</li>
+</ul>
+<p>Наиболее часто применяемые элементы управления расположены прямо на панели. Остальные элементы отображаются в виде дополнительного списка, если нажать кнопку  Другие элементы  (More Controls) в правом нижнем углу панели элементов.</p>
+<p>В верхней части панели элементов расположены две специальные кнопки:  Выбор объектов  (Select Objects) и  Мастера  (Control Wizards). Кнопка  Выбор объектов  в нажатом состоянии означает, что в данный момент включен режим выделения элементов, т. е. реакцией на щелчок мыши в форме будет выделение соответствующего элемента управления или другого объекта, попавшего в указанную область. Этот режим включен по умолчанию. Однако, если нажать на другую кнопку на панели элементов, предназначенную для создания элемента управления, кнопка выбора объектов автоматически отжимается. Ее нужно снова нажать, если вы передумали создавать элемент и хотите вернуться в режим выделения объектов. Нажатая кнопка  Мастера  означает, что при размещении элемента управления на форме запустится соответствующий мастер. При отжатой кнопке мастера не запускаются и элементы требуется настраивать вручную. Мастера элементов помогают создавать элементы управления, требующие определенной настройки, такие как поля со списком, командные кнопки, группы элементов выбора. Практически для каждого такого элемента управления существует свой мастер. Мастера элементов удобно использовать как на начальном этапе работы с Access для обучения, так и в дальнейшей работе, поскольку они автоматизируют рутинную операцию стандартной настройки элемента, представляя ее в виде удобного диалога.</p>
+<p>Кроме мастеров элементов, работу по настройке элементов управления облегчают специальные мастера, помогающие в создании нетривиальных значений свойств элемента, их называют построителями. Например, Построитель запросов (Query Builder) помогает создать инструкцию SQL, которая определяет источник строк для списков и полей со списками. Построитель выражений (Expression Builder) помогает создавать синтаксически правильные выражения для вычисляемых элементов управления.</p>
+<p>Основные кнопки, расположенные на панели элементов, предназначены для создания элементов управления разных типов. Название типа элемента управления отображается в виде всплывающей подсказки при наведении указателя мыши на соответствующую кнопку на панели управления.</p>
+<p>Панель элементов обычно отображается как &#171;плавающая&#187; (см. рис. 9.1), так что ее можно свободно перемещать по экрану, находя для нее удобное место. Перемещая с помощью мыши рамку панели элементов, можно изменить ее размеры или закрепить у границы окна, например так, как это показано на рис. 9.2.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" fetchpriority="high" decoding="async" src="/image07/3bef6dfdcd5d8361d9de64875b8ffe51.gif" width="521" height="413" alt=""><meta itemprop="width" content="521">
+<meta itemprop="height" content="413"></span></p>
+<p> Рис. 9.2.  Закрепленная панель элементов (внизу окна)</p>
+<p> Встроенные элементы управления </p>
+<p>В виде кнопок непосредственно на панели элементов размещаются лишь встроенные элементы управления, в отличие от внедряемых объектов и элементов управления ActiveX, которые  могут быть  добавлены в приложение  (см. также гл. 15). </p>
+<p> Разновидности элементов управления по типу содержимого </p>
+<p>В Access существует три разновидности элементов управления, в зависимости от типа содержимого в них, т. е. от способа заполнения их данными:</p>
+<ul>
+<li>присоединенные</li>
+<li>свободные</li>
+<li>вычисляемые</li>
+</ul>
+<p>К какому из перечисленных видов относится тот или иной элемент управления, определяется тем, как задан для него источник данных.</p>
+<p> Присоединенные элементы управления  связаны с полями базовой таблицы, т. е. той таблицы, которая является источником данных для формы. Если источником данных является запрос, то присоединенные элементы управления могут связываться с полями в разных таблицах. В присоединенном элементе отображаются данные, которые содержатся в связанном с ним поле таблицы, и при изменении этих данных соответствующим образом обновляется и значение в поле таблицы. В присоединенных элементах можно отображать все доступные в Access типы данных, в том числе объекты OLE и гиперссылки.</p>
+<p> Свободные элементы управления  не связаны с таблицами. Они предназначены либо для ввода информации, которая используется не для непосредственного редактирования данных в источнике, а в других целях (обычно макросами или программами VBA), либо для отображения объектов OLE, которые хранятся в самих формах. Свободными элементами являются также все элементы, не связанные с какими-либо данными, а предназначенные лишь для улучшения визуального восприятия форм, такие как линии, прямоугольники, рисунки.</p>
+<p> Вычисляемые элементы управления —  это такие элементы, значения которых вычисляются на основе значений других элементов. В качестве источника данных для этих элементов используются выражения и функции.</p>
+<p> Элемент управления  Надпись  </p>
+<p>Элемент  Надпись  (Label) используется для размещения в форме текста: заголовков полей, заголовка формы, различных поясняющих надписей. Надписи бывают двух типов:</p>
+<ul>
+<li>присоединенные</li>
+<li>свободные</li>
+</ul>
+<p> Присоединенные надписи  — это те, что существуют не самостоятельно, а связаны с другими элементами управления, и служат их заголовками, т. к. других видимых на экране заголовков у этих элементов нет. К таким элементам относятся, например, текстовые поля, поля со списками, флажки, переключатели и др. Такого типа надписи автоматически создаются при размещении соответствующего элемента управления на форме и присоединяются к нему. При отображении формы в режиме Таблицы присоединенные надписи становятся заголовками столбцов.</p>
+<p>Надписи, которые создаются с помощью кнопки  Надпись  (Label) на панели элементов, являются свободными, они не связываются ни с какими элементами управления. Эти надписи служат для оформления формы или для помощи пользователю, однако они не отображаются на экране, если форма выводится в режиме Таблицы.</p>
+<p>Свободную надпись можно при необходимости присоединить к элементу управления:</p>
+<ol>
+<li>Выделите элемент управления  Надпись,  который нужно присоединить к другому элементу.</li>
+<li>Нажмите кнопку  Вырезать  (Cut) на панели инструментов (или нажмите комбинацию клавиш &lt;Ctrl&gt;+&lt;X&gt;).</li>
+<li>Выделите элемент управления, к которому нужно присоединить надпись.</li>
+<li>Нажмите кнопку  Вставить  (Paste) на панели инструментов (или нажмите комбинацию клавиш &lt;Ctrl&gt;+&lt;V&gt;).</li>
+</ol>
+<p>Надпись окажется присоединенной к элементу управления.</p>
+<p>Текст надписи определяется свойством  Подпись  (Caption), его можно изменить в диалоговом окне свойств надписи или непосредственно в самой надписи, щелкнув по выделенной надписи на форме. Текст надписей, как свободных, так и присоединенных, можно изменять динамически при работе приложения с помощью макросов или программ VBA. Можно также выводить новые надписи в форме или скрывать существующие при выполнении определенных условий. Максимальная длина текста надписи — 2048 символов  (см. также гл. 13).  Кроме обычного текста, надпись (не присоединенная к другому элементу) может также включать в себя гиперссылку. В этом случае свойство  Адрес гиперссылки  (Hyperlink Address) содержит адрес документа&#187;, на который ссылается гиперссылка, в формате URL или UNC. Указать дополнительно элемент внутри данного документа, чтобы именно на него ссылалась гиперссылка, позволяет свойство  Дополнительный адрес  (Hyperlink SubAddress). Это могут быть закладка в документе, идентификатор поименованного тэга, ссылка на лист и интервал ячеек в рабочей книге Excel или другой адресуемый элемент в зависимости от типа документа. Например, чтобы гиперссылка указывала на десятый слайд презентации PowerPoint, нужно задать следующие значения свойств:</p>
+<ul>
+<li>адрес гиперссылки: С: Мои документыДоклад.ррt;</li>
+<li>дополнительный адрес: 10.</li>
+</ul>
+<p>А чтобы гиперссылка указывала на ячейку или интервал ячеек на листе электронной таблицы Excel, дополнительный адрес должен иметь вид ИмяЛиста!ИмяИнтервала, например: Лист1 !А2, Лист1 !А2:.В5 ИЛИ Лист1 !Итого.</p>
+<p>Создать гиперссылку удобнее с помощью команды  Вставка, Гиперссылка  (Insert, Hyperlink).</p>
+<p>Кроме надписей, гиперссылку может включать в себя и элемент управления  Кнопка.  Для этого у кнопок есть такие же свойства, задающие адрес гиперссылки.</p>
+<p><strong>Замечание</strong></p>
+<p>Надписи с гиперссылками моут быть помещены и в отчет, но при открытии отчета в Access не будут срабатывать. Однако такие гиперссылки будут работать в отчете, преобразованном в формат Word, Excel или HTML.</p>
+<p> Элемент управления  Поле  </p>
+<p>Элемент управления  Поле  (Text Box) наиболее часто используется, поскольку он служит для ввода и отображения данных. Обычно значение в поле вводится пользователем, однако можно задать его программно, присваивая значение свойству Text этого элемента. С помощью этого же свойства можно программно узнать текущее значение в поле. Длина текста, вводимого в текстовое поле, ограничена 65 535 символами.</p>
+<p>Как и многие другие элементы управления, текстовые поля могут быть трех типов:</p>
+<ul>
+<li>присоединенными</li>
+<li>свободными</li>
+<li>вычисляемыми</li>
+</ul>
+<p>Мы уже описывали способы создания присоединенных и свободных текстовых  полей (см. также разд. &#171;Создание и удаление элементов формы&#187;гл. 5).  О том, как создавать вычисляемые поля, рассказано  в разд. &#171;Вычисления в формах&#187; данной главы. </p>
+<p> Элементы управления выбора:  Выключатель, Переключатель, Флажок  и  Группа  </p>
+<p>О предоставлении пользователю возможности выбирать значение из предложенного набора вариантов с помощью элементов управления: флажков, переключателей, выключателей и групп элементов — уже говорилось  в гл. 5.  Рассмотрим эти элементы управления чуть более подробно. Три типа элементов: выключатели, переключатели и флажки — выполняют одинаковые функции и используются для представления значения логического типа данных. Они могут принимать значения о  (Нет)  или -1 (Да). Различаются они внешним видом (рис. 9.3).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image01/03cc0510b346e60f2e3d503670a46abb.gif" width="521" height="413" alt=""><meta itemprop="width" content="521">
+<meta itemprop="height" content="413"></span></p>
+<p> Рис. 9.3.  Элементы управления выбора</p>
+<p>В верхней строчке изображены элементы, значения которых равны Да, в следующей строчке — эти же элементы, когда они имеют значение Нет. В третьей строчке изображены переключатель и флажок, когда их значение не определено. Выключатель имеет значение Да, когда он включен, и Нет — когда выключен. Переключатель имеет значение Да, когда он выбран, и Нет — когда не выбран. Флажок имеет значение Да, когда он установлен и Нет — когда сброшен. Если элементы выбора используются для отображения логических данных, хранящихся в поле таблицы, нужно определить для них значения по умолчанию, т. к. в противном случае в новой записи значения этих элементов не будут определены. Значение по умолчанию задается как значение одноименного свойства  Значение по умолчанию  (Default Value) либо в окне свойств элемента, либо с помощью процедуры VBA, либо с помощью&#187; макроса. Всякий раз, когда пользователь щелкает мышью по элементу выбора, его значение изменяется на противоположное.</p>
+<p>Поскольку эти элементы предназначены в первую очередь для улучшения визуального восприятия данных, то предусмотрено несколько вариантов их оформления. Для элемента управления  Флажок  (CheckBox) эти варианты представлены на рис. 9.4, остальные элементы имеют те же варианты оформления.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image25/e69499c9970e300f9198c280980927a2.gif" width="453" height="303" alt=""><meta itemprop="width" content="453">
+<meta itemprop="height" content="303"></span></p>
+<p> Рис. 9.4.  Варианты оформления элементов выбора</p>
+<p>Элемент управления  Группа  (Option Group) используется для того, чтобы дать возможность выбрать одно значение из небольшого набора вариантов. Пример групп элементов был приведен на рис. 9.3. Если элементы выбора объединены с помощью элемента управления  Группа,  то только один из этих элементов может быть выбран пользователем, т. е. получит значение  Да. </p>
+<p>Если требуется задать несколько независимых признаков, например тип оплаты и способ вывоза товара, необходимо создать несколько независимых элементов выбора или групп.</p>
+<p>В одну группу можно объединить элементы выбора даже разных типов, но к полю таблицы присоединяется значение самой группы, а не составляющих ее элементов. Значением группы является уникальное значение, сопоставленное выбранному элементу (обычно это его порядковый номер). Чтобы привязать группу к источнику данных, установите значение свойства  Данные  (ControlSource) элемента  Группа  (Option Group). Чтобы выделить элемент  Группа,  а не элемент управления в группе, нужно щелкнуть по рамке группы. Тогда в диалоговом окне  Свойства  (Properties) отобразятся свойства группы (рис. 9.5).</p>
+<p>Здесь же можно задать значение по умолчанию для группы, чтобы указать, какой элемент в группе должен быть выбран по умолчанию.</p>
+<p>Элементы управления в группе не должны присоединяться к полям таблицы (в окне свойств для сгруппированных элементов даже не отображается свойство  Данные  (ControlSource)). Зато для каждого из элементов управления в группе нужно задать то уникальное значение, о котором мы упомянули, чтобы определить значение самой группы, когда данный элемент будет выбран. Делается это с помощью свойства  Значение параметра  (Option Value), которое должно быть числовым и обязательно уникальным для каждого из элементов управления в группе (рис. 9.6). В приведенном примере заданы следующие значения свойства  Значение параметра  (Option Value): 1 — Оплачено полностью, 2 — Оплачено частично, 3 — Не оплачено.</p>
+<p>Когда пользователь выбирает один из переключателей в группе, значение элемента управления  Группа  (Option Group) становится равным значению параметра выбранного переключателя. Это значение сохранится в поле таблицы, которое указано в качестве источника данных для группы.</p>
+<p>Для размещения элемента управления  Группа  (Option Group) на форме можно воспользоваться соответствующим мастером. Для демонстрации работы мастера рассмотрим процедуру создания группы, аналогичной представленной на рис. 9.5. Создайте новую форму, открыв ее в режиме Конструктора. Затем выполните следующие действия:</p>
+<ul>
+<li>Выберите на панели элементов элемент управления  Группа  (Option Group) и перетащите его на форму (кнопка  Мастера  (Control Wizards) при этом должна быть нажата). Запустится Мастер группы и появится окно, представленное на рис. 9.7.</li>
+</ul>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image10/5a6a9992ecb03a49d6b5898721cb8b13.gif" width="391" height="273" alt=""><meta itemprop="width" content="391">
+<meta itemprop="height" content="273"></span></p>
+<p> Рис. 9.5.  Свойства элемента управления  Группа </p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image23/cf1d7413348517ca73a1312b06125622.gif" width="391" height="273" alt=""><meta itemprop="width" content="391">
+<meta itemprop="height" content="273"></span></p>
+<p> Рис. 9.6.  Установка значения параметра переключателя</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image27/f328dc3ecd13494414b9070ab4dbf748.gif" width="450" height="276" alt=""><meta itemprop="width" content="450">
+<meta itemprop="height" content="276"></span></p>
+<p> Рис. 9.7.  Первое диалоговое окно  Мастера группы </p>
+<ul>
+<li>В этом окне нужно ввести текст надписей, которые будут размещаться справа от флажков (выключателей или переключателей). Вы можете заполнить эту таблицу так, как это показано на рис. 9.7). Нажмите кнопку  Далее  (Next). Появится следующее диалоговое окно мастера (рис. 9.8).</li>
+</ul>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image10/5770fa57e38ccd5c055c399e777c83e8.gif" width="450" height="276" alt=""><meta itemprop="width" content="450">
+<meta itemprop="height" content="276"></span></p>
+<p> Рис. 9.8.  Второе диалоговое окно  Мастера группы </p>
+<ul>
+<li>Теперь нужно выбрать тот флажок (выключатель, переключатель), который будет установлен по умолчанию, или указать, что не нужно определять значение по умолчанию. Выберите из списка значение  Не оплачено  и нажмите кнопку  Далее  (Next).</li>
+<li>В следующем диалоговом окне мастера (рис. 9.9) необходимо определить значения для каждого параметра. По умолчанию мастер предлагает возрастающую последовательность чисел: 1, 2, 3. Можете оставить эти значения и просто нажать кнопку  Далее  (Next).</li>
+</ul>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image12/6a88f056d530280cf3edd0529e6db2c8.gif" width="450" height="276" alt=""><meta itemprop="width" content="450">
+<meta itemprop="height" content="276"></span></p>
+<p> Рис. 9.9.  Третье диалоговое окно Мастера группы</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image16/934a80bcecaa773ca731ad8140b1cf7c.gif" width="450" height="276" alt=""><meta itemprop="width" content="450">
+<meta itemprop="height" content="276"></span></p>
+<p> Рис. 9.10.  Четвертое диалоговое окно Мастера группы</p>
+<ul>
+<li>Если данная форма связана с каким-либо источником данных, то есть возможность создаваемую группу привязать к одному из полей в этом источнике данных. В таком случае появится диалоговое окно, представленное на рис. 9.10. В противном случае отобразится окно, представленное на рис. 9.11, и нужно будет перейти сразу к шагу 6. В диалоговом окне, показанном на рис. 9.10, следует выбрать, будет ли создаваемая группа связана с полем источника данных или останется свободным элементом — например, чтобы значение группы было использовано в выражениях в других элементах формы, макросах или процедурах VBA. Чтобы связать группу с полем из источника данных, выберите переключатель  Сохранить значение в поле  (Store the value in this field) и выберите имя поля в раскрывающемся списке. Если же нужно оставить группу свободной, должен быть выбран переключатель  Сохранить значение для дальнейшего применения  (Save the value for later use). Нажмите кнопку  Далее  (Next).</li>
+<li>Далее предлагается выбрать тип элементов управления в группе: флажки, выключатели или переключатели — и вариант оформления группы (один из пяти вариантов, описанных выше). Выберите тот тип и вариант, которые вам понравятся. Обратите внимание, что слева мастер показывает вам образец выбранного вами варианта (см. рис. 9.11).</li>
+</ul>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image03/1d876657cd8136a7b4216dff1645c3fc.gif" width="450" height="276" alt=""><meta itemprop="width" content="450">
+<meta itemprop="height" content="276"></span></p>
+<p> Рис. 9.11.  Пятое диалоговое окно Мастера группы</p>
+<ul>
+<li>В последнем диалоговом окне Мастера группы нужно только определить текст надписи, которая будет служить названием группы. В нашем примере требуется ввести название Оплата (рис. 9.12). Теперь нажмите кнопку  Готово  (Finish), и вы увидите результат работы мастера. У вас должна получиться группа флажков, аналогичная представленной на рис. 9.13.</li>
+<li>Дальше вы можете реорганизовать эту группу, как вам нравится: например, вытянуть все флажки в одну строку, перенести надписи под флажки и т. д.</li>
+</ul>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image09/4eec58523decddbf135b65c78ed713bb.gif" width="450" height="276" alt=""><meta itemprop="width" content="450">
+<meta itemprop="height" content="276"></span></p>
+<p> Рис. 9.12.  Последнее диалоговое окно Мастера группы</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image22/c57f03b19460bc76be503c4554726b92.gif" width="393" height="339" alt=""><meta itemprop="width" content="393">
+<meta itemprop="height" content="339"></span></p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image18/a44e01fd9f4a4b34f09a504710703c17.gif" width="391" height="273" alt=""><meta itemprop="width" content="391">
+<meta itemprop="height" content="273"></span></p>
+<p> Рис. 9.13.  Группа флажков, созданная с помощью Мастера группы</p>
+<p> Элемент управления Список </p>
+<p>Элемент управления  Список  (ListBox) используется для представления на экране поля, возможные значения которого ограничиваются списком, причем списком недлинным. Это связано с тем, что такой список занимает много места на экране (рис. 9.14). И хотя можно использовать полосы прокрутки, чтобы посмотреть значения, которые не помещаются в выделенную область, очевидно, что для отображения длинных списков этот элемент управления не подходит.</p>
+<p>Список может состоять из одного или нескольких столбцов, однако при выборе элемента списка в связанное с ним поле таблицы передается только одно значение, например в приведенных на рис. 9.14 списках это &#171;КодТипа&#187; (CategoryID) и &#171;КодСотрудника&#187; (EmployeeID), которые в списках даже не отображаются. Внешний вид списка и его содержимое определяются его свойствами, которые можно задать вручную, а можно воспользоваться мастером при размещении списка в форме, который, запросив нужную информацию, определит большую часть свойств автоматически. Создание списка с помощью мастера уже демонстрировалось в первой части книги. Мастер списков очень похож на Мастера, с помощью которого создаётся элемент  Поле со списком  (см. разд. &#171;Создание и удаление элементов управления&#187; гл. 5).  Для того чтобы список правильно работал, нужно корректно определить его важнейшие свойства — это первые восемь свойств на рис. 9.15. Соответственно, если он работает неправильно, именно эти свойства нужно проверять в первую очередь.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image01/025d6a6afc52a87b2c2c75565b2a7e30.gif" width="424" height="358" alt=""><meta itemprop="width" content="424">
+<meta itemprop="height" content="358"></span></p>
+<p> Рис. 9.14.  Элементы управления  Список </p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image18/aabf2ec64f5c0ec22ae07e6935a1b27c.gif" width="378" height="506" alt=""><meta itemprop="width" content="378">
+<meta itemprop="height" content="506"></span></p>
+<p> Рис. 9.15.  Свойства элемента управления  Список </p>
+<ul>
+<li> Имя  (Name) — название данного элемента управления. Нужно дать ему осмысленное название, т. к. оно используется во всех ссылках на этот элемент управления в выражениях, программах и макросах.</li>
+<li> Данные  (Control Source) — название поля в таблице, которое будет содержать выбранное в списке значение.</li>
+<li>Следующие два свойства:  Тип источника строк  (Row Source Type) и  Источник строк  — (Row Source) определяют источник данных для элементов списка. В приведенном примере в качестве источника данных используется таблица &#171;Типы&#187; (Categories), поэтому в свойстве  Тип источника строк  (Row Source Type) выбрано значение  Таблица или запрос  (Table/Query), а в качестве значения свойства  Источник строк  (Row Source) указана инструкция SQL, которая выбирает нужные данные из таблицы (поля &#171;КодТипа&#187; и &#171;Катерогия&#187;): SELECT Типы.КодТипа, Типы.Категория FROM Типы; для английской версии Access: SELECT Categories.CategorylD, Categories.CategoryName FROM Categories;</li>
+<li>Чтобы элементы в данном списке были отсортированы в алфавитном порядке по полю &#171;Категория&#187;, в конец инструкции SQL нужно дабавить предложение: ORDER BY Типы.Категория (ORDER BY Categories.CategoryName).</li>
+</ul>
+<p>Замечание</p>
+<p>Значением этого свойства может быть также название таблицы или запроса. Список, базирующийся на таблице или сохраненном запросе, будет работать быстрее, чем список, у которого источник строк задан в виде инструкции SQL.</p>
+<ul>
+<li>Свойство  Число столбцов  (Column Count) имеет значение 2, т. е. в списке будет два столбца (выбираются два поля), однако свойство  Ширина столбцов  (Column Width) определяет ширину первого столбца, равной 0, т. е. он не будет отображаться на экране.</li>
+<li>Несмотря на то, что первый столбец является скрытым, его тоже можно присоединить к полю таблицы, как и любой другой столбец списка, чтобы в выбранном элементе списка значение именно из этого столбца (в нашем примере — это значение поля &#171;КодТипа&#187;) записывалось в базовую таблицу формы. Чаще всего именно первый слобец списка требуется присоединить к полю источника данных. Номер присоединенного столбца указывается в свойстве  Присоединенный столбец  (Bound Column).</li>
+<li>Свойство  Заглавия столбцов  (Column Heads) в нашем примере имеет значение  Нет  (No), поэтому они не будут отображаться в списке.</li>
+</ul>
+<p>Кроме рассмотренного, существуют еще три типа источников строк для элемента управления  Список  (ListBox):</p>
+<ol>
+<li> Список значений.  Если количество строк в списке невелико и постоянно, можно все значения задать прямо в окне свойств элемента. В этом случае в свойстве  Тип источника строк  выбирается значение  Список значений  (Value List), а значения элементов списка перечисляются через точку с запятой без пробелов в свойстве  Источник строк.  Например:понедельник;вторник;среда;четверг;пятница;суббота;воскресенье
+<p>Если элементы списка содержат пробелы, включите их в кавычки. Чтобы все дни недели отобразились в одном столбце списка, установите значение свойства  Число столбцов  равным 1, а свойству  Ширина столбцов  присвойте любое ненулевое значение, например 2, 5см (2, 5cm).</p>
+<p>Если нужно вывести два столбца значений, то в свойстве  Источник строк  в перечислении значений задаются последовательно пары значений, число столбцов устанавливается равным 2, а в свойстве  Ширина столбцов  задается пара значении, например 2, 5см; Зсм (2, 5cm; 3cm).</p>
+</li>
+<li> Список полей.  Этот тип источника строк (значение  Список полей  (Filed List) свойства  Тип источника строк)  предназначен для вывода в списке имен полей таблицы или .запроса. Имя таблицы или запроса задается в свойстве  Источник строк.  Таким способом в списке можно отобразить имена полей таблиц, чтобы предоставить возможность их выбора.</li>
+<li> Определяемая пользователем функция.  Наконец, источником строк для списка может быть функция, написанная на языке VBA, которая заполнит список значениями. В этом случае свойство  Тип источника строк  нужно установить, как это показано на рис. 9.16, т. е. указать имя функции без знака равенства (=) и без скобок, а свойство  Источник строк  должно остаться пустым. Использовать определяемую пользователем функцию полезно, когда требуется заполнить список вычисленными значениями или когда содержимое списка должно динамически меняться в зависимости от содержимого других элементов управления. В первом случае вычисления могут проводиться даже над данными, которых нет в базе (например, когда нужно вычислить определенные даты, начиная с текущей) Второй вариант окажется подходящим, например, если при выборе категории товаров в одном списке, в другом должен отображаться набор товаров именно этой категории.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image07/42fc799fcc529fbae8d0d378a4999a8e.gif" width="363" height="584" alt=""><meta itemprop="width" content="363">
+<meta itemprop="height" content="584"></span></p>
+<p> Рис. 9.16.  Использование функции в качестве источника строк</p>
+<p>Несколько слов о третьем типе источника строк списка. Эта функция должна иметь такой список аргументов:</p>
+<p>Function Имя_функции(fid As Control, id As Variant, _</p>
+<p>row As Variant, col As Variant, code As Variant) As Variant</p>
+<p>Данная функция вызывается Access каждый раз, когда требуется заполнение списка элементами. Например, это происходит автоматически, когда форма, содержащая список, открывается в первый раз. Вызвать обновление содержимого списка в какой-то другой момент можно программно, с помощью метода обновления содержимого элемента управления Require. Каждый раз при обновлении содержимого списка эта функция вызывается неоднократно: с различным &#171;кодом действия&#187;.</p>
+<p>Поясним значения ее аргументов и возвращаемого значения.</p>
+<ul>
+<li>code — &#171;код действия&#187;, определяет, какое действие должна выполнить функция при данном вызове. Это могут быть следующие действия: инициализация списка, его открытие, получение количества строк, количества столбцов, ширины столбцов, самих элементов списка и завершение работы. Всем этим действиям соответствуют зарезервированные константы VBA.</li>
+<li>fid — ссылка на элемент управления  Список или Поле со списком,  который заполняется элементами, с помощью данной функции.</li>
+<li>id — уникальный идентификатор заполняемого элемента управления. Этот аргумент полезен, когда такая функция используется для заполнения нескольких элементов управления, чтобы их различить.</li>
+<li>row — текущий номер строки для заполняемого элемента списка (начиная с 0).</li>
+<li>col — текущий номер столбца для заполняемого элемента списка (начиная с 0).</li>
+<li>Возвращаемое значение и его тип зависят от текущего &#171;кода действия&#187;, переданного в функцию. Например, для кода acLBGetValue (получить данные) это должно быть строковое значение элемента списка в заданной строке row и столбце col.</li>
+</ul>
+<p>Все значения аргументов формируются и передаются в функцию самим Access. Разработчику только остается их обработать.</p>
+<p>О создании функции, выполняющей роль источника данных для списка или поля со списком, можно получить подробную информацию в справочной системе Access 2002, в разд. &#171;Справка по Microsoft Access, Программирование на Visual Basic, Справочник по Visual Basic для Microsoft Access, Свойства, Q-R, RowSourceType&#187; (Microsoft Access Help, Programming in Visual Basic, Microsoft Access Visual Basic Reference, Properties, Q-R, RowSourceType Property). Пример использования такой функции можно найти также на компакт-диске, являющемся дополнительным приложением к данной книге, который продается отдельно.</p>
+<p>Свойство  Присоединенный столбец  (Bound Column), определяющее тот столбец списка, значение которого при выборе становится значением элемента управления, может иметь значение 0. В этом случае значением элемента  Список  (List Box) станет индекс (номер) выбранного элемента в списке.</p>
+<p>Элемент управления  Список  интересен еще и тем, что он позволяет делать множественный выбор в списке, т. е. в нем можно выбрать одновременно несколько элементов, чего не позволяет делать элемент  Поле со списком  (Combo Box). Такая возможность требуется довольно часто, когда задаются критерии отбора записей. Например, в базе данных объектов недвижимости надо найти интересующие клиента квартиры, а его интересуют квартиры в определенных районах города. Можно, конечно, выбирать в списке по очереди сначала один район, чтобы выбрать все квартиры в данном районе, потом другой и т. д. Однако удобнее в этом случае использовать для указания интересующих районов список, в котором выбираются сразу все интересующие районы, а потом формируется соответствующий запрос к базе данных.</p>
+<p>Определить, как пользователь будет выбирать значения из списка, можно с помощью свойства  Несвязное выделение  (Multi Select). Его можно найти на вкладке  Другие  (Other) окна свойств. По умолчанию это свойство имеет значение  Отсутствует  (None). В этом случае разрешается ныбор только одного элемента из списка. Но это свойство может иметь значения  Простой  (Simple) и  Со связным выбором  (Extended). В первом случае разрешается множественный выбор просто щелчком мыши по нужным элементам, а во втором список работает так, как почти все списки в Windows, т. е. можно использовать клавиши &lt;Shift&gt; и &lt;Ctrl&gt; для выделения смежных и несмежных элементов. Результаты выбора хранятся в специальном массиве и могут быть использованы программами VBA.</p>
+<p> Элемент управления  Поле со списком  </p>
+<p>Элемент управления  Поле со списком  (ComboBox) во многом аналогичен элементу управления  Список  (ListBox). Применяется он в формах для той же самой цели, т. е. когда требуется, чтобы значение поля в таблице не вводилось вручную, а выбиралось из известного списка значений. Как правило, этими списками являются различного рода справочники. Отличий между этими типами элементов управления три:</p>
+<ul>
+<li>Поле со списком  позволяет не только выбирать значение из списка, но и вводить его прямо в поле ввода;</li>
+<li>Поле со списком  не накладывает таких ограничений на длину списка, как  Список,  т.к. в нем отображается только текущее значение, а остальные значения выводятся, когда пользователь щелкает мышью по стрелке вниз с правой стороны поля. Соответственно, элемент  Поле со списком  занимает на форме меньше места, чем элемент  Список;</li>
+<li> Поле со списком  позволяет выбрать только один элемент из списка.</li>
+</ul>
+<p>Основные свойства для элемента управления  Поле со списком  (Combo Box) такие же, как и у элемента управления  Список  (List Box), однако есть дополнительные свойства, которые определяют формат вывода данных в текстовую часть поля:  Формат поля  (Format),  Число десятичных знаков  (Decimal Places),  Маска ввода  (Input Mask) (рис. 9.17).</p>
+<p>Еще два дополнительных свойства определяют особенности работы поля со списком:</p>
+<ul>
+<li> Ограничиться списком  (Limit To List). Это свойство может иметь значение  Да  (Yes), и тогда значение, которое вводится в поле, должно обязательно совпадать с одним из элементов списка, или Нет (No), и тогда список может дополняться значениями, вводимыми в текстовую часть поля со списком. Если значение этого поля Да, а вводимое значение не совпадает ни с одним из элементов списка, Access выдает сообщение об ошибке. Все ситуации, возникающие при вводе нового значения в поле, могут быть обработаны с помощью макроса или процедуры VBA, например, чтобы расширить список значений  (см. также разд. &#171;Применение макросов&#187; гл. 11). </li>
+<li> Автоподстановка  (Auto Expand). Это свойство обычно имеет значение  Да,  что обеспечивает удобный выбор значения из списка. Так как списки в данном случае могут быть длинными, например список клиентов, прокручивать их в поисках нужного значения неудобно. Однако можно просто ввести необходимое значение в текстовую часть поля. При этом Access автоматически подставит в поле то значение из списка, у которого первые буквы совпадают с введенными.</li>
+</ul>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image24/d8465bf009c69e92bd3774c859399e8e.gif" width="357" height="257" alt=""><meta itemprop="width" content="357">
+<meta itemprop="height" content="257"></span></p>
+<p> Рис. 9.17.  Свойства элемента  Поле со списком </p>
+<p>Обычно поле со списком используется для.тех полей базовой таблицы, которые служат внешними ключами, т. е. содержат значения, соответствующие первичным ключам  записей в  какой-либо другой таблице. В таблице такие поля обычно определяют как поля подстановки, т. е. при отображении этих полей отображается не то значение, которое содержится в данном поле, а соответствующее значение из связанной таблицы (ведь ключом часто является ничем не примечательный код)  (см. также разд. &#171;Создание таблиц&#187;гл. 2).  В этом случае Мастер форм при создании формы автоматически создаст для таких полей поля со списком и задаст их свойства.</p>
+<p>Совет</p>
+<p>Если вы в режиме Конструктора хотите создать элемент управления  Поле со списком  (Combo Box) для поля таблицы, являющегося полем подстановки, лучше делать это путем перетаскивания поля из окна  Список полей  (Field List), т. к. в этом случае все свойства элемента будут заданы автоматически.</p>
+<p> Элемент управления  Кнопка  </p>
+<p>Элемент управления  Кнопка  (Command Button) является очень важным элементом формы, поскольку именно с кнопками связаны различные действия, выполняемые пользователем в приложении (сохранение введенных данных, вызов другой формы, вывод на печать документа и т. д.). Обычно кнопка выбирается, когда пользователь щелкает по ней мышью. Однако можно выбрать (нажать, т. к. визуально это именно так и выглядит) кнопку, используя только клавиатуру. Для этого нужно поместить на нее фокус, т. е. сделать активной, нажимая клавишу &lt;Таb&gt;, а затем нажать клавиши &lt;Пробел&gt; или &lt;Enter&gt;. Для этой же цели можно назначить кнопке специальную комбинацию клавиш.</p>
+<p>Создать кнопку намного удобнее с помощью Мастера кнопок, поскольку он выполнит за вас большую работу и даже напишет программу, которая будет выполнять действия, для которых данная кнопка предназначена. Например, рассмотрим процесс создания кнопки, которая будет открывать новую форму:</p>
+<ol>
+<li>Создайте в режиме Конструктора пустую форму.</li>
+<li>Выберите на панели элементов элемент управления  Кнопка  (CommandButton) (кнопка  Мастера  (Control Wizards) на панели элементов должна быть нажата).</li>
+<li>В появившемся диалоговом окне вы увидите два списка: левый список содержит категории действий, а правый — сами действия. Выберите в списке  Категории  (Categories) значение  Работа с формой  (Form Operations) (рис. 9.18).</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image22/c57ae38d335faa9aa414b3b3d699e3ca.gif" width="486" height="319" alt=""><meta itemprop="width" content="486">
+<meta itemprop="height" content="319"></span></p>
+<p> Рис. 9.18.  Первое диалоговое окно Мастера кнопок</p>
+<ol start="4">
+<li>В поле  Действия  при этом появится список действий, относящихся к этой категории. Выберите значение  Открыть форму  (Open Form) и нажмите кнопку  Далее  (Next).</li>
+<li>В следующем окне мастера требуется выбрать форму, которую нужно открывать с помощью кнопки. Выберите одну из форм, например &#171;Заказы&#187; (Orders) (рис. 9.19).</li>
+<li>В третьем диалоговом окне Мастера кнопок нужно выбрать, все ли записи будут отображаться в открываемой форме, или отобрать записи, связанные с записями в данной форме (рис. 9.20). Поскольку наша форма не содержит пока ни одного поля, мы не сможем задать критерии отбора. Соответственно, следует выбрать второй переключатель:  Открыть форму и показать все записи  (Open the form and show all the records), после чего нажать кнопку Далее (Next).</li>
+<li>В следующем окне предлагается выбрать рисунок, который вы хотите поместить на кнопку, или задать надпись (рис. 9.21). Чтобы увидеть список всех готовых рисунков, необходимо установить флажок  Показать все рисунки  (Show All Pictures). Чтобы отобразить надпись на кнопке, выберите переключатель  Текст  (Text) и введите текст надписи, например совпадающий с именем формы: &#171;Заказы&#187;. Нажмите кнопку  Далее  (Next).</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image26/ed0c7d0946acf67e5b3c858daaa58f77.gif" width="486" height="319" alt=""><meta itemprop="width" content="486">
+<meta itemprop="height" content="319"></span></p>
+<p> Рис. 9.19.  Второе диалоговое окно Мастера кнопок</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image23/d08679f7ac059881b286ce53b1db590d.gif" width="486" height="319" alt=""><meta itemprop="width" content="486">
+<meta itemprop="height" content="319"></span></p>
+<p> Рис. 9.20.  Третье диалоговое окно Мастера кнопок</p>
+<ol start="8">
+<li>В последнем окне Мастера кнопок требуется ввести имя кнопки. Оно может не совпадать с надписью на кнопке, но должно быть коротким и понятным. В&#8217;дан-ном случае можно оставить тот же текст, что и в надписи: Заказы (рис. 9.22). Нажмите кнопку  Готово  (Finish).</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image07/3c5e4f2eda204beac11e9118192fe03c.gif" width="486" height="319" alt=""><meta itemprop="width" content="486">
+<meta itemprop="height" content="319"></span></p>
+<p> Рис. 9.21.  Четвертое диалоговое окно Мастера кнопок</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image07/3f092ddf7dac62e347c38191d1e2c543.gif" width="486" height="319" alt=""><meta itemprop="width" content="486">
+<meta itemprop="height" content="319"></span></p>
+<p> Рис. 9.22.  Пятое диалоговое окно Мастера кнопок</p>
+<p>На форме появилась кнопка. Если вы потом решите все-таки поместить на кнопку какую-нибудь картинку, это можно сделать, установив свойство  Рисунок  (Picture), для чего вы можете воспользоваться Построителем, который предлагает либо выбрать одну из стандартных картинок, либо использовать графический файл, например созданный в графическом редакторе Paint в Windows (рис. 9.23).</p>
+<p>Можно назначить элементу управления  Кнопка  (Command Button) комбинацию клавиш. Это бывает оправдано, например, если пользователь работает с клавиатурой и ему неудобно для нажатия кнопки переключаться на мышь, а также, если в форме много элементов и для активизации кнопки приходится много раз нажимать клавишу &lt;Tab&gt;. Чтобы назначить кнопке комбинацию клавиш, в свойстве  Подпись  (Caption), которое определяет надпись на кнопке, выбирают одну букву (она необязательно должна быть первой) и добавляют перед ней знак амперсанта (&amp;) (рис. 9.24). Выбранная буква в надписи на кнопке будет подчеркнута. Тогда для того, чтобы выбрать кнопку, достаточно просто нажать комбинацию клавиш &lt;Аlt&gt;+&lt;выбранная буква&gt;, в нашем примере — это &lt;Alt&gt;+&lt;3&gt;.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image24/ddc0cc2f6e6b384f2e4e8f8eb5b4a07c.gif" width="486" height="319" alt=""><meta itemprop="width" content="486">
+<meta itemprop="height" content="319"></span></p>
+<p> Рис. 9.23.  Размещение рисунка на кнопке</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image16/8eeab83a84dec8f23d5806df1266d793.gif" width="357" height="453" alt=""><meta itemprop="width" content="357">
+<meta itemprop="height" content="453"></span></p>
+<p> Рис. 9.24.  Назначение кнопке комбинации клавиш</p>
+<p>Для любой формы можно создать две специальные кнопки:</p>
+<ul>
+<li>Одна будет &#171;нажиматься&#187; всякий раз, когда пользователь нажмет клавишу &lt;Enter&gt; и независимо от того, на каком элементе формы установлен фокус. Такая кнопка определяет действие по умолчанию, и для нее свойству  По умолчанию  (Default) присваивают значение Да (Yes).</li>
+<li>Вторая кнопка &#171;нажимается&#187; всякий раз, когда пользователь нажмет клавишу &lt;Esc&gt;, и опять независимо от того, на каком элементе формы установлен фокус.</li>
+</ul>
+<p>Такая кнопка играет роль отмены по умолчанию. Для нее должно быть присвоено значение Да (Yes) свойству  Отмена  (Cancel).</p>
+<p> Элементы управления  Свободная рамка объекта  и  Присоединенная рамка объекта  </p>
+<p>Элементы управления  Свободная рамка объекта  (Unbound Object Frame) и  Присоединенная рамка объекта  (Bound Object Frame) используются для того, чтобы вставить в форму объекты, созданные в других приложениях, например документ Word или таблицу Excel или рисунок. Эти элементы различаются тем, будут ли объекты, вставленные в эти рамки, храниться в таблицах Access или не будут.</p>
+<p> Свободная рамка объекта  (Unbound Object Frame) содержит объект, который хранится либо в самой форме, либо во внешнем файле и независимо от того, какая запись отображается в форме, будет отображаться один и тот же объект. Этот объект может быть изменен прямо из формы с помощью того приложения, в котором он был создан.</p>
+<p> Присоединенная рамка объекта  (Bound Object Frame) содержит объект, который хранится в таблице, в поле, имеющем тип  Поле объекта OLE  (OLE Object). Поэтому присоединенная рамка объекта имеет в качестве источника данных поле в базовой таблице. Типичный пример такого элемента управления — фотографии людей, изделий и т. д.</p>
+<p>Подробно создание и использование этих элементов управления рассмотрено  в гл. 15. </p>
+<p> Элемент управления  Рисунок  </p>
+<p>Элемент управления  Рисунок  (Image) очень похож по своему назначению и свойствам на элемент  Свободная рамка объекта.  Он предназначен для вставки в форму графических файлов, но требует меньше системных ресурсов и работает быстрее, чем  Свободная рамка объекта.  Форматы графических файлов, которые поддерживаются Access, разнообразны — это растровые рисунки, метафайлы, значки и др.</p>
+<p>Подробно создание и использование этого элемента управления рассмотрено  в гл. 15. </p>
+<p> Элемент управления  Разрыв страницы  </p>
+<p>Элемент управления  Разрыв страницы  (Page Break) используется в многостраничных формах для того, чтобы определить место конца одной и начала новой страницы.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image26/f033f06488b3769fb90454edecce057f.gif" width="381" height="204" alt=""><meta itemprop="width" content="381">
+<meta itemprop="height" content="204"></span></p>
+<p> Рис. 9.25.  Свойства элемента  Разрыв страницы </p>
+<p>На форме этот элемент отображается в виде пяти горизонтально расположенных точек и имеет всего четыре свойства:  Имя  (Name), координаты относительно верхнего левого угла формы —  От левого края  (Left) и  От верхнего края  (Тор) и  Дополнительные сведения  (Tag) (рис. 9.25).</p>
+<p>Для переключения между страницами в такой форме используются клавиши <strong>&lt;PgUp&gt;</strong> и <strong>&lt;PgDn&gt;</strong> (см. также разд. &#171;Создание многостраничных форм&#187; в данной главе). </p>
+<p> Элемент управления  Набор вкладок  </p>
+<p>Элемент управления  Набор вкладок  (Tab Control) также используется для создания многостраничных форм. Он позволяет придать формам такой же вид, как у диалоговых окон свойств в Windows. В этом элементе может быть от одной до нескольких вкладок. Переключение между вкладками формы выполняется щелчком кнопкой мыши по ярлыку вкладки. Вкладки могут иметь два варианта оформления: ярлыки и кнопки (рис. 9.26).</p>
+<p>В таких формах Access на ярлыках могут размещаться не только надписи, но и рисунки, а также надписи и рисунки вместе. Если требуется отобразить большое количество вкладок, можно их разместить в несколько рядов. О создании форм, содержащих несколько вкладок, рассказано  в разд. <a href="https://taurion.ru/access/9/27">&#171;Создание многостраничных форм&#187;</a> данной главы. </p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image16/8fb8af45cc0c9280a48e197bc84d018c.gif" width="453" height="378" alt=""><meta itemprop="width" content="453">
+<meta itemprop="height" content="378"></span></p>
+<p> Рис. 9.26.  Элемент управления  Набор вкладок </p>
+<p> Элемент управления  Подчиненная форма/отчет  </p>
+<p>Элемент управления  Подчиненная форма/отчет  (Subform/Subreport) используется для отображения в форме другой формы  (см. также разд. &#171;Создание многотабличных форм&#187; в этой же главе). </p>
+<p> Элементы управления  Линиям Прямоугольник  </p>
+<p>Элементы управления  Линия  (Line) и  Прямоугольник  (Rectangle) используются для оформления внешнего вида форм, чаще всего для выделения группы логически связанных элементов управления.</p>
+<p>Для управления цветом и стилем линии, а также для окантовки прямоугольника используются свойства  Цвет границы  (Border Color),  Тип границы  (Border Style),  Ширина границы  (Border Width) и  Оформление  (Special Effect). Для прямоугольника можно также задать свойства  Тип фона  (Back Style) и  Цвет фона  (Back Color).</p>
+<p>Существует восемь вариантов типа линии и границ прямоугольника:  Отсутствует, Сплошная, Штриховая, Пунктирная, Точечная, Редкоточечная, Штрих-пунктирная и Штрих-точечная  (Transparent, Solid, Dashes, Short Dashes, Dots, Sparse Dots, Dash Dot, Dash Dot Dot соответственно). Для линии и границ прямоугольника определено шесть вариантов оформления:  обычное, приподнятое, утопленное, вдавленное, с тенью, рельефное  (Flat, Raised, Sunken, Etched, Shadowed, Chiseled соответственно) (это больше, чем было доступно в предыдущей версии — Access 2000).</p>
+<p>Цвет границы и цвет фона задаются с помощью Построителя, который позволяет выбрать один из 64 предложенных цветов или определить собственный цвет.</p>
+<p>На рис. 9.27 представлены различные  варианты оформления  прямоугольников и  линий.  Тип фона  для прямоугольника имеет два значения:</p>
+<ul>
+<li>прозрачный, при котором цвет фона прямоугольника совпадает с цветом фона раздела формы, и все элементы, лежащие под ним, видны;</li>
+<li>нормальный, при котором можно задать цвет фона, но тогда элементы управления, которые выделяет этот прямоугольник, должны быть размещены поверх него (то есть на переднем плане — командой  Формат, На передний план  (Format, Bring to Front)).</li>
+</ul>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image10/544e137a546574d24ad607a2a03a56f6.gif" width="465" height="386" alt=""><meta itemprop="width" content="465">
+<meta itemprop="height" content="386"></span></p>
+<p> Рис. 9.27.  Различные варианты оформления прямоугольника и линии</p>
+<p> Преобразование одного элемента управления в другой </p>
+<p>Иногда в процессе разработки формы требуется изменить тип элемента управления для отображения какого-либо поля. Такая ситуация может возникнуть, например, из-за ошибки в начальном выборе типа элемента. Чаще всего требуется преобразовать текстовое поле в поле со списком или изменить тип элемента выбора, заменив флажок переключателем или выключатель переключателем. В режиме Конструктора форм можно легко это сделать:</p>
+<ol>
+<li>Выделите на форме элемент управления, тип которого нужно изменить, щелкнув по нему правой кнопкой мыши.</li>
+<li>В появившемся контекстном меню выберите команду  Преобразовать элемент в  (Change To).</li>
+<li>Справа раскроется меню, в котором будут доступны только те типы элементов, в которые может быть преобразован выбранный элемент управления (рис. 9.28). Например, для текстового поля это может быть поле со списком, список или надпись.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image28/fccd29f325d803d23417d7ba837ca17a.gif" width="360" height="360" alt=""><meta itemprop="width" content="360">
+<meta itemprop="height" content="360"></span></p>
+<p> Рис. 9.28.  Преобразование одного элемента управления в другой</p>
+<ol start="4">
+<li>Выберите в меню нужный тип элемента управления. Элемент будет немедленно преобразован.</li>
+</ol>
+<p><strong>Замечание</strong></p>
+<p>Вместо контекстного меню для выполнения операции можно использовать команду меню  Формат, Преобразовать элемент в  (Format, Change To).</p>
+<p> Создание многотабличных форм </p>
+<p>К многотабличным формам относят формы, построенные на основе запроса, объединяющего несколько таблиц, а также формы с внедренными в них другими формами. Создание многотабличных форм на основе запроса рассматривалось ранее  (см. также разд. &#171;Создание форм для ввода данных&#187;гл. 5). </p>
+<p>В данном разделе мы остановимся на создании сложных форм, включающих подчиненные формы.</p>
+<p> Подчиненной формой  называется форма, которая встраивается в другую форму. При этом форма, которая включает подчиненную форму, называется основной (или главной) формой. </p>
+<p>Обычно такие формы применяются для отображения данных из связанных таблиц, например категории товаров и товары, организации и контактные лица в этих организациях и т. д. Однако это бывает не всегда. Иногда главная форма содержит свободные элементы управления и различные кнопки, которые влияют на представление данных в подчиненной форме. Типичным примером такой формы является форма для отбора записей в таблице. Основная форма содержит поля, в которых задаются критерии отбора и кнопки  Фильтр  или  Поиск и Отмена фильтра или Показать все  (рис. 9.29).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image19/ac13899155f91775b297f3e82972df1a.gif" width="413" height="285" alt=""><meta itemprop="width" content="413">
+<meta itemprop="height" content="285"></span></p>
+<p> Рис. 9.29.  Пример формы, содержащей подчиненную форму</p>
+<p>Применение встроенных подчиненных форм обеспечивает более компактное представление на экране данных из нескольких таблиц, чем использование разных форм для каждой таблицы.</p>
+<p>Создавать такие формы можно разными способами. Рассмотрим сначала способы создания главной и подчиненной форм для двух связанных таблиц.</p>
+<p> Создание главной и подчиненной форм с помощью Мастера автоформ </p>
+<p>В предыдущей версии Access — Access 2000 появилась возможность более интеллектуального автоматического отслеживания связей между таблицами. Поэтому самые простые формы для связанных таблиц можно построить с помощью Мастера автоформ. Он сразу найдет все таблицы, которые связаны с главной отношением &#171;один-ко-многим&#187;, и создаст для каждой такой таблицы подчиненную форму. В качестве примера давайте создадим новую форму &#171;Клиенты&#187;, в которой должны быть отражены не только данные о клиенте, но и о его заказах.</p>
+<p>Сначала откройте окно  Схема данных  (Relationship) и посмотрите, как связаны интересующие нас таблицы (рис. 9.30). Таблица &#171;Клиенты&#187; (Customers) связана с таблицей &#171;Заказы&#187; (Orders) отношением &#171;один-ко-многим&#187;. В свою очередь таблица &#171;Заказы&#187; (Orders) связана с таблицей &#171;Заказано&#187; (Order Details) тоже отношением &#171;один-ко-многим&#187;.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image12/673f7762d64357dd0509c05afea43a6a.gif" width="458" height="397" alt=""><meta itemprop="width" content="458">
+<meta itemprop="height" content="397"></span></p>
+<p> Рис. 9.30.  Диалоговое окно  Схема данных </p>
+<p>Теперь в окне базы данных на странице Таблицы (Table) выделите таблицу &#171;Клиенты&#187; и нажмите стрелку вниз на кнопке Новый объект (New Object) на панели инструментов. В открывшемся списке выберите объект Автоформа (AutoForm).</p>
+<p>Подождите, пока Мастер автоформ закончит свою работу. В результате вы должны увидеть на экране форму, которая представлена на рис. 9.31.</p>
+<p>Чтобы открыть вторую подчиненную форму (список подчиненных записей следующего уровня), просто щелкните мышью по квадратику с крестом слева от выбранной записи в подчиненной форме. В данном примере в главной форме отображается одна запись о клиенте, а в подчиненной форме отображаются только те записи из таблицы &#171;Заказы&#187; (Orders), которые связаны с текущей записью в главной форме, т. е. только заказы текущего клиента. В списке подчиненных записей для выбранного заказа отображается список заказанных продуктов.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image13/77d7540e01ad36b8022850c15d2d5dc2.gif" width="499" height="376" alt=""><meta itemprop="width" content="499">
+<meta itemprop="height" content="376"></span></p>
+<p> Рис. 9.31.  Составная форма, созданная  Мастером автоформ </p>
+<p>Уже из этой формы видно, что Access обеспечивает вложенность подчиненных форм, причем максимальное количество уровней вложенности достаточно велико — 7. С другой стороны, если таблица связана отношением &#171;один-ко-многим&#187; с несколькими таблицами, то в одну главную форму можно встроить любое количество подчиненных форм.</p>
+<p>Такое иерархическое представление связанных данных удобно не только для отображения, но и для ввода данных.</p>
+<p>Например, нужно оформить заказ клиенту, которого еще нет в базе данных. Значит, требуется добавить запись о новом клиенте в таблицу. Для этого перейдите в режим ввода записи в главной форме, щелкнув мышью по кнопке  Новая запись  (New Record) внизу формы или на панели инструментов. Введите данные о клиенте, а затем переместите фокус в подчиненную форму для оформления заказа. Как только вы переместите фокус в подчиненную форму, запись о клиенте из главной формы будет сохранена. Теперь подчиненная запись о заказе будет корректно добавлена в таблицу &#171;Заказы&#187; (Orders), гарантируя сохранение ссылочной целостности.</p>
+<p>Аналогично будет сохранена запись о заказе, прежде чем начнут вводиться данные о заказанных продуктах во вложенной подчиненной форме. Записи в подчиненной форме сохраняются при переходе к каждой следующей строке.</p>
+<p> Использование Мастера форм для создания главной и подчиненной форм </p>
+<p>Составную форму с подчиненными формами можно создать также с помощью Мастера форм. Это несколько сложнее, чем использование Мастера автоформ, но зато дает возможность поместить в формы не все поля, а только те, что требуется.</p>
+<p>Рассмотрим создание такой формы для таблиц &#171;Сотрудники&#187; (Employees) и &#171;Заказы&#187; (Orders). Снова обратимся к схеме данных (см. рис. 9.30) и убедимся, что таблица &#171;Сотрудники&#187; (Employees) связана с таблицей &#171;Заказы&#187; (Orders) отношением &#171;один-ко-многим&#187;:</p>
+<ol>
+<li>Нажмите стрелку справа от кнопки Новый объект (New Object) на панели инструментов и выберите в списке команду Форма (Form) или нажмите кнопку Создать (New) на странице Формы (Forms) окна База данных (Database).</li>
+<li>В диалоговом окне Новая форма (New Form) выделите элемент списка Мастер форм (Form Wizard), выберите в поле со списком таблицу для главной формы — &#171;Сотрудники&#187; (Employees) — и нажмите кнопку ОК  (см. также разд. <a href="https://taurion.ru/access/5/3">&#171;Создание формы с помощью мастера&#187;</a>гл. 5). </li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image16/8f76540a3f03fb03192f024a9072251b.gif" width="486" height="367" alt=""><meta itemprop="width" content="486">
+<meta itemprop="height" content="367"></span></p>
+<p>Рис. 9.32. Первое диалоговое окно Мастера форм</p>
+<ol start="3">
+<li>В первом диалоговом окне Мастера форм (рис. 9.32) в списке Доступные поля (Available Fields) выберите те поля, которые вы хотите включить в главную форму. Затем в этом же окне в поле со списком Таблицы и запросы (Tables/Queries) &#171;выберите запрос &#171;Запрос Заказы&#187; (Orders Qry), который содержит данные из двух таблиц: &#171;Заказы&#187; (Orders) и &#171;Клиенты&#187; (Customers). В списке Доступные поля (Available Fields) из этого запроса выберите поля, которые необходимо включить в подчиненную форму. Нажмите кнопку Далее (Next).</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image27/f97d990b2fb5ec93f9a8bf339fdb7195.gif" width="486" height="367" alt=""><meta itemprop="width" content="486">
+<meta itemprop="height" content="367"></span></p>
+<p>Рис. 9.33. Второе диалоговое окно Мастера форм</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image11/64772efe2d74dbbe56c56dabf23a1d9d.gif" width="396" height="305" alt=""><meta itemprop="width" content="396">
+<meta itemprop="height" content="305"></span></p>
+<p>Рис. 9.34. Составная форма, созданная Мастером форм</p>
+<ol start="4">
+<li>В следующем окне Мастера (рис. 9,33) предлагается выбрать, какая из двух таблиц будет главной (по умолчанию устанавливается первая таблица, поля из которой мы выбирали). Переключатель, определяющий вид представления иерархии форм, по умолчанию установлен в значение Подчиненные формы (Form with subform(s)). Это то, что нам нужно. Нажимаем кнопку Далее (Next).</li>
+<li>В остальных диалоговых окнах нужно выбрать вид подчиненной формы (ленточный или табличный), стиль и задать имена для главной и подчиненной форм. После нажатия кнопки Готово (Finish) создается форма, содержащая одну подчиненную форму, которая выглядит примерно так, как на показано рис. 9.34.</li>
+</ol>
+<p>Теперь можно открыть эту форму в режиме Конструктора и настроить ее нужным образом.</p>
+<p> Добавление подчиненной формы в главную форму </p>
+<p>Подчиненная форма является элементом управления и, как и все остальные элементы, может быть добавлена в главную форму с помощью Мастера подчиненных форм. При этом ее можно создать заранее, и тогда мастеру нужно будет только указать имя добавляемой формы. Если подчиненная форма еще не создана, мастер поможет ее создать.</p>
+<p>В качестве примера добавим в форму &#171;Поставщики&#187; (Suppliers) подчиненную форму, которая будет содержать список товаров текущего-поставщика (в исходной версии базы данных &#171;Борей&#187; товары поставщика отображаются в отдельной связанной форме при нажатии кнопки  Просмотр товаров  (Review Products)):</p>
+<ol>
+<li>Откройте форму &#171;Поставщики&#187; в режиме Конструктора и отобразите на экране панель элементов, если ее не видно.</li>
+<li>При нажатой кнопке  Мастера  (Control Wizards) перетащите с панели элементов в область данных формы элемент управления  Подчиненная форма/отчет  (Subform/ Subreport), поместив ее под всеми остальными элементами. Перед этим можно увеличить высоту области данных, но это необязательно, т. к. она увеличится автоматически после вставки нового элемента.</li>
+<li>В первом диалоговом окне мастера выберите переключатель  Имеющиеся таблицы и запросы  (Use existing Tables and Queries) и нажмите кнопку  Далее  (Next).</li>
+<li>Во втором диалоговом окне Мастера подчиненных форм в раскрывающемся списке  Таблицы и запросы  (Tables/Queries) выберите таблицу &#171;Товары&#187; (Products). В списке  Доступные поля  (Available Fields) выберите поля для включения в форму (рис. 9.35) и нажмите кнопку  Далее  (Next).</li>
+<li>В третьем диалоговом окне нужно определить поля, по которым связываются главная и подчиненная формы (рис. 9.36). Можно выбрать их из списка или задать самостоятельно. Так как таблицы &#171;Поставщики&#187; (Suppliers) и &#171;Товары&#187; (Products) связаны, в списке отображается нужная связь. Выберите ее и нажмите кнопку  Далее  (Next).</li>
+<li>В последнем диалоговом окне нужно задать имя подчиненной формы. По умолчанию предлагается имя &#171;подчиненная форма Товары&#187; (Products subform). Можно оставить-это имя и нажать кнопку  Готово. </li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image25/e482773c86ca6d336172b66b0f77ba03.gif" width="497" height="366" alt=""><meta itemprop="width" content="497">
+<meta itemprop="height" content="366"></span></p>
+<p> Рис. 9.35.  Второе диалоговое окно Мастера подчиненных форм</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image17/984b1acd203450f6c85598d37c6f1d29.gif" width="497" height="366" alt=""><meta itemprop="width" content="497">
+<meta itemprop="height" content="366"></span></p>
+<p> Рис. 9.36.  Третье диалоговое окно Мастера подчиненных форм</p>
+<p>Результат работы мастера представлен на рис. 9.37.</p>
+<p>Мастер подчиненных форм удобен тогда, когда подчиненная форма еще не создана. Если подчиненная форма уже существует, можно просто разместить рядом окно базы данных с раскрытой страницей  Формы  (Forms) и главную форму, открытую в режиме Конструктора и просто перетащить мышью нужную форму из окна базы данных в главную форму. При этом главная становится подчиненной формой и автоматически устанавливается связь между формами.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image17/9c2d63fc87c5b05ce5965656d9398b81.gif" width="483" height="525" alt=""><meta itemprop="width" content="483">
+<meta itemprop="height" content="525"></span></p>
+<p> Рис. 9.37.  Подчиненная форма &#171;Товары&#187; внутри формы &#171;Поставщики&#187;</p>
+<p> Связывание главной и подчиненной форм </p>
+<p>Связывание главной и подчиненной форм осуществляется с помощью свойств  Основные поля  (Link Master Fields) и  Подчиненные поля  (Link Child Fields) элемента управления  Подчиненная форма/отчет  (Subform/Subreport). Как мы уже сказали, мастера форм автоматически заполняют эти свойства, основываясь на связях между таблицами. Если связи не заданы, то связующими полями считаются поля в таблицах, которые имеют одинаковые имена и совместимые типы данных. При этом связующее поле в базовой таблице для главной формы должно быть ключевым.</p>
+<p>Если при разработке иерархической формы данные в главной и подчиненной формах окажутся не синхронизированными, следует проверить значение свойств  Основные поля  (Link Master Fields) и  Подчиненные поля  (Link Child Fields) и ввести или откорректировать их значения:</p>
+<ol>
+<li>Откройте главную форму в режиме Конструктора.</li>
+<li>Выделите элемент управления  Подчиненная форма/отчет  (Subform/Subreport) (проще всего сделать это, описав с помощью мыши прямоугольник вокруг или пересекая этот элемент управления) и откройте окно  Свойства  (Properties) для этого элемента.</li>
+<li>В ячейку свойства  Подчиненные поля  (Link Child Fields) следует ввести имя связующего поля из таблицы или запроса, на котором базируется подчиненная форма.</li>
+<li>В ячейку свойства  Основные поля  (Link Master Fields) необходимо ввести имя связующего поля из таблицы или запроса, на котором базируется главная форма.</li>
+<li>Если вы не помните имена полей в базовых таблицах или запросах, можно воспользоваться Построителем для связывания полей. Нажмите кнопку Построителя справа от любого из упомянутых свойств, и на экране появится диалоговое окно (рис. 9.38).</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image12/6edf0411e982bc5c2c6e16a7d4d23a71.gif" width="389" height="465" alt=""><meta itemprop="width" content="389">
+<meta itemprop="height" content="465"></span></p>
+<p> Рис. 9.38.  Определение связей между главной и подчиненной формами</p>
+<p>В левой части окна расположены раскрывающиеся списки для выбора связующих полей в главной форме, в правой — для выбора связующих полей в подчиненной форме. Связь может задаваться с помощью нескольких полей. Это может быть, если ключевое поле в главной таблице составное. Построитель позволяет задать максимум три поля и, как правило, этого хватает. В противном случае нужно просто вписать недостающие поля в значения свойств, разделив их точкой с запятой. Важно только, чтобы поля в каждом из данных свойств перечислялись в одинаковом порядке.</p>
+<p>В предложенных списках содержатся все поля базовых таблиц или запросов. Это означает, что связующие поля необязательно должны присутствовать в формах, они обязаны присутствовать в источнике данных формы.</p>
+<p> Синхронизация данных в элементах формы </p>
+<p>В этом разделе приведены некоторые типичные примеры, иллюстрирующие отображение в форме данных в соответствии со значениями некоторых ее элементов. Вообще говоря, подобные приемы можно применить для синхронизации данных как в простых, так и в составных формах, содержащих подчиненные формы. Примеры подобраны, исходя из наиболее часто встречающихся вопросов у наших читателей. Мы надеемся, что изучение этого раздела, а также применение комбинаций описанных приемов, помогут читателям решить основные задачи при проектировании интерактивных форм.</p>
+<p> Переход на определенную запись в форме </p>
+<p>Типичной задачей является организация более удобного чем последовательный перебор перехода по записям в форме, задавая значения каких-то полей записи, для ее поиска по ним. Например, в форме с информацией для большого количества сотрудников хотелось бы быстро перейти к карточке сотрудника с известной фамилией. Это можно сделать с помощью специального списка для выбора фамилии.</p>
+<p>В  разд. &#171;Создание элементов управления с помощью панели элементов&#187;гл. 5 мы упомянули о том, что при создании списка/поля со списком с помощью Мастера в форме, привязанной к источнику данных, Access предлагает сделать его средством перехода к нужной записи в форме. Рассмотрим пример создания такого списка:</p>
+<ol>
+<li>Откройте в режиме Конструктора форму &#171;Сотрудники&#187; (Employees) базы данных &#171;Борей&#187; (Northwind).</li>
+<li>Убедитесь, что на панели инструментов  Панель элементов  (Toolbox) нажата кнопка  Мастера  (Control Wizards). Нажмите кнопку  Поле со списком  (Combo Box) и разместите новый элемент в разделе заголовка формы, начертив мышью прямоугольник нужного размера.</li>
+<li>Появится первое диалоговое окно Мастера списков. Выберите переключатель  Поиск записи в форме на основе значения, которое содержит поле со списком  (Find a record on my form based on the value I selected in my combo box) и нажмите кнопку  Далее  (Next).</li>
+<li>В следующем диалоговом окне мастера выберите поля, которые образуют столбцы элементов списка: &#171;КодСотрудника&#187; (EmployeeID), &#171;Фамилия&#187; (LastName) и &#171;Имя&#187; (FirstName). Нажмите кнопку  Далее  (Next).</li>
+<li>В следующем диалоговом окне Мастера списков предлагается настроить ширину столбцов списка. Столбец с ключевым полем &#171;КодСотрудника&#187; рекомендуется сделать скрытым (установите флажок  Скрыть ключевой столбец  (Hide key column)). Оставьте предложенные параметры и нажмите кнопку Далее (Next).</li>
+<li>В последнем диалоговом окне мастера требуется ввести текст метки, поясняющей назначение списка. Введите текст: Фамилия: и нажмите кнопку  Готово  (Finish).</li>
+</ol>
+<p>Форма готова. Откройте ее в режиме Формы и убедитесь, что при выборе желаемых фамилии и имени в созданном поле со списком осуществляется переход к информации об этом сотруднике. Такое поле со списком удобно и тем, что значение в нем можно не только выбрать, но и просто ввести первые буквы фамилии — необходимый элемент будет выбран автоматически. Останется нажать клавишу &lt;Enter&gt;, чтобы отобразить информацию о выбранном сотруднике.</p>
+<p>Действие созданного поля со списком обеспечивается процедурой обработки события  После обновления  (After Update), сгенерированной мастером  (см. также разд. &#171;Создание процедур обработки событий&#187;гл. 13). </p>
+<p> Динамическая фильтрация данных </p>
+<p>Предположим, у нас есть форма, содержащая подчиненную форму, в которой отображается много записей, и вы хотели бы интерактивно задать в главной форме какое-нибудь условие для отбора интересующих записей в подчиненной форме, чтобы упростить их визуальный анализ.</p>
+<p>Это несложно сделать с помощью применения фильтра для источника данных формы (в данном случае — подчиненной). Фильтр можно применить двумя способами:</p>
+<ul>
+<li>с помощью интерфейса Access (соответствующих кнопок на панели инструментов  Режим формы  (Form View), команд стандартного меню и контекстного меню поля формы);</li>
+<li>с помощью изменения значений свойств формы.</li>
+</ul>
+<p>Первый способ применения фильтра в форме во многом аналогичен подобным действиям в режиме Таблицы, которые были рассмотрены  в разд. &#171;Фильтрация данных<a href="https://taurion.ru/access/2/29">&#171;</a>гл. 2.  Здесь мы рассмотрим второй способ.</p>
+<p>В этом случае применяются свойства формы  Фильтр  (Filter) и  Фильтр включен  (Filter On). Свойство  Фильтр  (Filter) содержит строковое значение — предложение WHERE на языке SQL (без ключевого слова WHERE). Свойство  Фильтр включен  (Filter On) определяет, применен ли фильтр, указанный в свойстве  Фильтр  (Filter), к форме. В отличие от свойства  Фильтр включен  (Filter On), свойство  Фильтр  (Filter) можно задать и в режиме Конструктора, в окне свойств формы, чтобы фильтр применился в момент загрузки формы. Но нам нужно изменять фильтр динамически — в процессе работы с формой в режиме Формы. Мы реализуем это с помощью процедуры VBA.  :  .</p>
+<p>И хоть данная глава не предназначена для описания программирования на VBA, мы приведем пример соответствующей процедуры VBA, поскольку он обеспечивает несложное решение довольно типичной задачи.</p>
+<p>Рассмотрим решение этой проблемы на примере формы &#171;Типы&#187; (Categories), содержащей подчиненную форму &#171;Список товаров&#187; (Product List). Организуем отбор товаров в подчиненной форме в зависимости от наличия их поставок:</p>
+<ol>
+<li>Откройте форму &#171;Типы&#187; (Categories) базы данных &#171;Борей&#187; (Northwind) в режиме Конструктора.</li>
+<li>Создайте в главной форме элемент  Поле со списком  (Combo Box), содержащий два столбца с фиксированным набором значений  (см. гл. 5).  Метку списка назовите Условие:. Свойства списка должны иметь значения, описанные в табл. 9.1.</li>
+</ol>
+<table class="table_common zebra" width="700">
+<tbody>
+<tr>
+<td><strong>Свойство </strong></td>
+<td><strong>Значение </strong></td>
+</tr>
+<tr>
+<td>Тип источника строк (Row Source Type)</td>
+<td>Список значений (Value List)</td>
+</tr>
+<tr>
+<td>Количество столбцов (Column Count)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Ширина столбцов (Column Widths)</td>
+<td>Ост; 2, 5cm</td>
+</tr>
+<tr>
+<td>Данные (ControlSource)</td>
+<td>оставьте поле свойства пустым</td>
+</tr>
+<tr>
+<td>Имя (Name)</td>
+<td>Отбор</td>
+</tr>
+<tr>
+<td>Присоединенный столбец (Bound Column)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Источник строк (Row Source)</td>
+<td>0; &#171;Поставки выполняются&#187;;— 1 ; &#171;Поставки прекращены&#187; ; 2 ; &#171;Все товары&#187;</td>
+</tr>
+</tbody>
+</table>
+<p> Таблица 9.1.  Свойства фильтрующего элемента</p>
+<p><strong>Замечание</strong></p>
+<p>Обратите внимание на значения созданного элемента в свойстве  Источник строк  — 0, -1 и 2. Первые два значения выбраны в соответствии с возможными вариантами значений поля &#171;ПоставкиПрекращены&#187; (Discontinued) таблицы &#171;Товары&#187; (Products), которая является источником данных для подчиненной формы в настоящем примере. По этому полю и будет проводиться фильтрация данных в подчиненной форме.</p>
+<ol start="3">
+<li>В окне свойств созданного списка раскройте вкладку  События  (Events) и нажмите кнопку Построителя слева от свойства  После обновления  (After Update).</li>
+<li>В появившемся диалоговом окне выделите элемент списка  Программы  (Code Builder) и нажмите кнопку  ОК. </li>
+<li>Откроется редактор VBA со сгенерированным заголовком процедуры обработки события. Вставьте в процедуру следующий код: Private Sub Отбор_А£terUpdate() If Me!Отбор = 2 Then [Список товаров].Form.Filter = &#171;&#187; [Список товаров].Form.FilterOn = False Else ? [Список товаров].Form.Filter = _ &#171;[ПоставкиПрекращены] = &#187; &amp; Me!Отбор [Список товаров].Form.FilterOn = True End If End Sub В английской версии &#171;Борей&#187; вместо русских названий подчиненной формы [Список товаров] и поля [ПоставкиПрекращены] используйте их английские аналоги: [Product List] и [Discontinued]. </li>
+<li>Закройте редактор VBA. Сохраните форму.</li>
+</ol>
+<p>Откройте форму &#171;Типы&#187; (Categories) в режиме Формы. Попробуйте выбирать в созданном списке разные значения и переходить от записи к записи. Вы увидите, что в соответствии с выбранным в списке значением, в подчиненной форме отображаются только товары с выполняющимися поставками, только товары с прекращенными поставками или все товары  (см. также разд. &#171;Синхронизация данных в связанных формах&#187;гл. 13). </p>
+<p> Автоматическая подстановка значения в поле ввода </p>
+<p>Частсг для заполнения некоторых полей таблиц требуется вычислить выражение на основе данных в других полях этой таблицы и, возможно, связанных с ней таблиц. Чтобы при вводе данных не вычислять это значение каждый раз самостоятельно, требуется создать форму для ввода данных, выполняющую необходимые вычисления автоматически. Это позволит застраховаться от ошибок при вычислениях и сократит время ввода данных.</p>
+<p>Представим себе такой пример. Есть таблица &#171;Товары&#187; со списком товаров, где для каждого товара указана его цена (таблица содержит поля &#171;НаименованиеТовара&#187; и &#171;Цена&#187;, и первое поле является ключевым). Есть другая таблица &#171;Заказы&#187; со списком заказов на эти товары, содержащая информацию о типе и количестве заказанного товара (поля &#171;НаименованиеТовара&#187; и &#171;Количество&#187;), а также о его стоимости (поле &#171;Сумма&#187;). Таблица &#171;Заказы&#187; связана с таблицей &#171;Товары&#187; по полю &#171;НаименованиеТовара&#187; отношением &#171;один-ко-многим&#187;. Требуется создать форму для добавления новых заказов так, чтобы при выборе необходимого товара из предложенного списка и после ввода заказанного количества в поле &#171;Сумма&#187; автоматически подставлялось значение стоимости всего заказа для данного товара.</p>
+<p>Для решения поставленной задачи требуется выполнить следующие действия:[  Реализация этого примера — небольшая база данных Заказы.mdb — есть на компакт-диске, который является дополнительным приложением к комплекту книг о Microsoft Office 2002 издательства &#171;БХВ-Петербург&#187; и распространяется отдельно.  ]</p>
+<ol>
+<li>Создайте запрос, содержащий поле &#171;Цена&#187; из таблицы &#171;Товары&#187; и все поля из таблицы &#171;Заказы&#187;. Сохраните его с именем &#171;Заказано&#187;.</li>
+<li>Создайте форму &#171;Заказы&#187; на основе запроса &#171;Заказано&#187;.</li>
+<li>Поместите в форму элемент управления  Список,  связанный с полем &#171;НаименованиеТовара&#187; источника данных формы.</li>
+</ol>
+<p><strong>Замечание</strong></p>
+<p>Это можно выполнить с помощью окна  Список полей  (Filed List) (см. гл. 5), предварительно указав в режиме Конструктора таблицы &#171;Заказы&#187; для поля &#171;НаименованиеТовара&#187; на вкладке  Подстановка  (Lookup) значение  Поле со списком  (Combo Box) для свойства  Тип элемента управления  (Display Control) и имя таблицы &#171;Товары&#187; в качестве значения свойства  Источник,строк  (Row Source).</p>
+<ol start="4">
+<li>Поместите в форму текстовые поля, связанные с полями &#171;Количество&#187; и &#171;Сумма&#187; источника данных формы.</li>
+<li>Для поля &#171;Количество&#187; в окне свойств раскройте вкладку  События  (Events). Для события  После обновления  (After Update) создайте процедуру обработки события  (см. разд. <a href="https://taurion.ru/access/9/25">&#171;Динамическая фильтрация данных&#187;</a> этой главы)  со следующим содержанием:Private Sub Количество_А£terUpdate()
+<p>Сумма = Цена * Количество End Sub</p>
+</li>
+</ol>
+<p>Таким образом, после ввода значения в поле &#171;Количество&#187; в поле &#171;Сумма&#187; будет автоматически подставлена вычисленная стоимость заказа. А поскольку поле &#171;Сумма&#187; является присоединенным к одноименному полю в таблице &#171;Заказы&#187;, вычисленное значение автоматически попадет в таблицу.</p>
+<p> Совет </p>
+<p>Не всегда вычисляемые значения требуется сохранять в самих таблицах. Чаще всего достаточно только отобразить результат вычисления в вычисляемом поле формы или запроса для информирования пользователя. Ведь это значение можно вычислить в любой момент на основе данных, хранящихся в таблицах, и не потребуется выполнять проверку на правильность сохраненного значения при изменении значений полей, использованных в его вычислении, в других формах или непосредственно в таблице (см. также разд. &#171;Создание вычисляемых полей&#187; данной главы и разд. &#171;Вычисления на выделенных записях таблицы&#187;гл. 8).</p>
+<p> Создание многостраничных форм </p>
+<p>Многостраничные формы используются в том случае, если данных, связанных с объектом, так много, что их невозможно разместить в форме, ограниченной размерами экрана.</p>
+<p>Для создания многостраничных форм используются элементы управления  Разрыв страницы  (Page Break) и  Набор вкладок  (Tab Control). Более распространенным является второй способ создания многостраничных форм — с помощью элемента управления  Набор вкладок  (Tab Control). Для того чтобы посмотреть, как выглядит такая форма и как она устроена, вы можете открыть в режиме Конструктора форму &#171;Сотрудники&#187; (Employees) — пример многостраничной формы со вкладками в демонстрационном приложении &#171;Борей&#187;. Форма &#171;Сотрудники&#187; содержит элемент управления  Набор вкладок  (Tab Control), состоящий из двух вкладок. Переключение между вкладками выполняется с помощью щелчка мыши по ярлыку вкладки.</p>
+<p> Создание многостраничных форм с элементом  Разрыв страницы  </p>
+<p>Рассмотрим процедуру создания формы, подобной форме &#171;Сотрудники&#187; (Employees) в приложении &#171;Борей&#187; (Northwind), но состоящую не из набора вкладок, а из страниц, разделенных элементом управления  Разрыв страницы  (Page Break).</p>
+<ol>
+<li>На панели инструментов  База данных  (Database) нажмите стрелку справа от кнопки  Новый объект  (New object) и выберите элемент  Форма  (Form).</li>
+<li>В появившемся диалоговом окне выделите элемент списка  Автоформа: в столбец  (AutoForm: Columnar) и в раскрывающемся списке выберите таблицу &#171;Сотрудники&#187; (Employees). Нажмите кнопку  ОК. </li>
+<li>Автоматически будет создана форма, содержащая все поля из таблица &#171;Сотрудники&#187;. Откройте ее в режиме Конструктора (например, выбрав команду  Вид, Конструктор  (View, Design View)).</li>
+<li>Высота формы будет около 7,5 см. Растяните нижний край области данных формы так, чтобы высота области данных стала в два раза больше — 15 см.</li>
+</ol>
+<p> Внимание </p>
+<p>При проектировании многостраничной формы нужно заранее спланировать, как разместить информацию на ее страницах. Обычно логически связанные данные группируются и разносятся по страницам формы. Однако при использовании элемента управления  Разрыв страницы  (Page Break) важно, чтобы все страницы были одинаковой высоты, т. к. в противном случае при переходе со страницы на страницу не всегда происходит точное переключение, может оказаться, что в окне видна только часть нужной страницы.</p>
+<ol start="5">
+<li>Пользуясь линейкой разметки формы, слева от нее, заметьте деление напротив отметки 7,5 см и перетащите туда с панели элементов элемент управления  Разрыв страницы  (Page Break). Этот элемент управления всегда располагается у левой границы формы и определяет конец текущей страницы.</li>
+<li>Мысленно разделите все поля на форме на две группы: те, что относятся к служебным данным о сотруднике, и те, что относятся к его личным данным — так, как они разделены в форме &#171;Сотрудники&#187;. Перетащите все поля, относящиеся к личной информации, в нижнюю часть формы — ниже элемента  Разрыв страницы  (Page Break). Эта часть формы будет служить второй страницей.</li>
+<li>Чтобы сделать форму более наглядной, добавьте сразу под элементом  Разрыв страницы  (Page Break) надпись с текстом Личные данные, а также растяните нижнюю границу раздела  Заголовок формы  (Form Header) на высоту 1 см и добавьте в этот раздел вычисляемое поле (без метки), содержащее выражение  (см. разд. <a href="https://taurion.ru/access/9/35">&#171;Создание вычисляемых полей&#187;</a> этой главы).  = [Имя] &amp; &#187; &#187; &amp; [Фамилия] (или =[FirstName] &amp; &#187; &#187; &amp; [LastName]). Отформатируйте добавленные элементы так, чтобы их выделить.</li>
+<li>В многостраничных формах обычно не размещают полос прокрутки, это излишне, поэтому установите для свойства  Полосы прогрутки  (Scroll Bars) значение  Отсутствуют  (Neither) в окне свойств формы. Мы практически закончили работу над содержимым формы, должно получиться примерно то, что показано на рис. 9.39. Для наглядности на рисунке мы обвели элемент  Разрыв страницы. </li>
+<li>Перемещая рамку окна формы, установите высоту окна так, чтобы самый нижний край был около отметки 5,5 см на линейке разметки (так, чтобы в режиме Формы высота окна формы была примерно равна высоте заголовка формы плюс высота одной страницы — это 1 см + 7,5 см).</li>
+<li>С помощью кнопки  Сохранить  (Save) на панели инструментов сохраните созданную форму с именем &#171;Сотрудники (с переводом страниц)&#187;.</li>
+<li>Откройте форму в режиме Формы (команда  Вид, Режим формы  (View, Form View)).</li>
+</ol>
+<p>Созданная форма состоит из двух страниц. На первой странице размещены служебные данные о сотруднике, а на второй странице — личные данные. Переключение между страницами, как обычно, выполняется с помощью клавиш &lt;PageUp&gt; и &lt;PageDown&gt;. Но кроме этого, для удобства переключения можно добавить на каждую страницу специальные кнопки  Служебные данные  (Company Info) и  Личные данные  (Persorfal Info) с реакцией на событие  Нажатие кнопки  (Click), вызывающей макрокоманду переключения на другую страницу GoToPage с заданным номером страницы (в нашем примере — 1 или 2) или инструкцию DoCmd.GoToPage в процедуре VBA  (см. также разд. <a href="https://taurion.ru/access/13/55">&#171;Создание процедур обработки событий&#187;</a><a href="https://taurion.ru/access/13">главы 13</a>).  Обратите внимание на поле, которое расположено в заголовке формы. Это вычисляемое поле, значение которого меняется для каждой записи в форме. Оно содержит имя и фамилию сотрудника. Это поле предназначено для того, чтобы при переходе на вторую страницу видеть имя и фамилию сотрудника — тогда пользователь всегда будет знать, с какой записью таблицы он работает.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image01/07e87b6aa7f91674a99f58fd7c0a7b82.gif" width="297" height="327" alt=""><meta itemprop="width" content="297">
+<meta itemprop="height" content="327"></span></p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image09/4b5a81e56af3961dda0fb17d898d8c36.gif" width="472" height="72" alt=""><meta itemprop="width" content="472">
+<meta itemprop="height" content="72"></span></p>
+<p> Рис. 9.39.  Использование элемента  Разрыв страницы </p>
+<p>Чтобы придать созданной форме законченный вид, нужно будет еще поработать с ее оформлением и, возможно, преобразовать типы некоторых элементов, присоединенных к полям источника данных  (см. также раздел &#171;Преобразование одного элемента в другой&#187; этой главы и раздел &#171;Оформление формы и ее элементов&#187;главы 5). </p>
+<p> Создание многостраничной формы со вкладками </p>
+<p>А теперь рассмотрим процедуру создания многостраничной формы с набором вкладок:</p>
+<ol>
+<li>Нажмите кнопку  Новый объект  (New object) на панели инструментов  База данных  (Database) и выберите объект  Форма  (Form).</li>
+<li>В диалоговом окне выделите элемент списка  Конструктор  (Design View) и нажмите кнопку  ОК. </li>
+<li>Выведите на экран панель инструментов  Панель элементов  (Toolbox), если она не видна, и нажмите на ней кнопку  Вкладка  (Tab Control). Этот элемент управления не имеет мастера, поэтому состояние кнопки  Мастера  (Control Wizard) не имеет значения.</li>
+<li>В разделе  Область данных  (Detail) формы очертите с помощью мыши достаточно большое прямоугольное пространство, чтобы в нем можно было разместить несколько элементов управления. Access создаст в форме элемент управления  Набор вкладок  (Tab Control), состоящий из двух страниц.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image22/ca3dc7c97d317f7add066243d6af734d.gif" width="530" height="493" alt=""><meta itemprop="width" content="530">
+<meta itemprop="height" content="493"></span></p>
+<p> Рис. 9.40.  Форма с набором вкладок в режиме Конструктора</p>
+<ol start="5">
+<li>Если окно  Свойства  (Properties) в данный момент открыто, то оно показывает свойства элемента управления  Набор вкладок  (Tab Control). Однако наборы свойств существуют и отдельно для каждой страницы. Чтобы их просмотреть, щелкните по ярлыку любой вкладки. Теперь в окне свойств отображаются свойства соответствующей страницы (рис. 9.40).</li>
+<li>Измените заголовок первой страницы, введя в ячейку свойства  Подпись  (Caption) слово Клиенты. Для второй страницы введите значение Квартальные обороты. Обратите внимание, как ширина вкладки автоматически меняется в зависимости от длины текста заголовка.</li>
+<li>В окне свойств формы установите свойство  Источник записей  (Record Source). В качестве источника записей укажите таблицу &#171;Клиенты&#187; (Customers). Свойству  Полосы прокрутки  (Scroll Bars) присвойте значение  Отсутствуют  (Neither), свойству  Область выделения  (Record Selectors) — значение  Нет  (No). В поле свойства  Подпись  (Caption) введите название формы, например Сведения о клиентах. Закройте окно свойств.</li>
+<li>Раскройте первую вкладку —  Клиенты.  Теперь на свободное поле страницы можно размещать другие элементы управления точно так же, как обычно в форме. Разместите на ней элементы управления, присоединенные к полям таблицы &#171;Клиенты&#187; (Customers). Например, с помощью окна  Список полей  (Filed List).</li>
+<li>Раскройте вторую вкладку —  Квартальные обороты.  Перенесите на нес форму &#171;Подчиненная для квартальных оборотов&#187; (Quarterly Orders Subform) из окна базы данных с помощью мыши. Эта форма станет подчиненной формой в создаваемой нами форме. Настройте размеры элемента управления  Подчиненная форма/отчет  (Subform/Subreport) таким образом, чтобы поместилась вся необходимая информация.</li>
+<li>Форма готова. Сохраните ее с именем &#171;Сведения о клиентах&#187;.</li>
+</ol>
+<p>Откройте созданную форму в режиме Формы. Вы должны получить результат, похожий на тот, что представлен на рис. 9.41 и 9.42.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image12/6825543f963e2c2b87da44f1b8e66303.gif" width="491" height="448" alt=""><meta itemprop="width" content="491">
+<meta itemprop="height" content="448"></span></p>
+<p> Рис. 9.41.  Вкладка  Клиенты  формы &#171;Сведения о клиентах&#187;</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image26/f125d51d798045575dd82003d2fa9021.gif" width="461" height="518" alt=""><meta itemprop="width" content="461">
+<meta itemprop="height" content="518"></span></p>
+<p> Рис. 9.42.  Вкладка  Квартальные обороты  формы &#171;Сведения о клиентах&#187;</p>
+<p> Добавление и удаление страниц в наборе вкладок </p>
+<p>Если для размещения всей информации недостаточно двух страниц, можно легко добавить новые страницы к набору. Для этого:</p>
+<ol>
+<li>Раскройте любую вкладку, щелкнув по ее ярлыку.</li>
+<li>Щелкните по ней правой кнопкой мыши и выберите в контекстном меню команду  Добавить вкладку  (Insert Page) или команду  Вставка, Вкладка  (Insert, Page).</li>
+<li>Новая страница будет вставлена в конец набора вкладок.</li>
+</ol>
+<p>Для того чтобы удалить лишнюю страницу:</p>
+<ol>
+<li>Раскройте вкладку, которую нужно удалить, щелкнув по ее ярлыку.</li>
+<li>Щелкните по ней правой кнопкой мыши и в контекстном меню выберите команду  Удалить вкладку  (Delete Page) или команду  Правка, Удалить  (Edit, Delete).</li>
+</ol>
+<p> Изменение порядка следования страниц </p>
+<p>Иногда требуется изменить порядок следования страниц в наборе вкладок, например, когда новую вкладку, вставленную в конец набора вкладок, нужно поместить перед другими вкладками.</p>
+<p>Чтобы изменить порядок взаимного расположения вкладок:</p>
+<ol>
+<li>Щелкните правой кнопкой мыши по любой вкладке и в контекстном меню выберите команду  Последовательность вкладок  (Page Order).</li>
+<li>В появившемся диалоговом окне  Порядок страниц  (Page Order) (рис. 9.43) установите необходимый порядок следования вкладок в форме: выделите в списке название вкладки, которую нужно переместить, и нажимайте кнопки  Вверх  (Move Up) и  Вниз  (Move Down), пока не переместите название вкладки на нужную позицию.</li>
+<li>Повторите эти действия для каждой вкладки, которую нужно переместить, и нажмите кнопку ОК.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image03/19f02cb459663242d0f6f6eb537dd7d1.gif" width="306" height="251" alt=""><meta itemprop="width" content="306">
+<meta itemprop="height" content="251"></span></p>
+<p> Рис. 9.43.  Диалоговое окно  Порядок страниц </p>
+<p> Свойства элемента управления Набор вкладок </p>
+<p>Наиболее важные свойства элемента управления  Набор вкладок  (Tab Control) приведены в табл.  9.2. </p>
+<table class="table_common zebra" width="700">
+<tbody>
+<tr>
+<td>Свойство</td>
+<td>Описание</td>
+<td>К какому элементу относится</td>
+</tr>
+<tr>
+<td>Подпись (Caption)</td>
+<td>Определяет текст, который отображается на ярлыке вкладки. Если это свойство не задано, то отображаться будет значение свойства Имя (Name)</td>
+<td>Страница элемента управления Набор вкладок</td>
+</tr>
+<tr>
+<td>Стиль (Style)</td>
+<td>Определяет представление ярлыков (пе- реключаталей) вкладок: Ярлычки, Кнопки, Нет (Tabs, Buttons, None). По умолчанию устанавливается стиль Ярлычки (Tabs)</td>
+<td>Элемент управления Набор вкладок</td>
+</tr>
+<tr>
+<td>Несколько строк (Multi-Row)</td>
+<td>Определяет, можно ли выводить ярлыки вкладок в несколько рядов. По умолчанию устанавливается значение Нет (No)</td>
+<td>Элемент управления Набор вкладок</td>
+</tr>
+<tr>
+<td>Рисунок (Picture)</td>
+<td>Определяет рисунок, который отображается на ярлыке страницы. Можно использовать встроенные значки Access или любой растровый рисунок — файл BMP</td>
+<td>Страница элемента управления Набор вкладок</td>
+</tr>
+<tr>
+<td>Высота ярлычка (Tab Fixed Height)</td>
+<td>Высота ярлыков вкладок, указанная в определенных с помощью панели управления Windows единицах измерения. Когда значение этого свойства равно 0, высота каждого ярлыка вкладки будет соответствовать его содержимому</td>
+<td>Элемент управления Набор вкладок</td>
+</tr>
+<tr>
+<td>Ширина ярлычка (Tab Fixed Width)</td>
+<td>Ширина ярлыков вкладок, указанная в определенных с помощью панели управления Windows единицах измерения. Когда значение этого свойства равно 0, ширина каждого ярлыка вкладки будет соответствовать его содержимому</td>
+<td>Элемент управления Набор вкладок</td>
+</tr>
+</tbody>
+</table>
+<p> Таблица 9.2.  Свойства элемента управления  Набор вкладок </p>
+<p>Как видно из этой таблицы, перечисленные свойства относятся либо к отдельной странице, либо к элементу управления в целом. Поэтому для их установки нужно выделять либо отдельную страницу (вкладку), либо весь элемент управления  Набор вкладок  (Tab Control). Самый простой способ выделения всего элемента управления — щелкнуть по свободной области справа от ярлыков.</p>
+<p> Всплывающие формы и диалоговые окна </p>
+<p>Вы, наверное, обратили внимание, что в Access, да и не только в нем, существуют такие окна, которые размещаются на экране поверх всех остальных окон, даже если в данный момент активным является другое окно. Примером такого окна является окно  Свойства  (Properties) в Конструкторе форм. Вы тоже можете в своем приложении создавать формы такого типа. Они называются  всгыывающими формами. </p>
+<p>Например, если Главная кнопочная форма, из которой можно выполнить основные действия в приложении, небольшая и не закрывает другие формы, ее можно сделать всплывающей, чтобы она была доступна в любое время. На рис. 9.44 представлена такая форма, которая находится поверх окна базы данных, хотя оно является активным.</p>
+<p>Чтобы форма обладала таким свойством, необходимо присвоить значение Да (Yes) свойству  Всплывающее окно  (Pop Up). Это свойство находится на вкладке  Другие  (Other) окна свойств формы (рис. 9.45).</p>
+<p>Обычную форму можно также превратить в модальное диалоговое окно, если свойству  Модальное окно  (Modal) этой формы задать значение Да (Yes).  Модальная форма  отличается тем, что пока она открыта, вы не можете переместить фокус на другой объект — форму, меню, кнопку панели инструментов и пр., т. е. другие объекты становятся недоступными, пока не будет закончена работа с данной формой и она не будет закрыта.</p>
+<p>Модальные формы обычно используются для создания специальных диалоговых окон, которые запрашивают у пользователя некоторую информацию. Для того чтобы выполнять другие задачи, пользователь должен ввести эту информацию и закрыть форму. Обычно в таком окне устанавливают свойства  Кнопка оконного меню  (Control Box),  Кнопки размеров окна  (Min Max Buttons) и  Кнопка закрытия  (Close Button) таким образом, что эти кнопки не отображались в форме. Зато в самой форме создают две кнопки  ОК  и  Отмена  (Cancel). Кнопка ОК позволяет выполнить дальнейшие действия и закрывает форму. Кнопка  Отмена  закрывает форму и выполняет все действия по прерыванию выполняемой операции. Для этого создают программы VBA или макросы, которые связывают с событием  Нажатие кнопки  (Click) каждой из этих кнопок  (см. также гл. 13). </p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image14/799c02954128773253b6cb2537440060.gif" width="407" height="477" alt=""><meta itemprop="width" content="407">
+<meta itemprop="height" content="477"></span></p>
+<p> Рис. 9.44.  Всплывающая Главная кнопочная форма</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image10/5503b59b91f0c8aff8c34b975b93f6a5.gif" width="330" height="294" alt=""><meta itemprop="width" content="330">
+<meta itemprop="height" content="294"></span></p>
+<p> Рис. 9.45.  Установка значения свойства  Всплывающее окно </p>
+<p>Обычно для всплывающих или модальных окон изменяют значение свойства  Тип границы  (Border Style), которое по умолчанию имеет значение  Изменяемая  (Sizable). Для этого свойства у всплывающей формы обычно устанавливают значение  Тонкая  (Thin). При этом всплывающую форму можно перемещать по экрану, но нельзя изменить ее размеры. У модальной формы для свойства  Тип границы  обычно устанавливают значение  Окна диалога  (Dialog). При этом автоматически отключаются кнопки размеров окна (но кнопку закрытия вам придется отключить вручную, если это нужно), поэтому она не может быть развернута на весь экран, свернута в значок или просто изменена в размерах.</p>
+<p>Примером модального диалогового окна является форма &#171;Продажи по годам&#187; (Sales by Year Dialog) в приложении &#171;Борей&#187; (Northwind) (рис. 9.46).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image21/be22204f0a203afee2268ad22bb2ea5d.gif" width="568" height="502" alt=""><meta itemprop="width" content="568">
+<meta itemprop="height" content="502"></span></p>
+<p> Рис. 9.46.  Модальное диалоговое окно в приложении</p>
+<p> Вычисления в формах </p>
+<p>Вычисления в формах используются:</p>
+<ul>
+<li>при создании вычисляемых полей, т. е. таких элементов управления, значения которых вычисляются на основе значений других элементов управления или встроенных функций;</li>
+<li>для вычисления значения по умолчанию элементов управления формы;</li>
+<li>в выражениях, с помощью которых задаются некоторые свойства элементов управления, например условие на значение, условия для отбора записей в форме и ряд других.</li>
+</ul>
+<p>Правила составления выражений в Access мы уже описывали  (см. разд. &#171;Использование выражений в запросах&#187;гл. 4).  Поэтому здесь мы остановимся в первую очередь на вычисляемых полях формы и опишем, где они нужны и как их создать.</p>
+<p> Внимание </p>
+<p>Формулы для вычислений в Access записываются с помощью специального синтаксиса, который диктует правила записи формул и в выражениях Access и в процедурах на VBA. Этот синтаксис несколько отличается от принятого в математике, однако во многом на него похож и интуитивно понятен. Описание синтаксиса вычислительных формул приведено в разд. &#171;Выражения в Access&#187;гл. 4.</p>
+<p> Создание вычисляемых полей </p>
+<p>Простейшим вычисляемым полем является поле, в котором должна выводиться текущая дата. Чтобы создать такое поле:</p>
+<ol>
+<li>Создайте свободный элемент управления типа  Поле  (Text Box) в нужном месте формы.</li>
+<li>Прямо в поле введите выражение =Date (). Знак равенства обязателен.</li>
+<li>Откройте окно  Свойства  (Properties) для этого элемента и задайте для свойства  Формат поля  (Format) желаемый формат даты, например  Длинный формат даты  (Long Date).</li>
+<li>Установите длину поля таким образом, чтобы в нем помещалось необходимое количество символов.</li>
+<li>Измените название метки этого текстового поля. Созданное поле будет выглядеть, как показано на рис. 9.47.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image28/fc646b5de9369aad499f49bd8741aa9e.gif" width="550" height="318" alt=""><meta itemprop="width" content="550">
+<meta itemprop="height" content="318"></span><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image11/5f8a0eecbf295ddb988a28520ebced6d.gif" width="330" height="294" alt=""><meta itemprop="width" content="330">
+<meta itemprop="height" content="294"></span></p>
+<p> Рис. 9.47.  Вычисляемое поле</p>
+<p>Обычно для создания вычисляемых полей выбирают именно элемент управления  Текстовое поле,  хотя это и необязательно. Допускается использовать для этого любые элементы управления, имеющие свойство  Данные  (Control Source).</p>
+<p>Именно в свойстве  Данные  (Control Source) должно быть задано выражение, которое вычисляет значение этого элемента. Ввод выражения допускается прямо в элемент управления, как мы и сделали это в примере. Однако, если выражение достаточно длинное, его неудобно вводить прямо в поле. Можно ввести выражение в ячейку свойства  Данные  (Control Source) в окне  Свойства  (Properties), а если выражение не помещается в ячейке свойства, просто нажать комбинацию клавиш &lt;Shiftl&gt;+&lt;F2&gt; и открыть окно  Область ввода  (Zoom). Еще можно воспользоваться Построителем выражений.</p>
+<p>Вычисляемые поля создаются чаще всего в табличных или ленточных формах для отображения столбца с какими-нибудь вычисленными значениями. Например, стоимость товара рассчитывается как значение выражения Цена * Количество. Для отображения таких расчетных данных используют два способа:</p>
+<ul>
+<li>Первый способ основан на том, что форма строится на базе запроса, в который включают вычисляемые столбцы. В форме создается текстовое поле, у которого в качестве источника данных указывается вычисляемый столбец запроса. Поле блокируется, чтобы пользователь не мог изменить данные в нем, ведь эти данные вычисляются в процессе выполнения запроса.</li>
+<li>Во втором случае форма может строиться прямо на базе таблицы. В ней создается текстовое поле, в котором в качестве источника данных указывается выражение, например = [Цена за единицу] * Количество. При этом в выражении необязательно указываются те поля, которые включены в форму, а любые поля базовой таблицы.</li>
+</ul>
+<p><strong>Замечание</strong></p>
+<p>При ссылках на поля в выражениях обязательно использование квадратных скобок, если название поля содержит пробелы; в остальных случаях можно обходиться без них.</p>
+<p>Первый способ в большинстве случаев предпочтительнее, т. к. такой запрос может быть использован не только в одной форме, но и в отчетах и в других формах. Примером такой организации расчетов может служить форма &#171;Подчиненная форма заказов&#187; (Orders Subform) базы данных &#171;Борей&#187;. Она основана на запросе &#171;Сведения о заказах&#187; (Order Details Extended), в котором создано вычисляемое поле &#171;ОтпускнаяЦена&#187; (ExtendedPrice), содержащее формулу:</p>
+<p>ОтпускнаяЦена:</p>
+<p>  CCur([Заказано].[Цена]*[Количество]*(1-[Скидка])/100}*100 </p>
+<p>в примере английской версии Access:</p>
+<p>ExtendedPrice:</p>
+<p>  CCur([Order Details].UnitPrice*[Quantity]*(1-[Discount])/100)*100 </p>
+<p>Свойство Данные (Control Source) элемента управления ОтпускнаяЦена</p>
+<p>(ExtendedPrice) в форме имеет значение &#171;ОтпускнаяЦена&#187; (ExtendedPrice) — имя вычисляемого поля запроса.</p>
+<p><strong>Замечание</strong></p>
+<p>В приведенной выше формуле CCur — это функция, которая преобразует значение выражения в тип  Денежный  (Currency).</p>
+<p> Создание вычисляемых полей для отображения итоговых значений </p>
+<p>Можно создать вычисляемые поля в форме, которые будут содержать итоговые значения для нескольких записей. Например, требуется рассчитать сумму счета или заказа, просуммировав данные по каждой позиции счета.</p>
+<p>Особенностью создания итогового поля в подчиненной форме является то,&#187; что в функции Sum нельзя использовать имя вычисляемого элемента управления, можно использовать только имя вычисляемого поля в базовом запросе. Если же суммируе-</p>
+<p>Хотя такое вычисляемое поле уже есть в базе данных &#171;Борей&#187;, рассмотрим в качестве примера процедуру его создания:</p>
+<ol>
+<li>Создайте в области примечаний формы &#171;Подчиненная форма заказов&#187; (Orders Subform), содержащей позиции заказа, вычисляемое текстовое поле. В качестве значения этого поля задайте итоговую сумму: =Sum( [ОтпускнаяЦена] ) (или =Sum( [ExtendedPrice])). То есть это поле рассчитывается как сумма значений поля &#171;ОтпускнаяЦена&#187; (ExtendedPrice) для всех позиций заказа (рис. 9.48).</li>
+<li>Так как это поле не отображается, когда форма выводится на экран в режиме Таблицы, нужно в главной форме — &#171;Заказы&#187; (Orders) — создать еще одно вычисляемое поле, для которого в качестве источника данных необходимо указать итоговое поле подчиненной формы (рис. 9.49):  =[Подчиненная форма заказов].Form1ПромежуточнаяСумма
+<p>или:</p>
+<p>  =[Orders Subform].Form1[Order Subtotal] </p>
+</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image08/44dc8786c293d995c95f288753928e0a.gif" width="330" height="294" alt=""><meta itemprop="width" content="330">
+<meta itemprop="height" content="294"></span></p>
+<p> Рис. 9.48.  Поле для вычисления итогового значения</p>
+<p>Особенностью создания итогового поля в подчиненной форме является то, что в функции Sum нельзя использовать имя вычисляемого элемента управления, можно использовать только имя вычисляемого поля в базовом запросе. Если же суммируемые значения вычисляются пряма в форме, то в формуле для итогового поля придется повторить выражение для расчета этих значений. Например, если бы элемент управления  ОтпускнаяЦена  (ExtendedPrice) рассчитывался по той же формуле в форме, т. е. в качестве источника данных для него стояло выражение:</p>
+<p>  =ССur ([Заказано]. [Цена]*[Количество]*(1-[Скидка])/100)*100, </p>
+<p>в свойстве  Данные  (Control Source) для элемента управления  ПромежуточнаяСумма  (Order Subtotal) пришлось бы ввести выражение</p>
+<p>  =Sum(CCur([Заказано].[Цена]*[Количество]*(1-[Скидка] ) /100)*100). </p>
+<p>Это еще один аргумент в пользу того, что лучше такие вычисления выполнять в базовом запросе.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image12/6b32b779146fa5ba1d5cca0a263fefeb.gif" width="344" height="341" alt=""><meta itemprop="width" content="344">
+<meta itemprop="height" content="341"></span></p>
+<p> Рис. 9.49.  Вычисляемое поле в главной форме &#171;Заказы&#187;</p>
+<p><strong>Замечание</strong></p>
+<p>Имена вычисляемых элементов управления нельзя использовать не только в функции Sum, но и в других статистических функциях, как агрегатных, так и в функциях по подмножеству.</p>
+<p> Использование статистических функций в формах </p>
+<p>При использовании статистических функций не обрабатываются записи, которые содержат пустое значение (Null) в указанных полях. Например, выражение Sum( [В наличии] + [Принято] &#8212; [Отпущено] &#8212; [Заказано] ) будет возвращать значение Null, если хотя бы одно из полей, участвующих в выражении, содержит пустое значение. Чтобы предотвратить такие ошибки в вычислениях, следует использовать функцию Nz, которая преобразует пустое значение в нулевое. Значит, описанное выше выражение должно выглядеть так:</p>
+<p>Sum(Nz([В наличии])+Nz([Принято])-Nz([Отпущено])-Nz([Заказано]))</p>
+<p>В табл. 9.3 приведены наиболее часто используемые в формах статистические функции  (см. также разд. <a href="https://taurion.ru/access/4/26">&#171;Функции&#187;</a><a href="https://taurion.ru/access/4/26">гл. 4</a>). </p>
+<table class="table_common zebra" width="700">
+<tbody>
+<tr class="header">
+<td>Функция</td>
+<td>Описание</td>
+</tr>
+<tr>
+<td>Sum</td>
+<td>Сумма значений поля</td>
+</tr>
+<tr>
+<td>Avg</td>
+<td>Среднее значение поля</td>
+</tr>
+<tr>
+<td>Min</td>
+<td>Минимальное значение поля</td>
+</tr>
+<tr>
+<td>Max</td>
+<td>Максимальное значение поля</td>
+</tr>
+<tr>
+<td>Count</td>
+<td>Количество значений поля</td>
+</tr>
+<tr>
+<td>DSum</td>
+<td>Сумма значений в указанном подмножестве записей</td>
+</tr>
+<tr>
+<td>DAvg</td>
+<td>Среднее значение в указанном подмножестве записей</td>
+</tr>
+<tr>
+<td>DCount</td>
+<td>Количество записей в подмножестве</td>
+</tr>
+<tr>
+<td>DLookup</td>
+<td>Значение конкретного поля в указанном подмножестве записей</td>
+</tr>
+<tr>
+<td>DMin, DMax</td>
+<td>Минимальное и максимальное значения поля в указанном подмножестве записей</td>
+</tr>
+</tbody>
+</table>
+<p> Таблица 9.3.  Статистические функции</p>
+<p>В таблице приведены и обычные статистические функции и статистические функции по подмножеству. В вычисляемых элементах управления форм могут использоваться и те и другие. При этом статистические, функции по подмножеству, как правило, используются, если требуется ограничить набор обрабатываемых записей, в противном случае используют простые статистические функции. У статистических функций по подмножеству задаются три аргумента: выражение, домен и критерий отбора. Выражение в данном случае может состоять из имени поля в домене, а также может быть комбинацией операций над полями в домене, константами, именами элементов управления (в форме), вызовами функций. Домен — это таблица, запрос или инструкция SQL, т. е. набор записей, являющийся источником данных для заданного выражения. Критерий — необязательный параметр, задающий условие отбора записей в домене, в виде предложения WHERE на языке SQL (но без самого ключевого слова WHERE). Все три параметра задаются в виде строкового значения. Результатом функции является обработка значений заданного выражения для всех выбранных по заданному критерию записей в домене.</p>
+<p>Ниже приводятся примеры использования статистических функций.</p>
+<p> Функция  DLookup  </p>
+<p>Обычно используется для вывода в форме значения поля из таблицы, не входящей в базовый запрос. Например, в форме &#171;Заказы&#187; (Orders) можно отобразить дополнительные поля из таблицы &#171;Клиенты&#187; (Customers), которые не были включены в базовый запрос. Например, чтобы отобразить значение поля &#171;Телефон&#187; (Phone), в качестве значения свойства  Данные  (Control Source) вычисляемого элемента управления нужно ввести следующее выражение:</p>
+<p>  =DLookup(&#171;[Телефон]&#187;; &#171;[Клиенты]&#187;; &#171;[КодКлиента] = &#8216;&#187; &amp; Forms!{Заказы]![КодКлиента]  &amp;  &#8216;&#187;&#187;) </p>
+<p>для английской версии Access:</p>
+<p>  =DLookUp(&#171;[Phone]&#187;;&#187;[Customers]&#187;;&#187;[CustomerlD] = &#8216;&#187;  &amp;  Forms![Orders]![CustomerlD] &amp; &#171;&#8216;&#187;) </p>
+<p>Критерием для выбора записи из таблицы &#171;Клиенты&#187; (Customers) является поле &#171;КодКлиента&#187; (CustomerlD) в форме &#171;Заказы&#187; (Orders).</p>
+<p><strong>Замечание</strong></p>
+<p>В данном случае выбор записей идет по полю текстового типа &#171;КодКлиента&#187; (CustomerlD), поэтому условие на его значение должно задаваться в виде строки, заключенной в кавычки или апострофы. Для этого необходима конкатенация заданного в условии значения с двух сторон с апострофом или кавычкой. Включение апострофа в строку не отличается от включения обычной буквы или цифры, а чтобы включить в строку символ кавычки, ее придется удвоить, чтобы она отличалась от кавычек, ограничивающих само строковое значение. Таким образом, если строка состоит из одной кавычки, она будет выглядеть так: &#171;&#187;&#187;&#187;, в нашем примере для задания условия на текстовое значение мы использовали апострофы.</p>
+<p> Функции  Dcount  и  DSum  </p>
+<p>Предположим, в форме &#171;Заказы&#187; (Orders) требуется создать вычисляемые поля для отображения количества заказов, сделанных клиентом, и общей суммы заказов. Для этого нужно создать два вычисляемых поля, а в качестве значений свойства  Данные  (Control Source) ввести следующие выражения:</p>
+<p>  =DCount(&#171;[КодЗаказа]&#187;; &#171;[Заказы]&#187;; &#171;[КодКлиента] = &#8216;&#187; &amp; Forms![Заказы]![КодКлиента] &amp; &#8216;&#187;&#187;) =DSum(&#171;[ОтпускнаяЦена]&#187;; &#171;&#8216;[Счета]&#187;; &#171;[КодКлиента] = &#8216;&#187; &amp; Forms![Заказы]![КодКлиента] &amp; &#171;&#8216;&#187;) </p>
+<p>Для английской версии Access, соответственно:</p>
+<p> =DCount(&#171;[OrderID]&#187;;&#187;[Orders]&#187;;&#187;[CustomerlD] = &#8216;&#187; &amp; Forms![Orders]![CustomerlD] &amp; &#171;&#8216;&#187;) =DSum(&#171;[ExtendedPrice]&#187;;&#187;[Invoices]&#187;;&#187;[CustomerlD] = &#8216;&#187; &amp; Forms![Orders]![CustomerlD] &amp; &#171;&#8216;&#187;)      Функция  DMax  </p>
+<p>Часто требуется организовать счетчик в одном из полей формы, например номер заказа должен при вводе каждой новой записи увеличиваться на единицу. Стандартный тип поля  Счетчик  (AutoNumber) не всегда подходит для этих целей, т. к. значение в поле такого типа нельзя вводить вручную. Если должна допускаться ручная корректировка номера заказа, удобнее для хранения номера заказа добавить в таблицу обычное числовое поле, а в форму поместить присоединенное к нему вычисляемое поле, у которого в свойстве  Значение по умолчанию  (Default Value) задано выражение:</p>
+<p>  =DMax(&#171;[КодЗаказа]&#187;; &#171;[Заказы]&#187;) + 1 </p>
+<p>Для английской версии:</p>
+<p>  =DMax(&#171;[OrderlD]&#187;;&#187;[Orders]&#187;) + 1. Рекомендации по оформлению форм </p>
+<p>В последнем разделе главы предлагаем вашему вниманию ряд рекомендаций по тому, как должны проектироваться формы, чтобы они выглядели профессионально. Возможно, наши советы покажутся вам тривиальными, однако опыт авторов в консультировании пользователей Access показывает, что даже простые и, казалось бы, очевидные правила на практике далеко не всегда выполняются. Если вы имеете большой опыт проектирования пользовательского интерфейса, можете смело пропустить этот раздел и перейти к изучению другого важнейшего типа объектов Access — отчетов.</p>
+<p> Размещение элементов управления в форме </p>
+<p>Если в форме требуется разместить много элементов управления — большое количество текстовых полей, полей со списком, флажков и кнопок, следует уделить внимание структуре формы. Форма состоит из нескольких разделов, в каждый из которых можно помещать необходимые элементы управления. Разделами формы являются заголовок и примечание формы, верхний и нижний колонтитулы и область данных  (см. разд. &#171;Структура формы&#187;гл. 5). </p>
+<p>В области заголовка обычно размещается не только заголовок формы, но заголовки полей, если это форма ленточного типа, некоторые вспомогательные поля, например для ввода критериев поиска записей и т. д. В области данных размещаются все поля, отображающие данные из базовой таблицы или запроса. Область примечания можно использовать для размещения командных кнопок или вывода информационных сообщений для пользователя. Каждая из этих областей может быть выделена своим цветом. Если элементов очень много, следует сделать форму многостраничной.</p>
+<p>Необходимо учесть, что при печати формы область заголовка будет присутствовать только на первой странице, а область примечания — только на последней.</p>
+<p> Размещение элементов управления в области данных </p>
+<p>Элементы управления в области данных формы должны размещаться в определенной последовательности, при определении которой рекомендуется принимать во внимание следующие факторы:</p>
+<ul>
+<li>частоту использования;</li>
+<li>важность;</li>
+<li>привычную последовательность (город — после страны, улица — после города и т. д.);</li>
+<li>схожесть с соответствующим документом.</li>
+</ul>
+<p>Связанные элементы управления следует группировать. Чаще всего группировка выполняется по функциональному признаку. Группы элементов должны иметь название и должны быть выделенными (например, рамкой).</p>
+<p> Внешний вид элементов управления </p>
+<p>Вот .несколько советов по оформлению элементов управления в форме. На первый взгляд, это совсем простые рекомендации, но следование им позволит сделать ваши формы существенно лучше, настолько, что они буду выглядеть как профессионально разработанные диалоговые окна.</p>
+<ul>
+<li>Поля для ввода данных должны быть выровнены и должны иметь одинаковую высоту. Обычно надписи выравниваются по правому краю, а текстовые поля — по левому. Расстояния между ними должны быть одинаковыми и достаточными, чтобы обеспечить визуальное отделение полей друг от друга (почаще пользуйтесь командами  Выровнять  (Align),  Размер  (Size),  Интервал по горизонтали  (Horizontal Spacing) и  Интервал по вертикали  (Vertical Spacing) меню  Формат  (Format)).</li>
+<li>Пользователь должен четко видеть разницу между различными категориями представленной информации, например между изменяемыми полями и неизменяемыми, обязательными для заполнения и необязательными.</li>
+<li>Все элементы, отображающие данные, должны быть подписаны, если пользователю не очевидно их назначение.</li>
+<li>Надпись должна отделяться от другой информации и располагаться слева или сверху от элемента, к которому она привязана, на расстоянии не менее одного пробела.</li>
+<li>Разные поля не должны иметь одинаковые надписи.</li>
+<li>Одинаковые поля в разных формах должны иметь одинаковые надписи.</li>
+<li>Там, где это возможно, необходимо предлагать пользователю выбор варианта вводимого значения. Это обеспечивается такими элементами, как список, поле со списком,группа.</li>
+<li>Курсор должен быть всегда хорошо видимым на фоне элементов.</li>
+</ul>
+<p> Формулировка надписей и инструкций </p>
+<p>Форма, предназначенная для ввода данных, должна включать инструкции для пользователя с описанием возможных действий. Обычно инструкции требуются, когда пользователь выбирает (активизирует) элемент управления в форме. Вот несколько общих правил для написания инструкций.</p>
+<ul>
+<li>Для описания действий нужно использовать известную пользователю терминологию.</li>
+<li>Во всех формах приложения стиль должен быть одинаковым.</li>
+<li>Если выбраны несколько действий, необходимо сообщать, в каком порядке они будут выполнены.</li>
+<li>Информация должна быть краткой, но достаточной, чтобы пользователь смог понять, что от него требуется или что он может сделать.</li>
+</ul>
+<p> Навигация в форме </p>
+<p>Одинаковые действия во всех формах должны выполняться единообразно, например все формы должны использовать одни и те же наборы клавиш для перемещения курсора по элементам управления. К счастью это условие выполнить просто, т. к. Access позволяет задать эти наборы клавиш в виде параметров, которые действуют во всех формах приложения. Вам нужно только выбрать один из предлагаемых вариантов в диалоговом окне  Параметры  (Options), которое появляется при выборе команды  Сервис, Параметры  (Tools, Options)  (см. также гл. 14).  Например, для перехода к следующему полю можно использовать клавиши &lt;ТаЬ&gt; и  &lt;вниз&gt;,  для перемещения к предыдущему полю — комбинацию клавиш &lt;Shift&gt;+&lt;Tab&gt; или клавишу  &lt;вверх&gt;,  для перемещения между записями — кнопки навигации в нижней части формы или клавишу &lt;Enter&gt;.</p>
+<p>Чтобы использовать именно такие комбинации клавиш для перехода по элементам в форме, необходимо установить значения переключателей на вкладке  Клавиатура  (Keyboard) диалогового окна  Параметры  (Options) следующим образом:</p>
+<ul>
+<li> Переход при нажатии Enter  (Move after enter) —  следующее поле  (Next field);</li>
+<li> Переход по клавише со стрелкой  (Arrow key behavior) —  следующий знак  (Next character);</li>
+<li> Поведение при входе в поле  (Behavior entering field) —  перейти в начало поля  (Go to start of field).</li>
+</ul>
+<p>В многостраничных формах для перелистывания &#8216;страниц используются по умолчанию клавиши &lt;Page Up&gt; и &lt;Page Down&gt;. Тем не менее рекомендуется для этих целей создать специальные кнопки, которые будут применяться в том случае, если пользователь работает с мышкой.</p>
+<p>При открытии формы курсор, как правило, должен позиционироваться в поле, расположенном в левом верхнем углу. Настройте соответствующим образом последовательность перехода по элементам формы с помощью команды  Вид, Последовательность перехода  (View, Tab Order).</p>
+<p>В любой форме для ввода данных пользователь должен иметь возможность:</p>
+<ul>
+<li>закрывать форму, сохраняя сделанные изменения;</li>
+<li>закрывать форму без сохранения (отменять изменения).</li>
+</ul>
+<p>И хотя, строго говоря, для выполнения этих действий можно обойтись уже имеющимися средствами, т. к. Access автоматически сохраняет запись при переходе к новой записи или закрытии формы, а отменить изменения можно с помощью клавиши &lt;Esc&gt;, мы все-таки рекомендуем создать специальные кнопки  Сохранение и Отмена,  т. к. такой вариант является более очевидным для пользователя.</p>
+<p> Использование цвета </p>
+<p>Цвет обычно привлекает взгляд, поэтому его следует использовать для того, чтобы обратить внимание пользователя на определенные области экрана, например; чтобы показать отношения или группировки, поскольку элементы одного цвета воспринимаются людьми как связанные. С помощью цвета можно также выделять поля, обязательные для заполнения. При выборе цветовых решений придерживайтесь следующих принципов.</p>
+<ul>
+<li>Избегать использования ярких цветов на больших областях, поскольку они имеют тенденцию оставаться перед глазами некоторое время, даже после того, когда взгляд будет переведен на другое изображение.</li>
+<li>Для фона должен использоваться неброский цвет (бледно-голубой, серый).</li>
+<li>Цвета белый, серый, черный должны использоваться для текстовых объектов, которые будут просматриваться в течение длительного времени.</li>
+<li>Цвета, выбранные для активного режима или цвета подсветки, должны обеспечивать максимальный контраст с цветом фона. Например, с черным фоном использование красного и синего должно быть минимизировано — белый, желтый, зеленый и сиреневый обеспечивают с черным фоном лучший контраст.</li>
+<li>Одновременно должно быть видно не более пяти разных цветов, а лучше всего использовать два или три цвета, т. к. использование красочного интерфейса может первоначально привлечь больше внимания, но затем вызовет напряжение при работе в течение длительного времени.</li>
+<li>Цвет не должен быть единственным индикатором свойства или функции. Вместе с цветом можно использовать другие визуальные эффекты, например курсив, подчеркивание и т. п.</li>
+<li>Красный цвет является наиболее значимым, он должен быть зарезервирован для важных предупреждений. Используйте его как можно реже, т. к. он ассоциируется с тревожными сообщениями.</li>
+<li>Красный цвет не должен отображаться на зеленом фоне, так же как и зеленый цвет на красном, поскольку эта цветовая комбинация может вызывать раздражение глаз.</li>
+<li>Синий не должен использоваться для текстовых символов, линий или границ, за исключением случая, когда объект является &#171;исчезающим&#187;, т. е. сливающимся с цветом фона. Синий цвет плохо виден и делает элементы размытыми и стертыми.</li>
+<li>Насыщенные красные и синие цвета не должны использоваться в смежных областях, поскольку это сочетание вызывает появление нежелательных визуальных эффектов в виде резкого ощущения глубины на изображаемом пространстве.</li>
+<li>Принятые цветовые решения необходимо строго соблюдать во всех формах приложения.</li>
+</ul>
+<p> Оформление в едином стиле </p>
+<p>Когда вы определитесь, какой стиль оформления подходит для форм вашего приложения, советуем выдерживать его при оформлении всех или большинства форм в нем. Удобнее всего сделать это, создав на основе такого оформления собственный автоформат или шаблон для оформления всех форм в приложении. Об автоформате и шаблоне оформления для форм уже говорилось  в гл. 5.  Такие средства оформления доступны и для форм, и для отчетов. Их применение очень похоже  (см. также разд. &#171;Применение автоформата&#187; и &#171;Параметры работы с формами&#187;гл. 5 и разд. &#171;Применение шаблона отчетов&#187;гл. 6). </p>
+<p> Выводы </p>
+<p>В этой главе мы подробно рассмотрели все основные типы элементов управления, научились создавать иерархические формы, содержащие подчиненные формы, многостраничные формы с использованием вкладок, всплывающие и модальные диалоговые окна. Мы показали вам, где обычно применяются вычисления в формах, а также рассказали, каких рекомендаций следует придерживаться при оформлении форм. Таким образом, мы осветили практически все возможности по конструированию нетривиальных форм, не требующие программирования.</p>
+<!-- toc empty -->	</div>
+<!-- .entry-content -->
+
+</article>
+
+
+
+
+
+
+
+
+
+<div class="social-buttons">
+<span class="social-button social-button--vkontakte main" data-social="vkontakte"><span>Поделиться в ВКонтакте</span></span><span class="social-button social-button--telegram " data-social="telegram"></span><span class="social-button social-button--odnoklassniki " data-social="odnoklassniki"></span><span class="social-button social-button--whatsapp " data-social="whatsapp"></span><span class="social-button social-button--viber " data-social="viber"></span>
+</div>
+
+<!--noindex-->
+<div class="author-box">
+    <div class="author-info">
+        <div class="author-box__ava">
+                    </div>
+
+        <div class="author-box__body">
+            <div class="author-box__author">
+                Автор А. Днепров            </div>
+            <div class="author-box__description">
+                <p>Обучаю основам работы с офисными программами.</p>
+            </div>
+
+            
+        </div>
+    </div>
+</div>
+<!--/noindex-->
+    <meta itemprop="author" content="А. Днепров">
+<meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/glava-sozdanie-sostavnyh-form" content="Глава 9. Создание составных форм">
+    <meta itemprop="dateModified" content="2024-09-27">
+<div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+<div class="related-posts">
+<div class="related-posts__header">Вам также может понравиться</div>
+<div class="post-cards post-cards--vertical">
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/kak-sdelat-massovuyu-zamenu-formul"><img width="311" height="230" src="/image04/2408fadbc9163d5aa4994580cfc152cd.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/kak-sdelat-massovuyu-zamenu-formul">Как сделать массовую замену формул</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/kak-udalit-lishnie-i-pustye-stranitsy-v-excel">Как удалить лишние и пустые страницы в Excel</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/preobrazovanie-teksta-v-tablitsu"><img width="345" height="122" src="/image14/7a0043c9bf012cc129b22376cfebb2a9.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/preobrazovanie-teksta-v-tablitsu">Преобразование текста в таблицу</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/kak-delat-skrinshoty-s-vysokim-razresheniem-v-windows">Как делать скриншоты с высоким разрешением в Windows 11/10</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/osobennosti-raboty-s-mnogostranichny"><img width="213" height="230" src="/image13/6f8f9694c11ee322ff9d3675b0b8ba07.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/osobennosti-raboty-s-mnogostranichny">13.1 Особенности работы с многостраничными документами</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/kak-sdelat-izmeneniya-vnutri-yacheyki-p"><img width="345" height="93" src="/image27/f6550fd3bdfdfdbe500536441d5d252e.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/kak-sdelat-izmeneniya-vnutri-yacheyki-p">Как сделать изменения внутри ячейки. Принудительный перенос</a></div>
+    </div>
+</div>
+</div>
+            </main><!-- #main -->
+        </div>
+<!-- #primary -->
+
+        
+    
+
+    </div>
+<!--.site-content-inner-->
+
+    
+</div>
+<!--.site-content-->
+
+    
+    
+
+<div class="site-footer-container">
+
+    
+
+    <footer id="colophon" class="site-footer full" itemscope itemtype="http://schema.org/WPFooter">
+        <div class="site-footer-inner fixed">
+
+            
+            
+<div class="footer-bottom">
+    <div class="footer-info">
+        <div class="footer-copyright">© 2024 Самоучитель справочник по офисным программам. <a href="/o-nas" rel="nofollow">О нас | Контакты</a> | <a href="/map" rel="nofollow">Карта сайта</a>
+</div>
+        <div class="footer-under-copyright"></div>
+	        </div>
+
+    </div>
+        </div>
+    </footer><!--.site-footer-->
+</div>
+
+
+            <button type="button" class="scrolltop js-scrolltop" data-mob="on"></button>
+    
+                    <div class="top-line js-top-line">
+            <div class="top-line-inner fixed">
+
+                <div class="top-line__title">Глава 9. Создание составных форм</div>
+<div class="top-line__like"><span class="btn-fb-like btn-top-like social-button--vkontakte" data-social="vkontakte"><span>Поделиться в ВКонтакте</span></span></div>
+<div class="top-line__post">
+<div class="top-line__post_thumbnail"><a href="/funktsiya-or-v-excel"></a></div>
+<div class="top-line__post_title"><a href="/funktsiya-or-v-excel">Функция OR в Excel</a></div>
+</div>            </div>
+        </div>
+    
+</div>
+<!-- #page -->
+
+<script>var pseudo_links = document.querySelectorAll(".pseudo-clearfy-link");for (var i=0;i<pseudo_links.length;i++ ) { pseudo_links[i].addEventListener("click", function(e){   window.open( e.target.getAttribute("data-uri") ); }); }</script><script>document.addEventListener("copy", (event) => {var pagelink = "\nИсточник: /glava-sozdanie-sostavnyh-form";event.clipboardData.setData("text", document.getSelection() + pagelink);event.preventDefault();});</script><script type="text/javascript" id="yelly-scripts-js-extra">
+/* <![CDATA[ */
+var settings_array = {"rating_text_average":"среднее","rating_text_from":"из","lightbox_display":"1"};
+var wps_ajax = {"url":"\/wp-admin\/admin-ajax.php","nonce":"e4ca9d4bd8"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="/js/scripts.min.js" id="yelly-scripts-js"></script>
+
+
+
+<div class="image-hover-social-buttons" style="display: none;">
+<div class="social-button social-button--vkontakte js-share-link" data-uri="https://vk.com/share.php?url=%2Fglava-sozdanie-sostavnyh-form"></div>
+<div class="social-button social-button--telegram js-share-link" data-uri="https://t.me/share/url?url=%2Fglava-sozdanie-sostavnyh-form&text=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+9.+%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5+%D1%81%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BD%D1%8B%D1%85+%D1%84%D0%BE%D1%80%D0%BC"></div>
+<div class="social-button social-button--odnoklassniki js-share-link" data-uri="https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&service=odnoklassniki&st.shareUrl=%2Fglava-sozdanie-sostavnyh-form"></div>
+<div class="social-button social-button--whatsapp js-share-link" data-uri="whatsapp://send?url=%2Fglava-sozdanie-sostavnyh-formtext=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+9.+%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5+%D1%81%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BD%D1%8B%D1%85+%D1%84%D0%BE%D1%80%D0%BC"></div>
+<div class="social-button social-button--viber js-share-link" data-uri="viber://forward?url=%2Fglava-sozdanie-sostavnyh-formtext=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+9.+%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5+%D1%81%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BD%D1%8B%D1%85+%D1%84%D0%BE%D1%80%D0%BC"></div>
+</div>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(93345646, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/93345646" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>

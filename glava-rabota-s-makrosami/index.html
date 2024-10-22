@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<title>Глава 11. Работа с макросами &#8212; learn-office</title>
+	<meta name="description" content="Работа с макросами Основной набор средств Microsoft Access, который мы рассматривали в предыдущих главах книги, ориентирован на пользователей, не">
+	<link rel="canonical" href="/glava-rabota-s-makrosami">
+	<meta property="og:locale" content="ru_RU">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Глава 11. Работа с макросами &#8212; learn-office">
+	<meta property="og:description" content="Работа с макросами Основной набор средств Microsoft Access, который мы рассматривали в предыдущих главах книги, ориентирован на пользователей, не">
+	<meta property="og:url" content="/glava-rabota-s-makrosami">
+	<meta property="og:site_name" content="Excel-jet">
+	<meta property="article:published_time" content="2024-08-18T08:04:39+00:00">
+	<meta property="og:image" content="/image26/ef59dc8064eff36e0aa4d2069dc156e3.gif">
+	<meta property="og:image:width" content="487">
+	<meta property="og:image:height" content="445">
+	<meta property="og:image:type" content="image/gif">
+	<meta name="author" content="А. Днепров">
+
+
+<style id="wp-block-library-theme-inline-css" type="text/css">.wp-block-audio :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio :where(figcaption){color:#ffffffa6}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed :where(figcaption){color:#ffffffa6}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:#ffffffa6}:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table :where(figcaption){color:#ffffffa6}.wp-block-video :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video :where(figcaption){color:#ffffffa6}.wp-block-video{margin:0 0 1em}:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}</style>
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 19.5px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36.5px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--normal: 22px;--wp--preset--font-size--huge: 49.5px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="google-fonts-css" href="https://fonts.googleapis.com/css?family=Roboto%3A400%2C400i%2C700&#038;subset=cyrillic&#038;display=swap" media="all">
+<link rel="stylesheet" id="yelly-style-css" href="/css/style.min.css" media="all">
+
+<style>.pseudo-clearfy-link { color: #008acf; cursor: pointer;}.pseudo-clearfy-link:hover { text-decoration: none;}</style>
+<link rel="preload" href="/fonts/icomoon.ttf" as="font" crossorigin>
+    <style>.scrolltop{width:50px}.scrolltop:before{content:"\21d1"}.entry-content a, .entry-content a:visited, .spanlink, .comment-reply-link, .pseudo-link, .widget_calendar a, .widget_recent_comments a, .child-categories ul li a{color:#0000ff}.child-categories ul li a{border-color:#0000ff}a:hover, a:focus, a:active, .spanlink:hover, .top-menu ul li>span:hover, .main-navigation ul li a:hover, .main-navigation ul li span:hover, .footer-navigation ul li a:hover, .footer-navigation ul li span:hover, .comment-reply-link:hover, .pseudo-link:hover, .child-categories ul li a:hover{color:#1e73be}.top-menu>ul>li>a:before, .top-menu>ul>li>span:before{background:#1e73be}.child-categories ul li a:hover, .post-box--no-thumb a:hover{border-color:#1e73be}.post-box--card:hover{box-shadow: inset 0 0 0 1px #1e73be}.post-box--card:hover{-webkit-box-shadow: inset 0 0 0 1px #1e73be}@media (min-width: 768px){body{background-attachment: scroll}}body{font-size:17px;}@media (max-width: 991px){.widget-area{display: block; margin: 0 auto}}</style>
+    <!-- Yandex.RTB -->
+<script>window.yaContextCb=window.yaContextCb||[]</script>
+<script src="https://yandex.ru/ads/system/context.js" async></script>	
+</head>
+<body class="post-template-default single single-post postid-623 single-format-standard wp-embed-responsive sidebar-right">
+<div id="page" class="site">
+    <a class="skip-link screen-reader-text" href="#content">Перейти к контенту</a>
+
+    
+    
+    <div class="search-screen-overlay js-search-screen-overlay"></div>
+    <div class="search-screen js-search-screen">
+        
+<form role="search" method="get" class="search-form" action="/">
+    <label>
+        <span class="screen-reader-text">Search for:</span>
+        <input type="search" class="search-field" placeholder="Поиск..." value="" name="s">
+    </label>
+    <button type="submit" class="search-submit"></button>
+</form>    </div>
+
+    
+
+<header id="masthead" class="site-header full" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="site-header-inner fixed">
+
+        <div class="humburger js-humburger">
+<span></span><span></span><span></span>
+</div>
+
+        
+<div class="site-branding">
+
+    <div class="site-branding__body"><div class="site-title"><a href="/">Excel-jet</a></div></div>
+</div>
+<!-- .site-branding -->
+
+    
+    <nav id="site-navigation" class="main-navigation full">
+        <div class="main-navigation-inner fixed">
+            <div class="menu-menyu-container"><ul id="header_menu" class="menu">
+<li id="menu-item-6695" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-6695">
+<a href="/excel">Excel</a>
+<ul class="sub-menu">
+	<li id="menu-item-6709" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6709"><a href="/excel/functions">Функции</a></li>
+</ul>
+</li>
+<li id="menu-item-6697" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6697"><a href="/microsoft-word">Word</a></li>
+<li id="menu-item-6696" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6696"><a href="/powerpoint">PowerPoint</a></li>
+<li id="menu-item-6698" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6698"><a href="/outlook">Outlook</a></li>
+</ul></div>        </div>
+    </nav><!-- #site-navigation -->
+
+    
+<div class="header-search"><span class="search-icon js-search-icon"></span></div>    </div>
+</header><!-- #masthead -->
+
+
+
+    
+    
+    <div id="content" class="site-content fixed">
+
+        
+        <div class="site-content-inner">
+    
+        
+        <div id="primary" class="content-area" itemscope itemtype="http://schema.org/Article">
+            <main id="main" class="site-main">
+
+                
+<article id="post-623" class="article-post post-623 post type-post status-publish format-standard has-post-thumbnail  category-excel">
+
+    
+        
+        <header class="entry-header"><h1 class="entry-title" itemprop="headline">Глава 11. Работа с макросами</h1></header>
+        
+        
+        
+    
+    
+    <div class="entry-meta">
+<span class="entry-time"><span class="entry-label">Время чтения</span> 51 мин.</span><span class="entry-date"><span class="entry-label">Опубликовано</span> <time itemprop="datePublished" datetime="2024-08-18">18.08.2024</time></span>
+</div>
+	<div class="entry-content" itemprop="articleBody">
+		<p>Работа с макросами </p>
+<p>Основной набор средств Microsoft Access, который мы рассматривали в предыдущих главах книги, ориентирован на пользователей, не владеющих языками программирования. Для программистов же к этим средствам добавлены  макросы  (небольшие программы на языке макрокоманд системы Access) и  модули  (процедуры на языке Visual Basic for Application, VBA). С их помощью можно существенно расширить функциональные возможности создаваемого вами приложения и настроить его на нужды конкретных пользователей. В этой главе мы познакомимся с одним из этих средств — макросами и одним из языков программирования Access — языком макрокоманд. С модулями и языком VBA мы вас познакомим  в гл. 13, </p>
+<p>Итак, мы будем обсуждать следующие вопросы:</p>
+<ul>
+<li>Понятие макроса</li>
+<li>Использование макросов в приложениях-</li>
+<li>Создание макросов и групп макросов</li>
+<li>Задание условий для управления процессом выполнения макроса</li>
+<li>Различные способы запуска макросов</li>
+<li>Советы по отладке макросов</li>
+<li>Обработка событий в формах и отчетах с помощью макросов</li>
+<li>Преобразование макросов в процедуры VBA</li>
+</ul>
+<p> Использование макросов в базе данных Microsoft Access </p>
+<p>С помощью макросов можно выполнить практически все действия над объектами Access из тех, которые были описаны в предыдущих главах.</p>
+<p>Макрос в Access представляет собой структуру, состоящую из одной или нескольких макрокоманд, которые выполняются либо последовательно, либо в порядке, заданном определенными условиями. Набор макрокоманд в Access очень широк, с помощью макросов можно реализовать многое из того, что позволяют сделать процедуры на VBA. Каждая макрокоманда имеет определенное имя и, возможно, один или несколько аргументов, которые задаются пользователем. Например, при использовании макрокоманды ОткрытьФорму (OpenForm) в качестве аргументов необходимо задать, по крайней мере, имя открываемой формы и режим вывода ее на экран.</p>
+<p>В табл. 11.1 содержится список макрокоманд Microsoft Access 2002, сгруппированных по категориям: работа с данными в формах и отчетах; выполнение команд, макросов, процедур и запросов; работа с объектами; импорт/экспорт данных и объектов и прочие. В категорию &#171;Прочие&#187; собраны все макрокоманды, которые позволяют влиять на интерфейс приложения.</p>
+<table class="table_common zebra" width="700">
+<tbody>
+<tr>
+<td> Категория </td>
+<td>Назначение</td>
+<td>Макрокоманда</td>
+</tr>
+<tr>
+<td>Работа с данными в формах и отчетах</td>
+<td>Отбор данных</td>
+<td>Применить Фильтр (ApplyFilter)</td>
+</tr>
+<tr>
+<td></td>
+<td>Перемещение по данным</td>
+<td>СледующаяЗапись (FindNext) НайтиЗапись (FindRecord) КЭлементуУправления (GoToControl) НаСтраницу (GoToPage) НаЗапись (GoToRecord)</td>
+</tr>
+<tr>
+<td></td>
+<td>Обновление данных или экрана</td>
+<td>Обновление (Requery) ПоказатьВсеЗаписи (ShowAllRecords)</td>
+</tr>
+<tr>
+<td>Выполнение</td>
+<td>Выполнение команды</td>
+<td>Выполнить Команду (RunComraand)</td>
+</tr>
+<tr>
+<td></td>
+<td>Выполнение макроса, процедуры или запроса</td>
+<td>ЗапускМакроса (RunMacro) Залуск Программы (RunCode) ОткрытьЗапрос (OpenQuery) 3anycк 3anpoca SQL (RunSQL)</td>
+</tr>
+<tr>
+<td></td>
+<td>Выполнение другого приложения</td>
+<td>Запуск Приложения (RunApp)</td>
+</tr>
+<tr>
+<td></td>
+<td>Прерывание выполнения</td>
+<td>Отменить Событие (CancelEvent) Остановить ВсеМакросы (StopAllMacros) ОстановитьМакрос (StopMacro)</td>
+</tr>
+<tr>
+<td></td>
+<td>Выход из Microsoft Access</td>
+<td>Выход (Quit)</td>
+</tr>
+<tr>
+<td>Импорт/экспорт</td>
+<td>Передача объектов Microsoft Access в другие приложения</td>
+<td>Вывести В Формате (OutputTo) ОтправитьОбъект (SendObject)</td>
+</tr>
+<tr>
+<td></td>
+<td>Преобразование формата данных</td>
+<td>Преобразовать БазуДанных (Transfer Database) ПереносБазыДанныхSQL (TransferSQLDat abase) Преобразовать ЭлектроннуюТаблицу (Transfer Spreadsheet) ПреобразоватьТекст (TransferText )</td>
+</tr>
+<tr>
+<td>Работа с объектами</td>
+<td>Копирование, переименование и сохранение объекта</td>
+<td>КопироватьОбъект (CopyObject) Копировать Файл БазыДанных (CopyDatabase File) Переименовать (Rename) Сохранить (Save)</td>
+</tr>
+<tr>
+<td>Прочие</td>
+<td>Вывод на экран или скрытие встроенной или специальной панели инструментов Подача звукового сигнала</td>
+<td>ПанельИнструментов (ShowToolbar) Сигнал (Веер)</td>
+</tr>
+</tbody>
+</table>
+<p> Таблица 11.1.  Макрокоманды Microsoft Access 2002</p>
+<p>Как видно из этой таблицы, действия, которые могут быть выполнены с помощью макросов, очень разнообразны. Даже если вы не будете использовать макросы в своих приложениях, имеет смысл изучить эти макрокоманды, поскольку их можно использовать и в процедурах VBA, как будет показано далее  (см. <a href="https://taurion.ru/access/13">гл. 13</a>). </p>
+<p>По сравнению с предыдущей версией Access, в Microsoft Access 2002 появились три новые макрокоманды:</p>
+<p>ПереносБазыДанныхSQL (TransferSQLDatabase) — переносит базу данных Microsoft SQL Server 7.0 и выше на другой сервер;</p>
+<p>КопироватьФайлБазыДанных(CopyDatabaseFile) — выполняет копирование текущей базы данных Microsoft SQL Server 7.0 и выше, присоединенной к проекту Access;</p>
+<p>ОткрытьФункцию (OpenFunction) — выполняет функцию, определенную пользователем, в проекте Access. Эта функция- представляет собой запрос, который, используя входные параметры, возвращает результаты так же, как и хранимая процедура.</p>
+<p>Использование макросов оправдано тем, что их легко создавать, и для этого не нужно изучать синтаксис языка программирования. Как будет показано в следующем разделе, для создания макроса требуется знать лишь основные приемы работы в Microsoft Access и Windows, такие как перетаскивание объектов из окна  База данных  (Database) в специальное окно —  Конструктор макросов  (Macro Design), выбор действия из списка и ввод выражений в качестве аргументов макрокоманды. Поэтому, если очень не хочется изучать синтаксис языка VBA или это представляется слишком трудным, смело применяйте макросы, и вы получите достаточно функциональное приложение.</p>
+<p>Как уже говорилось выше, основное назначение макросов — это создание удобного интерфейса приложения: чтобы формы и отчеты открывались при нажатии кнопок в форме или на панели инструментов или же привычным выбором команды меню; чтобы при открытии приложения пользователь видел на экране не окно  База данных  (Database), наполненное множеством таблиц, запросов, форм и отчетов, а некую понятную форму, с помощью которой можно было бы сразу производить желаемые действия и т. д.</p>
+<p>С помощью макросов можно создать удобные меню и панели инструментов для приложения, и чуть позже мы опишем, как это сделать.</p>
+<p>Однако использование макросов имеет и некоторые недостатки, о которых здесь уместно сказать.</p>
+<ul>
+<li>Возможности макрокоманд ограничены по сравнению с возможностями языка VBA, поэтому в ряде случаев без программирования на VBA не обойтись, хотя сначала нужно быть уверенным, что эти дополнительные возможности действительно нужны. Язык VBA предоставляет более широкие возможности для работы с данными, позволяет использовать механизм программирования объектов для связи с другими приложениями, вызывать функции из библиотек динамической загрузки (DLL) Windows и создавать собственные специализированные функции.</li>
+<li>Макросы можно использовать практически везде, где применяются процедуры VBA, однако процедуры VBA, как правило, выполняются быстрее.</li>
+<li>Макросы являются объектами, существующими отдельно от форм и отчетов, в которых они используются, поэтому, когда этих объектов становится очень много, их поддержка достаточно трудоемка. Процедуры обработки событий VBA являются неотъемлемой частью форм и отчетов, и в этом есть свои преимущества. Например, при переносе форм и отчетов из одной базы данных в другую с ними автоматически переносятся связанные процедуры.</li>
+</ul>
+<p>Тем не менее, как уже отмечалось, во многих случаях использование макросов вполне оправдано, т. к. это существенно упрощает и ускоряет разработку приложения. С помощью макросов можно создавать небольшие однопользовательские приложения, хотя при создании многопользовательских или клиент-серверных приложений, где скорость работы приложения критична, лучше применять VBA.</p>
+<p> Создание макросов </p>
+<p>В Microsoft Access существует специальное средство для создания макросов — Конструктор макросов (Macro Design). Рассмотрим процесс создания макроса с помощью Конструктора.</p>
+<p> Конструктор макросов </p>
+<p>Открыть окно  Конструктор макросов  (Macro Design) для создания нового макроса можно двумя способами:</p>
+<ol>
+<li>Раскройте список макросов в окне  База данных  (Database), щелкнув левой кнопкой мыши по ярлыку  Макросы  (Macros), и нажмите кнопку  Создать  (New) в верхней части окна (рис. 11.1).</li>
+<li>Щёлкните по стрелке вниз на кнопке  Новый объект  (New Object) на панели инструментов  База данных  (Database) и выберите элемент  Макрос  (Macro).</li>
+</ol>
+<p>Окно Конструктора макросов построено аналогично окну Конструктора таблиц, т. е. разделено по горизонтали на две части: панель описаний и панель аргументов.</p>
+<p>Верхняя часть окна Конструктора — панель описаний — состоит из нескольких столбцов. По умолчанию на этой панели выводится два столбца: &#171;Макрокоманда&#187; (Action) и &#171;Примечание&#187; (Comments). Панель описаний позволяет определить последовательность макрокоманд, из которых состоит макрос.</p>
+<p>Строка в столбце &#171;Макрокоманда&#187; (Action) представляет собой поле со списком, в котором можно выбрать нужную макрокоманду.</p>
+<p>Строка в столбце &#171;Примечание&#187; (Comments) — это обычное текстовое поле, в которое можно ввести комментарий, описывающий выполняемое действие.</p>
+<p>Когда поле &#171;Макрокоманда&#187; (Action) заполнено, в нижней части окна Конструктора макросов появляется панель аргументов, предназначенная для ввода значений аргументов соответствующей макрокоманды. Список полей на этой панели зависит от выбранной макрокоманды и может отсутствовать, если макрокоманда не имеет аргументов. Таким образом, при создании макросов не нужно запоминать список аргументов для каждой макрокоманды.</p>
+<p>На рис. 11.1 проиллюстрирован выбор макрокоманды Применить Фильтр (ApplyFilter). На панели аргументов имеются два поля, которые позволяют задать имя фильтра и условие отбора записей. Для того чтобы задать условие отбора записей, можно воспользоваться Построителем выражений  (см. разд. <a href="https://taurion.ru/access/4/27">&#171;Создание выражений с помощью Построителя выражений&#187;</a><a href="https://taurion.ru/access/4">гл. 4</a>). </p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" decoding="async" src="/image26/ef59dc8064eff36e0aa4d2069dc156e3.gif" width="487" height="445" alt=""><meta itemprop="width" content="487">
+<meta itemprop="height" content="445"></span></p>
+<p> Рис. 11.1.  Конструктор макросов и панель аргументов</p>
+<p>Такой макрос можно использовать в форме или отчете для того, чтобы ограничить число отображаемых записей.</p>
+<p><strong>Замечание</strong></p>
+<p>Для быстрого переключения между панелями описаний и аргументов, так же как при работе с таблицами и запросами в режиме Конструктора, можно использовать клавишу &lt;F6&gt;.</p>
+<p>Существует еще один очень простой способ ввода макрокоманды. Допустим, нужно создать макрос, который должен открывать форму &#171;Клиенты&#187; (Customers) в приложении &#171;Борей&#187; (Northwind). Для этого в окне  База данных  (Database) необходимо щелкнуть по ярлыку  Формы  (Forms), затем, используя панель инструментов (способ 2), открыть окно  Конструктор макросов  (Macro Design) и перетащить с помощью мыши форму &#171;Клиенты&#187; (Customers) в поле &#171;Макрокоманда&#187; (Action) окна Конструктора макросов.</p>
+<p> Совет </p>
+<p>Для удобства перетаскивания объектов из окна База данных (Database) в форму выберите команду Окно, Слева направо (Window, Tile Vertically), чтобы расположить окна на экране рядом.</p>
+<p>Тогда в поле &#171;Макрокоманда&#187; (Action) автоматически появится макрокоманда ОткрытьФорму (OpenForm) (рис. 11.2), а на панели аргументов автоматически заполнятся поля: в поле &#171;Имя формы&#187; (Form Name) появится имя формы &#171;Клиенты&#187; (Customers), в поле &#171;Режим&#187; (View) — значение по умолчанию Форма (Form), в поле &#171;Режим окна&#187; (Window Mode) — значение  Обычное  (Normal). Остальные поля останутся пустыми. Мы можем в этой же макрокоманде задать фильтр для отбора записей. Для этого введем в поле &#171;Имя фильтра&#187; (Filter Name) имя какого-нибудь фильтра, например &#171;Менеджеры по продажам&#187;, который мы строили при изучении запросов  (см. разд. <a href="https://taurion.ru/access/4/11">&#171;Создание запроса из фильтра&#187;</a><a href="https://taurion.ru/access/4">гл. 4</a>). </p>
+<p>Кроме того, можно сделать записи в этой форме недоступными для изменений, для чего в поле  Режим данных  (Data Mode) необходимо ввести значение  Только чтение  (Read Only).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" decoding="async" src="/image02/0c908e4850e4444718f3ce21e29739c9.gif" width="519" height="498" alt=""><meta itemprop="width" content="519">
+<meta itemprop="height" content="498"></span></p>
+<p> Рис. 11.2.  Автоматическое создание макрокоманд путем перетаскивания объектов</p>
+<p>Аналогично можно создавать макрокоманды, перетаскивая из окна  База данных  (Database) таблицы, запросы, отчеты и другие макросы. При этом в окне Конструктора макросов будут появляться соответствующие макрокоманды: ОткрытьТаблицу (ОрепТаblе), ОткрытьЗапрос (OpenQuery) , ОткрытьОтчет (OpenReport), ЗапускМакроса(RunMacro).</p>
+<p>Для ввода аргументов макрокоманды чаще всего требуется выбирать значения из списков или вводить выражения. Для ввода выражений можно воспользоваться Построителем выражений, кнопка которого находится справа от поля аргумента. Еще одна кнопка Построителя выражений находится на панели инструментов. Как и в других случаях, перед выражением нужно ставить знак равенства (=). Исключения составляют аргумент  Выражение  (Expression) макрокоманды ЗадатьЗначение (Setvalue) и аргумент  Число повторений  (Repeat Count) макрокоманды-ЗапускМакроса (RunMacro). Если ввести знак равенства перед выражением, задающим значение этих аргументов, то оно будет вычисляться дважды, что может привести к нежелательным результатам.</p>
+<p>Если в качестве аргумента макрокоманды необходимо задать имя объекта базы данных, то его можно либо ввести с помощью клавиатуры, либо выбрать из раскрывающегося списка, либо указать название объекта, перетащив его из окна базы данных.</p>
+<p>Итак, созданная нами макрокоманда будет открывать форму &#171;Клиенты&#187; (Customers) в режиме Только чтение (Read Only) и показывать в ней только менеджеров по продажам. Как уже было сказано ранее, макрос может содержать последовательность из нескольких макрокоманд. Поэтому в этом же макросе в следующей строке мы выберем макрокоманду Сообщение (MsgBox), которая после открытия формы будет отображать диалоговое окно с сообщением о том, какие клиенты представлены в форме. Для этого введем в поле  Сообщение  (Message) на панели аргументов текст сообщения, например Установлен фильтр Менеджеры по продажам, остальные поля можем оставить без изменения. Аргумент  Сигнал  (Веер) определяет, будет ли вывод сообщения сопровождаться звуковым сигналом. Аргумент  Тип  (Туре) определяет вид диалогового окна сообщения. Аргумент  Заголовок  (Title) позволяет задать текст, который будет выведен в заголовке окна сообщения.</p>
+<p>Если база данных большая, отбор записей в форме может занять некоторое время, поэтому рекомендуется вывести на экран курсор в форме песочных часов, который будет показывать, что идет обработка данных. Для того чтобы сделать это, воспользуемся макрокомандой ПесочныеЧасы (Hourglass). Макрокоманды в макросе выполняются в той последовательности, в которой они записаны в столбце &#171;Макрокоманда&#187; (Action), т. е. сверху вниз. Макрокоманду ПесочныеЧасы (Hourglass) следует поставить первой, т. к. курсор должен измениться перед выводом формы. Таким образом, нам нужно вставить новую строку на панели описаний. Для этого установим курсор в первую строку панели и нажмем кнопку  Добавить строки  (Insert Rows) на панели инструментов или просто клавишу &lt;Insert&gt;. Появится пустая строка. В этой строке в поле &#171;Макрокоманда&#187; (Action) выберем макрокоманду ПесочныеЧасы (Hourglass). В поле &#171;Включить&#187; (Hourglass On) панели аргументов появится значение Да (Yes), установленное по умолчанию, что нам и нужно. Чтобы вернуть первоначальный вид указателю мыши, в конце созданного макроса нужно ввести такую же макрокоманду ПесочныеЧасы (Hourglass), но со значением Нет (No) аргумента  Включить  (Hourglass On).</p>
+<p>Строго говоря, эту макрокоманду лучше поставить перед макрокомандой вывода сообщения на экран. Сделать это элементарно, поскольку макрокоманды легко меняются местами с помощью мыши. Чтобы поменять две последние макрокоманды местами, выделите последнюю строку, щелкнув левой кнопкой мыши по области выделения строк (слева в окне Конструктора) и перетащите строку вверх. Горизонтальная линия показывает место нового положения строки. Отпустите кнопку мыши, когда эта линия окажется над предпоследней строкой.</p>
+<p>Теперь остается только сохранить созданный макрос. Для этого можно выбрать в меню  Файл  (File) команду  Сохранить как  (Save As) или нажать клавишу &lt;F12&gt;. Появится окно сохранения макроса. Введите в поле ввода имя макроса, соблюдая правила именования объектов Access, например Менеджеры по продажам.</p>
+<p><strong>Замечание</strong></p>
+<p>В Microsoft Word и Excel имеются средства автоматической записи макросов. Эти средства очень удобны для изучения VBA, поскольку позволяют автоматически создать процедуру, включив запись макроса, выполнив необходимые действия и остановив запись. Тогда все действия пользователя, выполняемые после включения записи и до ее остановки, преобразуются в текст процедуры VBA. Затем этот текст можно просмотреть и отредактировать с помощью редактора VBA. В Microsoft Access средств автоматической записи макросов нет так же, как нет и средств автоматической генерации кода VBA (за исключением того, что создают мастера).</p>
+<p> Создание групп макросов </p>
+<p>При разработке приложения с использованием макросов количество макросов может оказаться очень большим. Поэтому важно хорошо организовать доступ к нужным макросам. Для этого в одном объекте  Макрос  (Macro) можно объединить несколько макросов. Например, рекомендуется все макросы, связанные с событиями в форме или отчете, объединить в отдельный объект, соответствующий данной форме или отчету. Для того чтобы можно было это сделать, каждый макрос группы должен иметь свое имя, а имя объекта  Макрос  (Macro) будет являться именем группы макросов.</p>
+<p>Чтобы создать группу макросов:</p>
+<ol>
+<li>Откройте Конструктор макросов одним из тех способов, которые были описаны в предыдущем разделе.</li>
+<li>Нажмите кнопку  Имена макросов  (Macro Name) на панели инструментов. На панели описаний в окне Конструктора появится еще один столбец — &#171;Имя макроса&#187; (Macro Name) (рис. 11.3).</li>
+<li>В этот столбец введите имя первого макроса. Остальные поля данной строки лучше оставить пустыми — это облегчит перемещение и копирование макрокоманд.</li>
+<li>Начиная со следующей строки, введите все макрокоманды макроса и соответствующие аргументы для каждой макрокоманды.</li>
+<li>Пропустите одну строку.</li>
+<li>Повторите шаги 3—5 для каждого макроса.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image20/b98b90993248bdb1b4d7578619093943.gif" width="519" height="383" alt=""><meta itemprop="width" content="519">
+<meta itemprop="height" content="383"></span></p>
+<p> Рис. 11.3.  Создание группы макросов</p>
+<p>На рис. 11.З в окне Конструктора представлен макрос &#171;Сотрудники&#187; (Employees) базы данных (Northwind). Для указания конца макроса не требуется отдельной макрокоманды. Access продолжает выполнение макроса, входящего в группу, пока не обнаружит строку, содержащую имя в столбце &#171;Имя макроса&#187; (Macro Name), либо пока не дойдет до последней строки окна макросов.</p>
+<p>При обработке макроса пустые строки игнорируются, поэтому их удобно использовать для разделения макросов в группе. Этот прием, а также ввод комментариев для сложных макросов, состоящих из большого числа макрокоманд, позволяет улучшить читаемость макросов.</p>
+<p>Для запуска одного из макросов группы используется полное имя для ссылки на макрос. Полное имя макроса формируется таким образом: имяГруппы.имяМакроса.</p>
+<p><strong>Замечание</strong></p>
+<p>Можно настроить систему так, чтобы столбец  Имя макроса  (Macro Name) выводился всегда в Конструкторе макросов. Для этого необходимо установить соответствующие параметры на вкладке  Вид  (View) в диалоговом окне  Параметры  (Options) (см. разд. &#171;Настройка параметров приложения Access&#187;гл. 14).</p>
+<p> Применение условий в макросах </p>
+<p>В примерах макросов, которые мы приводили раньше, использовался последовательный порядок выполнения макрокоманд. Однако, как и в любой программе, порядок выполнения макрокоманд в макросе может быть изменен. Для этого вводятся условия выполнения или пропуска макрокоманд. Эти условия задаются в виде выражений в специальном столбце, который появляется в окне Конструктора макросов, если нажата кнопка  Условия  (Conditions) на панели инструментов (рис. 11.4).</p>
+<p><strong>Замечание</strong></p>
+<p>Как и в случае с группами макросов, можно настроить параметры системы таким образом, чтобы этот столбец появлялся в Конструкторе макросов всегда.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image11/5e4a9998c4e6f8918657eff8d50501c5.gif" width="510" height="450" alt=""><meta itemprop="width" content="510">
+<meta itemprop="height" content="450"></span></p>
+<p> Рис. 11.4.  Применение условий в макросах</p>
+<p>На рис. 11.4 приведено окно Конструктора для группы макросов &#171;Наклейки для клиентов&#187; (Customer Label Dialog), используемой для печати отчета в виде наклеек на конверты. Причем можно напечатать наклейки сразу для всех клиентов или для клиентов одной страны, выбранной из списка. В окне виден столбец &#171;Условие&#187; (Condition). Если условие, заданное в этом столбце, истинно, выполняется макрокоманда, находящаяся в этой строке. Если условие ложно, соответствующая макрокоманда пропускается и выполняется следующая.</p>
+<p>Если требуется при истинности условия выполнить сразу несколько макрокоманд, то для всех макрокоманд, кроме первой, в столбце &#171;Условие&#187; (Condition) ставится многоточие (&#8230;). Условие, которое должно проверяться, пишется в строке первой макрокоманды. Тогда, если оно истинно, выполняется весь набор макрокоманд от этого условия и до следующей макрокоманды с заданным условием, до следующего макроса или до конца макроса. Если условие ложно, пропускаются все команды, помеченные многоточием, включая макрокоманду с заданным условием. Далее выполняется макрокоманда, следующая за пропущенными, в которой содержится новое условие или поле &#171;Условие&#187; (Condition) не заполнено. Таким образом, в отличие от &#171;большинства языков программирования, в макросах нет альтернативного ветвления. Для того чтобы создать макрос с двумя альтернативными ветвями, нужно сначала ввести условие и определить макрокоманды, исполняемые при выполнении этого условия. Сразу после них необходимо указать обратное условие и определить макрокоманды, исполняемые в альтернативной ветви. Затем можно ввести макрокоманды, которые исполняются безусловно. Такой способ ветвления используется, например, в макросе &#171;Просмотр&#187; (Preview), который связан с кнопкой  Просмотр  (Preview) в данной форме. Если пользователь выбрал вариант  для всех стран  (АН Countries), что определяется значением 1 элемента управления  ПечатьНаклеек  (PrintLabelFor), то отчет открывается в режиме Предварительного просмотра и форма закрывается. Если выбран переключатель  для конкретной страны  (Specific Country)&#187;, а страна не выбрана (значение поля со списком &#171;ВыборСтраны&#187; (SelectCountry) не задано), то выдается сообщение, фокус устанавливается в поле со списком для выбора страны и выполнение макроса прекращается. Если страна задана, то отображается отчет для выбранной страны и форма закрывается.</p>
+<p>В этом макросе используется макрокоманда ОстановитьМакрос (StopMacro). Она позволяет прекратить выполнение макроса, при этом все макрокоманды, следующие по порядку за макрокомандой ОстановитьМакрос (StopMacro), не будут выполняться.</p>
+<p><strong>Замечание</strong></p>
+<p>Макрокоманду ОстановитьМакрос (StopMacro) имеет смысл использовать, только если за ней идут другие макрокоманды, которые не следует выполнять при некотором условии. Как уже было сказано выше, для указания конца макроса специальной макрокоманды не требуется.</p>
+<p> Выполнение и отладка макросов </p>
+<p>Способов запуска макросов очень много. Среди них есть прямые способы, когда макрос запускается непосредственно пользователем. Эти способы используются обычно при тестировании макросов. Когда макрос отлажен, создают специальную команду меню или кнопку на панели инструментов или связывают макрос с каким-либо событием в форме или отчете. В данном разделе мы рассмотрим все возможные способы запуска макроса.</p>
+<p>Универсальным способом запуска макроса является использование команды меню  Сервис, Макрос, Выполнить макрос  (Tools, Macro, Run Macro) (рис. 11.5).</p>
+<p>В появившемся при выборе этой команды диалоговом окне нужно указать (ввести или выбрать из списка) полное имя макроса, т. е. имяГруппы.имяМакроса (рис. 11.6). Этот способ позволяет выполнить макрос из любого активного окна, будь то окно макросов, окно базы данных или, например, Конструктор форм.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image27/f9beb42a87b8e0013ea4f3bcb9ee4dd0.gif" width="424" height="411" alt=""><meta itemprop="width" content="424">
+<meta itemprop="height" content="411"></span></p>
+<p> Рис. 11.5.  Запуск макроса с помощью команды меню</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image20/b95506dc54ad902f8d68433e7f42fe89.gif" width="510" height="450" alt=""><meta itemprop="width" content="510">
+<meta itemprop="height" content="450"></span></p>
+<p> Рис. 11.6.  Диалоговое окно  Запуск макроса </p>
+<p> Запуск макроса из окна Конструктора макросов </p>
+<p>Этот способ применяется для тестирования только что созданного или исправленного макроса. Если макрос в окне Конструктора макросов один, то для его запуска нужно просто нажать кнопку  Запуск  (Run) на панели инструментов или выбрать команду  Запуск, По шагам  (Run, Single Step) (последний способ позволяет отладить макрос). Однако, если макросов несколько, то с помощью этой кнопки или команды можно запустить только первый макрос в группе. Чтобы запустить любой другой макрос из группы, нужно воспользоваться командой меню  Сервис, Макрос, Выполнить макрос  (Tools, Macro, Run Macro).</p>
+<p>Если вы часто используете этот способ запуска макроса, имеет смысл настроить панель инструментов, добавив на нее стандартную кнопку  Запуск  (Run Macro). Она эквивалентна выполнению команды меню  Сервис, Макрос, Выполнить макрос  (Tools, Macro, Run Macro).  (0 настройке панелей инструментов см. разд. &#171;Создание и изменение панелей инструментов&#187;гл. 14.) </p>
+<p> Запуск макроса из окна базы данных </p>
+<p>Чтобы запустить макрос из окна  База данных  (Database), щелкните по ярлыку  Макросы  (Macros) на панели объектов, найдите в списке нужный макрос и дважды щелкните по нему кнопкой мыши или нажмите кнопку  Запуск  (Run) на панели инструментов окна  База данных.  Последний способ подходит, только если в выбранном объекте содержится один макрос. В противном случае нужно воспользоваться универсальным способом выполнения макроса, описанным выше.</p>
+<p><strong>Замечание</strong></p>
+<p>Если в условиях или аргументах макрокоманд есть ссылки на объекты Access — формы, отчеты и пр., — они должны быть открыты перед запуском макроса, в противном случае будут выдаваться сообщения об ошибках.</p>
+<p> Запуск макроса с помощью кнопки на панели инструментов </p>
+<p>Прямые способы запуска макросов являются простыми, но не самыми быстрыми. Существуют более удобные и быстрые способы. Наиболее удобный с нашей точки зрения способ запуска макроса — это создание специальной кнопки на панели инструментов. Правда, стандартных панелей инструментов в Access много, и в разных режимах работы на экране появляются соответствующие панели. Поэтому наиболее разумным является создание специальной панели инструментов, на которую вы можете поместить все нужные кнопки. Тем не менее операция добавления специальной кнопки на стандартную панель инструментов чрезвычайно проста.</p>
+<p>Чтобы добавить кнопку на стандартную панель инструментов Access:</p>
+<ol>
+<li>Щелкните правой кнопкой мыши по панели инструментов и выберите в контекстном меню команду  Настройка  (Customize).</li>
+<li>В появившемся диалоговом окне  Настройка  (Customize) раскройте вкладку  Панели инструментов  (Toolbars).</li>
+<li>Установите флажок для одной из стандартных панелей инструментов, например  Запрос в режиме таблицы  (Query Datasheet), чтобы она отобразилась на экране.</li>
+<li>Закройте диалоговое окно  Настройка  (Customize), нажав кнопку  Закрыть  (Close).</li>
+<li>Щелкните по ярлыку  Макросы  (Macros) на панели объектов в окне  База данных  (Database) и найдите нужный макрос.</li>
+<li>Перетащите макрос с помощью мыши на панель инструментов  Запрос в режиме  таблицы (Query Datasheet).</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image21/bd9a43d4acedd104864f4dab438102b8.gif" width="510" height="450" alt=""><meta itemprop="width" content="510">
+<meta itemprop="height" content="450"></span></p>
+<p> Рис. 11.7.  Создание кнопки на панели инструментов для запуска макроса</p>
+<p><strong>Замечание</strong></p>
+<p>Если основной режим работы в вашем приложении — работа с формами, кнопки выполнения макросов можно поместить на панель инструментов  Режим формы  (Form View).</p>
+<p>Чтобы удалить с экрана панель инструментов, на которую вы только что добавили кнопку, щелкните правой кнопкой мыши в области панелей инструментов и в списке стандартных панелей команд снимите флажок слева от названия панели (рис. 11. 8).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image12/67cbac474c04735547ae5eda6fb5274e.gif" width="183" height="333" alt=""><meta itemprop="width" content="183">
+<meta itemprop="height" content="333"></span></p>
+<p> Рис. 11.8.  Контекстное меню со списком панелей команд</p>
+<p>Теперь рассмотрим создание специальной панели инструментов и размещение на ней кнопки вызова макроса.</p>
+<ol>
+<li>Щелкните по ярлыку  Макросы  (Macros) на панели объектов в окне  База данных  (Database) и выделите нужный макрос.</li>
+<li>Выберите команду  Сервис, Макрос, Создать панель инструментов из макроса  (Tools, Macro, Create Toolbar from Macro). На экране появляется пустая панель инструментов.</li>
+<li>Перетащите с помощью мыши нужный макрос на эту панель.</li>
+</ol>
+<p>На панели появляется кнопка с уже знакомым значком макроса. Кнопка получает такое же название, как имя макроса, для которого она создана.</p>
+<p>Если нужно создать панель инструментов для вызова нескольких макросов, мы рекомендуем объединить эти макросы в одну группу (создание группы макросов было описано в предыдущем разделе). Тогда при выполнении команды меню  Сервис, Макрос, Создать панель инструментов из макроса  (Tools, Macro, Create Toolbar from Macro) будет создана панель инструментов, на которой каждому макросу группы будет соответствовать своя кнопка. При этом на кнопках отображаются имена соответствующих макросов. Новая панель инструментов получает такое же имя, как имя группы макросов. Попробуйте выполнить эту команду для одной из групп макросов в базе данных &#171;Борей&#187; (Northwind), например &#171;Клиенты&#187; (Customers). При желании можно заменить текст на кнопках значками. Дополнительная информация о настройке панелей инструментов приложения, и, в частности, об удалении кнопок с панелей и удалении самих панелей, изменении вида этих кнопок, представлена в  разд. &#171;Создание и изменение панелей команд&#187;гл. 14. </p>
+<p> Запуск макроса с помощью команды меню </p>
+<p>Еще одним распространенным способом запуска макроса является запуск с помощью специально созданной для этого команды меню. Способы создания команд меню для запуска макросов очень похожи на те, что применяются для создания кнопок на панели инструментов. Например, можно воспользоваться для этого командой меню  Сервис, Макрос, Создать меню из макроса  (Tools, Macro, Create Menu from Macro).</p>
+<p>Более подробно создание и настройка пользовательских меню рассматриваются в  разд. &#171;Создание и изменение панелей команд&#187;гл. 14.  Поэтому в данном разделе мы не будем рассматривать создание команды меню из макроса.</p>
+<p> Запуск макроса с помощью комбинации клавиш </p>
+<p>Для запуска макроса можно назначить комбинацию клавиш. Для этого необходимо создать специальную группу макросов — &#171;AutoKeys&#187;. Эта группа макросов должна для каждой назначенной вами комбинации клавиш содержать макрокоманду запуска соответствующего макроса. Пример группы макросов &#171;AutoK&#187;eys приведен в базе данных &#171;Борей&#187;. Откройте эту группу макросов в режиме Конструктора. Она содержит один макрос (рис. 11.9). Имя макроса— это запись комбинации клавиш &lt;Ctrl&gt;+&lt;P&gt;. Сам макрос состоит из одной макрокоманды ЗапускМакроса (RunMacro), которая запускает макрос &#171;Телефоны клиентов. Печать&#187; (Customer Phone List.Print). Макрос &#171;AutoKeys&#187; просматривается каждый раз, когда пользователь вводит специальные комбинации клавиш, например &lt;Ctrl&gt;+&lt;P&gt;. Если введенная комбинация клавиш найдена в &#171;AutoKeys&#187;, то запускается соответствующий макрос.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image21/c30c0c1aba0a0b0fec36781728294102.gif" width="510" height="450" alt=""><meta itemprop="width" content="510">
+<meta itemprop="height" content="450"></span></p>
+<p> Рис. 11.9.  Пример макроса &#171;AutoKeys&#187;</p>
+<p>Этот способ запуска макроса, безусловно, является самым быстрым, однако он имеет существенный недостаток: свободных комбинаций клавиш очень немного. И хотя комбинации, определенные в &#171;AutoKeys&#187;, имеют более высокий приоритет, чем стандартные (например, &lt;Ctrl&gt;+&lt;C&gt; — копировать), заменять стандартное назначение комбинаций клавиш не рекомендуется. Разрешенные комбинации клавиш приведены в табл. 11.2. Комбинации с клавишей &lt;Alt&gt; в данном случае не применяются, т. к. используются для запуска команд меню и нажатия кнопок.</p>
+<table class="table_common zebra" width="700">
+<tbody>
+<tr>
+<td>Обозначение</td>
+<td>Комбинации клавиш</td>
+</tr>
+<tr>
+<td>^А или ^4</td>
+<td>&lt;Ctrl&gt; + буква или &lt;Ctrl&gt; + цифра</td>
+</tr>
+<tr>
+<td>{F1}</td>
+<td>Любая функциональная клавиша</td>
+</tr>
+<tr>
+<td>^{F1}</td>
+<td>&lt;Ctrl&gt; + любая функциональная клавиша</td>
+</tr>
+<tr>
+<td>+ {F1}</td>
+<td>&lt;Shift&gt; + любая функциональная клавиша</td>
+</tr>
+<tr>
+<td>{Insert}</td>
+<td>&lt;Ins&gt;</td>
+</tr>
+<tr>
+<td>A {Insert}</td>
+<td>&lt;Ctrl&gt; + &lt;Ins&gt;</td>
+</tr>
+<tr>
+<td>+{Insert}</td>
+<td>&lt;Shift&gt; + &lt;Ins&gt;</td>
+</tr>
+<tr>
+<td>{Delete} или {Del}</td>
+<td>&lt;Del&gt;</td>
+</tr>
+<tr>
+<td>^{ Delete} или ^{Dе1}</td>
+<td>&lt;Ctrl&gt; + &lt;Del&gt;</td>
+</tr>
+<tr>
+<td>+{ Delete} или +{Del}</td>
+<td>&lt;Shift&gt; + &lt;Del&gt;</td>
+</tr>
+</tbody>
+</table>
+<p> Таблица 11.2.  Разрешенные комбинации клавиш</p>
+<p> Запуск макроса при открытии базы данных </p>
+<p>При открытии базы данных Microsoft Access могут выполняться некоторые действия. Чаще всего это открытие специальной формы, так называемой Главной кнопочной формы, вывод специальных меню или панелей инструментов, скрытие стандартных меню и т. д. Для определения этих действий используется диалоговое окно  Параметры запуска  (Startup). Однако иногда требуется при запуске приложения выполнить более сложный набор действий, чем тот, что позволяет задать это диалоговое окно. Например, может потребоваться заранее открыть несколько форм (не показывая их на экране), чтобы потом их отображение не занимало много времени, проверить некоторые условия или запросить ввод некоторых данных. Все это можно сделать с помощью специального макроса, который называется &#171;AutoExec&#187;. При открытии базы данных Access проверяет наличие этого макроса и, если он существует, выполняет его. При создании макроса &#171;AutoExec&#187; следует помнить, что Access сначала выполнит действия, определенные в окне  Параметры запуска  (Startup), а затем — макрос &#171;AutoExec&#187;, поэтому в них не должно быть противоречивых действий.</p>
+<p> Запуск макроса из другого макроса </p>
+<p>Иногда требуется вызвать макрос из другого макроса. Это можно сделать с помощью макрокоманды ЗапускМакроса (RunMacro). Мы уже встречались с этой макрокомандой при описании макроса &#171;AutoKeys&#187;. Здесь нужно отметить, что эта макрокоманда имеет три аргумента: кроме имени макроса, задается число повторов выполнения макрокоманды и условие повтора. Таким образом, эта макрокоманда позволяет организовывать циклы. Аргумент  Число повторов  (Repeat Count) задает количество вызовов макроса. Аргумент  Условие повтора  (Repeat Expression) является выражением, которое может принимать значение Истина или Ложь. Перед выполнением макрокоманды ЗапускМакроса (RunMacro) проверяется значение этого выражения. Если оно Истина, то макрос выполняется, если Ложь, то макрос не выполняется и управление передается следующей макрокоманде. Если эти два аргумента не заданы, макрос выполняется только один раз. Если заданы оба эти аргумента, цикл вызова прекращается, когда макрос выполнился заданное число раз либо когда заданное условие окажется невыполненным и получит значение Ложь.</p>
+<p><strong>Замечание</strong></p>
+<p>Имя макроса в аргументе макрокоманды ЗапускМакроса (RunMacro) должно быть полным, т. е. должно иметь вид имяГруппы. имяМакроса, даже если вызываемый макрос находится в той же группе, что и вызывающий. Если условие повтора задано таким образом, что оно всегда истинно, то цикл окажется бесконечным. Можно прервать его с помощью комбинации клавиш &lt;Ctrl&gt;+&lt;Break&gt;. Если это не поможет, придется прервать работу Access, нажав комбинацию клавиш &lt;Ctrl&gt;+&lt;Alt&gt;+&lt;Del&gt;.</p>
+<p> Назначение макроса событию </p>
+<p>Наиболее часто макросы используются в приложении Access для обработки событий.  Событие —  это любое действие, распознаваемое объектом, и можно определить реакцию объекта на событие. События происходят в результате действий пользователя, выполнения инструкций VBA или генерируются системой. Примером событий является вывод на экран формы, отчета, ввод данных в текстовое поле, нажатие кнопки мыши или клавиши. Каждому из этих событий можно назначить макрос или процедуру VBA, которые будут автоматически выполняться в ответ на произошедшее событие. Практически все программирование в Access сводится к написанию макросов или процедур, обрабатывающих события, т. е. программируется реакция объектов на события. Существует большое количество различного рода событий, на которые реагируют объекты, причем часто возникает не одно, а целая последовательность событий. Поэтому необходимо обладать определенным умением, чтобы решить, какому событию следует назначить созданный вами макрос или процедуру VBA. Все тонкости этого выбора будут обсуждаться  в разд. <a href="https://taurion.ru/access/13/42">&#171;Программирование в формах и отчетах&#187;</a><a href="https://taurion.ru/access/13">гл. 13</a>.  Здесь мы опишем только способ назначения макроса событию и приведем примеры обработки событий с помощью макросов.</p>
+<p>Начнем с самого простого. Откроем форму &#171;Клиенты&#187; (Customers) в базе данных &#171;Борей&#187;. В этой форме отображается информация о клиенте. Допустим, мы хотели бы видеть не только эту информацию, но и данные о купленных клиентом продуктах. Было бы хорошо создать кнопку  Заказы клиента,  при нажатии которой появлялась бы форма &#171;Заказы&#187; (Orders) с заказами только того клиента, который в данный момент выбран в форме &#171;Клиенты&#187; (Customers). Для того чтобы получить желаемое, создадим макрос, который будет выполняться, когда произойдет событие  Нажатие кнопки  (On Click) в форме &#171;Клиенты&#187; (Customers).</p>
+<p>Чтобы создать макрос, определяющий описанную реакцию приложения на событие  Нажатие кнопки  (OnClick):</p>
+<ol>
+<li>Откройте форму &#171;Клиенты&#187; (Customers) в режиме Конструктора.</li>
+<li>Создайте кнопку в области заголовка формы. При этом кнопка мастера на панели элементов должна быть отжата, т. к. в противном случае вам будет предложено создать процедуру обработки событий, а не макрос.</li>
+<li>Откройте окно свойств только что созданной кнопки, если оно еще не открыто, и раскройте вкладку  События  (Event).</li>
+<li>Обратите внимание, сколько разных событий связано только с командной кнопкой. Помимо обычного нажатия, которое мы сейчас и будем использовать, в набор событий кнопки входят получение и потеря фокуса, двойной щелчок кнопкой мыши, простое перемещение указателя мыши над кнопкой и пр. Такое многообразие событий дает разработчику большие возможности по созданию удобного интерфейса пользователя. Теперь найдите в списке событие  Нажатие кнопки  (On Click) и установите курсор в соответствующую ячейку. Это поле со списком, и в данный момент оно пустое. Если открыть этот список, то первым его элементом будет  [Процедура обработки событий]  ([Event procedure]), а далее идет перечень всех макросов, существующих в приложении (рис. 11.10).</li>
+<li>Поскольку нужного нам макроса в списке нет, давайте его создадим. Для этого нажмите кнопку Построителя, находящуюся справа от поля. Появится окно  Построитель  (Choose Builder), в котором предлагается выбрать один из трех Построителей:  Выражения  (Expression Builder),  Макросы  (Macro Builder) и  Программы  (Code Builder) (рис. 11.11).</li>
+<li>Выберите  Макросы  (Macro Builder) и нажмите кнопку  ОК.  Откроется&#187;окно макросов и диалоговое окно, в которое нужно ввести имя создаваемого макроса. Введите имя Заказы клиента.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image05/317687df748a1658b28c791dd2007cf6.gif" width="344" height="341" alt=""><meta itemprop="width" content="344">
+<meta itemprop="height" content="341"></span></p>
+<p> Рис. 11.10.  Диалоговое окно свойств кнопки</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image05/2ee2deecd7139fb073d39effd2ab071f.gif" width="306" height="251" alt=""><meta itemprop="width" content="306">
+<meta itemprop="height" content="251"></span></p>
+<p> Рис. 11.11.  Диалоговое окно  Последовательность перехода </p>
+<ol start="7">
+<li>В макрос нужно добавить единственную макрокоманду ОткрытьФорму (OpenForm). Значения аргументов этой макрокоманды приведены в табл. 11.З.</li>
+</ol>
+<table class="table_common zebra" width="700">
+<tbody>
+<tr>
+<td>Аргумент</td>
+<td>Значение </td>
+</tr>
+<tr>
+<td>Имя формы (Form Name)</td>
+<td>Заказы (Orders)</td>
+</tr>
+<tr>
+<td>Режим (View)</td>
+<td>Форма (Form)</td>
+</tr>
+<tr>
+<td>Условие отбора (Condition)</td>
+<td>[КодКлиента] = [Forms] ! [Клиенты] ! [КодКлиента]</td>
+</tr>
+<tr>
+<td>Режим данных (Data Mode)</td>
+<td>Только чтение (Read Only)</td>
+</tr>
+<tr>
+<td>Режим окна (Window Mode)</td>
+<td>Обычное (Normal)</td>
+</tr>
+</tbody>
+</table>
+<p> Таблица 11.3. Значения аргументов макрокоманды  ОткрытьФорму (OpenForm)</p>
+<p>Аргумент  Режим  (View) определяет режим, в котором форма должна быть открыта. Он может принимать значения:  Форма  (Form),  Конструктор  (Design),  Просмотр  (Print Preview),  Таблица  (Datasheet),  Сводная таблица  (PivotTable) и  Сводная диаграмма  (Pivot Chart). Аргумент  Условие отбора  (Condition) определяет условие для отбора записей, отображаемых в форме. Условие представляет собой выражение. В данном случае это выражение содержит ссылку на элемент управления  КодКлиента  (CustomerlD) в форме &#171;Клиенты&#187; (Customers), что позволяет выбрать все записи из таблицы &#171;Заказы&#187; (Orders), в которых код клиента равняется значению, заданному в поле &#171;КодКлиента&#187; (CustomerID) формы &#171;Клиенты&#187; (Customers).  (Подробнее об использовании ссылок в макросах и выражениях будет рассказано в разд. &#171;Применение макросов&#187; данной главы.)  Аргумент  Режим данных  (Data Mode) определяет способ работы с данными и может принимать одно из значений:  Добавление  (Add),  Изменение  (Edit) или  Только чтение  (Read Only). И наконец, аргумент  Режим окна  (Window Mode) определяет тип окна:  Обычное  (Normal),  Невидимое  (Hidden),  Значок  (Icon) и  Окно диалога  (Dialog).</p>
+<ol start="8">
+<li>Закройте окно макроса, сохранив изменения. В окне свойств кнопки в поле  Нажатие кнопки  (On Click) появится имя макроса &#171;Заказы клиента&#187;.</li>
+<li>Раскройте вкладку Макет (Format) и введите в поле  Подпись  (Caption) название кнопки: Заказы клиента. То же самое имя рекомендуется ввести в поле  Имя  (Name) на вкладке  Другие  (Other).</li>
+</ol>
+<p>Теперь остается перейти в режим Формы и проверить, как макрос отрабатывает событие  Нажатие кнопки  (On Click). Если вы нигде не ошиблись, то должны увидеть на экране картинку, похожую на ту, что изображена на рис. 11.12.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image15/89894c30f707469dbe510094d05356e2.gif" width="439" height="497" alt=""><meta itemprop="width" content="439">
+<meta itemprop="height" content="497"></span></p>
+<p> Рис. 11.12.  Форма &#171;Заказы&#187;</p>
+<p>Однако мы выполнили еще не все необходимые действия. Если перейти к следующей записи в форме &#171;Клиенты&#187; (Customers), данные в форме &#171;Заказы&#187; (Orders) уже не будут правильно отражать ситуацию — они не меняются. Нужно сделать так, чтобы эти данные изменялись синхронно с переходом к другим записям в форме &#171;Клиенты&#187; (Customers) либо чтобы это окно просто закрывалось. Рассмотрим реализацию второго варианта. Форма &#171;Заказы&#187; (Orders) открывается, когда мы нажимаем кнопку  Заказы клиента,  и становится активной. Требуется сделать так, чтобы она закрывалась, когда активной становится форма &#171;Клиенты&#187; (Customers). Для этого нужно выбрать соответствующее событие и задать процедуру или макрос его обработки. Если вы откроете окно  Свойства  (Properties) формы &#171;Клиенты&#187; (Customers) и раскроете вкладку  События  (Event), то среди множества событий увидите событие  Включение  (On Activate). Это как раз то событие, которое нам нужно. Выберем это событие, но теперь мы не будем создавать новую группу макросов, а добавим новый макрос в группу макросов &#171;Клиенты&#187; (Customers), которая уже содержит макросы для формы &#171;Клиенты&#187; (Customers). Выберите эту группу макросов в раскрывающемся списке и нажмите кнопку Построителя. Откроется окно, в котором отобразятся два макроса. Добавим к ним еще один макрос. Назовем его &#171;Закрытие&#187; и введем макрокоманду Закрыть (Close) с соответствующими параметрами (табл. 11.4). Но перед закрытием формы необходимо проверить, открыта ли она. Для этого воспользуемся функцией isLoaded, которая возвращает значение Истина, если форма открыта, и Ложь — в противном случае. В качестве аргумента в функцию isLoaded нужно передать имя формы. Итак, в столбец  Условие  (Condition), напротив макрокоманды Закрыть (Close), введите IsLoaded(&#171;Заказы&#187;) (или IsLoaded (&#171;Orders&#187;)).</p>
+<table class="table_common zebra" width="700">
+<tbody>
+<tr>
+<td><strong>Аргумент </strong></td>
+<td><strong>Значение </strong></td>
+</tr>
+<tr>
+<td>Тип объекта (Object Type)</td>
+<td>Форма (Forms)</td>
+</tr>
+<tr>
+<td>Имя объекта (Object Name)</td>
+<td>Заказы (Orders)</td>
+</tr>
+<tr>
+<td>Сохранение (Save)</td>
+<td>Нет (No)</td>
+</tr>
+</tbody>
+</table>
+<p> Таблица 11.4.  Значения аргументов макрокоманды Закрыть (Close)</p>
+<p>Аргумент  Сохранение  (Save) позволяет определить, будет ли Access при закрытии формы отображать диалоговое окно для подтверждения сохранения измененных данных. Поскольку мы открывали форму &#171;Заказы&#187; (Orders) в режиме только для чтения, изменение данных запрещено, поэтому данному аргументу необходимо присвоить значение  Нет  (No). Готовый макрос показан на рис. 11.13.</p>
+<p>Закройте окно макроса, сохранив изменения. Измените имя макроса, назначенного событию  Включение  (On Activate). Для этого выберите в списке или введите имя Клиенты.Закрыть (Customers.Close) и нажмите клавишу &lt;Enter&gt;. Теперь сохраните форму, перейдите в режим Формы и проверьте, как работают созданные вами макросы.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image03/1e4c675ee97429c64cfd0ec568ca2404.gif" width="479" height="420" alt=""><meta itemprop="width" content="479">
+<meta itemprop="height" content="420"></span></p>
+<p> Рис. 11.13.  Макрос для закрытия формы</p>
+<p>      Вызов макроса из процедуры VBA </p>
+<p>Как мы уже говорили, процедуры VBA и макросы в Access являются объектами близкими и часто взаимозаменяемыми, т. е. вместо макроса можно использовать процедуру VBA и наоборот. Существуют способы запуска макроса из процедуры VBA, запуска процедуры VBA из макроса, кроме того, Access позволяет преобразовать макрос в процедуру VBA. Такое преобразование описано в  разд. &#171;Преобразование макросов в процедуры VBA&#187; данной главы. </p>
+<p>Для запуска процедуры VBA из макроса существует специальная макрокоманда ЗапускПрограммы(КипСоdе). Эта макрокоманда имеет один аргумент — имя вызываемой процедуры, хотя вызываться может только функция, а не подпрограмма.</p>
+<p>Для запуска макроса из процедуры VBA применяется специальный метод ЗапускМакроса (RunMacro) объекта DoCmd, например:</p>
+<p>DoCmd.RunMacro &#171;Макрос!&#187;.</p>
+<p>Объект DoCmd используется в процедуре VBA для выполнения макрокоманд Access. При этом английское имя нужной макрокоманды должно быть указано в качестве Метода объекта DoCmd, например строка процедуры</p>
+<p>DoCmd.OpenForm &#171;Клиенты&#187;</p>
+<p>позволяет открыть форму &#171;Клиенты&#187;. Здесь &#171;Клиенты&#187;— аргумент макрокоманды. Аргументы перечисляются в предложении DoCmd через запятую. Таким способом может быть выполнено большинство макрокоманд.</p>
+<p>Создание процедур VBA мы рассмотрим ниже, в гл. 13. </p>
+<p> Отладка макросов и поиск ошибок </p>
+<p>Обычно для отладки макроса его выполняют в пошаговом режиме. Для включения этого режима необходимо нажать кнопку  По шагам  (Single Step) на панели инструментов в окне Конструктора макросов или выбрать команду меню  Запуск, По шагам  (Run, Single Step). Тогда перед выполнением каждой макрокоманды будет появляться диалоговое окно  Пошаговое исполнение макроса  (Macro Single Step) (рис. 11.14).</p>
+<p>В этом окне отображаются имя макроса, имя исполняемой макрокоманды, условие ее исполнения и аргументы. При этом в полях  Условие  (Condition) и  Аргументы  (Arguments) видны значения условного выражения и аргументов макрокоманды. Если в строке макрокоманды условие не указано, в поле Условие (Condition) всегда будет показываться значение  Истина  (True). Кнопки справа от полей в этом окне позволяют выполнить очередную макрокоманду, прервать выполнение макроса (например, если видно, что аргументы вычислены неправильно) и продолжить выполнение в обычном режиме, т. е. не по шагам.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image25/e8792d3ecd9b97deab444cbb9f2c03ea.gif" width="504" height="448" alt=""><meta itemprop="width" content="504">
+<meta itemprop="height" content="448"></span></p>
+<p> Рис. 11.14.  Диалоговое окно  Пошаговое исполнение макроса </p>
+<p>Если в процессе выполнения макроса возникла ошибка, появляется диалоговое окно  Ошибка выполнения макроса  (Action Failed), аналогичное окну  Пошаговое исполнение макроса  (Macro Single Step), но без возможности продолжить процесс (кнопки  Шаг  (Step) и  Продолжить  (Continue) недоступны). Можно только прервать выполнение макроса, нажав кнопку  Прервать  (Halt). В окне отображается макрокоманда, содержащая ошибку.</p>
+<p>Поиск ошибок в макросах, как правило, не вызывает больших затруднений. Это связано с тем, что:</p>
+<ul>
+<li>большинство синтаксических ошибок проверяется при вводе и система просто не даст ввести неправильное название макрокоманды или условное выражение (правда, она не защитит от ввода неправильного имени объекта, например несуществующей формы или элемента управления в форме);</li>
+<li>макросы, как правило, достаточно просты и не содержат длинных последовательностей макрокоманд, в противном случае лучше написать процедуру на VBA, т. к. язык VBA предоставляет больше возможностей и имеет существенно лучшие средства отладки.</li>
+</ul>
+<p>Основные ошибки, которые возникают в макросах, связаны либо с неправильным вводом имен объектов, и тогда Access не может найти соответствующий объект, либо с тем, что объекты, на которые ссылается макрокоманда, недоступны, например форма не открыта. Поэтому при возникновении ошибки в первую очередь нужно проверить, правильно ли введены имена объектов и открыты ли формы, использованные в условиях или аргументах макрокоманд.</p>
+<p> Совет </p>
+<p>Прежде чем использовать ссылки на форму или элемент управления, рекомендуется выполнять проверку, открыта ли форма, с помощью функции isLoaded(). К сожалению, эта функция не является стандартной функцией Access, а обычно включается в модуль &#171;Служебные функции&#187; (Utility Function) базы данных &#171;Борей&#187;. Вы можете скопировать ее оттуда в свою базу данных.</p>
+<p>Стандартным приемом отладки как процедур, так и макросов, является вывод на экран специальных сообщений, говорящих о прохождении определенных этапов процесса. В макросах это осуществляется путем вставки дополнительных макрокоманд ВыводСообщения (MsgBox) для отображения таких сообщений. Причем в сообщении можно вывести значения свойств элементов управления, например: &#171;Цена товара = &#187; &amp; Forms!Товары!Цена</p>
+<p>Можно легко отключить вывод на экран отладочных сообщений, для чего введите в столбец &#171;Условия&#187; (Condition) напротив соответствующих макрокоманд значение Ложь.</p>
+<p>Еще один стандартный прием — установка точек останова. Его применяют для того, чтобы остановить выполнение макроса в определенной точке до завершения процесса. Для этого используется макрокоманда ОстановитьМакрос (StopMacro). Макрос будет выполняться до макрокоманды ОстановитьМакрос (StopMacro), после этого можно проверить результаты. Таким образом, можно локализовать ошибку с точностью до макрокоманды.</p>
+<p> Применение макросов </p>
+<p>Макросы могут применяться для решения самых разнообразных задач. В первом разделе данной главы мы привели таблицу макрокоманд, сгруппированных по категориям. Теперь рассмотрим применение макрокоманд некоторых категорий.</p>
+<p> Работа с данными в формах и отчетах </p>
+<p>В эту категорию входит набор макрокоманд, обеспечивающих отбор данных, перемещение по данным и обновление данных в формах. Прежде чем перейти к примерам использования макросов, покажем, как применять ссылки на формы, отчеты и элементы управления в аргументах и условиях макрокоманд, поскольку такие ссылки используются очень часто.</p>
+<p> Ссылки на формы, отчеты и их свойства </p>
+<p>Чтобы задать ссылку на форму или отчет, нужно сначала определить, в какое семейство (collection) входит объект, на который создается ссылка.  (Подробнее о семействах и составляющих их объектах см. гл. 13)  Все открытые формы входят в семейство Формы (Forms), а открытые отчеты — в семейство Отчеты (Reports). Полная ссылка на форму или отчет должна состоять из двух частей: имяСемейства!имяОбъекта. Причем если имя объекта содержит пробелы или специальные символы, то его нужно заключить в квадратные скобки. Если пробелы в имени не используются, скобки можно не ставить. Таким образом, ссылка на форму будет выглядеть так: Forms![Заказы клиента] ИЛИ Forms!Клиенты Для отчета ссылки выглядят аналогично:</p>
+<p>Reports! [Отчет о продажах] ИЛИ Reports!Прайс-лист Ссылка на свойство формы или отчета состоит из трех частей: имяСемейства!имяОбъекта.имяСвойства Например:</p>
+<p>Forms!Клиенты.Visible или Reports![Продажи за период].MenuBar Свойство  Вывод на экран  (Visible) определяет, будет ли форма видна на экрану или спрятана, а свойство  Меню  (MenuBar) позволяет связать с отчетом или формой специальное меню.</p>
+<p> Ссылки на элементы управления форм, отчетов и их свойства </p>
+<p>Чтобы создать ссылку на элемент управления или его свойство, необходимо указать его имя. Если имя содержит пробелы, оно заключается в квадратные скобки. Ссылка на элемент управления в форме или отчете состоит из трех частей:</p>
+<p>  имяСемейства!имяОбъекта!имяЭлемента </p>
+<p>Например, ссылка на элемент управления  Номер заказа  в форме &#171;Заказы клиента&#187; выглядит так:</p>
+<p>  Forms![Заказы клиента]![Номер заказа] </p>
+<p>Ссылка на элемент управления  Сумма  в отчете &#171;Продажи за период&#187; выглядит так:</p>
+<p>  Reports![Продажи за период]![Сумма] </p>
+<p>Ссылка на свойство элемента управления состоит из четырех частей:</p>
+<p>имяСемейства!имяОбъекта!имяЭлемента.имяСвойства</p>
+<p>Например:</p>
+<p>  Forms![Заказы клиента]![Номер заказа].Enabled </p>
+<p>Свойство  Доступ  (Enabled) позволяет запретить или разрешить доступ к элементу управления.</p>
+<p>Объект может иметь свойство, используемое по умолчанию. Это свойство применяется в том случае, когда имя свойства в ссылке явно не указано. Например, у элементов управления по умолчанию используется свойство  Значение  (Value), поэтому ссылка Forms! Товары! Цена позволяет получить доступ к значению, отображенному в текстовом поле &#171;Цена&#187;.</p>
+<p> Ссылки на подчиненные формы и отчеты </p>
+<p>На подчиненную форму или отчет можно ссылаться так же, как и на любой другой элемент управления, т. к. подчиненная форма и подчиненный отчет являются одним из типов элементов управления. Например:</p>
+<p>  Forms!Заказы!ПодформаТовары </p>
+<p>Здесь ПодформаТовары — это имя элемента управления в форме &#171;Заказы&#187;, который представляет собой подчиненную форму.</p>
+<p>А вот ссылка на элемент управления в подчиненной форме или отчете имеет особую структуру: после имени элемента управления, который является подчиненной формой, нужно сначала указать специальное свойство: Form — для форм или Report — для отчетов, а затем имя элемента управления, на который выполняется ссылка:</p>
+<p>  Forms!Заказы!ТоварыПодформа.Form![Код Товара] Фильтрация записей в формах, отчетах, таблицах </p>
+<p>Перейдем к примерам применения макрокоманд Access. Для отбора записей в формах, отчетах, таблицах используется макрокоманда Приме нить Фильтр (ApplyFilter). Задать фильтр можно двумя способами: либо указав имя заранее созданного фильтра в аргументе  Имя фильтра  (Filter Name), либо непосредственно задав условие выборки в аргументе  Условие отбора  (Where Condition). Если фильтр нужно применить сразу при открытии формы, тогда с событием  Открытие  (On Open) формы необходимо связать макрос, содержащий макрокоманду ПрименитьФильтр (ApplyFilter). Если нужно менять набор отображаемых записей в открытой форме динамически, поступают следующим образом:</p>
+<ul>
+<li>создают в этой форме набор полей, в которых можно задать условия отбора;</li>
+<li>создают кнопку  Применить фильтр,  с которой связывают макрос, содержащий макрокоманду ПрименитьФильтр (ApplyFilter). В качестве значения аргумента  Условие отбора  (Where Condition) для этой макрокоманды указывают выражение, содержащее ссылки на эти поля.</li>
+</ul>
+<p>Пример такого решения приведен на рис. 11.15. На этом рисунке представлена форма &#171;Товары&#187; (Products), позволяющая просматривать товары с выборкой по различным критериям.</p>
+<p>Эта форма построена на основе таблицы &#171;Товары&#187; (Products) с помощью Мастера автоматической генерации ленточных форм. Затем в режиме Конструктора форм к ней добавлены поля для определения критериев выбора и кнопки для применения и отмены фильтра. Соответствующие макросы, связанные с событием  Нажатие, кнопки  (On Click), приведены на рис. 11.16. Для отмены фильтра используется макрокоманда ПоказатьВсеЗаписи(ShowAllRecords).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image14/7e245d8dc1f2373fbc5fbf2cab66786f.gif" width="438" height="417" alt=""><meta itemprop="width" content="438">
+<meta itemprop="height" content="417"></span></p>
+<p> Рис. 11.15.  Форма для отбора записей по заданным критериям</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image16/8f3ce8ca1d3aa00d540c58b94ce6a690.gif" width="465" height="222" alt=""><meta itemprop="width" content="465">
+<meta itemprop="height" content="222"></span></p>
+<p> Рис. 11.16.  Макросы для установки и отмены фильтра в форме &#171;Товары&#187;</p>
+<p>На рис. 11.16 представлено два макроса: УстановитьФильтр и Отменить Фильтр. В диалоговом окне  Область ввода  (Zoom) отображено значение аргумента  Условие отбора  (Where Condition) макрокоманды ПрименитьФильтр (ApplyFilter). Обратите внимание, условие получилось довольно сложным, а длина поля  Условие отбора  (Where Condition) ограничена 255 символами. Поэтому, если бы мы включили в условия отбора еще одно поле, например &#171;Поставки прекращены&#187;, нам пришлось бы отдельно создать специальный фильтр и задать его имя в аргументе  Имя фильтра  (Filter Name).</p>
+<p>В макросе &#171;ОтменитьФильтр&#187;, кроме макрокоманды ПоказатьВсеЗаписи(ShowAllRecords), нужны еще две макрокоманды, чтобы очистить поля &#187; ВыборПоставщика&#187; и &#171;ВыборТипа&#187;, т. е. присвоить им значение  Пусто  (Null). Это делается с помощью макрокоманды ЗадатьЗначение(SetValue).</p>
+<p> Перемещение по данным </p>
+<p>Эта группа макрокоманд связана с перемещением по записям и элементам управления. В качестве примера применения макрокоманд этой группы рассмотрим ситуацию, когда пользователь работает с формой &#171;Клиенты&#187; и хочет найти заказ текущего клиента, номер которого ему известен. Давайте вернемся к примеру, приведенному в  разд. &#171;Назначение макроса событию&#187;.  Тогда мы создали.в форме &#171;Клиенты&#187; кнопку  Заказы клиента  для отображения заказов выбранного клиента. Попробуем усовершенствовать эти формы. Если номер заказа известен пользователю, он может ввести его в текстовое поле  Поиск заказа,  которое можно добавить в форму &#171;Клиенты&#187; (Customers). Тогда в открываемой форме &#171;Заказы&#187; (Orders) следует сразу показать запись, содержащую соответствующий счет. Добавим поле &#171;Поиск заказа&#187; в заголовок формы и сделаем так, чтобы при открытии формы &#171;Заказы&#187; (Orders) проверялось значение этого поля и, если оно не пустое, производился бы поиск счета с указанным номером и выполнялся переход на соответствующую запись. В противном случае текущей становилась бы первая запись из отфильтрованного набора записей. На рис. 11.17 показана форма &#171;Клиенты&#187; (Customers) с новым полем и макрос &#171;Поиск заказа&#187;, который связан с событием  Загрузка  (On Load) формы &#171;Заказы&#187; (Orders).</p>
+<p>Поскольку добавленный макрос обработки события ссылается на элемент управления в форме &#171;Клиенты&#187; (Customers), он должен выполняться только в том случае, если эта форма открыта, и, кроме того, поиск должен производиться только тогда, когда поле &#171;Поиск заказа&#187; не пусто. Исходя из этого формируются условия макроса. Прежде чем производить поиск записи по образцу в одном из полей, необходимо активизировать это поле, для чего используется макрокоманда КЭлементуУправления(GoToControl) . С ее помощью устанавливается фокус на поле &#171;КодЗаказа&#187; (Orderld). Но это поле в форме &#171;Заказы&#187; (Orders) недоступно, поэтому сначала нужно изменить значение свойства  Доступ  (Enabled) этого поля. В противном случае выполнение макрокоманды КЭлементуУправления (GoToControl) приведет к возникновению ошибки.</p>
+<p>Макрокоманда КЭлементуУправления (GoToControl) используется, как правило&#187;, если требуется изменить стандартный порядок перехода между полями в форме. Обычно переход между полями выполняется с помощью клавиши &lt;Таb&gt;, однако иногда требуется пропустить ряд полей и переместить фокус к определенному элементу управления. Это может зависеть от каких-либо условий, например от значения поля. В этом случае на событие  После обновления  (After Update) для данного прля назначается макрос, который перемещает фокус на нужный элемент управления в форме. В качестве аргумента для макрокоманды необходимо указать короткое имя элемента управления. В случае излишне длинного имени переход к элементу управления не произойдет и отобразится сообщение об ошибке.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image20/bb9da728b62defdc578c3420eba67702.gif" width="458" height="435" alt=""><meta itemprop="width" content="458">
+<meta itemprop="height" content="435"></span></p>
+<p> Рис. 11.17.  Пример макроса для перемещения по данным</p>
+<p>  Обновление данных в формах и элементах управления </p>
+<p>Последняя группа макрокоманд в рассматриваемой категории связана с обновлением данных в активных формах, таблицах и запросах. Если несколько человек в сети одновременно изменяют данные, то формы и таблицы у конкретного пользователя могут не отражать актуальных данных. Для того чтобы отображаемые данные соответствовали текущему состоянию базы данных, их необходимо обновить с помощью команды  Записи, Обновить  (Record, Refresh)  (см. разд.Работа с записями гл. 2). </p>
+<p>Похожая ситуация возникает даже в однопользовательском режиме, если в форме используется поле со списком, источником данных для которого является таблица или запрос. Если в исходную таблицу были добавлены записи, то в поле со списком они автоматически не появятся — нужно повторно выполнить запрос. Кроме полей со списком, к элементам управления, требующим обновления отображаемых данных, относятся также списки и элементы управления подчиненной формы, объекты OLE и вычисляемые элементы управления, содержащие статистические функции по подмножеству записей, такие как DLookUp () или DSum ().</p>
+<p>Для того чтобы выполнить обновление записей в формах, таблицах или элементах управления, используются макрокоманды Обновление(Requery), ПоказатьВсеЗаписи(ShowAllRecords) И ОбновитьОбъект(RepaintObject).</p>
+<p>Макрокоманда Обновление (Requery) обновляет данные в объекте базы данных путем повторного просмотра источника данных. Макрокоманда имеет один аргумент, содержащий имя объекта, который следует обновить. Если обновляется активный объект, например форма, то поле аргумента следует оставить пустым. При этом макрокоманда будет повторно выполнять запрос, указанный в свойстве  Источник данных  (RecordSource) этой формы.</p>
+<p>Рассмотрим пример использования макроса для обновления данных. В форме &#171;Клиенты&#187; (Customers) есть поле со списком &#171;Страна&#187; (Country). Источником данных для этого поля является запрос, который выбирает значения из поля &#171;Страна&#187; (Country) таблицы &#171;Клиенты&#187; (Customers):</p>
+<p>  SELECT DISTINCT Клиенты.Страна FROM Клиенты; </p>
+<p>Если при вводе клиента в таблицу добавляется новое название страны, то в списке эта страна не появится, поскольку запрос будет выполнен повторно только при следующем открытии формы. Чтобы провести обновление списка стран раньше, следует назначить событию  После обновления  (After Update) формы макрос Клиенты.Обновление списка стран, который состоит из одной макрокоманды Обновление (Requery) со значением аргумента &#171;Страна&#187; (Country) (рис. 11.18).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image13/73cecf772a2000c5cd1c834e7b7b18ba.gif" width="344" height="341" alt=""><meta itemprop="width" content="344">
+<meta itemprop="height" content="341"></span></p>
+<p> Рис. 11.18.  Назначение макроса событию формы  После обновления </p>
+<p><strong>Замечание</strong></p>
+<p>Макрокоманда Обновление (Requery) обновляет только один объект, поэтому если в форме существуют элементы управления, требующие обновления отображаемых данных, и в макросе, назначенном этой форме, используется макрокоманда Обновление (Requery) с пустым значением аргумента, то обновляться будут только записи в форме. Для каждого такого элемента управления нужно использовать отдельную макрокоманду. Если эта макрокоманда в качестве аргумента содержит имя элемента управления, то при ее выполнении обновляется только данный элемент. Записи в самой форме не обновляются.</p>
+<p>С помощью макрокоманды Обновление (Requery) можно обновлять данные и в неактивной форме, точнее, не в той форме, которой назначен макрос. Однако в этом случае сначала необходимо выполнить макрокоманду ВыделитьОбъект(SelectObject), которая перенесет фокус на нужную форму, чтобы ее активизировать (потом фокус можно вернуть обратно).</p>
+<p>Макрокоманда ПоказатьВсеЗаписи (ShowAllRecords), как уже отмечалось, отменяет действие фильтра и повторно просматривает источник записей. Ее часто используют для обновления данных в подчиненной форме.</p>
+<p>Макрокоманда ОбновитьОбъект (RepaintObject) применяется только к объекту базы данных (к таблице, запросу, форме, отчету, странице, макросу и модулю) и не применяется к элементу управления. Она выполняет немедленное обновление указанного открытого объекта (если имя объекта не задано, обновляется активный объект), хотя при этом не производится повторное выполнение запроса к источнику данных. Обновление объекта не влияет на. отображение новых и удаленных записей, как это происходит при выполнении макрокоманды Обновление (Requery). Обычно макрокоманду ОбновитьОбъект (RepaintObject) применяют для отображения результатов изменения данных с помощью макрокоманд ЗадатьЗначение (SetValue), а также для повторного вычисления значений выражений в вычисляемых элементах управления.</p>
+<p> Работа с объектами </p>
+<p>Это наиболее обширная категория макрокоманд, часть из которых уже была описана в предыдущих разделах.</p>
+<p>Рассмотрим сначала, как используется макрокоманда ЗадатьЗначение (SetValue), которая позволяет устанавливать значения свойств элементов управления в формах и отчетах. Мы уже использовали эту макрокоманду в предыдущих примерах.</p>
+<p>Установка свойств элементов управления позволяет динамически, в зависимости от условий, делать эти элементы недоступными или невидимыми. Вот несколько примеров.</p>
+<ul>
+<li>Можно создать одну форму, в которой в зависимости от определенных условий, видимыми будут разные поля. Это позволяет использовать одну форму в нескольких случаях и не создавать для каждой ситуации дополнительную форму. Когда форм в приложении очень много, такая возможность становится очень полезной. Чтобы сделать элемент управления невидимым, следует задать значение  Ложь  (False) для свойства  Вывод на экран  (Visible) этого элемента. Чтобы показать элемент управления на экране, задайте для этого свойства значение  Истина  (True).</li>
+<li>В зависимости от текущего состояния работы с данными можно изменять доступность кнопок, предназначенных для выполнения определенных действий, или других элементов управления в форме. Чтобы сделать элемент управления недоступным, задайте значение  Ложь  (False) его свойству Доступ (Enabled). Чтобы элемент управления стал доступным, задайте значение  Истина  (True) для этого свойства.</li>
+<li>Можно запретить пользователю изменять данные в форме. Для этого свойству  Доступ  (Enabled) соответствующих полей следует присвоить значение  Ложь  (False), а свойству  Блокировка записей  (Locked) — значение  Истина  (True). Если необходимо запретить изменение во всех полях, установите значение  Ложь  (False) для следующих свойств формы:  Разрешить изменения  (Allow Edits),  Разрешить добавление  (Allow Additions),  Разрешить удаление  (Allow Delitions). Эти свойства можно изменять динамически, т. е. в процессе работы пользователя с формой. Например, можно разрешить или запретить редактирование данных после проверки прав пользователя.</li>
+<li>С помощью макрокоманды ЗадатьЗначение (SetValue) можно динамически изменять значение свойства  Источник записей  (RecordSource) для формы, что позволяет управлять содержанием отображаемых данных.</li>
+</ul>
+<p>Существуют макрокоманды для открытия &#171;и закрытия объектов Access:</p>
+<p>ОткрытьФорму(OpenForm), ОткрытьЗапрос(OpenQuery), ОткрытьОтчет(OpenReport) и т. д. Для открытия объекта каждого типа применяется отдельная макрокоманда, а для закрытия объекта используется общая для объектов всех типов макрокоманда Закрыть (Close). Тип объекта, к которому следует применить эту макрокоманду, указывается в качестве одного из ее аргументов. В предыдущих примерах уже использовались макрокоманды ОткрытьФорму(OpenForm) и Закрыть(Close) для активного объекта.</p>
+<p>Макрокоманда ОткрытьЗапрос (OpenQuery) позволяет выполнить любой тип запроса, в том числе запрос на изменение данных. Если в качестве аргумента этой макрокоманды задается имя запроса на выборку или перекрестного запроса, то результатом выполнения макрокоманды будет вывод на экран выбранных записей. Если же аргумент — имя запроса на изменение данных, то макрокоманда выполнит запрос, изменяя соответствующим образом данные в таблицах.</p>
+<p>При выполнении запроса, изменяющего данные, на экране будут отображаться предупреждающие сообщения. Чтобы отключить вывод этих сообщений, используйте макрокоманду УстановитьСообщения (SetWarnings) со значением аргумента  Нет  (No). Только не забудьте после выполнения запроса снова включить вывод системных сообщений, применив ту же макрокоманду, но с аргументом Да (Yes). Иначе в Access не будут отображаться никакие системные сообщения, что может привести к выполнению нежелательных действий в приложении.</p>
+<p>Макрокоманда ОткрытьПредставление (OpenView) аналогична макрокоманде ОткрытьЗапрос (OpenQuery), только применяется она в проектах Access 2000 и предназначена для работы с данными, хранящимися на сервере.</p>
+<p>Макрокоманда ОткрытьСохраненнуюПроцедуру (OpenStoreProcedure) позволяет выполнить или открыть в режиме редактирования хранимую процедуру сервера.</p>
+<p>В данном разделе описаны далеко не все макрокоманды. Для получения полной информации используйте справочную систему Access. Чтобы быстро получить справку:</p>
+<ol>
+<li>Выберите команду  Справка, Справка по Micrisift  Access (Help, Microsoft Access Help).</li>
+<li>Раскройте вкладку  Мастер ответов  (Answer Wizard) и введите в поле  Выберите действие  (What would you like to do?) имя макрокоманды. Нажмите кнопку  Найти  (Search).</li>
+</ol>
+<p> Преобразование макросов в процедуры VBA </p>
+<p>Если вы создали много макросов, а потом решили перейти к программированию на VBA, не следует беспокоиться о том, что придется заново переписывать на VBA все созданные макросы. В Access существует возможность автоматического преобразования макросов в процедуры на VBA. Это касается как макросов, связанных с событиями в формах и отчетах, которые преобразуются в процедуры обработки событий, так и общих макросов, не связанных с формами и отчетами. Все они преобразуются в отдельные стандартные модули.</p>
+<p>Давайте попробуем преобразовать в процедуры обработки событий макросы, назначенные событиям формы &#171;Наклейки для клиентов&#187; (Customers Labels Dialog):</p>
+<ol>
+<li>Откройте форму &#171;Наклейки для клиентов&#187; (Customers Labels Dialog) в режиме Конструктора.</li>
+<li>Выберите команду  Сервис, Макрос, Преобразовать макросы формы  (Tools, Macro, Convert form&#8217;s Macros to Visual Basic).</li>
+<li>В диалоговом окне  Преобразование макроса формы  (Convert form macros) (рис. 11.19) нажмите кнопку  Преобразовать  (Convert), оставив флажки установленными по умолчанию.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image10/56a35aa6c2afe2d2fa427964d79a5dfa.gif" width="480" height="358" alt=""><meta itemprop="width" content="480">
+<meta itemprop="height" content="358"></span></p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image26/e9b3ac574795bb6e311f5f3a0d7fb3ec.gif" width="380" height="107" alt=""><meta itemprop="width" content="380">
+<meta itemprop="height" content="107"></span></p>
+<p> Рис. 11.19.  Преобразование макроса в процедуру VBA</p>
+<ol start="4">
+<li>Когда преобразование закончится, в форме &#171;Наклейки для клиентов&#187; (Customers Labels Dialog) щелкните правой кнопкой мыши, например по кнопке  Отменить,  и выберите команду  Свойства  (Properties).</li>
+<li>В диалоговом окне  Свойства  (Properties) раскройте вкладку  События  (Events).</li>
+<li>В поле для события  Нажатие кнопки  (On Click) оказалось установленным значение  [Процедура обработки событий]  ([Event Procedure]). Щелкните по кнопке Построителя, находящейся справа от поля, — откроется окно редактора VBA с текстом процедуры (рис. 11.20).</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image05/2fa2262f0aca139fd07946b7510681bf.gif" width="404" height="269" alt=""><meta itemprop="width" content="404">
+<meta itemprop="height" content="269"></span></p>
+<p> Рис. 11.20.  Процедура, полученная из макроса</p>
+<p>В этой процедуре, полученной из макроса, используются объект DoCmd для выполнения макрокоманды закрытия формы. В соответствии с флажками, установленными в окне  Преобразование макроса  (Convert Macro), комментарии в макросе были преобразованы в комментарии в процедуре и был добавлен код обработки ошибки, который выдает на экран сообщение об ошибке в случае ее возникновения  (см. гл. 13). </p>
+<p>Аналогично выполняется преобразование макросов, назначенных событиям отчета.</p>
+<p>Теперь рассмотрим преобразование в процедуру VBA макроса, не связанного с событием формы или отчета, например созданного ранее макроса &#171;Менеджеры по продажам&#187;.</p>
+<ol>
+<li>Щелкните по ярлыку  Макросы  (Macros) в окне базы данных &#171;Борей&#187;. Появится список макросов. Выделите макрос &#171;Менеджеры по продажам&#187;.</li>
+<li>Выберите команду  Сервис, Макрос, Преобразовать макросы  (Tools, Macro, Convert Macros to Visual Basic).</li>
+<li>Откроется такое же диалоговое окно, как в предыдущем примере (см. рис. 11.19), в котором необходимо нажать кнопку  Преобразовать  (Convert). После окончания процесса преобразования появится сообщение об успешном завершении процесса преобразования и откроется окно редактора VBA, в котором можно посмотреть полученный код на VBA (рис. 11.21).</li>
+<li>Макрос преобразуется в функцию с аналогичным именем Менеджеры_по_продажам (пробелы заменились символами подчеркивания).</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image09/51e5facffea9671dd84d5c461be7db19.gif" width="471" height="446" alt=""><meta itemprop="width" content="471">
+<meta itemprop="height" content="446"></span></p>
+<p> Рис. 11.21.  Результат преобразования макроса &#171;Менеджеры по продажам&#187;</p>
+<p>После преобразования исходный макрос &#171;Менеджеры по продажам&#187; не был удален, а в списке модулей в окне базы данных &#171;Борей&#187; появился новый модуль с именем &#171;Преобразованный макрос — Менеджеры по продажам&#187; (Converted Macro — Менеджеры по продажам).</p>
+<p>Существует еще один способ преобразования макросов в модуль VBA:</p>
+<ol>
+<li>Выделите макрос &#171;Менеджеры по продажам&#187; в окне базы данных &#171;Борей&#187;.</li>
+<li>Выберите команду  Файл, Сохранить как  (File, Save As).</li>
+<li>В появившемся диалоговом окне  Сохранение  (Save As), в раскрывающемся списке Как (As) выберите элемент  Модуль  (Module) (рис. 11.22) и нажмите кнопку  ОК. </li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image22/c99477a431d7beb53388f3c7f77fa8b3.gif" width="351" height="162" alt=""><meta itemprop="width" content="351">
+<meta itemprop="height" content="162"></span></p>
+<p> Рис. 11.22.  Сохранение макроса в виде модуля</p>
+<p> Выводы </p>
+<p>В этой главе мы познакомили вас с макросами, способами их создания и запуска, привели краткий обзор существующих макрокоманд и показали примеры их использования. Мы не описывали все события в формах и отчетах и их обработку с помощью макросов. Этот материал подробно изложен в  гл. 13.  Нет необходимости уделять особое внимание обработке событий с помощью макросов, поскольку те же действия можно реализовать в процедурах на VBA.</p>
+<p>В заключение хочется еще раз подчеркнуть, что использование макросов позволяет без особых усилий создавать приложения, автоматизирующие многие действия пользователя. Рекомендуется начинать с создания таких приложений, прежде чем углубляться в изучение языка программирования VBA. Однако сложные многопользовательские приложения следует сразу разрабатывать, используя язык программирования VBA, не создавая сложных комбинаций из макросов и модулей.</p>
+<!-- toc empty -->	</div>
+<!-- .entry-content -->
+
+</article>
+
+
+
+
+
+
+
+
+
+<div class="social-buttons">
+<span class="social-button social-button--vkontakte main" data-social="vkontakte"><span>Поделиться в ВКонтакте</span></span><span class="social-button social-button--telegram " data-social="telegram"></span><span class="social-button social-button--odnoklassniki " data-social="odnoklassniki"></span><span class="social-button social-button--whatsapp " data-social="whatsapp"></span><span class="social-button social-button--viber " data-social="viber"></span>
+</div>
+
+<!--noindex-->
+<div class="author-box">
+    <div class="author-info">
+        <div class="author-box__ava">
+                    </div>
+
+        <div class="author-box__body">
+            <div class="author-box__author">
+                Автор А. Днепров            </div>
+            <div class="author-box__description">
+                <p>Обучаю основам работы с офисными программами.</p>
+            </div>
+
+            
+        </div>
+    </div>
+</div>
+<!--/noindex-->
+    <meta itemprop="author" content="А. Днепров">
+<meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/glava-rabota-s-makrosami" content="Глава 11. Работа с макросами">
+    <meta itemprop="dateModified" content="2024-08-18">
+<div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+<div class="related-posts">
+<div class="related-posts__header">Вам также может понравиться</div>
+<div class="post-cards post-cards--vertical">
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/kak-sdelat-massovuyu-zamenu-formul"><img width="311" height="230" src="/image04/2408fadbc9163d5aa4994580cfc152cd.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/kak-sdelat-massovuyu-zamenu-formul">Как сделать массовую замену формул</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/kak-udalit-lishnie-i-pustye-stranitsy-v-excel">Как удалить лишние и пустые страницы в Excel</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/preobrazovanie-teksta-v-tablitsu"><img width="345" height="122" src="/image14/7a0043c9bf012cc129b22376cfebb2a9.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/preobrazovanie-teksta-v-tablitsu">Преобразование текста в таблицу</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/kak-delat-skrinshoty-s-vysokim-razresheniem-v-windows">Как делать скриншоты с высоким разрешением в Windows 11/10</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/osobennosti-raboty-s-mnogostranichny"><img width="213" height="230" src="/image13/6f8f9694c11ee322ff9d3675b0b8ba07.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/osobennosti-raboty-s-mnogostranichny">13.1 Особенности работы с многостраничными документами</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/kak-sdelat-izmeneniya-vnutri-yacheyki-p"><img width="345" height="93" src="/image27/f6550fd3bdfdfdbe500536441d5d252e.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/kak-sdelat-izmeneniya-vnutri-yacheyki-p">Как сделать изменения внутри ячейки. Принудительный перенос</a></div>
+    </div>
+</div>
+</div>
+            </main><!-- #main -->
+        </div>
+<!-- #primary -->
+
+        
+    
+
+    </div>
+<!--.site-content-inner-->
+
+    
+</div>
+<!--.site-content-->
+
+    
+    
+
+<div class="site-footer-container">
+
+    
+
+    <footer id="colophon" class="site-footer full" itemscope itemtype="http://schema.org/WPFooter">
+        <div class="site-footer-inner fixed">
+
+            
+            
+<div class="footer-bottom">
+    <div class="footer-info">
+        <div class="footer-copyright">© 2024 Самоучитель справочник по офисным программам. <a href="/o-nas" rel="nofollow">О нас | Контакты</a> | <a href="/map" rel="nofollow">Карта сайта</a>
+</div>
+        <div class="footer-under-copyright"></div>
+	        </div>
+
+    </div>
+        </div>
+    </footer><!--.site-footer-->
+</div>
+
+
+            <button type="button" class="scrolltop js-scrolltop" data-mob="on"></button>
+    
+                    <div class="top-line js-top-line">
+            <div class="top-line-inner fixed">
+
+                <div class="top-line__title">Глава 11. Работа с макросами</div>
+<div class="top-line__like"><span class="btn-fb-like btn-top-like social-button--vkontakte" data-social="vkontakte"><span>Поделиться в ВКонтакте</span></span></div>
+<div class="top-line__post">
+<div class="top-line__post_thumbnail"><a href="/rabota-s-elementami-outlook"><img width="100" height="76" src="/image19/b2305eb45bee011604eb8c928c618716.jpg" class="attachment-yelly_square size-yelly_square wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="top-line__post_title"><a href="/rabota-s-elementami-outlook">Работа с элементами Outlook</a></div>
+</div>            </div>
+        </div>
+    
+</div>
+<!-- #page -->
+
+<script>var pseudo_links = document.querySelectorAll(".pseudo-clearfy-link");for (var i=0;i<pseudo_links.length;i++ ) { pseudo_links[i].addEventListener("click", function(e){   window.open( e.target.getAttribute("data-uri") ); }); }</script><script>document.addEventListener("copy", (event) => {var pagelink = "\nИсточник: /glava-rabota-s-makrosami";event.clipboardData.setData("text", document.getSelection() + pagelink);event.preventDefault();});</script><script type="text/javascript" id="yelly-scripts-js-extra">
+/* <![CDATA[ */
+var settings_array = {"rating_text_average":"среднее","rating_text_from":"из","lightbox_display":"1"};
+var wps_ajax = {"url":"\/wp-admin\/admin-ajax.php","nonce":"e4ca9d4bd8"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="/js/scripts.min.js" id="yelly-scripts-js"></script>
+
+
+
+<div class="image-hover-social-buttons" style="display: none;">
+<div class="social-button social-button--vkontakte js-share-link" data-uri="https://vk.com/share.php?url=%2Fglava-rabota-s-makrosami"></div>
+<div class="social-button social-button--telegram js-share-link" data-uri="https://t.me/share/url?url=%2Fglava-rabota-s-makrosami&text=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+11.+%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0+%D1%81+%D0%BC%D0%B0%D0%BA%D1%80%D0%BE%D1%81%D0%B0%D0%BC%D0%B8"></div>
+<div class="social-button social-button--odnoklassniki js-share-link" data-uri="https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&service=odnoklassniki&st.shareUrl=%2Fglava-rabota-s-makrosami"></div>
+<div class="social-button social-button--whatsapp js-share-link" data-uri="whatsapp://send?url=%2Fglava-rabota-s-makrosamitext=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+11.+%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0+%D1%81+%D0%BC%D0%B0%D0%BA%D1%80%D0%BE%D1%81%D0%B0%D0%BC%D0%B8"></div>
+<div class="social-button social-button--viber js-share-link" data-uri="viber://forward?url=%2Fglava-rabota-s-makrosamitext=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+11.+%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0+%D1%81+%D0%BC%D0%B0%D0%BA%D1%80%D0%BE%D1%81%D0%B0%D0%BC%D0%B8"></div>
+</div>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(93345646, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/93345646" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>

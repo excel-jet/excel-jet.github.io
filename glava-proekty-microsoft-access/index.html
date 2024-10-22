@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<title>Глава 17. Проекты Microsoft Access — learn-office</title>
+	<meta name="description" content="В данной главе мы постараемся показать, что Microsoft Access 2000, будучи настольной СУБД, не ограничивает пользователя в разработке приложений различной">
+	<link rel="canonical" href="/glava-proekty-microsoft-access">
+	<meta property="og:locale" content="ru_RU">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Глава 17. Проекты Microsoft Access — learn-office">
+	<meta property="og:description" content="В данной главе мы постараемся показать, что Microsoft Access 2000, будучи настольной СУБД, не ограничивает пользователя в разработке приложений различной">
+	<meta property="og:url" content="/glava-proekty-microsoft-access">
+	<meta property="og:site_name" content="Excel-jet">
+	<meta property="article:published_time" content="2024-10-03T11:31:38+00:00">
+	<meta property="og:image" content="/image28/fdc95b541612384725310330935e9eee.gif">
+	<meta property="og:image:width" content="506">
+	<meta property="og:image:height" content="420">
+	<meta property="og:image:type" content="image/gif">
+	<meta name="author" content="А. Днепров">
+
+
+<style id="wp-block-library-theme-inline-css" type="text/css">.wp-block-audio :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio :where(figcaption){color:#ffffffa6}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed :where(figcaption){color:#ffffffa6}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:#ffffffa6}:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table :where(figcaption){color:#ffffffa6}.wp-block-video :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video :where(figcaption){color:#ffffffa6}.wp-block-video{margin:0 0 1em}:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}</style>
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 19.5px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36.5px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--normal: 22px;--wp--preset--font-size--huge: 49.5px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="google-fonts-css" href="https://fonts.googleapis.com/css?family=Roboto%3A400%2C400i%2C700&#038;subset=cyrillic&#038;display=swap" media="all">
+<link rel="stylesheet" id="yelly-style-css" href="/css/style.min.css" media="all">
+
+<style>.pseudo-clearfy-link { color: #008acf; cursor: pointer;}.pseudo-clearfy-link:hover { text-decoration: none;}</style>
+<link rel="preload" href="/fonts/icomoon.ttf" as="font" crossorigin>
+    <style>.scrolltop{width:50px}.scrolltop:before{content:"\21d1"}.entry-content a, .entry-content a:visited, .spanlink, .comment-reply-link, .pseudo-link, .widget_calendar a, .widget_recent_comments a, .child-categories ul li a{color:#0000ff}.child-categories ul li a{border-color:#0000ff}a:hover, a:focus, a:active, .spanlink:hover, .top-menu ul li>span:hover, .main-navigation ul li a:hover, .main-navigation ul li span:hover, .footer-navigation ul li a:hover, .footer-navigation ul li span:hover, .comment-reply-link:hover, .pseudo-link:hover, .child-categories ul li a:hover{color:#1e73be}.top-menu>ul>li>a:before, .top-menu>ul>li>span:before{background:#1e73be}.child-categories ul li a:hover, .post-box--no-thumb a:hover{border-color:#1e73be}.post-box--card:hover{box-shadow: inset 0 0 0 1px #1e73be}.post-box--card:hover{-webkit-box-shadow: inset 0 0 0 1px #1e73be}@media (min-width: 768px){body{background-attachment: scroll}}body{font-size:17px;}@media (max-width: 991px){.widget-area{display: block; margin: 0 auto}}</style>
+    <!-- Yandex.RTB -->
+<script>window.yaContextCb=window.yaContextCb||[]</script>
+<script src="https://yandex.ru/ads/system/context.js" async></script>	
+</head>
+<body class="post-template-default single single-post postid-908 single-format-standard wp-embed-responsive sidebar-right">
+<div id="page" class="site">
+    <a class="skip-link screen-reader-text" href="#content">Перейти к контенту</a>
+
+    
+    
+    <div class="search-screen-overlay js-search-screen-overlay"></div>
+    <div class="search-screen js-search-screen">
+        
+<form role="search" method="get" class="search-form" action="/">
+    <label>
+        <span class="screen-reader-text">Search for:</span>
+        <input type="search" class="search-field" placeholder="Поиск..." value="" name="s">
+    </label>
+    <button type="submit" class="search-submit"></button>
+</form>    </div>
+
+    
+
+<header id="masthead" class="site-header full" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="site-header-inner fixed">
+
+        <div class="humburger js-humburger">
+<span></span><span></span><span></span>
+</div>
+
+        
+<div class="site-branding">
+
+    <div class="site-branding__body"><div class="site-title"><a href="/">Excel-jet</a></div></div>
+</div>
+<!-- .site-branding -->
+
+    
+    <nav id="site-navigation" class="main-navigation full">
+        <div class="main-navigation-inner fixed">
+            <div class="menu-menyu-container"><ul id="header_menu" class="menu">
+<li id="menu-item-6695" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-6695">
+<a href="/excel">Excel</a>
+<ul class="sub-menu">
+	<li id="menu-item-6709" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6709"><a href="/excel/functions">Функции</a></li>
+</ul>
+</li>
+<li id="menu-item-6697" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6697"><a href="/microsoft-word">Word</a></li>
+<li id="menu-item-6696" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6696"><a href="/powerpoint">PowerPoint</a></li>
+<li id="menu-item-6698" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6698"><a href="/outlook">Outlook</a></li>
+</ul></div>        </div>
+    </nav><!-- #site-navigation -->
+
+    
+<div class="header-search"><span class="search-icon js-search-icon"></span></div>    </div>
+</header><!-- #masthead -->
+
+
+
+    
+    
+    <div id="content" class="site-content fixed">
+
+        
+        <div class="site-content-inner">
+    
+        
+        <div id="primary" class="content-area" itemscope itemtype="http://schema.org/Article">
+            <main id="main" class="site-main">
+
+                
+<article id="post-908" class="article-post post-908 post type-post status-publish format-standard has-post-thumbnail  category-excel">
+
+    
+        
+        <header class="entry-header"><h1 class="entry-title" itemprop="headline">Глава 17. Проекты Microsoft Access</h1></header>
+        
+        
+        
+    
+    
+    <div class="entry-meta">
+<span class="entry-time"><span class="entry-label">Время чтения</span> 72 мин.</span><span class="entry-date"><span class="entry-label">Опубликовано</span> <time itemprop="datePublished" datetime="2024-10-03">03.10.2024</time></span>
+</div>
+	<div class="entry-content" itemprop="articleBody">
+		<p>В данной главе мы постараемся показать, что Microsoft Access 2000, будучи настольной СУБД, не ограничивает пользователя в разработке приложений различной сложности и масштабируемости. Кроме создания достаточно сложных многопользовательских приложений, Access может использоваться в качестве средства для разработки клиентской части приложения с архитектурой «клиент-сервер». С помощью объектов Access может быть создан интерфейс к базам данных, которые размещаются на мощных серверах баз данных, таких как Microsoft SQL Server, Oracle и т. д.</p>
+<p>Для доступа к серверным базам данных из приложений Access используется один из двух стандартных способов доступа к удаленным данным: ODBC или OLE DB. Достоинством Access как клиента к серверной базе данных является наличие мощных и простых средств для разработки интерфейса — форм, отчетов и страниц Web. Наиболее простым и перспективным способом создания приложений в архитектуре «клиент-сервер» являются проекты Microsoft Access 2002 — файлы с расширением adp. В отличие от файла базы данных Access файл проекта не содержит таблиц с данными. Все таблицы, с которыми работает клиентское приложение, размещаются на сервере базы данных, а файл проекта включает в себя только те объекты, которые создаются на базе этих таблиц: формы, отчеты, страницы, макросы и модули. Однако из проекта Access доступны не только таблицы, но и другие объекты сервера: представления (views), хранимые процедуры (stored procedures), схемы базы данных (database diagrams). Доступ к этим объектам выполняется посредством OLE DB — универсального интерфейса, разработанного фирмой Microsoft для доступа к данным произвольного типа как реляционным, так и нереляционным.</p>
+<p>В качестве сервера базы данных в проектах Access 2002 может быть использован либо Microsoft SQL Server версии 6.5 и выше, либо настольная (desktop) версия Microsoft SQL Server 2000.</p>
+<p><strong>Замечание</strong></p>
+<p>В Access 2002 сохранилась возможность создавать интерфейс к серверным базам данных не только в проектах, но и в базах данных через присоединенные таблицы, используя доступ к серверу с помощью драйверов ODBC.</p>
+<p>Основные понятия</p>
+<p>В данном разделе мы рассмотрим основные понятия модели «клиент-сервер».</p>
+<p>Независимо от того, как определяется понятие архитектуры «клиент-сервер» (а таких определений в литературе много), в основе этого понятия лежит распределенная модель вычислений. В самом общем случае под клиентом и сервером понимаются два взаимодействующих процесса, из которых один является поставщиком некоторого сервиса для другого.</p>
+<ul>
+<li>Сервер — логический процесс, который обеспечивает некоторый сервис по запросу от клиента. Обычно сервер не только выполняет запрос, но и управляет очередностью запросов, буферами обмена, извещает своих клиентов о выполнении запроса и т. д.</li>
+<li>Клиент — процесс, который запрашивает обслуживание от сервера. Процесс не является клиентом по каким-то параметрам своей структуры, он является клиентом только по отношению к серверу. При взаимодействии клиента и сервера инициатором диалога с сервером, как правило, является клиент, сервер сам не инициирует совместную работу. Это не исключает, однако, того, что сервер может извещать клиентов о каких-то зарегистрированных им событиях. Инициирование взаимодействия, запрос на обслуживание, восприятие результатов от сервера, обработка ошибок — это обязанности клиента.</li>
+</ul>
+<p>Здесь и далее в книге речь будет идти о частном случае архитектуры «клиент-сервер», а именно о приложениях баз данных, в которых сервером является мощная реляционная СУБД, такая как Microsoft SQL Server (back-end), а клиентом — приложение, созданное в среде Access 2000, которое использует данные с сервера (front-end).</p>
+<p>Отличие архитектуры «клиент-сервер» от архитектуры «файл-сервер»</p>
+<p>Такое приложение от сетевого многопользовательского приложения, которое рассматривалось в предыдущей главе, отличается только тем, где конкретно ведется обработка данных.</p>
+<p>Сетевое многопользовательское приложение строится по принципу файл-серверной архитектуры. Данные в виде одного или нескольких файлов размещаются на файловом сервере. Файловый сервер принимает запросы, поступающие по сети от компьютеров-клиентов, и передает им требуемые данные. Однако обработка этих данных выполняется на компьютерах-клиентах. На каждом из компьютеров запускается полная копия процессора обработки данных Jet Engine. Любая копия Jet независимо управляет файлами MDB, содержащими данные. Единственная связь между этими независимыми действиями — файл блокировок (файл, который имеет имя, совпадающее с именем файла приложения, но с расширением Idb), который обязательно создается для каждого файла базы данных с расширением mdb. При этом каждая копия Jet выполняет изменения индексов, работу с системными таблицами и другие функции, входящие в компетенцию СУБД.</p>
+<p>В архитектуре «клиент-сервер» сервер базы данных не только обеспечивает доступ к общим данным, но и берет на себя всю обработку этих данных. Клиент посылает на сервер запросы на чтение или изменение данных, которые формулируются на языке SQL. Сервер сам выполняет все необходимые изменения или выборки, контролируя при этом целостность и согласованность данных, и результаты в виде набора записей или кода возврата посылает на компьютер клиента.</p>
+<p>Недостатки архитектуры с файловым сервером очевидны и вытекают главным образом из того, что данные хранятся в одном месте, а обрабатываются в другом. Это означает, что их нужно передавать по сети, что приводит к очень высоким нагрузкам на сеть и, вследствие этого, резкому снижению производительности приложения при увеличении числа одновременно работающих клиентов. Вторым важным недостатком такой архитектуры является децентрализованное решение проблем целостности и согласованности данных и одновременного доступа к данным. Такое решение снижает надежность приложения.</p>
+<p>Архитектура «клиент-сервер» позволяет устранить все указанные недостатки. Кроме того, она позволяет оптимальным образом распределить вычислительную нагрузку между клиентом и сервером, что также влияет на многие характеристики системы: стоимость, производительность, поддержку.</p>
+<p>Распределение функций в архитектуре «клиент-сервер»</p>
+<p>Процесс разработки таких систем достаточно сложен и одной из наиболее важных задач является как раз решение о том, как функциональность приложения должна быть распределена между клиентской и серверной частью. Пытаясь решить эту задачу, разработчики получают двух-звенные, трехзвенные и многозвенные архитектуры. Все зависит от того, сколько промежуточных звеньев включается между клиентом и сервером.</p>
+<p>Основная задача, которую решает клиентское приложение, — это обеспечение интерфейса с пользователем, т. е. ввод данных и представление результатов в удобном для пользователя виде, и управление сценариями работы приложения.</p>
+<p>Основные функции серверной СУБД — обеспечение надежности, согласованности и защищенности данных, управление запросами клиентов, быстрая обработка SQL-запросов.</p>
+<p>Вся логика работы приложения — прикладные задачи, бизнес-правила — в двух-звенной архитектуре распределяются разработчиком между двумя процессами: клиентом и сервером (рис. 17.1).</p>
+<p>Сначала большая часть функций приложения решалась клиентом, сервер занимался только обработкой SQL-запросов. Такая архитектура получила название «толстый клиент — тонкий сервер». Появление возможности создавать на сервере хранимые процедуры, т. е. откомпилированные программы с внутренней логикой работы, привело к тенденции переносить все большую часть функций на сервер. Сервер становился все более «толстым», а клиент — «утоньшался». Такое решение имеет очевидные преимущества, например его легче поддерживать, т. к. все изменения нужно вносить только в одном месте — на сервере. Однако язык, на котором пишутся хранимые процедуры, не является достаточно мощным и гибким, чтобы на нем было удобно реализовывать сложную логику приложения.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" decoding="async" src="/image28/fdc95b541612384725310330935e9eee.gif" alt="" width="506" height="420"><meta itemprop="width" content="506">
+<meta itemprop="height" content="420"></span></p>
+<p>Рис. 17.1. Распределение функций между клиентом и сервером</p>
+<p>Тогда возникла тенденция поручить выполнение прикладных задач и бизнес-правил отдельному компоненту приложения (или нескольким компонентам), которые могут работать как на специально выделенном компьютере — сервере приложений, так и на том же компьютере, где работает сервер базы данных. Так возникли трехзвенные и многозвенные архитектуры «клиент-сервер». Появилось специальное программное обеспечение (ПО) промежуточного слоя, которое должно обеспечить совместное функционирование множества компонентов такого многокомпонентного приложения. Такие приложения являются гибкими, масштабируемыми, но сложными в разработке.</p>
+<p>Далее в данной главе мы будем говорить только о двухзвенных приложениях «клиент-сервер», в которых клиент, реализованный на базе Access 2002, непосредственно обращается с запросами к серверу базы данных. Промежуточное ПО в данном случае только транслирует эти запросы и результирующие наборы записей между клиентом и сервером и не реализует никаких функций приложения.</p>
+<p>Универсальный доступ к данным через OLE DB</p>
+<p>Интерфейс ODBC был первым средством, которое обеспечило универсальный доступ к данным реляционного типа посредством SQL-запросов. Однако реляционные базы данных не единственный формат хранения данных, а современные приложения требуют интеграции информации из разных источников, не только SQL-ориентированных. Отсюда возникает потребность либо перевести все данные в единый формат, т. е. создать универсальную базу данных, что очень-дорого и неэффективно, либо обеспечить универсальный доступ к данным разных типов без необходимости их преобразовывать и реплицировать.</p>
+<p>OLE DB представляет собой разработанный фирмой Microsoft набор интерфейсов OLE, обеспечивающих унифицированный доступ приложений к данным из разнообразных источников, включая текстовые файлы, файлы электронной почты, электронные таблицы, данные мультимедиа и пр.</p>
+<p>Основные отличия OLE DB от ODBC состоят в следующем:</p>
+<ul>
+<li>OLE DB обеспечивает доступ к данным произвольных типов, а не только реляционным;</li>
+<li>OLE DB не является набором функций, а представляет собой набор интерфейсов, построенных в соответствии с компонентной моделью объектов (СОМ).</li>
+</ul>
+<p>Общие сведения</p>
+<p>Архитектура приложения, использующего интерфейсы OLE DB для доступа к данным, представлена на рис. 17.2. Эта архитектура является многокомпонентной. Компоненты доступа к данным делятся на три категории: потребители, провайдеры и сервисные компоненты.</p>
+<p>Потребители данных (Data Consumer) — это любое приложение или компонент, которые используют интерфейсы OLE DB для доступа к данным.</p>
+<p>Провайдеры данных (Data Provider) — это компоненты, которые обеспечивают потребителям доступ к данным через строго специфицированный набор интерфейсов. Они взаимодействуют с данными и представляют их единообразно в табличном виде, используя абстракцию, называемую набор рядов (rowsef).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" decoding="async" src="/image23/d2796d0da2f6c9d3d27e118c47975616.gif" alt="" width="575" height="426"><meta itemprop="width" content="575">
+<meta itemprop="height" content="426"></span></p>
+<p>Рис. 17.2. Архитектура универсального доступа к данным</p>
+<p>Сервисы (Services) — это дополнительные компоненты, которые обеспечивают функции, не реализованные провайдером OLE DB. Они являются как потребителями OLE DB данных, так и провайдерами. Примером сервиса может быть процессор запросов, который может объединять табличную информацию от разных OLE DB провайдеров и обеспечивать доступ к результирующим данным через OLE DB-интерфейс.</p>
+<p>Функционирование компонентов может реализовываться как разными процессами, так и на разных компьютерах через сетевые протоколы, такие как DCOM (Distributed Component Object Model — Распределенная компонентная модель объектов) или HTTP. При этом для выполнения распределенных транзакций может использоваться координатор распределенных транзакций, например Microsoft Transaction Server (MTS).</p>
+<p>&nbsp;</p>
+<p>Компоненты OLE DB</p>
+<p>В OLE DB определена иерархия компонентов, каждый из которых является СОМ-объектом (рис. 17.3).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image04/2709b27ba034c3144bb7aeead8631ecd.gif" alt="" width="506" height="420"><meta itemprop="width" content="506">
+<meta itemprop="height" content="420"></span></p>
+<p>Рис. 17.3. Объекты — компоненты OLE DB</p>
+<p>П Источники данных (Data Source) — объекты, которые реализуют подключение к источнику данных: Они определяют нужный OLE DB-провайдер, проверяют права доступа потребителя данных и инициируют соединение с источником данных.</p>
+<p><strong>Замечание</strong></p>
+<p>Следует различать объект — источник данных и источник данных, который фактически содержит данные.</p>
+<ul>
+<li>Сеансы (Sessions) — объекты, которые реализуют функции поддержки соединения с источником данных. Они предоставляют контекст для выполнения транзакций и команд. Основная цель сеанса — установить рамки транзакции. Один объект — источник данных может поддерживать несколько сеансов, а значит, и несколько транзакций.</li>
+<li>Транзакции (Transactions) — объекты, которые обеспечивают реализацию механизма транзакций. Они предоставляют методы для того, чтобы начать транзакцию для сеанса или новую транзакцию внутри текущей и подтвердить или отменить транзакцию самого нижнего уровня.</li>
+<li>Команды (Commands) — объекты, которые реализуют выполнение действий с данными (например, запросов). Команды порождаются сеансом, и в одном сеансе можно создать несколько команд.</li>
+<li>Наборы рядов (Rowsets) — объекты, которые предоставляют данные в табличной форме. Они порождаются либо сеансом, либо командой в качестве результата ее выполнения. Непосредственно из сессии можно создать набор рядов, содержащий все данные таблицы. Для реализации такого простого запроса не требуется команды. В остальных же случаях для создания набора рядов используются команды.</li>
+</ul>
+<p>Microsoft ActiveX Data Objects (ADO)</p>
+<p>Хотя OLE DB является очень мощным интерфейсом для работы с данными, этот интерфейс является низкоуровневым. Для удобства работы с OLE DB, так же как и для ODBC, была разработана объектная модель, которую назвали ADO (ActiveX Data Objects). Эта модель была описана в разд. «Объектные модели Microsoft Access»гл. 13. Здесь хотелось бы указать на те достоинства этой модели, которые позволяют говорить о ее ключевой роли в приложениях, связанных с обработкой данных, в ближайшем будущем.</p>
+<ul>
+<li>ADO является общей программной моделью для работы с данными различных типов. Она разрабатывалась специально для того, чтобы заменить все другие интерфейсы работы с данными. Впервые она была реализована в Internet Information Server (IIS), где успешно работала вместе с Active Server Pages.</li>
+<li>Модель включила ряд возможностей других известных объектных моделей (DAO и RDO), хотя и не полностью. Но она является расширяемой и в очередной версии должна превзойти эти модели как по функциональности, так и по производительности.</li>
+<li>Так как ADO реализована на базе СОМ-объектов, то она может быть использована в любом языке, который может работать с СОМ-объектами, в том числе и в VBA.</li>
+<li>ADO обеспечивает доступ к любому OLE DB источнику данных, для которого имеется OLE DB провайдер, и, более того, она позволяет расширить функциональность провайдера.</li>
+<li>ADO реализована таким образом, чтобы минимизировать сетевой трафик в ин-тернет-приложениях и сократить число промежуточных слоев между фронтальным (клиентским) приложением и источниками данных. Это требуется для того, чтобы сделать интерфейс как можно более легким и высокопроизводительным.</li>
+</ul>
+<p>Установка связи с источником данных посредством интерфейса OLE DB</p>
+<p>При установке на компьютере Microsoft Office XP или отдельного приложения Access 2002 автоматически устанавливаются следующие провайдеры OLE DB:</p>
+<ul>
+<li>Microsoft Jet 4.0 OLE DB Provider;</li>
+<li>Microsoft OLE DB Provider for SQL Server;</li>
+<li>OLE DB Provider for ODBC Drivers;</li>
+<li>OLE DB Provider for Oracle.</li>
+</ul>
+<p>Для того чтобы посмотреть, какие провайдеры OLE DB установлены на вашем компьютере, необходимо открыть диалоговое окно Data Link Properties. Это окно открывается при создании или редактировании специальных файлов — Microsoft Data Link, или файлов UDL (universal data link), в которых хранится информация о конкретном источнике данных OLE DB (тип провайдера OLE DB, сервер, на котором размещаются данные, база данных или файл, в котором они хранятся).</p>
+<p>Информация о соединении может храниться и запрашиваться также в том приложении, которое использует интерфейс OLE DB для доступа к данным. В нашем случае таким приложением яапяется проект Microsoft Access, однако о проектах Microsoft Access речь еще впереди, поэтому пока мы опишем только, как работать с файлами связей Microsoft Data Link.</p>
+<p>Для того чтобы создать новый UDL-файл, проще всего воспользоваться программой Проводник (Explorer) Windows:</p>
+<ol>
+<li>В окне Проводника откройте папку, в которую вы хотите поместить UDL-файл. Щелкните правой кнопкой мыши по правой панели и выберите из контекстного меню команду Создать, Microsoft Data Link (New, Microsoft Data Link). В результате будет создан новый файл с расширением udl.</li>
+<li>Дайте этому файлу название, например TestSQLServer, а затем откройте его двойным щелчком кнопки мыши. Появится диалоговое окно Data Link Properties.</li>
+<li>Раскройте вкладку Provider. Вы увидите список доступных провайдеров OLE DB</li>
+<li>Выберите один из провайдеров, например Microsoft OLE DB Provider for SQL Server, и нажмите кнопку Next. Раскроется вкладка Connection.</li>
+</ol>
+<p>Вкладка Connection и следующая вкладка Advanced содержат параметры соединения с источником данных. Вид этих вкладок зависит от используемого провайдера OLE DB. Для SQL Server провайдера OLE DB вкладка Connections</p>
+<p><strong>Замечание</strong></p>
+<p>Вкладка такого же вида отображается в диалоговом окне Data Link Properties, появляющемся при выборе команды Файл, Подключение (File, Connection) в окне приложения Access 2000 при работе с проектом Access 2002</p>
+<p>На этой вкладке нужно определить сервер, с которым будет выполняться соединение, имя базы данных и параметры регистрации на сервере. Можно использовать интегрированную с Windows NT (Use Windows NT integrated security) или стандартную (Use a specific user name and password) схему безопасности. При выборе переключателя Use a specific user name and password нужно ввести имя и пароль для регистрации на сервере. Флажок Blank password предназначен для использования пустого пароля в строке соединения (connection string). Флажок Allow saving password позволяет сохранить пароль в строке соединения. Если используется интегрированная схема безопасности, то подключение к SQL Server будет выполняться с тем именем и паролем, под которым вы зарегистрировались в сети Windows NT. На этой вкладке есть также кнопка Test Connection, позволяющая немедленно протестировать соединение с заданными параметрами.</p>
+<p>Следующая вкладка Advanced позволяет определить дополнительные свойства соединения, например Connection timeout . Это время ожидания (в секундах) соединения с источником данных. Если через заданный промежуток времени связь с источником данных установить не удалось, выдается сообщение об ошибке.</p>
+<p>Все свойства соединения можно увидеть и отредактировать на вкладке All . Перечень свойств в списке зависит от типа провайдера OLE DB. Для того чтобы отредактировать любое свойство, нужно выделить его в списке и нажать кнопку Edit Value. Появится диалоговое окно Edit Property Value. В поле Property Value можно ввести новое значение свойства, предварительно очистив его при необходимости нажатием кнопки Reset Value</p>
+<p>Настольная версия Microsoft SQL Server 2000</p>
+<p>Данная версия сервера представляет собой процессор обработки данных, который является альтернативой процессору Jet (первая версия этого процессора называлась MSDE — Microsoft Server Database Engine и была совместима с Microsoft SQL Server 7.0). Он может быть использован либо как локальный сервер, и в этом случае устанавливается на тот же компьютер, на котором установлен Access 2002, либо как сервер баз данных для небольшой рабочей группы, и в этом случае будет удаленным по отношению к клиентским компьютерам. Основное его достоинство по сравнению с процессором Jet — полная совместимость с Microsoft SQL Server 2000. Это означает, что, создав приложение целиком на персональном компьютере, можно в любой момент времени без труда перенести всю серверную его часть на Microsoft SQL Server 2000. В результате становится возможным многократное увеличение числа пользователей приложения и получение доступа к многочисленным службам SQL Server, например Data Transformation Services, OLAP Services и т. д.</p>
+<p>В отличие от Microsoft SQL Server 2000, Standard Edition Microsoft SQL Server 2000 Desktop Engine имеет ограничение на количество одновременно работающих с базой данных пользователей и на объем базы данных, не поддерживает симметричную мультиобработку (SMP) и в процессе репликации может функционировать только как подписчик. Максимальный объем базы данных, так же как и у Jet равен 2 Гбайт, а количество одновременно работающих пользователей ограничивается пятью активными запросами (потоками).</p>
+<p>Итак, с помощью проектов Access, используя Microsoft SQL Server 2000 Desktop Engine, вы можете создавать надежные многопользовательские приложения, а когда потребуется подключить к базе данных большое число пользователей или объем базы данных будет превышать 2 Гбайт, можно легко масштабировать этот проект, просто перенеся базу данных на SQL Server 2000.</p>
+<p>Установить Microsoft SQL Server 2000 Desktop Engine можно с того же компакт-диска, что и Microsoft Office XP. Он находится в папке Msde2000. При этом программа установки не запрашивает ни имя папки, в которую будет установлен сервер, ни имя самого сервера. Установка выполняется в папку C:PROGRAM FILESMICROSOFT SQL SERVER, а имя сервера по умолчанию — MSSQLSERVER. Если требуется изменить эти значения, нужно использовать при установке параметры командной строки (см. разд. справки Access 2002 «Работа с проектами Microsoft Access, Основные задачи, Установка и конфигурирование SQL Server 2000 Desktop Engine» (Working with Microsoft Access Projects, Basic Tasks, Install and configure SQL Server 2000 Desktop Engine)).</p>
+<p><strong>Замечание</strong></p>
+<p>Установка Microsoft SQL Server 2000 Desktop Engine выполняется корректно на компьютер с операционными системами Windows 98 или Windows 2000. Все попытки авторов установить его на компьютер с Windows NT не увенчались успехом.</p>
+<p>Создание проекта Access 2002</p>
+<p>Создание проекта Access аналогично созданию базы данных Access. Поэтому мы опишем эту процедуру кратко (см. разд. «Создание новой базы данных»гл. 1). Существует три возможности создания проекта Access:</p>
+<ul>
+<li>создать проект и сразу же связать его с существующей базой данных на сервере;</li>
+<li>создать проект и одновременно создать новую базу данных на сервере;</li>
+<li>создать проект, не связывая его пока с базой данных сервера.</li>
+</ul>
+<p>В любом случае нужно сначала выполнить команду меню Файл, Создать (File, New), чтобы появилась область задач Создание файла (New File).</p>
+<p>Создание проекта с использованием существующей базы данных</p>
+<ol>
+<li>Выберите в группе Создание (New) на Панели задач ярлык Проект (существующие данные) (Project (Existing Database)).</li>
+<li>В диалоговом окне Файл новой базы данных (File new database) введите имя файла проекта. Этот файл получает расширение adp. Нажмите кнопку Создать (Create). Появится диалоговое окно Data Link Properties, в котором нужно задать параметры соединения с сервером.</li>
+<li>Введите имя сервера, если требуется — имя и пароль, и выберите из списка нужную базу данных.</li>
+</ol>
+<p><strong>Замечание</strong></p>
+<p>Если вы хотите использовать SQL Server 2000 Desktop Engine, установленный локально, то поля в спецификации соединения должны быть заполнены так, (имя сервера — это имя вашего компьютера или специальный идентификатор local, и имя пользователя — за).</p>
+<p>Можно убедиться в правильности задания параметров соединения, нажав кнопку Test Connection. Нажмите кнопку ОК. Появится окно проекта Access 2000, очень похожее на окно обычной базы данных Access, однако список ярлыков на панели объектов будет несколько отличаться от традиционного списка объектов базы данных Access.</p>
+<p><strong>Замечание</strong></p>
+<p>В качестве примера мы используем учебный проект NorthwindCS, входящий в комплект демонстрационных приложений Access 2002. При установке Access 2002 в папке SAMPLES размещается сценарий установки этой базы на Microsoft SQL Server — файл NorthwindCS. SQL. Этот файл содержит набор предложений SQL, которые создают на сервере необходимые таблицы, представления, хранимые процедуры и загружают данные. Этот сценарий можно выполнить на сервере с помощью утилиты SQL Enterprise Manager, которая включена в дистрибутивный пакет любой версии сервера, либо он выполняется автоматически при открытии файла NordwindCS.adp.</p>
+<p>Еще одним примером может служить демонстрационная база данных Pabs, которая создается на SQL Server при его установке и содержит данные о книгах, их авторах и издателях.</p>
+<p>Создание проекта с новой базой данных</p>
+<p>Выберите ярлык Проект (новые данные) (Project (New Database)) в группе Создание (New) области задач Создание файла (New File). Откроется пустое окно базы данных и запустится Мастер баз данных Microsoft SQL Server (Microsoft SQL Server Database Wizard). В диалоговом окне мастера (рис. 17.4) нужно ввести имя сервера (если Access обнаруживает на локальном компьютере MSDE, то имя сервера автоматически подставляется), имя и пароль пользователя для регистрации на сервере и имя базы данных. После этого нажмите кнопку Далее (Next). Если все введено правильно, во втором диалоговом окне мастера нужно только нажать кнопку Готово (Finish). После этого появится окно с индикатором процесса создания новой базы «данных на сервере (рис. 17.5).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image22/c8371171211338ad13486da2247c6bf5.gif" alt="" width="486" height="361"><meta itemprop="width" content="486">
+<meta itemprop="height" content="361"></span></p>
+<p>Рис. 17.4. Первое диалоговое окно Мастера баз данных Microsoft SQL Server</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image11/62b99811f40a6c81c834395d70b4b389.gif" alt="" width="372" height="333"><meta itemprop="width" content="372">
+<meta itemprop="height" content="333"></span></p>
+<p>Рис. 17.5. Диалоговое окно с индикатором процесса создания базы данных на сервере</p>
+<p><strong>Замечание</strong></p>
+<p>Если база данных создается на SQL Server 6.5, то появятся дополнительные окна мастера, в которых нужно ввести названия и размеры устройств для базы данных и журнала транзакций, а также размеры базы данных и журнала транзакций.</p>
+<p>При создании нового проекта можно не устанавливать соединение с базой данных на сервере сразу, а выполнить подключение позже. Для этого в диалоговом окне Data Link Properties необходимо нажать кнопку Отмена (Cancel). Присоединить базу данных на сервере к существующему проекту Access 2002 можно с помощью команды меню Файл, Подключение (File, Connection). Эту же команду можно использовать также для соединения проекта с другой базой данных. Чтобы подключить проект Access 2000 к базе данных на сервере, выберите команду меню Файл, Подключение (File, Connection) и введите необходимые параметры соединения в диалоговое окно Data Link Properties.</p>
+<p>Открытие файла проекта</p>
+<p>Файл проекта Access открывается аналогично файлу базы данных. Однако, в отличие от файла базы данных, файл проекта всегда открывается в монопольном режиме. Если вы пытаетесь открыть файл, который уже открыт другим пользователем, он откроется в режиме «только для чтения». Тем не менее и в этом режиме можно работать с объектами, размещенными на сервере (изменять, удалять, создавать новые объекты). Запрещается только модифицировать объекты, находящиеся в самом файле проекта. Для примера можно открыть файл NorthwindCS.adp, который размещается в папке Samples при установке Access 2002. При первом открытии данного файла Access может автоматически создать базу данных на SQL Server. Для этого используется файл сценария установки NorthwindCS.SQL, который находится в той же папке Samples. Сначала Access ищет настольную версию SQL Server на локальном компьютере, и если найдет, то спросит вас, хотите ли вы создать на нем новую базу данных «NorthwindCS». Если на локальном компьютере сервер не найден, то Access попросит ввести имя удаленного сервера, имя пользователя и пароль. После этого исполняется сценарий установки базы данных на соответствующем сервере, и файл проекта NorthwindCS.ADP соединяется с новой базой данных «NorthwindCS».</p>
+<p>Окно проекта представлено выше. В списке таблиц вы видите те же таблицы, что и в базе данных «Борей» (Northwind). Однако эти таблицы хранятся не в файле проекта, а на сервере. Хотя значок таблицы выглядит так, как если бы это были локальные таблицы. На панели объектов проекта Access 2002 по сравнению с базой данных Access 2002 появился новый ярлык — Схемы баз данных (Database Diagrams). Соответствующие новые объекты также размещены на сервере. Все остальные объекты (кроме страниц доступа к данным) находятся в файле проекта.</p>
+<p>Работа с таблицами</p>
+<p>Если вы откроете одну из таблиц, например «Товары» (Products), то увидите, что форма представления таблицы почти не изменилась. Появились только две дополнительные кнопки справа от кнопок навигации. Одна из них (крайняя справа) используется для задания максимального числа записей, которые будут передаваться с сервера. Это значение отображается в небольшом диалоговом окне. Вы можете ограничить передаваемое число записей, введя требуемое значение в текстовое поле Максимальное число записей (Max Record Count). Еще одна кнопка (вторая справа) подсвечивается красным цветом в процессе передачи записей. С помощью этой кнопки можно прервать процесс передачи записей с сервера. Заметим, что такой возможности явно не хватает в базе данных Access. Когда запрос выполняется достаточно долго, вы не можете прервать этот процесс.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image02/100e4a7ed3e192a543f4a1bb212b87f1.gif" alt="" width="518" height="337"><meta itemprop="width" content="518">
+<meta itemprop="height" content="337"></span></p>
+<p>Рис. 17.6. Отображение таблицы, хранящейся на SQL Server, в проекте Access 2002</p>
+<p>Определение и изменение структуры таблицы</p>
+<p>Открыв таблицу в режиме Конструктора, вы увидите, что способ отображения структуры таблицы незначительно отличается от принятого в режиме Конструктора таблиц базы данных Access (рис. 17.7). В верхней части Конструктора появились два новых столбца:</p>
+<ul>
+<li>Длина (Length) — длина поля в байтах;</li>
+<li>Разрешить Null (Allow Null) допустимо или нет значение NULL в данном поле.</li>
+</ul>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image10/55d73960c4d9226172e9c05d460c5ce1.gif" alt="" width="517" height="456"><meta itemprop="width" content="517">
+<meta itemprop="height" content="456"></span></p>
+<p>Рис. 17.7. Таблица SQL Server в режиме Конструктора</p>
+<p>Значение в столбце Длина (Lengh) может изменяться пользователем только для текстовых полей, в остальных случаях это значение устанавливается по умолчанию при выборе типа данных и не может быть изменено. Раскрывающийся список в столбце Тип данных (Data Type) содержит значения, отличающиеся от типов данных, принятых в базах данных Access. Это типы данных для Microsoft SQL Server.</p>
+<p>Столбец Описание (Description) — эквивалент поля Примечание (Comment) в Access — отображается только для SQL Server 2000.</p>
+<p>Остальные свойства полей таблицы отображаются на вкладке Столбцы (Columns) в нижней части окна Конструктора. Описание этих свойств приведено в табл. 17.1.</p>
+<table class="table_common zebra" width="700">
+<tbody>
+<tr>
+<td>Свойство</td>
+<td>Описание</td>
+<td>Значения по умолчанию</td>
+</tr>
+<tr>
+<td>Значение по умолчанию (Default Value)</td>
+<td>Значение, которое вставляется в поле, если пользователь ничего не ввел в него. Это значение игнорируется для полей, имею- щих тип данных timestamp. Если значе- ние по умолчанию не задано, в поле встав- ляется значение Null</td>
+<td>Пусто</td>
+</tr>
+<tr>
+<td>Число цифр (Precision)</td>
+<td>Максимальное количество цифр (для чи- словых полей), разрешенных для данного поля</td>
+<td>Зависит от типа дан- ных. Например, для int равно 4</td>
+</tr>
+<tr>
+<td>Точность (Scale)</td>
+<td>Максимальное количество десятичных знаков после разделителя. Это значение должно быть меньше или равно значению Precision</td>
+<td>Как правило 0, для типа данных money и smallmaney — 4</td>
+</tr>
+<tr>
+<td>Идентификация (Identity)</td>
+<td>Свойство, которое обеспечивает автоматическую генерацию уникальных значений в этом поле при вставке новых записей</td>
+<td>Нет (флажок сброшен)</td>
+</tr>
+<tr>
+<td>Начало идентификации (Identity Seed)</td>
+<td>Значение, которое присваивается первой записи в таблице</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Шаг идентификации (Identity Increment)</td>
+<td>Шаг изменения значений в поле. В каждой последующей записи значение поля увеличивается на это число</td>
+<td>1</td>
+</tr>
+<tr>
+<td>IsRowGuid</td>
+<td>Указывает, является ли данное поле глобальным идентификатором. В отличие от поля, которое имеет значение свойства Идентификация (Identity) равным Да (Yes) и которое однозначно идентифицирует ка- ждую запись в таблице, SQL Server версии 7.0 и выше позволяет создать поле в таблице, которое является глобальным идентификатором, т. е. каждое значение этого поля может быть уникальным в пределах всей базы данных или даже во всех базах данных на всех серверах сети.
+<p>В этом случае значение данного поля должно быть Да (Yes), но тип данных может быть только uniqueidentif ier</p>
+</td>
+<td>Нет</td>
+</tr>
+<tr>
+<td>Формула (Formula)</td>
+<td>Показывает формулу для вычисляемого столбца. Только для SQL Server 2000</td>
+<td>Пусто</td>
+</tr>
+<tr>
+<td>Сортировка (Collation)</td>
+<td>Для текстовых полей позволяет выбрать способ сортировки данных в поле. Только для SQL Server 2000</td>
+<td>По умолчанию для базы данных</td>
+</tr>
+<tr>
+<td>Формат (Format)</td>
+<td>Позволяет задать формат отображения данных в поле. Только для SQL Server 2000</td>
+<td>Пусто</td>
+</tr>
+<tr>
+<td>Число десятичных знаков (Decimal Places)</td>
+<td>Для числовых полей определяет количество десятичных знаков при отображении данных в поле. Аналог соответствующего свойства в Access. Если установлено значение [Авто] (Auto), то количество отображаемых десятичных знаков определяется значением свойства Формат (Format)</td>
+<td>Авто</td>
+</tr>
+<tr>
+<td>Маска ввода (Input Mask)</td>
+<td>Аналог соответствующего свойства в Access. Только для SQL Server 2000</td>
+<td>Пусто</td>
+</tr>
+<tr>
+<td>Подпись (Caption)</td>
+<td>Определяет подпись для поля, которая появляется в формах. Только для SQL Server 2000</td>
+<td>Пусто</td>
+</tr>
+<tr>
+<td>Индексация (Indexed)</td>
+<td>Определяет, будет ли создаваться индекс для данного поля. Только для SQL Server 2000</td>
+<td>Нет</td>
+</tr>
+<tr>
+<td>Гиперссылка (Hyperlink)</td>
+<td>Указывает, будет ли значение этого поля интерпретироваться как гиперссылка. Только для SQL Server 2000</td>
+<td>Нет</td>
+</tr>
+<tr>
+<td>Режим IME (IME Mode)</td>
+<td>Позволяет задать способ ввода данных в поле при использовании китайского, японского и некоторых других языков. Только для SQL Server 2000</td>
+<td>Нет</td>
+</tr>
+<tr>
+<td>Режим предложений IME (IME Sentence Mode)</td>
+<td>Определяет режим преобразования данных при использовании китайского, японского и ряда других языков. Только для SQL Server 2000</td>
+<td>Отсутствует</td>
+</tr>
+<tr>
+<td>Почтовый адрес (Postal Address)</td>
+<td>Содержит имя элемента управления или поля, которое отображает почтовый адрес, соответствующий введенному в данное поле почтовому коду, либо штрих-код клиента, соответствующий введенному адресу. Только для SQL Server 2000</td>
+<td>Пусто</td>
+</tr>
+<tr>
+<td>Фуригана (Furigana)</td>
+<td>Содержит имя столбца таблицы, в котором может храниться Furigana-эквивалент введенного текста. Только для SQL Server 2000</td>
+<td>Пусто</td>
+</tr>
+</tbody>
+</table>
+<p>Таблица 17.1. Свойства полей</p>
+<p>Теперь и в проекте Access таблицы могут иметь поля подстановки. Раскройте вкладку Поиск (Lookup) и вы увидите знакомые свойства, которые позволяют определить поле подстановки. Оно задается точно так же, как и в базе данных Access.</p>
+<p>Типы данных, которые поддерживает SQL Server, приведены в табл. 17.2.</p>
+<table class="table_common zebra" width="700">
+<tbody>
+<tr>
+<td>Типы данных</td>
+<td>Типы данных SQL Server</td>
+<td>Примечания</td>
+</tr>
+<tr>
+<td>Двоичные</td>
+<td>binary[(n)] varbinary [(n)] .</td>
+<td></td>
+</tr>
+<tr>
+<td>Символьные</td>
+<td>char[(n)] varchar [(n)]</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>nchar nvarchar</td>
+<td>Используются для поддержки Unicode-символов. Только в Microsoft SQL Server 7.0</td>
+</tr>
+<tr>
+<td>Дата и время</td>
+<td>clatetime smalldatetime</td>
+<td>Нет отдельных типов для даты и времени</td>
+</tr>
+<tr>
+<td>Числовые с фиксированной точностью (Exact numeric)</td>
+<td>decimal [(p[,s])] numeric[(p[,s])]</td>
+<td>Не теряют точность за счет округления</td>
+</tr>
+<tr>
+<td>Приблизительные число-вые (Approximate numeric)</td>
+<td>floatf [(n)] real</td>
+<td></td>
+</tr>
+<tr>
+<td>Целые</td>
+<td>int smallint tinyint</td>
+<td>4 байта 2 байта 1 байт</td>
+</tr>
+<tr>
+<td>Денежные</td>
+<td>money smallmoney</td>
+<td></td>
+</tr>
+<tr>
+<td>Специальные</td>
+<td>bit timestamp</td>
+<td></td>
+</tr>
+<tr>
+<td>Текст</td>
+<td>text ntext</td>
+<td>Используются для поддержки UNICODE-символов. Только в Microsoft SQL Server 7.0</td>
+</tr>
+<tr>
+<td>Графика</td>
+<td>image</td>
+<td></td>
+</tr>
+<tr>
+<td>Курсор</td>
+<td>cursor</td>
+<td>Можно использовать для выходных параметров процедур Только в Microsoft SQL Server 7.0</td>
+</tr>
+<tr>
+<td>Уникальный идентификатор</td>
+<td>unique identifier</td>
+<td>Соответствует QUID в модели СОМ. Только в Microsoft SQL Server 7.0</td>
+</tr>
+<tr>
+<td>Пользовательские типы данных (user-defined datatypes)</td>
+<td></td>
+<td>Определяются на базе системных типов данных</td>
+</tr>
+</tbody>
+</table>
+<p>Таблица 17.2. Типы данных Microsoft SQL Server</p>
+<p>Диалоговое окно свойств таблицы</p>
+<p>Если щелкнуть правой кнопкой мыши в верхней части окна Конструктора и выбрать в контекстном меню команду Свойства (Properties), появится диалоговое окно Свойства (Properties), имеющее пять вкладок. На них перечисляется ряд свойств таблицы, которые можно просматривать и изменять. Наиболее важны три вкладки:</p>
+<ul>
+<li>Связи (Relationships);</li>
+<li>Индексы и ключи (Indexes/Keys);</li>
+<li>Проверить ограничения (Check’Constraints).</li>
+</ul>
+<p>На вкладке Связи (Relationships) отображаются и могут модифицироваться внешние ключи (foreign keys) таблицы, которые отражают ее связи с другими таблицами. Внешние ключи создаются автоматически в процессе задания связей между таблицами на схеме данных.</p>
+<p>Поле со списком Выделенная связь (Selected relationship) содержит список связей таблицы. Выбрав из этого списка значение, в остальных полях можно увидеть описание выбранной связи.</p>
+<p>Поле Имя связи (Relationship name) показывает имя данной связи.</p>
+<p>Таблица из двух столбцов отображает две стороны связи: слева — имя таблицы и имя поля, которое является первичным ключом; справа — имя таблицы и имя поля, которое является внешним ключом, т. е. содержит значения первичного ключа другой таблицы. Эти таблицы связаны по полю «КодТипа» (Categoryld). Это поле в таблице «Типы» является первичным ключом, а в таблице «Товары» — внешним. Имя связи состоит из трех частей и формируется следующим образом: первым пишется имя таблицы, включающей внешний ключ, затем имя таблицы, содержащей первичный ключ, и перед ними ставится префикс. Префикс зависит от того, на какой стороне оказывается таблица, связи которой мы описываем: если она содержит внешний ключ, то пишется префикс FK_, если она содержит первичный ключ, то пишется префикс РК_. В данном примере получается имя FK_Products_Categories, т. к. мы смотрим связи таблицы «Товары» (Products). Перед именем связи присутствует значок. Значок «бесконечность» указывает, что данная таблица находится в связи на стороне «многие», а значок «ключ» означает, что данная таблица находится на стороне «один». Имя связи формируется автоматически, однако оно может быть откорректировано в поле Имя связи (Relationship name).</p>
+<p>Для выбранной связи можно изменить поле, которое будет содержать вторичный ключ, выбрав из списка полей таблицы нужное поле. Изменить поле первичного ключа нельзя, это можно сделать только на вкладке Индексы и ключи (Indexes/Keys).</p>
+<p>Флажки в нижней части вкладки имеют следующие значения.</p>
+<ul>
+<li>Флажок Проверить имеющиеся данные при создании (Check existing data on creation), будучи установленным, гарантирует, что для всех данных, которые были введены в таблицу до того, как наложили данное ограничение, будет выполнена проверка, удовлетворяют ли они этому ограничению.</li>
+<li>Флажок Применить связь при репликации (Enforce constraint for replication) позволяет включать и отключать проверку данного ограничения при копировании таблицы в другую базу данных.</li>
+<li>Флажок Применить связь для INSERT и UPDATE (Enforce constraint for INSERT and UPDATE) позволяет включать и отключать проверку данного ограничения при добавлении, изменении и удалении записей в таблице, содержащей внешний ключ. Каскадное удаление и обновление связанных полей возможно только для . Microsoft SQL Server 2000.</li>
+</ul>
+<p>Кнопки Создать (New) и Удалить (Delete) используются для создания и удаления связей.</p>
+<p>На вкладке Индексы и ключи (Indexes/Keys) можно вводить и изменять индексы таблицы, первичный ключ и ограничения типа уникальность (флажок UNIQUE) .</p>
+<p>Первичный ключ устанавливается в таблицах проекта так же, как в таблицах Access: нужно выделить поле или несколько полей и нажать кнопку Ключевое поле (Primary Key) на панели инструментов в режиме Конструктора таблицы. Первичный ключ может быть изменен с помощью диалогового окна Свойства (Properties). Для этого нужно выделить в списке Выбранный индекс (Selected index) первичный ключ (он имеет префикс РК_). В поле Тип (Туре) появится значение Первичный ключ (Primary key). В списке Имя столбца (Column name) определите поле или несколько полей, которые будут составлять ключ. При этом, если ключ составной, нужно выбирать поля и том порядке, в каком они должны быть в ключе. При выходе из поля Имя столбца (Column name) (при переносе фокуса в любое другое поле) проверяется правильность определения ключа и выдается сообщение об ошибке, если нарушено какое-либо правило.</p>
+<p>Поле Имя индекса (Index Name) содержит имя индекса. Для первичного ключа это имя состоит из префикса РК_ и имени таблицы.</p>
+<p>Флажок CLUSTERED для первичного ключа должен быть установлен, т. к. это кластеризованный индекс.</p>
+<p><strong>Замечание</strong></p>
+<p>Кластеризованный индекс (clustered index) определяет порядок физического следования строк в таблице, поэтому он может быть только один, и его предпочтительнее использовать, если часто приходится выбирать не по одной строке, а по целому диапазону строк — в этом случае кластеризованный индекс работает быстрее, чем некластеризованный. Если этот флажок недоступен, значит, в таблице уже есть поле, в котором определен кластеризованный индекс. Чтобы установить флажок для первичного ключа, нужно сначала снять его в другом поле.</p>
+<p>Поле Выделенный индекс (Selected index) содержит список всех индексов в таблице. Чтобы добавить новый индекс, нужно:</p>
+<ol>
+<li>Нажать кнопку Создать (New). При этом в поле Выделенный индекс (Selected index) появится имя индекса, автоматически созданное системой.</li>
+<li>В списке Имя столбца (Column name) выбрать поля, которые будут составлять индекс (максимальное число полей в составном индексе 16), и задать порядок сортировки данных в индексе (по возрастанию или по убыванию).</li>
+<li>Ввести имя индекса в поле Имя индекса (Index name).</li>
+<li>Дополнительно можно определить другие свойства. Например, если вы хотите сделать индекс уникальным, нужно установить флажок UNIQUE, выбрать переключатель Индекс (Index) и установить флажок Пропускать повторения (Ignore duplicate key).</li>
+</ol>
+<p>Чтобы удалить индекс, нужно выбрать его из списка и нажать кнопку Удалить (Delete).</p>
+<p>Ограничение типа UNIQUE на поле таблицы создается так же, как уникальный индекс, только нужно выбрать переключатель Ограничение (Constraint) (он выбирается по умолчанию). Такое ограничение можно ввести для поля, в котором разрешены значения Null, хотя первичным ключом такое значение быть не может.</p>
+<p>Параметр Степень заполнения (Fill factor) определяет максимальный процент заполнения индексной страницы данными. Этот параметр может влиять на производительность и используется при тонкой настройке приложения, по умолчанию его значение равно 0.</p>
+<p>На вкладке Проверить ограничения (Check Constraints) можно вводить и изменять ограничения типа проверки (CHECK), описывающие правила проверки значений полей. В поле со списком Выделенное ограничение (Selected constraint) можно выбрать одно из ограничений, которые уже введены для таблицы. Каждое ограничение имеет имя, состоящее из трех частей:</p>
+<ul>
+<li>префикс, который определяет тип ограничения, в данном случае это СК_;</li>
+<li>имя таблицы;</li>
+<li>имя поля.</li>
+</ul>
+<p>Обычно префикс и имя таблицы формируются автоматически, в процессе ввода нового ограничения, последняя часть имени добавляется вручную в поле Имя ограничения (Constraint name).</p>
+<p>Поле Выражение для ограничения (Constraint expression) служит для ввода выражения, которое и определяет ограничение. При написании выражения используется синтаксис языка сервера Transact-SQL, который отличается от синтаксиса SQL Access. (Для справки обращайтесь к разд. «Transact-SQL Reference» справочной системы Access.)</p>
+<p>Флажки в нижней части вкладки имеют то же назначение, что и на вкладке Связи (Relationships).</p>
+<p>Чтобы ввести новое ограничение, нужно нажать кнопку Создать (New), ввести выражение в поле Выражение для ограничения (Constraint expression) и добавить к значению в поле Имя ограничения (Constraint name) имя поля, на которое накладывается ограничение.</p>
+<p>Чтобы удалить уже существующее ограничение, нужно выбрать его из списка в поле Выделенное ограничение (Selected constraint) и нажать кнопку Удалить (Delete).</p>
+<p>Создание триггеров</p>
+<p><strong> Триггеры </strong> являются особой разновидностью хранимых процедур, которые активизируются не по прямому вызову пользователя, а при наступлении определенного события в базе данных, а именно — вставки, удаления или модификации записи в таблице. Триггеры привязаны к конкретной таблице. Каждая таблица может иметь до трех триггеров — по одному на каждый вид операции с данными (INSERT, UPDATE, DELETE). Но один триггер может также обрабатывать и два и все три события.</p>
+<p>Триггер может быть использован для соблюдения определенных правил модификации данных. При нарушении этих правил он может откатить все произведенные изменения и вернуть данные в исходное состояние. Кроме того, триггер может быть использован для автоматического осуществления каких-либо сопутствующих операций, например ведения журнала изменений данных или автоматического обновления некоторых итоговых значений (например, значения поля, в которое вносится количество сотрудников в фирме).</p>
+<p>Чтобы создать триггер для таблицы, нужно:</p>
+<ol>
+<li>Щелкнуть по ярлыку Таблицы (Tables) на панели объектов в окне базы данных.</li>
+<li>Щелкнуть правой кнопкой мыши по таблице «Заказы» (Orders).</li>
+<li>В контекстном меню выбрать команду Триггеры (Triggers). Появится диалоговое окно Триггеры для таблицы (Triggers for Table) со списком триггеров. Нажмите кнопку Создать (New). Откроется окно редактора кода с шаблоном текста программы.</li>
+<li>Нужно определить тип операции с данными (INSERT, UPDATE, DELETE) и вставить в этот шаблон текст SQL-предложений, которые будут выполнять требуемые действия. (Для справки о языке SQL обращайтесь к разд. справки «Transact SQL Reference».) Чтобы сохранить код программы, выполните команду Файл, Сохранить (File, Save).</li>
+</ol>
+<p>Для того чтобы изменить или удалить существующий триггер, нужно в диалоговом окне Триггеры для таблицы выбрать из списка нужный триггер и нажать кнопку Изменить (Edit) или Удалить (Delete) соответственно.</p>
+<p>Работа со схемами базы данных</p>
+<p>Схемы баз данных (Database Diagrams) — это тип объектов, который присутствует только в проектах Access. Они являются аналогом схемы данных в базах данных Access, однако в проектах Access это понятие существенно расширено.</p>
+<p>Во-первых, таких схем в одном проекте может быть несколько. Это значит, что всю совокупность таблиц можно разделить на логические области и построить для каждой из них свою схему данных. Это очень важно, т. к. количество таблиц в базе данных на сервере может быть очень велико, и, если разместить их все на одной схеме, она может быть просто необозрима. Кроме того, могут быть созданы схемы данных для определенных целей, когда нужно выделить и выразить специфический взгляд на подмножество таблиц базы.</p>
+<p>Во-вторых, сам инструментарий для создания схем баз данных более богат: он позволяет не только определять связи между существующими таблицами, но и изменять структуру и свойства таблиц, создавать новые таблицы и т. д. В этом смысле он является альтернативой обычному способу описания таблиц — с помощью режима Конструктора.</p>
+<p>Вы можете выполнять операции как с отдельным объектом этой структуры, так и с группой объектов. Причем все изменения, которые вносятся в структуру базы данных, не сохраняются не сервере до тех пор, пока вы не сохраните измененную схему. Это удобно, когда нужно внести много изменений. Тогда сохранить можно только конечный результат, когда вы убедились, что все изменения согласованы.</p>
+<p>Конструктор баз данных</p>
+<p>Конструктор баз данных (Database Diagram Designer) обеспечивает графическое представление структуры базы данных SQL Server. Основными объектами схемы являются таблицы и связи. Действия, которые могут выполняться над объектами схемы, можно разбить на две группы:</p>
+<ul>
+<li>действия, изменяющие структуру базы данных;</li>
+<li>действия, изменяющие форму представления объектов на схеме.</li>
+</ul>
+<p>При сохранении схемы данных и те и другие изменения сохраняются в системной таблице dtproperties.</p>
+<p>К действиям, изменяющим структуру данных, относятся:</p>
+<ul>
+<li>создание новых таблиц;</li>
+<li>редактирование свойств существующих таблиц;</li>
+<li>определение индексов и ограничений для полей таблиц;</li>
+<li>создание связей между таблицами;</li>
+<li>удаление таблиц.</li>
+</ul>
+<p>К действиям, изменяющим только форму представления схемы, относятся:</p>
+<ul>
+<li>добавление таблиц к схеме (уже существующих в базе данных);</li>
+<li>удаление таблиц из схемы (но не из базы данных);</li>
+<li>изменение расположения таблиц на схеме;</li>
+<li>изменение формы представления и размеров таблиц;</li>
+<li>масштабирование схемы данных;</li>
+<li>предварительный просмотр и печать схемы;</li>
+<li>копирование и перемещение таблиц.</li>
+</ul>
+<p>Рассмотрим эти действия последовательно.</p>
+<p>Создание таблицы в окне Конструктора базы данных</p>
+<p>Сначала откройте в режиме Конструктора как любой другой объект Access схему базы даннйх Relationships (Связи), которая присутствует в проекте NorthwindCS.adp. Для того чтобы создать с помощью Конструктора новую таблицу, нужно:</p>
+<ol>
+<li>Щелкнуть правой кнопкой мыши по свободному месту в окне Конструктора и выбрать в контекстном меню команду Новая таблица (New Table). Появится диалоговое окно Выбор имени (Choose Name), запрашивающее имя таблицы. Мы предлагаем создать новую таблицу Departments (Отделы) в схеме данных, которая будет содержать подразделения фирмы Northwind</li>
+<li>В диалоговом окне Выбор имени (Choose Name) введите имя новой таблицы Departments и нажмите кнопку ОК. Появится таблица свойств с пустыми долями.</li>
+<li>Определите первичный ключ для таблицы, выделив сначала поле Departmentld (Код отдела), а затем нажав кнопку Ключевое поле (Primary Key) на панели инструментов.</li>
+<li>Для того чтобы новая таблица выглядела на схеме так же, как и остальные таблицы, щелкните по ней правой кнопкой мыши и в контекстном меню выберите элемент Имена столбцов (Column Names) — это другая форма представления таблицы на схеме.</li>
+</ol>
+<p>Изменение свойств существующей таблицы</p>
+<p>Рассмотрим изменение свойств таблицы на примере таблицы Employees (Сотрудники). Чтобы изменить свойства таблицы в схеме базы данных, нужно сначала изменить форму представления таблицы:</p>
+<ol>
+<li>Щелкните правой кнопкой мыши по таблице Employees и выберите в контекстном меню форму представления Свойства столбца (Column Properties) или выделите таблицу Employees, откройте список форм представления таблиц, нажав стрелку справа на кнопке Перечень режимов таблицы (Table Modes) на панели инструментов и затем выбрав в раскрывшемся списке значение Свойства столбца (Column Properties).</li>
+<li>Появится таблица со столбцами, которые обычно отображаются в Конструкторе таблиц (рис. 17.8). Значения соответствующих свойств можно изменять так, как это описано в разд. «Определение и изменение структуры таблицы» данной главы.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image07/3defea7a766ea3969d4d9afa04a630f3.gif" alt="" width="499" height="273"><meta itemprop="width" content="499">
+<meta itemprop="height" content="273"></span></p>
+<p>Рис. 17.8. Отображение свойств таблицы Employees на схеме данных</p>
+<p>Для того чтобы увидеть остальные свойства полей таблицы, вызовите диалоговое окно свойств, нажав кнопку Свойства (Properties) на панели инструментов, и раскройте вкладку Столбцы (Columns).</p>
+<ol start="3">
+<li>Вставьте в таблицу новое поле, которое будет содержать идентификатор подразделения, в котором работает сотрудник. Для этого выделите поле Title (Должность) и нажмите клавишу &lt;Ins&gt; или кнопку Добавить строки (Insert rows) на панели инструментов. Появится пустая строка над строкой Title. Введите имя нового поля Departmentid и тип данных int. После этого можно снова изменить представление таблицы на стандартное — Имена столбцов (Column Names).</li>
+</ol>
+<p><strong>Замечание</strong></p>
+<p>Обратите внимание, что как новые таблицы, так и измененные, помечаются-на схеме звездочкой в области заголовка таблицы.</p>
+<p>Установление связей между таблицами</p>
+<p>Теперь нужно связать новую таблицу Departments (Отделы) с таблицей Employees (Сотрудники). Для этого щелкните левой кнопкой по области выделения слева от поля Departmentid (Код отдела) таблицы Departments и перетащите появившийся значок поля на одноименное поле таблицы Employees. Появится диалоговое окно Установить связь (Create Relationship). В этом окне нужно сбросить флажок Проверять имеющиеся данные при создании (Check existing data on creation), т. к. поле Departmentid в таблице Employees заведомо будет пустым. Нажмите кнопку ОК.</p>
+<p>Результат изменений отображается в схеме базы данных. Тот конец связи, который соединен с таблицей, содержащей первичный ключ, помечается значком ключа. Конец связи, который соединен с таблицей, содержащей внешний ключ, может помечаться по-разному:</p>
+<ul>
+<li>для связей «один-к-одному» он тоже помечается ключом;</li>
+<li>для связей «один-ко-многим» он помечается значком «бесконечность».</li>
+</ul>
+<p>Если вы подведете курсор мыши к линии связи, то появится метка связи (Связь ‘FK_Employees_Departments’ между ‘Departments’ и ‘Employees’).</p>
+<p>Настроить параметры связи можно и с помощью окна свойств. Чтобы открыть это окно, выделите связь на схеме и нажмите кнопку Свойства (Properties) на панели инструментов или щелкните по связи правой кнопкой мыши и выберите в контекстном меню команду Свойства (Properties). Для вновь созданной связи автоматически устанавливается свойство проверки ссылочной целостности. Эту проверку можно отключить, если сбросить флажок Применить связь для INSERT и UPDATE (Enable relationship for INSERT and UPDATE) на вкладке Связи (Relationship) диалогового окна Свойства (Properties).</p>
+<p>Возможно создание на схеме данных рекурсивной связи, т. е. связи между полями одной и той же таблицы. Примером такой связи является связь в таблице Employees между полями Employeeld и ReportsTo. Поле ReportsTo играет роль внешнего ключа, т. к. оно содержит идентификатор сотрудника, перед которым отчитывается данный сотрудник.</p>
+<p>Создание индексов и ограничений</p>
+<p>Индексы и ограничения для таблиц в схеме базы данных создаются так же, как это описано ранее в разд. «<a href="/glava-rabota-s-tablitsami">Работа с таблицами</a>» данной главы. Для создания в таблице индекса или ограничения необходимо открыть диалоговое окно Свойства (Properties). Создадим индекс для вновь созданного поля DepartmentID (Код отдела) в таблице Employees (Сотрудники). Щелкните правой кнопкой мыши по таблице Employees в окне схемы базы данных и выберите в контекстном меню команду Свойства (Properties) или выделите таблицу Employees и нажмите кнопку Свойства (Properties) на панели инструментов. Появится диалоговое окно Свойства (Properties). Раскройте вкладку Индексы и ключи (Indexes/Keys), нажмите кнопку Создать (New) и создайте новый индекс, как это было описано ранее.</p>
+<p><strong>Замечание</strong></p>
+<p>Индексы и ограничения не отображаются на схеме базы данных.</p>
+<p>Сохранение и откат изменений в структуре базы данных</p>
+<p>Сохранение изменений, которые выполнены в структуре таблиц и связей в схеме базы данных, выполняется после закрытия окна схемы. При этом выдается диалоговое окно Сохранить (Save), в котором перечисляются все измененные объекты. Пользователь имеет возможность проконтролировать, какие объекты подлежат изменению, и принять решение о том, сохранять или нет внесенные изменения. Можно даже сохранить информацию об измененных объектах в текстовом файле. Для этого нужно нажать кнопку Сохранить как текст (Save Text File). Текстовый файл, полученный при сохранении внесенных нами изменений, представлен на рис. 17.9.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image23/cce7ccdcbeb107c22db100a65f73898e.gif" alt="" width="342" height="205"><meta itemprop="width" content="342">
+<meta itemprop="height" content="205"></span></p>
+<p>Рис. 17.9. Текстовый файл, содержащий сведения об измененных объектах</p>
+<p>Если вы не хотите сохранять в базе данных те изменения, которые были внесены в структуру при работе со схемой данных, достаточно на вопрос Сохранить изменения макета или структуры схемы ‘&lt;имя схемы&gt;’?, который будет задан при закрытии окна схемы данных, нажать кнопку Нет (No). Произойдет откат всех изменений.</p>
+<p><strong>Замечание</strong></p>
+<p>При сохранении изменений, внесенных в схему базы данных, не всегда удается просто перенести все изменения в таблицы на сервере из-за ограничений сервера (например, в таблицах SQL Server нельзя поменять порядок полей). В этом случае таблица сначала удаляется из базы данных, а потом создается заново. Кроме того, если изменения вносятся в таблицу, которая связана с другими таблицами, то изменения могут затронуть и связанные таблицы. В этом случае в списке, который отображается в диалоговом окне Сохранить (Save), могут появиться таблицы, которые вы явно не изменяли.</p>
+<p>Создание новой схемы базы данных и добавление в нее таблиц</p>
+<p>Новая схема базы данных создается так же, как и любой другой объект базы данных Access — нужно открыть список схем, щелкнув мышью по ярлыку Схемы баз данных (Database Diagrams) на панели объектов окна базы данных. Затем нажать кнопку Создать (New). Откроется пустое окно Конструктора базы данных и в нем — диалоговое окно Добавление таблицы (Show Table) (рис. 17.10). Выделите в списке нужную таблицу и нажмите кнопку Добавить (Add). Если в схему добавляются таблицы, между которыми уже установлены связи (определены внешние ключи), то эти связи сразу же отображаются на схеме. Для любой таблицы, размещенной на схеме базы данных, очень легко отобразить все связанные с ней таблицы. Для этого достаточно щелкнуть по этой таблице правой кнопкой мыши и в контекстном меню выбрать команду Добавить связанные таблицы (Add Related Tables). Мы это проделали для таблицы «Orders» (Заказы).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image09/51eb34819554187a3998ed27efa94883.gif" alt="" width="566" height="414"><meta itemprop="width" content="566">
+<meta itemprop="height" content="414"></span></p>
+<p>Рис. 17.10. Добавление таблиц в схему данных</p>
+<p>Изменение формы и расположения объектов на схеме базы данных</p>
+<p>Для того чтобы удобно расположить таблицы в окне Конструктора базы данных, можно щелкнуть правой кнопкой мыши на поле схемы и выбрать в контекстном меню команду Схема макета (Layout Diagram).</p>
+<p>Можно применить аналогичную операцию для группы таблиц. Для этого сначала необходимо выделить требуемые таблицы. Чтобы выделить группу таблиц, достаточно «нарисовать» мышью прямоугольник вокруг этих таблиц, причем таблицы могут попадать в выделяемую область только частично. Выделенные таблицы можно определить по изменившемуся цвету области заголовка. Затем нужно щелкнуть правой кнопкой мыши по любой из выделенных таблиц и выбрать из контекстного меню команду Выбор разметки (Layout Selection).</p>
+<p>Масштабировать можно или всю схему, или выделенную группу таблиц. Щелкнув правой кнопкой по окну схемы, нужно выбрать в контекстном меню команду Масштаб (Zoom) и указать масштаб отображения схемы в процентах .</p>
+<p>Обычно для редактирования свойств таблиц масштаб увеличивают, а для создания связей — уменьшают.</p>
+<p>Существует несколько способов представления таблиц на схеме данных, которые обеспечивают различную степень детализации свойств таблиц. До сих пор мы видели только одно представление: Имена столбцов (Column names), когда в таблицах показывались только наименования полей. Но в зависимости от того, какие действия выполняются с таблицами, можно выбрать наиболее удобную форму представления. Эти формы описаны в табл. 17.3.</p>
+<table class="table_common zebra" width="700">
+<tbody>
+<tr>
+<td><strong>Форма представления </strong></td>
+<td><strong>Описание </strong></td>
+</tr>
+<tr>
+<td>Свойства столбца (Column Properties)</td>
+<td>Представление в виде таблицы свойств. Эта форма удобна для редактирования свойств полей таблицы. Когда создается новая таблица, она отображается на схеме именно в такой форме</td>
+</tr>
+<tr>
+<td>Ключи (Keys)</td>
+<td>Показываются только первичный и внешние ключи таблицы и столбцы, имеющие ограничение типа UNIQUE</td>
+</tr>
+<tr>
+<td>Только имя (Name Only)</td>
+<td>Показывается только заголовок таблицы</td>
+</tr>
+<tr>
+<td>Новое представление (Custom)</td>
+<td>Показываются свойства полей, но не все, а только выбранные пользователем</td>
+</tr>
+<tr>
+<td>Имена столбцов (Column Names)</td>
+<td>Показываются только имена полей таблицы и обозначается ключевое поле. В таком виде показывается существующая таблица при добавлении ее в схему данных. Имена полей в этом представлении можно редактировать</td>
+</tr>
+</tbody>
+</table>
+<p>Таблица 17.3. Формы представления таблицы на схеме данных</p>
+<p>Представление Новое представление является настраиваемым. По умолчанию в нем отображаются три столбца: имя поля, тип поля и возможность пустых значений. Чтобы настроить это представление:</p>
+<ol>
+<li>Выделите таблицу в окне схемы базы данных.</li>
+<li>Выберите команду Схема, Изменить настраиваемое представление (Diagram, Modify Custom View). Появится диалоговое окно Выбор столбца (Column Selection) .</li>
+<li>С помощью кнопок со стрелками перенесите из левой части окна в правую те свойства, которые вы хотите видеть при отображении таблицы на схеме.</li>
+<li>Если нужно изменить порядок следования столбцов свойств в таблице, воспользуйтесь кнопками со стрелками и переместите имена полей в правом списке нужным образом.</li>
+<li>Если вы хотите, чтобы эта форма представления использовалась во всех схемах баз данных, как Новое представление, установите флажок Сохранить для использования по умолчанию (Save as default). В противном случае такое представление будет действовать только для таблиц в данной схеме.</li>
+<li>Нажмите кнопку ОК.</li>
+</ol>
+<p>Кроме таблиц и связей между ними, на схеме можно создавать надписи, которые могут содержать все необходимые комментарии к схеме. Для того чтобы создать надпись, нужно щелкнуть правой кнопкой мыши на поле схемы и выбрать в контекстном меню команду Новое название (New Label). На схеме появляется рамка, в которую можно ввести текст.</p>
+<p>Для того чтобы изменить шрифт надписи, нужно щелкнуть по ней правой кнопкой мыши и выбрать в контекстном меню команду Шрифт (Font). Изменение шрифта действует на всю надпись. Нельзя одну часть надписи отформатировать одним шрифтом, а другую — другим.</p>
+<p>Предварительный просмотр и печать схемы данных</p>
+<p>Если схема данных содержит большое количество таблиц и не помещается на одну страницу, Access разбивает ее на страницы. Перед печатью можно просмотреть, как выполняется разбиение. Для этого нужно выполнить команду меню Схема, Просмотреть разрывы страниц (Diagram, View Page Breaks). Тогда на схеме появляются синие разделительные линии и номера страниц. Перемещая объекты, можно добиться, чтобы они целиком помещались на странице, а меняя форму представления, получить тот вид схемы, который обеспечит нужную степень детализации информации.</p>
+<p>После того как вы убедились, что вид схемы вас удовлетворяет, выберите команду Файл, Печать (File, Print), чтобы напечатать эту схему.</p>
+<p>Копирование и перемещение таблиц между схемами данных</p>
+<p>Таблицы и группы таблиц легко копируются из одной схемы в другую через буфер обмена. При этом можно копировать как отдельные таблицы, так и группы таблиц.</p>
+<p>Для перемещения таблиц из одной схемы в другую необходимо открыть на экране сразу обе схемы, выделить нужную таблицу или группу таблиц и перетащить их мышью в новую схему.</p>
+<p>С помощью операций копирования и перемещения можно разделить одну большую схему на несколько более простых и, наоборот, из нескольких подсхем создать одну общую схему.</p>
+<p>Также через буфер можно копировать поля из одной таблица в другую, причем другая таблица может быть как в той же самой схеме, так и в другой.</p>
+<p>Удаление таблиц из схемы и из базы данных</p>
+<p>Чтобы удалить таблицу из схемы данных, нужно выделить эту таблицу и нажать кнопку Скрыть таблицу (Hide Table) на панели инструментов или выбрать соответствующую команду в контекстном меню. При этом таблица больше не отображается в схеме базы данных, но не удаляется из самой базы данных. Если таблица была из—менена, то прежде чем удалить ее из схемы, Access запросит, хотите ли вы сохранить изменения в базе данных. Если вы ответите Нет (No), то таблица сохранится в памяти Access в измененном состоянии, и эти изменения перенесутся в базу данных когда вы сохраните схему базы данных при закрытии.</p>
+<p>Для того чтобы удалить таблицу не только из схемы, но и из базы данных, нужно выделить эту таблицу и выполнить из контекстного меню команду Удалить таблицу из базы данных (Delete Table from Database). При этом таблица на самом деле удаляется из базы данных только тогда, когда вы сохраните схему базы данных, из которой вы ее удаляли. Если не сохранять изменения в схеме данных, то таблица удалена из базы данных не будет.</p>
+<p>Работа со схемами базы данных в многопользовательской среде</p>
+<p>Схемы базы данных хранятся на SQL Server, и несколько пользователей могут работать с одной схемой, если они имеют на это права. При этом, когда вы попытаетесь сохранить изменения в схеме базы данных, может оказаться, что другой пользователь сделал изменения в схеме или в базе данных, которые не были отражены в вашей схеме. Access сообщит вам о такой ситуации. В этом случае вы можете выполнить одно из трех действий:</p>
+<ul>
+<li>сохранить свою схему и все изменения в структуре базы данных, которые перечислены в списке в диалоговом окне Сохранить (Save). Это действие может повлиять на другие схемы, содержащие те же таблицы;</li>
+<li>закрыть диаграмму, не сохраняя никаких изменений. Тогда, когда вы ее снова откроете, она окажется согласованной с базой данных;</li>
+<li>сохранить список изменений в текстовом файле.</li>
+</ul>
+<p>Если вы решили сохранить сделанные вами изменения в базе данных, то происходит следующее:</p>
+<ol>
+<li>Если другой пользователь удалил объекты, которые присутствуют в вашей схеме, они будут созданы вновь.</li>
+<li>Сохраняются триггеры, которые были добавлены к таблицам.</li>
+<li>Удаляются объекты, которые были удалены из вашей схемы, даже если другой пользователь изменил эти объекты.</li>
+</ol>
+<p>Работа с запросами</p>
+<p>Запросы в проектах Access являются более сложным понятием, чем в базах данных Access. Это понятие включает несколько разных объектов SQL Server: Представления (Views), Сохраненные процедуры (Stored Procedures) и Функции, определенные пользователем (User-defined Function). Все эти объекты могут быть созданы с помощью Конструктора запросов.</p>
+<p>Конструктор запросов</p>
+<p>Как видите, оно похоже на окно Конструктора запросов в базе данных Access. На верхней панели размещаются таблицы или запросы (в данном случае представления), являющиеся источником данных. Средняя панель представляет собой бланк запроса, который является трансформацией бланка запроса в базе данных Access (столбцы стали строками, а строки — столбцами). Различие между ними небольшое. Например, появился отдельный столбец Псевдоним (Alias), в котором можно задать псевдоним названия поля. Нижняя панель содержит текст инструкции SQL. соответствующий формируемому запросу.</p>
+<p>Не всегда все панели видны на экране. Для управления отображением панелей служат три кнопки на панели инструментов.</p>
+<p>Окно Конструктора запросов появляется, когда вы создаете новое представление, редактируете старое или создаете инструкцию SQL в свойстве Источник записей (Record Source) формы или отчета с помощью кнопки Построителя. Для добавления таблицы на панель Конструктора используется диалоговое окно Добавление таблицы (Show Table), но содержит три вкладки — Таблицы (Tables), Представления (Views) и Функции (Function). Окно Добавление таблицы (Show Table) появляется при нажатии на кнопку Добавить таблицу (Show Table) на панели инструментов. Создание представления аналогично созданию запроса в базе данных Access, поэтому мы не будем здесь описывать этот процесс полностью, а покажем только отличия от аналогичного процесса в базе данных. (О создании запросов в базе данных см. разд. «Отбор и сортировка записей с помощью запросов»гл. 4 и разд. «Редактирование и анализ данных с помощью запросов»гл. <img src="/image45/smilies/cool.png" alt="8)" class="wp-smiley" style="height: 1em; max-height: 1em;"></p>
+<p>Для того чтобы задать те или иные поля представления, их помечают в таблицах путем установки флажка у каждого поля. Одновременно эти поля появляются в бланке запроса и формируется инструкция SQL на панели SQL. Чтобы выбрать сразу все поля таблицы, нужно установить флажок * (все столбцы) (All Columns). Кроме того, поля могут перетаскиваться в бланк запроса мышью, как это делается в окне Конструктора запросов в базе данных Access.</p>
+<p>Формирование критериев отбора записей аналогично формированию критериев в базе данных Access, однако выражения подчиняются синтаксическим правилам языка SQL Server.</p>
+<p>Способы объединения таблиц в представлении</p>
+<p>Так же как и в запросах в базе данных Access, можно создавать разные типы объединений таблиц:</p>
+<ul>
+<li>внутренние, когда из обеих таблиц отбираются только те записи, у которых совпадают значения связанных полей;</li>
+<li>внешние, когда в одной из таблиц выбираются все записи, а в другой — только связанные.</li>
+</ul>
+<p>Существует три типа внешних объединений:</p>
+<ul>
+<li>левое внешнее объединение, когда выбираются все строки из левой таблицы;</li>
+<li>правое внешнее объединение, когда выбираются все строки из правой таблицы;</li>
+<li>полное внешнее объединение, когда выбираются строки из обеих таблиц.</li>
+</ul>
+<p>По умолчанию используется внутреннее объединение таблиц. Если нужно изменить тип объединения, щелкните правой кнопкой мыши по линии связи (удобнее всего по ромбику в центре связи) и выберите соответствующую команду в контекстном меню. В представлении «Products by Category» (Товары по типам) (см. рис. 17.36) это будут команды:</p>
+<ul>
+<li>Выделить все строки с Categories (Select All Rows from Categories);</li>
+<li>Выделить все строки с Products (Select All Rows from Product).</li>
+</ul>
+<p>Или можно выбрать из контекстного меню команду Свойства (Properties) и открыть диалоговое окно Свойства (Properties) .</p>
+<p>Флажки в группе Включить строки (Include rows) позволяют установить любой тип внешнего соединения между таблицами. При изменении типа соединения меняется значок на связи — дополняется ромб справа или слева до квадрата.</p>
+<p>Как видно из рис. 17.38, записи в таблицах могут связываться не только по условию равенства связанных полей. Для связи можно использовать любой из операторов сравнения (&gt;, &lt;, &gt;=, &lt;= или о). При изменении оператора сравнения он отображается на значке связи, таким образом, тип связи очень хорошо идентифицируется визуально. Кроме того, когда вы подводите курсор мыши к связи, появляется всплывающая подсказка, указывающая тип объединения, условие объединения и связанные поля .</p>
+<p>Группировка записей и суммирование значений в представлении</p>
+<p>Группировка записей в представлениях и вычисления с использованием статистических функций, в том числе суммирование, выполняются так же, как в запросах базы данных Access (см. разд. «Создание и изменение запроса с помощью Конструктора запросов» гл. 4).</p>
+<p>Вместо строки Групповая операция (Totals) в бланке запроса Конструктора запросов в проекте присутствует столбец Группировка (Group by). По умолчанию этот столбец скрыт. Для того чтобы вывести его на экран, нужно нажать кнопку Группировка (Group By) на панели инструментов. Столбец Группировка (Group by) добавляется в бланк представления, и для всех полей, включенных в представление, этому полю присваивается значение Группировка (Group by). Можно затем в отдельных строках заменить значение (Group by) необходимыми статистическими функциями (сумма — Sum, среднее — Avg, число значений — Count и т. д.). В результате на нижней панели соответствующим образом изменится инструкция SQL. Чтобы ввести условие на выборку записей, можно использовать две разновидности инструкции SELECT:</p>
+<ul>
+<li>если в столбце Группировка (Group by) установлено значение параметра WHERE, тогда в инструкцию SELECT добавляется, условие WHERE с критериями выборки;</li>
+<li>если столбец Группировка (Group by) имеет другие значения, тогда в инструкцию SELECT добавится условие HAVING.</li>
+</ul>
+<p>Использование подчиненных представлений</p>
+<p>Подчиненные запросы обычно используются в предложении WHERE для определения условий выборки и в предложении FROM, если нужно определить некоторый результирующий набор в качестве источника данных для представления. Создать представление, содержащее подчиненное представление, можно либо путем ввода инструкции SQL на панели запроса SQL, либо с помощью бланка представления. Если вы недостаточно свободно владеете языком SQL, используйте второй способ.</p>
+<p>Сначала создайте подчиненное представление. Для этого, получив на панели запроса SQL необходимую инструкцию и протестировав соответствующий запрос (используя кнопку Запуск (Run) на панели инструментов), скопируйте его в буфер.</p>
+<p>Создайте второе представление и вставьте выражение из буфера в предложение FROM или WHERE на панели SQL. Вы можете получить инструкцию SQL, например, такого вида:</p>
+<p>SELECT SupplierName, ProductName FROM Products WHERE Supplier-ID IN (SELECT SupplierID FROM Suppliers WHERE (Country = &#8216;UK&#8217;)) Параметры в инструкциях SQL</p>
+<p>В представлении параметры использовать нельзя, однако их можно использовать в инструкциях SQL. которые являются источниками записей в формах и отчетах. То есть можно в свойстве Источник записей (RecordSource) формы или отчета ввести предложение SQL, которое содержит один или несколько параметров. Эти параметры будут либо запрашиваться у пользователя при открытии формы, либо устанавливаться равными текущему значению заданного элемента управления формы. Покажем на примере, как создаются такие формы. Возьмем форму «Products» (Товары) и будем выбирать в ней только те продукты, цена которых выше заданного значения. Это значение и будет параметром.</p>
+<ol>
+<li>Откройте форму «Products» в режиме Конструктора и диалоговое окно свойств формы. В качестве источника записей для этой формы используется таблица «Products». Нажмите кнопку Построителя справа от ячейки Источник записей (RecordSource). Появится сообщение, спрашивающее, действительно ли вы хотите построить запрос на базе таблицы. Нажмите кнопку Да (Yes). Откроется окно Конструктора запросов. На панели схемы запроса уже размещена таблица «Products».</li>
+<li>С помощью кнопок на панели инструментов отобразите все три панели запроса: схему, бланк и запрос SQL. Переместите границы панелей таким образом, чтобы их все хорошо видеть.</li>
+<li>В бланке запроса уже стоит символ звездочки (*), который означает, что в результирующий набор включаются все поля таблицы. Установите флажок с названием поля «UnitPrice» (Цена) на панели схемы запроса. Это поле появится в бланке запроса. Сбросьте флажок в столбце Вывод (Output), чтобы не включать это поле в результирующий набор (оно уже включено символом звездочки). В столбце Критерий (Criteria) введите выражение &gt;? (рис. 17.11). Символ «?» в предложении WHERE и является обозначением параметра.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image25/e7e6107680ab89a87c066510ae9e7b87.gif" alt="" width="504" height="388"><meta itemprop="width" content="504">
+<meta itemprop="height" content="388"></span></p>
+<p>Рис. 17.11. Создание запроса с параметрами</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image06/3b044cea3ca5ae3ab0360403531d5a65.gif" alt="" width="372" height="332"><meta itemprop="width" content="372">
+<meta itemprop="height" content="332"></span></p>
+<p>Рис. 17.12. Задание параметра в форме</p>
+<ol start="4">
+<li>Установите флажок у поля «ProductName» (Марка), чтобы добавить его в запрос, и сбросьте флажок в столбце Вывод (Output) бланка запроса. В столбце Тип сортировки (Sort Type) выберите из списка По возрастанию (Ascending), чтобы отсортировать записи по наименованию продукта в прямом алфавитном порядке (см. рис. 17.12).</li>
+<li>Закройте окно Конструктора запроса. Подтвердите сохранение внесенных изменений.</li>
+<li>Переместите курсор в ячейку Входные параметры (Input Parameters) диалогового окна свойств формы и введите выражение Price money= [Введите пороговую цену], где Price— имя параметра; money— тип данных. Выражение справа от знака равенства определяет строку, которая будет выводиться для пользователя при запросе параметра. Вместо этого выражения можно использовать ссылку на элемент управления формы, например Form! [Критерии выборки] ! [Цена].</li>
+</ol>
+<p>Диалоговое окно свойств представления</p>
+<p>Если вы щелкните правой кнопкой мыши на любой панели в окне Конструктора представления, появится диалоговое окно свойств представления. Оно содержит несколько параметров, которые влияют на способ выполнения запроса для формирования представления. На вкладке Представление (View):</p>
+<ul>
+<li>В поле Представление (View name) содержится имя представления.</li>
+<li>Поле ТОР позволяет задать количество возвращаемых записей в результирующем наборе. По умолчанию при установке флажка в этом поле возвращаются первые 10 записей из исходной таблицы. Количество возвращаемых записей можно задать и в процентах, в этом случае нужно установить флажок в поле PERSENT.</li>
+<li>Флажок Вывод всех столбцов (Output all columns) позволяет включить в результирующий запрос все поля из.всех таблиц запроса.</li>
+<li>Флажок Привязать к схеме (Bind to Schema) запрещает пользователям изменять базовые таблицы представления, которые могут привести к некорректности самого представления.</li>
+<li>Флажок Обновить как представления (Update using view rules) указывает, что все операции обновления и вставки в представление транслируются в инструкции SQL, ссылающиеся на представление, а не на базовые таблицы представления.</li>
+<li>Флажок DISTINCT позволяет исключить из результирующего набора повторяющиеся записи. Когда этот флажок установлен, в предложение SQL вставляется слово DISTINCT.</li>
+<li>Группа параметров Расширения GROUP BY доступна только, если в запросе SQL используются статистические функции.
+<ul>
+<li>Переключатель WITH CUBE позволяет добавить в результирующий набор записи, в которых суммируются значения в группах, задаваемых предложением Group by запроса. Заметим, что этой возможности очень не хватало в запросах базы данных Access. Чтобы проверить, что позволяет этот параметр, мы рекомендуем открыть в режиме Конструктора представление Order Subtotals, в котором суммируются записи в заказах с целью определения сумм заказов, и выбрать переключатель WITH CUBE в группе Расширения GROUP BY. .</li>
+<li>Параметр WITH ROLLUP аналогичен параметру WITH CUBE, но разрешает только один тип суммирования для каждой комбинации столбца и агрегирующей функции.</li>
+<li>Параметр ALL позволяет включить в суммирование все повторяющиеся записи.</li>
+</ul>
+</li>
+</ul>
+<p>Создание и применение хранимых процедур</p>
+<p><strong>Хранимые процедуры</strong> — основное средство программирования серверной логики. Они представляют собой откомпилированный модуль, написанный на языке Transact-SQL. В коде хранимой процедуры можно использовать не только операции выборки и модификации данных, но и логику ветвления, переменные, вызовы других процедур и некоторые другие средства, характерные для языков программирования высокого уровня. Код процедуры синтаксически анализируется при компиляции, а оптимизированный план выполнения создается при первом вызове процедуры. В отличие от запросов, хранимые процедуры имеют возможность возвращать несколько наборов записей, а также значения.</p>
+<p>Для вызова процедуры клиентская программа или другая процедура должны указать имя выполняемой процедуры и передать ей набор входных параметров.</p>
+<p>Хранимые процедуры используются в проектах Access везде, где могут использоваться предложения SQL. Они могут служить:</p>
+<ul>
+<li>в качестве источников записей в формах, отчетах, активных страницах;</li>
+<li>в качестве источников строк для полей со списком.</li>
+</ul>
+<p>Однако нужно помнить, что хранимые процедуры возвращают необновляемый набор записей.</p>
+<p>Хранимая процедура может содержать одну инструкцию SQL, и в этом случае для ее создания можно использовать графический режим Конструктора запросов. Если же она состоит из нескольких инструкций SQL, тогда она создается и изменяется в редакторе SQL.</p>
+<p>В первом случае чтобы создать процедуру проще всего щелкнуть по ярлыку Создание сохраненной процедуры в режиме конструктора (Create stored procedure in designer). При этом открывается стандартное окно Конструктора запросов, в котором можно создать инструкцию SQL, составляющие тело процедуры. Так же как и представление, хранимая процедура в данном случае может иметь ряд дополнительных свойств. Чтобы отобразить или изменить эти свойства, необходимо открыть окно свойств. На вкладке Сохраненная процедура (Stored Procedure) содержится перечень свойств, которые аналогичны свойствам представления. А на второй вкладке можно посмотреть и изменить параметры процедуры.</p>
+<p>Для примера воспользуемся хранимой процедурой Exployee Sales by Country.</p>
+<ol>
+<li>Откройте эту процедуру в режиме Конструктора.</li>
+<li>Нажмите кнопку Свойства (Properties) на панели инструментов, чтобы отобразить диалоговое окно Свойства (Properties).</li>
+<li>Раскройте вкладку Параметры сохраненной процедуры (Stored Procedure Parameters).</li>
+</ol>
+<p>На вкладке отображается таблица со списком параметров процедуры. Каждый параметр обязательно должен иметь имя и тип данных. Кроме того, для него может быть указано значение по умолчанию. Обратите внимание, что имя каждого параметра начинается со значка @. Но имя параметра не может быть изменено на этой вкладке, так же как нельзя добавить новый параметр. Это делается только в бланке запроса в окне Конструктора или прямо в инструкции SQL.</p>
+<p>Для того чтобы создать хранимую процедуру, состоящую из нескольких инструкций SQL, нужно открыть список запросов в окне проекта и нажать кнопку Создать (New). В диалоговом окне Новый запрос (New Query) следует выбрать элемент Ввод сохраненной процедуры (Create Text Stored Procedure) .</p>
+<p>Нужно изменить имя процедуры в первой строке шаблона и ввести текст процедуры в соответствии с правилами языка Transact-SQL.</p>
+<p>Если в теле процедуры нужно ввести инструкцию SQL SELECT, то можно воспользоваться для этого Конструктором запросов. Установите курсор на строке редактора, в которой должна быть введена инструкция SELECT и нажмите кнопку Вставить SQL (Insert SQL) на панели инструментов . Появится окно Конструктора запросов. После того как запрос будет создан, нужно закрыть это окно, подтвердив сохранение изменений инструкции SQL.</p>
+<p>Пример использования хранимой процедуры в качестве источника записей вы увидите, если откроете отчет «Employee Sales by Country». В качестве источника записей в этом отчете используется одноименная хранимая процедура. В свойстве Входные параметры (Input Parameters) этого отчета описаны два параметра: @Beginning_date И @Ending_date.</p>
+<p>При запуске отчета эти параметры будут запрашиваться так же, как и при использовании запроса с параметрами в базе данных Access.</p>
+<p>О языке Transact-SQL, используемом в хранимых процедурах, см. документацию по Microsoft SQL Server.</p>
+<p>Создание и использование определяемой пользователем функции</p>
+<p><strong>Определяемая пользователем функция</strong> — это новый объект Microsoft SQL Server 2000, аналогичный представлению и хранимой процедуре. Отличие ее от упомянутых объектов состоит в том, что она всегда, как и любая другая функция, возвращает некоторое значение. Причем в зависимости от того, какое значение возвращает функция, она относится к одному из трех типов:</p>
+<ul>
+<li>встроенная;</li>
+<li>табличная;</li>
+<li>скалярная.</li>
+</ul>
+<p><strong> Встроенная определяемая пользователем функция </strong> представляет собой инструкцию SELECT, которая возвращает обновляемый набор записей.</p>
+<p><strong> Табличная определяемая пользователем функция </strong> может содержать несколько инструкций SQL и возвращает необновляемый набор записей.</p>
+<p><strong> Скалярная определяемая пользователем функция </strong> возвращает скалярное значение одного из следующих типов данных: int, decimal, varchar, sql_variant или table.</p>
+<p>Встроенные и табличные функции обычно употребляются в предложении FROM инструкции SQL, скалярная же функция может быть использована в любом месте запроса, где разрешено использование имени поля таблицы. Кроме этого, определенная пользователем функция может быть применена в качестве источника данных для формы, отчета и поля со списком в форме, однако она не может быть использована в качестве источника записей для страницы доступа к данным.</p>
+<p>Правила создания определенной пользователем функции те же самые, что и для хранимой процедуры. То есть можно использовать для ее создания Конструктор запросов, если она состоит из одной инструкции SELECT, или редактор SQL, если тело функции содержит несколько инструкций SQL. В первом случае вы можете использовать ярлык Создание функции в режиме конструктора (Create function in designer) в списке запросов окна проекта. Во втором случае необходимо нажать кнопку Создать (New) и выбрать соответствующую строку в списке операций диалогового окна Новый запрос (New Query).</p>
+<p>Подробнее об определенных пользователем функциях см. документацию по Microsoft SQL Server.</p>
+<p>Использование индексированных представлений</p>
+<p>Представления SQL Server могут быть проиндексированы, т. е. существует возможность сохранить результаты представления и создать для них индекс. Правда это можно сделать, только если проект Access подключен к Microsoft SQL Server 2000 Enterprise Edition или SQL Server 2000 Developer Edition. Если вы используете Microsoft SQL Server 2000 Desktop Edition, то это сделать нельзя.</p>
+<p>Представления индексируются в том случае, если требуется ускорить доступ к данным, возвращаемым этим представлением. Чтобы создать индекс для представления, необходимо:</p>
+<ol>
+<li>Открыть представление в режиме Конструктора.</li>
+<li>Щелкнуть правой кнопкой мыши по свободному полю в области таблиц и выбрать из контекстного меню команду Управление индексами (Manage Indexes). Появится диалоговое окно Индексы (Indexes) .</li>
+</ol>
+<ol start="3">
+<li>Нажать кнопку Создать (New) и заполнить поля для описания индекса. Это делается так же, как при создании индекса для таблицы, т. е. необходимо ввести имя индекса, указать столбцы запроса, по которым должен быть построен индекс, порядок сортировки и т. д.</li>
+<li>Нажать кнопку ОК.</li>
+</ol>
+<p><strong>Замечание</strong></p>
+<p>Индекс можно добавить к представлению только в том случае, если вы являетесь владельцем всех его базовых таблиц.</p>
+<p>Если теперь открыть окно свойств представления, то вы увидите, что установлен флажок Привязать к схеме (Bind to Schema). Это означает, что индексированное представление автоматически получает так называемую схемную привязку. После того как такое представление сохранено, SQL Server будет контролировать, чтобы базовые таблицы не были изменены таким образом, что индексированное представление станет некорректным, например, изменено наименование базовой таблицы или наименование столбца базовой таблицы, который включен в результат запроса.</p>
+<p>В случае подтверждения схемная привязка и индексы в соответствующих представлениях будут удалены.</p>
+<p><strong>Замечание</strong></p>
+<p>Выполнить схемную привязку можно для любого представления, установив флажок Привязать к схеме (Bind to Schema).</p>
+<p>Сортировка и фильтрация данных в формах и отчетах</p>
+<p>В нашем достаточно беглом обзоре проектов Access нельзя не остановиться еще на двух вопросах:</p>
+<ul>
+<li>Как отфильтровать данные на сервере, для того чтобы передавать минимум данных клиенту?</li>
+<li>Как отсортировать записи в формах и отчетах?</li>
+</ul>
+<p>Фильтровать данные лучше с помощью предложений SQL и хранимых процедур, на которых базируются формы и ‘Отчеты. Если нужно, используйте в них параметры. Еще один способ — определить так называемый серверный фильтр. Для этого необходимо задать значение свойства Серверный фильтр (Server Filter) формы или отчета. Свойство Серверный фильтр представляет собой строковое выражение, определяющее условие выборки. Фильтр сохраняется в форме или отчете и при загрузке формы в ней будут отображаться только отфильтрованные записи.</p>
+<p>Если вы хотите изменять фильтр каждый раз при загрузке формы, необходимо присвоить значение Да свойству Серверный фильтр по форме (ServerFilterByForm). В этом случае при загрузке появится диалоговое окно, в котором можно задать условия отбора записей. После этого необходимо нажать кнопку Применить серверный фильтр (Apply Server Filter) на панели инструментов. При этом введенные условия сохраняются в свойстве Серверный фильтр (Server Filter) формы и показывается форма с отфильтрованными записями.</p>
+<p><strong>Замечание</strong></p>
+<p>Нельзя применять серверный фильтр в формах или отчетах, которые созданы на основе хранимой процедуры.</p>
+<p>Уже после того как записи отфильтрованы на сервере, можно их еще раз отфильтровать локально, используя методы Фильтр по выделенному (Filter by Selection), Изменить фильтр (Filter by Form) или Исключить выделенное (Filter For Input).</p>
+<p>Для того чтобы сортировка записей выполнялась на сервере, нужно использовать в качестве источника записей формы (отчета) представление, хранимую процедуру, определенную пользователем функцию или предложение SQL. В противном случае сортировка будет выполняться локально.</p>
+<p>Повышение производительности приложения «клиент-сервер»</p>
+<p>Существует набор общих правил, относящихся к приложениям «клиент-сервер», которые нужно соблюдать, чтобы уменьшить нагрузку на сеть и увеличить производительность приложения. Эти правила таковы: необходимо перенести по возможности обработку данных на сервер, минимизировать количество обращений к серверу (roundtrip) для доступа к данным и ограничить объем данных, загружаемых с сервера.</p>
+<p>Минимизация количества обращений к серверу для доступа к данным</p>
+<p>Связь проекта Access 2002 с базой данных на SQL Server осуществляется посредством OLE DB. При доступе к данным из формы, таблицы или страницы доступа к данным OLE DB предоставляет так называемый обновляемый статический набор записей (updateable snapshot recordset), полученный с помощью одного обращения к базе данных на SQL Server. Этот набор записей кэшируется на клиентском приложении. В Access данные загружаются в асинхронном режиме, что позволяет пользователю выполнять другие действия с базой данных в процессе загрузки данных с сервера. Просмотр, фильтрация, сортировка, поиск и обновление данных в форме, таблице или странице доступа к данным производятся с кэшированными на клиентской стороне данными. Таким образом, использование обновляемого статического набора записей минимизирует количество обращений к серверу для доступа к данным.</p>
+<p>Осуществление обработки данных на сервере</p>
+<p>Чтобы осуществить обработку данных на сервере, используйте хранимые процедуры, определяемые пользователем функции и инструкции SQL, а также выполняйте сортировку данных на сервере перед загрузкой их с сервера. Сортировка данных на сервере выполняется с помощью хранимой процедуры, определяемой пользователем функции или предложения SQL, заданного в свойстве Источник записей (RecordSource) формы или отчета (это предложение выполняется на сервере).</p>
+<p>Ограничение объема загружаемых с сервера данных</p>
+<p>Необходимо ограничить объем загружаемых данных из базы данных на SQL Server, насколько это возможно. Используйте для этого представления, хранимые процедуры, определяемые пользователем функции, фильтры, выполняющиеся на сервере, и предложение SQL WHERE, позволяющее выделить только нужные записи для отображения в клиентском приложении. Следует избегать таких сценариев работы, где пользователю разрешается просматривать весь объем данных.</p>
+<p>Рекомендуется ограничить максимальное число возвращаемых запросом или отображаемых в форме записей с помощью специальной кнопки Максимальное число записей (Maximum record limit) или свойства Максимальное число записей (MaxRecords), которое можно установить в программе VBA или в окне свойств запроса или формы.</p>
+<p>Используйте фильтры, выполняющиеся на сервере, прежде чем загружать данные с сервера, и фильтры, выполняющиеся на клиенте, чтобы ограничить объем отображаемых данных. Для формы или отчета можно установить фильтр с помощью свойства Серверный фильтр (ServerFilter). Увеличить быстроту загрузки списков значений можно, установив подходящее значение свойства Применение автофильтра (FilterLooknp) (элемента управления для отображения ограниченного набора значений, загружаемых с сервера или с другой рабочей станции.</p>
+<p>Повышение производительности при работе с отчетами</p>
+<p>Существует ряд правил, соблюдение которых позволяет повысить скорость печати отчетов. Наряду с перечисленными ниже советами полезно проверить конкретные отчеты с помощью анализатора быстродействия.</p>
+<ul>
+<li>Для печати большого набора данных создавайте составные отчеты, содержащие подчиненные данные, используя в качестве источника данных представления, хранимые процедуры, предложения SQL или фильтры.</li>
+<li>Используйте режим Образец (Layout Preview) вместо режима Предварительный просмотр (Print Preview) при проектировании отчета. Режим Образец (Layout Preview) позволяет быстро просмотреть структуру отчета, т. к. в отчет загружается лишь образец данных, а это требует гораздо меньшего времени, чем загрузка всего объема данных. Используйте режим Предварительный просмотр (Print Preview) для проверки данных после того, как проектирование структуры отчета завершено.</li>
+<li>Чтобы распространить среди сотрудников такую периодическую информацию, как расписания, недельные отчеты, планы продаж и пр., создавайте отчеты в формате снимка отчета (snapshot) и распространяйте их пользователям, которые могут посмотреть их с помощью программы просмотра снимков Snapshot Viewer. Если необходимо предоставить пользователям оперативную информацию, используйте для этого страницы доступа к данным.</li>
+</ul>
+<p>Повышение производительности при работе с формами</p>
+<p>Некоторые рекомендации по повышению производительности форм в клиентском приложении.</p>
+<ul>
+<li>При проектировании формы определите, какие данные она должна предоставлять и какой функциональностью должна обладать. Отложите процесс загрузки данных с сервера до того момента, когда это потребуется пользователю. Создайте форму, в которую данные не будут загружаться в процессе открытия, поместите в форму специальную кнопку, позволяющую загрузить данные.</li>
+<li>Используйте в формах минимальное количество полей, требующих длительного времени для загрузки данных, таких как текст и графические элементы. Поместите поле с текстом или рисунок в подчиненную форму, использующую тот же источник данных, что и главная форма.</li>
+<li>Помещайте в главную форму только основные поля, все остальные данные поместите в подчиненную форму, открываемую с помощью специальной кнопки с названием Дополнительная информация в главной форме. В качестве источника данных для подчиненной формы используйте запрос, параметризованный ключевыми полями источника данных главной формы.</li>
+<li>Для ввода данных создайте отдельные формы специального типа, установив для них значение Да (Yes) свойства Ввод данных (Data Entry). В формы такого типа данные из источника данных (находящегося на сервере) не загружаются, в них отображаются только добавляемые записи, что значительно ускоряет работу.</li>
+<li>Минимизируйте число строк, показываемых в полях со списком, если данные для этих списков берутся с сервера. Если данные редко модифицируются, то лучше храните их в локальных таблицах и создайте процедуру для синхронизации серверных и локальных таблиц. В локальных таблицах, хранящих такие данные, обязательно постройте индексы, чтобы ускорить создание списков.</li>
+<li>Если форма или отчет основаны на параметризованной хранимой процедуре, устанавливайте значение параметров с помощью свойства Входные параметры (Input Parameters).</li>
+<li>Чтобы удалить или обновить данные, используйте инструкции SQL UPDATE и DELETE с параметром WHERE. Этот способ более эффективен по сравнению с открытием набора записей и выполнением над ним необходимых операций.</li>
+</ul>
+<p>Повышение производительности внешней базы данных на SQL Server</p>
+<p>Полные сведения о повышении производительности баз данных на SQL Server можно найти в документации к SQL Server. Здесь приведены лишь некоторые рекомендации по повышению производительности.</p>
+<ul>
+<li>Проектируйте таблицы так, чтобы в них не содержалось избыточной информации. Используйте средство нормализации схемы данных (команда Сервис, Анализ, Таблицы (Tools, Analyze, Tables)) для разделения таблиц на несколько связанных. Хорошо спроектированная схема данных способствует более быстрому доступу к данным.</li>
+<li>Установите контроль ссылочной целостности данных. Это позволит сохранить корректность данных в связанных таблицах при добавлении, удалении и обновлении записей.</li>
+<li>Выбирайте подходящие типы данных для полей таблиц. Это позволит сэкономить место на диске и оптимизировать операции объединения данных из разных таблиц.</li>
+<li>Индексируйте поля, по которым производятся сортировка, объединение и выборка. Это приведет к существенному повышению производительности при выполнении запросов, созданных на основе таблиц, содержащих индексированные поля по обе стороны связи, и запросов, производящих выборку по индексированным полям. Однако индексирование полей замедляет процесс добавления, обновления и удаления записей.</li>
+<li>Добавьте в таблицы поля типа «штамп времени» (timestamp) для повышения скорости удаления и обновления записей, особенно если в таблице содержится большое количество полей. Поле «штамп времени» (timestamp) используется SQL Server перед обновлением записи для определения, была ли запись изменена. Это позволяет получить выигрыш производительности, особенно в многопользовательской среде.</li>
+<li>Периодически проводите сжатие базы данных на SQL Server, чтобы освободить место на диске и реорганизовать индексы и данные для более быстрого доступа к данным.</li>
+</ul>
+<p>Выводы</p>
+<p>В данной главе мы рассмотрели вопросы, касающиеся разработки двухзвенных приложений «клиент-сервер» в которых Microsoft Access 2002 используется для реализации клиентской части. Мы кратко описали, как разрабатываются проекты Access, постарались дать рекомендации, каким образом можно оптимизировать такое приложение. Очевидно, что переход от многопользовательского приложения в среде Access к клиент-серверному приложению, использующему сервер баз данных, не простая задача. Недостаточно только перенести данные на сервер — чтобы обеспечить требуемую производительность, его придется перепроектировать, изменив стратегию доступа к данным. Выполнив преобразование базы данных Access в приложение с архитектурой «клиент-сервер» (upsizing), вы получите работающее приложение, но чтобы сделать его эффективно работающим, требуется немало потрудиться. Как мы постарались показать в этой главе, в распоряжении разработчика есть широкий спектр средств доступа к данным, и выбор конкретного решения не всегда очевиден. Авторы в своей практике очень широко применяют хранимые процедуры, стараясь перенести максимум логики работы приложения на сервер. Это обеспечивает не только скорость, но и защищенность приложения, возможность использовать развитые средства сервера, такие как механизм транзакций, курсоры и триггеры, для обеспечения согласованности данных. При этом основная задача клиентского приложения — обеспечение удобных сценариев работы пользователя, ввод необходимых данных и их наглядное представление. И именно Access является прекрасным инструментом, позволяющим делать это быстро и профессионально.</p>
+<!-- toc empty -->	</div>
+<!-- .entry-content -->
+
+</article>
+
+
+
+
+
+
+
+
+
+<div class="social-buttons">
+<span class="social-button social-button--vkontakte main" data-social="vkontakte"><span>Поделиться в ВКонтакте</span></span><span class="social-button social-button--telegram " data-social="telegram"></span><span class="social-button social-button--odnoklassniki " data-social="odnoklassniki"></span><span class="social-button social-button--whatsapp " data-social="whatsapp"></span><span class="social-button social-button--viber " data-social="viber"></span>
+</div>
+
+<!--noindex-->
+<div class="author-box">
+    <div class="author-info">
+        <div class="author-box__ava">
+                    </div>
+
+        <div class="author-box__body">
+            <div class="author-box__author">
+                Автор А. Днепров            </div>
+            <div class="author-box__description">
+                <p>Обучаю основам работы с офисными программами.</p>
+            </div>
+
+            
+        </div>
+    </div>
+</div>
+<!--/noindex-->
+    <meta itemprop="author" content="А. Днепров">
+<meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/glava-proekty-microsoft-access" content="Глава 17. Проекты Microsoft Access">
+    <meta itemprop="dateModified" content="2024-10-03">
+<div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+<div class="related-posts">
+<div class="related-posts__header">Вам также может понравиться</div>
+<div class="post-cards post-cards--vertical">
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/kak-sdelat-massovuyu-zamenu-formul"><img width="311" height="230" src="/image04/2408fadbc9163d5aa4994580cfc152cd.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/kak-sdelat-massovuyu-zamenu-formul">Как сделать массовую замену формул</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/kak-udalit-lishnie-i-pustye-stranitsy-v-excel">Как удалить лишние и пустые страницы в Excel</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/preobrazovanie-teksta-v-tablitsu"><img width="345" height="122" src="/image14/7a0043c9bf012cc129b22376cfebb2a9.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/preobrazovanie-teksta-v-tablitsu">Преобразование текста в таблицу</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/kak-delat-skrinshoty-s-vysokim-razresheniem-v-windows">Как делать скриншоты с высоким разрешением в Windows 11/10</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/osobennosti-raboty-s-mnogostranichny"><img width="213" height="230" src="/image13/6f8f9694c11ee322ff9d3675b0b8ba07.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/osobennosti-raboty-s-mnogostranichny">13.1 Особенности работы с многостраничными документами</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/kak-sdelat-izmeneniya-vnutri-yacheyki-p"><img width="345" height="93" src="/image27/f6550fd3bdfdfdbe500536441d5d252e.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/kak-sdelat-izmeneniya-vnutri-yacheyki-p">Как сделать изменения внутри ячейки. Принудительный перенос</a></div>
+    </div>
+</div>
+</div>
+            </main><!-- #main -->
+        </div>
+<!-- #primary -->
+
+        
+    
+
+    </div>
+<!--.site-content-inner-->
+
+    
+</div>
+<!--.site-content-->
+
+    
+    
+
+<div class="site-footer-container">
+
+    
+
+    <footer id="colophon" class="site-footer full" itemscope itemtype="http://schema.org/WPFooter">
+        <div class="site-footer-inner fixed">
+
+            
+            
+<div class="footer-bottom">
+    <div class="footer-info">
+        <div class="footer-copyright">© 2024 Самоучитель справочник по офисным программам. <a href="/o-nas" rel="nofollow">О нас | Контакты</a> | <a href="/map" rel="nofollow">Карта сайта</a>
+</div>
+        <div class="footer-under-copyright"></div>
+	        </div>
+
+    </div>
+        </div>
+    </footer><!--.site-footer-->
+</div>
+
+
+            <button type="button" class="scrolltop js-scrolltop" data-mob="on"></button>
+    
+                    <div class="top-line js-top-line">
+            <div class="top-line-inner fixed">
+
+                <div class="top-line__title">Глава 17. Проекты Microsoft Access</div>
+<div class="top-line__like"><span class="btn-fb-like btn-top-like social-button--vkontakte" data-social="vkontakte"><span>Поделиться в ВКонтакте</span></span></div>
+<div class="top-line__post">
+<div class="top-line__post_thumbnail"><a href="/funktsiya-sign-v-excel"></a></div>
+<div class="top-line__post_title"><a href="/funktsiya-sign-v-excel">Функция SIGN в Excel</a></div>
+</div>            </div>
+        </div>
+    
+</div>
+<!-- #page -->
+
+<script>var pseudo_links = document.querySelectorAll(".pseudo-clearfy-link");for (var i=0;i<pseudo_links.length;i++ ) { pseudo_links[i].addEventListener("click", function(e){   window.open( e.target.getAttribute("data-uri") ); }); }</script><script>document.addEventListener("copy", (event) => {var pagelink = "\nИсточник: /glava-proekty-microsoft-access";event.clipboardData.setData("text", document.getSelection() + pagelink);event.preventDefault();});</script><script type="text/javascript" id="yelly-scripts-js-extra">
+/* <![CDATA[ */
+var settings_array = {"rating_text_average":"среднее","rating_text_from":"из","lightbox_display":"1"};
+var wps_ajax = {"url":"\/wp-admin\/admin-ajax.php","nonce":"e4ca9d4bd8"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="/js/scripts.min.js" id="yelly-scripts-js"></script>
+
+
+
+<div class="image-hover-social-buttons" style="display: none;">
+<div class="social-button social-button--vkontakte js-share-link" data-uri="https://vk.com/share.php?url=%2Fglava-proekty-microsoft-access"></div>
+<div class="social-button social-button--telegram js-share-link" data-uri="https://t.me/share/url?url=%2Fglava-proekty-microsoft-access&text=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+17.+%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%8B+Microsoft+Access"></div>
+<div class="social-button social-button--odnoklassniki js-share-link" data-uri="https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&service=odnoklassniki&st.shareUrl=%2Fglava-proekty-microsoft-access"></div>
+<div class="social-button social-button--whatsapp js-share-link" data-uri="whatsapp://send?url=%2Fglava-proekty-microsoft-accesstext=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+17.+%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%8B+Microsoft+Access"></div>
+<div class="social-button social-button--viber js-share-link" data-uri="viber://forward?url=%2Fglava-proekty-microsoft-accesstext=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+17.+%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%8B+Microsoft+Access"></div>
+</div>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(93345646, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/93345646" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>

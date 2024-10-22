@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<title>Глава 8. Ввод начальных остатков &#8212; learn-office</title>
+	<meta name="description" content="8.1. Общие правила ввода входящих остатков    Когда учет в программе «1С: Бухгалтерия 8.0» собирается вести вновь созданная организация, то в базу">
+	<link rel="canonical" href="/glava-vvod-nachalnyh-ostatkov">
+	<meta property="og:locale" content="ru_RU">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Глава 8. Ввод начальных остатков &#8212; learn-office">
+	<meta property="og:description" content="8.1. Общие правила ввода входящих остатков    Когда учет в программе «1С: Бухгалтерия 8.0» собирается вести вновь созданная организация, то в базу">
+	<meta property="og:url" content="/глава-8-ввод-начальных-остатков">
+	<meta property="og:site_name" content="Excel-jet">
+	<meta property="article:published_time" content="2024-09-24T19:56:18+00:00">
+	<meta property="og:image" content="/image16/8c7db189e2a2bbc0ac4c85505ea49c6c.jpg">
+	<meta property="og:image:width" content="1">
+	<meta property="og:image:height" content="1">
+	<meta property="og:image:type" content="image/jpeg">
+	<meta name="author" content="А. Днепров">
+
+
+<style id="wp-block-library-theme-inline-css" type="text/css">.wp-block-audio :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio :where(figcaption){color:#ffffffa6}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed :where(figcaption){color:#ffffffa6}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:#ffffffa6}:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table :where(figcaption){color:#ffffffa6}.wp-block-video :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video :where(figcaption){color:#ffffffa6}.wp-block-video{margin:0 0 1em}:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}</style>
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 19.5px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36.5px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--normal: 22px;--wp--preset--font-size--huge: 49.5px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="google-fonts-css" href="https://fonts.googleapis.com/css?family=Roboto%3A400%2C400i%2C700&#038;subset=cyrillic&#038;display=swap" media="all">
+<link rel="stylesheet" id="yelly-style-css" href="/css/style.min.css" media="all">
+
+<style>.pseudo-clearfy-link { color: #008acf; cursor: pointer;}.pseudo-clearfy-link:hover { text-decoration: none;}</style>
+<link rel="preload" href="/fonts/icomoon.ttf" as="font" crossorigin>
+    <style>.scrolltop{width:50px}.scrolltop:before{content:"\21d1"}.entry-content a, .entry-content a:visited, .spanlink, .comment-reply-link, .pseudo-link, .widget_calendar a, .widget_recent_comments a, .child-categories ul li a{color:#0000ff}.child-categories ul li a{border-color:#0000ff}a:hover, a:focus, a:active, .spanlink:hover, .top-menu ul li>span:hover, .main-navigation ul li a:hover, .main-navigation ul li span:hover, .footer-navigation ul li a:hover, .footer-navigation ul li span:hover, .comment-reply-link:hover, .pseudo-link:hover, .child-categories ul li a:hover{color:#1e73be}.top-menu>ul>li>a:before, .top-menu>ul>li>span:before{background:#1e73be}.child-categories ul li a:hover, .post-box--no-thumb a:hover{border-color:#1e73be}.post-box--card:hover{box-shadow: inset 0 0 0 1px #1e73be}.post-box--card:hover{-webkit-box-shadow: inset 0 0 0 1px #1e73be}@media (min-width: 768px){body{background-attachment: scroll}}body{font-size:17px;}@media (max-width: 991px){.widget-area{display: block; margin: 0 auto}}</style>
+    <!-- Yandex.RTB -->
+<script>window.yaContextCb=window.yaContextCb||[]</script>
+<script src="https://yandex.ru/ads/system/context.js" async></script>	
+</head>
+<body class="post-template-default single single-post postid-1272 single-format-standard wp-embed-responsive sidebar-right">
+<div id="page" class="site">
+    <a class="skip-link screen-reader-text" href="#content">Перейти к контенту</a>
+
+    
+    
+    <div class="search-screen-overlay js-search-screen-overlay"></div>
+    <div class="search-screen js-search-screen">
+        
+<form role="search" method="get" class="search-form" action="/">
+    <label>
+        <span class="screen-reader-text">Search for:</span>
+        <input type="search" class="search-field" placeholder="Поиск..." value="" name="s">
+    </label>
+    <button type="submit" class="search-submit"></button>
+</form>    </div>
+
+    
+
+<header id="masthead" class="site-header full" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="site-header-inner fixed">
+
+        <div class="humburger js-humburger">
+<span></span><span></span><span></span>
+</div>
+
+        
+<div class="site-branding">
+
+    <div class="site-branding__body"><div class="site-title"><a href="/">Excel-jet</a></div></div>
+</div>
+<!-- .site-branding -->
+
+    
+    <nav id="site-navigation" class="main-navigation full">
+        <div class="main-navigation-inner fixed">
+            <div class="menu-menyu-container"><ul id="header_menu" class="menu">
+<li id="menu-item-6695" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-6695">
+<a href="/excel">Excel</a>
+<ul class="sub-menu">
+	<li id="menu-item-6709" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6709"><a href="/excel/functions">Функции</a></li>
+</ul>
+</li>
+<li id="menu-item-6697" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6697"><a href="/microsoft-word">Word</a></li>
+<li id="menu-item-6696" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6696"><a href="/powerpoint">PowerPoint</a></li>
+<li id="menu-item-6698" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6698"><a href="/outlook">Outlook</a></li>
+</ul></div>        </div>
+    </nav><!-- #site-navigation -->
+
+    
+<div class="header-search"><span class="search-icon js-search-icon"></span></div>    </div>
+</header><!-- #masthead -->
+
+
+
+    
+    
+    <div id="content" class="site-content fixed">
+
+        
+        <div class="site-content-inner">
+    
+        
+        <div id="primary" class="content-area" itemscope itemtype="http://schema.org/Article">
+            <main id="main" class="site-main">
+
+                
+<article id="post-1272" class="article-post post-1272 post type-post status-publish format-standard has-post-thumbnail  category-excel">
+
+    
+        
+        <header class="entry-header"><h1 class="entry-title" itemprop="headline">Глава 8. Ввод начальных остатков</h1></header>
+        
+        
+        
+    
+    
+    <div class="entry-meta">
+<span class="entry-time"><span class="entry-label">Время чтения</span> 12 мин.</span><span class="entry-date"><span class="entry-label">Опубликовано</span> <time itemprop="datePublished" datetime="2024-09-24">24.09.2024</time></span>
+</div>
+	<div class="entry-content" itemprop="articleBody">
+		<p>8.1. Общие правила ввода входящих остатков    Когда учет в программе «1С: Бухгалтерия 8.0» собирается вести вновь созданная организация, то в базу последовательно вводятся операции и документы, отражающие формирование уставного капитала, внесение вкладов учредителями и т.д.    Чаще на практике случается ситуация, когда на компьютерный учет переходит фирма, которая уже вела деятельность до приобретения компьютеров и установки программы. Следовательно, возникает необходимость внести в информационную базу начальные остатки, имевшие место по данным бухгалтерии на дату начала компьютерного учета.    Прежде всего в данной ситуации следует определиться с датой начала компьютерного учета. На автоматизированный учет можно переходить с начала отчетного года, начала квартала, начала месяца и даже с произвольной даты. Идеальным вариантом начала автоматизированного учета было бы начало отчетного года, так как этот вариант дает возможность анализировать данные за весь отчетный период и использовать при составлении квартальной и годовой отчетности регламентированные отчеты. Однако при этом может возникнуть необходимость ввода очень большого количества проводок за период с начала года до текущего квартала или месяца.    Выбор конкретной даты начала учета предполагает, что остатки вводятся по состоянию на эту дату, далее учет уже ведется на компьютере. Это означает, что датой операций по вводу начальных остатков должна быть последняя календарная дата предыдущего периода. Например, при вводе остатков на 1 января 2006 года, датой ввода остатков будет 31 декабря 2005г., при вводе остатков на 1 июля датой ввода будет 30 июня и т.д. Это делается для того, чтобы на дату начала учета остатки уже имели место и с этой даты уже начали бы накапливаться обороты по счетам. Для удобства работы перед вводом входящих остатков дату их ввода следует задать в качестве рабочей даты (пункт меню «Сервис – Параметры»).    Ввод остатков осуществляется вручную проводками с использованием вспомогательного счета 000. Для этого в Журнале операции с помощью добавления новой строки (или клавиши INS) открываем новую операцию, заполняем поля даты и содержания, а затем вводим в табличную часть операции проводки типа ДА – К000 или Д000 – КП, где А – активный счет, а П – пассивный счет, по которым вводятся остатки. Таким образом, дебетовые сальдо на активных счетах и кредитовые сальдо на пассивных попадают в базу в корреспонденции с вспомогательным счетом 000.    Как мы уже знаем из предыдущих тем, при выборе в проводку того или иного счета, программа будет запрашивать необходимые разрезы аналитики, которые выбираются из соответствующих справочников и перечислений. То есть вводить остатки придется по самой мелкой аналитике – по каждому поставщику, сотруднику, материалу, товару, складу и т.д. При этом, если по счету введется количественный учет – в проводке следует указать количество, если на счете предусмотрено ведение валютного учета – следует задать количество иностранной валюты. <img decoding="async" src="/image16/8c7db189e2a2bbc0ac4c85505ea49c6c.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Если аналитика обширна, можно разделить работу по вводу остатков на нескольких сотрудников бухгалтерии. Например, кто-то вводит остатки по поставщикам, кто-то – по материалам, основным средствам, сотрудникам. То есть каждый создает свою операцию, внутри которой копированием вводит проводки по конкретному счету, но различной аналитике. Главное, чтобы всеми соблюдались общие правила – дата ввода остатков должна быть у всех одинаковая, и все проводки вводятся с использованием вспомогательного счета 000. Тогда в оборотах за дату ввода остатков эти суммы суммируются, и будет получен требуемый результат.    При вводе остатков на забалансовых счетах вспомогательный счет 000 не используется. Например, если по состоянию на дату начала ведения автоматизированного учета, а организации имелось арендованное имущество, следует ввести проводку: <img decoding="async" src="/image21/c45c04cc8167db2774ff014257808dda.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Следует иметь в виду, что корректный ввод начальных остатков по отдельным счетам можно осуществить только с помощью специализированных документов, входящих в состав конфигурации. В частности, это касается ввода остатков по основным средствам и остатков по НДС.   8.2. Документ «Ввод начальных остатков ОС».    Данный документ может быть вызван из пункта меню «Операции – Документы – Ввод начальных остатков ОС». <img decoding="async" src="/image05/299a6b96546959cd9885dc8d72046489.jpg" alt="" border="1">    Документ предназначен для ввода всех сведений об основных средствах, необходимых для дальнейшего ведения учета.    В документ вносятся начальные данные для ведения бухгалтерского и налогового учета по основным средствам. Признак ведения налогового учета может быть изменен. По бухгалтерскому учету документ проводится всегда.    В документ вносятся лишь актуальные сведения об основных средствах, история изменения сведений об основных средствах не переносится. Данные указываются только для тех основных средств, которые на момент ввода остатков уже приняты к учету, но еще не списаны с учета.    Документ рекомендуется вносить последним днем месяца, за который рассчитаны данные, включая расчет амортизации. </p>
+<p>Реквизиты шапки документа:</p>
+<p>    ● Организация. Организация, в которой числятся основные средства, указанные в табличной части.    ● Подразделение организации. Подразделение организации, за которым числятся основные средства, указанные в табличной части.    ● Ответственный. Пользователь, ответственный за ввод информации в документ.    ● Комментарий. Текстовое примечание к документу.    Заполнение табличной части документа:    Подбор данных в табличную часть может быть выполнен несколькими способами, такими как ручной ввод строки, заполнение при помощи механизма подбора, автоматическое заполнение.    Для подбора данных в табличную часть используется кнопка «Подбор». При ее нажатии открывается диалоговое окно со списком основных средств, имеющихся в справочнике.    Существует возможность автоматически заполнить табличную часть объектами основных средств, относящимися к определенной группе учета основных средств (здания, сооружения и др.). Для этого следует нажать на кнопку «Заполнить» в командной панели табличной части. При выборе в выпадающем меню пункта «По группе ОС» предоставляется возможность указать группу учета основных средств. Объекты, относящиеся к этой группе, будут автоматически добавлены в табличную часть. Если на момент заполнения в табличной части документа уже имеются некоторые строки, пользователю будет предложено выбрать: удалить существующие строки или же добавить к ним новые.    Для быстрого заполнения табличной части однотипными объектами основных средств, имеющими одинаковые наименования, нужно ввести в табличную часть хотя бы один такой объект. Затем следует воспользоваться кнопкой «Заполнить» в командной панели табличной части. При выборе в выпадающем меню пункта «По наименованию» табличная часть будет заполнена объектами основных средств, имеющими такое же наименование, как у введенного первоначально.    Для каждого объекта основных средств заполнению подлежат только те реквизиты (колонки), которые имеют к нему отношение. С порядком заполнения всех реквизитов табличной часть можно познакомиться, нажав кнопку <img decoding="async" src="/image04/24d457013e2100e1a2cb3c56bf1feba2.jpg" alt="" border="1">    панели инструментов окна документа.    Печать табличной части документа:    Для вывода на печать данных табличной части документа предназначена кнопка «Печать». На печать выводятся только те колонки табличной части, видимость которых включена на момент формирования печатной формы документа кнопкой <img decoding="async" src="/image04/272cc3a3ac2731518f4d49ab453077fe.jpg" alt="" border="1">    На закладке «Итоги» выводятся данные об итогах по некоторым колонкам табличной части «Основные средства». <img decoding="async" src="/image17/9b7a91336c9cba128255ed9cbc187e8b.jpg" alt="" border="1">    При проведении документа кроме записей в различных регистрах формируются следующие проводки:    ● Д «Счет учета (БУ)» – К 000 – на сумму, равную значению реквизита «Текущая стоимость (БУ)»    ● Д 000 – К «Счет амортизации (БУ)» – на сумму, равную значению реквизита «Накопленная амортизация (БУ)» <img decoding="async" src="/image07/42218d8de28ee0397d95a3178de17cbe.jpg" alt="" border="1">    ● Д «Счет учета (НУ) без указания корр. счета – на сумму, равную значению реквизита „Текущая стоимость (НУ)“    ● К «Счет амортизации (НУ)» без указания корр. счета – на сумму, равную значению реквизита «Накопленная амортизация (НУ)» <img decoding="async" src="/image26/eb78b7249068f35084b78d83adeedbb8.jpg" alt="" border="1"> </p>
+<h3></h3>
+<p>    8.3. Документ «Ввод начальных остатков по НДС»    Документ вызывается через пункт меню «Операции – Документ – Ввод начальных остатков по НДС». <img decoding="async" src="/image16/95083a449cd06479db0e924e67d63159.jpg" alt="" border="1">    Документ позволяет ввести первоначальные данные о суммах НДС, как подлежащих в дальнейшем вычету, так и подлежащих уплате в бюджет. Его необходимо использовать при начале эксплуатации программы.    Данный документ формирует проводки ввода начальных остатков по счетам 19 «НДС по приобретенным ценностям» (различным субсчетам), 76.Н «Расчеты по НДС, отложенному для уплаты в бюджет» и 76.АВ «НДС по авансам и предоплатам», а также соответствующие записи в регистрах подсистемы учета НДС.    При заполнении сначала необходимо указать операцию – тот участок учета НДС, по которому предполагается вводить начальные остатки. При смене операции данные всех табличных частей очищаются. <img decoding="async" src="/image18/a6d108984ed07f369a01e14ec9f1fb98.jpg" alt="" border="1">    В табличной части «Данные по остаткам» вводятся общие данные об остатках НДС в разрезе аналитики. Колонки с суммами по отдельным событиям (например, какая сумма НДС оплачена поставщику – для операции ввода остатков НДС по приобретенным ценностям), счета учета НДС и иная необходимая информация вводятся в табличной части «Дополнительные сведения». Каждой строке из табличной части «Данные по остаткам» может соответствовать несколько строк табличной части «Дополнительные сведения»    В табличных частях «Расчеты с контрагентами» и/или «Авансы» (в зависимости от вида операции) вводится информация о расчетах с контрагентами (неоплаченная задолженность и авансы). Есть возможность заполнить данные этих таблиц по данным, введенным в табличных частях «Данные по остаткам» и «Дополнительные сведения».    Если в документе установлен флажок «Отразить расчеты с контрагентами», при проведении документа будут сформированы проводки отражения начальных остатков по расчетам с контрагентами в бухгалтерском учете по данным табличных частей «Расчеты с контрагентами» и/или «Авансы» (в зависимости от вида операции) .    Рассмотрим разные варианты вводимых операций:    ● Вид операции «НДС по приобретенным ценностям» предназначен для ввода начальных остатков по суммам НДС предъявленным поставщиками ценностей. В табличной части «Данные по остаткам» вводятся данные о поставщике и документах поступления ценностей. После записи документа, создается документ вида «Отражение поступления товаров и услуг (НДС)», и, если установлен флаг «СФ», счет-фактура полученный. В табличной части «Дополнительные сведения» вводятся сведения по приобретенным ценностям. В табличной части «Расчеты с контрагентами» вводятся данные о неоплаченной задолженности организации перед поставщиками. В табличной части «Авансы» вводятся данные по незачтенным авансам, выданным организацией поставщикам.    ● Вид операции «НДС неполученный от покупателей» предназначен для ввода начальных остатков по суммам НДС начисленным при реализации ценностей. В табличной части «Данные по остаткам» вводятся данные о покупателе и документах реализации ценностей. После записи документа, создается документ вида «Отражение реализации товаров и услуг (НДС)», и счет-фактура выданный. В табличной части «Дополнительные сведения» вводятся сведения по реализованным ценностям. В табличной части «Расчеты с контрагентами» вводятся данные о неоплаченной задолженности покупателя перед организацией. <img decoding="async" src="/image03/161b44c2db174963c50645c6c599805c.jpg" alt="" border="1">    ● Вид операции «НДС по авансам полученным» предназначен для ввода начальных остатков по суммам НДС с авансов полученных. В табличной части «Данные по остаткам» вводятся данные о покупателе и документах оплаты аванса. После записи документа, создается документ вида «Документ расчетов с контрагентами (ручной учет)», и счет-фактура выданный. В табличной части «Дополнительные сведения» вводятся сведения по полученным авансам. Для одной строки табличной части «Данные по остаткам» можно вводить строки в табличной части «Дополнительные сведения» с одинаковыми видами ценностей и ставками НДС. В табличной части «Авансы» вводятся данные о незачтенных авансах полученных от покупателя. <img decoding="async" src="/image26/eb5e304bbb7291d53a5386ab109d0487.jpg" alt="" border="1"> </p>
+<h3></h3>
+<p>    8.4. Проверка правильности ввода начальных остатков    После того, как будут введены все входящие остатки, следует убедиться в правильности их ввода. Представим ситуацию, что остатки вводились на 01.07.2006 г. Это значит, что датой 30.06.2006 г. в базу были введены проводки типа Д01,10,50,41…-К000, то есть в кредит вспомогательного счета 000 за 30.06.2006 попал весь актив полугодового баланса. В то же время тем же 30.06.2006 г. в базу были введены так же проводки типа Д000 – К60,68,69,70,80…, то есть в дебет вспомогательного счета 000 за 30.06.2006 попал весь пассив полугодового баланса. Таким образом, чтобы убедиться в правильности ввода начальных остатков, надо сравнить дебетовые и кредитовые обороты на счете 000 за дату ввода остатков. Равенство этих оборотов говорит о том, что все введено правильно. Если же обороты счета 000 за дату ввода остатков не равны, и на счете 000 образовалось конечное сальдо – следует искать ошибку, допущенную при вводе. <img decoding="async" src="/image15/8b7d46d5172644372a059f781558c69b.jpg" alt="" border="1">    Пример: Рассмотрим ситуацию, изложенную на примере ТД «Нева» демонстрационной базы, входящей в комплект поставки.    Автоматизированный учет в ТД «Нева» решено начать с 1 января 2005 года. Следовательно, остатки должны вводиться 31 декабря 2004г. Что и было сделано: откройте Журнал операций, настройте в нем отбор по организации ТД «Нева» и выделите курсором операцию номер ТДН00001 от 31.12.2004. Нажмите кнопку «Проводки» – в нижней часть журнала будут отражены проводки по вводу входящих остатков с использованием счета 000 (34 проводки).    Чтобы удостовериться, что остатки введены правильно, вызовем на экран отчет «Оборотно-сальдовая ведомость» (из пункта меню «Отчеты»). Настроим период формирования ведомости – 31.12.2004 г. и выберем в строку «Организация» интересующий нас ТД «Нева». Нажмем кнопку «Сформировать» и получим следующий результат: <img decoding="async" src="/image22/c90aaf5e8009ca3ee7a120fd5978ead9.jpg" alt="" border="1">    Как видно из самой верхней строки табличной части сформированного отчета, оборот по дебету счета 000 равен обороту по кредиту счета 000 (678 400 руб.). Сальдо конечное на вспомогательном счете 000 отсутствует. Это говорит о том, что ошибок при вводе остатков допущено не было, и с 1 января 2005 года можно вводить текущие операции, получать верную промежуточную и итоговую отчетную информацию по организации. </p>
+<h2></h2>
+<!-- toc empty -->	</div>
+<!-- .entry-content -->
+
+</article>
+
+
+
+
+
+
+
+
+
+<div class="social-buttons">
+<span class="social-button social-button--vkontakte main" data-social="vkontakte"><span>Поделиться в ВКонтакте</span></span><span class="social-button social-button--telegram " data-social="telegram"></span><span class="social-button social-button--odnoklassniki " data-social="odnoklassniki"></span><span class="social-button social-button--whatsapp " data-social="whatsapp"></span><span class="social-button social-button--viber " data-social="viber"></span>
+</div>
+
+<!--noindex-->
+<div class="author-box">
+    <div class="author-info">
+        <div class="author-box__ava">
+                    </div>
+
+        <div class="author-box__body">
+            <div class="author-box__author">
+                Автор А. Днепров            </div>
+            <div class="author-box__description">
+                <p>Обучаю основам работы с офисными программами.</p>
+            </div>
+
+            
+        </div>
+    </div>
+</div>
+<!--/noindex-->
+    <meta itemprop="author" content="А. Днепров">
+<meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/glava-vvod-nachalnyh-ostatkov" content="Глава 8. Ввод начальных остатков">
+    <meta itemprop="dateModified" content="2024-09-24">
+<div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+<div class="related-posts">
+<div class="related-posts__header">Вам также может понравиться</div>
+<div class="post-cards post-cards--vertical">
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/kak-sdelat-massovuyu-zamenu-formul"><img width="311" height="230" src="/image04/2408fadbc9163d5aa4994580cfc152cd.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" fetchpriority="high"></a></div>
+<div class="post-card__title"><a href="/kak-sdelat-massovuyu-zamenu-formul">Как сделать массовую замену формул</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/kak-udalit-lishnie-i-pustye-stranitsy-v-excel">Как удалить лишние и пустые страницы в Excel</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/preobrazovanie-teksta-v-tablitsu"><img width="345" height="122" src="/image14/7a0043c9bf012cc129b22376cfebb2a9.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/preobrazovanie-teksta-v-tablitsu">Преобразование текста в таблицу</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/kak-delat-skrinshoty-s-vysokim-razresheniem-v-windows">Как делать скриншоты с высоким разрешением в Windows 11/10</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/osobennosti-raboty-s-mnogostranichny"><img width="213" height="230" src="/image13/6f8f9694c11ee322ff9d3675b0b8ba07.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/osobennosti-raboty-s-mnogostranichny">13.1 Особенности работы с многостраничными документами</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/kak-sdelat-izmeneniya-vnutri-yacheyki-p"><img width="345" height="93" src="/image27/f6550fd3bdfdfdbe500536441d5d252e.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/kak-sdelat-izmeneniya-vnutri-yacheyki-p">Как сделать изменения внутри ячейки. Принудительный перенос</a></div>
+    </div>
+</div>
+</div>
+            </main><!-- #main -->
+        </div>
+<!-- #primary -->
+
+        
+    
+
+    </div>
+<!--.site-content-inner-->
+
+    
+</div>
+<!--.site-content-->
+
+    
+    
+
+<div class="site-footer-container">
+
+    
+
+    <footer id="colophon" class="site-footer full" itemscope itemtype="http://schema.org/WPFooter">
+        <div class="site-footer-inner fixed">
+
+            
+            
+<div class="footer-bottom">
+    <div class="footer-info">
+        <div class="footer-copyright">© 2024 Самоучитель справочник по офисным программам. <a href="/o-nas" rel="nofollow">О нас | Контакты</a> | <a href="/map" rel="nofollow">Карта сайта</a>
+</div>
+        <div class="footer-under-copyright"></div>
+	        </div>
+
+    </div>
+        </div>
+    </footer><!--.site-footer-->
+</div>
+
+
+            <button type="button" class="scrolltop js-scrolltop" data-mob="on"></button>
+    
+                    <div class="top-line js-top-line">
+            <div class="top-line-inner fixed">
+
+                <div class="top-line__title">Глава 8. Ввод начальных остатков</div>
+<div class="top-line__like"><span class="btn-fb-like btn-top-like social-button--vkontakte" data-social="vkontakte"><span>Поделиться в ВКонтакте</span></span></div>
+<div class="top-line__post">
+<div class="top-line__post_thumbnail"><a href="/kak-skryt-stolbets-stroku"><img width="100" height="73" src="/image06/38b46de369836b0e877b012df702ee51.jpg" class="attachment-yelly_square size-yelly_square wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="top-line__post_title"><a href="/kak-skryt-stolbets-stroku">Как скрыть столбец, строку</a></div>
+</div>            </div>
+        </div>
+    
+</div>
+<!-- #page -->
+
+<script>var pseudo_links = document.querySelectorAll(".pseudo-clearfy-link");for (var i=0;i<pseudo_links.length;i++ ) { pseudo_links[i].addEventListener("click", function(e){   window.open( e.target.getAttribute("data-uri") ); }); }</script><script>document.addEventListener("copy", (event) => {var pagelink = "\nИсточник: /glava-vvod-nachalnyh-ostatkov";event.clipboardData.setData("text", document.getSelection() + pagelink);event.preventDefault();});</script><script type="text/javascript" id="yelly-scripts-js-extra">
+/* <![CDATA[ */
+var settings_array = {"rating_text_average":"среднее","rating_text_from":"из","lightbox_display":"1"};
+var wps_ajax = {"url":"\/wp-admin\/admin-ajax.php","nonce":"e4ca9d4bd8"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="/js/scripts.min.js" id="yelly-scripts-js"></script>
+
+
+
+<div class="image-hover-social-buttons" style="display: none;">
+<div class="social-button social-button--vkontakte js-share-link" data-uri="https://vk.com/share.php?url=%2Fglava-vvod-nachalnyh-ostatkov"></div>
+<div class="social-button social-button--telegram js-share-link" data-uri="https://t.me/share/url?url=%2Fglava-vvod-nachalnyh-ostatkov&text=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+8.+%D0%92%D0%B2%D0%BE%D0%B4+%D0%BD%D0%B0%D1%87%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85+%D0%BE%D1%81%D1%82%D0%B0%D1%82%D0%BA%D0%BE%D0%B2"></div>
+<div class="social-button social-button--odnoklassniki js-share-link" data-uri="https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&service=odnoklassniki&st.shareUrl=%2Fglava-vvod-nachalnyh-ostatkov"></div>
+<div class="social-button social-button--whatsapp js-share-link" data-uri="whatsapp://send?url=%2Fglava-vvod-nachalnyh-ostatkovtext=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+8.+%D0%92%D0%B2%D0%BE%D0%B4+%D0%BD%D0%B0%D1%87%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85+%D0%BE%D1%81%D1%82%D0%B0%D1%82%D0%BA%D0%BE%D0%B2"></div>
+<div class="social-button social-button--viber js-share-link" data-uri="viber://forward?url=%2Fglava-vvod-nachalnyh-ostatkovtext=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+8.+%D0%92%D0%B2%D0%BE%D0%B4+%D0%BD%D0%B0%D1%87%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85+%D0%BE%D1%81%D1%82%D0%B0%D1%82%D0%BA%D0%BE%D0%B2"></div>
+</div>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(93345646, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/93345646" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>

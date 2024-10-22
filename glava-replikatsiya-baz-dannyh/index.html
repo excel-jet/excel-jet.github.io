@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<title>Глава 18. Репликация баз данных &#8212; learn-office</title>
+	<meta name="description" content="Что такое &#171;Репликация баз данных&#187;? Что такое репликация? Это средство организации работы одного или нескольких пользователей с одним и тем же">
+	<link rel="canonical" href="/glava-replikatsiya-baz-dannyh">
+	<meta property="og:locale" content="ru_RU">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Глава 18. Репликация баз данных &#8212; learn-office">
+	<meta property="og:description" content="Что такое &#171;Репликация баз данных&#187;? Что такое репликация? Это средство организации работы одного или нескольких пользователей с одним и тем же">
+	<meta property="og:url" content="/glava-replikatsiya-baz-dannyh">
+	<meta property="og:site_name" content="Excel-jet">
+	<meta property="article:published_time" content="2024-08-19T17:06:37+00:00">
+	<meta property="og:image" content="/image05/3132acbaae85d53071aef3f7fce846d6.gif">
+	<meta property="og:image:width" content="580">
+	<meta property="og:image:height" content="367">
+	<meta property="og:image:type" content="image/gif">
+	<meta name="author" content="А. Днепров">
+
+
+<style id="wp-block-library-theme-inline-css" type="text/css">.wp-block-audio :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio :where(figcaption){color:#ffffffa6}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed :where(figcaption){color:#ffffffa6}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:#ffffffa6}:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table :where(figcaption){color:#ffffffa6}.wp-block-video :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video :where(figcaption){color:#ffffffa6}.wp-block-video{margin:0 0 1em}:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}</style>
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 19.5px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36.5px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--normal: 22px;--wp--preset--font-size--huge: 49.5px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="google-fonts-css" href="https://fonts.googleapis.com/css?family=Roboto%3A400%2C400i%2C700&#038;subset=cyrillic&#038;display=swap" media="all">
+<link rel="stylesheet" id="yelly-style-css" href="/css/style.min.css" media="all">
+
+<style>.pseudo-clearfy-link { color: #008acf; cursor: pointer;}.pseudo-clearfy-link:hover { text-decoration: none;}</style>
+<link rel="preload" href="/fonts/icomoon.ttf" as="font" crossorigin>
+    <style>.scrolltop{width:50px}.scrolltop:before{content:"\21d1"}.entry-content a, .entry-content a:visited, .spanlink, .comment-reply-link, .pseudo-link, .widget_calendar a, .widget_recent_comments a, .child-categories ul li a{color:#0000ff}.child-categories ul li a{border-color:#0000ff}a:hover, a:focus, a:active, .spanlink:hover, .top-menu ul li>span:hover, .main-navigation ul li a:hover, .main-navigation ul li span:hover, .footer-navigation ul li a:hover, .footer-navigation ul li span:hover, .comment-reply-link:hover, .pseudo-link:hover, .child-categories ul li a:hover{color:#1e73be}.top-menu>ul>li>a:before, .top-menu>ul>li>span:before{background:#1e73be}.child-categories ul li a:hover, .post-box--no-thumb a:hover{border-color:#1e73be}.post-box--card:hover{box-shadow: inset 0 0 0 1px #1e73be}.post-box--card:hover{-webkit-box-shadow: inset 0 0 0 1px #1e73be}@media (min-width: 768px){body{background-attachment: scroll}}body{font-size:17px;}@media (max-width: 991px){.widget-area{display: block; margin: 0 auto}}</style>
+    <!-- Yandex.RTB -->
+<script>window.yaContextCb=window.yaContextCb||[]</script>
+<script src="https://yandex.ru/ads/system/context.js" async></script>	
+</head>
+<body class="post-template-default single single-post postid-921 single-format-standard wp-embed-responsive sidebar-right">
+<div id="page" class="site">
+    <a class="skip-link screen-reader-text" href="#content">Перейти к контенту</a>
+
+    
+    
+    <div class="search-screen-overlay js-search-screen-overlay"></div>
+    <div class="search-screen js-search-screen">
+        
+<form role="search" method="get" class="search-form" action="/">
+    <label>
+        <span class="screen-reader-text">Search for:</span>
+        <input type="search" class="search-field" placeholder="Поиск..." value="" name="s">
+    </label>
+    <button type="submit" class="search-submit"></button>
+</form>    </div>
+
+    
+
+<header id="masthead" class="site-header full" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="site-header-inner fixed">
+
+        <div class="humburger js-humburger">
+<span></span><span></span><span></span>
+</div>
+
+        
+<div class="site-branding">
+
+    <div class="site-branding__body"><div class="site-title"><a href="/">Excel-jet</a></div></div>
+</div>
+<!-- .site-branding -->
+
+    
+    <nav id="site-navigation" class="main-navigation full">
+        <div class="main-navigation-inner fixed">
+            <div class="menu-menyu-container"><ul id="header_menu" class="menu">
+<li id="menu-item-6695" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-6695">
+<a href="/excel">Excel</a>
+<ul class="sub-menu">
+	<li id="menu-item-6709" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6709"><a href="/excel/functions">Функции</a></li>
+</ul>
+</li>
+<li id="menu-item-6697" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6697"><a href="/microsoft-word">Word</a></li>
+<li id="menu-item-6696" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6696"><a href="/powerpoint">PowerPoint</a></li>
+<li id="menu-item-6698" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6698"><a href="/outlook">Outlook</a></li>
+</ul></div>        </div>
+    </nav><!-- #site-navigation -->
+
+    
+<div class="header-search"><span class="search-icon js-search-icon"></span></div>    </div>
+</header><!-- #masthead -->
+
+
+
+    
+    
+    <div id="content" class="site-content fixed">
+
+        
+        <div class="site-content-inner">
+    
+        
+        <div id="primary" class="content-area" itemscope itemtype="http://schema.org/Article">
+            <main id="main" class="site-main">
+
+                
+<article id="post-921" class="article-post post-921 post type-post status-publish format-standard has-post-thumbnail  category-excel">
+
+    
+        
+        <header class="entry-header"><h1 class="entry-title" itemprop="headline">Глава 18. Репликация баз данных</h1></header>
+        
+        
+        
+    
+    
+    <div class="entry-meta">
+<span class="entry-time"><span class="entry-label">Время чтения</span> 29 мин.</span><span class="entry-date"><span class="entry-label">Опубликовано</span> <time itemprop="datePublished" datetime="2024-08-19">19.08.2024</time></span>
+</div>
+	<div class="entry-content" itemprop="articleBody">
+		<p>Что такое &#171;Репликация баз данных&#187;? </p>
+<p>Что такое репликация? Это средство организации работы одного или нескольких пользователей с одним и тем же документом, базой данных или другими-файлами на разных компьютерах независимо, без одновременного доступа к файлам, но когда требуется поддерживать некоторую общую версию изменяемых файлов, содержащую в себе все последние исправления, сделанные независимо. Более конкретно, <strong> репликация </strong> — это процесс создания копий файлов, между которыми может осуществляться обмен обновляемыми данными или объектами. Такие копии называются  репликами,  а такой обмен — <strong>синхронизацией</strong> . </p>
+<p>Когда нужна репликация? Microsoft приводит два примера необходимости в такой организации работы.</p>
+<ul>
+<li>Вы — агент по продажам и совершаете поездки для посещения клиентов. Перед поездкой вам нужно просмотреть последние заказы и маркетинговые тенденции клиентов, которых вы собираетесь посетить. Эта информация хранится в базах данных о клиентах и заказах вашей компании. Вы загружаете данные о клиентах на свой переносной компьютер. Во время посещения клиента вы обновляете загруженную информацию о клиенте, например: номера телефонов, адреса E-mail и прочую персональную информацию о клиенте на вашем переносном компьютере, а также вносите туда информацию о новых заказах. Однако вам необходимо закончить работу с заказами как можно быстрее. В конце дня вы подключаетесь по Интернету к сети вашей компании через защищенное удаленное соединение и обновляете базы данных о клиентах и заказах. Конфликты данных автоматически разрешаются благодаря имеющимся бизнес-процедурам. После этого вы печатаете и отправляете клиенту по факсу отчет о принятии заказа или отправляете снимок отчета по E-mail, который клиент может просмотреть с помощью программы Просмотр снимков (Snapshot Viewer).</li>
+<li>Вы — разработчик программного обеспечения и хотите закончить работу с приложением вашей компании, отслеживающим статистику об обнаружении и исправлении ошибок в проекте, дома, где нет необходимого или защищенного доступа к корпоративной сети. Вы забираете данные только о ваших ошибках, помещая их на свой переносной компьютер, и отключаете его от корпоративной сети. Затем приходите домой и работаете с имеющимися данными, изменяя поля статуса ошибки и прочие поля с информацией об ошибке. На следующий день* вы подключаете свой переносной компьютер к корпоративной сети и легко син-* хронизируете свои изменения с приложением вашей компании, отслеживающим; статистику ошибок в проекте.</li>
+</ul>
+<p>Существует несколько средств репликации баз данных, проектов Access и других файлов.</p>
+<ul>
+<li>
+<strong> Портфельная репликация</strong> —  средство операционной системы Microsoft Windows. Оно позволяет осуществлять репликацию файлов многих типов, в том числе баз данных Access (файлов MDB), исключая проекты Access (файлы ADP).</li>
+<li>
+<strong> Репликация баз данных и проектов средствами Acces</strong>s —  встроенные средства Microsoft Access. Они предназначены для репликации баз данных и проектов Access.</li>
+<li>
+<strong> Репликация с помощью Диспетчера репликации Microsoft</strong> —  полнофункциональное средство управления репликами, планирования синхронизации и просмотра элементов набора реплик. Диспетчер репликации входит в комплект средств разработчика Microsoft Office 2002 Developer Edition. Описание Диспетчера репликации (Replication Manager) можно найти в документации этого комплекта.</li>
+<li>
+<strong>Репликация файлов на сервере Web</strong> —  средство сервера Web фирмы Microsoft. Оно позволяет работать с файлами, сохраненными на узле Web, в автономном режиме — без подключения к серверу.</li>
+<li>
+<strong> Программная репликация с помощью интерфейсов DАО и JRO. </strong> Создание и управление репликами баз данных Access может осуществляться программно — в процедурах на VBA. Разработчики приложений Access могут обеспечить автоматическую синхронизацию реплик и прочие действия, связанные с репликацией, используя специальные свойства и методы объектов из библиотек VBA:  Объекты репликации и Jet (JRO)  для репликации баз данных Access 2000 и выше и  Объекты доступа к данным (DАО)  для репликации баз данных более ранних версий — Access 95 и 97.</li>
+</ul>
+<p>Репликация включает следующие действия:</p>
+<ul>
+<li>выбор средства репликации;</li>
+<li>создание реплик;</li>
+<li>синхронизация реплик;</li>
+<li>управление репликами.</li>
+</ul>
+<p>Способ выполнения перечисленных действий зависит от выбранного средства репликации. Мы рассмотрим основные вопросы, касающиеся использования перечисленных средств репликации, но не будем касаться темы программирования. Дополнительную информацию о репликации можно найти в справочной системе Access 2002.</p>
+<p> Портфельная репликация </p>
+<p><strong> Портфельная репликация </strong> является удобным способом поддержания файла базы данных в обновленном состоянии при работе с ним на разных компьютерах, которые лишь иногда соединяются посредством кабельного соединения (локальной сети или прямого кабельного соединения), или обмен данными между ними выполняется с помощью переносного диска. В этом случае файл базы данных можно поместить в Портфель, чтобы потом поместить его на переносной компьютер. При этом создается новая реплика, которая может быть синхронизирована с базой данных на стационарном компьютере.</p>
+<p>Предположим, вы ведете на своем персональном компьютере список контактов с помощью базы данных &#171;Контакты&#187;. Вас отправляют в командировку на несколько дней, но вам необходимо постоянно использовать эту информацию, сохраненную на вашем компьютере. В этом случае следует применить средства портфельной репликации.</p>
+<p>Сначала создайте базу данных &#171;Контакты&#187;. Для этого можно использовать Мастер создания базы данных Access:</p>
+<ol>
+<li>Выберите команду  Файл, Создать  (File, New). Появится панель  Создание файла  (New File). В разделе  Создание с помощью шаблона  (New from template) Щелкните по гиперссылке  Общие шаблоны  (General Templates).</li>
+<li>Раскройте вкладку  Базы данных  (Databases) (рис. 18.1).</li>
+<li>Дважды щелкните по ярлыку  Контакты  (Contact Management).</li>
+<li>Откроется окно, в котором следует выбрать папку для сохранения новой базы данных и имя файла. Выберите папку  Мои документы  (Му  Documents)  и введите имя файла Контакты.mdb. Нажмите кнопку  Создать  (New).</li>
+<li>Запустится Мастер создания базы данных по шаблону  Контакты  (Contact Management). Следуйте предлагаемым инструкциям.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" decoding="async" src="/image05/3132acbaae85d53071aef3f7fce846d6.gif" width="580" height="367" alt=""><meta itemprop="width" content="580">
+<meta itemprop="height" content="367"></span></p>
+<p> Рис. 18.1.  Вкладка  Базы данных  диалогового окна  Шаблоны </p>
+<p>После того как база данных будет создана и заполнена необходимой информацией, закройте ее. Чтобы иметь возможность работать с базой данных на портативном компьютере, создайте реплику с помощью средства портфельной репликации и поместите ее на портативный компьютер.</p>
+<p>Чтобы создать реплику базы данных &#171;Контакты&#187;:</p>
+<ol>
+<li>Закройте Access и запустите Проводник. Раскройте папку Мои документы, в которой хранится база данных Контакты.mdb. Нормализуйте окно Проводника, нажав кнопку  Восстановить  (Restore) в правом верхнем углу окна.</li>
+<li>Перетащите с помощью мыши базу данных &#171;Контакты&#187; на значок  Портфель  (Briefcase) на рабочем столе Windows.</li>
+</ol>
+<p><strong>Замечание</strong></p>
+<p>В Windows 2000 значок Портфель (Briefcase) изначально не отображается на рабочем столе. Откройте Проводник, раскройте любую папку, в которой хотите создать новый Портфель, и выберите команду Файл, Создать, Портфель (File, New, Briefcase) или щелкните правой кнопкой по пустому месту в этой папке и выберите команду Создать, Портфель (New, Briefcase) в контекстном меню. В качестве такой папки можно выбрать и Рабочий стол (Desktop). Выполните шаг 2.</p>
+<ol start="3">
+<li>Начнется процесс обновления Портфеля. Если Портфель используется впервые, появится диалоговое окно  Создание Портфеля Windows  (Welcome to the Windows Briefcase) (рис. 18.2).</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" decoding="async" src="/image09/518fd7ee19d685da406cf47a6be79031.gif" width="488" height="345" alt=""><meta itemprop="width" content="488">
+<meta itemprop="height" content="345"></span></p>
+<p> Рис. 18.2.  Диалоговое окно  Создание Портфеля Windows </p>
+<ol start="4">
+<li>Через некоторое время будет отображено сообщение, требующее подтвердить выполнение репликации (рис. 18.3). Нажмите кнопку Да (Yes).</li>
+<li>Будет отображено сообщение с предложением создать резервную копию (рис. 18.3). Нажмите кнопку Да (Yes).</li>
+<li>Будет отображено сообщение с вопросом о том, какую из двух реплик (реплику, полученную из исходной базы данных, или реплику, созданную в Портфеле) следует назначить основной репликой (рис. 18.4). Не забудьте, что основная реплика допускает правку структуры объектов и схемы данных, а обычная — нет.Чтобы сделать основной реплику, полученную из исходной базы данных, оставьте выбранным переключатель  Исходная копия  (Source Copy). Иначе выберите переключатель  Копия в портфель  (Copy to Briefcase). Нажмите кнопку  ОК. </li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image02/11e7ebffbd03c3696dc6d750a0162391.gif" width="438" height="195" alt=""><meta itemprop="width" content="438">
+<meta itemprop="height" content="195"></span></p>
+<p> Рис. 18.3.  Создание резервной копии базы данных</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image02/0d0e634c15d10c8fc60d1f1b8ce8cffd.gif" width="488" height="345" alt=""><meta itemprop="width" content="488">
+<meta itemprop="height" content="345"></span></p>
+<p> Рис. 18.4.  Выбор основной реплики</p>
+<p>Нажмите кнопку  Готово  (Finish) в диалоговом окне  Создание Портфеля Windows. </p>
+<ol start="7">
+<li>Откройте Портфель. Для этого дважды щелкните по значку  Портфель  (Briefcase) на рабочем столе Windows. Появится окно со списком реплик в Портфеле.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image12/6c3c4a28cfa35dcd3b481e7ec3fca13d.gif" width="366" height="455" alt=""><meta itemprop="width" content="366">
+<meta itemprop="height" content="455"></span></p>
+<p> Рис. 18.5.  Состояние синхронизации реплики в Портфеле</p>
+<p>Щелкните правой кнопкой мыши по элементу списка  Контакты.mdb  и выберите в контекстном меню команду  Свойства  (Properties), чтобы открыть окно свойств. Раскройте вкладку  Обновление  (Update Status) для вывода информации о состоянии синхронизации. Оригинал и реплика базы данных &#171;Контакты&#187; являются последними версиями, т. к. реплики не изменялись (рис. 18.5). Нажмите кнопку  ОК. </p>
+<p>Для просмотра содержимого реплики дважды щелкните по элементу Контакты.mdb списка реплик в Портфеле. Запустится Access и откроется реплика базы &#171;Контакты&#187;. В заголовке окна базы данных появится надпись  реплика  (Replica), указывающая на то, что производится работа с репликой исходной базы данных.</p>
+<p>Выберите команду  Сервис, Параметры  (Tools, Options) и раскройте вкладку Вид (View). Установите флажки  скрытые объекты  (Hidden objects) и  системные объекты  (System objects) и нажмите кнопку  ОК.  Обратите внимание на то, что для обеспечения репликации в базу данных &#171;Контакты&#187; было добавлено множество скрытых таблиц, например  MSysRepIicas и MSysTombstone  (рис. 18.6).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image28/fbb793647941c5be9697a7264bc23ac1.gif" width="536" height="430" alt=""><meta itemprop="width" content="536">
+<meta itemprop="height" content="430"></span></p>
+<p> Рис. 18.6.  Реплика базы данных &#171;Контакты&#187; с системными таблицами</p>
+<p>Снова выберите команду  Сервис, Параметры  (Tools, Options) и сбросьте установленные на прошлом шаге флажки. Нажмите кнопку ОК и закройте реплику базы данных &#171;Контакты&#187;.</p>
+<p>Чтобы поместить реплику на портативный компьютер или отдать ее другому пользователю:</p>
+<ol>
+<li>Создайте копию Портфеля, содержащего реплику, путем копирования и вставки Портфеля на рабочий стол, а затем переименованием копии. Копии Портфеля используются для обновления реплик другими пользователями.</li>
+<li>Откройте Портфель и выберите команду  Портфель, Обновить все  (Briefcase, Update All). Основная реплика обновляется данными, содержащимися в репликах других Портфелей.</li>
+<li>Поместите копию Портфеля на рабочий стол портативного компьютера (или передайте ее на дискете другому пользователю).</li>
+</ol>
+<p>Теперь можно работать с базой данных на портативном компьютере.</p>
+<p>Синхронизировать реплику в Портфеле на портативном компьютере с репликой в Портфеле на основном компьютере и основной репликой можно несколькими способами.</p>
+<ul>
+<li>Используя  сетевое подключение.  Связав портативный компьютер с Портфелем основного компьютера, можно обновлять реплику Портфеля непосредственно с помощью команды контекстного меню реплики  Обновить  (Update). Если реплика открыта в режиме разделения (по умолчанию), то допускается одновременное обновление реплики Портфеля несколькими пользователями. Однако пользова-телям в сети проще соединиться напрямую и обновить основной (исходный) файл MDB.</li>
+<li>Используя  прямое кабельное соединение.  Для обеспечения доступа к Портфелю основного компьютера пользователями портативных компьютеров можно соединить последовательные (СОМ) порты основного и переносного компьютера с помощью кабеля последовательной связи (нуль-модемный кабель). Если компьютеры оборудованы параллельными портами, использующими протокол ЕСР (Расширенный протокол связи), то можно соединить параллельные порты основного и переносного компьютеров с помощью кабеля ЕСР. При параллельном соединении обновление проходит намного быстрее, чем при последовательном соединении. Для соединения различных типов параллельных портов имеется возможность использовать кабель UCM (Универсальный модуль кабеля).</li>
+<li>Используя  соединение с помощью модемов.  Если установить на основном компьютере приложение &#171;Телефон&#187; (Phone Dialer), то можно будет связать портативный компьютер с Портфелем основного компьютера и обновить реплику в Портфеле.</li>
+<li>С помощью  дискет  или  переносного диска.  Реплику в Портфеле основного компьютера можно перенести на портативный компьютер или компьютер другого пользователя с помощью дискеты или переносного диска. Для этого переместите Портфель на дискету (роль дискеты может выполнять и переносной диск), а затем перепишите его с дискеты на рабочий стол переносного компьютера или компьютера другого пользователя. После внесения изменений на портативном компьютере или на компьютере другого пользователя проведите обратный процесс: переместите Портфель переносного компьютера на дискету, а с дискеты — на рабочий стол основного компьютера. Затем выполните синхронизацию реплики в Портфеле с основной репликой, как рассказано далее. Многие пользователи применяют именно этот способ.</li>
+</ul>
+<p><strong>Замечание</strong></p>
+<p>Перемещение Портфеля на дискету (или переносной диск) является важным этапом в осознании концепции Портфеля Windows. Реплики всех файлов хранятся в Портфеле на стационарном компьютере. Когда вы уходите, вы берете с собой Портфель. Один Портфель не может быть в двух местах одновременно. Более того, Портфель не является объектом рабочего стола Windows. По возвращении необходимо переместить Портфель с дискеты (или диска) на рабочий стол. Если Портфель разделяется в сети, то аналогией из реальной жизни является папка для входящих бумаг.</p>
+<p>Если изменить данные или параметры либо в реплике Портфеля, либо в основной реплике, то статус файла изменится на  Изменен  (Modified). Если со времени последней синхронизации одна из реплик изменялась, можно обновить либо реплику в Портфеле, либо основную реплику. Чтобы синхронизировать реплики:</p>
+<ol>
+<li>Откройте Портфель. Щелкните правой кнопкой по базе данных &#171;Контакты&#187; и выберите в контекстном меню команду  Свойства  (Properties). В окне свойств реплики раскройте вкладку  Обновление  (Update Status). Статусом реплики в Портфеле является значение  Изменен  (Modified) (рис. 18.7), хотя данные не изменялись. Дело в том, что на состояние реплики повлияло изменение параметров базы данных в Access.</li>
+<li>Нажмите кнопку  Обновить  (Update) для обновления основной реплики.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image05/2880a7d6648d8d85cb97b0b1b28804f8.gif" width="380" height="337" alt=""><meta itemprop="width" content="380">
+<meta itemprop="height" content="337"></span></p>
+<p> Рис. 18.7.  Статус  Изменен  для реплики в  Портфеле </p>
+<p>Аналогичным образом производится обновление реплики в Портфеле, когда изменения внесены в основную реплику.</p>
+<p><strong>Замечание</strong></p>
+<p>Щелкнув правой кнопкой мыши по полю окна свойств реплики, в котором отображается статус обновления реплики, можно отобразить список для выбора направления записи изменений в двух синхронизируемых репликах.</p>
+<p>Синхронизацию реплик в Портфеле можно проводить также с помощью команды  Портфель, Обновить выделенные объекты  (Briefcase, Update Selection) и команды</p>
+<p> Портфель, Обновить все  (Briefcase, Update All). Последняя команда очень удобна, когда требуется обновить реплики в нескольких копиях Портфеля на рабочем столе, которые принадлежат разным пользователям, обновляющим реплики в Портфеле с помощью дискет. В этом случае, выполнив команду обновления всего один раз, можно внести все произведенные каждым пользователем изменения.</p>
+<p><strong>Замечание</strong></p>
+<p>Можно создать копию Портфеля так же, как копию обычной папки с файлами Windows. Чтобы создать совершенно новый Портфель, не копируя имеющийся, в Проводнике Windows выберите команду  Файл, Создать, Портфель  (File, New, Briefcase).</p>
+<p> Репликация баз данных Access </p>
+<p>В начале главы были приведены основные понятия репликации файлов. Если говорить именно о репликации баз данных средствами Access, то  репликой  в данном случае называется каждая копия реплицированной базы данных. Каждая реплика базы данных содержит общий (для всех реплик базы данных) набор таблиц, запросов, форм, отчетов, страниц доступа к данным, макросов и модулей. Изменения данных таблицы, сделанные в одной из реплик, передаются в другие реплики. Каждая реплика может также содержать  локшьные объекты,  которые существуют только в этой реплике.</p>
+<p>Отдельная реплика является компонентом  набора регьтк  и допускает синхронизацию с другими репликами в наборе. В наборе реплик выделяется главная реплика, она называется  основной.  Основная реплика является главным компонентом набора реплик и используется для создания первой реплики в наборе. В основную реплику добавляются системные таблицы, системные поля и свойства репликации. Изменение структуры базы данных допускается только в основной реплике. Другие реплики в том же наборе также могут быть назначены основными репликами, но в каждый момент времени в наборе реплик должна быть только одна основная реплика. Основная реплика и все остальные реплики имеют общую структуру базы данных и уникальный идентификатор набора реплик.</p>
+<p><strong> Синхронизацией </strong>в данном случае называется процесс обновления двух компонентов набора реплик, при котором происходит взаимный обмен обновленными записями и объектами. После синхронизации двух компонентов набора реплик изменения из каждой реплики оказываются примененными в другой реплике.</p>
+<p><strong> Частичная реплика </strong> — база данных, содержащая подмножество записей полной реплики. С помощью частичной реплики пользователь имеет возможность устанавливать фильтры и задавать отношения, определяющие, какое подмножество записей полной реплики должно входить в базу данных.</p>
+<p><strong> Область видимости. </strong> Реплики по области видимости разделяются на три типа:  глобальные, локальные  и  анонимные.  Тип реплики определяет ряд важных характеристик реплики, например: типы реплик, которые могут создаваться по данной реплике, может ли данная реплика стать основной репликой в наборе реплик, а также, как в ней обрабатываются конфликты при синхронизации. Возможные типы, реплик описаны в табл. 18.1.</p>
+<p><strong>Приоритет реплики</strong> —  это специальная характеристика реплики базы данных, определяющая относительный приоритет реплики в наборе реплик. Приоритет выражается целым положительным числом. Приоритет реплик учитывается при разрешении конфликтов, возникших в процессе синхронизации реплик. Подробнее о приоритетах рассказано в справочной системе Access 2002.</p>
+<table class="table_common zebra" width="700">
+<tbody>
+<tr>
+<td><strong>Тип реплики </strong></td>
+<td><strong>Описание </strong></td>
+</tr>
+<tr>
+<td>Глобальная (global) реплика</td>
+<td>Реплика, по которой можно создавать реплики всех остальных типов. При репликации базы данных первая создаваемая реплика (основная реплика) является глобальной репликой. Изменения, внесенные в глобальную реплику, отслеживаются полностью; возможен обмен этими изменениями с любой другой глобальной репликой в наборе. Глобальная реплика может также обмениваться изменениями с любой локальной или анонимной репликой, для которой она становится разветвителем. Раз-ветвителем называется глобальная реплика, с которой все реплики в наборе синхронизируют свои изменения</td>
+</tr>
+<tr>
+<td>Локальная (local) реплика</td>
+<td>Реплика, в которой выводятся только данные из этой реплики и не отображаются данные из других реплик в наборе, в том числе из основной реплики. Локальная реплика синхронизирует свои данные с разветвителем, который является глобальной репликой. Синхронизация локальных реплик с другими репликами в наборе не разрешена. Если изменения в локальной реплике конфликтуют с глобальной репликой-разветвителем, эти изменения автоматически теряются в любом процессе устранения конфликтов</td>
+</tr>
+<tr>
+<td>Анонимная (anonymous) реплика</td>
+<td>Особый тип реплик в базах данных Microsoft Access, для которых не ведется отслеживание отдельных пользователей. Анонимные реплики особенно удобны при работе в Интернете, когда ожидается загрузка реплик многими пользователями</td>
+</tr>
+</tbody>
+</table>
+<p>Таблица 18.1.  Типы реплик по области видимости</p>
+<p>Выполнение действий, связанных с созданием, синхронизацией и управлением репликами в Access, осуществляется с помощью команд меню  Сервис, Репликация  (Tools, Replication).</p>
+<p> Создание реплик базы данных </p>
+<p>Основная и обычная реплики базы данных создаются в Access одинаковым способом: с помощью команды меню  Сервис, Репликация, Создать реплику  (Tools, Replication, Create Replica). Частичная реплика создается с помощью специального мастера. Об этом рассказано  в разд. &#171;Создание частичной реплики&#187; этой главы.  Новую реплику можно создать на основе любой существующей реплики. В любое время основной репликой можно назначить другую реплику в наборе. Основная реплика отличается от обычной. В основной реплике разрешено изменение структуры объектов базы данных и схемы данных, а в обычной и частичной репликах — только просмотр структуры объектов и схемы данных. Но вводить, удалять и изменять данные разрешено во всех репликах в наборе.</p>
+<p>Чтобы создать реплику базы данных:</p>
+<ol>
+<li>Откройте базу данных, предназначенную для репликации, например базу данных &#171;Борей&#187; (Northwind). Если работа идет в многопользовательской среде, то следует убедиться в том, что все остальные пользователи закрыли эту базу данных. Если база данных защищена паролем, то его необходимо удалить. Чтобы создать новую реплику в наборе реплик, откройте созданную ранее основную или обычную реплику.</li>
+<li>Выберите команду  Сервис, Репликация, Создать реплику  (Tools, Replication, Create Replica).</li>
+<li>Появится диалоговое окно с требованием подтверждения закрытия базы данных. Нажмите кнопку Да (Yes).</li>
+</ol>
+<p><strong>Замечание</strong></p>
+<p>Если команда  Сервис, Репликация, Создать реплику  используется для создания реплики еще нереплицированной базы данных, то в результате ее выполнения база данных будет преобразована в основную реплику, а затем для нее будет создана первая обычная реплика. В этом случае после требования о закрытии базы данных будет отображено сообщение с вопросом о создании резервной копии базы данных. Рекомендуем создать резервную копию базы данных перед ее репликацией. Для этого нажмите кнопку Да (Yes).</p>
+<ol start="4">
+<li>Появится диалоговое окно  Размещение новой реплики  (Location of New Replica) (рис. 18.8). Укажите папку для размещения новой реплики. Если нужно, измените имя файла реплики, заданное по умолчанию.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image18/aa8e3bb454558f533c9445ad25f92524.gif" width="580" height="354" alt=""><meta itemprop="width" content="580">
+<meta itemprop="height" content="354"></span></p>
+<p> Рис. 18.8.  Диалоговое окно  Размещение новой реплики </p>
+<ol start="5">
+<li>Чтобы задать приоритет реплики, нажмите кнопку  Приоритет  (Priority). Появится диалоговое окно, представленное на рис. 18.9. Введите приоритет реплики и нажмите кнопку  ОК. </li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image12/6a45e689536e0459d55c9e58726591d2.gif" width="291" height="146" alt=""><meta itemprop="width" content="291">
+<meta itemprop="height" content="146"></span></p>
+<p> Рис. 18.9.  Диалоговое окно  Приоритет </p>
+<ol start="6">
+<li>Если требуется запретить пользователям удалять записи из таблиц в реплике, установите флажок  Запретить удаление  (Prevent delets).</li>
+<li>Чтобы задать область видимости реплики, выберите необходимый элемент в раскрывающемся списке  Тип файла  (Save as type).</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image24/d68d066768a5f26f8e48961e146761b5.gif" width="513" height="419" alt=""><meta itemprop="width" content="513">
+<meta itemprop="height" content="419"></span></p>
+<p> Рис. 18.10.  Основная реплика базы данных с системными таблицами</p>
+<ol start="8">
+<li>Нажмите кнопку ОК. Начнется процесс создания реплики. После его завершения, возможно, появится пояснительное сообщение с текстом &#171;Изменения структуры базы данных допускаются только в основной реплике; изменения данных могут выполняться как в основной, так и в любой другой реплике набора&#187;. Нажмите кнопку  ОК. </li>
+<li>Если база данных не была реплицированной, в результате работы Access она преобразуется в основную реплику и отобразится на экране (рис. 18.10). Кроме того, будет создана первая реплика с указанным именем (шаг 4). Если текущая база данных уже была репликой, в результате работы Access на ее основе будет создана новая реплика с указанным именем. В реплику добавляются системные таблицы и поля, специально предназначенные для поддержки реплики.</li>
+</ol>
+<p> Создание частичной реплики </p>
+<p> Частичная реплика  (partial replica) — это реплика, содержащая лишь подмножество записей полной реплики (обычной реплики). Для создания частичной реплики требуется задать фильтр для выбора требуемых записей, которые будут синхронизироваться с соответствующими записями в полной реплике.</p>
+<p>Частичные реплики позволяют ограничиться лишь необходимым для работы объемом данных. Синхронизация частичной реплики требует передачи меньшего количества данных, чем синхронизация полной реплики, что, конечно, уменьшает нагрузку на сеть.</p>
+<p>Чтобы создать частичную реплику базы данных:</p>
+<ol>
+<li>Откройте реплику базы данных, на основе которой нужно создать частичную реплику. Например, откройте реплику базы данных &#171;Борей&#187;, создание которой было описано в предыдущем разделе</li>
+<li>Выберите команду  Сервис, Репликация, Мастер частичной репликации  (Partial Replica Wizard). Появится первое диалоговое окно Мастера частичной репликации (рис. 18.11).</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image08/46e523aaf295377dcf8f1e6c9fd9635d.gif" width="488" height="367" alt=""><meta itemprop="width" content="488">
+<meta itemprop="height" content="367"></span></p>
+<p> Рис. 18.11.  Первое диалоговое окно Мастера частичной репликации</p>
+<ol start="3">
+<li>Выберите переключатель  создать частичную реплику  (Create a new partial replica) и нажмите кнопку Далее (Next).</li>
+<li>Появится диалоговое окно, представленное на рис. 18.12. Введите путь и имя файла MDB для сохранения частичной реплики. Здесь же можно задать дополнительные свойства создаваемой реплики. Нажмите кнопку  Далее. </li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image17/96701958ff40f399ab195cde7d91545a.gif" width="488" height="367" alt=""><meta itemprop="width" content="488">
+<meta itemprop="height" content="367"></span></p>
+<p> Рис. 18.12.  Второе диалоговое окно Мастера частичной репликации</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image13/6f0a6119ba5e11aca5e22f754ff7f116.gif" width="488" height="367" alt=""><meta itemprop="width" content="488">
+<meta itemprop="height" content="367"></span></p>
+<p> Рис. 18.13.  Третье диалоговое окно Мастера частичной репликации</p>
+<ol start="5">
+<li>Появится диалоговое окно, позволяющее задать фильтр для отбора данных, которые следует сохранить в частичной реплике (рис. 18.13). Частичную реплику можно создать на основе только одной таблицы из базы данных, но из этой таблицы можно выбрать несколько полей.</li>
+<li>Выделите в списке  Таблица для отбора  (Table to filter) имя таблицы, из которой будут выбираться данные. Например, выделите таблицу &#171;Заказы&#187; (Orders). В списке  Поля таблицы  (Fileds in the table) отобразятся все поля выбранной таблицы.</li>
+<li>Теперь нужно составить выражение фильтра. Оно подобно выражению SQL WHERE, только не может содержать вызовов статистических и пользовательских функций и подчиненных запросов. Например, составим фильтр для выбора всех заказов, которые были размещены с 1 апреля 1998 года, стоимость доставки которых превышает 100 рублей.</li>
+<li>Выделите поле &#171;ДатаРазмещения&#187; (OrderDate) в списке  Поля таблицы,  выберите переключатель &gt;= и нажмите кнопку  Вставить  (Paste). В поле  Выражение фильтра  (Filter expression) появится строка: [ДатаРазмещения] &gt;= [Выражение].</li>
+<li>Вместо слова [Выражение] введите дату #4/1/1998#.</li>
+<li>Выделите в списке  Поля таблицы  поле &#171;СтоимостьДоставки&#187; (ShippedPrice), выберите переключатель &gt; в группе переключателей отношений и переключатель И (AND) — в группе переключателей логических связок. Нажмите кнопку  Вставить.  В поле  Выражение фильтра  появится строка: [ДатаРазмещения] &gt;= #4/1/1998# AND [СтоимостьДоставки] &gt; [Выражение].</li>
+<li>Вместо слова [Выражение] введите число 100. Получится требуемое выражение фильтра: [ДатаРазмещения] &gt;= #4/1/1998# AND [СтоимостьДоставки] &gt; 100 (рис. 18.14). Нажмите кнопку Далее.</li>
+<li>Появится следующее диалоговое окно Мастера частичной репликации (рис. 18.15). В списке  Список таблиц  (List of Tables) отображаются все таблицы текущей реплики, за исключением той, на основе которой создан фильтр для отбора записей. Таблицы, связанные с таблицей, к которой применяется фильтр, выделены полужирным шрифтом. Установите флажок около имени таблицы, чтобы включить в частичную реплику все записи в этой таблице. Сбросьте флажок около имени таблицы, если нужно включить в частичную реплику только записи, связанные с отобранными фильтром записями. Нажмите кнопку  Далее. </li>
+<li>Появится последнее диалоговое окно мастера (рис. 18.16), предлагающее создать отчет с описанием содержания частичной реплики. Оставьте выбранным переключатель Да (Yes) и нажмите кнопку  Готово  (Finish).</li>
+<li>После этого начнется процесс создания частичной реплики, который может занять несколько минут. После окончания работы мастера будет отображен отчет о создании частичной реплики. Сохраните его в формате снимка отчета, чтобы иметь информацию о данных, хранящихся в частичной реплике. Тогда этот отчет можно будет просмотреть в любое время с помощью программы  Просмотр снимков  (Snapshot Viewer) (рис. 18.17)  (см. разд. <a href="/glava-sozdanie-i-pechat-otchetov">&#171;Снимки отчетов&#187;</a><a href="https://taurion.ru/access/6">гл. 6</a>). </li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image17/9cd60aaa141840e80eb7bd612817332e.gif" width="488" height="367" alt=""><meta itemprop="width" content="488">
+<meta itemprop="height" content="367"></span></p>
+<p> Рис. 18.14.  Фильтр для отбора записей в таблице &#171;Заказы&#187;</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image21/bd33456d17594742cd47679174d92b79.gif" width="488" height="367" alt=""><meta itemprop="width" content="488">
+<meta itemprop="height" content="367"></span></p>
+<p> Рис. 18.15.  Четвертое диалоговое окно Мастера частичной репликации</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image13/7080f0af6588ae77714e8ec470d6c812.gif" width="488" height="367" alt=""><meta itemprop="width" content="488">
+<meta itemprop="height" content="367"></span></p>
+<p> Рис. 18.16.  Последнее диалоговое окно Мастера частичной репликации</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image28/fee385da930453e5cc952f295949abf3.gif" width="487" height="511" alt=""><meta itemprop="width" content="487">
+<meta itemprop="height" content="511"></span></p>
+<p> Рис. 18.17.  Отчет о создании частичной реплики</p>
+<p> Синхронизация реплик </p>
+<p>В Microsoft Access, Диспетчере репликации Microsoft и Объектах репликации и Jet (JRO) можно выбрать один из трех различных методов синхронизации данных:</p>
+<ul>
+<li> Прямая синхронизация  является прекрасным решением для случаев, когда реплики непосредственно подключены к локальной сети и находятся в общих сетевых папках. Прямая синхронизация не очень хорошо подходит для удаленной синхронизации с помощью сервера удаленного доступа (RAS) или соединения удаленного доступа. В этом случае следует использовать косвенную синхронизацию или синхронизацию по Интернету.Если при попытке выполнить прямую синхронизацию с репликой, присутствующей в списке известных реплик, эта реплика не будет найдена, то она будет исключена из набора реплик.</li>
+<li> Косвенная синхронизация  полезна при работе в автономной среде, например: на переносном компьютере.Косвенную синхронизацию можно настроить только с помощью Диспетчера репликации (Replication Manager), входящего в комплект средств разработчика Microsoft Office 2002 Developer. После того как косвенная синхронизация будет настроена в Диспетчере репликации, ее можно выполнять с помощью Microsoft Access, Диспетчера репликации или JRO.</li>
+<li> Синхронизация по Интернету  представляет собой удобный способ синхронизации реплик в тех автономных средах, которые имеют доступ к Интернету.</li>
+</ul>
+<p>Для настройки синхронизации по Интернету нужно использовать Диспетчер репликации (Replication Manager), который входит в комплект средств разработчика Microsoft Office 2002 Developer.</p>
+<p>Чтобы синхронизировать реплику с другой репликой в наборе реплик базы данных:</p>
+<ol>
+<li>Откройте реплику, которую нужно синхронизировать. Это может быть основная, обычная или частичная реплика.</li>
+<li>Выберите команду  Сервис, Репликация, Синхронизация  (Tools, Replication, Synchronize Now). Появится диалоговое окно, представленное на рис. 18.18.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image21/be3693192c5f19d03b4b95887c617312.gif" width="485" height="238" alt=""><meta itemprop="width" content="485">
+<meta itemprop="height" content="238"></span></p>
+<p> Рис. 18.18.  Диалоговое окно  Синхронизация базы данных &lt;&#8230;&gt; </p>
+<ol start="3">
+<li>Введите путь и имя файла элемента набора реплик, который требуется синхронизировать с текущей репликой. Это может быть основная, обычная или частичная реплика.</li>
+<li>Если текущую реплику нужно сделать основной, установите флажок  Сделать основной репликой &#171;&lt;имя файла&gt;&#187;  (Make &#8216;&lt;имя файла&gt;&#8217; the Design Master). (Этот режим недоступен в том случае, когда одна или обе синхронизируемые реплики являются частичными репликами и когда обе синхронизируемые реплики являются обычными репликами — не основными).</li>
+<li>Нажмите кнопку  ОК. </li>
+<li>Отобразится сообщение с требованием подтвердить закрытие базы данных для выполнения синхронизации. Чтобы выполнить синхронизацию, нажмите кнопку  Да  (Yes).</li>
+</ol>
+<p>В результате синхронизации могут возникать конфликты. Устранение конфликтов выполняется с помощью специальной программы Просмотр конфликтов (Conflict Viewer). Чтобы ее запустить, откройте базу данных, которую требуется проверить на наличие конфликтов, и нажмите кнопку  Да  (Yes) в окне с сообщением о наличии конфликтов и с предложением их устранить или выберите команду  Сервис, Репликация, Устранить конфликты  (Tools, Replication, Resolve Conflicts). Если конфликтов в реплике нет, программа  Просмотр конфликтов  не запускается, сообщение о наличии конфликтов при открытии реплики тоже не отображается. Сведения о причинах возникновения конфликтов и об использовании программы  Просмотр конфликтов  находятся в справочной системе Access 2002.</p>
+<p> Управление репликами </p>
+<p>Управление реплицированными базами данных включает:</p>
+<ul>
+<li> Восстановление основной реплики.  Если основная реплика в наборе реплик была повреждена, потеряна, переименована, удалена или перемещена, можно восстановить основную реплику. Для этого:</li>
+</ul>
+<ol>
+<li>Убедитесь, что в наборе отсутствует основная реплика.</li>
+<li>Выберите в наборе реплику, которую нужно сделать основной (для этого нельзя использовать частичную реплику).</li>
+<li>Синхронизируйте ее со всеми остальными репликами в наборе.</li>
+<li>Чтобы сделать текущую реплику основной, выберите команду  Сервис, Репликация, Восстановить основную реплику  (Tools, Replication, Recover Design Master).</li>
+</ol>
+<p> Внимание </p>
+<p>В наборе реплик не должно быть больше одной основной реплики. В противном случае могут происходить сбои синхронизации в наборе реплик.</p>
+<ul>
+<li> Назначение реплики основной репликой.  Чтобы одну из реплик в наборе назначить новой основной репликой:</li>
+</ul>
+<ol>
+<li>Убедитесь, что данная реплика и текущая основная реплика никем не используются.</li>
+<li>Откройте реплику, которую нужно сделать основной.</li>
+<li>Выберите команду  Сервис, Репликация, Синхронизировать  (Tools, Replication, Synchronize Now).</li>
+<li>Выберите в списке текущую основную реплику для синхронизации с открытой репликой.</li>
+<li>Установите флажок  Сделать основной репликой &#171;&lt;имя файла&gt;&#187;  (Make &#8216;&lt;имя файла&#8217; the Design Master) и нажмите кнопку  ОК. </li>
+</ol>
+<ul>
+<li>
+<strong> Преобразование реплицированной базы данных в нереплицированную. </strong> После преобразования базы данных в основную реплику ее обратное преобразование в нереплицированную базу данных будет невозможно. Однако, если дальнейшее использование репликации не планируется и требуется уменьшить объем реплици-рованной базы данных, следует создать новую нереплицированную базу данных, содержащую все объекты и данные реплицированной базы данных, но не включающую в себя дополнительные системные поля, таблицы и свойства, добавляемые при репликации. Для этого требуется выполнить импорт из реплики в новую базу данных необходимых объектов всех типов, кроме таблиц. Для переноса таблиц в новую базу данных создайте в ней запросы, выбирающие все записи из исходных таблиц и создающие на их основе новые таблицы. Воссоздайте индексы и связи между таблицами. Подробные инструкции о выполнении этой процедуры можно найти в справочной системе Access 2002.</li>
+<li>
+<strong> Защита репетированной базы данных. </strong> Для защиты реплики можно использовать систему защиты на уровне пользователей. Назначенные права доступа к объектам реплики для пользователей рабочей группы не влияют на синхронизацию этой реплики с другими репликами в наборе. Реплику нельзя защитить паролем. Нельзя также защищенную паролем базу данных преобразовать в реплицирован-ную базу данных. Для защиты файла реплики можно установить разрешения на общую папку, в которой хранится реплика (не назначайте доступ только для чтения, иначе не будет выполняться синхронизация с остальными элементами набора реплик), или поместить ее в папку, недоступную в сети, и использовать косвенную синхронизацию через Диспетчер репликации Microsoft.</li>
+<li>
+<strong> Удаление реплики из набора реплик. </strong> Удалите файл реплики, выделив его в Проводнике Windows и нажав клавишу &lt;Del&gt;. Выполните синхронизацию любой реплики из набора с удаленной репликой. Access автоматически определит, что заданная реплика отсутствует и удалит ее из набора реплик. Не удаляйте основную реплику из набора реплик, если только она не повреждена. Если в наборе реплик отсутствует основная реплика, невозможно изменить структуру базы данных.</li>
+<li>
+<strong> Создание резервной копии реципированной базы данных Microsoft Access. </strong> Создание реплики предоставляет возможность создать резервную копию базы данных. Создавать резервные копии полезно, однако пользоваться ими следует лишь в исключительных ситуациях. Любая копия с резервной копии базы данных или любая реплика созданная из преобразованной резервной копии, не может быть синхронизирована с существующими элементами набора реплик.</li>
+</ul>
+<p> Репликация проектов Access </p>
+<p>Репликация проектов Access отличается от репликации баз данных. В проектах реп-лицируются только данные. Формы, отчеты и прочие объекты, содержащиеся в проекте, не реплицируются.</p>
+<p>В отличие от баз данных для репликации проектов Microsoft Access предоставляет средства создания не реплик, а  публикаций  (publication) и  подписок  (subscription).</p>
+<ul>
+<li>В проекте Microsoft Access  публикация  может содержать одну или несколько статей с таблицами или хранимыми процедурами из одной базы данных пользователя. Создание публикации выполняется с помощью мастера, который запускается с помощью команды  Сервис, Репликация, Создать публикацию.  Каждая пользовательская база данных может иметь несколько публикаций.</li>
+<li> Статьей  в публикации называют сгруппированные данные, которые реплицируются как целое. Статьей может быть целая таблица либо некоторые строки и столбцы, определяемые фильтром. Публикация может содержать несколько статей. Подписчики подписываются на публикацию, а не на отдельные статьи в публикации.</li>
+<li> Подпиской  называется база данных, получающая реплицированные таблицы и данные из базы данных издателя в проекте Microsoft Access. Создать подписку можно с помощью мастера, который запускается с помощью команды  Сервис, Репликация, Запросить подписку. </li>
+</ul>
+<p>Синхронизация реплицированных проектов Access может быть трех типов: прямая, косвенная и через Интернет. Синхронизация реплицированных проектов осуществляется аналогично синхронизации реплицированных баз данных с помощью команды  Сервис, Репликация, Сихронизация. </p>
+<p>Подробная информация о репликации проектов Access содержится в документации Microsoft SQL Server.</p>
+<p> Репликация файлов на сервере Web </p>
+<p>Есть еще одно средство работы с базой данных в той ситуации, когда требуется синхронизация данных — это работа с данными в Web в автономном режиме (off-line), когда нет постоянного подключения к источнику данных.</p>
+<p>Репликация файлов на сервере Web позволяет работать с файлами, используя программу просмотра Microsoft Internet Explorer 5 (и выше) или приложение из пакета Microsoft Office 2002 (а также предыдущей версии Office 2000), даже после отключения от сервера. На локальном компьютере сохраняются копии файлов, хранящихся на сервере, отображаемых в Проводнике в папках Web. Локальные копии могут быть просмотрены и изменены даже при работе в автономном режиме. При подключении к серверу Web копии файлов на локальном компьютере могут быть синхронизированы с исходными файлами, хранящимися на сервере Web.</p>
+<p> Внимание </p>
+<p>На сервере Web, который будет использоваться для сохранения синхронизируемых файлов, должны быть установлены серверные расширения FrontPage.</p>
+<p> Репликация файлов в Internet Explorer и Windows </p>
+<p>Описание процедур репликации и синхронизации файлов на сервере Web, использования Менеджера синхронизации Windows (Synchronization Manager), так называемых  подписок  (subscription), и папки  Избранное  (Favorites) можно найти в справочной системе Windows и Internet Explorer.</p>
+<p> Репликация страниц доступа к данным в Access 2002 </p>
+<p>Когда нет постоянного подключения к базе данных, чтобы удобно было использовать и изменять данные, можно воспользоваться средством работы со страницами доступа к данным проектов Access 2002 в автономном режиме (без подключения).</p>
+<p>Для такой работы потребуется следующее программное обеспечение:</p>
+<ul>
+<li>Microsoft Access 2002, установленный на клиентском компьютере, например на переносном компьютере или домашнем компьютере;</li>
+<li>Microsoft SQL Server 2000 Desktop Edition (MSDE), установленное и работающее на клиентском компьютере;</li>
+<li>Microsoft SQL Server 2000, установленное и работающее на удаленном сервере;</li>
+<li>Microsoft Internet Explorer 5.0, установленный на клиентском компьютере и на удаленном сервере.</li>
+</ul>
+<p>Инструкции по использованию синхронизируемых страниц доступа к данным для проектов Access 2002 можно найти в справочной системе Access 2002.</p>
+<p> Выводы </p>
+<p>Эта глава посвящена репликации баз данных и проектов Access 2002 с помощью различных инструментов. Средства портфельной репликации Windows позволяют работать с базой данных на переносном компьютере во время поездки и синхронизировать ее позже с базой данных на компьютере, находящемся в офисе. Средства Microsoft Access 2002 репликации баз данных и проектов дают возможность организовать совместную работу нескольких пользователей с базой данных или проектом путем создания реплик — копий базы данных или проекта, изменения в которых могут быть синхронизированы. Средство репликации сервера Web предоставляет возможность удаленным пользователям работать с базой данных, хранящейся на сервере Web, даже в автономном режиме, после отключения от Интернета.</p>
+<!-- toc empty -->	</div>
+<!-- .entry-content -->
+
+</article>
+
+
+
+
+
+
+
+
+
+<div class="social-buttons">
+<span class="social-button social-button--vkontakte main" data-social="vkontakte"><span>Поделиться в ВКонтакте</span></span><span class="social-button social-button--telegram " data-social="telegram"></span><span class="social-button social-button--odnoklassniki " data-social="odnoklassniki"></span><span class="social-button social-button--whatsapp " data-social="whatsapp"></span><span class="social-button social-button--viber " data-social="viber"></span>
+</div>
+
+<!--noindex-->
+<div class="author-box">
+    <div class="author-info">
+        <div class="author-box__ava">
+                    </div>
+
+        <div class="author-box__body">
+            <div class="author-box__author">
+                Автор А. Днепров            </div>
+            <div class="author-box__description">
+                <p>Обучаю основам работы с офисными программами.</p>
+            </div>
+
+            
+        </div>
+    </div>
+</div>
+<!--/noindex-->
+    <meta itemprop="author" content="А. Днепров">
+<meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/glava-replikatsiya-baz-dannyh" content="Глава 18. Репликация баз данных">
+    <meta itemprop="dateModified" content="2024-08-19">
+<div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+<div class="related-posts">
+<div class="related-posts__header">Вам также может понравиться</div>
+<div class="post-cards post-cards--vertical">
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/kak-sdelat-massovuyu-zamenu-formul"><img width="311" height="230" src="/image04/2408fadbc9163d5aa4994580cfc152cd.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/kak-sdelat-massovuyu-zamenu-formul">Как сделать массовую замену формул</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/kak-udalit-lishnie-i-pustye-stranitsy-v-excel">Как удалить лишние и пустые страницы в Excel</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/preobrazovanie-teksta-v-tablitsu"><img width="345" height="122" src="/image14/7a0043c9bf012cc129b22376cfebb2a9.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/preobrazovanie-teksta-v-tablitsu">Преобразование текста в таблицу</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/kak-delat-skrinshoty-s-vysokim-razresheniem-v-windows">Как делать скриншоты с высоким разрешением в Windows 11/10</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/osobennosti-raboty-s-mnogostranichny"><img width="213" height="230" src="/image13/6f8f9694c11ee322ff9d3675b0b8ba07.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/osobennosti-raboty-s-mnogostranichny">13.1 Особенности работы с многостраничными документами</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/kak-sdelat-izmeneniya-vnutri-yacheyki-p"><img width="345" height="93" src="/image27/f6550fd3bdfdfdbe500536441d5d252e.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/kak-sdelat-izmeneniya-vnutri-yacheyki-p">Как сделать изменения внутри ячейки. Принудительный перенос</a></div>
+    </div>
+</div>
+</div>
+            </main><!-- #main -->
+        </div>
+<!-- #primary -->
+
+        
+    
+
+    </div>
+<!--.site-content-inner-->
+
+    
+</div>
+<!--.site-content-->
+
+    
+    
+
+<div class="site-footer-container">
+
+    
+
+    <footer id="colophon" class="site-footer full" itemscope itemtype="http://schema.org/WPFooter">
+        <div class="site-footer-inner fixed">
+
+            
+            
+<div class="footer-bottom">
+    <div class="footer-info">
+        <div class="footer-copyright">© 2024 Самоучитель справочник по офисным программам. <a href="/o-nas" rel="nofollow">О нас | Контакты</a> | <a href="/map" rel="nofollow">Карта сайта</a>
+</div>
+        <div class="footer-under-copyright"></div>
+	        </div>
+
+    </div>
+        </div>
+    </footer><!--.site-footer-->
+</div>
+
+
+            <button type="button" class="scrolltop js-scrolltop" data-mob="on"></button>
+    
+                    <div class="top-line js-top-line">
+            <div class="top-line-inner fixed">
+
+                <div class="top-line__title">Глава 18. Репликация баз данных</div>
+<div class="top-line__like"><span class="btn-fb-like btn-top-like social-button--vkontakte" data-social="vkontakte"><span>Поделиться в ВКонтакте</span></span></div>
+<div class="top-line__post">
+<div class="top-line__post_thumbnail"><a href="/kak-nayti-obedinennye-yacheyki-v-excel"></a></div>
+<div class="top-line__post_title"><a href="/kak-nayti-obedinennye-yacheyki-v-excel">Как найти объединенные ячейки в Excel</a></div>
+</div>            </div>
+        </div>
+    
+</div>
+<!-- #page -->
+
+<script>var pseudo_links = document.querySelectorAll(".pseudo-clearfy-link");for (var i=0;i<pseudo_links.length;i++ ) { pseudo_links[i].addEventListener("click", function(e){   window.open( e.target.getAttribute("data-uri") ); }); }</script><script>document.addEventListener("copy", (event) => {var pagelink = "\nИсточник: /glava-replikatsiya-baz-dannyh";event.clipboardData.setData("text", document.getSelection() + pagelink);event.preventDefault();});</script><script type="text/javascript" id="yelly-scripts-js-extra">
+/* <![CDATA[ */
+var settings_array = {"rating_text_average":"среднее","rating_text_from":"из","lightbox_display":"1"};
+var wps_ajax = {"url":"\/wp-admin\/admin-ajax.php","nonce":"e4ca9d4bd8"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="/js/scripts.min.js" id="yelly-scripts-js"></script>
+
+
+
+<div class="image-hover-social-buttons" style="display: none;">
+<div class="social-button social-button--vkontakte js-share-link" data-uri="https://vk.com/share.php?url=%2Fglava-replikatsiya-baz-dannyh"></div>
+<div class="social-button social-button--telegram js-share-link" data-uri="https://t.me/share/url?url=%2Fglava-replikatsiya-baz-dannyh&text=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+18.+%D0%A0%D0%B5%D0%BF%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F+%D0%B1%D0%B0%D0%B7+%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85"></div>
+<div class="social-button social-button--odnoklassniki js-share-link" data-uri="https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&service=odnoklassniki&st.shareUrl=%2Fglava-replikatsiya-baz-dannyh"></div>
+<div class="social-button social-button--whatsapp js-share-link" data-uri="whatsapp://send?url=%2Fglava-replikatsiya-baz-dannyhtext=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+18.+%D0%A0%D0%B5%D0%BF%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F+%D0%B1%D0%B0%D0%B7+%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85"></div>
+<div class="social-button social-button--viber js-share-link" data-uri="viber://forward?url=%2Fglava-replikatsiya-baz-dannyhtext=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+18.+%D0%A0%D0%B5%D0%BF%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F+%D0%B1%D0%B0%D0%B7+%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85"></div>
+</div>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(93345646, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/93345646" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<title>Глава 11. Сервисные функции &#8212; learn-office</title>
+	<meta name="description" content=" 11.1. Калькулятор    При выполнении несложных текущих расчетов в системе «1С:Предприятие 8.0» можно воспользоваться встроенным калькулятором. Вызвать его">
+	<link rel="canonical" href="/glava-servisnye-funktsii">
+	<meta property="og:locale" content="ru_RU">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Глава 11. Сервисные функции &#8212; learn-office">
+	<meta property="og:description" content=" 11.1. Калькулятор    При выполнении несложных текущих расчетов в системе «1С:Предприятие 8.0» можно воспользоваться встроенным калькулятором. Вызвать его">
+	<meta property="og:url" content="/глава-11-сервисные-функции">
+	<meta property="og:site_name" content="Excel-jet">
+	<meta property="article:published_time" content="2024-07-12T17:57:17+00:00">
+	<meta property="og:image" content="/image24/d7a2695e6d9601c9bf6cabfa8661b2da.jpg">
+	<meta property="og:image:width" content="1">
+	<meta property="og:image:height" content="1">
+	<meta property="og:image:type" content="image/jpeg">
+	<meta name="author" content="А. Днепров">
+
+
+<style id="wp-block-library-theme-inline-css" type="text/css">.wp-block-audio :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio :where(figcaption){color:#ffffffa6}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed :where(figcaption){color:#ffffffa6}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:#ffffffa6}:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table :where(figcaption){color:#ffffffa6}.wp-block-video :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video :where(figcaption){color:#ffffffa6}.wp-block-video{margin:0 0 1em}:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}</style>
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 19.5px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36.5px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--normal: 22px;--wp--preset--font-size--huge: 49.5px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="google-fonts-css" href="https://fonts.googleapis.com/css?family=Roboto%3A400%2C400i%2C700&#038;subset=cyrillic&#038;display=swap" media="all">
+<link rel="stylesheet" id="yelly-style-css" href="/css/style.min.css" media="all">
+
+<style>.pseudo-clearfy-link { color: #008acf; cursor: pointer;}.pseudo-clearfy-link:hover { text-decoration: none;}</style>
+<link rel="preload" href="/fonts/icomoon.ttf" as="font" crossorigin>
+    <style>.scrolltop{width:50px}.scrolltop:before{content:"\21d1"}.entry-content a, .entry-content a:visited, .spanlink, .comment-reply-link, .pseudo-link, .widget_calendar a, .widget_recent_comments a, .child-categories ul li a{color:#0000ff}.child-categories ul li a{border-color:#0000ff}a:hover, a:focus, a:active, .spanlink:hover, .top-menu ul li>span:hover, .main-navigation ul li a:hover, .main-navigation ul li span:hover, .footer-navigation ul li a:hover, .footer-navigation ul li span:hover, .comment-reply-link:hover, .pseudo-link:hover, .child-categories ul li a:hover{color:#1e73be}.top-menu>ul>li>a:before, .top-menu>ul>li>span:before{background:#1e73be}.child-categories ul li a:hover, .post-box--no-thumb a:hover{border-color:#1e73be}.post-box--card:hover{box-shadow: inset 0 0 0 1px #1e73be}.post-box--card:hover{-webkit-box-shadow: inset 0 0 0 1px #1e73be}@media (min-width: 768px){body{background-attachment: scroll}}body{font-size:17px;}@media (max-width: 991px){.widget-area{display: block; margin: 0 auto}}</style>
+    <!-- Yandex.RTB -->
+<script>window.yaContextCb=window.yaContextCb||[]</script>
+<script src="https://yandex.ru/ads/system/context.js" async></script>	
+</head>
+<body class="post-template-default single single-post postid-647 single-format-standard wp-embed-responsive sidebar-right">
+<div id="page" class="site">
+    <a class="skip-link screen-reader-text" href="#content">Перейти к контенту</a>
+
+    
+    
+    <div class="search-screen-overlay js-search-screen-overlay"></div>
+    <div class="search-screen js-search-screen">
+        
+<form role="search" method="get" class="search-form" action="/">
+    <label>
+        <span class="screen-reader-text">Search for:</span>
+        <input type="search" class="search-field" placeholder="Поиск..." value="" name="s">
+    </label>
+    <button type="submit" class="search-submit"></button>
+</form>    </div>
+
+    
+
+<header id="masthead" class="site-header full" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="site-header-inner fixed">
+
+        <div class="humburger js-humburger">
+<span></span><span></span><span></span>
+</div>
+
+        
+<div class="site-branding">
+
+    <div class="site-branding__body"><div class="site-title"><a href="/">Excel-jet</a></div></div>
+</div>
+<!-- .site-branding -->
+
+    
+    <nav id="site-navigation" class="main-navigation full">
+        <div class="main-navigation-inner fixed">
+            <div class="menu-menyu-container"><ul id="header_menu" class="menu">
+<li id="menu-item-6695" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-6695">
+<a href="/excel">Excel</a>
+<ul class="sub-menu">
+	<li id="menu-item-6709" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6709"><a href="/excel/functions">Функции</a></li>
+</ul>
+</li>
+<li id="menu-item-6697" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6697"><a href="/microsoft-word">Word</a></li>
+<li id="menu-item-6696" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6696"><a href="/powerpoint">PowerPoint</a></li>
+<li id="menu-item-6698" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6698"><a href="/outlook">Outlook</a></li>
+</ul></div>        </div>
+    </nav><!-- #site-navigation -->
+
+    
+<div class="header-search"><span class="search-icon js-search-icon"></span></div>    </div>
+</header><!-- #masthead -->
+
+
+
+    
+    
+    <div id="content" class="site-content fixed">
+
+        
+        <div class="site-content-inner">
+    
+        
+        <div id="primary" class="content-area" itemscope itemtype="http://schema.org/Article">
+            <main id="main" class="site-main">
+
+                
+<article id="post-647" class="article-post post-647 post type-post status-publish format-standard has-post-thumbnail  category-excel">
+
+    
+        
+        <header class="entry-header"><h1 class="entry-title" itemprop="headline">Глава 11. Сервисные функции</h1></header>
+        
+        
+        
+    
+    
+    <div class="entry-meta">
+<span class="entry-time"><span class="entry-label">Время чтения</span> 17 мин.</span><span class="entry-date"><span class="entry-label">Опубликовано</span> <time itemprop="datePublished" datetime="2024-07-12">12.07.2024</time></span>
+</div>
+	<div class="entry-content" itemprop="articleBody">
+		<p> 11.1. Калькулятор    При выполнении несложных текущих расчетов в системе «1С:Предприятие 8.0» можно воспользоваться встроенным калькулятором. Вызвать его на экран можно, выбрав пункт «Сервис – Калькулятор», либо воспользовавшись кнопкой <img decoding="async" src="/image24/d7a2695e6d9601c9bf6cabfa8661b2da.jpg" alt="" border="1">    панели инструментов программы. <img decoding="async" src="/image19/ab8cd9eda2a5892235336463c1dd5339.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Калькулятор можно перетащить мышью в любое место экрана, а также изменить размер окна. При этом все элементы управления, расположенные в форме калькулятора, изменяют свой размер пропорционально изменению размеров окна.    Калькулятор позволяет выполнять все арифметические действия, вычислять проценты и обратные значения, запоминать числа в буфер и выполнять сложение и вычитание с запомненными в буфере значениями. При вводе числа можно редактировать введенное значение, удаляя неверно введенные разряды.    Для работы с калькулятором можно использовать как мышь, так клавиатуру.    Если результат какой-либо операции превысит допустимую разрядность калькулятора, будет выдано сообщение: «Результат превышает допустимые пределы».    При делении на 0 на дисплей будет выдано сообщение: «Деление на 0». Для продолжения работы в этом случае нужно будет очистить дисплей калькулятора, нажав кнопку сброса «С».    В памяти калькулятора запоминаются последние 15 вычислений, которые можно просмотреть, воспользовавшись кнопкой <img decoding="async" src="/image03/1f4d5625f2e4c013d447ed24e4f9e090.jpg" alt="" border="1">    расположенной справа от дисплея. <img decoding="async" src="/image15/88a3f0f46908ecd6d5853e1c29a5b1fa.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Калькулятор имеет 10 регистров памяти для запоминания чисел и их дальнейшего использования в вычислениях. С помощью кнопок «MS», «М+», «М-» и «МС» работают с первым регистром.    Для запоминания результата вычислений в первом регистре следует нажать кнопку «MS». В табло, справа от надписи «М=«, появится запомненное значение. Нажатием кнопки «MR» запомненное значение выводится из первого регистра на дисплей. По кнопке «М+» запомненное в первом регистре значение прибавляется к результату вычислений, по кнопке «М-» запомненное в первом регистре значение вычитается из результата вычислений. Кнопка «МС» сбрасывает содержимое первого регистра.    Для запоминания числа в один из девяти других регистров следует набрать число на дисплее (ввести или произвести нужные расчеты) и нажать кнопку <img decoding="async" src="/image01/059ab0336b6351038d2f7d125171b7f1.jpg" alt="" border="1">    расположенную рядом с кнопкой «MS». На экран будет выведен список регистров. Укажите мышью нужный регистр. Число записывается.    Для извлечения числа из регистра нажмите кнопку <img decoding="async" src="/image06/3a03e2cadcdda8848269212e1e904e1a.jpg" alt="" border="1">    расположенную рядом с кнопками «MR», «М+» или «М-», в зависимости от вида действия, и выберите регистр. Аналогично выполняется очистка регистра (кнопка «МС»). <img decoding="async" src="/image07/3d1caa18e5526c648b91850027a30259.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Калькулятор может работать в нескольких режимах. Выбор режима осуществляется кнопкой <img decoding="async" src="/image10/5883559f3d2751cd83a5da52a3330445.jpg" alt="" border="1">    и выбором нужного пункта: <img decoding="async" src="/image02/10b9dc56ae2bb30c5dfbd996b322cc52.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    ● В режиме «Микрокалькулятор» все действия выполняются с клавиатуры. Калькулятор при этом принимает упрощенную форму: <img decoding="async" src="/image24/dc37f019bba74e7d5d280acf2c739c7e.jpg" alt="" border="1">    Числа при этом вводятся с клавиатуры. Для очистки дисплея используется клавиша «С».    ● В режиме «Формульный калькулятор» все действия записываются в табло последовательно. Для организации определенной последовательности действий и ввода сложных выражений допускается использование скобок: <img decoding="async" src="/image19/aceb34226ab3b878f1061cbfa6a6129c.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    ● В режиме «Настройка» можно настроить точность расчетов калькулятором. В выведенном на экран диалоговом окне настройки следует указать число знаков после запятой: <img decoding="async" src="/image09/51aec0e8730d57f6a6106123640095d0.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Калькулятор может использоваться не только для выполнения расчетов, но и для ввода численных реквизитов в документы и справочники. Для этого справа от числового реквизита следует нажать кнопку <img decoding="async" src="/image06/36186e18215fe6eb42147c014a9be59d.jpg" alt="" border="1">    или использовать клавишу F4. <img decoding="async" src="/image10/54bbc4848e07b8679d78d893439a22fe.jpg" alt="" border="1"> </p>
+<h3></h3>
+<p>    11.2. Календарь    Система «1С:Предприятие 8.0» содержит встроенный календарь, открыть который можно, выбрав пункт «Сервис – Календарь», либо воспользовавшись кнопкой <img decoding="async" src="/image05/288f772758504ed26555b7d1b695c8eb.jpg" alt="" border="1">    панели инструментов программы.    В окно выводится календарь на текущий месяц. <img decoding="async" src="/image03/15c03245423591500133b43eeb26070d.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Красной рамкой в календаре всегда выделена текущая системная дата компьютера. При выборе указателем мыши другой даты она выделяется рамкой серого цвета, а выбранная дата выводится в нижней строке окна.    Для перехода к предыдущему месяцу используется кнопка <img decoding="async" src="/image10/540f6be2a9d1e7c1f25dcc012cd14bb9.jpg" alt="" border="1">    к следующему: <img decoding="async" src="/image15/895df32977f765eb1a102008afed11e0.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Для перехода к предыдущему году используется кнопка <img decoding="async" src="/image16/92f2eb7bb95fb0fb1bdc5bff76ba6194.jpg" alt="" border="1">    к следующему: <img decoding="async" src="/image13/72905f974ccc8f7a0c0e8f4a11eaaaaf.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Для быстрого возврата к текущей дате, а также для перехода на начало/конец квартала или года, используется кнопка <img decoding="async" src="/image15/829081cc2891d1b56cc0ed9ee6629692.jpg" alt="" border="1">    расположенная в нижней строке справа от выбранной даты.    Если подвести указатель мыши в строку, содержащую наименование месяца и года, то при нажатой левой кнопки мыши (после нажатия не отпускайте ее) на экран выводится список месяцев для выбора. <img decoding="async" src="/image13/76e87e12cb0251b0e6d7e2d5239d43e2.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Перемещая указатель мыши вверх или вниз, можно прокручивать список до нужного значения. Для выбора месяца отпустите кнопку мыши. <img decoding="async" src="/image18/a5448f989b5b091369e98aff47e1b7fd.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Календарь можно перетащить мышью в любое место экрана, а также изменить размер окна. При этом по мере увеличения размеров окна, в нем размещаются дополнительные календари: <img decoding="async" src="/image07/411fa042a955765d52f8071df61754c6.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Добавление календарей происходит при любом направлении увеличения размеров окна календаря. При уменьшении размеров дополнительные календари исчезают.    При записи в базу периодических реквизитов, а также при вводе документов и операций, можно использовать календарь для ввода реквизита типа «Дата». В этом случае календарь открывается нажатием кнопки <img decoding="async" src="/image24/d8c1db7cb89b8ebb1cdac03249309938.jpg" alt="" border="1">    или с помощью клавиши F4. <img decoding="async" src="/image07/3fcede8666ea164e20814e98d1372282.jpg" alt="" border="1">   11.3. Временная блокировка    Зачастую администратор системы настраивает работу таким образом, чтобы каждый пользователь «входил» в систему под своим именем. Это дает возможность отследить авторство введенных документов и других производимых в программе действий, то есть на пользователя возлагается ответственность за выполняемые действия. Если же пользователю надо ненадолго отлучиться от компьютера и при этом быть уверенным, что в его отсутствие под его именем никто никаких действий в системе не предпримет, можно воспользоваться режимом «Временной блокировки». Этот режим предназначен для предотвращения несанкционированного использования системы в отсутствии пользователя. Данный режим имеет смысл только тогда, когда для пользователей заданы пароли на вход в систему.    Для входа в режим временной блокировки нужно выбрать пункт «Сервис – Временная блокировка», либо использовать кнопку <img decoding="async" src="/image07/42f068b0a18662e2e2c42821a201b9d6.jpg" alt="" border="1">    панели инструментов программы. При этом программа сворачивается, а на экране остается только следующее окно: <img decoding="async" src="/image26/e94fc3f252b524bb7441c50f01393098.jpg" alt="" border="1">    Чтобы продолжить работу, следует ввести пароль (тот же, что использовался при запуске системы) и нажать «ОК». После этого программа «разворачивается» и становится доступной для работы. </p>
+<h3></h3>
+<p>    11.4. Параметры пользователя    В режиме работы «1С:Предприятие» пользователь может сменить пароль.    Для этого выберите пункт «Сервис – Параметры пользователя». <img decoding="async" src="/image20/ba90ee43c5a06284a4e1db041b6aa1f0.jpg" alt="" border="1">    Для смены пароля сначала нужно ввести пароль и его подтверждение. Установка нового пароля будет иметь действие только после перезапуска системы. </p>
+<h3></h3>
+<p>    11.5. Список активных пользователей    В процессе работы иногда бывает необходимо определить, кто еще из пользователей работает в данный момент с информационной базой. Для этого необходимо воспользоваться пунктом «Сервис – Активные пользователи». На экран будет выведено окно со списком пользователей, работающих в данный момент с базой. <img decoding="async" src="/image11/5e8154d5aeee975eb4a3ee1435c30809.jpg" alt="" border="1">    При открытии текущая строка показывает данные пользователя, вызвавшего окно (текущее соединение). Пользователи, имеющие пароль, отличаются в списке пиктограммой (имеют пометку).    Состав колонок списка активных пользователей и порядок их следования можно настроить (пункт меню «Действия – Настройка списка»). Так же список активных пользователей можно вывести на печать (пункт меню «Действия – Вывести список»). <img decoding="async" src="/image15/89417a5a1b55f26867c8a94c2b61c76e.jpg" alt="" border="1"> </p>
+<h3></h3>
+<p>    11.6. Журнал регистрации    Для выполнения административных обязанностей часто требуется выяснить, какие события происходили в определенный момент времени или какие действия выполнял тот или иной пользователь. Для этих целей предназначен журнал регистрации.    Для открытия журнала регистрации выберите пункт «Администрирование – Журнал регистрации». <img decoding="async" src="/image25/e098a3636e7b9b361b37400ba232c504.jpg" alt="" border="1">    В этом журнале могут фиксироваться различные события. С его помощью администратор может получить историю работы пользователей с системой.    Журнал ведется в обоих режимах (Конфигуратор и 1С:Предприятие).    Настройка журнала производится в Конфигураторе.    Для настройки журнала регистрации выберите пункт «Администрирование – Настройка журнала регистрации». Укажите нужный режим регистрации событий в журнале регистраций. Наименование режимов регистрации расположены в порядке степени подробности (сверху вниз). <img decoding="async" src="/image12/6c57d5acae572388aeeacd9f36272af8.jpg" alt="" border="1">    Для отключения регистрации выберите «Не регистрировать».    В процессе эксплуатации системы в журнале регистрации может накопиться значительное число записей. Для выполнения сокращения журнала регистрации в диалоге настройки журнала нажмите кнопку «Сократить». <img decoding="async" src="/image21/c08cb75fe91a95c71a46b19ce305d1d0.jpg" alt="" border="1">    Сокращение записей производится до указанной в поле «Удалить события до» даты.    Если требуется сохранить удаляемые записи, то установите флажок «Записать удаляемые записи в файл» и укажите имя файла-архива.    Для сохранения записей журнала регистрации в файл откройте журнал регистрации и выберите пункт «Файл – Сохранить копию». На экран выводится диалог выбора каталога и файла, в который будет произведена выгрузка, а также тип файла (по умолчанию указывается тип журнала регистрации «*.elf»). Выгрузка также возможна в формате XML. <img decoding="async" src="/image17/9f3e18d65b064965c94bbf3c9d3058f9.jpg" alt="" border="1">    Для просмотра архива записей журнала регистрации выберите пункт «Файл – Открыть» и в стандартном диалоге выбора файла укажите тип файла журнала регистрации (*.elf). Выберите нужный файл архива и нажмите кнопку «Открыть» («Open»).    Настройка списка производится в окне, вызываемом командой меню «Действия – Настройка списка».    С помощью команды меню «Действия – Вывести список» можно вывести журнал в табличный и текстовый документ для печати.    В Журнале регистрации можно установить отбор. Настройки отбора вызываются выбором пункта «Действия – Отбор» журнала регистрации. <img decoding="async" src="/image05/30598bc0c6e0292358745dddc9e046f1.jpg" alt="" border="1">    С помощью настроек отбора можно установить фильтры событий.    На закладке «Основные» производится установка фильтров отбора по периоду, наименованию компьютера, пользователю, степени важности событий, комментарию. Если запущено несколько приложений, то в списке приложений можно указать, события каких именно приложений следует отбирать. В списке событий указывается, какие виды событий нужно включить в отбор. Укажите способ отбора событий:    ● Выбор «Фильтровать динамически» позволяет использовать установленный фильтр отбора динамически, т.е. новые события, удовлетворяющие условиям, будут автоматически включаться в просмотр журнала регистрации.    ● Выбор «Отобрать сразу» выполняется быстрее, чем предыдущий режим, но не позволяет динамически обновлять журнал.    На закладке «Прочие» указываются данные, по которым будет производиться отбор событий, информация о которых представлена в колонках «Метаданные», «Данные» и «Представление данных» журнала регистрации.    ● В табличном поле «Метаданные» содержится список метаданных, представленных в журнале метаданных. Установите флажки для тех метаданных, по которым требуется произвести отбор.    ● В поле «Данные» выбирается объект информационной базы, по которому требуется отобрать события.    ● В поле «Представление данных» указывается строковое представление    Для использования параметров отбора в дальнейшем нажмите кнопку «Отборы».    Для вызова списка сохраненных ранее отборов в диалоге настройки отборов нажмите кнопку «Отборы». Список отборов содержит все отборы, выполненные ранее, настройки которых были сохранены. Для выполнения отбора достаточно выбрать его в списке и нажать кнопку «Восстановить». Для сохранения параметров отбора введите его имя и нажмите кнопку «Сохранить».    Используя пункт меню «Действие – Событие…», можно увидеть данные по конкретному событию журнала регистрации. Эти сведения можно только просмотреть. </p>
+<h3></h3>
+<p>    11.7. Групповое проведение документов    Обычно документы проводятся пользователем сразу после ввода. Однако в некоторых случаях возникает необходимость выполнения группового проведения документов. Например, если большая группа документов не проводилась во время ввода, а теперь их нужно провести. Причиной необходимости выполнения группового проведения документов может быть изменение некоторых данных, которые использовались при проведении документа. В этом случае групповое проведение позволит заново выполнить проведение для большого количества документов с учетом измененных данных.    Для вызова этого режима необходимо обратиться в пункт меню «Сервис – Групповое перепроведение документов». <img decoding="async" src="/image20/b95bd7c9a4a7cef96cdd4f4681c42fd3.jpg" alt="" border="1">    В диалоговом окне данной обработки настраивается интервал, за который планируется перепроведение документов и выбирается организация (организации), от лица которых эти документы вводились. Для ввода в нижнее окно списка организаций нужно воспользоваться стандартным приемом ввода новой строки. Организации из списка можно:    удалять <img decoding="async" src="/image26/ef86395f676bf26ebd63cd20c767536a.jpg" alt="" border="1">    менять местами <img decoding="async" src="/image03/1cc56ba9ef398646e576e92cb1403dcd.jpg" alt="" border="1">    сортировать по алфавиту <img decoding="async" src="/image20/bc6ee5b58393dec51531d2cb654f724b.jpg" alt="" border="1">    Обычно рекомендуется проводить перепроведение по всем организациям, для чего переключатель в верхней части окна ставится в соответствующее положение.    После установки всех необходимых параметров для выполнения перепроведения следует нажать кнопку «Выполнить».    Нажатие кнопки «Закрыть» позволяет выйти из режима перепроведения документов. </p>
+<h3></h3>
+<p>    11.8. Групповая обработка справочников и документов    Универсальная обработка «Групповая обработка справочников и документов» предназначена для поиска и групповой обработки элементов справочников и документов в информационной базе 1С:Предприятия.    Основная форма обработки содержит две страницы:    ● Объекты отбора    ● Обработка <img decoding="async" src="/image20/baac17fa882581f812873c98895c1b15.jpg" alt="" border="1">    Страница «Объекты отбора» содержит область «Тип объекта», на которой следует выбрать то, что следует обрабатывать (справочники/документы), флажок «Обрабатывать табличные части», табличное поле «Виды объектов». В области «Отбор» при необходимости можно задать отбор по значениям реквизитов.    После определения источников данных и отбора, нажатием на кнопку «Отобрать» на странице «Обработка» формируется таблица элементов, удовлетворяющих условиям отбора. Напротив каждого элемента можно установить/снять пометку, обрабатываться будут только отмеченные. <img decoding="async" src="/image28/fe1aa1e35a24071bad37eb2d81d68855.jpg" alt="" border="1">    При нажатии на кнопку «Настройка» можно задать настройки: <img decoding="async" src="/image02/0ee2cdef4b8aaca8452660d68012ebe0.jpg" alt="" border="1">    Для отобранных элементов необходимо выбрать действие и определить его значение (расшифровку). Действие может быть следующим:    ● Изменить: [&lt;Реквизит&gt;]    ● Изменить реквизит: [&#8230;] (имя реквизита выбирается из всех реквизитов с помощью формы «Выбор реквизита объекта»)    ● Пометка на удаление    ● Родитель (только для иерархических справочников)    ● Владелец (только для подчиненных справочников)    ● Печать документов (только для документов)    ● Проведение документов (только для документов)    При нажатии на кнопку «Выполнить» выполняется выбранное действие. </p>
+<h3></h3>
+<p>    11.9. Дата запрета изменения данных    В конфигурации поддерживается возможность установки ограничения изменения данных ранее определенной даты (далее «дата запрета»). Это бывает необходимо в случае, когда отчетность уже сдана и главный бухгалтер должен быть уверен в том, что изменение данных за прошедший отчетный период не приведет к их расхождению со сданной отчетностью.    Данная обработка может быть вызвана на экран через пункт меню «Сервис – Дата запрета изменения данных».    Для документов проверяемым значением является дата этого документа, для наборов записей – период каждой из записей данного набора.    При установке даты запрета следует учитывать, под действие данного ограничения попадают данные, период действия которых ограничен концом предыдущего дате запрета дня. То есть, например, при установке значения 01.01.2005, изменение данных будет возможно только, начиная с 01.01.2005 00:00:00 включительно. <img decoding="async" src="/image18/ab0a980fecbd6d8659d42cd6e32746b2.jpg" alt="" border="1">    Дата запрета устанавливается в разрезе ролей пользователей. В случае если пользователю одновременно доступно несколько ролей, в качестве ограничивающей даты берется максимальная из дат, установленных для этих ролей. Ограничение по дате запрета не распространяется на пользователей, которым доступна роль «Полные права».    Возможны несколько вариантов установки даты запрета изменений:    ● Общая дата запрета изменений. В этом режиме устанавливается общая дата запрета одновременно для всех организаций и ролей пользователей.    ● Дата запрета по организациям. Позволяет установить различные значения дат запрета для организаций, без разделения по ролям. <img decoding="async" src="/image09/53671885a7309c5f2a85ee67f7b6c125.jpg" alt="" border="1">    ● Дата запрета по организациям и ролям. Позволяет установить различные значения дат запрета для организаций в разрезе ролей пользователей. <img decoding="async" src="/image08/4af40e78e01ba6e2c38090497758ad5e.jpg" alt="" border="1">    В случае использования механизма даты запрета изменения данных, при попытке проведения документа (нового или существующего непроведенного) в периоде до даты запрета, пользователю выводится сообщение «У пользователя недостаточно прав на исполнение операций над базой данных». Если же выполняется отмена проведения (перепроведение) существующего документа до даты запрета, пользователю выводится сообщение «Операция не выполнена». </p>
+<h3></h3>
+<p>    11.10. Обработка «Настройка торгового оборудования»    При помощи обработки «Настройка торгового оборудования» задаются различные параметры использования торгового оборудования на конкретном рабочем месте. <img decoding="async" src="/image25/e0196ac8f064f37a581a27befce6ba72.jpg" alt="" border="1">    Диалог настройки торгового оборудования вызывается из пункта меню «Сервис – Настройка торгового оборудования» и представлен в виде списка, в который должны быть добавлены модели торгового оборудования, которые могут быть подключены к компьютеру, установленному на данном рабочем месте. <img decoding="async" src="/image11/5d258db743822de5e91355b7acb1ebf0.jpg" alt="" border="1">    Добавление производится из справочника «Торговое оборудование».    Справочник может быть заполнен предварительно или в момент настройки торгового оборудования. Для заполнения справочника «Торговое оборудование» используется список того торгового оборудования, которое может быть стандартно подключено в конфигурации.    Из справочника выбирается модель торгового оборудования, вид торгового оборудования определяется автоматически. Для модели торгового оборудования в настройках торгового оборудования задаются дополнительные параметры.    Наличие флага в списке означает, что в данном сеансе работы торговое оборудование реально подключено к компьютеру.    При необходимости пользователь может убрать флаг. Тогда при выполнении обработки настройки торгового оборудования не будет производиться анализ возможности подключения данной модели торгового оборудования и фактическое его подключение.    При нажатии на кнопку «Применить» производится анализ возможности подключения торгового оборудования и фактическое подключение торгового оборудования к конфигурации, диалог настройки торгового оборудования при этом не закрывается.    Нажатие на кнопку «Закрыть» закрывает диалог настройки торгового оборудования без выполнения каких-либо действий и без сохранения списка настроек.    После записи настройки торгового оборудования конфигурация загружает и запускает необходимые драйверы торгового оборудования. Впоследствии, при запуске системы на данном рабочем месте, конфигурация будет при начале работы автоматически настраиваться в соответствии с записанными настройками.    К одному компьютеру может быть подключено несколько моделей торгового оборудования одного вида. Для каждой модели торгового оборудования определенного вида должен быть установлен «Номер логического устройства». Номер логического устройства должен совпадать с тем номером текущего устройства, которое указывается при реальном подключении торгового оборудования. </p>
+<h3></h3>
+<p>    11.11. Установка режима завершения работы пользователей    Параметр устанавливается для управления работой пользователей в информационной базе. Для каждого пользователя с интервалом 5 минут проверяется, разрешено ли работать в ИБ. <img decoding="async" src="/image04/215c94bb2c73cb9fe4417e663b685173.jpg" alt="" border="1">    Описание режимов работы пользователей:    ● Разрешить работу. Нормальный режим, при котором разрешена работа всех пользователей.    ● Предупредить пользователя о завершении работы. Пользователь предупреждается о завершении работы программы через несколько минут. <img decoding="async" src="/image09/4f97affbec5126ec30b83097f25aa86e.jpg" alt="" border="1">    ● Завершить с сохранением данных пользователя. Пользователя предупреждают о необходимости завершения работы с системой. Через 5 минут после такого предупреждения система завершает работу самостоятельно с сохранением всех данных. Если для принятия решения о сохранении данных необходимо интерактивное вмешательство пользователя, то система не завершит работу без пользователя.    ● Прекратить работу безусловно. Система предупреждает пользователя о необходимости завершения работы. Если работа с программой не завершена в течение 5 минут, то производится безусловное завершение работы. Если безусловное завершение работы не отработало, то инициируется прекращение работы системы.</p>
+<!-- toc empty -->	</div>
+<!-- .entry-content -->
+
+</article>
+
+
+
+
+
+
+
+
+
+<div class="social-buttons">
+<span class="social-button social-button--vkontakte main" data-social="vkontakte"><span>Поделиться в ВКонтакте</span></span><span class="social-button social-button--telegram " data-social="telegram"></span><span class="social-button social-button--odnoklassniki " data-social="odnoklassniki"></span><span class="social-button social-button--whatsapp " data-social="whatsapp"></span><span class="social-button social-button--viber " data-social="viber"></span>
+</div>
+
+<!--noindex-->
+<div class="author-box">
+    <div class="author-info">
+        <div class="author-box__ava">
+                    </div>
+
+        <div class="author-box__body">
+            <div class="author-box__author">
+                Автор А. Днепров            </div>
+            <div class="author-box__description">
+                <p>Обучаю основам работы с офисными программами.</p>
+            </div>
+
+            
+        </div>
+    </div>
+</div>
+<!--/noindex-->
+    <meta itemprop="author" content="А. Днепров">
+<meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/glava-servisnye-funktsii" content="Глава 11. Сервисные функции">
+    <meta itemprop="dateModified" content="2024-07-12">
+<div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+<div class="related-posts">
+<div class="related-posts__header">Вам также может понравиться</div>
+<div class="post-cards post-cards--vertical">
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/kak-sdelat-massovuyu-zamenu-formul"><img width="311" height="230" src="/image04/2408fadbc9163d5aa4994580cfc152cd.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" fetchpriority="high"></a></div>
+<div class="post-card__title"><a href="/kak-sdelat-massovuyu-zamenu-formul">Как сделать массовую замену формул</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/kak-udalit-lishnie-i-pustye-stranitsy-v-excel">Как удалить лишние и пустые страницы в Excel</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/preobrazovanie-teksta-v-tablitsu"><img width="345" height="122" src="/image14/7a0043c9bf012cc129b22376cfebb2a9.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/preobrazovanie-teksta-v-tablitsu">Преобразование текста в таблицу</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/kak-delat-skrinshoty-s-vysokim-razresheniem-v-windows">Как делать скриншоты с высоким разрешением в Windows 11/10</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/osobennosti-raboty-s-mnogostranichny"><img width="213" height="230" src="/image13/6f8f9694c11ee322ff9d3675b0b8ba07.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/osobennosti-raboty-s-mnogostranichny">13.1 Особенности работы с многостраничными документами</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/kak-sdelat-izmeneniya-vnutri-yacheyki-p"><img width="345" height="93" src="/image27/f6550fd3bdfdfdbe500536441d5d252e.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/kak-sdelat-izmeneniya-vnutri-yacheyki-p">Как сделать изменения внутри ячейки. Принудительный перенос</a></div>
+    </div>
+</div>
+</div>
+            </main><!-- #main -->
+        </div>
+<!-- #primary -->
+
+        
+    
+
+    </div>
+<!--.site-content-inner-->
+
+    
+</div>
+<!--.site-content-->
+
+    
+    
+
+<div class="site-footer-container">
+
+    
+
+    <footer id="colophon" class="site-footer full" itemscope itemtype="http://schema.org/WPFooter">
+        <div class="site-footer-inner fixed">
+
+            
+            
+<div class="footer-bottom">
+    <div class="footer-info">
+        <div class="footer-copyright">© 2024 Самоучитель справочник по офисным программам. <a href="/o-nas" rel="nofollow">О нас | Контакты</a> | <a href="/map" rel="nofollow">Карта сайта</a>
+</div>
+        <div class="footer-under-copyright"></div>
+	        </div>
+
+    </div>
+        </div>
+    </footer><!--.site-footer-->
+</div>
+
+
+            <button type="button" class="scrolltop js-scrolltop" data-mob="on"></button>
+    
+                    <div class="top-line js-top-line">
+            <div class="top-line-inner fixed">
+
+                <div class="top-line__title">Глава 11. Сервисные функции</div>
+<div class="top-line__like"><span class="btn-fb-like btn-top-like social-button--vkontakte" data-social="vkontakte"><span>Поделиться в ВКонтакте</span></span></div>
+<div class="top-line__post">
+<div class="top-line__post_thumbnail"><a href="/funktsiya-xmatch-v-excel"></a></div>
+<div class="top-line__post_title"><a href="/funktsiya-xmatch-v-excel">Функция XMATCH в Excel</a></div>
+</div>            </div>
+        </div>
+    
+</div>
+<!-- #page -->
+
+<script>var pseudo_links = document.querySelectorAll(".pseudo-clearfy-link");for (var i=0;i<pseudo_links.length;i++ ) { pseudo_links[i].addEventListener("click", function(e){   window.open( e.target.getAttribute("data-uri") ); }); }</script><script>document.addEventListener("copy", (event) => {var pagelink = "\nИсточник: /glava-servisnye-funktsii";event.clipboardData.setData("text", document.getSelection() + pagelink);event.preventDefault();});</script><script type="text/javascript" id="yelly-scripts-js-extra">
+/* <![CDATA[ */
+var settings_array = {"rating_text_average":"среднее","rating_text_from":"из","lightbox_display":"1"};
+var wps_ajax = {"url":"\/wp-admin\/admin-ajax.php","nonce":"e4ca9d4bd8"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="/js/scripts.min.js" id="yelly-scripts-js"></script>
+
+
+
+<div class="image-hover-social-buttons" style="display: none;">
+<div class="social-button social-button--vkontakte js-share-link" data-uri="https://vk.com/share.php?url=%2Fglava-servisnye-funktsii"></div>
+<div class="social-button social-button--telegram js-share-link" data-uri="https://t.me/share/url?url=%2Fglava-servisnye-funktsii&text=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+11.+%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%D0%BD%D1%8B%D0%B5+%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8"></div>
+<div class="social-button social-button--odnoklassniki js-share-link" data-uri="https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&service=odnoklassniki&st.shareUrl=%2Fglava-servisnye-funktsii"></div>
+<div class="social-button social-button--whatsapp js-share-link" data-uri="whatsapp://send?url=%2Fglava-servisnye-funktsiitext=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+11.+%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%D0%BD%D1%8B%D0%B5+%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8"></div>
+<div class="social-button social-button--viber js-share-link" data-uri="viber://forward?url=%2Fglava-servisnye-funktsiitext=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+11.+%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%D0%BD%D1%8B%D0%B5+%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8"></div>
+</div>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(93345646, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/93345646" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>

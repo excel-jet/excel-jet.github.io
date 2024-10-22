@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<title>Глава 13. Администрирование &#8212; learn-office</title>
+	<meta name="description" content=" Основные средства администрирования системы 1С: Предприятие реализованы в составе Конфигуратора. Процесс администрирования включает в себя ведение списка">
+	<link rel="canonical" href="/glava-administrirovanie">
+	<meta property="og:locale" content="ru_RU">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Глава 13. Администрирование &#8212; learn-office">
+	<meta property="og:description" content=" Основные средства администрирования системы 1С: Предприятие реализованы в составе Конфигуратора. Процесс администрирования включает в себя ведение списка">
+	<meta property="og:url" content="/глава-13-администрирование">
+	<meta property="og:site_name" content="Excel-jet">
+	<meta property="article:published_time" content="2024-06-30T06:34:56+00:00">
+	<meta property="og:image" content="/image24/dcbc3b0120a015bb7fa06b9c6e9a76bc.jpg">
+	<meta property="og:image:width" content="1">
+	<meta property="og:image:height" content="1">
+	<meta property="og:image:type" content="image/jpeg">
+	<meta name="author" content="А. Днепров">
+
+
+<style id="wp-block-library-theme-inline-css" type="text/css">.wp-block-audio :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio :where(figcaption){color:#ffffffa6}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed :where(figcaption){color:#ffffffa6}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:#ffffffa6}:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table :where(figcaption){color:#ffffffa6}.wp-block-video :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video :where(figcaption){color:#ffffffa6}.wp-block-video{margin:0 0 1em}:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}</style>
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 19.5px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36.5px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--normal: 22px;--wp--preset--font-size--huge: 49.5px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="google-fonts-css" href="https://fonts.googleapis.com/css?family=Roboto%3A400%2C400i%2C700&#038;subset=cyrillic&#038;display=swap" media="all">
+<link rel="stylesheet" id="yelly-style-css" href="/css/style.min.css" media="all">
+
+<style>.pseudo-clearfy-link { color: #008acf; cursor: pointer;}.pseudo-clearfy-link:hover { text-decoration: none;}</style>
+<link rel="preload" href="/fonts/icomoon.ttf" as="font" crossorigin>
+    <style>.scrolltop{width:50px}.scrolltop:before{content:"\21d1"}.entry-content a, .entry-content a:visited, .spanlink, .comment-reply-link, .pseudo-link, .widget_calendar a, .widget_recent_comments a, .child-categories ul li a{color:#0000ff}.child-categories ul li a{border-color:#0000ff}a:hover, a:focus, a:active, .spanlink:hover, .top-menu ul li>span:hover, .main-navigation ul li a:hover, .main-navigation ul li span:hover, .footer-navigation ul li a:hover, .footer-navigation ul li span:hover, .comment-reply-link:hover, .pseudo-link:hover, .child-categories ul li a:hover{color:#1e73be}.top-menu>ul>li>a:before, .top-menu>ul>li>span:before{background:#1e73be}.child-categories ul li a:hover, .post-box--no-thumb a:hover{border-color:#1e73be}.post-box--card:hover{box-shadow: inset 0 0 0 1px #1e73be}.post-box--card:hover{-webkit-box-shadow: inset 0 0 0 1px #1e73be}@media (min-width: 768px){body{background-attachment: scroll}}body{font-size:17px;}@media (max-width: 991px){.widget-area{display: block; margin: 0 auto}}</style>
+    <!-- Yandex.RTB -->
+<script>window.yaContextCb=window.yaContextCb||[]</script>
+<script src="https://yandex.ru/ads/system/context.js" async></script>	
+</head>
+<body class="post-template-default single single-post postid-732 single-format-standard wp-embed-responsive sidebar-right">
+<div id="page" class="site">
+    <a class="skip-link screen-reader-text" href="#content">Перейти к контенту</a>
+
+    
+    
+    <div class="search-screen-overlay js-search-screen-overlay"></div>
+    <div class="search-screen js-search-screen">
+        
+<form role="search" method="get" class="search-form" action="/">
+    <label>
+        <span class="screen-reader-text">Search for:</span>
+        <input type="search" class="search-field" placeholder="Поиск..." value="" name="s">
+    </label>
+    <button type="submit" class="search-submit"></button>
+</form>    </div>
+
+    
+
+<header id="masthead" class="site-header full" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="site-header-inner fixed">
+
+        <div class="humburger js-humburger">
+<span></span><span></span><span></span>
+</div>
+
+        
+<div class="site-branding">
+
+    <div class="site-branding__body"><div class="site-title"><a href="/">Excel-jet</a></div></div>
+</div>
+<!-- .site-branding -->
+
+    
+    <nav id="site-navigation" class="main-navigation full">
+        <div class="main-navigation-inner fixed">
+            <div class="menu-menyu-container"><ul id="header_menu" class="menu">
+<li id="menu-item-6695" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-6695">
+<a href="/excel">Excel</a>
+<ul class="sub-menu">
+	<li id="menu-item-6709" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6709"><a href="/excel/functions">Функции</a></li>
+</ul>
+</li>
+<li id="menu-item-6697" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6697"><a href="/microsoft-word">Word</a></li>
+<li id="menu-item-6696" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6696"><a href="/powerpoint">PowerPoint</a></li>
+<li id="menu-item-6698" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6698"><a href="/outlook">Outlook</a></li>
+</ul></div>        </div>
+    </nav><!-- #site-navigation -->
+
+    
+<div class="header-search"><span class="search-icon js-search-icon"></span></div>    </div>
+</header><!-- #masthead -->
+
+
+
+    
+    
+    <div id="content" class="site-content fixed">
+
+        
+        <div class="site-content-inner">
+    
+        
+        <div id="primary" class="content-area" itemscope itemtype="http://schema.org/Article">
+            <main id="main" class="site-main">
+
+                
+<article id="post-732" class="article-post post-732 post type-post status-publish format-standard has-post-thumbnail  category-excel">
+
+    
+        
+        <header class="entry-header"><h1 class="entry-title" itemprop="headline">Глава 13. Администрирование</h1></header>
+        
+        
+        
+    
+    
+    <div class="entry-meta">
+<span class="entry-time"><span class="entry-label">Время чтения</span> 15 мин.</span><span class="entry-date"><span class="entry-label">Опубликовано</span> <time itemprop="datePublished" datetime="2024-06-30">30.06.2024</time></span>
+</div>
+	<div class="entry-content" itemprop="articleBody">
+		<p> Основные средства администрирования системы 1С: Предприятие реализованы в составе Конфигуратора. Процесс администрирования включает в себя ведение списка пользователей, настройку прав доступа, резервное копирование информационной базы, мониторинг системных событий и выполнение других действий для поддержания работоспособности системы. </p>
+<h3></h3>
+<p>    13.1. Список пользователей    Чтобы пользователь имел возможность войти в систему, его необходимо зарегистрировать в списке пользователей, назначить ему интерфейс и доступные роли (см. ниже). Администратор всегда может узнать, кто подключен к информационной базе в данный момент. Система 1С:Предприятие позволяет вести список пользователей, которым разрешена работа с системой. Этот список не является частью прикладного решения, а создается отдельно в конкретной организации, в которой используется система.    Список пользователей вызывается на экран выбором пункта «Администрирование – Пользователи». <img decoding="async" src="/image24/dcbc3b0120a015bb7fa06b9c6e9a76bc.jpg" alt="" border="1">    Окно со списком пользователей имеет панель инструментов и табличное поле с двумя колонками:    ● В колонке «Имя» выводится список пользователей, зарегистрированных для работы с системой 1С: Предприятие.    ● Колонка «Полное имя» может содержать расшифровку имени, выданного в первой колонке.    Администратор информационной базы имеет возможность добавлять, копировать, удалять пользователей, а также модифицировать данные пользователя. Создание новых пользователей возможно также путем копирования уже существующих пользователей. </p>
+<p>Создание нового пользователя</p>
+<p>    Для создания нового пользователя необходимо выбрать пункт «Действия – Добавить» диалога «Список пользователей». На экран будет выдан диалог для редактирования параметров пользователя.    ● На закладке «Основные» указываются имя, полное имя и пароль (указывать не обязательно) для входа в систему. Пароль запрашивается при запуске системы «1С: Предприятие». Также на этой закладке указывается порядок аутентификации (опознавания) пользователя системой. Желательно задавать пользователям смысловые имена, используя фамилию сотрудника, наименование должности, характер выполняемых им функций и тому подобное. В дальнейшем это имя будет использоваться сотрудником для входа в систему «1С: Предприятие». <img decoding="async" src="/image03/1ee33ecbf3f1ba8f1a10c4eff645e43d.jpg" alt="" border="1">    ● На закладке «Права доступа» указываются роли, которые будут доступны пользователю при работе с прикладным решением, а также основной интерфейс и язык, на котором будут отображаться надписи, содержащиеся в интерфейсе прикладного решения: <img decoding="async" src="/image23/ce55187dab98fca14b9d1eaa16ef3a09.jpg" alt="" border="1">    Если ролей в конфигурации определено несколько, то для пользователя можно также указать несколько ролей. Систему ролей, существующую в конкретном прикладном решении, определяет разработчик в процессе создания прикладного решения. Администратор может только выбирать среди существующих в прикладном решении ролей.    В качестве интерфейса можно выбрать один из созданных в конфигурации интерфейсов. <img decoding="async" src="/image19/ac9bc948e24b934a9477b42c69bdb66e.jpg" alt="" border="1">    В диалоге для редактирования свойств пользователя не обязательно заполнять сразу все поля – это можно сделать позднее. </p>
+<p>Копирование пользователя</p>
+<p>    Нового пользователя можно создать путем копирования существующего пользователя. Используя такую возможность, нет необходимости создавать нового пользователя «с нуля» – достаточно скопировать одного из уже существующих в списке пользователей и отредактировать его свойства.    Для копирования используются возможности Буфера Обмена MS Windows. <img decoding="async" src="/image27/f7942c3c6424c53e177e51ed58c96ed6.jpg" alt="" border="1"> <img decoding="async" src="/image07/3d7b38904e501151ae4269c0d46f7bbd.jpg" alt="" border="1">    При копировании имя пользователя может быть преобразовано с целью соблюдения уникальности. Остальные свойства нового пользователя будут такие же, как и у пользователя, выбранного в качестве образца. </p>
+<p>Установка пароля</p>
+<p>    С целью предотвращения входа пользователей в систему 1С: Предприятие под чужими именами, каждому пользователю, которому разрешена работа с системой, может быть установлен пароль на вход. Как и имя пользователя, пароль служит для подтверждения полномочий пользователя на работу в системе.    В поле для ввода пароля введите пароль пользователя. Пароль представляет собой произвольную строку, состоящую из букв и цифр. Пароль не должен содержать пробелов и специальных символов, размер пароля не должен превышать 255 символов. При вводе пароль отображается звездочками, поэтому будьте внимательны.    После ввода пароля нажмите кнопку «ОК». Если вы передумали устанавливать пароль, нажмите кнопку «Отмена».    Следует помнить, что присвоенный пользователю пароль нельзя посмотреть, поэтому будьте внимательны при установке пароля и твердо запомните его.    Если пользователь забыл свой пароль, необходимо задать ему новый пароль. </p>
+<p>Удаление пользователя</p>
+<p>    Для удаления пользователя из списка выделите имя пользователя, которого необходимо удалить, и выберите пункт «Действия – Удалить» диалога «Список пользователей» или нажмите кнопку <img decoding="async" src="/image27/f964ab0d506e18e72d5fddaeda3bd0be.jpg" alt="" border="1">    В появившемся на экране запросе нажмите «Да» для подтверждения удаления пользователя. <img decoding="async" src="/image23/cf793995de61a668cc76e3bee136ad52.jpg" alt="" border="1"> </p>
+<p>Рдактирование свойств пользователя</p>
+<p>    Для редактирования параметров пользователя выберите пункт «Администрирование – Пользователи». В списке пользователей выберите нужного пользователя и выберите пункт «Действия – Изменить» диалога «Список пользователей» или нажмите кнопку <img decoding="async" src="/image09/4d9d10e70a56e81c1c80cca905c9bc4c.jpg" alt="" border="1">    В диалоге «Параметры пользователя» измените параметры и сохраните их, нажав «ОК». </p>
+<h3></h3>
+<p>    13.2. Настройка прав доступа (ролей)    Система «1С: Предприятие 8.0» поддерживает механизм ролей пользователей, являющийся важным элементом в системе контроля доступа. Роль – это совокупность прав доступа к объектам информационной базы. У одного пользователя может быть несколько ролей.    Заметим, что роль является объектом конфигурации и редактируется только в Конфигураторе. При разработке прикладного решения обычно создается несколько ролей, каждая со своим набором прав доступа. Но при внедрении конфигурации в конкретной организации администратор информационной базы может создать новые роли или изменить существующие, отредактировать пользовательские интерфейсы, экранные формы и вообще изменять конфигурацию в соответствии с возникающими потребностями. <img decoding="async" src="/image08/486dbd71f2ece0786344762cf24d3508.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Редактирование прав доступа к объекту производится в окне редактирования объекта (пункт меню «Конфигурация – Открыть конфигурацию») на закладке «Права» или из окна самой роли правой кнопкой мыши (Дополнительно). </p>
+<h3></h3>
+<p>    13.3. Активные пользователи    Список активных пользователей позволяет получать информацию о том, кто из пользователей работает с информационной базой в данный момент: <img decoding="async" src="/image14/7a329e2d9b60e2a54791a044b9db74f5.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Список активных пользователей открывается из пункта меню «Администрирование – Активные пользователи» и содержит информацию об имени пользователя, режиме, в котором пользователь использует систему, времени начала его работы и пр. Пользователь имеет возможность отсортировать список по любой из колонок, вывести список активных пользователей на печать в виде текстового или табличного документа. Кроме этого, из списка активных пользователей можно открыть журнал регистрации системы, или просмотреть историю работы пользователя – содержимое журнала регистрации, отфильтрованное по тому пользователю, на котором установлен курсор. Список активных пользователей может быть открыт так же из режима «1С:Предприятие» через пункт меню «Сервис» (см. главу 11. Сервисные возможности»). </p>
+<h3></h3>
+<p>    13.4. Журнал регистрации    Журнал регистрации предназначен для регистрации системных событий и действий пользователей. По умолчанию он отключен, так как его ведение требует некоторых дополнительных затрат при работе системы. Чтобы включить его, необходимо выбрать пункт меню «Администрирование – Настройка журнала регистрации» и указать уровень важности событий, которые будут регистрироваться в журнале: <img decoding="async" src="/image11/5c804728667ef426ed3e5b9aa8895d3c.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Просматривать Журнал регистрации можно также в режиме «1С:Предприятие» через пункт меню «Сервис» (см. главу 11. Сервисные функции). </p>
+<h3></h3>
+<p>    13.5. Аутентификация средствами 1С:Предприятия <img decoding="async" src="/image11/633069e104e955751b6f1d4246b79936.jpg" alt="" border="1">    Для выполнения аутентификации средствами 1С:Предприятия пользователь, при начале работы с прикладным решением, должен выбрать (или ввести) имя пользователя и соответствующий этому имени пароль: <img decoding="async" src="/image26/ebea36ebdf6e3256b03efc29806cd7e6.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    Если пароль, введенный пользователем, не соответствует тому, который хранится в информационной базе, доступ к прикладному решению будет закрыт: <img decoding="async" src="/image24/dbcd5c0d40a3df68cbb8a8c4000dc3a5.jpg" alt="" border="1"> </p>
+<h3></h3>
+<p>    13.6. Аутентификация средствами Windows <img decoding="async" src="/image02/0f1f6bb2e2b20696ad2d544fa3f9ed5a.jpg" alt="" border="1"> </p>
+<p>&nbsp;</p>
+<p>    При выполнении аутентификации средствами Windows, от пользователя не требуется каких-либо действий по вводу имени и пароля. Система анализирует, от имени какого Windows-пользователя выполняется подключение к прикладному решению, и на основании этого определяет соответствующего пользователя «1С:Предприятия». При этом диалог аутентификации «1С:Предприятия» не отображается, если не указан специальный параметр командной строки. Аутентификацию средствами Windows имеет смысл использовать для NT-подобных операционных систем, например NT, 2000, XP.    Если для пользователя не указан ни один из видов аутентификации, – такому пользователю доступ к прикладному решению закрыт.   13.7. Загрузка и выгрузка информационной базы    Текущая информационная база может быть выгружена в файл на диске или загружена из файла. Эти операции могут использоваться, например, для создания архива информационной базы и восстановления какой-либо копии базы из архива. Также выгрузка и загрузка информационной базы используется для переноса базы из файлового варианта в клиент — серверный и обратно.    Архивную копию базы рекомендуется делать каждый день, но в каждом конкретном случае, периодичность архивирования определяется интенсивностью ввода и изменения данных. При использовании файлового варианта работы «1С:Предприятия 8.0» резервную копию можно сделать, просто скопировав файл информационной базы. В клиент-серверном варианте можно воспользоваться встроенными средствами MS SQL Server. Механизм выгрузки и загрузки позволяет переносить информационную базу между файловым и клиент-серверным вариантом.    Итак, в процессе работы с ИБ, как в процессе разработки конфигурации, так и при эксплуатации пользователем уже готового решения, рекомендуется делать резервную копию всей ИБ.    За создание архива отвечает команда «Администрирование – Выгрузить информационную базу …», которая позволяет создать файл с расширением «*.dt». <img decoding="async" src="/image17/a023e1a23ea6123b80377b64d1c8034f.jpg" alt="" border="1">    После завершение выгрузки на экран выдается сообщение: <img decoding="async" src="/image01/0711daafe10d5495957a71ffc663a40b.jpg" alt="" border="1">    При загрузке информационной базы (меню «Администрирование – Загрузить информационную базу») система открывает стандартный диалог выбора файла: <img decoding="async" src="/image19/b27203fd3d725ef34066f26d9c101c6c.jpg" alt="" border="1">    Следует учитывать, что при загрузке базы из файла, текущая информационная база будет полностью заменена загружаемой. Для продолжения загрузки следует нажать кнопку «Да»: <img decoding="async" src="/image18/a5d9b4d0b0a0ce43d0595906fc600906.jpg" alt="" border="1">    По окончанию процесса загрузки на экран выводится сообщение: <img decoding="async" src="/image22/cc27011df9bd51bd65dd0682d99b9e33.jpg" alt="" border="1">    В случае, когда выгрузка информационной базы используется для создания архивных копий, администратор может автоматизировать этот процесс, используя возможность запуска конфигуратора в пакетном режиме. </p>
+<h3></h3>
+<p>    13.8. Тестирование и исправление информационной базы    При возникновении подозрений на наличие ошибок в данных, после критических ситуаций, например, отключения электричества, а также периодически для профилактики возникновения неполадок необходимо проводить проверку информационной базы.    Процедура тестирования и исправления информационной базы служит для диагностики и устранения ошибочных состояний информационных баз, имеющих различный формат хранения данных (файловый или клиент&#8212;серверный). Вызывается процедура из меню «Администрирование – Тестирование и исправление…»: <img decoding="async" src="/image28/fd6ad549b1875c0926e27946729c4f87.jpg" alt="" border="1">    Процедура позволяет выбрать проверки и режимы, которые должны быть выполнены для текущей информационной базы. Для баз, использующих клиент&#8212;серверный вариант, возможна проверка логичесокй целостности данных и пересчет итогов. Для баз, использующий файловый вариант, в дополнение к этим проверкам, может быть выполнена реиндексация таблиц и сжатие информационной базы.    Имеется возможность выполнять только тестирование или тестирование с исправлением. Причем, возможен выбор нескольких вариантов исправления конфликтных ситуаций.    Перед проведением тестирования с исправлением рекомендуется сделать резервную выгрузку информационной базы, т.к. процедура тестирования с исправлением – операция необратимая.    Следует заметить, что тестирование и исправление информационной базы может выполняться только в монопольном режиме (т.е. работа пользователей с информационной базой в процессе тестирования и исправления невозможна). </p>
+<h3></h3>
+<p>    13.9. Региональные установки информационной базы    Режим настройки региональных установок информационной базы позволяет управлять форматом отображения даты, времени, чисел, логических констант. Для вызова режима выберите пункт «Администрирование – региональные установки информационной базы». <img decoding="async" src="/image11/60c66d2080729c3f847e629775fa386e.jpg" alt="" border="1">    Если ни одно из свойств не установлено, то язык и форматы отображения чисел даты и времени будут определяться настройками операционной системы.    В нижней части диалога выводятся примеры отображения числе даты и времени с выбранными в диалоге установками.    ● Язык. Выбор языка (страны) для данной установки информационной базы.    ● Разделитель дробной части. Символ-разделитель целой и дробной части чисел можно выбрать из выпадающего списка или указать самостоятельно в поле ввода. Пример символа будет выведен в рамке слева от поля ввода.    ● Разделитель групп. Символ-разделитель групп цифр в целой части числа можно выбрать из выпадающего списка или указать самостоятельно в поле ввода. Пример символа будет выведен в рамке слева от поля ввода    ● Группировка. Свойство задает формат группировки цифр в целой части числе. Форматную строку можно выбрать из выпадающего списка или указать самостоятельно.    Формат группировки указывается следующим образом:    &lt;количество цифр в группе&gt;&lt;символ-разделитель&gt;&#8230; &#8230;&lt;0&gt;. <img decoding="async" src="/image04/20b79542e50ba6a83c1a095af87f9a34.jpg" alt="" border="1">    В качестве символа-разделителя можно использовать любой символ, отличный от цифры.    Например, последовательность символов «3,2,0» означает, что цифры будут сгруппированы следующим образом (отсчет цифр в числе идет слева направо только в целой части):    ● первую группу образуют первые три цифры числа;    ● затем идет символ-разделитель групп (заданный настройками операционной системы или указанный в свойстве «Разделитель групп);    ● все оставшиеся цифры числа будут сгруппированы по две.    Символ «0» в конце форматной строки означает «и так же – до конца», то есть, если в вышеприведенном примере форматной строки убрать «0», указав -»3,2», группировка изменится следующим образом:    ● первую группу образуют первые три цифры числа;    ● затем идет символ-разделитель групп;    ● вторую группу образуют следующие 3 цифры числа;    ● затем идет символ-разделитель групп;    ● все оставшиеся цифры числа будут собраны вместе.    Ввод одного символа «0» в этом поле означает, что цифры в целой части чисел не будут разделяться на группы.    ● Представление отрицательных чисел. Из выпадающего списка можно выбрать вид отрицательных чисел. Выбор «Авто» означает, что вид отрицательных чисел будет определяться установками операционной системы. <img decoding="async" src="/image14/7a269a8c0f4a1e86692948e4af9174c5.jpg" alt="" border="1">    ● Формат даты. Устанавливает формат отображения даты. Можно использовать в различных сочетаниях символы:    ● d число месяца. Числа меньше 10 выводятся без лидирующего нуля;    ● dd число месяца. Числа меньше 10 выводятся с лидирующим нулем;    ● М номер месяца. Номера месяцев меньше 10 выводятся без лидирующего нуля;    ● MM номер месяца. Номера месяцев меньше 10 выводятся с лидирующим нулем;    ● мммм наименование месяца словами;    ● У две последние цифры года. Года меньше 10 выводятся без лидирующего нуля;    ● УУ две последние цифры года. Года меньше 10 выводятся с лидирующим нулем;    ● УУУУ год четырьмя цифрами. <img decoding="async" src="/image12/66cc2be7761a8004425ca170630b5b5a.jpg" alt="" border="1">    Перечисленные выше символы и группы символов можно указывать в любой последовательности. Для разделения дня, месяца и года можно указывать различные символы-разделители.    ● Формат времени. Устанавливает формат отображения времени, Можно использовать в различных сочетаниях символы:    ● h,H часы в 12-часовом (h) или 24-часовом (Н) формате. Часы меньше 10 выводятся без лидирующего нуля;    ● hh.HH часы в 12-часовом (hh) или 24-часовом (НН) формате. Часы меньше 10 выводятся с лидирующим нулем;    ● m минуты. Минуты меньше 10 выводятся без лидирующего нуля;    ● mm минуты. Минуты меньше 10 выводятся с лидирующим нулем;    ● s секунды. Секунды меньше 10 выводятся без лидирующего нуля;    ● SS секунды. Секунды меньше 10 выводятся с лидирующим нулем. <img decoding="async" src="/image10/56de8a0420c59ea7fe04eeceafa1ff10.jpg" alt="" border="1">    Перечисленные выше символы и группы символов можно указывать в любой последовательности. Для разделения часов, минут и секунд можно указывать различные символы-разделители.    ● Логическое ложь, логическое истина. Позволяет указать вид логических констант. Можно выбрать из выпадающего списка, либо ввести самостоятельно. <img decoding="async" src="/image06/3619434e79185e1ebd277add484a6c5f.jpg" alt="" border="1"> </p>
+<h3></h3>
+<p>    13.10. Проверка наличия обновления конфигурации    Данный сервис предназначен для проверки наличия обновления конфигурации.    Проверка выполняется с помощью выбора пункта «Сервис – Интернет-поддержка пользователей – Проверка наличия комплекта обновлений», а также автоматически при каждом запуске конфигурации, если установлен флажок «Проверять наличие обновления при запуске».    Следует помнить, что проверка выполняется при подключении компьютера к Интернет. <img decoding="async" src="/image14/7cdd12dcafd035d2f651082d9dffad8c.jpg" alt="" border="1"> </p>
+<p>Выполнение проверки</p>
+<p>    При запуске сервиса производится получение информации о текущем комплекте обновления. Полученные данные показываются в форме. Также выполняется анализ пригодности данного комплекта для установленной конфигурации.    ● Если версии комплекта и текущей конфигурации совпадают, то сообщается, что обновление конфигурации не требуется.    ● Если версии различны и в списке версий указана версия текущей конфигурации, то сообщается: «Обнаружен комплект поставки для обновления конфигурации!». Для его получения и установки необходимо открыть Web&#8212;страницу конфигурации и получить комплект обновления.    ● Если версии различны и в списке версий не указана версия текущей конфигурации, то сообщается: «Комплект поставки на вэб-сервере не может быть использован для обновления текущей конфигурации. Используйте диск ИТС!» </p>
+<p>Настройка проверки и показа результата</p>
+<p>    Для выполнения автоматической проверки наличия комплекта обновления конфигурации при каждом запуске следует установить флажок «Проверять наличие обновления при запуске». Если флажок установлен, то при запуске конфигурации на выполнение форма будет показываться только в том случае, когда версии комплекта и текущей конфигурации различаются. Если после выхода комплекта обновления по каким-либо причинам не требуется выполнять обновление конфигурации (версии комплекта и текущей конфигурации различны), то для отключения показа данной формы установите флажок «Показывать только при появлении следующей версии». Проверка будет выполняться каждый раз, независимо от установки данного флажка, но при установленном флажке форма будет показа только в том случае, когда изменится версия комплекта обновления (по сравнению с последним просмотром).</p>
+<!-- toc empty -->	</div>
+<!-- .entry-content -->
+
+</article>
+
+
+
+
+
+
+
+
+
+<div class="social-buttons">
+<span class="social-button social-button--vkontakte main" data-social="vkontakte"><span>Поделиться в ВКонтакте</span></span><span class="social-button social-button--telegram " data-social="telegram"></span><span class="social-button social-button--odnoklassniki " data-social="odnoklassniki"></span><span class="social-button social-button--whatsapp " data-social="whatsapp"></span><span class="social-button social-button--viber " data-social="viber"></span>
+</div>
+
+<!--noindex-->
+<div class="author-box">
+    <div class="author-info">
+        <div class="author-box__ava">
+                    </div>
+
+        <div class="author-box__body">
+            <div class="author-box__author">
+                Автор А. Днепров            </div>
+            <div class="author-box__description">
+                <p>Обучаю основам работы с офисными программами.</p>
+            </div>
+
+            
+        </div>
+    </div>
+</div>
+<!--/noindex-->
+    <meta itemprop="author" content="А. Днепров">
+<meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/glava-administrirovanie" content="Глава 13. Администрирование">
+    <meta itemprop="dateModified" content="2024-06-30">
+<div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+<div class="related-posts">
+<div class="related-posts__header">Вам также может понравиться</div>
+<div class="post-cards post-cards--vertical">
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/kak-sdelat-massovuyu-zamenu-formul"><img width="311" height="230" src="/image04/2408fadbc9163d5aa4994580cfc152cd.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" fetchpriority="high"></a></div>
+<div class="post-card__title"><a href="/kak-sdelat-massovuyu-zamenu-formul">Как сделать массовую замену формул</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/kak-udalit-lishnie-i-pustye-stranitsy-v-excel">Как удалить лишние и пустые страницы в Excel</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/preobrazovanie-teksta-v-tablitsu"><img width="345" height="122" src="/image14/7a0043c9bf012cc129b22376cfebb2a9.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/preobrazovanie-teksta-v-tablitsu">Преобразование текста в таблицу</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/kak-delat-skrinshoty-s-vysokim-razresheniem-v-windows">Как делать скриншоты с высоким разрешением в Windows 11/10</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/osobennosti-raboty-s-mnogostranichny"><img width="213" height="230" src="/image13/6f8f9694c11ee322ff9d3675b0b8ba07.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/osobennosti-raboty-s-mnogostranichny">13.1 Особенности работы с многостраничными документами</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/kak-sdelat-izmeneniya-vnutri-yacheyki-p"><img width="345" height="93" src="/image27/f6550fd3bdfdfdbe500536441d5d252e.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/kak-sdelat-izmeneniya-vnutri-yacheyki-p">Как сделать изменения внутри ячейки. Принудительный перенос</a></div>
+    </div>
+</div>
+</div>
+            </main><!-- #main -->
+        </div>
+<!-- #primary -->
+
+        
+    
+
+    </div>
+<!--.site-content-inner-->
+
+    
+</div>
+<!--.site-content-->
+
+    
+    
+
+<div class="site-footer-container">
+
+    
+
+    <footer id="colophon" class="site-footer full" itemscope itemtype="http://schema.org/WPFooter">
+        <div class="site-footer-inner fixed">
+
+            
+            
+<div class="footer-bottom">
+    <div class="footer-info">
+        <div class="footer-copyright">© 2024 Самоучитель справочник по офисным программам. <a href="/o-nas" rel="nofollow">О нас | Контакты</a> | <a href="/map" rel="nofollow">Карта сайта</a>
+</div>
+        <div class="footer-under-copyright"></div>
+	        </div>
+
+    </div>
+        </div>
+    </footer><!--.site-footer-->
+</div>
+
+
+            <button type="button" class="scrolltop js-scrolltop" data-mob="on"></button>
+    
+                    <div class="top-line js-top-line">
+            <div class="top-line-inner fixed">
+
+                <div class="top-line__title">Глава 13. Администрирование</div>
+<div class="top-line__like"><span class="btn-fb-like btn-top-like social-button--vkontakte" data-social="vkontakte"><span>Поделиться в ВКонтакте</span></span></div>
+<div class="top-line__post">
+<div class="top-line__post_thumbnail"><a href="/kak-uvidet-kto-priglashen-i-posetil-sobranie-v-outlook"></a></div>
+<div class="top-line__post_title"><a href="/kak-uvidet-kto-priglashen-i-posetil-sobranie-v-outlook">Как увидеть, кто приглашен и посетил собрание в Outlook?</a></div>
+</div>            </div>
+        </div>
+    
+</div>
+<!-- #page -->
+
+<script>var pseudo_links = document.querySelectorAll(".pseudo-clearfy-link");for (var i=0;i<pseudo_links.length;i++ ) { pseudo_links[i].addEventListener("click", function(e){   window.open( e.target.getAttribute("data-uri") ); }); }</script><script>document.addEventListener("copy", (event) => {var pagelink = "\nИсточник: /glava-administrirovanie";event.clipboardData.setData("text", document.getSelection() + pagelink);event.preventDefault();});</script><script type="text/javascript" id="yelly-scripts-js-extra">
+/* <![CDATA[ */
+var settings_array = {"rating_text_average":"среднее","rating_text_from":"из","lightbox_display":"1"};
+var wps_ajax = {"url":"\/wp-admin\/admin-ajax.php","nonce":"e4ca9d4bd8"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="/js/scripts.min.js" id="yelly-scripts-js"></script>
+
+
+
+<div class="image-hover-social-buttons" style="display: none;">
+<div class="social-button social-button--vkontakte js-share-link" data-uri="https://vk.com/share.php?url=%2Fglava-administrirovanie"></div>
+<div class="social-button social-button--telegram js-share-link" data-uri="https://t.me/share/url?url=%2Fglava-administrirovanie&text=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+13.+%D0%90%D0%B4%D0%BC%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5"></div>
+<div class="social-button social-button--odnoklassniki js-share-link" data-uri="https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&service=odnoklassniki&st.shareUrl=%2Fglava-administrirovanie"></div>
+<div class="social-button social-button--whatsapp js-share-link" data-uri="whatsapp://send?url=%2Fglava-administrirovanietext=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+13.+%D0%90%D0%B4%D0%BC%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5"></div>
+<div class="social-button social-button--viber js-share-link" data-uri="viber://forward?url=%2Fglava-administrirovanietext=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+13.+%D0%90%D0%B4%D0%BC%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5"></div>
+</div>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(93345646, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/93345646" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>

@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<title>Глава 1. Общие сведения о Microsoft Access &#8212; learn-office</title>
+	<meta name="description" content="Описание главы Настоящая глава адресована тем пользователям, которые только приступают к использованию Access в своей работе. Поэтому мы даем в ней">
+	<link rel="canonical" href="/glava-obschie-svedeniya-o-microsoft-access">
+	<meta property="og:locale" content="ru_RU">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Глава 1. Общие сведения о Microsoft Access &#8212; learn-office">
+	<meta property="og:description" content="Описание главы Настоящая глава адресована тем пользователям, которые только приступают к использованию Access в своей работе. Поэтому мы даем в ней">
+	<meta property="og:url" content="/glava-obschie-svedeniya-o-microsoft-access">
+	<meta property="og:site_name" content="Excel-jet">
+	<meta property="article:published_time" content="2024-06-21T23:27:06+00:00">
+	<meta property="og:image" content="/image28/fd66c5009d1d9944fc528f807441c2a5.gif">
+	<meta property="og:image:width" content="536">
+	<meta property="og:image:height" content="287">
+	<meta property="og:image:type" content="image/gif">
+	<meta name="author" content="А. Днепров">
+
+
+<style id="wp-block-library-theme-inline-css" type="text/css">.wp-block-audio :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio :where(figcaption){color:#ffffffa6}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed :where(figcaption){color:#ffffffa6}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:#ffffffa6}:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table :where(figcaption){color:#ffffffa6}.wp-block-video :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video :where(figcaption){color:#ffffffa6}.wp-block-video{margin:0 0 1em}:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}</style>
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 19.5px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36.5px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--normal: 22px;--wp--preset--font-size--huge: 49.5px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="google-fonts-css" href="https://fonts.googleapis.com/css?family=Roboto%3A400%2C400i%2C700&#038;subset=cyrillic&#038;display=swap" media="all">
+<link rel="stylesheet" id="yelly-style-css" href="/css/style.min.css" media="all">
+
+<style>.pseudo-clearfy-link { color: #008acf; cursor: pointer;}.pseudo-clearfy-link:hover { text-decoration: none;}</style>
+<link rel="preload" href="/fonts/icomoon.ttf" as="font" crossorigin>
+    <style>.scrolltop{width:50px}.scrolltop:before{content:"\21d1"}.entry-content a, .entry-content a:visited, .spanlink, .comment-reply-link, .pseudo-link, .widget_calendar a, .widget_recent_comments a, .child-categories ul li a{color:#0000ff}.child-categories ul li a{border-color:#0000ff}a:hover, a:focus, a:active, .spanlink:hover, .top-menu ul li>span:hover, .main-navigation ul li a:hover, .main-navigation ul li span:hover, .footer-navigation ul li a:hover, .footer-navigation ul li span:hover, .comment-reply-link:hover, .pseudo-link:hover, .child-categories ul li a:hover{color:#1e73be}.top-menu>ul>li>a:before, .top-menu>ul>li>span:before{background:#1e73be}.child-categories ul li a:hover, .post-box--no-thumb a:hover{border-color:#1e73be}.post-box--card:hover{box-shadow: inset 0 0 0 1px #1e73be}.post-box--card:hover{-webkit-box-shadow: inset 0 0 0 1px #1e73be}@media (min-width: 768px){body{background-attachment: scroll}}body{font-size:17px;}@media (max-width: 991px){.widget-area{display: block; margin: 0 auto}}</style>
+    <!-- Yandex.RTB -->
+<script>window.yaContextCb=window.yaContextCb||[]</script>
+<script src="https://yandex.ru/ads/system/context.js" async></script>	
+</head>
+<body class="post-template-default single single-post postid-509 single-format-standard wp-embed-responsive sidebar-right">
+<div id="page" class="site">
+    <a class="skip-link screen-reader-text" href="#content">Перейти к контенту</a>
+
+    
+    
+    <div class="search-screen-overlay js-search-screen-overlay"></div>
+    <div class="search-screen js-search-screen">
+        
+<form role="search" method="get" class="search-form" action="/">
+    <label>
+        <span class="screen-reader-text">Search for:</span>
+        <input type="search" class="search-field" placeholder="Поиск..." value="" name="s">
+    </label>
+    <button type="submit" class="search-submit"></button>
+</form>    </div>
+
+    
+
+<header id="masthead" class="site-header full" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="site-header-inner fixed">
+
+        <div class="humburger js-humburger">
+<span></span><span></span><span></span>
+</div>
+
+        
+<div class="site-branding">
+
+    <div class="site-branding__body"><div class="site-title"><a href="/">Excel-jet</a></div></div>
+</div>
+<!-- .site-branding -->
+
+    
+    <nav id="site-navigation" class="main-navigation full">
+        <div class="main-navigation-inner fixed">
+            <div class="menu-menyu-container"><ul id="header_menu" class="menu">
+<li id="menu-item-6695" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-6695">
+<a href="/excel">Excel</a>
+<ul class="sub-menu">
+	<li id="menu-item-6709" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6709"><a href="/excel/functions">Функции</a></li>
+</ul>
+</li>
+<li id="menu-item-6697" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6697"><a href="/microsoft-word">Word</a></li>
+<li id="menu-item-6696" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6696"><a href="/powerpoint">PowerPoint</a></li>
+<li id="menu-item-6698" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6698"><a href="/outlook">Outlook</a></li>
+</ul></div>        </div>
+    </nav><!-- #site-navigation -->
+
+    
+<div class="header-search"><span class="search-icon js-search-icon"></span></div>    </div>
+</header><!-- #masthead -->
+
+
+
+    
+    
+    <div id="content" class="site-content fixed">
+
+        
+        <div class="site-content-inner">
+    
+        
+        <div id="primary" class="content-area" itemscope itemtype="http://schema.org/Article">
+            <main id="main" class="site-main">
+
+                
+<article id="post-509" class="article-post post-509 post type-post status-publish format-standard has-post-thumbnail  category-excel">
+
+    
+        
+        <header class="entry-header"><h1 class="entry-title" itemprop="headline">Глава 1. Общие сведения о Microsoft Access</h1></header>
+        
+        
+        
+    
+    
+    <div class="entry-meta">
+<span class="entry-time"><span class="entry-label">Время чтения</span> 47 мин.</span><span class="entry-date"><span class="entry-label">Опубликовано</span> <time itemprop="datePublished" datetime="2024-06-22">22.06.2024</time></span>
+</div>
+	<div class="entry-content" itemprop="articleBody">
+		<p>Описание главы </p>
+<p>Настоящая глава адресована тем пользователям, которые только приступают к использованию Access в своей работе. Поэтому мы даем в ней основные понятия, касающиеся баз данных и систем управления базами данных, которые потребуются нам в дальнейшем изложении. Еще мы хотели бы показать разницу между обработкой данных в формате электронных таблиц, которые стали уже привычными для широкого круга пользователей, и возможностями систем управления базами данных.</p>
+<p>Мы объясним также, когда следует от простого способа работы с электронными таблицами перейти к более сложному приложению Access. В дальнейшем вы убедитесь, что на самом деле не такое оно сложное, если уметь пользоваться теми помощниками, которые представляет Access. Мы дадим краткий обзор возможностей Access как системы управления реляционной базой данных, описание ее рабочей среды, справочной системы и операций, связанных с открытием уже существующих приложений Access и созданием нового файла базы данных.</p>
+<p>Итак, здесь будут обсуждаться следующие темы:</p>
+<ul>
+<li>Базы данных как средство хранения и обработки информации</li>
+<li>Запуск Access и открытие баз данных</li>
+<li>Создание новой базы данных</li>
+<li>Рабочая среда Access</li>
+<li>Использование справочной системы</li>
+</ul>
+<p> Общие сведения о Microsoft Access 2002 </p>
+<p>Система управления базами данных Microsoft Access является одним из самых популярных приложений в семействе настольных СУБД. Все версии Access имеют в своем арсенале средства, значительно упрощающие ввод и обработку данных, поиск данных и предоставление информации в виде таблиц, графиков и отчетов. Начиная с версии Access 2000, появились также Web-страницы доступа к данным, которые пользователь может просматривать с помощью программы Internet Explorer. Помимо этого, Access позволяет использовать электронные таблицы и таблицы из других настольных и серверных баз данных для хранения информации, необходимой приложению. Присоединив внешние таблицы, пользователь Access будет работать с базами данных в этих таблицах так, как если бы это были таблицы Access. При этом и другие пользователи могут продолжать работать с этими данными в той среде, в которой они были созданы.</p>
+<p> Базы данных как средство хранения и обработки информации </p>
+<p>В этом разделе мы познакомим вас с основными понятиями баз данных и систем управления базами данных (СУБД) и дадим краткий обзор Access как системы управления реляционными базами данных. Приведем сравнение возможностей электронных таблиц Excel и СУБД Access. Раскроем общие характеристики возможностей использования технологий баз данных в документационном обеспечении управления.</p>
+<p> Основные понятия СУБД </p>
+<p>Базы данных —  это совокупность сведений (о реальных объектах, процессах, событиях или явлениях), относящихся к определенной теме или задаче, организованная таким образом, чтобы обеспечить удобное представление этой совокупности как в целом, так и любой ее части.  Реляционная база данных  представляет собой множество взаимосвязанных таблиц, каждая из которых содержит информацию об объектах определенного типа. Каждая строка таблицы включает данные об одном объекте (например, клиенте, автомобиле, документе), а столбцы таблицы содержат различные характеристики этих объектов — атрибуты (например, наименования и адреса клиентов, марки и цены автомобилей). Строки таблицы называются  записями;  все записи имеют одинаковую структуру — они состоят из полей,  в которых хранятся атрибуты объекта. Каждое поле записи содержит одну характеристику объекта и имеет строго определенный  тип данных  (например, текстовая строка, число, дата). Все записи имеют одни и те же поля, только в них содержатся разные значения атрибутов.</p>
+<p>Для работы с данными используются системы управления базами данных (СУБД).  Основные функции СУБД — это определение данных (описание структуры баз данных), обработка данных и управление данными.</p>
+<p>Прежде чем заносить данные в таблицы, нужно определить структуру этих таблиц. Под этим понимается не только описание наименований и типов полей, но и ряд других характеристик (например, формат, критерии проверки вводимых данных). Кроме описания структуры таблиц, обычно задаются  связи  между таблицами. Связи в реляционных базах данных определяются по совпадению значений полей в разных таблицах. Например, клиенты и заказы связаны отношением  &#171;один-ко-многим&#187;,  т.к. одной записи в таблице, содержащей сведения о клиентах, может соответствовать несколько записей в таблице заказов этих клиентов. Если же рассмотреть отношение между преподавателями и курсами лекций, которые они читают, это будет отношение  &#171;многие-ко-многим&#187;,  т.к. один преподаватель может читать несколько курсов, но и один курс может читаться несколькими преподавателями. И последний тип связей между таблицами — это отношение  &#171;один-к-одному&#187;.  Такой тип отношений встречается гораздо реже. Как правило, это бывает в двух случаях: запись имеет большое количество полей, и тогда данные об одном типе объектов разносятся по двум связанным таблицам, или нужно определить дополнительные атрибуты для некоторого количества записей в таблице, тогда создается отдельная таблица для этих дополнительных атрибутов, которая связывается отношением &#171;один-к-одному&#187; с основной таблицей.</p>
+<p>Любая СУБД позволяет выполнять четыре простейшие операции с данными:</p>
+<ul>
+<li>добавлять в таблицу одну или несколько записей;</li>
+<li>удалять из таблицы одну или несколько записей;</li>
+<li>обновлять значения некоторых полей в одной или нескольких записях;</li>
+<li>находить одну или несколько записей, удовлетворяющих заданному условию.</li>
+</ul>
+<p>Для выполнения этих операций используется механизм  запросов.  Результатом выполнения запросов является либо отобранное по определенным критериям множество записей, либо изменения в таблицах. Запросы к базе формируются на специально созданном для этого языке, который так и называется  язык структурированных запросов  (SQL — Structured Query Language).</p>
+<p>И последняя функция СУБД — это управление данными. Под управлением данными обычно понимают защиту данных от несанкционированного доступа, поддержку многопользовательского режима работы с данными и обеспечение целостности и согласованности данных.</p>
+<p>Защита от несанкционированного доступа обычно позволяет каждому пользователю видеть и изменять только те данные, которые ему разрешено видеть или менять. Средства, обеспечивающие многопользовательскую работу, не позволяют нескольким пользователям одновременно изменять одни и те же данные. Средства обеспечения целостности и согласованности данных не дают выполнять такие изменения, после которых данные могут оказаться несогласованными. Например, когда две таблицы связаны отношением &#171;один-ко-многим&#187;, нельзя внести запись в таблицу на стороне &#171;многие&#187; (ее обычно называют подчиненной), если в таблице на стороне &#171;один&#187; (главной) отсутствует соответствующая запись.</p>
+<p> Microsoft Access как настольная СУБД реляционного типа </p>
+<p>Microsoft Access является настольной СУБД реляционного типа, которая имеет все необходимые средства для выполнения перечисленных выше функций. Достоинством Access является то, что она имеет очень простой графический интерфейс, который позволяет не только создавать собственную базу данных, но и разрабатывать простые и сложные приложения.</p>
+<p>В отличие от других настольных СУБД, Access хранит все данные в одном файле, хотя и распределяет их по разным таблицам. Вы можете создать сколько угодно таблиц, используя те правила, которые были описаны выше. Самым важным правилом, которое необходимо соблюдать, является то, что в базе данных нужно хранить только необходимую информацию, и при этом все данные должны храниться только в одном месте.</p>
+<p>Замечание</p>
+<p>Из всякого правила могут быть исключения, поэтому иногда требуется сделать отступление и хранить, например, промежуточные расчетные данные. Это диктуется обычно соображениями производительности. Однако общее правило все-таки следующее: если вы определяете какое-либо поле в таблице, проверьте, не хранятся ли уже эти данные где-нибудь еще. Если хранятся, то их, как правило, можно так или иначе извлечь.</p>
+<p>&#171;Почему же плохо иметь в таблицах поля с повторяющимися данными?&#187; — может спросить неискушенный в области баз данных читатель. Дело в том, что это очень неэффективный способ хранения данных. И не только потому, что они занимают лишнее место в памяти. Этот аргумент в последнее время не является таким сильным, как раньше из-за значительного снижения цен па микросхемы памяти. Основная причина — это то, что такие данные долго вводить и трудно анализировать. Если случайно-при вводе значения пользователь сделал грамматическую ошибку или даже просто ввел лишний пробел, то при запросах и группировках такое значение будет рассматриваться как самостоятельное, и строка, содержащая это значение, не попадет в нужную группу или просто не будет выведена на экран. Именно поэтому при проектировании структуры баз данных стараются избегать повторения данных и создают для них отдельные таблицы. Этот процесс называется  нормализацией. </p>
+<p>Рассмотрим на примере, как можно избежать повторения данных ь полях таблиц. На рис. 1.1 показан способ хранения данных об участниках семинара в одной таблице.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" decoding="async" src="/image28/fd66c5009d1d9944fc528f807441c2a5.gif" width="536" height="287" alt=""><meta itemprop="width" content="536">
+<meta itemprop="height" content="287"></span></p>
+<p>Рис. 1.1. Способ хранения информации в одной таблице</p>
+<p>Как видно из таблицы, сведения об организациях (их названия, адреса и телефоны) повторяются в разных строчках таблицы.. Чтобы избежать дублирования данных, рекомендуется создать две таблицы и затем связать их. В первую таблицу включить сведения об организации — и это будет  главная  таблица. Во вторую  (подчиненную)  будут внесены участники семинара и их должности, а вместо полной информации о месте работы — код организации, равный порядковому номеру организации в первой таблице (см. третий столбец на рис. 1.2). Далее устанавливаем связь между таблицами по полю &#171;Код организации&#187;. В результате главная таблица принимает вид, показанный на рис. 1.3, где реквизиты каждой организации записаны один раз и (под строкой организации) можно раскрыть список всех сотрудников данной организации, посетивших семинар  (о работе с таблицами см. также <a href="https://taurion.ru/access/2">гл. 2</a>). </p>
+<p>Если вы правильно определили поля таблиц, то связи между ними Access установит сама. Для этого нужно, чтобы поля в связанных таблицах, содержащие совпадающие данные (например, &#171;Код организации&#187; на рис. 1.2), имели одинаковое наименование и согласующиеся типы данных.</p>
+<p>Вы можете просматривать, изменять и удалять данные прямо в таблицах. Однако часто удобнее использовать для этого специально созданные  экранные формы,  которые могут иметь как табличный вид, когда в форме таблицы отображается сразу несколько записей, так и показывать только одну запись в виде некоторого бланка. В формах можно отображать информацию сразу из нескольких таблиц. В этом случае в основе формы будет не таблица, а запрос. Запрос позволяет объединять данные из нескольких связанных таблиц, выполнять вычисления над данными из других столбцов таблицы, добавлять, изменять и удалять записи в таблицах. При этом в большинстве случаев вам не нужно изучать язык Access SQL, т. к. вы всегда можете посмотреть тот запрос, который сформирует для вас Access в результате интерактивного процесса конструирования.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" decoding="async" src="/image16/8edf902f89f8b7eba63170f466e6737a.gif" width="515" height="462" alt=""><meta itemprop="width" content="515">
+<meta itemprop="height" content="462"></span></p>
+<p> Рис. 1.2.  Способ хранения информации в нескольких таблицах</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image26/ed796d1fc709dd00e8845f7b32609b12.gif" width="509" height="455" alt=""><meta itemprop="width" content="509">
+<meta itemprop="height" content="455"></span></p>
+<p> Рис. 1.3.  Внешний вид главной таблицы</p>
+<p>Для того чтобы можно было анализировать хранящуюся в базе данных Access информацию, вы будете создавать разные  отчеты,  которые позволяют извлекать необходимые данные, группировать и сортировать их в нужном виде, вычислять итоговые значения по группам и в целом по всем отработанным записям. Отчеты могут быть дополнены рисунками, диаграммами, содержательными комментариями, могут быть выведены на печать, преобразованы в документ Word или опубликованы на Web.</p>
+<p>Другим удобным средством, которым вы можете пользоваться, чтобы публиковать данные в вашей сети интранет или Интернет, являются  страницы доступа к данным. </p>
+<p>Они могут содержать не только статическую информацию для просмотра отчетов, но могут также иметь вид динамических страниц, позволяющих пользователю создавать запросы к базе данных, которые извлекают или изменяют нужные данные.</p>
+<p>Для выполнения всех перечисленных операций Access предлагает большое количество Мастеров и Построителей, которые помогут быстро научиться работать с данными и добиваться желаемых результатов, а также избежать рутинных действий, которые присутствуют всегда, даже в такой творческой работе, как разработка приложений в Access.</p>
+<p> Различия между СУБД Access и электронными таблицами Excel </p>
+<p>На первый взгляд СУБД Access очень похожа по своему назначению и возможностям на программу электронных таблиц Microsoft Excel. Однако между ними существуют принципиальные различия.</p>
+<ul>
+<li>При работе с электронной таблицей Excel вы можете в ячейку таблицы внести любую информацию, вследствие чего на рабочем листе можно разместить и таблицу, и текст, и рисунок. В один столбец таблицы могут при необходимости вноситься разные данные — числа, текст, даты. Таблица в базе данных Access отличается от таблицы Excel тем, что в ней, как уже говорилось выше, для каждого поля записи определен тип данных, т. е. нельзя в однин столбец таблицы в разные строки заносить данные разных типов.</li>
+<li>Access позволяет не только вводить данные в таблицы, но и контролировать правильность вводимых данных. Для этого необходимо установить правила проверки прямо на уровне таблицы. Тогда каким бы образом не вводились данные — прямо в таблицу, через экранную форму или на странице доступа к данным, Access не позволит сохранить в записи те данные, которые не удовлетворяют заданным правилам.</li>
+<li>С таблицами Excel удобно работать, если они содержат ограниченное количество строк. Таблицы баз данных могут включать в себя огромное количество записей, и при этом СУБД обеспечивает удобные способы извлечения из этого множества нужной информации.</li>
+<li>Если все необходимые для работы данные вы будете хранить в документах Word и электронных таблицах, то по мере накопления информации вы просто можете запутаться в большом количестве файлов. Access позволяет хранить все данные в одном файле и осуществлять доступ к этим данным постранично, т. е. не превышая ограничений на ресурсы памяти компьютера.</li>
+<li>В Access возможно создание связей между таблицами, что позволяет совместно использовать данные из разных таблиц. При этом для пользователя они будут представляться одной таблицей. Реализовать такую возможность в системах управления электронными таблицами сложно, а иногда просто невозможно.</li>
+<li>Устанавливая взаимосвязи между отдельными таблицами, Access позволяет избежать ненужного дублирования данных, сэкономить память компьютера, а также увеличить скорость и точность обработки информации. Для этого таблицы, содержащие повторяющиеся данные, разбивают на несколько связанных таблиц.</li>
+<li>Excel позволяет работать нескольким пользователям с одним документом, однако эти возможности очень ограничены. Access может поддерживать одновременную работу с базой данных 50 пользователей, при этом все пользователи гарантировано будут работать с актуальными данными.</li>
+<li>Access имеет развитую систему защиты от несанкционированного доступа, которая позволяет каждому пользователю или группе пользователей видеть и изменять только те объекты, на которые ему выданы права администратором системы, например можно запретить использование некоторых команд меню, открытие определенных форм, изменение данных в таблицах или формах. Электронные таблицы тоже позволяют защитить данные паролем или разрешить только просмотр данных, однако эти средства существенно проще.</li>
+</ul>
+<p>Таким образом, СУБД Access применяется в тех случаях, когда прикладная задача требует хранения и обработки разнородной информации о большом количестве объектов и предполагает возможность многопользовательского режима. Примером может служить задача ведения складского учета. Электронные таблицы Excel являются удобным средством хранения ограниченного количества табличных данных с широкими возможностями выполнения расчетов и анализа данных. Документы Excel предназначаются, как правило, для индивидуального использования.</p>
+<p>Замечание</p>
+<p>Возможности Excel, конечно, не ограничиваются только электронными таблицами, например Excel очень удобно использовать для анализа данных, которые хранятся на сервере базы данных (в частности, Microsoft SQL Server), но в этом случае Excel не является хранилищем данных, а обеспечивает только их обработку.</p>
+<p> Запуск Access и открытие баз данных </p>
+<p>После короткого обзора возможностей Access перейдем к описанию начальных действий по запуску Access и открытию файлов баз данных.</p>
+<p>Замечание</p>
+<p>Мы не описываем здесь процесс установки Microsoft Access 2002, т. к. подробную информацию об установке можно найти в документации, которая входит в комплект поставки.</p>
+<p>Для того чтобы запустить Microsoft Access 2002, необходимо:</p>
+<ol>
+<li>Нажать кнопку  Пуск  (Start) на Панели задач в нижней части рабочего стола.</li>
+<li>Открыть в главном меню пункт  Программы  (Programms).</li>
+<li>Выбрать программу  Microsoft  Access.</li>
+</ol>
+<p>Базой данных Access является файл, который имеет расширение mdb. Этот файл может содержать не только все таблицы, но и другие объекты приложений Access — запросы, формы, отчеты, страницы доступа к данным, макросы и модули.</p>
+<p>Замечание</p>
+<p>В дальнейшем вы узнаете, что это не всегда бывает так. Иногда приложение состоит из нескольких файлов, но пока мы рассматриваем простейший вариант.</p>
+<p>При запуске Access появляется главное окно Microsoft Access.</p>
+<p>Для того чтобы открыть существующую базу данных, можно воспользоваться одним из трех способов.</p>
+<ul>
+<li>Выбрать в меню  Файл  (File) из списка ранее открывавшихся файлов требуемый файл (рис. 1.4).</li>
+</ul>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image01/0331da9aef79af82af92784721e3ff93.gif" width="217" height="445" alt=""><meta itemprop="width" content="217">
+<meta itemprop="height" content="445"></span></p>
+<p> Рис. 1.4.  Открытие базы данных из меню  Файл </p>
+<p>Замечание</p>
+<p>Если такой список в меню  Файл  (File) отсутствует, нужно с помощью команды  Сервис, Параметры  (Tools, Options) открыть диалоговое окно  Параметры  (Options), раскрыть вкладку  Общие  (General) и установить флажок  Помнить список файлов  (Recently used file list).</p>
+<ul>
+<li>Выбрать файл из списка в области задач, которая расположена в правой части окна приложения (см. рис. 1.4).</li>
+<li>Выбрать команду  Открыть  (Open) в меню  Файл  (File), и затем выбрать нужный файл в диалоговом окно  Открытие файла базы данных  (Open) (рис. 1.5).</li>
+</ul>
+<p>В последнем случае в диалоговом окне обычно по умолчанию отображается содержимое папки Мои документы или Личная (в зависимости от установленной на компьютере операционной системы). Найдя в списке необходимую базу данных, нужно выделить файл и нажать кнопку  Открыть  (Open) или дважды щелкнуть по элементу списка. В главном окне Microsoft Access появится окно выбранной базы данных (рис. 1.6).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image02/0c0f1370aa61310c634420b03f1a200f.gif" width="550" height="336" alt=""><meta itemprop="width" content="550">
+<meta itemprop="height" content="336"></span></p>
+<p> Рис. 1.5.  Диалоговое окно  Открытие файла базы данных </p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image22/ca18bdc88d43800a69b53af0002c0004.gif" width="524" height="422" alt=""><meta itemprop="width" content="524">
+<meta itemprop="height" content="422"></span></p>
+<p> Рис. 1.6.  Пример базы данных</p>
+<p>Замечание</p>
+<p>Вы можете спокойно в новой версии Access открывать файлы баз данных, созданные в версии Access 2000, и работать с ними так же, как делали это раньше. Однако, если вы хотите работать с файлами, созданными в более ранних версиях Access, рекомендуем вам ознакомиться предварительно с материалом <a href="https://taurion.ru/access/19">гл. 19</a>.</p>
+<p>Файлы можно выбирать не только из списка, который появляется в диалоговом окне  Открытие файла базы данных  (Open) при его открытии. Можно выбрать нужную папку либо из раскрывающегося списка  Папка  (Look in), либо использовать ярлыки, находящиеся на так называемой панели адресов слева. При выборе ярлыка  Журнал  (History) (см. рис. 1.5) появляется список ярлыков к последним открывавшимся файлам и папкам. При выборе ярлыка  Рабочий стол  (Desktop) в диалоговом окне появляется список, содержащий ярлыки папок, и файлы, находящиеся в данный момент на рабочем столе Windows. Тип файла выбирается в раскрывающемся списке  Тип файлов  (File of type) в нижней части окна. В папке  Избранное  (Favorites) можно просмотреть ярлыки к тем папкам и файлам, которые вы используете наиболее часто. Многие программы позволяют добавлять ярлыки в папку  Избранное  (Favorites), в том числе это можно сделать прямо в окне  Открытие файла базы данных  (Open). Для этого вы должны выделить в списке нужный файл, щелкнуть мышью по кнопке  Сервис  (Tools) на панели инструментов в верхней части окна и выбрать из списка команду  Добавить в папку &#171;Избранное&#187;  (Add to Favorites).</p>
+<p>Можно открыть файл базы данных, находящийся на сетевом диске. Для того чтобы подключить сетевой диск, необходимо выполнить команду  Подключить сетевой диск  (Map Network Drive) из списка команд кнопки  Сервис  (Tools).</p>
+<p>Если вы не можете найти нужный файл базы данных, его можно разыскать, задавая критерии поиска в специальном диалоговом окне, которое появляется, если вы щелкнете по кнопке  Сервис  (Tools) и выберете из списка команду  Найти  (Search).</p>
+<p>Замечание</p>
+<p>В новой версии Access средства поиска файлов еще более усовершенствованы. Появилась специальная область — область задач  Поиск  (Search), которая может быть использована для обычного и расширенного поиска нужного файла. (Подробнее об этой панели см. <a href="https://taurion.ru/access/7">гл. 7</a>.)</p>
+<p>Открыть файл можно в одном из четырех режимов:</p>
+<ul>
+<li> Открыть  (Open) — режим коллективного доступа. Когда вы открываете файл базы данных в этом режиме, доступ к нему будет разрешен другим пользователям, они могут открыть его и работать с объектами базы данных одновременно с вами. Причем все пользователи будут иметь возможность как просматривать данные, так и изменять их.</li>
+<li> Открыть монопольно  (Open Exclusive) — режим монопольного доступа. В этом случае никто другой не сможет открыть этот файл, пока вы его используете.</li>
+<li> Открыть для чтения  (Open Read-Only) — режим коллективного доступа только для чтения. В этом случае вы не сможете изменять ни данные в таблицах, ни другие объекты базы данных.</li>
+<li> Открыть монопольно только для чтения  (Open Exclusive Read-Only) — режим монопольного доступа только для чтения. Вы открываете файл только для чтения и одновременно запрещаете другим пользователям открывать этот файл.</li>
+</ul>
+<p>Выбрать нужный режим вы можете из списка, который раскрывается при нажатии стрелки справа от кнопки  Открыть  (Open). По умолчанию (при двойном щелчке мышью по имени файла или нажатии кнопки  Открыть  (Open)) файл базы данных открывается в режиме коллективного доступа.</p>
+<ol>
+<li>Нажать кнопку  Открыть  (Open) на панели инструментов (рис. 1.7), что также приведет к открытию диалогового окна  Открытие файла базы данных  (Open) (см. рис. 1.5).</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image04/27f9a967f589ec81ae0ce02dfdfdb47e.gif" width="470" height="478" alt=""><meta itemprop="width" content="470">
+<meta itemprop="height" content="478"></span></p>
+<p> Рис. 1.7.  Открытие базы данных с помощью кнопки  Открыть  на панели инструментов</p>
+<ol start="2">
+<li>Наконец, можно воспользоваться областью задач  Создание файла  (New file) справа (рис. 1.8), где в разделе  Открытие файла  (Open a file) помещен список ранее открывавшихся файлов, [ Если вы впервые работаете с Access, это будет список примеров баз данных из поставки Microsoft Office 2002.] а также кнопка  Другие файлы  (More files). Щелчок мышью по последней приведет к открытию диалогового окна  Открытие файла базы данных  (Open) (см. рис. 1.5).</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image12/66d9a0455b1a5cf8d9cfcf83857dcb12.gif" width="213" height="567" alt=""><meta itemprop="width" content="213">
+<meta itemprop="height" content="567"></span></p>
+<p> Рис. 1.8.  Область задач  Создание файла </p>
+<p> Создание новой базы данных </p>
+<p>Для создания новой базы данных необходимо воспользоваться областью задач  Создание файла  (New file) окна приложения Microsoft Access (см. рис. 1.4). Эта область появляется справа при первом запуске Access. Если вы уже использовали Access для работы с каким-либо файлом и после его закрытия не видите в главном окне этой области, вы можете:</p>
+<ul>
+<li>выбрать команду  Создать  (New) из меню  Файл  (File) (см. рис. 1.4);</li>
+<li>нажать кнопку  Создать  (New) на панели инструментов. На рис. 1.7 она расположена слева от кнопки  Открыть  (Open).</li>
+</ul>
+<p>Любое из этих действий приведет к открытию справа области задач  Создание файла  (New file).</p>
+<p>Замечание</p>
+<p>При создании новой базы данных в процессе работы в Access прежняя база данных будет автоматически закрыта. Обратите внимание, что две базы данных в одном окне приложения Access одновременно открытыми быть не могут!</p>
+<p>Создать новую базу данных можно тремя способами:</p>
+<ul>
+<li>путем создания новой пустой базы данных;</li>
+<li>созданием копии существующей базы данных;</li>
+<li>с помощью создания базы данных с использованием шаблона.</li>
+</ul>
+<p> Создание новой пустой базы данных </p>
+<p>Чтобы создать базу данных с помощью области задач  Создание файла  (New file), необходимо:</p>
+<ol>
+<li>В этой области из раздела  Создание  (New) выбрать элемент  Новая база данных  (Blank Database) (см. рис. 1.4). Появится диалоговое окно  Файл новой базы данных  (File New Database) с содержимым папки Мои документы (рис. 1.8).</li>
+<li>В раскрывающемся списке  Папка  (Save in) открыть папку, в которой будет храниться создаваемая база данных, или выбрать папку одним из методов, описанных в  разд. <a href="https://taurion.ru/access/1/7">&#171;Запуск Access и открытие баз данных&#187;</a> данной главы  (рис. 1 .9).</li>
+<li>В поле ввода  Имя файла  (File name) указать имя создаваемого файла и нажать кнопку  Создать  (Create). По умолчанию Access присваивает новой базе данных имя dbl, а если база с именем dbl уже существует, то db2 и т. д. После нажатия кнопки появится окно новой базы данных (рис. 1.10).</li>
+</ol>
+<p>Дальнейшая работа с таблицами баз данных описана в <a href="https://taurion.ru/access/2">гл. 2</a>,  в частности в  разд. <a href="https://taurion.ru/access/2/3">&#171;Создание таблиц&#187;</a>. </p>
+<p>Если на вашем компьютере установлена операционная система Windows NT Workstation, то это будет папка Личная. Папки Личная и Мои документы по умолчанию предназначены для хранения документов Microsoft Office, поэтому их многие используют для хранения рабочих документов.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image10/5bd65c4b3c16f4770d84ae095f652bde.gif" width="550" height="336" alt=""><meta itemprop="width" content="550">
+<meta itemprop="height" content="336"></span></p>
+<p> Рис. 1.9.  Диалоговое окно  Файл новой базы данных </p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image22/c8ce3022a542daac5bedd0d436309ca9.gif" width="481" height="345" alt=""><meta itemprop="width" content="481">
+<meta itemprop="height" content="345"></span></p>
+<p> Рис. 1.10.  Окно новой базы данных Access 2002</p>
+<p> Создание копии существующей базы данных </p>
+<p>Чтобы создать копию существующей базы данных, необходимо:</p>
+<ol>
+<li>Открыть область задач  Создание файла  (New file), если она не была открыта  (см. разд. &#171;Создание новой базы данных&#187;данной главы). </li>
+<li>Из раздела  Создание из имеющегося файла  (New from existing file) выбрать команду  Выбор файла  (Choose file).</li>
+<li>С помощью открывшегося диалогового окна  Создание из имеющегося файла  (New from existing file) выбрать файл базы данных, копию которого вы хотите создать. Это диалоговое окно будет идентично окну  Открытие файла базы  данных  (Open) (см. рис. 1.5)  (см. разд. &#171;Запуск Access и открытие баз данных&#187; данной главы). </li>
+<li>Щелкнуть Мышью по кнопке  ОК. </li>
+</ol>
+<p>При этом будет открыта копия выбранного вами файла базы данных, во всем идентичная оригиналу (то есть и по данным, и по структуре баз данных), которая будет немедленно сохранена под именем &lt;имя файла&gt;1 .mdb.</p>
+<p> Создание базы данных с использованием шаблона </p>
+<p>Для создания новой базы данных можно воспользоваться соответствующим заранее заготовленным шаблоном. Чтобы запустить Мастер шаблонов, нужно:</p>
+<ol>
+<li>Открыть область задач  Создание файла  (New file), если она еще не была открыта  (см. начало разд. <a href="https://taurion.ru/access/1/8">&#171;Создание новой базы данных&#187;</a> данной главы). </li>
+<li>Из раздела  Создание с помощью шаблона  (New from template) выбрать команду  Общие шаблоны  (General templates). Появится диалоговое окно  Шаблоны  (Templates) (рис. 1.11).</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image25/e768da3e4d1cd536d3ca823877d8efc9.gif" width="550" height="348" alt=""><meta itemprop="width" content="550">
+<meta itemprop="height" content="348"></span></p>
+<p> Рис. 1.11.  Диалоговое окно  Шаблоны</p>
+<p>Замечание</p>
+<p>Обратите внимание на вкладку Общие (General). Здесь предусмотрена еще одна возможность создавать пустую базу данных (элемент Новая база данных (Blank database)), а также новые объекты: Страницы доступа к данным (Pages) и Проекты (Projects) (см. гл. <a href="https://taurion.ru/access/12">12</a> и гл. <a href="https://taurion.ru/access/17">17</a>).</p>
+<ol start="3">
+<li>Вкладка  Базы данных  (Databases) позволяет использовать в качестве основы один из шаблонов наиболее популярных баз данных. Для этого выберите ярлык шаблона, который кажется вам более всего подходящим для создаваемой базы данных, и нажмите кнопку ОК. Далее следуйте указаниям Мастера шаблонов.</li>
+<li>При работе с Мастером шаблонов сначала вас попросят задать название новой базы данных, после чего она будет открыта. Затем приводятся краткие сведения о содержимом базы. Нажмите на кнопку  Далее  (Next). После этого вам будут показаны таблицы и поля, используемые в базе (рис. 1.12).</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image21/c374b324ceac3ade11f5e24e138152ab.gif" width="488" height="345" alt=""><meta itemprop="width" content="488">
+<meta itemprop="height" content="345"></span></p>
+<p> Рис. 1.12.  Диалоговое окно выбора шаблонов и полей таблиц Мастера шаблонов</p>
+<p>Следующие шаги (переход к каждому следующему шагу осуществляется нажатием кнопки  Далее  (Next)) позволяют выбрать стилевое оформление форм (рис. 1.13) и отчетов (рис. 1.14), а также задать заголовок главного меню новой базы данных и файл рисунка, используемого при печати отчетов (рис. 1.15).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image02/103066fd84871feaea022dd292a649a1.gif" width="488" height="345" alt=""><meta itemprop="width" content="488">
+<meta itemprop="height" content="345"></span></p>
+<p>Рис. 1.13.  Диалоговое окно стилевого оформления форм Мастера шаблонов</p>
+<p>Наконец, на последнем шаге можно уведомить Access об отказе немедленного открытия вновь созданной базы (для этого необходимо снять флажок Да (Yes) в последнем окне мастера), после чего нажать кнопку  Готово  (Finish).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image15/849c1afdfcaa88b52dd157844f01a49a.gif" width="488" height="345" alt=""><meta itemprop="width" content="488">
+<meta itemprop="height" content="345"></span></p>
+<p> Рис. 1.14.  Диалоговое окно стилевого оформления отчетов Мастера шаблонов</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image01/07c1c7274fa4378fc54f9c227b022209.gif" width="580" height="568" alt=""><meta itemprop="width" content="580">
+<meta itemprop="height" content="568"></span></p>
+<p> Рис. 1.15.  Диалоговое окно Мастера шаблонов, задающее заголовок базы данных и файл логотипа отчетов</p>
+<p> Рабочая среда Access </p>
+<p>Открыв базу данных Access, пользователь видит на экране главное окно Access и окно базы данных. Главное окно Access имеет вид, аналогичный окнам других приложений Microsoft Office. В верхней части окна размещается его заголовок, меню и панель инструментов, а в нижней части — строка состояния. Наиболее важным элементом интерфейса в среде Access является окно базы данных. Это контейнер, содержащий все объекты базы данных. Доступ к данным объектам возможен только через окно базы данных.</p>
+<p>На рис. 1.16 показано главное окно Access 2002, в котором открыто несколько таблиц в режиме Таблицы. Ниже мы прокомментируем этот рисунок, а заодно определим используемые термины.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image09/4b6a409a5d55543be9860509b99040d3.gif" width="560" height="479" alt=""><meta itemprop="width" content="560">
+<meta itemprop="height" content="479"></span></p>
+<p> Рис. 1.16.  Главное окно Access 2002 с окном базы данных и несколькими таблицами</p>
+<p> Окна рабочей среды Access </p>
+<p>Каждое запущенное приложение Windows имеет свое окно, в котором выводятся результаты его работы —  окно приложения.  В данном случае окном приложения является главное окно Access. Кроме окна приложения, в Access широко используются еще два типа окон:  диалоговые окна  и  окна документов.  Окна приложения и окна документов могут перемещаться по экрану монитора, имеют изменяемые размеры и могут быть свернуты, развернуты или развернуты до максимальных размеров. Диалоговые окна также можно перемещать по экрану, но они имеют постоянные размеры и их нельзя свернуть или развернуть.</p>
+<p>Строка в верхней части окна приложения, содержащая название приложения, является  заголовком  окна приложения. Заголовок окна приложения используется для перемещения окна по экрану (только если окно приложения не свернуто и не развернуто до максимальных размеров). Окно документа, так же как и окно приложения, имеет заголовок, который содержит название этого документа.</p>
+<p> Строка состояния  в нижней части окна приложения или документа служит для отображения подсказок о командах и кнопках и сведений о выполняемых операциях.</p>
+<p>Большинство объектов базы данных Access: таблицы, запросы, формы, отчеты, страницы доступа к данным и макросы — выводятся в окнах, которые в терминологии Windows являются окнами документов. Исключение составляют программные модули — для их представления используется специальная среда программирования  (см. гл. 13). </p>
+<p>Access 2002 поддерживает  интерфейс множественных документов  (Multiple Document Interface — MDI), который позволяет открыть в рабочем поле окна приложения несколько окон документов одновременно.</p>
+<p>На рис. 1.16 показаны в рабочем поле окна приложения окно базы данных и три окна документов, из которых одно окно развернуто и два — свернуты.</p>
+<p>Окна приложения и все окна документов Access 2002 по умолчанию отображаются на Панели задач вашей операционной системы. Вы можете активизировать любое из этих окон, щелкнув мышью по соответствующему значку.</p>
+<p> Активным  окном называется окно, в которое направляются все сообщения (действия) от мыши или клавиатуры. Заголовок окна активного приложения или документа подсвечивается цветом, выбранным при установке параметров оформления рабочего стола (обычно это синий цвет). Если окно приложения и окно документа в нем являются активными одновременно, то все сообщения от клавиатуры и мыши получает окно документа.</p>
+<p>Одновременно могут быть активными только одно окно приложения и одно окно документа в этом приложении. Все остальные окна считаются  неактивными  (их заголовок выводится на сером фоне). Щелчок левой кнопкой мыши по неактивному окну делает его активным и переводит на передний план. Если нужное окно целиком закрыто другими окнами, то сделать его активным можно, выбрав название документа в меню  Окно  (Window).</p>
+<p>Чтобы закрыть окно документа или приложения, необходимо нажать кнопку  Закрыть  в заголовке окна справа (на ней изображен крестик).</p>
+<p>Нажатие кнопки  Развернуть  в заголовке окна приложения (на ней изображен квадратик) позволяет установить максимальные размеры окна приложения. Нажатие кнопки  Развернуть  в заголовке окна документа позволяет максимизировать его в окне приложения. В заголовке развернутого окна (как документа, так и приложения) вместо кнопки  Развернуть  появляется кнопка  Восстановить  (с изображением двух наложенных квадратиков), нажатие которой вызывает возвращение окну прежних размеров. Кнопка  Свернуть  (на ней изображен знак подчеркивания) позволяет минимизировать окно приложения или документа. Окно приложения при этом сворачивается в значок на Панели задач вашей операционной системы, а окно документа — в значок в нижней части окна приложения. Обратную ей функцию выполняет кнопка  Восстановить.  Она позволяет вернуть окну те размеры, которые оно имело до применения операций сворачивания.</p>
+<p>Максимально развернутое окно документа занимает все поле окна приложения. Кнопки  Свернуть, Восстановить и Закрыть  при этом перемещаются в правую часть строки главного меню приложения.</p>
+<p>Замечание</p>
+<p>Будьте осторожны и не путайте кнопки окна приложения и окна документа, которые при этом оказываются близко (друг под другом), иначе вместо окна документа вы можете закрыть окно приложения.</p>
+<p> Меню и панели инструментов </p>
+<p>В Access 2002 так же, как и в других приложениях Microsoft Office, используются два типа меню: раскрывающиеся и контекстные. Контекстное меню появляется на экране при щелчке правой кнопкой мыши по объекту, с которым вы хотите работать. Оно содержит перечень действий, которые можно выполнять с данным объектом в данном контексте.</p>
+<p>Примером раскрывающегося меню может служить системное меню окна приложения или документа.  Системное меню окна приложения  появляется при щелчке левой кнопкой мыши по значку приложения, который находится в левой части заголовка окна приложения, или при нажатии комбинации клавиш &lt;АН&gt;+&lt;пробел&gt;.  Системное меню документа  открывается после щелчка левой кнопкой мыши по значку документа, который находится в левой части заголовка окна документа, или при нажатии комбинации клавиш &lt;Alt&gt;+&lt;—&gt;. Системное меню предназначено для изменения параметров окна.</p>
+<p>Строка под заголовком окна приложения содержит  главное меню приложения,  с помощью которого можно получить доступ к командам меню. Вид главного меню Access 2002 зависит от режима, в котором находится приложение. Например, когда активным окном является окно таблицы (см. рис. 1.16), в главном меню появляется команда  Запись  (Record), которая отсутствует в других режимах работы.</p>
+<p>Ниже строки меню располагается  панель инструментов,  на которой находятся кнопки. Многие кнопки имеют тот же внешний вид и назначение, что и в других приложениях Microsoft Office, но, конечно, большинство предназначено для выполнения специфических функций Access. Кнопки панели инструментов часто дублируют команды меню. Access 2002 имеет 27 стандартных панелей инструментов, которые выводятся на экран в зависимости от того, какой объект активен в данный момент.</p>
+<p>Все кнопки панелей инструментов имеют &#171;всплывающие&#187; подсказки, объясняющие их назначение. Подсказки появляются, если подвести к кнопке указатель мыши и немного подождать. Если подсказки не появляются, значит, они отключены. Чтобы включить режим вывода подсказок, выполните команду меню  Вид, Панели инструментов, Настройка  (View, Toobars, Customize) и в диалоговом окне  Настройка  (Customize) на вкладке  Параметры  (Options) установите флажок  Отображать подсказки для кнопок  (Show ScreenTips on toolbars).</p>
+<p>Панели инструментов могут фиксироваться вдоль границы окна приложения, как показано на рис. 1.10, а могут быть плавающими, т. е. перемещаемыми по экрану. В этом случае панель инструментов будет иметь заголовок и может менять свою форму и размеры. Левый край панели инструментов помечен вертикальной линией. Если подвести указатель мыши к этой линии, нажать левую кнопку мыши и, не отпуская, потянуть вправо, панель будет перемещаться вдоль границы окна. А если потянуть вниз, панель инструментов превратится в плавающую. Такую панель можно перемещать по экрану, зацепив за заголовок.</p>
+<p>Меню и панели инструментов по умолчанию отображают лишь наиболее часто используемые команды и кнопки. Чтобы получить полный список команд меню, необходимо щелкнуть мышью по двойной стрелке у нижнего края раскрывающегося меню. Если не все кнопки поместились на панели инструментов, то у ее правого края тоже появляется значок двойной стрелки. Если щелкнуть мышью по нему, будут показаны оставшиеся кнопки. Если вы использовали какую-то кнопку или команду, которой не было по умолчанию в соответствующей панели или меню, то в дальнейшем она будет там видна.</p>
+<p>Меню и панели инструментов Access являются настраиваемыми, т. е. можно изменять состав кнопок, удаляя ненужные или добавляя новые кнопки  (см. разд. &#171;Командный интерфейс приложения&#187;гл. 14). </p>
+<p> Окно базы данных </p>
+<p>Особым окном в Access является  окно базы данных,  которое позволяет получить доступ ко всем объектам базы данных и выбрать режим работы с объектом. В левой части окна находится панель объектов, которая содержит ярлыки для каждого из  объектов  Access:  Таблицы  (Tables),  Запросы  (Queries),  Формы  (Forms),  Отчеты  (Reports),  Страницы  (Pages),  Макросы  (Macros),  Модули  (Modules) (рис. 1.17).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image10/5b3d2a43dd055b140fed633440787426.gif" width="514" height="408" alt=""><meta itemprop="width" content="514">
+<meta itemprop="height" content="408"></span></p>
+<p> Рис. 1.17.  Окно базы данных Access 2002</p>
+<p>Щелкнув на ярлыке мышью, в правой части окна вы откроете список соответствующих объектов. Список объектов может быть представлен четырьмя разными способами (обычными для папок операционной системы Windows):</p>
+<ul>
+<li>в виде мелких значков;</li>
+<li>в виде крупных значков (см. рис. 1.17);</li>
+<li>в виде списка;</li>
+<li>в виде таблицы.</li>
+</ul>
+<p>Переключение этих режимов отображения выполняется с помощью четырех правых кнопок на панели инструментов, расположенной вдоль верхнего края окна.</p>
+<p>При представлении объектов в виде значков эти значки можно перетаскивать с помощью мыши и располагать внутри окна базы данных любым удобным образом. Если же вы хотите расположить значки так, чтобы они находились рядом друг с другом, нужно:</p>
+<ol>
+<li>Щелкнуть правой кнопкой мыши на любом свободном участке окна базы данных.</li>
+<li>Из контекстного меню выбрать команду  Выстроить значки  (Line Up Icons).</li>
+</ol>
+<p>Представление перечня объектов в виде списка не позволяет располагать значки произвольным образом в окне базы данных, но их можно &#171;перетаскивать&#187; за пределы окна базы данных (это один из способов активизировать объект, например открыть таблицу). Представление в виде таблицы позволяет для каждого объекта посмотреть не только его имя, но и описание (столбец  Описание  (Description)), дату и время последнего изменения (столбец  Дата изменения  (Modified)), дату и время создания (столбец  Дата создания  (Created)), а также тип объекта.</p>
+<p>При использовании любого вида представления объектов в окне базы данных их можно упорядочить по имени, типу, дате создания и дате изменения. Для этого необходимо:</p>
+<ol>
+<li>Щелкнуть правой кнопкой мыши на любом свободном участке окна базы данных.</li>
+<li>Из контекстного меню выбрать команду  Упорядочить значки  (Arrange Icons).</li>
+<li>Из раскрывающегося меню выбрать способ упорядочения:  по имени  (By Name),  по типу  (By Type),  по дате создания  (By Created),  по дате изменения  (By Modified).</li>
+</ol>
+<p>Чтобы объекты в окне базы данных упорядочились автоматически, необходимо:</p>
+<ol>
+<li>Щелкнуть правой кнопкой мыши на любом свободном участке окна базы данных.</li>
+<li>Из контекстного меню выбрать команду  Упорядочить значки  (Arrange Icons).</li>
+<li>В раскрывающемся меню выбрать команду  автоматически  (Auto Arrange). Перед командой появится метка, свидетельствующая о том, что режим автоматического упорядочения включен.</li>
+</ol>
+<p>Чтобы отменить автоматическое упорядочение, необходимо снова выбрать команду  автоматически  (Auto Arrange) в меню  Упорядочить значки  (Arrange Icons). Метка команды будет удалена, а режим автоматического упорядочения выключен.</p>
+<p>С каждым объектом базы данных можно работать в двух режимах. Первый режим назовем  режимом выполнения  (условно, т. к. он несколько различается для разных типов объектов):</p>
+<ul>
+<li>для таблиц, запросов, форм и страниц доступа к данным этот режим означает открытие соответствующего объекта и называется, соответственно, режим Таблицы (для таблиц и запросов), режим Формы, режим Страницы;</li>
+<li>для отчета — это режим предварительного просмотра;</li>
+<li>для макроса — это действительно режим выполнения;</li>
+<li>для модуля этот режим отключен.</li>
+</ul>
+<p>Второй режим — это  режим Конструктора.  Данный режим применяется ко всем типам объектов и предназначен для создания и изменения объектов.</p>
+<p>Выбрать нужный режим можно с помощью кнопок, которые находятся в левой части панели инструментов окна базы данных, с помощью команд меню  Вид  (View) или с помощью кнопок на панели инструментов Access.</p>
+<p>На панели инструментов окна  База данных  (Database) слева имеются три основных кнопки:</p>
+<ul>
+<li>первая кнопка имеет изменяющееся название, в зависимости от того, какой объект выбран. Если выбраны таблица, запрос, форма, страница или группа Избранное (Favorites), кнопка приобретает вид  Открыть  (Open). Если выбран отчет —  Просмотреть  (Preview), если макрос или модуль —  Запустить  (Run). При этом значок рядом с названием соответственно изменяется. Название этой кнопки в каждом варианте наглядно отражает назначение;</li>
+<li>вторая кнопка  Конструктор  (Design) постоянна для всех объектов и предназначена для редактирования ранее созданного объекта;</li>
+<li>третья кнопка  Создать  (New) имеет постоянное название, но при этом изменяются значки на ней, в соответствии с типом объекта.</li>
+</ul>
+<p>Замечание</p>
+<p>Для создания новых объектов можно использовать также специальные ярлыки, включенные в список объектов каждого типа.</p>
+<p>Например, открыть таблицу в режиме Таблицы можно следующими способами:</p>
+<ol>
+<li>Выделить ее в списке и нажать кнопку  Открыть  (Open).</li>
+<li>Перетащить значок таблицы мышью за пределы окна базы данных.</li>
+<li>Дважды щелкнуть кнопкой мыши по имени таблицы.</li>
+<li>Один раз щелкнуть левой кнопкой мыши по имени таблицы, если установлен флажок  Одним щелчком  (Single-click ope) в диалоговом окне  Параметры  (Options).</li>
+</ol>
+<p>Чтобы открыть любой объект в режиме Конструктора, необходимо выделить этот объект в списке и нажать кнопку  Конструктор  (Design).</p>
+<p>Чтобы удалить объект из списка, нужно:</p>
+<ol>
+<li>Выделить объект в списке и нажать кнопку  Удалить  (Delete) в верхней части окна базы данных или клавишу &lt;Delete&gt; на клавиатуре или щелкнуть правой кнопкой мыши по имени объекта и из контекстного меню выбрать команду  Удалить  (Delete).</li>
+<li>В появившемся диалоговом окне, запрашивающем подтверждение на удаление объекта, необходимо нажать кнопку Да (Yes).</li>
+</ol>
+<p>Чтобы переименовать объект, нужно:</p>
+<ol>
+<li>Выделить необходимую таблицу в списке.</li>
+<li>Щелкнуть левой кнопкой мыши на имени таблицы или щелкнуть правой кнопкой мыши на имени таблицы и из контекстного меню выбрать команду  Переименовать  (Rename).</li>
+<li>В поле имени таблицы ввести новое имя.</li>
+<li>Нажать клавишу &lt;Enter&gt; или щелкнуть левой кнопкой мыши на любом свободном месте в правой части окна.</li>
+</ol>
+<p>Чтобы скопировать или переместить объект, можно воспользоваться стандартными программами копирования/вставки. Например, чтобы скопировать таблицу в буфер обмена (Clipboard), необходимо сделать одно из двух действий:</p>
+<ul>
+<li>выделить требуемую таблицу в списке и нажать на кнопку  Копировать  (Сору) на стандартной панели инструментов  База данных  (Database);[  Эта панель отображается на экране, когда активным является окно базы данных.  ]</li>
+<li>щелкнуть правой кнопкой мыши на имени таблицы и из контекстного меню выбрать команду  Копировать  (Сору).</li>
+</ul>
+<p>Чтобы вырезать таблицу в буфер обмена (Clipboard), нужно осуществить одну из двух операций:</p>
+<ul>
+<li>выделить необходимую таблицу в списке и нажать на кнопку  Вырезать  (Cut) на панели инструментов  База данных  (Database);</li>
+<li>щелкнуть правой кнопкой мыши на имени таблицы и из контекстного меню выбрать команду  Вырезать  (Cut).</li>
+</ul>
+<p>Чтобы вставить таблицу из буфера обмена, нужно:</p>
+<ol>
+<li>Открыть список таблиц в окне базы данных.</li>
+<li>Нажать на кнопку  Вставить  (Paste) на панели инструментов  База данных  (Database) или щелкнуть правой кнопкой мыши на свободном поле в списке таблиц и из контекстного меню выбрать команду  Вставить  (Paste).</li>
+<li>В появившемся окне  Вставка таблицы  (Paste Table As) в поле  Имя таблицы  (Table Name) ввести имя новой таблицы, в группе  Параметры вставки  (Paste Option) выбрать вариант вставки таблицы:  Только структура  (Structure only),  Структура и данные  (Structure and Data),  Добавление данных в таблицу  (Append Data to Existing Table) и нажать кнопку  ОК. </li>
+</ol>
+<p>Режим вставки  Только структура  (Structure only) предназначен для копирования структуры таблиц, т. е. списка полей таблицы с указанием типа каждого поля и с его описанием. При этом не предусматривается копирование данных. В режиме  Структура и данные  (Structure and Data) таблица копируется целиком вместе со своим содержимым. В режиме  Добавление данных в таблицу  (Append Data to Existing Table) необходимо в поле  Имя таблицы  (Table Name) ввести имя существующей таблицы, после чего будет осуществлено добавление данных из таблицы, находящейся в буфере обмена, в указанную таблицу.</p>
+<p>Замечание</p>
+<p>При добавлении данных в существующую таблицу структуры таблицы-источника и таблицы-приемника должны совпадать.</p>
+<p>При копировании других объектов базы данных запрашивается только имя нового объекта.</p>
+<p>Чтобы посмотреть свойства объекта, необходимо проделать одну из следующих операций:</p>
+<ul>
+<li>щелкнуть правой кнопкой мыши на имени объекта и из контекстного меню выбрать команду  Свойства  (Properties);</li>
+<li>выделить объект из списка в окне базы данных и выбрать команду Вид, Свойства (View, Properties) из главного меню Access.</li>
+</ul>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image01/03d19274f6977bc6f02993ea6a1e422b.gif" width="380" height="337" alt=""><meta itemprop="width" content="380">
+<meta itemprop="height" content="337"></span></p>
+<p> Рис. 1.18.  Окно свойств таблицы</p>
+<p>На рис. 1.18 показано окно свойств таблицы. В нем отражается следующая информация:</p>
+<ul>
+<li> Тип  (Туре) — тип объекта (в данном случае Таблица (Table));</li>
+<li> Описание  (Description) — описание таблицы, определяемое пользователем;</li>
+<li> Создан  (Created) — дата создания таблицы;</li>
+<li> Изменен  (Modified) — дата последнего изменения таблицы;</li>
+<li> Владелец  (Owner) — владелец (создатель) таблицы;</li>
+<li> Атрибуты  (Attributes):  Скрытый  (Hidden) — позволяет скрыть таблицу из окна базы данных,  Реплицируемый  (Replicated) — позволяет управлять реплицируемо-стью объекта  (см. разд. <a href="https://taurion.ru/access/18/1">&#171;Репликация баз данных&#187;</a><a href="https://taurion.ru/access/18">гл. 18</a>). </li>
+</ul>
+<p>Пользователь может изменять в окне свойств только описание таблицы и значения ее атрибутов.</p>
+<p>На панели объектов можно размещать также папки, которые содержат ярлыки к различным объектам баз данных. Таким образом, можно объединять разные типы объектов в группы. По умолчанию в этой части панели объектов размещается одна папка —  Избранное  (Favorites). Щелкнув мышью по папке, можно увидеть список объектов, входящих в данную группу (рис. 1.19).</p>
+<p>Чтобы добавить новую папку на панель объектов, нужно:</p>
+<ol>
+<li>Щелкнуть правой кнопкой мыши на панели объектов и выбрать из контекстного меню команду  Новая группа  (New Group).</li>
+<li>В диалоговом окне  Новая группа  (New Group) ввести имя создаваемой папки и нажать кнопку  ОК. </li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image14/7dcd0a44e7176156e85ba5f524d47119.gif" width="494" height="400" alt=""><meta itemprop="width" content="494">
+<meta itemprop="height" content="400"></span></p>
+<p> Рис. 1.19.  Ярлыки объектов, входящих в группу  Поставщики </p>
+<p>Самый простой способ добавления ярлыка объекта в группу следующий. Необходимо раскрыть список объектов данного типа, найти в нем нужный объект и перетащить его мышью в соответствующую папку на панели объектов.</p>
+<p>Другой способ добавления объекта в группу:</p>
+<ol>
+<li>Откройте список объектов нужного типа в окне базы данных.</li>
+<li>Щелкните правой кнопкой мыши по нужному объекту и из контекстного меню выберите команду  Добавить в группу  (Add to Group).</li>
+<li>Выберите в раскрывшемся меню нужную папку или создайте новую папку, выбрав команду  Новая группа  (New Group).</li>
+</ol>
+<p>Замечание</p>
+<p>Обратите внимание, что в группу включаются только ярлыки объектов; сами объекты никуда не перемещаются и видны в своих списках.</p>
+<p>Так же как и отдельные объекты базы данных, группы могут удаляться и переименовываться. Ярлыки в группе тоже могут удаляться, переименовываться, копироваться. Осуществляется это с помощью соответствующих команд контекстного меню, которое появляется если щелкнуть правой кнопкой мыши по объекту, который нужно удалить, переименовать или скопировать.</p>
+<p> Использование справочной системы </p>
+<p>Access содержит обширную справочную систему и средства ее визуализации, готовые дать ответ на подавляющее большинство вопросов, возникающих у пользователя. При этом сведения, предоставляемые справочной системой, можно не только прочесть, но и скопировать в буфер обмена или вывести на печать.</p>
+<p>Существует несколько способов получить ответы на свои вопросы.</p>
+<ul>
+<li>С помощью специального поля для ввода вопроса в строке главного меню Access.</li>
+<li>Вызвав окно  Справка Microsoft  Access (Microsoft Access Help).</li>
+<li>Задав вопрос Помощнику (Office Assistant).</li>
+<li>Обратившись за справкой на Web-сервер Microsoft.</li>
+</ul>
+<p> Вызов окна справки </p>
+<p>Чтобы вызвать окно справки, выполните одно из действий:</p>
+<ul>
+<li>выберите команду меню  Справка, Справка Microsoft Access  (Help, Microsoft Access Help);</li>
+<li>нажмите кнопку  Справка Microsoft Access  (Microsoft Access Help) на стандартной панели инструментов Access (той, которая отображается в данный момент на экране);</li>
+<li>выберите команду  Справка Microsoft Access  (Microsoft Access Help) в области задач  Создание файла  (New File), если она отображается на экране.</li>
+</ul>
+<p>В любом случае вы получите на экране окно  Справка Microsoft Access  (Microsoft Access Help), которое выглядит так, как показано на рис. 1.20.</p>
+<p>В левой части окна находится панель, которая содержит три вкладки, соответствующие трем способам поиска информации. В правой части отображается сама справочная информация. В случае необходимости левую панель окна справки можно легко скрыть с помощью кнопки  Скрыть  (Hide) на панели инструментов в верхней части окна справки.[  Если у вас левая панель не отображается, а видна только справочная информация, значит она уже скрыта. Тогда нажмите кнопку Показать (Show).]</p>
+<p>Первая вкладка,  Содержание  (Contents), представляет собой оглавление, которое отображается в виде иерархической структуры тем и разделов справки. Чтобы открыть нужную тему (она обозначается значком книги), достаточно дважды щелкнуть на ее значке или один раз на значке плюс (+) слева. На нижнем уровне иерархии размещаются разделы справки, которые помечаются значком со знаком вопроса. Щелкнув по заголовку раздела, вы получите текст этого раздела справки. Этот текст в большинстве случаев содержит ссылки на другие разделы, которые называются гиперссылками и выделяются по умолчанию синим цветом. Текст, скрытый за гиперссылкой, вы можете увидеть, только щелкнув по ней. Причем, если гиперссылка помечена треугольником слева, текст вставляется прямо в то место, где она расположена (исходный текст раздвигается), что отличает этот вариант справочной системы от предыдущих версий, когда выдавались всплывающие подсказки. Щелкните по гиперссылке второй раз, и соответствующий текст будет убран с экрана.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image01/00ffbdbe42d8cad26b404deec64de502.gif" width="548" height="427" alt=""><meta itemprop="width" content="548">
+<meta itemprop="height" content="427"></span></p>
+<p> Рис. 1.20.  Окно  Справка Microsoft Access </p>
+<p>Замечание</p>
+<p>Обратите внимание на маленькую гиперссылку Показать все (Show all), которая часто присутствует в правом верхнем углу окна. Щелкнув на ней, вы можете раскрыть сразу все гиперссылки, присутствующие в данном разделе. А потом точно так же вы можете их все скрыть, щелкнув по гиперссылке Скрыть все (Hide All).</p>
+<p>Вкладка  Мастер ответов  (Answer Wizard) позволяет найти все разделы справки, в которых встречается нужное слово или словосочетание (рис. 1.21).</p>
+<p>Вы вводите нужное слово или предложение в поле  Выберите действие  (What would you like to do?) и нажимаете кнопку  Найти  (Search). Внизу появляется список разделов. Щелкнув на строке списка, в правой части окна, вы получите текст данного раздела. Если вам не удалось найти нужную информацию, вы можете тут же поискать ее на Web-сервере Microsoft, если нажмете кнопку  Поиск в Интернете  (Search on Web).</p>
+<p>Последняя вкладка,  Указатель  (Index), обеспечивает поиск нужного термина по индексу (рис. 1.22). По сути такой поиск похож на поиск по предметному указателю, который обычно приводится в конце книги.</p>
+<p>В текстовое поле  1. Введите ключевые слова  (1. Type keywords) достаточно ввести первые буквы интересующего термина, чтобы в поле 2.  Или выберите ключевые слова  (2. Or choose keywords) были выбраны подходящие варианты. Можно также найти нужный термин прямо во втором текстовом поле. Затем щелкните по кнопке</p>
+<p> Найти  (Search). Тогда в поле  3. Выберите раздел  (Choose a topic) появится список найденных разделов. Выбирайте нужный раздел и смотрите его текст.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image10/55f6283e8dcffc092994b80e6acfd1b7.gif" width="535" height="429" alt=""><meta itemprop="width" content="535">
+<meta itemprop="height" content="429"></span></p>
+<p> Рис. 1.21. Вкладка Мастер ответов окна <strong>Справка Microsoft Access</strong></p>
+<p>В тексте разделов справки, кроме уже упомянутых гиперссылок, вам могут встретиться различные элементы управления, предоставляющие различные возможности, например мини-учебник. При наведении на элемент управления указатель мыши меняет форму. Чтобы активизировать элемент управления, необходимо щелкнуть на нем левой кнопкой мыши.</p>
+<p>Совет</p>
+<p>Если вы встретите в разделе справки нечто, не похожее на текст, подведите к нему указатель мыши и, если он изменит свою форму, щелкните левой кнопкой мыши.</p>
+<p>При работе со справочной системой полезно пользоваться кнопками панели инструментов ее окна (панель инструментов находится под строкой заголовка).</p>
+<ul>
+<li>Кнопка  Автомозаика/Разобрать  (Auto Tile/Untile). Эта кнопка позволяет изменять расположение окон  Microsoft  Access и  Справка Microsoft  Access на рабочем столе операционной системы. Режим  Автомозаика  (Auto Tile) означает, что рабочий стол будет разделен между двумя этими окнами. Режим  Разобрать  (Untile) означает, что главное окно Microsoft Access будет иметь максимальный экранный размер (или любой другой, который был установлен вручную). Окно  Справка Microsoft Access  будет располагаться независимо поверх него.</li>
+</ul>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image19/affaea1d4bea471df912b27808229328.gif" width="463" height="429" alt=""><meta itemprop="width" content="463">
+<meta itemprop="height" content="429"></span></p>
+<p> Рис. 1.22.  Вкладка Указатель окна Справка Microsoft Access</p>
+<ul>
+<li>Кнопка  Показать/Скрыть  (Show/Hide) показывает или скрывает панель со вкладками.</li>
+<li>Кнопки Назад (Back) и  Вперед  (Forward) позволяют возвращаться к тем разделам, которые вы смотрели, и перемещаться между ними в обоих направлениях</li>
+<li>Кнопка  Печать  (Print) дает возможность вывести на печать содержание либо текущего раздела, либо всех разделов выделенного заголовка в оглавлении.</li>
+<li>Кнопка  Параметры  (Options) отображает меню, с помощью которого можно настроить ряд параметров окна справочной системы.</li>
+</ul>
+<p> Работа с помощником </p>
+<p>В последних версиях пакета Microsoft Office в дополнение к классической справочной системе предлагается новое средство — Помощник по Офису (Office Assistant). Помощник дает советы, причем весьма уместные, ибо советы начинающим чередуются с напоминаниями, полезными и тем, кто давно знаком с Access. Помощник помогает быстро разыскать нужную справочную информацию, часто пытается заранее предугадать, какая помощь может понадобиться в данный момент. Помощник во многих случаях берет на себя диалог с пользователем. Обычно пользователи настраивают помощника в соответствии со своим вкусом.</p>
+<p>Замечание</p>
+<p>Поскольку помощник работает во всех приложениях Microsoft Office, настройки, сделанные для Access, распространятся и на все другие приложения.</p>
+<p>В отличие от предыдущей версии Microsoft Office, помощник не запускается автоматически при каждом запуске приложения. По умолчанию он теперь спрятан.</p>
+<p>Чтобы активизировать помощника нужно выполнить команду меню  Справка, Показать Помощника  (Help, Show Assistant). Работать с помощником очень просто. Если вы хотите к нему обратиться, щелкните на нем левой кнопкой мыши. Появится диалоговое окно, в котором он спросит, что вы хотите сделать (рис. 1.23). Введите в поле этого окна свой вопрос, слово или словосочетание и нажмите кнопку  Поиск  (Search). Как правило, он сначала уточняет вопрос, предлагая выбрать из списка нужное действие (рис. 1.24), а когда вы выберете, он выведет диалоговое окно справки, в котором будет раскрыт соответствующий раздел.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image09/4ed9dbb78ec76f44b1c6f0cb65abd550.gif" width="491" height="447" alt=""><meta itemprop="width" content="491">
+<meta itemprop="height" content="447"></span></p>
+<p> Рис. 1.23.  Окно вопросов-ответов помощника</p>
+<p>Иногда помощник старается привлечь внимание пользователя необычным поведением (кроме того, над ним может зажечься лампочка). Это означает, что он готов поделиться полезным советом, уместным в данной ситуации. Если вы хотите принять его помощь, щелкните по лампочке, чтобы прочитать совет.</p>
+<p>Если вам кажется, что помощник больше не нужен, удалите его с экрана. Для этого щелкните на нем правой кнопкой мыши и выберите команду  Скрыть  (Hide).</p>
+<p>Как и другие средства Microsoft Office, помощник можно настраивать. Для этого выберите из контекстного меню команду  Параметры  (Options). Появится диалоговое окно  Помощник  (Office Assistant) (рис. 1.25), в котором автоматически будет активизирована вкладка  Параметры  (Options).</p>
+<p>Если вы совсем хотите отказаться от услуг помощника, сбросьте флажок  Использовать Помощника  (Use the Office Assistant). С помощью других флажков вы можете отрегулировать, какие именно справки и советы будет выдавать вам помощник. Назначение этих флажков представлено в табл. 1.1.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image08/49c3c616be92d035dcba0041b1041b14.gif" width="230" height="282" alt=""><meta itemprop="width" content="230">
+<meta itemprop="height" content="282"></span></p>
+<p> Рис. 1.24.  Список предлагаемых действий</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image16/8c4cbd315d3bb247af6e7b396dec3406.gif" width="552" height="328" alt=""><meta itemprop="width" content="552">
+<meta itemprop="height" content="328"></span></p>
+<p> Рис. 1.25.  Вкладка  Параметры  диалогового окна  Помощник </p>
+<table class="table_common" width="700">
+<tbody>
+<tr class="header">
+<td>Флаг</td>
+<td>Назначение</td>
+</tr>
+<tr class="one">
+<td>Вызывать при нажатии клавиши &lt;F1&gt; (Respond to F1 Key)</td>
+<td>Установить, чтобы при нажатой клавише &lt;F1&gt; отображался помощник, а не диалоговое окно справочной системы</td>
+</tr>
+<tr class="two">
+<td>Отображать справку для мастеров (Help with Wizards)</td>
+<td>Установить, чтобы при обращении к мастерам помощник предоставлял информацию по работе с ними</td>
+</tr>
+<tr class="one">
+<td>Отображать сообщения Помощника (Display Alerts)</td>
+<td>Установить, чтобы сообщения приложений отображались помощником, если он активизирован, а не в диалоговом окне</td>
+</tr>
+<tr class="two">
+<td>Просматривать две справочных системы при работе с VBA (Search for Both Product and Programming Help When Programming)</td>
+<td>Установить, чтобы при работе с Visual Basic для приложений (VBA) справки выдавались как по программированию, так и по продукту. Если нужны справки только по программированию, флажок необходимо сбросить.  (Подробнее о VBA см. <a href="https://taurion.ru/access/13">гл. 13</a>.) </td>
+</tr>
+<tr class="one">
+<td>He закрывать данные (Move When in the Way)</td>
+<td>Установить, чтобы помощник автоматически перемещался, если он перекрывает диалоговые окна или другие элементы экрана. Если Помощник не используется в течение пяти минут, он уменьшается в размерах.</td>
+</tr>
+<tr class="two">
+<td>Подбирать разделы справки (Guess Help Topics)</td>
+<td>Установить, чтобы разделы справки относительно действий, выполняемых в данный момент, отображались до обращения к ней</td>
+</tr>
+<tr class="one">
+<td>Звуковое сопровождение (Make Sounds)</td>
+<td>Включить звуки, издаваемые помощником</td>
+</tr>
+<tr class="two">
+<td>Об использовании возможностей программы (Using Features More Effectively)</td>
+<td>Установить, чтобы отображались сведения о средствах, BОЗМОЖНО, неизвестных пользователю, и советы об эффективном использовании уже известных ему средств</td>
+</tr>
+<tr class="one">
+<td>Об операциях с мышью (Using the Mouse More Effectively)</td>
+<td>Установить, чтобы отображались советы по более эффективному использованию мыши</td>
+</tr>
+<tr class="two">
+<td>О сочетаниях клавиш (Keyboard Shortcuts)</td>
+<td>Установить, чтобы отображались комбинации клавиш для используемых средств</td>
+</tr>
+<tr class="one">
+<td>Отображать только важные советы (Only Show High Priority Tips)</td>
+<td>Установить, чтобы отображались только важные советы: например, о средствах, сберегающих время</td>
+</tr>
+<tr class="two">
+<td>Отображать совет дня при запуске (Show the Tip of the Day at Startup)</td>
+<td>Установить, чтобы при запуске приложения всегда отображался совет дня</td>
+</tr>
+</tbody>
+</table>
+<p> Таблица 1.1.  Флажки в диалоговом окне  Помощник </p>
+<p>Кнопка Очистить журнал  (Reset My Tips) позволяет очистить журнал помощника, содержащий полученные ранее советы.</p>
+<p>Помощник Microsoft Office имеет целую коллекцию разных персонажей (по умолчанию отображается известный Скрепыш). Чтобы сменить персонаж помощника, выберите из контекстного меню команду  Выбрать Помощника  (Choose Assistant). Откроется диалоговое окно  Помощник  (Office Assistant) с автоматически раскрытой вкладкой  Коллекция  (Gallery) (рис. 1.26).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image08/4539f60a60a56e57290d5c902fc302e5.gif" width="580" height="500" alt=""><meta itemprop="width" content="580">
+<meta itemprop="height" content="500"></span></p>
+<p> Рис. 1.26. Вкладка с коллекцией Помощников</p>
+<p>Используя кнопки  Далее  (Next) и  Назад  (Back), познакомьтесь со всеми персонажами и выберите того, кто вам понравится.</p>
+<p>Замечание</p>
+<p>С анимацией персонажей можно познакомиться, выбирая команду  Мотор!  (Animate!) из контекстного меню помощника.</p>
+<p> Другие средства получения справки </p>
+<p>Новое средство для быстрого ответа на вопрос появилось во всех продуктах Microsoft Office 2002. Это текстовое поле в правой части строки главного меню. В это поле можно ввести слово, словосочетание или предложение и нажать клавишу &lt;Enter&gt;. После этого появляется окно, очень похожее на окно со списком предлагаемых действий помощника. Вы выбираете нужное действие, и раскрывается соответствующий раздел справки Microsoft Access.</p>
+<p>Если вы имеете со своего компьютера выход в Интернет, т.е. возможность соединиться с Web-сервером Microsoft (страничкой, посвященной Microsoft Office), то это можно сделать прямо из Access. Для этого в меню  Справка  (Help) есть команда  Office в Интернете  (Office on the Web).</p>
+<p> Выводы </p>
+<p>В данной главе мы сделали беглый обзор того, с чем вам придется работать, если вы хотите создать приложение в среде Access. Мы вынесли в эту главу те общие приемы, которые будут вами использоваться при работе с разными объектами базы данных Access. В дальнейших главах первой части вы последовательно познакомитесь с каждым из этих объектов более подробно. Возможно этих сведений будет достаточно для того, чтобы решить те задачи, которые перед вами стоят и которые побудили вас взяться за эту книгу. Если же это не так, то вам придется изучить и остальные&#187; части, чтобы ваше знакомство с СУБД Access было более глубоким.</p>
+<!-- toc empty -->	</div>
+<!-- .entry-content -->
+
+</article>
+
+
+
+
+
+
+
+
+
+<div class="social-buttons">
+<span class="social-button social-button--vkontakte main" data-social="vkontakte"><span>Поделиться в ВКонтакте</span></span><span class="social-button social-button--telegram " data-social="telegram"></span><span class="social-button social-button--odnoklassniki " data-social="odnoklassniki"></span><span class="social-button social-button--whatsapp " data-social="whatsapp"></span><span class="social-button social-button--viber " data-social="viber"></span>
+</div>
+
+<!--noindex-->
+<div class="author-box">
+    <div class="author-info">
+        <div class="author-box__ava">
+                    </div>
+
+        <div class="author-box__body">
+            <div class="author-box__author">
+                Автор А. Днепров            </div>
+            <div class="author-box__description">
+                <p>Обучаю основам работы с офисными программами.</p>
+            </div>
+
+            
+        </div>
+    </div>
+</div>
+<!--/noindex-->
+    <meta itemprop="author" content="А. Днепров">
+<meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/glava-obschie-svedeniya-o-microsoft-access" content="Глава 1. Общие сведения о Microsoft Access">
+    <meta itemprop="dateModified" content="2024-06-22">
+<div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+<div class="related-posts">
+<div class="related-posts__header">Вам также может понравиться</div>
+<div class="post-cards post-cards--vertical">
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/kak-sdelat-massovuyu-zamenu-formul"><img width="311" height="230" src="/image04/2408fadbc9163d5aa4994580cfc152cd.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/kak-sdelat-massovuyu-zamenu-formul">Как сделать массовую замену формул</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/kak-udalit-lishnie-i-pustye-stranitsy-v-excel">Как удалить лишние и пустые страницы в Excel</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/preobrazovanie-teksta-v-tablitsu"><img width="345" height="122" src="/image14/7a0043c9bf012cc129b22376cfebb2a9.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/preobrazovanie-teksta-v-tablitsu">Преобразование текста в таблицу</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/kak-delat-skrinshoty-s-vysokim-razresheniem-v-windows">Как делать скриншоты с высоким разрешением в Windows 11/10</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/osobennosti-raboty-s-mnogostranichny"><img width="213" height="230" src="/image13/6f8f9694c11ee322ff9d3675b0b8ba07.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/osobennosti-raboty-s-mnogostranichny">13.1 Особенности работы с многостраничными документами</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/kak-sdelat-izmeneniya-vnutri-yacheyki-p"><img width="345" height="93" src="/image27/f6550fd3bdfdfdbe500536441d5d252e.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/kak-sdelat-izmeneniya-vnutri-yacheyki-p">Как сделать изменения внутри ячейки. Принудительный перенос</a></div>
+    </div>
+</div>
+</div>
+            </main><!-- #main -->
+        </div>
+<!-- #primary -->
+
+        
+    
+
+    </div>
+<!--.site-content-inner-->
+
+    
+</div>
+<!--.site-content-->
+
+    
+    
+
+<div class="site-footer-container">
+
+    
+
+    <footer id="colophon" class="site-footer full" itemscope itemtype="http://schema.org/WPFooter">
+        <div class="site-footer-inner fixed">
+
+            
+            
+<div class="footer-bottom">
+    <div class="footer-info">
+        <div class="footer-copyright">© 2024 Самоучитель справочник по офисным программам. <a href="/o-nas" rel="nofollow">О нас | Контакты</a> | <a href="/map" rel="nofollow">Карта сайта</a>
+</div>
+        <div class="footer-under-copyright"></div>
+	        </div>
+
+    </div>
+        </div>
+    </footer><!--.site-footer-->
+</div>
+
+
+            <button type="button" class="scrolltop js-scrolltop" data-mob="on"></button>
+    
+                    <div class="top-line js-top-line">
+            <div class="top-line-inner fixed">
+
+                <div class="top-line__title">Глава 1. Общие сведения о Microsoft Access</div>
+<div class="top-line__like"><span class="btn-fb-like btn-top-like social-button--vkontakte" data-social="vkontakte"><span>Поделиться в ВКонтакте</span></span></div>
+<div class="top-line__post">
+<div class="top-line__post_thumbnail"><a href="/kak-ubrat-izmenenie-masshtaba-kolesom-myshi-v-excel"></a></div>
+<div class="top-line__post_title"><a href="/kak-ubrat-izmenenie-masshtaba-kolesom-myshi-v-excel">Как убрать изменение масштаба колесом мыши в Excel</a></div>
+</div>            </div>
+        </div>
+    
+</div>
+<!-- #page -->
+
+<script>var pseudo_links = document.querySelectorAll(".pseudo-clearfy-link");for (var i=0;i<pseudo_links.length;i++ ) { pseudo_links[i].addEventListener("click", function(e){   window.open( e.target.getAttribute("data-uri") ); }); }</script><script>document.addEventListener("copy", (event) => {var pagelink = "\nИсточник: /glava-obschie-svedeniya-o-microsoft-access";event.clipboardData.setData("text", document.getSelection() + pagelink);event.preventDefault();});</script><script type="text/javascript" id="yelly-scripts-js-extra">
+/* <![CDATA[ */
+var settings_array = {"rating_text_average":"среднее","rating_text_from":"из","lightbox_display":"1"};
+var wps_ajax = {"url":"\/wp-admin\/admin-ajax.php","nonce":"e4ca9d4bd8"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="/js/scripts.min.js" id="yelly-scripts-js"></script>
+
+
+
+<div class="image-hover-social-buttons" style="display: none;">
+<div class="social-button social-button--vkontakte js-share-link" data-uri="https://vk.com/share.php?url=%2Fglava-obschie-svedeniya-o-microsoft-access"></div>
+<div class="social-button social-button--telegram js-share-link" data-uri="https://t.me/share/url?url=%2Fglava-obschie-svedeniya-o-microsoft-access&text=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+1.+%D0%9E%D0%B1%D1%89%D0%B8%D0%B5+%D1%81%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D1%8F+%D0%BE+Microsoft+Access"></div>
+<div class="social-button social-button--odnoklassniki js-share-link" data-uri="https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&service=odnoklassniki&st.shareUrl=%2Fglava-obschie-svedeniya-o-microsoft-access"></div>
+<div class="social-button social-button--whatsapp js-share-link" data-uri="whatsapp://send?url=%2Fglava-obschie-svedeniya-o-microsoft-accesstext=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+1.+%D0%9E%D0%B1%D1%89%D0%B8%D0%B5+%D1%81%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D1%8F+%D0%BE+Microsoft+Access"></div>
+<div class="social-button social-button--viber js-share-link" data-uri="viber://forward?url=%2Fglava-obschie-svedeniya-o-microsoft-accesstext=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+1.+%D0%9E%D0%B1%D1%89%D0%B8%D0%B5+%D1%81%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D1%8F+%D0%BE+Microsoft+Access"></div>
+</div>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(93345646, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/93345646" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>

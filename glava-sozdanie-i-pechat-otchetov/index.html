@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<title>Глава 6. Создание и печать отчетов &#8212; learn-office</title>
+	<meta name="description" content="Создание и печать отчетов Одной из основных задач создания и использования баз данных является предоставление пользователям необходимой информации на">
+	<link rel="canonical" href="/glava-sozdanie-i-pechat-otchetov">
+	<meta property="og:locale" content="ru_RU">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Глава 6. Создание и печать отчетов &#8212; learn-office">
+	<meta property="og:description" content="Создание и печать отчетов Одной из основных задач создания и использования баз данных является предоставление пользователям необходимой информации на">
+	<meta property="og:url" content="/glava-sozdanie-i-pechat-otchetov">
+	<meta property="og:site_name" content="Excel-jet">
+	<meta property="article:published_time" content="2024-07-21T09:28:28+00:00">
+	<meta property="og:image" content="/image19/b182fcdcd12529cf70ba56c33843fb58.gif">
+	<meta property="og:image:width" content="381">
+	<meta property="og:image:height" content="274">
+	<meta property="og:image:type" content="image/gif">
+	<meta name="author" content="А. Днепров">
+
+
+<style id="wp-block-library-theme-inline-css" type="text/css">.wp-block-audio :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio :where(figcaption){color:#ffffffa6}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed :where(figcaption){color:#ffffffa6}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:#ffffffa6}:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table :where(figcaption){color:#ffffffa6}.wp-block-video :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video :where(figcaption){color:#ffffffa6}.wp-block-video{margin:0 0 1em}:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}</style>
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 19.5px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36.5px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--normal: 22px;--wp--preset--font-size--huge: 49.5px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="google-fonts-css" href="https://fonts.googleapis.com/css?family=Roboto%3A400%2C400i%2C700&#038;subset=cyrillic&#038;display=swap" media="all">
+<link rel="stylesheet" id="yelly-style-css" href="/css/style.min.css" media="all">
+
+<style>.pseudo-clearfy-link { color: #008acf; cursor: pointer;}.pseudo-clearfy-link:hover { text-decoration: none;}</style>
+<link rel="preload" href="/fonts/icomoon.ttf" as="font" crossorigin>
+    <style>.scrolltop{width:50px}.scrolltop:before{content:"\21d1"}.entry-content a, .entry-content a:visited, .spanlink, .comment-reply-link, .pseudo-link, .widget_calendar a, .widget_recent_comments a, .child-categories ul li a{color:#0000ff}.child-categories ul li a{border-color:#0000ff}a:hover, a:focus, a:active, .spanlink:hover, .top-menu ul li>span:hover, .main-navigation ul li a:hover, .main-navigation ul li span:hover, .footer-navigation ul li a:hover, .footer-navigation ul li span:hover, .comment-reply-link:hover, .pseudo-link:hover, .child-categories ul li a:hover{color:#1e73be}.top-menu>ul>li>a:before, .top-menu>ul>li>span:before{background:#1e73be}.child-categories ul li a:hover, .post-box--no-thumb a:hover{border-color:#1e73be}.post-box--card:hover{box-shadow: inset 0 0 0 1px #1e73be}.post-box--card:hover{-webkit-box-shadow: inset 0 0 0 1px #1e73be}@media (min-width: 768px){body{background-attachment: scroll}}body{font-size:17px;}@media (max-width: 991px){.widget-area{display: block; margin: 0 auto}}</style>
+    <!-- Yandex.RTB -->
+<script>window.yaContextCb=window.yaContextCb||[]</script>
+<script src="https://yandex.ru/ads/system/context.js" async></script>	
+</head>
+<body class="post-template-default single single-post postid-1122 single-format-standard wp-embed-responsive sidebar-right">
+<div id="page" class="site">
+    <a class="skip-link screen-reader-text" href="#content">Перейти к контенту</a>
+
+    
+    
+    <div class="search-screen-overlay js-search-screen-overlay"></div>
+    <div class="search-screen js-search-screen">
+        
+<form role="search" method="get" class="search-form" action="/">
+    <label>
+        <span class="screen-reader-text">Search for:</span>
+        <input type="search" class="search-field" placeholder="Поиск..." value="" name="s">
+    </label>
+    <button type="submit" class="search-submit"></button>
+</form>    </div>
+
+    
+
+<header id="masthead" class="site-header full" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="site-header-inner fixed">
+
+        <div class="humburger js-humburger">
+<span></span><span></span><span></span>
+</div>
+
+        
+<div class="site-branding">
+
+    <div class="site-branding__body"><div class="site-title"><a href="/">Excel-jet</a></div></div>
+</div>
+<!-- .site-branding -->
+
+    
+    <nav id="site-navigation" class="main-navigation full">
+        <div class="main-navigation-inner fixed">
+            <div class="menu-menyu-container"><ul id="header_menu" class="menu">
+<li id="menu-item-6695" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-6695">
+<a href="/excel">Excel</a>
+<ul class="sub-menu">
+	<li id="menu-item-6709" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6709"><a href="/excel/functions">Функции</a></li>
+</ul>
+</li>
+<li id="menu-item-6697" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6697"><a href="/microsoft-word">Word</a></li>
+<li id="menu-item-6696" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6696"><a href="/powerpoint">PowerPoint</a></li>
+<li id="menu-item-6698" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6698"><a href="/outlook">Outlook</a></li>
+</ul></div>        </div>
+    </nav><!-- #site-navigation -->
+
+    
+<div class="header-search"><span class="search-icon js-search-icon"></span></div>    </div>
+</header><!-- #masthead -->
+
+
+
+    
+    
+    <div id="content" class="site-content fixed">
+
+        
+        <div class="site-content-inner">
+    
+        
+        <div id="primary" class="content-area" itemscope itemtype="http://schema.org/Article">
+            <main id="main" class="site-main">
+
+                
+<article id="post-1122" class="article-post post-1122 post type-post status-publish format-standard has-post-thumbnail  category-excel">
+
+    
+        
+        <header class="entry-header"><h1 class="entry-title" itemprop="headline">Глава 6. Создание и печать отчетов</h1></header>
+        
+        
+        
+    
+    
+    <div class="entry-meta">
+<span class="entry-time"><span class="entry-label">Время чтения</span> 68 мин.</span><span class="entry-date"><span class="entry-label">Опубликовано</span> <time itemprop="datePublished" datetime="2024-07-21">21.07.2024</time></span>
+</div>
+	<div class="entry-content" itemprop="articleBody">
+		<p>Создание и печать отчетов </p>
+<p>Одной из основных задач создания и использования баз данных является предоставление пользователям необходимой информации на основе существующих данных. В Access 2002 для этих целей предназначены формы и отчеты. Отчеты позволяют выбрать из базы данных требуемую пользователем информацию и оформить ее в виде документов, которые можно просмотреть и напечатать. Источником данных для отчета может быть таблица или запрос. Кроме данных, полученных из таблиц, в отчете могут отображаться вычисленные по исходным данным значения, например итоговые суммы.</p>
+<p>Отчеты и формы Access имеют много общего. Однако, в отличие от форм, отчеты не предназначены для ввода и правки данных в таблицах. Они позволяют лишь просматривать и печатать данные. В отчете невозможно изменить исходные данные с помощью элементов управления, как это мож-но сделать с помощью форм. Хотя в отчетах можно использовать такие же элементы управления для указания состояния переключателей, флажков и списков.</p>
+<p>Отчет, как и форма, может быть создан с помощью мастера. Разделы отчета подобны разделам формы и включают заголовок и примечание отчета, область данных, а также верхний и нижний колонтитулы. В примечание отчета часто помещают поля с итоговыми значениями. Элементы управления могут быть добавлены в отчет с помощью панели инструментов Панель элементов (Toolbox), идентичной той, что используется в режиме Конструктора форм. Форматирование и группировка элементов управления в отчете выполняются аналогично форматированию и группировке элементов управления в форме. Формы могут содержать подчиненные формы, а отчеты могут содержать подчиненные отчеты.</p>
+<p>В этой главе обсуждаются следующие вопросы:</p>
+<ul>
+<li>Автоматическое создание отчета по таблице или запросу</li>
+<li>Создание отчета с помощью мастера</li>
+<li>Преобразование отчетов Access в другие форматы</li>
+<li>Создание и удаление элементов отчета</li>
+<li>Изменение свойств отчета и его элементов</li>
+<li>Создание вычисляемых полей</li>
+<li>Форматирование отчета</li>
+<li>Просмотр и печать отчетов</li>
+</ul>
+<p>Данная глава посвящена созданию и изменению простых отчетов, не содержащих подчиненных отчетов. О создании более сложных отчетов рассказываетсяв гл. 10.</p>
+<p> Автоматическое создание отчета на основе таблицы или запроса </p>
+<p>Access предлагает несколько способов создания отчетов. Наиболее простым из них является использование средств автоматического создания отчета. Автоматически создаваемый на основе таблицы или запроса отчет называется  автоотчетом. Access позволяет автоматически создавать отчеты двух форматов: в столбец и ленточный.</p>
+<p>Чтобы создать автоотчет:</p>
+<ol>
+<li>На панели объектов окна  База данных (Database) щелкните по ярлыку  Отчеты (Reports) и нажмите кнопку  Создать (New). Появится диалоговое окно  Новый отчет (New Report), представленное на рис. 6.1.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" decoding="async" src="/image19/b182fcdcd12529cf70ba56c33843fb58.gif" width="381" height="274" alt=""><meta itemprop="width" content="381">
+<meta itemprop="height" content="274"></span></p>
+<p> Рис. 6.1. Диалоговое окно  Новый отчет</p>
+<ol start="2">
+<li>В списке диалогового окна  Новый отчет (New Report) выделите один из элементов:  Автоотчет: в столбец (AutoReport: Columnar) или  Автоотчет: ленточный (AutoReport: Tabular).</li>
+<li>В поле со списком, находящемся в нижней части диалогового окна  Новый отчет  (New Report), содержатся имена всех таблиц и запросов базы данных, которые могут быть использованы в качестве источника данных для отчета. Щелкните левой кнопкой мыши по кнопке со стрелкой для открытия списка, а затем выделите в списке необходимый элемент.</li>
+<li>Нажмите кнопку  ОК. </li>
+</ol>
+<p>В результате Access автоматически создаст отчет на основе выбранного источника данных, используя ленточный формат или формат в столбец. Ленточный формат располагает поля выводимых записей в строку. Формат в столбец располагает поля выводимых записей в столбец. Автоотчет, созданный с использованием любого из этих двух форматов, будет включать все поля и записи, имеющиеся в выбранном источнике данных.</p>
+<p>Чтобы созданный отчет можно было использовать в дальнейшем, его необходимо сохранить. Для этого выберите команду  Файл, Сохранить (File, Save) или нажмите кнопку  Сохранить (Save) на панели инструментов. Затем, в текстовое поле появившегося диалогового окна  Сохранение (Save As) введите название нового отчета (например: Мой отчет) и нажмите кнопку  ОК.</p>
+<p>Замечание</p>
+<p>Есть еще один вариант сохранения отчета: с помощью команды меню Файл, Сохранить как (File, Save As). Этой командой отображается диалоговое окно Сохранение (Save As) (рис. 6.2). Введите имя отчета и, прежде чем нажать кнопку ОК, убедитесь, что в раскрывающемся списке Как (As) этого окна выбран элемент Отчет (Report). Выбранный элемент определяет то, как будет сохранен новый отчет, точнее, в виде какого объекта базы данных Access. Дело в том, что в новой версии Access 2002 появилась возможность сохранить отчет в виде другого объекта базы данных — страницы доступа к данным (см. гл. 12). Сделать это позволяет другой элемент раскрывающегося списка Как — элемент Страница доступа к данным (Data Access Page).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" decoding="async" src="/image12/6a30fae96a82cd2468ed7463dd9d6439.gif" width="351" height="162" alt=""><meta itemprop="width" content="351">
+<meta itemprop="height" content="162"></span></p>
+<p> Рис. 6.2. Диалоговое окно  Сохранение</p>
+<p> Создание отчета с помощью Мастера отчетов </p>
+<p>Еще одним простым и быстрым способом создания отчетов является использование Мастера отчетов. С его помощью можно создавать отчеты (от самых простых до включающих подчиненные отчеты), содержащие поля из одной или более таблиц или запросов. Использование Мастера отчетов позволяет очень быстро познакомиться со многими основными средствами разработки отчетов, предоставляемыми Access 2002. Процесс создания отчетов, более сложных, чем позволяет мастер, описан  в гл. 10.</p>
+<p>Чтобы более наглядно представить процесс создания отчета с помощью мастера, опишем процедуру создания отчета на основе сразу нескольких таблиц: &#171;Товары&#187; (Products), &#171;Поставщики&#187; (Suppliers) и &#171;Типы&#187; (Categories) базы данных &#171;Борей&#187; (Northwind). В отчете будет представлено текущее количество товаров на складе по категориям.</p>
+<p>Чтобы создать простой отчет:</p>
+<ol>
+<li>На панели объектов окна базы данных щелкните по ярлыку  Отчеты (Reports) и нажмите кнопку  Создать (New). Появится диалоговое окно  Новый отчет (New Report) (см. рис. 6.1).</li>
+<li>В списке диалогового окна  Новый отчет (New Report) выделите элемент  Мастер отчетов (Report Wizard). В поле со списком, находящемся в нижней части диалогового окна  Новый отчет (New Report), содержатся имена всех таблиц и запросов базы данных, которые могут быть использованы в качестве источника данных для отчета. Раскройте этот список и выделите в нем таблицу &#171;Товары&#187;. Нажмите кнопку  ОК.  Появится первое диалоговое окно Мастера отчетов (рис. 6.3).</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image18/aac30c047156bda3587e39eba7fdd3fc.gif" width="486" height="367" alt=""><meta itemprop="width" content="486">
+<meta itemprop="height" content="367"></span></p>
+<p> Рис. 6.3. Первое диалоговое окно Мастера отчетов</p>
+<ol start="3">
+<li>Прежде всего нужно определить, какие поля включить в отчет. Из таблицы &#171;Товары&#187; в отчете будут использоваться следующие поля: &#171;КодТовара&#187; (ProductID), &#171;Марка&#187; (ProductName), &#171;Цена&#187; (UnitPrice), &#171;НаСкладе&#187; (UnitsInStock). С помощью кнопки &#171;&gt;&#187; (или дважды щелкнув по элементу списка) поочередно переместите эти поля из списка  Доступные поля  (Available Fields) в список  Выбранные поля (Selected Fields). В отчете поля появляются слева направо, в соответствии с последовательностью их расположения в списке  Выбранные поля.</li>
+</ol>
+<p>Замечание</p>
+<p>Если на каком-либо шаге создания отчета при помощи Мастера отчетов была допущена ошибка или возникла необходимость изменения каких-либо параметров, то для возвращения к предыдущему шагу нажмите кнопку Назад (Back). Кроме того, в любой момент можно нажать кнопку  Отмена (Cancel) для отказа от создания отчета и возвращения к окну базы данных.</p>
+<ol start="4">
+<li>Кроме того, чтобы видеть поставщиков товара и категории, в создаваемый отчет необходимо добавить поле &#171;Название&#187; (CompanyName) из таблицы &#171;Поставщики&#187; (Suppliers) и &#171;Категория&#187; (CategoryName) из таблицы &#171;Типы&#187; (Categories). Для добавления первого недостающего поля раскройте список  Таблицы и запросы  (Tables/Queries) и выберите элемент  Таблица: Поставщики (Table: Suppliers). Имя поставщика не должно отображаться в конце отчета. Чтобы столбец &#171;Название&#187; выводился сразу за столбцом &#171;Марка&#187;, в списке  Выбранные поля  (Selected Fields) выделите поле &#171;Марка&#187;, затем в списке  Доступные поля  (Available Fields) выделите поле &#171;Название&#187; и нажмите кнопку &#171;&gt;&#187;. Access переместит поле &#171;Название&#187; из списка  Доступные поля  (Available Fields) и вставит его в список  Выбранные поля (Selected Fields) после поля &#171;Марка&#187;, перед полем &#171;Цена&#187;.</li>
+<li>Аналогично добавьте в конец списка поле &#171;Категория&#187; из таблицы &#171;Типы&#187;. Чтобы перейти ко второму диалоговому окну Мастера отчетов, изображенному на рис. 6.4, нажмите кнопку  Далее. </li>
+</ol>
+<p>Замечание</p>
+<p>Можно таким способом добавлять в создаваемый отчет поля из разных таблиц, которые связаны между собой в схеме данных.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image02/12acc55b4c8bd738d0172c2660da857e.gif" width="486" height="367" alt=""><meta itemprop="width" content="486">
+<meta itemprop="height" content="367"></span></p>
+<p> Рис. 6.4. Второе диалоговое окно Мастера отчетов</p>
+<ol start="6">
+<li>Во втором диалоговом окне необходимо указать, каким образом будут структурированы данные в отчете. Мастер проверяет связи между таблицами и в зависимости от выбранного представления предлагает несколько вариантов группировки записи в отчете. Чтобы осуществить группировку по товарам, выделите в списке элемент  Товары  (by Products).</li>
+<li>Нажмите на кнопку  Вывести дополнительные сведения  (Show Me More Information) в левой части диалогового окна для отображения одного из вспомогательных диалоговых окон Мастера отчетов. Если в этом диалоговом окне нажать кнопку  Показать примеры (Show Me Examples), то Access выведет дополнительные вспомогательные диалоговые окна, в которых используются &#171;примеры из таблиц &#171;Продажи&#187; (Sales Reps), &#171;Клиенты&#187; (Customers) и &#171;Заказы&#187; (Orders), позволяющие продемонстрировать различные способы группировки, которые Мастер отчетов может автоматически применить к создаваемому отчету. Закройте все вспомогательные диалоговые окна и вернитесь к диалоговому окну Мастера отчетов, изображенному на рис. 6.4. Нажмите кнопку Далее (Next) для перехода к третьему диалоговому окну Мастера отчетов.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image04/27ddefdb8295914ec3faf865e02fe6b6.gif" width="492" height="115" alt=""><meta itemprop="width" content="492">
+<meta itemprop="height" content="115"></span></p>
+<p> Рис. 6.5. Предупреждение Мастера отчетов</p>
+<ol start="8">
+<li>В третьем диалоговом окне Мастера отчетов необходимо определить дополнительные уровни группировки в отчете. Выделите в списке поле &#171;Категория&#187; (Category) и нажмите кнопку &#171;&gt;&#187; (или просто дважды щелкните по этому полю в списке), чтобы установить группировку по категории товаров (рис. 6.6).</li>
+</ol>
+<p>Замечание</p>
+<p>Если потребуется отменить добавление поля группировки, нажмите кнопку &#171;&lt;&#187; или дважды щелкните по названию этого поля (выделенному жирным шрифтом) в области диалогового окна с эскизом отчета.</p>
+<ol start="9">
+<li>Мастер отчетов позволяет задать интервалы значений, по которым группируются данные. Чтобы изменить их в этом же (третьем) диалоговом окне Мастера отчетов, нажмите кнопку  Группировка (Grouping Options). На экране появится диалоговое окно  Интервалы группировки (Grouping Intervals), изображенное на рис. 6.7. Изменяя интервал группировки, можно влиять на способ группировки данных в отчете. Для числовых полей можно задать группировку по десяткам, сотням и прочим значениям. Для текстовых полей возможна группировка по первой букве, первым трем буквам и т.д.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image02/107407fac977bc69fb38ead9b20ccdb0.gif" width="486" height="367" alt=""><meta itemprop="width" content="486">
+<meta itemprop="height" content="367"></span></p>
+<p> Рис. 6.6. Третье диалоговое окно Мастера отчетов</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image06/38e662baaada5f561ad744954682e29c.gif" width="419" height="278" alt=""><meta itemprop="width" content="419">
+<meta itemprop="height" content="278"></span></p>
+<p> Рис. 6.7. Диалоговое окно  Интервалы группировки</p>
+<ol start="10">
+<li>Для создаваемого отчета выберите из списка  Интервалы группировки (Grouping Intervals) вариант  Обычный (Normal) и нажмите кнопку ОК. Для перехода к четвертому диалоговому окну Мастера отчетов нажмите кнопку  Далее (Next).</li>
+<li>Access 2002 позволяет сортировать записи в пределах группы по значению произвольного поля, при этом сортировка проводится не более чем по четырем полям (рис. 6.8). Выберите в первом раскрывающемся списке поле &#171;КодТовара&#187; (ProductID). По умолчанию принят порядок сортировки по возрастанию; если вы хотите выбрать порядок сортировки по убыванию, то нажмите на кнопку справа от раскрывающегося списка. Для возврата к сортировке по возрастанию снова нажмите на эту кнопку.</li>
+<li>Чтобы указать для столбца отчета итоговую информацию, нажмите&#187; на кнопку  Итоги  (Summary Options). В появившемся диалоговом окне  Итоги (Summary Options), изображенном на рис. 6.9, можно задать параметры для выбранного столбца. Выбрать можно среди всех числовых полей отчета, не являющихся счетчиками, которые Мастер отчетов перечислит в этом диалоговом окне и позволит установить для любого из них флажки Sum, Avg, Min и Мах. В зависимости от установленных флажков Мастер отчетов добавит соответствующие итоговые поля в конец отчета, вычисляющие итоговую сумму, среднее значение, минимальное или максимальное значение данного поля по всем записям. Группа переключателей  Показать (Show) позволяет выбрать, следует ли в отчете указывать только итоги или необходимо выдавать полный отчет, добавляя поля с промежуточными итогами в конце каждой группы и поля с полными итогами в конце отчета. Для создаваемого отчета установите флажки  Sum для поля &#171;НаСкладе&#187; и Avg для поля &#171;Цена&#187;, переключатель  данные и итоги  (Detail and Summary) и флажок  Вычислить проценты (Calculate Percent of Total for Sum), который позволяет выводить долю группы (в процентах) в общем итоге для всех групп (рис. 6.9). Для возврата к диалоговому окну Мастера отчетов нажмите кнопку  ОК.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image01/04f00f5cd1d8b9474012524b09b399e8.gif" width="486" height="367" alt=""><meta itemprop="width" content="486">
+<meta itemprop="height" content="367"></span></p>
+<p> Рис. 6.8. Четвертое диалоговое окно Мастера отчетов</p>
+<ol start="13">
+<li>Нажмите кнопку  Далее (Next), чтобы перейти к пятому диалоговому окну Мастера отчетов, изображенному на рис. 6.10. Мастер отчетов предложит на выбор шесть вариантов оформления сгруппированных данных (вариантов макета отчета). В левой части диалогового окна Мастера отображается эскиз выбранного макета. Выберите в группе  Макет (Layout) переключатель  ступенчатый (Stepped). По умолчанию Мастер отчетов устанавливает флажок  Настроить ширину полей для размещения на одной странице (Adjust the field width so all fields fit on a page), что позволяет сэкономить бумагу и сделать отчет более удобным для чтения. В группе  Ориентация (Orientation) можно выбрать расположение страницы отчета при печати. Широким отчетам, в которых отображается много полей в одной строке, удобно задавать ориентацию  альбомная (Landscape). Для отчета же из нашего примера оставьте выбранным переключатель  книжная (Portrait). Чтобы перейти к шестому диалоговому окну Мастера отчетов, нажмите кнопку  Далее (Next).</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image16/938cfc3613c7a7b57df38457a3323cbe.gif" width="462" height="350" alt=""><meta itemprop="width" content="462">
+<meta itemprop="height" content="350"></span></p>
+<p> Рис. 6.9. Диалоговое окно  Итоги</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image11/5d45ca6acdfb80715236ee00f310cebd.gif" width="486" height="367" alt=""><meta itemprop="width" content="486">
+<meta itemprop="height" content="367"></span></p>
+<p> Рис. 6.10. Пятое диалоговое окно Мастера отчетов</p>
+<ol start="14">
+<li>В шестом диалоговом окне Мастера отчетов выберите один из предложенных стилей оформления отчета. В левой части диалогового окна Мастера отображается эскиз отчета выбранного стиля (рис. 6.11). Для создаваемого отчета выберите стиль  Сжатый  (Compact), а затем нажмите кнопку  Далее (Next) для перехода к последнему диалоговому окну Мастера отчетов.</li>
+</ol>
+<p>Замечание</p>
+<p>В шестом окне Мастера отчетов отображается список всех доступных в данный момент стилей. Кроме шести заранее определенных стандартных стилей, Access позволяет настроить любой стандартный стиль или создать свой собственный для использования при оформлении форм и отчетов, в том числе с помощью мастера. Набор вариантов оформления для отчетов можно пополнить и применить аналогично тому, как это делается для форм (см. разд. &#171;Применение автоформата&#187;гл. 5).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image03/1c1737bb4f9ac5f5a47d0c533f887999.gif" width="486" height="367" alt=""><meta itemprop="width" content="486">
+<meta itemprop="height" content="367"></span></p>
+<p> Рис. 6.11. Шестое диалоговое окно Мастера отчетов</p>
+<ol start="15">
+<li>В последнем диалоговом окне Мастера отчетов (рис. 6.12) в качестве заголовка отчета введите: Товары на складе. Мастер отчетов сохранит созданный отчет под этим же именем. Выберите переключатель  Просмотреть отчет  (Preview the Report) и нажмите кнопку  Готово (Finish) для завершения создания отчета. Мастер отчетов создаст отчет и отобразит его в режиме Предварительного просмотра. Если при этом необходимо получить справку по работе с отчетом, предварительно установите флажок  Вывести справку по работе с отчетом? (Display Help on Working with the Report?).</li>
+</ol>
+<p>На рис. 6.13 изображен отчет, созданный мастером. Для просмотра всех частей отчета воспользуйтесь вертикальной и горизонтальной полосами прокрутки. Этот отчет можно использовать непосредственно в том виде, как его создал мастер, или применить его как основу для разработки более сложного отчета.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image17/9a3c8385436b0a726ac98505ec21a662.gif" width="486" height="367" alt=""><meta itemprop="width" content="486">
+<meta itemprop="height" content="367"></span></p>
+<p> Рис. 6.12. Последнее диалоговое окно Мастера отчетов</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image23/d061e9037a2cee1c49914b9c84fd1783.gif" width="531" height="525" alt=""><meta itemprop="width" content="531">
+<meta itemprop="height" content="525"></span></p>
+<p> Рис. 6.13. Отчет &#171;Итоговый запрос предприятия&#187;, созданный Мастером отчетов</p>
+<p> Преобразование отчетов </p>
+<p>Вы создаете базу данных, накапливаете в ней данные, редактируете и анализируете их, используя средства Access. В какой-то момент, когда результаты обработки данных готовы, вы представляете их в виде отчета Access — внешне выглядящего как обычный документ, но этот документ можно просмотреть лишь в базе данных Access, в которой он сохранен. Этот вариант не годится, когда результаты своей работы в виде отчета Access вы хотите передать кому-либо другому, кто не работает с Access или даже, возможно, вообще не имеет дела с базами данных. Самый простой вариант — напечатать отчет на принтере, и тогда формат, в котором он был создан, не будет иметь значения. Но чаще всего отчет требуется передать именно в электронном виде, например переслать по электронной почте или другим способом предоставить данные из отчета, чтобы в дальнейшем они могли быть использованы в других документах.</p>
+<p>Для решения этой задачи Microsoft Access предоставляет целый ряд возможностей преобразования отчетов в другие форматы. Это формат документов RTF, с которым можно работать в Word и некоторых других текстовых редакторах, формат электронных таблиц Excel, страницы HTML, разнообразные текстовые форматы (файлы с расширением txt, csv, tab, asc) с возможностью сохранения содержимого отчета на выбор в кодировке Windows, MS-DOS или Unicode, специальный формат снимков отчетов (snapshot). В новой версии Access 2002 к этим форматам добавились страницы доступа к данным и XML.</p>
+<p>В этом разделе мы расскажем о том, как просто преобразовать отчет Access в любой из этих форматов. И вы сможете кому-либо передать отчет в наиболее удобном для него виде или использовать выбранный формат, чтобы поработать с отчетом в другом приложении.</p>
+<p> Преобразование отчета в формат документов Word и Excel </p>
+<p>Access 2002 позволяет преобразовать созданный отчет в документ Microsoft Word формата RTF. Чтобы выполнить такое преобразование:</p>
+<ol>
+<li>Откройте отчет в любом режиме или просто выделите его в окне базы данных.</li>
+<li>Выберите команду  Сервис, Связи с Office, Публикация в Microsoft Word (Tools, Office Links, Publish It with MS Word).</li>
+</ol>
+<p>В результате Access 2002 создаст файл формата RTF в текущем каталоге, например в папке Мои документы (Му Documents), по умолчанию используя в качестве имени файла название отчета, а затем откроет его в Word.</p>
+<p>С помощью соседней команды меню  Сервис, Связи с Office, Анализ в Microsoft Excel (Tools, Office Links, Analyze It with Microsoft Excel) можно преобразовать отчет в электронную таблицу Excel. При выборе этой команды автоматически создается новая рабочая книга Excel, в которую помещается рабочий лист с представлением отчета в виде электронной таблицы. В качестве имени файла XLS используется имя отчета.</p>
+<p>Замечание</p>
+<p>Эти команды преобразования в формат документов Word и Excel доступны также для таблиц, запросов и форм Access. Кроме того, для таблиц и запросов доступна еще команда Сервис, Связи с Office, Слияние с Microsoft Word (Tools, Office Links, Merge It with Microsoft Word). С помощью этой команды вызывается Мастер слияния, который позволяет на основе выделенной таблицы или запроса создать документ Word, связанный с этим источником данных, или связать данную таблицу или запрос с уже существующим документом Word, таким образом, что, когда данные в таблице или запросе будут изменяться, будут соответственно обновляться связанные поля в документе.</p>
+<p> Преобразование отчета в другие форматы </p>
+<p>В Access 2002 существует средство преобразования отчетов в целый ряд других форматов. Это средство называется  экспортом. Чтобы экспортировать отчет Access в какой-нибудь другой формат, выделите отчет в окне базы данных или откройте его в любом режиме, а затем выберите команду Файл, Экспорт (File, Export). Появится диалоговое окно экспорта объекта базы данных, похожее на стандартное окно сохранения файла, в котором в качестве типа сохраняемого файла можно выбрать любой формат из предлагаемого списка:</p>
+<ul>
+<li>Microsoft Access (для копирования отчета в другую базу данных);</li>
+<li>Microsoft Excel 5—7 (для преобразования отчета в формат ранних версий Excel);</li>
+<li>Microsoft Excel 97—2002 (для преобразования отчета в формат последних версий Excel);</li>
+<li>страницы HTML (HTML Documents) (для преобразования отчета в формат статических Web-страниц в формате HTML);</li>
+<li>текстовые документы (Text Files) (для преобразования в один из текстовых форматов Windows или MS-DOS: TXT, CSV, TAB, ASC);</li>
+<li>Reach Text Format (для преобразования отчета в документ Word);</li>
+<li>снимок (Snapshot Format) (для преобразования отчета в формат статических снимков);</li>
+<li>документы XML (XML Documents) (для преобразования отчета в формат динамических Web-страниц в формате XML).</li>
+</ul>
+<p>Выбрав формат в раскрывающемся списке Тип файла (Save as type), введите в поле Имя файла (File name) имя файла, который будет создан, и нажмите кнопку Экспорт (Export). Предварительно можно установить в этом диалоговом окне флажок Автозапуск (Autostart), если вы хотите, чтобы после экспорта автоматически открылся созданный файл в приложении, в котором этот файл можно просмотреть.</p>
+<p>Экспортировать отчет в один из перечисленных форматов можно также с помощью макроса, включающего макрокоманду OutputTo, или используя одноименный метод объекта DoCmd в процедуре VBA  (о применении макросов и программировании на VBA см. гл. 11 и 13).</p>
+<p>Вы можете также послать отчет по электронной почте в одном из форматов экспорта прямо из Access программным путем, с помощью макроса, используя макрокоманду SendObject, или с помощью процедуры VBA, используя одноименный метод объекта DoCmd.  (0 преобразовании отчетов Access в различные форматы Web-страниц подробнее будет рассказано в разд. &#171;Преобразование объектов базы данных в Web-страницы&#187; гл. 12.) </p>
+<p> Снимки отчетов </p>
+<p>В предыдущей версии Access 2000 появилось новое средство публикации отчетов, отличающееся от экспорта в разнообразные наиболее популярные форматы документов. Это — преобразование отчетов Access в специально разработанный для задачи их публикации формат  снимков отчетов (report snapshot). Основная идея этого новшества — предоставление компактного представления отчетов Access в виде отдельных от базы данных файлов (снимков отчетов), которые можно просматривать, листать и печатать без использования Microsoft Access, с помощью специально созданного очень небольшого приложения, названного &#171;Просмотр снимков&#187; (Snapshot Viewer). Эта программа совершенно независима от самого Microsoft Access и может быть установлена без установки на компьютер пакета Microsoft Office. Ее дистрибутив входит в состав пакета, а также доступен через Интернет на Web-узле Microsoft:    .  Электронную версию отчета Access в виде файла снимка отчета можно также переслать по электронной почте или распространить другим способом передачи файлов. Те пользователи, на чьих компьютерах установлена программа &#171;Просмотр снимков&#187;, смогут просмотреть полученный в виде снимка отчет. В новой версии Access 2002 это средство сохранилось.</p>
+<p>Для преобразования отчета Access в формат снимка требуется воспользоваться тем же, упомянутым в предыдущем разделе, средством экспорта объектов базы данных Access.</p>
+<p>Снимок отчета — файл с расширением snp — содержит копии всех страниц отчета, включая графические и другие вложенные объекты. Чтобы на основе отчета Access создать снимок:</p>
+<ol>
+<li>В окне базы данных в списке отчетов выделите нужный отчет и выберите команду  Файл, Экспорт (File, Export). Появится диалоговое окно  Экспорт объекта (Export Object).</li>
+<li>В раскрывающемся списке  Тип файла (Save as type) выберите элемент  Снимок (Snapshot Format), в раскрывающемся списке  Папка (Save in) выберите папку, в которой будет сохранен файл, а в поле  Имя файла (File name) введите имя файла снимка. Нажмите кнопку  Экспорт (Export).</li>
+<li>Созданный в результате снимок отчета будет сохранен в указанной папке, после чего он будет открыт в автоматически запущенном (если ранее не было запущено) приложении &#171;Просмотр снимков&#187; (рис. 6.14).</li>
+</ol>
+<p>Замечание</p>
+<p>Если программа &#171;Просмотр снимков&#187; на вашем компьютере не была установлена (она не устанавливается со стандартной конфигурацией Access), то в этот момент будет произведена автоматическая попытка установить ее. Поэтому, возможно, вы получите сообщение с требованием вставить в дисковод дистрибутивный диск Microsoft Office.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image23/cf53640d84f6b57cdb6c51a8eb662a1a.gif" width="531" height="525" alt=""><meta itemprop="width" content="531">
+<meta itemprop="height" content="525"></span></p>
+<p> Рис. 6.14. Снимок отчета &#171;Каталог&#187; из демонстрационной базы данных</p>
+<p>В нижней части окна приложения &#171;Просмотр снимков&#187; содержится панель навигации, которая позволяет листать страницы отчета при просмотре. Крайняя справа кнопка на этой панели позволяет выполнить печать отчета. Щелкнув правой кнопкой мыши по области отчета, вы откроете контекстное меню, которое включает команды, дублирующие функции кнопок панели навигации, и команду  Масштаб  (Zoom), с помощью которой вы сможете регулировать масштаб отображения страниц отчета в окне программы Просмотра снимков. Это приложение позволяет одновременно просматривать несколько снимков отчета. Переключаться между снимками и управлять расположением их окон внутри приложения можно с помощью команд меню  Окно (Window). Кроме просмотра и печати снимков программа &#171;Просмотр снимков&#187; позволяет также пересылать их по электронной почте. Для этого нужно выбрать команду меню  Файл, Отправить  (File, Send). Тогда появится окно сообщения Microsoft Outlook, в которое автоматически попадет снимок отчета в виде вложенного файла (рис. 6.15). Останется заполнить необходимые поля и отправить сообщение с помощью кнопки  Отправить (Send). Получателю сообщения достаточно дважды щелкнуть мышью по значку вложенного файла, чтобы запустить программу &#171;Просмотр снимков&#187; и открыть в ней полученный снимок.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image28/fbe56fbc136f248b5b7447f33883f645.gif" width="428" height="387" alt=""><meta itemprop="width" content="428">
+<meta itemprop="height" content="387"></span></p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image23/d56cfea01641b4ba57ebeaf667b685bf.gif" width="441" height="551" alt=""><meta itemprop="width" content="441">
+<meta itemprop="height" content="551"></span></p>
+<p> Рис. 6.15. Отправка снимка отчета по электронной почте</p>
+<p>Создав файл снимка отчета, вы можете сразу поместить его в папку на Web-узле и, установив ссылки на него на Web-страницах, предоставить доступ к этому снимку отчета всем пользователям Интернета или внутренней сети итранет с помощью программы просмотра Internet Explorer.</p>
+<p>Для просмотра снимков отчетов можно также использовать элемент ActiveX — файл Snapview.ocx, который входит в состав дистрибутива пакета Microsoft Office 2002. Например, чтобы использовать этот ActiveX в качестве элемента управления в каком-либо объекте представления данных в Access (форме, отчете, странице доступа к данным), требуется включить ссылку на него. Для этого в редакторе VBA выберите команду  Сервис, Ссылки (Tools, References) и в появившемся диалоговом окне установите флажок напротив элемента списка  Snapshot Viewer Control (Элемент Просмотр снимков).</p>
+<p> Режимы работы с отчетами </p>
+<p>Работа с отчетами Access 2002 может происходить в трех режимах: в режиме Просмотра образца, в режиме Предварительного просмотра и в режиме Конструктора. Переключиться из одного режима в другой можно либо с помощью команды  Образец (Layout Preview),  Предварительный просмотр (Print Preview) или  Конструктор (Design View) в меню Вид (View) в любом режиме работы с отчетом, либо с помощью кнопки  Вид (View) панели инструментов  Конструктор отчетов (Report Design) в режиме Конструктора.</p>
+<p>Режим Предварительного просмотра предназначен для просмотра отчета в Access в том виде, как он будет выведен на печать. Отчет, открытый в режиме Предварительного просмотра, можно просмотреть в увеличенном или уменьшенном масштабе, отобразить на экране одновременно одну или несколько страниц, а также напечатать, предварительно определив параметры страницы. По умолчанию из окна базы данных (при двойном щелчке по отчету или нажатии кнопки  Открыть (Preview) в окне базы данных) отчет открывается именно в этом режиме. Если отчет был открыт в другом режиме, то для перехода в режим Предварительного просмотра выберите команду  Вид, Предварительный просмотр (View, Print Preview) или нажмите на стрелку, расположенную справа от кнопки Вид (View) панели инструментов  Конструктор отчетов (Report Design) и в открывшемся списке выберите элемент  Предварительный просмотр (Print Preview).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image06/359cc0d687057ead027924e3a003002f.gif" width="457" height="522" alt=""><meta itemprop="width" content="457">
+<meta itemprop="height" content="522"></span></p>
+<p> Рис. 6.16. Отчет &#171;Итоговый запрос предприятия&#187; в режиме Конструктора</p>
+<p>Режим Просмотра образца является удобным средством проверки внешнего вида и структуры (макета) создаваемого отчета. В этом режиме в окно просмотра выводятся только те данные, которые необходимы для заполнения каждого из элементов макета отчета. Для просмотра всех данных, выводящихся в отчете, следует использовать режим Предварительного просмотра. Чтобы перейти в режим Просмотра образца, выберите команду  Вид, Образец (View, Layout Preview) или нажмите на стрелку, расположенную справа от кнопки Вид (View) панели инструментов  Конструктор отчетов (Report Design) и в открывшемся списке выберите элемент  Образец (Layout Preview).</p>
+<p>В режиме Конструктора можно разрабатывать отчеты, модифицировать их структуру, изменять внешний вид, добавлять и удалять поля. Этим режимом обычно пользуются разработчики отчетов Access. Чтобы перейти в режим Конструктора, выберите команду  Вид, Конструктор (View, Design View) или нажмите на стрелку, расположенную справа от кнопки  Вид (View) панели инструментов  Конструктор отчетов (Report Design) и в открывшемся списке выберите элемент  Конструктор (Design View). На рис. 6.16 показан открытый в режиме Конструктора отчет, создание которого описано  в разд. &#171;Создание отчета с помощью Мастера отчетов&#187; этой главы. </p>
+<p>Замечание</p>
+<p>Создать новый отчет можно &#171;с нуля&#187;, начиная его разработку сразу в режиме Конструктора, не пользуясь средствами автоматического создания отчетов и Мастером отчетов Access. Для этого достаточно дважды щелкнуть по ярлыку Создание отчета в режиме конструктора (Create report in Design view) над списком отчетов в окне базы данных.</p>
+<p> Режим Предварительного просмотра </p>
+<p>Если в окне  База данных  (Database) дважды щелкнуть левой кнопкой мыши по имени существующего отчета, то на экране появится отчет в режиме Предварительного просмотра. На рис. 6.17 изображена панель инструментов  Предварительный просмотр  (Print Preview), а в табл. 6.1 перечислены кнопки панели инструментов и соответствующие им команды меню в режиме Предварительного просмотра.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image14/7d519063a66370df3633d1497b153e3f.gif" width="495" height="46" alt=""><meta itemprop="width" content="495">
+<meta itemprop="height" content="46"></span></p>
+<p> Рис. 6.17. Панель инструментов Предварительный просмотр </p>
+<table class="table_common" width="600">
+<tbody>
+<tr class="header">
+<td width="150">Кнопка</td>
+<td width="150">Команда меню</td>
+<td>Описание</td>
+</tr>
+<tr class="one">
+<td>Вид (View)</td>
+<td>Вид, Конструктор (View, Design View) Вид, Предварительный просмотр (View, Print Preview) Вид, Образец (View, Layout Preview)</td>
+<td>Переключение между тремя режимами работы с отчетом</td>
+</tr>
+<tr class="two">
+<td>Печать (факс) (Print (Fax))</td>
+<td>He предусмотрена</td>
+<td>Печать отчета или отправка его по факсу без отображения диалогового окна Печать (Print). Печать отчета выполняется с использованием текущих параметров принтера</td>
+</tr>
+<tr class="one">
+<td>Масштаб (Zoom)</td>
+<td>Вид, Масштаб, 100% (View, Zoom, Zoom 100%), Вид, Масштаб, Вписать в окно (View, Zoom, Fit То Window)</td>
+<td>Обеспечивает переключение между полностраничным режимом просмотра и режимом просмотра в натуральную величину. Щелчок левой кнопкой мыши, если ее указатель принял форму увеличительного стекла, приведет к тем же результатам</td>
+</tr>
+<tr class="two">
+<td>Одна страница (One Page)</td>
+<td>Вид, Число страниц, Одна страница (View, Pages, One Page)</td>
+<td>Отображает на экране одну страницу</td>
+</tr>
+<tr class="one">
+<td>Две страницы (Two Pages)</td>
+<td>Вид, Число страниц, Две страницы (View, Pages, Two Pages)</td>
+<td>Отображает на экране две страницы</td>
+</tr>
+<tr class="two">
+<td>Несколько страниц (Multiple Pages)</td>
+<td>Вид, Число страниц, Четыре страницы (View, Pages, Four Pages), или Восемь страниц (Eight Pages), или Двен-надцать страниц (Twelve Pages)</td>
+<td>Отображает на экране несколько страниц</td>
+</tr>
+<tr class="one">
+<td>Список Масштаб (Zoom)</td>
+<td>Вид, Масштаб (View, Zoom)</td>
+<td>Изменяет масштаб изображения от 10 до 1000% либо обеспечивает масштабирование отчета по размеру окна</td>
+</tr>
+<tr class="two">
+<td>Закрыть (Close)</td>
+<td>Файл, Предварительный просмотр (File, Print Preview)</td>
+<td>Закрывает окно предварительного просмотра и обеспечивает возврат в режим Конструктора отчета или в окно База данных (Database)</td>
+</tr>
+<tr class="one">
+<td>Установка (Setup)</td>
+<td>Файл, Параметры страницы (File, Page Setup)</td>
+<td>Отображение диалогового окна Параметры страницы (Page Setup)</td>
+</tr>
+<tr class="two">
+<td>Связи с Office (OfficeLinks)</td>
+<td>Сервис, Связи с Office (Tools, Office Links)</td>
+<td>Выводит раскрывающийся список команд для связи с программами Microsoft Office: Публикация в Microsoft Word (Publish It with Microsoft Word) и Анализ в Microsoft Excel (Analyze It with Microsoft Excel). (Команда Слияние с Microsoft Word (Merge It with Microsoft Word) для отчетов не доступна)</td>
+</tr>
+<tr class="one">
+<td>Окно базы данных (Database Window)</td>
+<td>Окно, 1 (Window, 1)</td>
+<td>Открывает окно базы данных</td>
+</tr>
+<tr class="two">
+<td>Справка по Microsoft Access (Microsoft Access Help)</td>
+<td>Справка, Справка по Microsoft Access (Help, Microsoft Access Help)</td>
+<td>Вызов помощника и получение справки Access 2002</td>
+</tr>
+<tr class="one">
+<td>Новый объект (New Object)</td>
+<td>Нет</td>
+<td>Создает новый объект. Щелкните по стрелке справа от этой кнопки, появится раскрывающийся список объектов, которые можно создать</td>
+</tr>
+</tbody>
+</table>
+<p> Таблица 6.1.  Панель инструментов  Предварительный просмотр</p>
+<p> Режим Просмотра образца </p>
+<p>Режим Просмотра образца применяется при разработке отчета для быстрого просмотра полученной структуры отчета. В этом режиме в отчете отображается лишь часть данных, что значительно ускоряет процесс загрузки данных в отчет для просмотра.</p>
+<p>Если отчет открыт в режиме Конструктора, то, чтобы перейти в режим Просмотра образца на панели инструментов  Конструктор отчетов  (Report Design), нажмите стрелку справа от кнопки Вид (View) и в раскрывшемся списке выделите элемент  Образец  (Layout Preview). Чтобы вернуться в режим Конструктора и продолжить правку отчета, нажмите кнопку Вид, отображенную теперь на панели инструментов  Предварительный просмотр  (Print Preview).</p>
+<p> Режим Конструктора </p>
+<p>Разработку структуры отчета, изменение его внешнего вида, добавление и удаление элементов можно производить только в режиме Конструктора отчетов.  Панель элементов (Toolbox), отображаемая в этом режиме, позволяет создавать элементы управления. При этом некоторые элементы управления можно создать с помощью Мастера элементов, осуществляющего пошаговое руководство этим процессом.</p>
+<p>К разрабатываемому отчету можно применить один из предлагаемых Access автоформатов, позволяющих быстро настроить внешний вид отчета. Более того, Access 2002 позволяет создавать свои собственные автоформаты и применять их к другим отчетам.</p>
+<p>Чтобы открыть отчет в режиме Конструктора, выделите нужный отчет в окне базы данных и выберите команду  Вид, Конструктор (View, Design View) или нажмите на кнопку  Конструктор (Design) в окне базы данных.</p>
+<p> Структура отчета </p>
+<p>Отчет состоит из нескольких частей, называемых  разделами. Рассмотрим их назначение. Разделы (sections) отчета включают заголовок отчета, примечание отчета, область данных отчета, а также верхний и нижний колонтитулы страниц отчета. Заголовок и примечание отчета, верхний и нижний колонтитулы страницы не являются обязательными элементами структуры отчета. Эти разделы можно добавить или удалить из отчета с помощью соответствующей команды меню Вид (View) в режиме Конструктора.</p>
+<p>Раздел заголовка отчета определяет высоту области заголовка отчета. Этот раздел может содержать текст, графику и другие элементы управления, которые будут выводиться в верхней части отчета. В многостраничном отчете раздел заголовка отображается только на первой странице.</p>
+<p>Раздел области данных предназначен для отображения записей источника данных отчета. Этот раздел может содержать элементы управления для отображения данных из каждой записи в источнике — таблице и запросе.</p>
+<p>Раздел примечаний отчета определяет высоту области примечания отчета и добавляется вместе с разделом заголовка отчета. При печати многостраничного отчета примечание будет отображено только внизу последней страницы.</p>
+<p>Для добавления областей заголовка и примечания отчета выберите команду  Вид, Заголовок/примечание отчета (View, Report Header/Footer). Если отчет уже содержит данные области, то команда меню  Заголовок/примечание отчета (Report Header/Footer) будет отмечена флажком. В этом случае команда  Вид, Заголовок/примечание отчета (View, Report Header/Footer) позволяет удалить области заголовка и примечания из отчета.</p>
+<p>Замечание</p>
+<p>При удалении областей заголовка или примечания отчета, содержащих текст либо другие элементы управления, Access выводит диалоговое окно, предупреждающее об удалении содержимого заголовка и примечания.</p>
+<p>При печати многостраничного отчета содержимое разделов верхнего и нижнего колонтитулов страниц отчета выводится на каждой странице. Чтобы добавить к отчету верхний и нижний колонтитулы, выберите команду  Вид, Колонтитулы (View, Page Header/Footer). Если отчет уже содержит эти области, то команда меню Колонтитулы (Page Header/Footer) будет отмечена флажком. Для удаления областей верхнего и нижнего колонтитулов страниц отчета снова выберите команду  Вид, Колонтитулы (View, Page Header/Footer).</p>
+<p>Поскольку отчеты, как правило, включают группировку записей и вывод промежуточных итогов, в них могут присутствовать дополнительные разделы  Заголовок группы (Group Header) и  Примечание группы (Group Footer). В зависимости от количества уровней группировки в отчете может быть разное количество таких разделов.</p>
+<p> Изменение размеров отчета и его разделов </p>
+<p>Чтобы изменить горизонтальный размер, т. е. ширину отчета, с помощью мыши перетащите правую границу отчета влево или вправо. При этом горизонтальная линейка, расположенная в верхней части окна Конструктора отчетов, поможет установить точную ширину отчета.</p>
+<p>Чтобы изменить вертикальные размеры области какого-либо раздела отчета, поместите указатель мыши на нижнюю границу области так, чтобы он принял форму черты с двумя вертикальными стрелками, и перетащите его вверх или вниз. В. этом случае вертикальная линейка, расположенная в левой части окна Конструктора отчетов, поможет установить точную высоту области раздела.</p>
+<p>Вертикальный размер отчета определяется вертикальными размерами всех разделов отчета.</p>
+<p> Инструментальные средства режима Конструктора </p>
+<p>Окно Конструктора отчетов состоит из следующих основных элементов:</p>
+<ul>
+<li>Панель инструментов Конструктор отчетов (Report Design). Кнопки этой панели дублируют некоторые команды меню режима Конструктора отчетов. Функции кнопок этой панели инструментов и соответствующие им команды меню описаны в табл. 6.2.</li>
+<li>Панель инструментов Формат (форма/отчет) (Formatting (Form/Report)). Кнопки данной панели облегчают форматирование элементов управления (например, выбор цвета и стиля рамок элементов управления или параметров оформления текста).</li>
+<li>Панель инструментов Панель элементов (Toolbox), с помощью которой в отчет добавляются элементы управления (на рис. 6.16 она расположена вдоль правой вертикальной границы отчета).</li>
+<li>Вертикальная и горизонтальная линейки позволяют производить точную разметку отчета и его разделов.</li>
+<li>Крайняя правая вертикальная линия (см. рис. 6.16) позволяет определить ширину отчета — расстояние до его правой границы.</li>
+<li>Крайняя нижняя горизонтальная линия (см. рис. 6.16) позволяет определить высоту нижнего поля отчета.</li>
+<li>С помощью вертикальной и горизонтальной полос прокрутки можно просматривать части отчета, находящиеся за границами области окна Конструктора отчетов.</li>
+</ul>
+<p> Панель инструментов  Конструктор отчетов </p>
+<p>На рис. 6.18 изображена панель инструментов Конструктор отчетов (Report Design), а в табл. 6.2 приведены описания кнопок панели инструментов Конструктор отчетов (Report Design) и соответствующие им команды меню.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image16/9084440898d1ea1821a9f623fb469036.gif" width="316" height="74" alt=""><meta itemprop="width" content="316">
+<meta itemprop="height" content="74"></span></p>
+<p> Рис. 6.18. Панель инструментов  Конструктор отчетов</p>
+<p> Таблица 6.2. Панель инструментов  Конструктор отчетов</p>
+<table class="table_common" width="600">
+<tbody>
+<tr class="header">
+<td width="150">Кнопка</td>
+<td width="150">Команда меню</td>
+<td>Описание</td>
+</tr>
+<tr class="one">
+<td>Вид (View)</td>
+<td>Вид, Предварительный просмотр (View, Print Preview) Вид, Образец (View, Layout Preview)</td>
+<td>Переключение в другие режимы работы с отчетом. Чтобы открыть отчет в каком-либо другом режиме, нажмите стрелку справа от кнопки и в появившемся списке выделите элемент, соответствующий необходимому режиму</td>
+</tr>
+<tr class="two">
+<td>Сохранить (Save)</td>
+<td>Файл, Сохранить (File, Save)</td>
+<td>Сохранение открытого отчета</td>
+</tr>
+<tr class="one">
+<td>Найти (Search)</td>
+<td>Файл, Найти (File, Search)</td>
+<td>Отображение панели поиска документов Office. (Это новое средство Access 2002.)</td>
+</tr>
+<tr class="two">
+<td>Печать (факс) (Print (Fax))</td>
+<td>Не предусмотрена</td>
+<td>Печать или отправка по факсу отчета без открытия диалогового окна Печать (Print). (Отправка по факсу — новое средство Access 2002.)</td>
+</tr>
+<tr class="one">
+<td>Предварительный просмотр (Print Preview)</td>
+<td>Файл, Предварительный просмотр (File, Print Preview)</td>
+<td>Предварительный просмотр отчета перед печатью. Отчет может быть напечатан из окна предварительного просмотра.</td>
+</tr>
+<tr class="two">
+<td>Вырезать (Cut)</td>
+<td>Правка, Вырезать (Edit, Cut)</td>
+<td>Удаление выделенных объектов из отчета в буфер обмена Windows.</td>
+</tr>
+<tr class="one">
+<td>Копировать (Сору)</td>
+<td>Правка, Копировать (Edit, Copy)</td>
+<td>Копирование выделенных объектов отчета в буфер обмена.</td>
+</tr>
+<tr class="two">
+<td>Вставить (Paste)</td>
+<td>Правка, Вставить (Edit, Paste)</td>
+<td>Вставка содержимого буфера обмена в отчет</td>
+</tr>
+<tr class="one">
+<td>Формат по образцу (Format Painter)</td>
+<td>Нет</td>
+<td>Копирование параметров форматирования из одного выделенного объекта в другой</td>
+</tr>
+<tr class="two">
+<td>Отменить (Undo)</td>
+<td>Правка, Отменить (Edit, Undo)</td>
+<td>Отмена последнего изменения отчета</td>
+</tr>
+<tr class="one">
+<td>Вернуть (Redo)</td>
+<td>Правка, Вернуть (Edit, Redo)</td>
+<td>Повторить отмененное действие</td>
+</tr>
+<tr class="two">
+<td>Добавление гиперссылки (Insert Hyperlink)</td>
+<td>Вставка, Гиперссылка (Insert, Hyperlink)</td>
+<td>Вставка в отчет гиперссылки</td>
+</tr>
+<tr class="one">
+<td>Список полей (Field List)</td>
+<td>Вид, Список полей (View, Field List)</td>
+<td>Отображение или скрытие списка полей, содержащихся в источнике данных (запросе или таблице) отчета</td>
+</tr>
+<tr class="two">
+<td>Панель элементов (Toolbox)</td>
+<td>Вид, Панель элементов (View, Toolbox)</td>
+<td>Отображение или скрытие панели элементов</td>
+</tr>
+<tr class="one">
+<td>Сортировка и группировка (Sorting and Grouping)</td>
+<td>Вид, Сортировка и группировка (View, Sorting and Grouping)</td>
+<td>Выводит диалоговое окно Сортировка и группировка (Sorting and Grouping), в котором можно задать структуру отчета и порядок отображения данных в нем</td>
+</tr>
+<tr class="two">
+<td>Автоформат (AutoFormat)</td>
+<td>Формат, Автоформат (Format, AutoFormat)</td>
+<td>Выбор заранее определенных форматов для отчетов, включая такие характеристики, как фоновый рисунок для отчета и шрифты для элементов управления</td>
+</tr>
+<tr class="one">
+<td>Программа (Code)</td>
+<td>Вид, Программа (View, Code)</td>
+<td>Открытие модуля, содержащего процедуры обработки событий отчета</td>
+</tr>
+<tr class="two">
+<td>Свойства (Properties)</td>
+<td>Вид, Свойства (View, Properties)</td>
+<td>Открытие окон свойств выделенных объектов — отчета, раздела (например, верхнего или нижнего колонтитула), а также элементов управления</td>
+</tr>
+<tr class="one">
+<td>Построить (Build)</td>
+<td>Нет</td>
+<td>Вызов Построителя для выделенного элемента или свойства в отчете. Access активизирует данную кнопку только в том случае, если для выделенного элемента или для свойства имеется Построитель</td>
+</tr>
+<tr class="two">
+<td>Окно базы данных (Database Window)</td>
+<td>Окно, 1 (Window, 1)</td>
+<td>Отображение окна базы данных</td>
+</tr>
+<tr class="one">
+<td>Новый объект (New Object)</td>
+<td>Нет</td>
+<td>Создание нового объекта базы данных. Чтобы выбрать тип создаваемого объекта, нажмите стрелку справа от кнопки</td>
+</tr>
+<tr class="two">
+<td>Справка по Microsoft Access (Microsoft Access Help)</td>
+<td>Справка, Справка по Microsoft Access (Help, Microsoft Access Help)</td>
+<td>Вызов помощника и получение справки Access 2002</td>
+</tr>
+</tbody>
+</table>
+<p>     Форматирование отчета </p>
+<p>Как уже упоминалось выше, одним из элементов окна Конструктора отчетов является панель  Формат (форма/отчет)  (Formatting (Form/Report)), содержащая кнопки и раскрывающиеся списки, облегчающие выбор параметров форматирования (цвета, шрифты, толщины линий и т. п.).</p>
+<p>Функции кнопок этой панели инструментов, используемых для форматирования текста, аналогичны функциям кнопок, которые можно увидеть на панелях инструментов Microsoft Word. С помощью раскрывающегося списка  Объект  (Object) можно быстро выделить любой элемент отчета, выбрав его имя в списке. В раскрывающемся списке  Шрифт  (Font) можно выбрать любой из установленных на компьютере шрифтов. А раскрывающийся список  Размер  (Font Size) позволяет выбрать нужный размер шрифта или ввести его значение (в пунктах).</p>
+<p>Эта же панель инструментов используется при форматировании текста элементов управления в отчете. Названия и функции кнопок, предназначенных для форматирования текста элементов управления, а также значение соответствующих свойств элемента управления подробно описаны  в разд. &#171;Панель инструментов<a href="/glava-sozdanie-i-pechat-otchetov">  Формат (форма/отчет)&#187;</a>гл. 5. </p>
+<p>Кнопка  Автоформат  (AutoFormat) панели инструментов  Конструктор отчетов  (Report Design) предоставляет те же возможности по форматированию отчетов, что и для форм. Подробное описание использования автоформата, способов изменения предопределенных стилей автоформата или создания собственных стилей пользователя содержится  в разд. &#171;Применение автоформата&#187;гл. 5. </p>
+<p>Замечание</p>
+<p>Поскольку Access хранит стили отчетов и форм по отдельности, то для отчетов придется создать отдельные стили автоформата.</p>
+<p> Панель элементов </p>
+<p>Панель инструментов, появляющаяся при открытии отчета в режиме Конструктора, содержащая кнопки с символическими изображениями элементов управления, называется  Панель элементов (Toolbox). Это та же самая панель, которая используется в режиме Конструктора форм, и, как и в случае с формой, она позволяет размещать в отчете новые элементы управления. Чтобы закрыть панель элементов (Toolbox), нажмите кнопку  Панель элементов (Toolbox) на панели инструментов  Конструктор отчетов (Report Design) или нажмите кнопку  Закрыть (Close) в правом верхнем углу панели элементов.</p>
+<p>Замечание</p>
+<p>При переходе в режим Конструктора Access автоматически отображает панель элементов. Если ее закрыть, то в следующий раз при переходе в режим Конструктора Access не будет выводить ее. В этом случае для отображения панели элементов нажмите кнопку Панель элементов (Toolbox) на панели инструментов Конструктор отчетов (Report Design) или выберите команду Вид, Панели инструментов (View, Toolbars), а затем установите флажок Панель элементов (Toolbox).</p>
+<p> Выделение отчета и его элементов </p>
+<p>Прежде чем перейти к изменению свойств отчета или его элементов, необходимо научиться их выделять. Выделение объектов производится с помощью мыши.</p>
+<p>Выделить весь отчет или его элемент можно щелчком левой кнопки мыши по определенному месту в окне Конструктора. Назовем такие места, соответственно,  областями выделения всего отчета или его элемента.</p>
+<p>Областью выделения всего отчета можно назвать квадратик, расположенный в месте пересечения вертикальной и горизонтальной линеек в верхней и левой боковой части отчета в режиме Конструктора, а еще области за границами отчета, но внутри окна Конструктора отчетов, т. к. щелчком левой кнопки по этим областям выполняется выделение отчета.</p>
+<p>Итак, чтобы выделить весь отчет, щелкните левой кнопкой мыши по области вне границ отчета, но внутри окна Конструктора отчетов, либо щелкните левой кнопкой мыши по квадратику в верхнем левом углу окна Конструктора отчетов, где пересекаются вертикальная и горизонтальная линейки; либо выберите команду  Правка, Выделить отчет (Edit, Select Report).</p>
+<p>Замечание</p>
+<p>Другой способ выделить отчет — выбрать команду  Вид, Выделить отчет (View, Select Report). Команда  Вид, Выделить все (View, Select All) позволяет сразу выделить все элементы управления отчета.</p>
+<p>Областью выделения элемента управления является все пространство внутри контура этого элемента. Щелкнув в любом месте этого пространства, вы выделяете элемент управления.</p>
+<p>Итак, чтобы выделить элемент управления (либо элемент управления с меткой), щелкните по нему левой кнопкой мыши.</p>
+<p>Еще одной разновидностью элементов отчета можно назвать его разделы. Областью выделения раздела отчета является любое свободное от элементов управления пространство внутри раздела или заголовок раздела, выделенный в отчете полосой серого цвета с названием заголовка.</p>
+<p>Итак, чтобы выделить раздел заголовка отчета, примечания отчета, области данных или разделы верхнего и нижнего колонтитулов, щелкните левой кнопкой мыши по области заголовка отчета, примечания отчета, области данных, верхнего или нижнего колонтитулов.</p>
+<p>Замечание</p>
+<p>Чтобы быстро выделить любой объект отчета или весь отчет целиком, в раскрывающемся списке  Объект (Object) панели инструментов  Формат (форма/отчет) (Formatting Form/Report) выберите название нужного раздела отчета или элемента управления.</p>
+<p> Изменение свойств отчета и его элементов </p>
+<p>Элементами отчета являются разделы отчета и добавленные в них элементы управления. И сам отчет, и его отдельные элементы обладают целым рядом свойств, которые определяют их внешний вид, поведение и данные, которые они отображают. Эти свойства доступны для изменения в режиме Конструктора в специальном окне свойств. Чтобы отобразить окно свойств отчета или его элемента:</p>
+<ol>
+<li>Откройте отчет в режиме Конструктора. Для этого в окне базы данных щелкните по ярлыку  Отчеты  (Reports) и выделите в списке отчетов нужный отчет, затем нажмите кнопку  Конструктор (Design).</li>
+<li>Выделите отчет или его элемент и нажмите кнопку  Свойства  (Properties) на панели инструментов  Конструктор отчетов (Report Design), или выберите команду  Вид, Свойства (View, Properties), или щелкните по области выделения всего отчета или его элемента правой кнопкой и выберите команду  Свойства (Properties) в контекстном меню.</li>
+</ol>
+<p>Например, чтобы отобразить окно свойств отчета, щелкните по квадратику в левом верхнем углу отчета и нажмите кнопку  Свойства (Properties) на панели инструментов  Конструктор отчетов (Report Design).</p>
+<p>Замечание</p>
+<p>Чтобы быстро открыть окно свойств отчета или его элемента, дважды щелкните по области выделения отчета или его элемента.</p>
+<p>Окно свойств отчета или какого-либо его элемента содержит пять вкладок, каждая из которых объединяет однотипные группы параметров. На последней вкладке представлены все свойства элемента или отчета.</p>
+<p>На рис. 6.19 изображено окно свойств отчета, имеющее вкладки  Макет (Format),  Данные (Data),  События (Event),  Другие (Other) и Все (АН).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image19/b12752780de5c3e6eee343536fa0587f.gif" width="333" height="443" alt=""><meta itemprop="width" content="333">
+<meta itemprop="height" content="443"></span></p>
+<p> Рис. 6.19. Окно свойств отчета</p>
+<p>Окно свойств элемента управления содержит такие же вкладки, как и окно свойств отчета, однако некоторые вкладки, например  События (Event) и  Данные (Data), могут оказаться пустыми. На рис. 6.20 изображено окно свойств текстового поля.</p>
+<p>Окно свойств раздела тоже содержит такие же вкладки, как и окно свойств отчета. На рис. 6.21 представлено окно свойств заголовка отчета.</p>
+<p>Замечание</p>
+<p>Не закрывая открытое окно свойств, можно переключаться между свойствами различных элементов отчета и самого отчета, щелкая левой кнопкой мыши по области выделения отчета или его элемента.</p>
+<p>На вкладке  Макет (Format) окна свойств отчета или его элемента сгруппированы свойства, управляющие внешним видом отчета или его элемента. Например, значение свойства  Ширина (Width) определяет ширину отчета или выделенного элемента управления, а в поле  Подпись (Caption) задается название, отображаемое в заголовке отчета в режиме его просмотра. На этой же вкладке располагаются поля свойств, позволяющих задать цвет, толщину и стиль рамки элемента управления, определить рисунок, используемый в качестве фона отчета, и настроить его отображение, а также многие другие параметры, отвечающие за внешний вид отчета или его элементов.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image05/28794937e01afd7dc526e1c6c9965c4d.gif" width="353" height="555" alt=""><meta itemprop="width" content="353">
+<meta itemprop="height" content="555"></span></p>
+<p> Рис. 6.20. Окно свойств текстового поля</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image27/f456b012947c956efe1f642f90ef3cc9.gif" width="327" height="324" alt=""><meta itemprop="width" content="327">
+<meta itemprop="height" content="324"></span></p>
+<p> Рис. 6.21. Окно свойств заголовка отчета</p>
+<p>Вкладка  Данные (Data) позволяет указать источник данных для отчета или выделенного элемента управления, а также настроить их использование.</p>
+<p>С помощью вкладки  События (Event) окна свойств отчета или его раздела можно определить действия, выполняемые, когда происходят определенные события, например, открытие или закрытие отчета, его активизация или возникновение ошибки.</p>
+<p>На вкладке  Другие (Other) собраны свойства, которые нельзя отнести ни к одной из перечисленных групп свойств. Например, с помощью этой вкладки окна свойств отчета можно определить привязанные к нему файл справки и панель инструментов, способ группировки данных для отчета. Эта же вкладка в окне свойств элемента управления позволяет, например, изменить его имя или ориентацию отображаемого в нем текста.</p>
+<p>На вкладке Все (All) собраны все свойства отчета или его элемента, размещенные на четырех основных вкладках окна свойств. Поскольку отчет и каждый его элемент в отдельности обладают достаточно большим количеством свойств, то список всех свойств на этой вкладке будет достаточно длинным и нахождение нужного свойства на вкладке может оказаться затруднительным.</p>
+<p>Значения свойств устанавливаются либо с помощью текстовых полей, либо с помощью раскрывающихся списков, отображающихся справа от названий свойств. Например, чтобы изменить шрифт, используемый каким-либо элементом управления, щелкните левой кнопкой мыши в поле свойства  Шрифт (Font Name), а затем щелкните по кнопке со стрелкой, появившейся в правом поле, и в раскрывшемся списке выберите нужный шрифт. Чтобы изменить ширину отчета, на вкладке Макет (Format) щелкните по полю свойства  Ширина (Width) и введите число, соответствующее нужной ширине отчета, в сантиметрах. А чтобы изменить ориентацию текста какого-либо элемента управления, на вкладке  Другие (Other) щелкните по полю свойства  По вертикали (Vertical), затем щелкните по кнопке со стрелкой, появившейся на правом конце поля, и в раскрывшемся списке выберите значение Да (Yes). Теперь текст выделенного элемента управления будет расположен по вертикали.</p>
+<p>Некоторые свойства снабжены вспомогательным мастером, называющимся Построителем, помогающим задать значение свойства. Кнопка вызова Построителя отображается слева от поля ввода значений свойства при помещении в это поле курсора ввода. Чтобы воспользоваться Построителем для определения значения какого-либо свойства, щелкните по полю этого свойства, а затем нажмите кнопку с тремя точками, появившуюся справа от поля.</p>
+<p>Кроме ручной настройки свойств форматирования, определяющих внешний вид отчета и его элементов, Access 2002 предоставляет средство автоматического форматирования, называющееся  автоформатом. Применение автоформата позволяет очень быстро изменить параметры оформления всех элементов отчета. Это средство доступно для оформления не только отчетов, но и форм. Применение автоформата для отчетов совершенно аналогично применению его для форм. Поэтому мы не будем повторять здесь его описание, которое уже было приведено  в гл. 5.</p>
+<p> Создание и удаление элементов управления отчета </p>
+<p>Access 2002 предоставляет два простых метода создания элементов управления: с помощью панели инструментов  Панель элементов (Toolbox) и с помощью кнопки</p>
+<p> Список полей (Field List). Кроме того, при создании элементов управления с помощью панели элементов можно воспользоваться мастером, позволяющим пройти шаг за шагом процесс создания более сложных элементов управления, например таких, как списки, поля со списком, кнопки и группы элементов управления.</p>
+<p> Создание элементов управления с помощью панели элементов </p>
+<p>Создание элементов управления с помощью панели элементов может происходить с использованием или без использования мастера. В этом разделе мы приведем пример создания элемента управления  Список (List Box) этими двумя способами.</p>
+<p>Для добавления списка в какой-либо раздел отчета без помощи мастера:</p>
+<ol>
+<li>Убедитесь в том, что на панели элементов не нажата кнопка  Мастера  (Control Wizards).</li>
+<li>На панели элементов нажмите кнопку  Список  (List Box). Когда указатель мыши попадет в область отчета, он примет вид крестика со значком элемента управления  Список (List Box). Центр крестика определяет позицию левого верхнего угла создаваемого элемента управления.</li>
+<li>Поместите указатель мыши в виде крестика в область нужного раздела отчета. Нажмите левую кнопку мыши и, удерживая ее, переместите указатель мыши в ту точку, где должен расположиться нижний правый угол списка, растянув рамку воображаемого нового элемента.</li>
+<li>При этом в строке состояния будет показано число строк и количество символов для текущего шрифта, которые может вместить список текущего размера.</li>
+<li>При достижении элементом управления  Список (List Box) нужных размеров отпустите левую кнопку мыши. Если список будет иметь размеры, превышающие область того раздела, к которому он добавляется, то область раздела отчета будет автоматически увеличена, чтобы поместить список целиком.</li>
+<li>На некотором расстоянии слева от поля списка появится его метка. Чтобы изменить название метки, щелкните внутри нее левой кнопкой мыши. Внутри метки появится текстовый курсор. Введите нужный текст и нажмите клавишу &lt;Enter&gt;.</li>
+</ol>
+<p>Теперь для определения свойств созданного списка нужно открыть окно его свойств и сделать необходимые изменения.</p>
+<p>После добавления элемента управления для его перемещения и изменения размеров используются верхний угловой маркер перемещения и маркеры изменения размеров. Положение левого верхнего угла элемента определяется значениями свойств элемента управления  От левого края (Left) и  От верхнего края (Тор). Перемещая мышью маркеры изменения размеров, вы изменяете значения свойств элемента управления  Ширина (Width) и  Высота (Height).</p>
+<p>Добавление большинства других типов элементов управления (выключателей, переключателей, флажков) в форму совершенно аналогично.</p>
+<p>Если кнопка  Мастера (Control Wizards) на панели элементов нажата, то некоторые ее кнопки, например,  Список (List Box) или  Поле со списком (Combo Box), при их нажатии для создания элемента управления вызывают Мастер элементов.</p>
+<p>Чтобы создать элемент управления  Список (List Box), содержащий фиксированный набор значений с помощью мастера:</p>
+<ol>
+<li>На панели элементов нажмите кнопку  Мастера  (Control Wizards), если она еще не нажата.</li>
+<li>На панели элементов нажмите кнопку  Список  (List Box). Когда указатель мыши попадет в область отчета, он примет вид крестика со значком элемента управления  Список. Центр крестика определяет позицию левого верхнего угла создаваемого элемента управления.</li>
+<li>Поместите указатель мыши в виде крестика в область нужного раздела отчета. Нажмите левую кнопку мыши и, удерживая ее, переместите указатель мыши в ту точку, где должен находиться нижний правый угол списка, растянув рамку воображаемого нового элемента. При этом в строке состояния будет отображаться число строк и количество символов для текущего шрифта, которые может вместить список текущего размера.</li>
+<li>При достижении элементом управления  Список нужных размеров отпустите левую кнопку мыши. Появится первое -диалоговое окно Мастера списков. В этом диалоговом окне выберите переключатель  Будет введен фиксированный набор значений (I will type in the values that I want). Нажмите кнопку  Далее (Next). Появится второе диалоговое окно Мастера списков (рис. 6.22).</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image10/568a0c7a66244a35624754b542cee1d6.gif" width="486" height="341" alt=""><meta itemprop="width" content="486">
+<meta itemprop="height" content="341"></span></p>
+<p> Рис. 6.22. Второе диалоговое окно Мастера списков</p>
+<ol start="5">
+<li>Во втором диалоговом окне Мастера списков можно указать количество столбцов создаваемого списка, а также определить их ширину. Введите число столбцов в поле ввода и, при необходимости, переместите правые границы столбцов с помощью мыши, если хотите изменить их ширину. В таблицу, изображенную внутри диалогового окна, введите желаемые значения элементов списка. Выполнив все необходимые действия, нажмите кнопку  Далее  (Next). Появится третье диалоговое окно мастера (рис. 6.23).</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image12/6cdbbbb469d4408ea918c135972938ee.gif" width="486" height="341" alt=""><meta itemprop="width" content="486">
+<meta itemprop="height" content="341"></span></p>
+<p> Рис. 6.23. Третье диалоговое окно Мастера списков</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image20/b7855d001c7798b7919d2fc6aee36501.gif" width="486" height="341" alt=""><meta itemprop="width" content="486">
+<meta itemprop="height" content="341"></span></p>
+<p> Рис. 6.24. Четвертое диалоговое окно Мастера списков</p>
+<ol start="6">
+<li>В этом диалоговом окне нужно определить, что предполагается делать со значением, выбранным в списке пользователем: запомнить его для дальнейшего использования или сохранить в каком-либо поле источника данных. Выберите нужный вариант — выберите соответствующий переключатель и, если требуется сохранить значение в поле источника данных, выделите элемент с его именем в раскрывающемся списке. Нажмите кнопку  Далее (Next). Появится четвертое диалоговое окно мастера (рис. 6.24).</li>
+<li>В четвертом диалоговом окне требуется указать название, которое будет использовано в качестве метки для создаваемого списка. Чтобы после создания списка получить справку по возможностям его настройки, установите флажок, расположенный внизу диалогового окна.</li>
+<li>Для завершения процесса создания списка нажмите кнопку  Готово  (Finish).</li>
+</ol>
+<p> Создание элементов управления с помощью кнопки  Список полей </p>
+<p>Не менее простым и удобным способом создания элементов управления является использование списка полей. Чтобы открыть список полей источника данных, доступных для создаваемого отчета, нажмите кнопку  Список полей (Field List) на панели инструментов  Конструктор отчетов (Report Design). Появится плавающее окно, содержащее поля из выбранного для формы источника данных. На рис. 6.25 изображен список полей запроса, который был использован в качестве источника данных для отчета &#171;Товары на складе&#187;.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image08/4a8b0b2c4bf163581f736c8412975091.gif" width="262" height="209" alt=""><meta itemprop="width" content="262">
+<meta itemprop="height" content="209"></span></p>
+<p> Рис. 6.25. Окно  Список полей а режиме Конструктора отчета</p>
+<p>Чтобы создать элемент управления, связанный с каким-либо полем источника данных для создаваемого отчета (таблицы или запроса):</p>
+<ol>
+<li>На панели инструментов  Конструктор отчетов  (Report Design) нажмите кнопку  Список полей (Field List).</li>
+<li>В открывшемся окне выделите нужное поле и с помощью мыши перетащите его в область одного из разделов отчета.</li>
+<li>В отчете появится текстовое поле с меткой, содержащей название поля источника данных. Теперь его можно перемещать и форматировать стандартными методами, используемыми для настройки элементов управления.</li>
+</ol>
+<p> Удаление элементов отчета </p>
+<p>Чтобы удалить из отчета какой-либо элемент управления:</p>
+<ol>
+<li>Выделите элемент управления, щелкнув по нему левой кнопкой мыши.</li>
+<li>Нажмите клавишу &lt;Delete&gt; или выберите команду  Правка, Удалить  (Edit, Delete).</li>
+</ol>
+<p>Чтобы сразу удалить несколько элементов управления, выделите их с помощью мыши, удерживая нажатой клавишу &lt;Shift&gt;, и нажмите клавишу &lt;Delete&gt; или выберите команду  Правка, Удалить. </p>
+<p> Изменение размеров и перемещение элементов управления </p>
+<p>Access 2002 предоставляет достаточно удобный и наглядный способ настройки внешнего вида созданных элементов управления с помощью мыши. Вы можете изменять размеры, перемещать, выравнивать как каждый элемент управления в отдельности, так и группы элементов управления.</p>
+<p> Перемещение и изменение размера отдельного элемента управления </p>
+<p>Как уже описывалось выше, выделить отдельный элемент управления можно с помощью мыши или с помощью раскрывающегося списка  Объект (Object) на панели инструментов  Формат (форма/отчет) (Formatting Form/Report). При выделении элемента управления вокруг него появляется рамка с маркером перемещения (черный квадратик в левом верхнем углу) и пятью маркерами изменения размеров (рис. 6.26). На рис. 6.26 приведен пример выделенного элемента управления в отчете &#171;Товары на складе&#187;. Сам отчет представлен на рис. 6.16.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image22/c64559268ce50aafbd514700a6f861e4.gif" width="428" height="325" alt=""><meta itemprop="width" content="428">
+<meta itemprop="height" content="325"></span></p>
+<p> Рис. 6.26. Выделенный элемент управления &#171;Марка&#187; в отчете &#171;Товары на складе&#187;</p>
+<p>Перемещать и изменять размеры элементов управления можно следующими способами.</p>
+<ul>
+<li> Чтобы переместить элемент управления вместе с его меткой, поместите указатель мыши в любую точку на границе выделенного элемента управления, отличную от маркеров изменения размеров и маркера перемещения. Когда указатель мыши превратится в инструмент перемещения, нажмите левую кнопку мыши и, не отпуская ее, перетащите элемент управления на новое место. При перетаскивании элемента управления его граница перемещается одновременно с указателем мыши. Когда элемент управления окажется на нужном месте, отпустите левую кнопку мыши.</li>
+<li> Чтобы переместить элемент управления, не перемещая связанную с ним метку, поместите указатель мыши над маркером перемещения, находящимся в левом верхнем углу выделенного элемента управления. Указатель мыши превратится в инструмент перемещения отдельного элемента управления. Нажмите левую кнопку мыши и, удерживая ее, перетащите элемент управления на новое место, а затем отпустите левую кнопку мыши.</li>
+<li> Чтобы изменить одновременно ширину и высоту элемента управления, перемещайте указатель мыши над одним из трех угловых маркеров изменения размера выделенного элемента управления, пока указатель мыши не превратится в наклонную двустороннюю стрелку. Нажмите левую кнопку мышки и, удерживая ее, перетащите границу элемента управления до достижения нужного размера, а затем отпустите левую кнопку мыши.</li>
+<li> Чтобы изменить высоту элемента управления, перемещайте указатель мыши над верхним или нижним маркером изменения размера выделенного элемента управления, пока указатель мыши не превратится в двустороннюю вертикальную стрелку. Нажмите левую кнопку мыши и, удерживая ее, перетащите границу элемента управления до достижения нужного размера, а затем отпустите левую кнопку мыши.</li>
+<li> Чтобы изменить ширину элемента управления, перемещайте указатель мыши над правым или левым маркером изменения размера выделенного элемента управления, пока указатель мыши не превратится в двустороннюю горизонтальную стрелку. Нажмите левую кнопку мыши и, удерживая ее, перетащите границу элемента управления до достижения нужного размера, а затем отпустите левую кнопку мыши.</li>
+</ul>
+<p> Выравнивание элемента управления по сетке </p>
+<p>В окне Конструктора отчетов может быть отображена сетка, состоящая in линий толщиной в один пиксел, которые проводятся через каждое деление горизонтальной и вертикальной линеек окна Конструктора отчетов (то есть через сантиметр). Чтобы отобразить сетку, выберите команду Вид, Сетка (View, Grid). Соответствующая команда меню будет отмечена галочкой. Чтобы отменить отображение сетки, снова выберите команду  Вид, Сетка (View, Grid). Отметка с команды меню  Сетка (Grid) будет снята.</p>
+<p>С помощью сетки можно выравнивать элементы управления по горизонтали или по вертикали. Элементы управления можно &#171;привязать к сетке&#187;, выбрав команду  Формат, Привязать к сетке  (Format, Snap to Grid). Если привязка к сетке включена, то пункт меню  Привязать к сетке (Snap to Grid) отмечен галочкой. Если перемещать элемент управления при включенной привязке к сетке, то левый верхний угол объекта перемещается дискретно по узлам сетки.</p>
+<p>По умолчанию сетка отображается во всех новых отчетах и ее густота равна 10 узлам на сантиметр. Чтобы изменить густоту узлов сетки:</p>
+<ol>
+<li>Выберите команду  Правка, Выделить отчет (Edit, Select Report).</li>
+<li>На панели инструментов  Конструктор форм  (Report Design) нажмите кнопку  Свойства (Properties). Появится окно свойств отчета.</li>
+<li>В окне свойств отчета раскройте вкладку  Макет  (Format) и при помощи полосы прокрутки найдите свойства  Число делений по X (Grid X) и  Число делений по Y (Grid Y).</li>
+<li>Измените значение свойств  Число делений по X  (Grid X) и  Число делений по Y (Grid Y).</li>
+</ol>
+<p> Выделение, перемещение и изменение свойств нескольких элементов управления </p>
+<p>Чтобы одновременно выделить несколько элементов управления, щелкните левой кнопкой мыши по одному элементу управления, чтобы выделить его и, удерживая нажатой клавишу &lt;Shift&gt;, выделите остальные элементы управления либо при помощи мыши нарисуйте область выделения вокруг группы элементов управления. Группа элементов управления окажется выделенной.</p>
+<p>Замечание</p>
+<p>Область выделения позволяет выделить все элементы управления, которые хотя бы частично попадают в область. Однако данный способ выделения объектов, используемый Access по умолчанию, можно изменить для того, чтобы выделять объект только в том случае, если он целиком попадает в область выделения. Для этого выберите команду Сервис, Параметры (Tools, Options), раскройте вкладку Формы и отчеты (Forms/Reports) и выберите переключатель охват (Fully Enclosed).</p>
+<p>Выделив несколько элементов одновременно, можно сразу настроить их общие свойства. Для этого отобразите диалоговое окно свойств, нажав кнопку  Свойства (Properties) на панели инструментов  Конструктор отчетов (Report Design).</p>
+<p>Чтобы отменить выделение одного из элементов управления в выделенной группе, нажмите клавишу &lt;Shift&gt; и, удерживая ее нажатой, щелкните левой кнопкой мыши по элементу управления. Для отмены выделения всей группы элементов управления щелкните левой кнопкой мыши по любой пустой (не содержащей объектов) области формы.</p>
+<p>Переместить выделенную группу элементов управления можно, зацепив указателем мыши за границу одного из них и перетащив всю группу на новое место.</p>
+<p> Выравнивание нескольких элементов управления </p>
+<p>Высоту всех текстовых полей можно одновременно отрегулировать таким образом, чтобы их параметры соответствовали используемому шрифту. Чтобы выделить все элементы управления в отчете, выберите команду  Правка, Выделить все (Edit, Select All), а затем выберите команду  Формат, Размер, По размеру данных (Format, Size, To Fit). Access автоматически установит приемлемую высоту всех текстовых полей.</p>
+<p>Один или несколько элементов управления можно выровнять по сетке или относительно друг друга. Для этого выделите нужные элементы и выберите команду  Формат, Выровнять (Format, Align), а затем выберите команду:</p>
+<ul>
+<li> По узлам сетки (То Grid), чтобы выровнять элементы управления по узлам сетки;</li>
+<li> По левому краю (Left), чтобы выровнять выделенные элементы управления, расположенные в столбец, так, чтобы их левые края находились на одной вертикальной линии;</li>
+<li> По правому краю (Right), чтобы выровнять выделенные элементы управления, расположенные в столбец, так, чтобы их правые края находились на одной вертикальной линии;</li>
+<li> По верхнему краю (Тор), чтобы выровнять выделенные элементы управления, расположенные в строку по их верхней границе;</li>
+<li> По нижнему краю (Bottom), чтобы выровнять выделенные элементы управления, расположенные в строку по их нижним границам.</li>
+</ul>
+<p>Чтобы придать создаваемому отчету более привлекательный вид, необходимо потратить некоторое время на выравнивание групп элементов управления по горизонтали и вертикали.</p>
+<p> Изменение межстрочного интервала </p>
+<p>Чтобы сделать отчет более компактным и уместить его на меньшем количестве листов, можно сократить межстрочные интервалы в разделах отчета. Для этого:</p>
+<ol>
+<li>Перейдите в режим Конструктора отчетов.</li>
+<li>Выделите все надписи в верхнем колонтитуле и переместите полученную группу как можно ближе к верхнему краю раздела.</li>
+<li>Щелкните по нижней линии верхнего колонтитула и переместите ее как можно ближе к нижнему краю надписей в этом разделе отчета.</li>
+<li>Выделите все текстовые поля в разделе области данных и переместите эту группу к верхнему краю раздела.</li>
+<li>Переместите нижнюю границу области данных как можно ближе к нижнему краю текстовых полей в этом разделе.</li>
+<li>Нажмите кнопку  Вид  (View) на панели инструментов  Конструктор отчетов (Report Design), чтобы проверить эффект от сделанных изменений в режиме Предварительного просмотра.</li>
+<li>Заметьте, что невозможно сделать межстрочный интервал меньше, чем высота самого высокого текстового поля или надписи, даже уменьшая значение свойства  Высота  (Height) в окне  Свойства (Properties) раздела, поскольку Access игнорирует введенное значение и подставляет требуемое значение, вычисленное в зависимости от границы самого крайнего элемента с нижней стороны раздела.</li>
+<li>Выберите команду  Файл, Сохранить  (File, Save), чтобы сохранить внесенные изменения.</li>
+</ol>
+<p> Настройка расстояний между несколькими элементами </p>
+<p>Возможно, в вашем отчете будут содержаться целые блоки текстовых полей, расположенных в строки и столбцы. Существует возможность быстро и точно изменить или выровнять горизонтальные и вертикальные расстояния между несколькими в ряд расположенными соседними элементами управления с помощью команд меню  Формат, Интервал по горизонтали (Format, Horizontal Spacing) и  Формат, Интервал но вертикали (Format, Vertical Spacing):</p>
+<ul>
+<li> Сделать равным (Make Equal) — сделать горизонтальное (вертикальное) расстояние между соседними горизонтально (вертикально) расположенными элементами одинаковым, равным среднему расстоянию между ними по этому направлению;</li>
+<li> Увеличить (Increase) — увеличить горизонтальное (вертикальное) расстояние между соседними горизонтально (вертикально) расположенными элементами на величину одного горизонтального (вертикального) деления сетки;</li>
+<li> Уменьшить (Decrease) — увеличить горизонтальное (вертикальное) расстояние между соседними горизонтально (вертикально) расположенными элементами на величину одного горизонтального (вертикального) деления сетки.</li>
+</ul>
+<p>Используйте эти команды, предварительно выделив группу в ряд расположенных элементов.</p>
+<p> Копирование элементов управления через буфер обмена </p>
+<p>Выделенный элемент управления или группу элементов управления можно удалить или скопировать в буфер обмена, а затем вставить в отчет. В Access 2002 для работы с буфером обмена используются стандартные комбинации клавиш Windows: &lt;Ctrl&gt;+&lt;X&gt; или &lt;Shift&gt;+&lt;Delete&gt; — для удаления из отчета и помещения в буфер обмена, &lt;Ctrl&gt;+&lt;C&gt; или &lt;Ctrl&gt;+&lt;Insert&gt; — для копирования выделенных элементов управления в буфер обмена и &lt;Ctrl&gt;+&lt;V&gt; или &lt;Shift&gt;+&lt;Insert&gt; — для вставки содержимого буфера обмена. Чтобы безвозвратно удалить элемент управления, выделите его и нажмите клавишу &lt;Deiete&gt;. Чтобы восстановить удаленную метку, связанную с элементом управления, выделите другую метку, скопируйте ее в буфер обмена, затем выделите элемент управления, с которым нужно связать метку, и вставьте ее из буфера обмена.</p>
+<p> Копирование формата элемента управления </p>
+<p>В Access 2002 существует возможность скопировать параметры форматирования из одного элемента управления отчета в другой, при этом копируются только те элементы форматирования, применение которых возможно для данного элемента управления. Чтобы скопировать параметры форматирования:</p>
+<ol>
+<li>Выделите элемент управления, формат которого нужно скопировать.</li>
+<li>На панели инструментов  Конструктор отчетов  (Report Design) нажмите кнопку  Формат по образцу (Format Painter). Указатель мыши превратится в инструмент копирования формата. Если необходимо скопировать параметры форматирования выделенного элемента управления в несколько элементов управления, дважды щелкните левой кнопкой мыши по кнопке  Формат по образцу (Format Painter).</li>
+<li>Щелкните левой кнопкой мыши по элементу управления, в который нужно скопировать формат. Скопированы будут только те элементы форматирования, применение которых возможно для данного элемента управления.</li>
+<li>Если кнопка  Формат по образцу (Format Painter) была нажата одним щелчком, то режим копирования формата будет отключен сразу после копирования элементов форматирования в выделенный элемент управления. Если по кнопке  Формат по образцу (Format Painter) был произведен двойной щелчок, то шаг 3 можно повторять любое число раз. Для отключения режима копирования формата нажмите еще раз кнопку  Формат по образцу (Format Painter) или клавишу &lt;Esc&gt;.</li>
+</ol>
+<p> Оформление страниц отчета </p>
+<p>При создании отчета важно не только определить данные, которые должны быть представлены в отчете, но и нужным образом оформить отчет как документ: правильно разбить его на страницы, пронумеровать страницы, выделить наиболее важные данные. В этом разделе будут рассмотрены вопросы, касающиеся оформления страниц отчета.</p>
+<p> Добавление разрывов и нумерации страниц </p>
+<p>Если не все нужные данные помещаются на одной странице, Access позволяет вставить принудительный разрыв страницы, чтобы не разрывать группы данных и не нарушать структуру отчета. Для этого:</p>
+<ol>
+<li>Откройте отчет в режиме Конструктора.</li>
+<li>На панели элементов нажмите кнопку  Разрыв страницы (Page Break). В тех областях отчета, где можно вставить разрыв страницы, курсор мыши будет принимать вид маленького креста, к которому прикреплена страница.</li>
+<li>Поместите указатель мыши в то место, где необходимо разорвать страницу, и щелкните левой кнопкой мыши. Появится символ разрыва страницы.</li>
+</ol>
+<p>Теперь вся информация, расположенная после вставленного разрыва страницы, будет выводиться на новой странице. При необходимости использования принудительных разрывов страниц и в других местах отчета повторите описанную выше процедуру.</p>
+<p>Вставленный разрыв страницы можно перемещать в пределах всего отчета. Для этого выделите его, щелкнув по нему левой кнопкой мыши либо выбрав его название в списке  Объект (Object) панели форматирования, и с помощью мыши перетащите в новое место.</p>
+<p>Чтобы удалить разрыв страницы, выделите его и нажмите клавишу &lt;Delete&gt; либо выберите команду  Правка, Удалить  (Edit, Delete).</p>
+<p>После того как отчет разбит на страницы, их необходимо пронумеровать. Access 2002 предоставляет несколько возможностей нумерации многостраничных отчетов. Номера страниц могут быть двух форматов, выводиться внизу или вверху каждой страницы с различным выравниванием. Для вставки номеров страниц:</p>
+<ol>
+<li>Откройте отчет в режиме Конструктора.</li>
+<li>Выберите команду  Вставка, Номера страниц (Insert, Page Numbers).</li>
+<li>В появившемся диалоговом окне  Номера страниц (Page Numbers) установите нужные параметры и нажмите кнопку  ОК.</li>
+</ol>
+<p>В разделе нижнего или верхнего колонтитулов (в зависимости от выбранного в окне  Номера страниц (Page Numbers) значения) появится текстовое поле, источником данных которого будет выражение, задающее номер страницы в выбранном формате. Как и любое другое текстовое поле, номер страницы можно перемещать и форматировать, изменять его свойства и размер.</p>
+<p> Использование в отчете линий и прямоугольников </p>
+<p>Чтобы сделать отчет более эффектным и наглядным, Access 2002 позволяет использовать в нем линии и прямоугольники. С помощью этих элементов можно выделять заголовки и группы данных.</p>
+<p>Чтобы добавить к отчету линию:</p>
+<ol>
+<li>Откройте отчет в режиме Конструктора.</li>
+<li>На панели элементов нажмите кнопку  Линия (Line). В тех областях отчета, где можно вставить линию, курсор мыши будет принимать вид маленького креста, к которому прикреплена линия.</li>
+<li>Щелкните левой кнопкой мыши в том месте отчета, где должна начинаться линия, и, не отпуская кнопку мыши, нарисуйте линию нужной длины, затем отпустите кнопку мыши.</li>
+</ol>
+<p>Нарисованную линию можно перемещать, изменять ее размеры и свойства с помощью тех же приемов, что и для любого другого элемента управления. Чтобы удалить линию, выделите ее и нажмите клавишу &lt;Delete&gt;.</p>
+<p>Совет</p>
+<p>Если после изменения размеров горизонтальной или вертикальной линии с помощью мыши вы случайно сделали ее наклоненной на небольшой градус, который не удается исправить с помощью перетаскивания маркеров размера, установите в окне свойств нулевое значение для свойства  Высота (Height) или  Ширина (Width) соответственно.</p>
+<p>Чтобы сделать линию более эффектной, ее нужно отформатировать:</p>
+<ol>
+<li>Выделите линию, щелкнув по ней левой кнопкой мыши.</li>
+<li>На панели инструментов  Конструктор отчетов (Report Design) нажмите кнопку  Свойства (Properties).</li>
+<li>В появившемся окне свойств раскройте вкладку  Макет (Format).</li>
+<li>Измените стиль, цвет и ширину линии, установив нужные значения для свойств  Тип границы (Border Style),  Цвет границы (Border Color) и  Ширина границы (Border Width).</li>
+<li>Свойство  Оформление (Special Effect) позволяет придать линии специальный эффект изображения, например сделать ее приподнятой, утопленной либо добавить к ней тень. Для этого просто выберите необходимый элемент в списке данного свойства.</li>
+</ol>
+<p>Заключив в прямоугольник несколько элементов управления, можно выделить соответствующую группу данных:</p>
+<ol>
+<li>Откройте отчет в режиме Конструктора.</li>
+<li>На панели элементов нажмите кнопку  Прямоугольник (Rectangle). В тех областях отчета, где можно вставить прямоугольник, курсор мыши будет принимать вид маленького креста, к которому прикреплен прямоугольник.</li>
+<li>Щелкните левой кнопкой мыши в том месте отчета, где должен располагаться верхний левый угол прямоугольника, и, не отпуская кнопку мыши, перетащите указатель мыши в нижний правый угол прямоугольника, затем отпустите кнопку мыши. Внутрь нарисованного прямоугольника должны попасть элементы управления, соответствующие той гpyппe данных, которую нужно выделить.</li>
+</ol>
+<p>Нарисованный прямоугольник можно перемещать, изменять его размеры и свойства с помощью тех же приемов, что и для любого другого элемента управления. Чтобы удалить прямоугольник, выделите его и нажмите клавишу &lt;Delete&gt;.</p>
+<p>Чтобы попавшие в нарисованную прямоугольную область данные еще больше обращали на себя внимание, нужно отформатировать нарисованный прямоугольник:</p>
+<ol>
+<li>Выделите прямоугольник, щелкнув по нему левой кнопкой мыши.</li>
+<li>На панели инструментов  Конструктор отчетов (Report Design) нажмите кнопку  Свойства (Properties).</li>
+<li>В появившемся окне свойств раскройте вкладку  Макет  (Format).</li>
+<li>Чтобы изменить параметры границы прямоугольника, измените значения свойств  Тип границы  (Border Style),  Цвет границы (Border Color) и  Ширина границы (Border Width).</li>
+<li>Чтобы прямоугольник не перекрывал данные, которые он выделяет, установите для свойства  Тип фона (Back Style) значение  Прозрачный (Transparent) или переместите непрозрачный, залитый цветом, прямоугольник на задний план (по отношению к элементам управления с данными) с помощью команды  Формат, На задний план (Format, Send to Back).</li>
+<li>Чтобы сделать прямоугольник более эффектным и еще больше выделить заключенные в него данные, выберите один из элементов раскрывающегося списка свойства  Оформление (Special Effect). С помощью этого свойства прямоугольник можно сделать, например, приподнятым, утопленным либо добавить к нему тень.</li>
+</ol>
+<p> Создание в отчете вычисляемых полей </p>
+<p>Вычисляемые поля предназначены для отображения в отчетах значений выражений на основе исходных данных. Вычисляемые поля в отчетах можно использовать для получения итоговых значений или проведения специальных вычислений, например, чтобы отобразить общую цену заказа, вычислив произведение количества товара на цену одного изделия. Рассмотрим процедуру создания вычисляемых полей на примере отчета &#171;Товары на складе&#187;, созданного ранее.</p>
+<p>Чтобы добавить к отчету вычисляемое поле &#171;Сумма&#187;:</p>
+<ol>
+<li>Откройте отчет &#171;Товары на складе&#187; в режиме Конструктора.</li>
+<li>На панели элементов нажмите кнопку  Надпись (Label) и поместите новую надпись справа от надписи &#171;На складе&#187; (Units in Stock) в разделе верхнего колонтитула. Введите в качестве текста надписи слово &#171;Сумма&#187; (Sum).</li>
+<li>Чтобы создать вычисляемое поле &#171;Сумма&#187; (Sum), нажмите кнопку  Поле  (Text Box) на панели элементов и добавьте текстовое поле справа от текстового поля &#171;НаСкладе&#187; (UnitsInStock) в разделе данных. Удалите метку нового текстового поля.</li>
+<li>Щелкните внутри текстового поля и введите в качестве его значения выражение:= [НаСкладе]* [Цена] (= [UnitsInStock] * [Unit-Price]  ).
+<p> Откройте окно свойств  поля, дважды щелкнув по нему, и на вкладке  Макет  (Format) в поле со списком свойства  Формат поля (Format) выберите значение  Денежный (Currency).</p>
+</li>
+</ol>
+<p>Замечание</p>
+<p>Ввести выражение в текстовое поле можно несколькими способами: выделите его и нажмите комбинацию клавиш &lt;Shift&gt;+&lt;F2&gt;, чтобы войти в режим редактирования содержимого поля, или сделайте двойной щелчок по полю для отображения диалогового окна  Свойства  (Properties), а затем введите выражение как значение свойства  Данные (Source).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image04/23d04c66da4ac4d190bbed5688d59448.gif" width="520" height="560" alt=""><meta itemprop="width" content="520">
+<meta itemprop="height" content="560"></span></p>
+<p> Рис. 6.27. Первая страница отчета с вычисляемыми полями</p>
+<ol start="5">
+<li>Повторите шаги 3 и 4 для того, чтобы создать текстовое поле в разделе примечаний группы &#171;Категория&#187; (Category), но в качестве выражения для вычисления промежуточного значения следует ввести: =Sum( [НаСкладе] * [Цена]) (=Sum( [UnitsInStock] * [UnitPrice])). Нажмите кнопку  Полужирный  (Bold) на панели форматирования, чтобы установить полужирный шрифт для текста в новом поле. Откройте диалоговое окно  Свойства (Properties) и раскройте в нем вкладку  Другие (Other), в поле  Имя (Name) введите имя текстового поля &#171;Сумма&#187; (Sum). Затем раскройте вкладку  Макет  (Format) и в поле со списком свойства  Формат поля (Format) выберите значение  Денежный (Currency).</li>
+<li>Поскольку ширина области данных нашего отчета увеличилась, уменьшите ширину полей страницы, чтобы все поля поместились на одной странице. Для этого выберите команду  Файл, Параметры страницы (File, Page Setup) и задайте вместо ширины левого и правого полей, заданных по умолчанию, значение 10 мм  (см. разд. &#171;Просмотр и печать отчетов&#187; в этой главе). </li>
+<li>Нажмите кнопку  Вид (View) на панели инструментов  Конструктор отчетов (Report Design), чтобы оценить результаты своей работы. Отчет будет выглядеть так, как показано на рис. 6.27. К прежним данным добавился крайний правый столбец со значениями стоимости каждого товара в имеющемся количестве на складе и промежуточных итоговых сумм по стоимости товаров для каждой категории.</li>
+</ol>
+<p>Замечание</p>
+<p>Если при переходе в режим Просмотра отчета появляется диалоговое окно Введите значение параметра (Enter Parameter Value), это означает, что в выражениях неправильно заданы названия одного или нескольких полей. Нажмите кнопку Отмена (Cancel) и проверьте свойства, установленные на шагах 4 и 5.</p>
+<p> Сортировка и группировка данных </p>
+<p>Отчеты становятся более понятными и структурированными, если данные в них организованы в группы и подгруппы.  В разд. <a href="/glava-sozdanie-sostavnyh-form">&#171;Создание отчета с помощью Мастера отчетов&#187;</a>данной главы было показано, как задать начальные свойства группировки и сортировки данных. Однако структуру отчета можно изменить. Для этого используется диалоговое окно  Сортировка и группировка (Sorting and Grouping), изображенное на рис. 6.28.</p>
+<p>Чтобы открыть диалоговое окно  Сортировка и группировка (Sorting and Grouping), откройте отчет в режиме Конструктора и нажмите кнопку  Сортировка и группировка (Sorting and Grouping) на панели инструментов  Конструктор отчетов (Report Design).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image01/08d16b71c42a6ff454d37006ced1785a.gif" width="430" height="230" alt=""><meta itemprop="width" content="430">
+<meta itemprop="height" content="230"></span></p>
+<p> Рис. 6.28. Диалоговое окно  Сортировка и группировка</p>
+<p>В этом диалоговом окне можно определить поля или выражения, по которым Access будет группировать данные. Кроме того, сгруппированные данные можно сортировать по возрастанию или по убыванию. Символ  Сортировка и группировка (Sorting and Grouping) на кнопке выделения в левом сером столбце этого диалогового окна указывает на то, что данное поле или выражение (находящееся справа от значка) используется для группировки записей. В данном примере поле &#171;Категория&#187; (CategoryName) используется для группировки строк отчета, а сортировка строк в пределах группы выполняется по полю &#171;КодТовара&#187; (ProductID).</p>
+<p>Access 2002 позволяет группировать данные двумя способами: по категориям, при этом каждой категории должно соответствовать уникальное значение, и по диапазону значений, который может быть как числовым, так и алфавитным. При этом для группировки данных можно использовать не только значения полей, но и выражения.</p>
+<p>Замечание</p>
+<p>Уровней группировки может быть несколько, т. е. можно создавать подгруппы внутри группы строк. Примером отчета с несколькими уровнями группировки, одним из которых является группировка по значению выражения в качестве категории, является отчет &#171;Продажи по сотрудникам и странам&#187; (Employee Sales by Country) — один из отчетов базы данных &#171;Борей&#187;. В нем используются группы (страны) и подгруппы (имена сотрудников). Более подробную информацию о выполнении группировки в отчетах вы можете найти также в разд. &#171;Сортировка и группировка данных&#187;.</p>
+<p> Применение шаблона отчетов </p>
+<p>Как правило, отчеты, подготавливаемые в одной базе данных, должны быть выполнены в одном стиле. Потратив достаточно много времени на создание и форматирование одного отчета, не хотелось бы терять еще столько же времени на разработку остальных. В качестве решения этой проблемы Access 2002 предлагает использовать созданный отчет в качестве шаблона для всех новых отчетов.</p>
+<p>Чтобы создать отчет, который послужит шаблоном для всех последующих отчетов:</p>
+<ol>
+<li>В окне  База данных щелкните по ярлыку  Отчеты (Reports) и нажмите кнопку  Создать (New).</li>
+<li>В появившемся диалоговом окне  Новый отчет (New Report) выделите в списке способов создания элемент  Конструктор (Design View) и нажмите кнопку  ОК. Откроется окно Конструктора отчетов.</li>
+<li>Если необходимо, добавьте к отчету разделы верхнего и нижнего колонтитулов, раздел примечания и раздел заголовка отчета. С помощью мыши установите необходимую ширину отчета и высоту его разделов.</li>
+<li>Выделите весь отчет, щелкнув левой кнопкой мыши в левом верхнем углу в месте пересечения линеек либо выбрав в списке  Объект (Object) панели форматирования элемент  Отчет (Report).</li>
+<li>На панели инструментов  Конструктор отчетов (Report Design) нажмите кнопку  Свойства (Properties).</li>
+<li>В появившемся окне свойств отчета раскройте вкладку  Макет (Format). Определите на этой вкладке те значения свойств, которые должны иметь все создаваемые отчеты. Например, можно указать файл рисунка, который будет использоваться в качестве фона отчетов, определить параметры отображения рисунка, установить точную ширину отчета в сантиметрах, задать частоту сетки, по которой выравниваются объекты отчета.</li>
+</ol>
+<p>Замечание</p>
+<p>Для контроля вносимых изменений используйте режим Предварительного просмотра. Чтобы перейти в этот режим, на панели инструментов Конструктор отчета (Report Design) нажмите кнопку Вид (View), на которой отображен элемент списка режимов Предварительный просмотр (Print Preview).</p>
+<ol start="7">
+<li>Закройте окно свойств и сохраните отчет: выберите команду  Файл, Сохранить  (File, Save) и в появившемся диалоговом окне введите название отчета, например Образец. Закройте отчет, щелкнув по кнопке с изображением крестика в правом верхнем углу отчета.</li>
+<li>Выберите команду  Сервис, Параметры  (Tools, Options). В появившемся диалоговом окне  Параметры (Options) раскройте вкладку  Формы и отчеты (Forms/Reports).</li>
+<li>В текстовом поле  Шаблон отчета (Report template) укажите название созданного отчета (в нашем примере: Образец) и нажмите кнопку ОК.</li>
+</ol>
+<p>Теперь при создании отчета в режиме Конструктора в качестве шаблона будет использоваться указанный отчет, т. е. по умолчанию свойства создаваемого отчета будут иметь значения, определенные в шаблоне.</p>
+<p> Просмотр и печать отчетов </p>
+<p>Созданный отчет можно отобразить на экране и напечатать. Access 2002 позволяет просмотреть отчет перед печатью и установить подходящие поля страницы. При просмотре отчета в режиме одной полной страницы (масштаб 100%) Access отображает отчет так, как он будет выглядеть при печати.</p>
+<p>Просмотреть отчет перед печатью можно в режиме Просмотра образца или в режиме Предварительного просмотра. Переход из одного режима в другой описан  в разд. &#171;Режимы работы с отчетами&#187; данной главы. </p>
+<p>Чтобы изменить поля страницы отчета:</p>
+<ol>
+<li>В режиме Предварительного просмотра отчета выберите команду  Файл, Параметры страницы  (File, Page Setup). Откроется диалоговое окно  Параметры страницы (Page Setup), изображенное на рис. 6.29.</li>
+</ol>
+<p>Замечание</p>
+<p>Эту же команду можно использовать и в режиме Просмотра образца отчета, и после выделения отчета в списке отчетов в окне базы данных.</p>
+<ol start="2">
+<li>Это диалоговое окно похоже на диалоговые окна  Параметры страницы  (Page Setup) в других приложениях Windows. Раскройте вкладку  Поля (Margins) и уменьшите поля сверху, снизу, слева и справа, чтобы увеличить количество информации, размещаемой на одной странице. Установка флажка  Печатать только данные (Print Data Only) позволяет распечатать только данные из отчета, при этом графическое оформление элементов управления, верхний и нижний колонтитулы, а также разделы заголовка и примечаний отчета печататься не будут.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image21/c1f094b5726d0429b9b02eed475d2873.gif" width="462" height="500" alt=""><meta itemprop="width" content="462">
+<meta itemprop="height" content="500"></span></p>
+<p> Рис. 6.29. Диалоговое окно  Параметры страницы</p>
+<p>Замечание</p>
+<p>Учтите, что установленные в диалоговом окне  Параметры страницы (Page Setup) значения размеров полей страницы будут использоваться только в данном отчете, поскольку для каждого отчета задается свой набор значений полей. При сохранении отчета Access сохраняет информацию о полях страницы. Для того чтобы установить значения полей страницы, которые будут применяться по умолчанию для всех отчетов базы данных, нужно использовать вкладку  Общие (General) диалогового окна  Параметры (Options) (см. также разд. &#171;Настройка пользовательского интерфейса&#187;гл. 14).</p>
+<ol start="3">
+<li>На вкладке  Страница  (Page) диалогового окна  Параметры страницы (Page Setup) можно определить ориентацию страницы, тип бумаги и принтер, на котором нужно напечатать отчет. После установки всех параметров нажмите кнопку  ОК.</li>
+<li>Чтобы при просмотре отчета увеличить какую-либо его часть, поместите над ней указатель мыши в виде увеличительного стекла и щелкните левой кнопкой мыши либо нажмите кнопку  Масштаб (Zoom) на панели инструментов  Предварительный просмотр (Print Preview). Можно также выбрать в раскрывающемся списке  Масштаб (Zoom) той же панели инструментов нужный процент увеличения.</li>
+<li>Чтобы напечатать отчет, нажмите кнопку  Печать (факс) (Print (Fax)) на панели инструментов  Предварительный просмотр (Print Preview). Access напечатает отчет, используя текущие настройки принтера. Если вы хотите поменять принтер, ориентацию страницы или значение какого-либо другого параметра принтера, то выберите команду  Файл, Печать (File, Print). На экране появится стандартное диалоговое окно  Печать (Print) для принтера, заданного в Windows в качестве принтера по умолчанию (рис. 6.30).</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image22/c6d61d33ecc81c64112c3017fd14275f.gif" width="441" height="221" alt=""><meta itemprop="width" content="441">
+<meta itemprop="height" content="221"></span></p>
+<p> Рис. 6.30. Диалоговое окно  Печать</p>
+<ol start="6">
+<li>С помощью диалогового окна Печать (Print) можно распечатать либо весь отчет целиком, либо его часть, вывести отчет в файл для последующей печати и указать количество печатаемых копий. Нажав кнопку Свойства (Properties), можно изменить значения параметров, относящихся к выбранному принтеру. Для печати отчета нажмите кнопку  ОК.</li>
+</ol>
+<p> Выводы </p>
+<p>Эта глава является последней в первой части нашей книги. На ней мы заканчиваем наше знакомство с Access 2002. Мы показали вам основные приемы работы с объектами Access: таблицами, запросами, формами и отчетами. Этих сведений вполне достаточно для того, чтобы решать несложные задачи обработки данных, которые можно представить в виде некоторого количества связанных таблиц — базы данных. Мы надеемся, что вы убедились в том, что Access 2002 является удобным инструментом, которым легко пользоваться и который вы можете очень быстро освоить, и получили первые навыки работы. Во всех главах этой части мы отсылали читателя к следующим главам книги за дополнительными сведениями, касающимися предмета рассмотрения. Следующие главы существенно расширят ваше представление о возможностях системы и должны показать вам, что Access 2002 не только легкий и простой, но ч мощный инструмент для решения прикладных задач.</p>
+<!-- toc empty -->	</div>
+<!-- .entry-content -->
+
+</article>
+
+
+
+
+
+
+
+
+
+<div class="social-buttons">
+<span class="social-button social-button--vkontakte main" data-social="vkontakte"><span>Поделиться в ВКонтакте</span></span><span class="social-button social-button--telegram " data-social="telegram"></span><span class="social-button social-button--odnoklassniki " data-social="odnoklassniki"></span><span class="social-button social-button--whatsapp " data-social="whatsapp"></span><span class="social-button social-button--viber " data-social="viber"></span>
+</div>
+
+<!--noindex-->
+<div class="author-box">
+    <div class="author-info">
+        <div class="author-box__ava">
+                    </div>
+
+        <div class="author-box__body">
+            <div class="author-box__author">
+                Автор А. Днепров            </div>
+            <div class="author-box__description">
+                <p>Обучаю основам работы с офисными программами.</p>
+            </div>
+
+            
+        </div>
+    </div>
+</div>
+<!--/noindex-->
+    <meta itemprop="author" content="А. Днепров">
+<meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/glava-sozdanie-i-pechat-otchetov" content="Глава 6. Создание и печать отчетов">
+    <meta itemprop="dateModified" content="2024-07-21">
+<div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+<div class="related-posts">
+<div class="related-posts__header">Вам также может понравиться</div>
+<div class="post-cards post-cards--vertical">
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/kak-sdelat-massovuyu-zamenu-formul"><img width="311" height="230" src="/image04/2408fadbc9163d5aa4994580cfc152cd.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/kak-sdelat-massovuyu-zamenu-formul">Как сделать массовую замену формул</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/kak-udalit-lishnie-i-pustye-stranitsy-v-excel">Как удалить лишние и пустые страницы в Excel</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/preobrazovanie-teksta-v-tablitsu"><img width="345" height="122" src="/image14/7a0043c9bf012cc129b22376cfebb2a9.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/preobrazovanie-teksta-v-tablitsu">Преобразование текста в таблицу</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/kak-delat-skrinshoty-s-vysokim-razresheniem-v-windows">Как делать скриншоты с высоким разрешением в Windows 11/10</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/osobennosti-raboty-s-mnogostranichny"><img width="213" height="230" src="/image13/6f8f9694c11ee322ff9d3675b0b8ba07.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/osobennosti-raboty-s-mnogostranichny">13.1 Особенности работы с многостраничными документами</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/kak-sdelat-izmeneniya-vnutri-yacheyki-p"><img width="345" height="93" src="/image27/f6550fd3bdfdfdbe500536441d5d252e.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/kak-sdelat-izmeneniya-vnutri-yacheyki-p">Как сделать изменения внутри ячейки. Принудительный перенос</a></div>
+    </div>
+</div>
+</div>
+            </main><!-- #main -->
+        </div>
+<!-- #primary -->
+
+        
+    
+
+    </div>
+<!--.site-content-inner-->
+
+    
+</div>
+<!--.site-content-->
+
+    
+    
+
+<div class="site-footer-container">
+
+    
+
+    <footer id="colophon" class="site-footer full" itemscope itemtype="http://schema.org/WPFooter">
+        <div class="site-footer-inner fixed">
+
+            
+            
+<div class="footer-bottom">
+    <div class="footer-info">
+        <div class="footer-copyright">© 2024 Самоучитель справочник по офисным программам. <a href="/o-nas" rel="nofollow">О нас | Контакты</a> | <a href="/map" rel="nofollow">Карта сайта</a>
+</div>
+        <div class="footer-under-copyright"></div>
+	        </div>
+
+    </div>
+        </div>
+    </footer><!--.site-footer-->
+</div>
+
+
+            <button type="button" class="scrolltop js-scrolltop" data-mob="on"></button>
+    
+                    <div class="top-line js-top-line">
+            <div class="top-line-inner fixed">
+
+                <div class="top-line__title">Глава 6. Создание и печать отчетов</div>
+<div class="top-line__like"><span class="btn-fb-like btn-top-like social-button--vkontakte" data-social="vkontakte"><span>Поделиться в ВКонтакте</span></span></div>
+<div class="top-line__post">
+<div class="top-line__post_thumbnail"><a href="/funktsiya-mmult-v-excel"></a></div>
+<div class="top-line__post_title"><a href="/funktsiya-mmult-v-excel">Функция MMULT в Excel</a></div>
+</div>            </div>
+        </div>
+    
+</div>
+<!-- #page -->
+
+<script>var pseudo_links = document.querySelectorAll(".pseudo-clearfy-link");for (var i=0;i<pseudo_links.length;i++ ) { pseudo_links[i].addEventListener("click", function(e){   window.open( e.target.getAttribute("data-uri") ); }); }</script><script>document.addEventListener("copy", (event) => {var pagelink = "\nИсточник: /glava-sozdanie-i-pechat-otchetov";event.clipboardData.setData("text", document.getSelection() + pagelink);event.preventDefault();});</script><script type="text/javascript" id="yelly-scripts-js-extra">
+/* <![CDATA[ */
+var settings_array = {"rating_text_average":"среднее","rating_text_from":"из","lightbox_display":"1"};
+var wps_ajax = {"url":"\/wp-admin\/admin-ajax.php","nonce":"e4ca9d4bd8"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="/js/scripts.min.js" id="yelly-scripts-js"></script>
+
+
+
+<div class="image-hover-social-buttons" style="display: none;">
+<div class="social-button social-button--vkontakte js-share-link" data-uri="https://vk.com/share.php?url=%2Fglava-sozdanie-i-pechat-otchetov"></div>
+<div class="social-button social-button--telegram js-share-link" data-uri="https://t.me/share/url?url=%2Fglava-sozdanie-i-pechat-otchetov&text=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+6.+%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5+%D0%B8+%D0%BF%D0%B5%D1%87%D0%B0%D1%82%D1%8C+%D0%BE%D1%82%D1%87%D0%B5%D1%82%D0%BE%D0%B2"></div>
+<div class="social-button social-button--odnoklassniki js-share-link" data-uri="https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&service=odnoklassniki&st.shareUrl=%2Fglava-sozdanie-i-pechat-otchetov"></div>
+<div class="social-button social-button--whatsapp js-share-link" data-uri="whatsapp://send?url=%2Fglava-sozdanie-i-pechat-otchetovtext=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+6.+%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5+%D0%B8+%D0%BF%D0%B5%D1%87%D0%B0%D1%82%D1%8C+%D0%BE%D1%82%D1%87%D0%B5%D1%82%D0%BE%D0%B2"></div>
+<div class="social-button social-button--viber js-share-link" data-uri="viber://forward?url=%2Fglava-sozdanie-i-pechat-otchetovtext=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+6.+%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5+%D0%B8+%D0%BF%D0%B5%D1%87%D0%B0%D1%82%D1%8C+%D0%BE%D1%82%D1%87%D0%B5%D1%82%D0%BE%D0%B2"></div>
+</div>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(93345646, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/93345646" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>

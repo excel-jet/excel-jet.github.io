@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<title>Глава 5. Создание форм для ввода данных &#8212; learn-office</title>
+	<meta name="description" content="Создание форм для ввода данных Access 2002 позволяет организовать удобный и интуитивно понятный интерфейс пользователя для работы с данными с">
+	<link rel="canonical" href="/glava-sozdanie-form-dlya-vvoda-dannyh">
+	<meta property="og:locale" content="ru_RU">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Глава 5. Создание форм для ввода данных &#8212; learn-office">
+	<meta property="og:description" content="Создание форм для ввода данных Access 2002 позволяет организовать удобный и интуитивно понятный интерфейс пользователя для работы с данными с">
+	<meta property="og:url" content="/glava-sozdanie-form-dlya-vvoda-dannyh">
+	<meta property="og:site_name" content="Excel-jet">
+	<meta property="article:published_time" content="2024-09-30T07:07:10+00:00">
+	<meta property="og:image" content="/image21/c1599171b7d9799fea155bb9defb197a.gif">
+	<meta property="og:image:width" content="543">
+	<meta property="og:image:height" content="454">
+	<meta property="og:image:type" content="image/gif">
+	<meta name="author" content="А. Днепров">
+
+
+<style id="wp-block-library-theme-inline-css" type="text/css">.wp-block-audio :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio :where(figcaption){color:#ffffffa6}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed :where(figcaption){color:#ffffffa6}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:#ffffffa6}:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table :where(figcaption){color:#ffffffa6}.wp-block-video :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video :where(figcaption){color:#ffffffa6}.wp-block-video{margin:0 0 1em}:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}</style>
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 19.5px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36.5px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--normal: 22px;--wp--preset--font-size--huge: 49.5px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="google-fonts-css" href="https://fonts.googleapis.com/css?family=Roboto%3A400%2C400i%2C700&#038;subset=cyrillic&#038;display=swap" media="all">
+<link rel="stylesheet" id="yelly-style-css" href="/css/style.min.css" media="all">
+
+<style>.pseudo-clearfy-link { color: #008acf; cursor: pointer;}.pseudo-clearfy-link:hover { text-decoration: none;}</style>
+<link rel="preload" href="/fonts/icomoon.ttf" as="font" crossorigin>
+    <style>.scrolltop{width:50px}.scrolltop:before{content:"\21d1"}.entry-content a, .entry-content a:visited, .spanlink, .comment-reply-link, .pseudo-link, .widget_calendar a, .widget_recent_comments a, .child-categories ul li a{color:#0000ff}.child-categories ul li a{border-color:#0000ff}a:hover, a:focus, a:active, .spanlink:hover, .top-menu ul li>span:hover, .main-navigation ul li a:hover, .main-navigation ul li span:hover, .footer-navigation ul li a:hover, .footer-navigation ul li span:hover, .comment-reply-link:hover, .pseudo-link:hover, .child-categories ul li a:hover{color:#1e73be}.top-menu>ul>li>a:before, .top-menu>ul>li>span:before{background:#1e73be}.child-categories ul li a:hover, .post-box--no-thumb a:hover{border-color:#1e73be}.post-box--card:hover{box-shadow: inset 0 0 0 1px #1e73be}.post-box--card:hover{-webkit-box-shadow: inset 0 0 0 1px #1e73be}@media (min-width: 768px){body{background-attachment: scroll}}body{font-size:17px;}@media (max-width: 991px){.widget-area{display: block; margin: 0 auto}}</style>
+    <!-- Yandex.RTB -->
+<script>window.yaContextCb=window.yaContextCb||[]</script>
+<script src="https://yandex.ru/ads/system/context.js" async></script>	
+</head>
+<body class="post-template-default single single-post postid-1087 single-format-standard wp-embed-responsive sidebar-right">
+<div id="page" class="site">
+    <a class="skip-link screen-reader-text" href="#content">Перейти к контенту</a>
+
+    
+    
+    <div class="search-screen-overlay js-search-screen-overlay"></div>
+    <div class="search-screen js-search-screen">
+        
+<form role="search" method="get" class="search-form" action="/">
+    <label>
+        <span class="screen-reader-text">Search for:</span>
+        <input type="search" class="search-field" placeholder="Поиск..." value="" name="s">
+    </label>
+    <button type="submit" class="search-submit"></button>
+</form>    </div>
+
+    
+
+<header id="masthead" class="site-header full" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="site-header-inner fixed">
+
+        <div class="humburger js-humburger">
+<span></span><span></span><span></span>
+</div>
+
+        
+<div class="site-branding">
+
+    <div class="site-branding__body"><div class="site-title"><a href="/">Excel-jet</a></div></div>
+</div>
+<!-- .site-branding -->
+
+    
+    <nav id="site-navigation" class="main-navigation full">
+        <div class="main-navigation-inner fixed">
+            <div class="menu-menyu-container"><ul id="header_menu" class="menu">
+<li id="menu-item-6695" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-6695">
+<a href="/excel">Excel</a>
+<ul class="sub-menu">
+	<li id="menu-item-6709" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6709"><a href="/excel/functions">Функции</a></li>
+</ul>
+</li>
+<li id="menu-item-6697" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6697"><a href="/microsoft-word">Word</a></li>
+<li id="menu-item-6696" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6696"><a href="/powerpoint">PowerPoint</a></li>
+<li id="menu-item-6698" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6698"><a href="/outlook">Outlook</a></li>
+</ul></div>        </div>
+    </nav><!-- #site-navigation -->
+
+    
+<div class="header-search"><span class="search-icon js-search-icon"></span></div>    </div>
+</header><!-- #masthead -->
+
+
+
+    
+    
+    <div id="content" class="site-content fixed">
+
+        
+        <div class="site-content-inner">
+    
+        
+        <div id="primary" class="content-area" itemscope itemtype="http://schema.org/Article">
+            <main id="main" class="site-main">
+
+                
+<article id="post-1087" class="article-post post-1087 post type-post status-publish format-standard has-post-thumbnail  category-excel">
+
+    
+        
+        <header class="entry-header"><h1 class="entry-title" itemprop="headline">Глава 5. Создание форм для ввода данных</h1></header>
+        
+        
+        
+    
+    
+    <div class="entry-meta">
+<span class="entry-time"><span class="entry-label">Время чтения</span> 83 мин.</span><span class="entry-date"><span class="entry-label">Опубликовано</span> <time itemprop="datePublished" datetime="2024-09-30">30.09.2024</time></span>
+</div>
+	<div class="entry-content" itemprop="articleBody">
+		<p>Создание форм для ввода данных </p>
+<p>Access 2002 позволяет организовать удобный и интуитивно понятный интерфейс пользователя для работы с данными с помощьюформ.Формами называются настраиваемые диалоговые окна, сохраняемые в базе данных в виде объектов специального типа. Формы Access являются объектами базы данных, так же как таблицы и запросы. Формы используются в приложении для ввода и отображения данных. Формами можно управлять программно с помощью процедур на VBA.</p>
+<p>Формы предоставляют более удобный способ просмотра и правки данных в таблицах, чем режим/Таблицы. Формы содержат так называемыеэлементы управления,с помощью которых осуществляется доступ к данным в таблицах. Элементами управления являются текстовые поля для ввода и правки данных, кнопки, флажки, переключатели, списки, надписи, а также рамки объектов для отображения графики и объектов OLE. Создание форм, содержащих необходимые элементы управления, существенно упрощает процесс ввода данных и позволяет предотвратить ошибки.</p>
+<p>Формы Access 2002 предоставляют функциональные возможности для выполнения многих задач, которые нельзя выполнить другими средствами. Формы позволяют выполнять проверку корректности данных при вводе, проводить вычисления, и обеспечивают доступ к данным в связанных таблицах с помощью подчиненных форм.</p>
+<p>В этой главе обсуждаются следующие вопросы:</p>
+<ul>
+<li>Автоматическое создание форм по таблице или запросу</li>
+<li>Создание форм с помощью мастера</li>
+<li>Режимы работы с формами</li>
+<li>Работа с формой в режиме Конструктора</li>
+<li>Создание, удаление, перемещение и изменение размеров элементов управления</li>
+<li>Задание последовательности перехода между элементами управления в форме</li>
+<li>Сохранение формы</li>
+<li>Использование форм для просмотра, ввода и правки данных</li>
+</ul>
+<p> Автоматическое создание формы на основе таблицы или запроса </p>
+<p>Access 2002 предлагает несколько способов создания форм. Самым простым из них является использование средств автоматического создания форм на основе таблицы или запроса. Автоматически создаваемые формы  (автоформы)  бывают нескольких видов, каждый из которых отличается способом отображения данных.</p>
+<ul>
+<li>Автоформа, организованная  &#171;в столбец&#187;  (Columnar). В такой форме поля каждой записи отображаются в виде набора элементов управления, расположенных в один или несколько столбцов. Это компактное и, пожалуй, самое удачное представление для быстрого создания формы.</li>
+<li> Табличная  (Datasheet). Форма будет выглядеть так же, как обычная таблица Access.</li>
+<li> Ленточная  (Tabular). В такой форме поля каждой записи располагаются в отдельной строке. Это очень удобно для работы с большими массивами данных, поскольку данные располагаются в таком же порядке, как в простой таблице. Преимуществом именно этого представления формы по сравнению с табличным является то, что каждое поле представлено в виде отдельного элемента управления, которое можно оформить в любом стиле по вашему вкусу и для которого можно определить функции обработки событий, т. е. &#171;оживить&#187; поле с помощью программирования.</li>
+<li>Автоформа в виде  сводной таблицы  (PivotTable) или  сводной диаграммы  (PivotChart) — два новых варианта, появившихся в Access 2002. Об этих представлениях речь пойдет во второй части книги.</li>
+</ul>
+<p>Автоматически созданная форма включает все поля выбранного источника данных. Чтобы создать форму с помощью средства автоматического создания форм:</p>
+<ol>
+<li>Щелкните по ярлыку  Формы  (Forms) в окне  База данных  (Database) и нажмите кнопку  Создать  (New). Появится диалоговое окно  Новая форма  (New Form), представленное на рис 5.1.
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" decoding="async" src="/image21/c1599171b7d9799fea155bb9defb197a.gif" width="543" height="454" alt=""><meta itemprop="width" content="543">
+<meta itemprop="height" content="454"></span></p>
+<p> Рис. 5.1.  Диалоговое окно  Новая форма </p>
+</li>
+<li>В списке диалогового окна  Новая форма  выделите один из вариантов автоформы, например:  Автоформа: в столбец  (AutoForm: Columnar).</li>
+<li>В поле со списком, находящимся в нижней части диалогового окна  Новая форма,  содержатся имена всех таблиц и запросов базы данных, которые могут быть использованы в качестве источника данных для формы. Щелкните левой кнопкой мыши по кнопке со стрелкой, чтобы раскрыть список, и выберите в нем нужный элемент.</li>
+<li>Нажмите кнопку  ОК. </li>
+</ol>
+<p>В результате будет автоматически создана и открыта форма выбранного вида. Чтобы созданную форму можно было использовать в дальнейшем, ее необходимо сохранить. Для сохранения формы выберите команду  Файл, Сохранить  (File, Save) или нажмите на кнопку  Сохранить  (Save) на панели инструментов  Режим формы  (Form View). В поле  Имя формы  (Form Name) появившегося диалогового окна  Сохранение  (Save As) введите нужное название и нажмите кнопку  ОК. </p>
+<p>Cовет</p>
+<p>Для любой формы можно изменить ее представление, определяющее режим отображения данных. В окне свойств формы можно выбрать один из пяти вариантов:  Одиночная форма  (Single Form),  Ленточные формы  (Continuous Form),  Режим таблицы  (Datasheet),  Сводная таблица  (PivotTable) и  Сводная диаграмма  (PivotChart). Чтобы изменить режим отображения данных, откройте форму в режиме Конструктора, затем откройте окно свойств формы (как это сделать, описано в разд. &#171;Выделение формы и элементов управления и отображение окна свойств&#187; данной главы) и выберите соответствующий элемент в раскрывающемся списке  Режим по умолчанию  (Default View).</p>
+<p> Создание формы с помощью мастера </p>
+<p>Другим простым и быстрым способом создания формы является использование Мастера форм. С помощью мастера можно создавать формы на основе одной таблицы и более сложные формы на основе нескольких таблиц и запросов, имеющие подчиненные формы. Намного проще и быстрее создавать формы с помощью мастера, а затем усовершенствовать их в режиме Конструктора. Поэтому Мастер форм полезен не только начинающим пользователям, но и профессиональным разработчикам.</p>
+<p>Мастер форм разбивает процесс создания формы на несколько этапов. На каждом этапе требуется установить определенные параметры в одном из диалоговых окон мастера, каждое из которых определяет один шаг создания формы. Если на каком-нибудь шаге была допущена ошибка или возникла необходимость изменения каких-либо установленных параметров, для возвращения к предыдущему шагу нажмите кнопку  Назад  (Back). Кроме того, в любой момент можно нажать кнопку  Отмена  (Cancel) для отказа от создания формы и возвращения к окну базы данных.</p>
+<p>Чтобы лучше представить, как создавать простые формы с помощью Мастера форм, опишем процедуру создания формы &#171;Сотрудники&#187; (Employees) для базы данных &#171;Борей&#187; (Northwind). Источником данных для этой формы будет таблица &#171;Сотрудники&#187; (Employees). Эта форма предназначена для ввода и редактирования информации о сотрудниках компании. Чтобы с помощью мастера создать простую форму, не содержащую подчиненных форм:</p>
+<ol>
+<li>Щелкните по ярлыку  Формы  (Forms) в окне базы данных.</li>
+<li>Нажмите кнопку  Создать  (New) на панели инструментов окна базы данных. В списке вариантов в появившемся диалоговом окне  Новая форма  (New Form) (см. рис. 5.1) выделите элемент  Мастер форм  (Form Wizard) и нажмите кнопку ОК. То же самое можно сделать, дважды щелкнув по ярлыку  Создание формы с помощью мастера  (Create form by using wizard), находящемуся перед списком существующих форм в базе данных.</li>
+<li>Появится первое диалоговое окно Мастера форм (рис. 5.2). В поле со списком  Таблицы и запросы  (Tables/Queries), как и в раскрывающемся списке в окне  Новая форма,  будут отображены имена всех таблиц и запросов базы данных, которые могут использоваться в качестве источника данных для формы. Раскройте этот список и выберите имя таблицы или запроса. В нашем примере это таблица &#171;Сотрудники&#187; (Employees).
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" decoding="async" src="/image25/e2f6ee36896e93539ce895aeb02d56dd.gif" width="486" height="367" alt=""><meta itemprop="width" content="486">
+<meta itemprop="height" content="367"></span></p>
+<p> Рис. 5.2.  Первое диалоговое окно Мастера форм</p>
+</li>
+<li>В списке  Доступные поля  (Available Fields) этого диалогового окна отображаются все поля выбранной таблицы или запроса. Добавление полей в форму позволит просматривать и редактировать данные выбранной таблицы. Чтобы добавить в создаваемую форму только некоторые поля, выделите каждое из этих полей и нажмите кнопку &#171;&gt;&#187;. Выделенное поле будет перемещено из списка  Доступные поля  в список  Выбранные поля  (Selected Fields). Чтобы добавить в создаваемую форму сразу все поля из выбранной таблицы или запроса, нажмите кнопку &#171;&gt;&gt;&#187;. Нажмите кнопку  Далее  (Next) для отображения второго диалогового окна Мастера форм.</li>
+<li>Во втором диалоговом окне мастера (рис. 5.3) можно определить вид формы. Как уже говорилось в предыдущем разделе, существует несколько видов форм, определяющих представление данных на ней. Чтобы задать внешний вид формы, выберите один из переключателей:  в один столбец  (Columnar),  ленточный  (Tabular),  табличный  (Datasheet),  выровненный  (Justified),  сводная таблица  (PivotTable) или  сводная диаграмма  (PivotChart).
+<p>Замечание</p>
+<p>Попробуйте создать ленточную форму и оформить ее подходящим образом с помощью форматирования элементов управления. Вы увидите, что в хорошо оформленной ленточной форме данные просматривать намного удобнее, чем в табличной форме. Вид  выровненный  аналогичен виду  ленточный,  но отличается тем, что все поля записи будут отображены на одной странице.</p>
+<p>После выбора подходящего режима отображения данных в форме нажмите кнопку  Далее  для отображения следующего диалогового окна Мастера форм.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image18/a90374464339c4ace10f7cdca4686d81.gif" width="486" height="367" alt=""><meta itemprop="width" content="486">
+<meta itemprop="height" content="367"></span></p>
+<p> Рис. 5.3.  Второе диалоговое окно Мастера форм</p>
+</li>
+<li>Третье диалоговое окно Мастера форм (рис. 5.4) предназначено для выбора стиля оформления новой формы. Мастер предлагает несколько стандартных стилей оформления. Можно определить собственные стили оформления форм с помощью диалогового окна  Автоформат  (Autoformat). Тогда эти стили будут отображаться вместе со стандартными в этом диалоговом окне Мастера форм. Выберите один из предлагаемых стилей и нажмите кнопку  Далее  (способ создания собственного стиля описан в разд. &#171;Применение автоформата&#187; данной главы). </li>
+<li>В последнем диалоговом окне Мастера форм (рис. 5.5) требуется указать название формы. В поле ввода этого диалогового окна введите название формы: Форма_Сотрудники. Чтобы отобразить созданную мастером форму в режиме Формы, выберите переключатель  Открыть форму для просмотра и ввода данных  (Open the form to view or enter information). А если после автоматического создания формы с помощью мастера требуется внести собственные изменения, выберите переключатель  Изменить макет формы  (Modify the form&#8217;s design), тогда созданная форма будет открыта в режиме Конструктора. Если необходима справка о работе с созданной формой, установите флажок  Вывести справку по работе с формой?  (Display Help on working with the form?), после чего нажмите кнопку  Готово  (Finish).</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image04/1fefdfc0c7aba4f4fa6e292627e26207.gif" width="486" height="367" alt=""><meta itemprop="width" content="486">
+<meta itemprop="height" content="367"></span></p>
+<p> Рис. 5.4.  Третье диалоговое окно Мастера форм</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image26/ed7f86325bf0bfb7fbedae5d562f2683.gif" width="486" height="367" alt=""><meta itemprop="width" content="486">
+<meta itemprop="height" content="367"></span></p>
+<p> Рис. 5.5.  Последнее диалоговое окно Мастера форм</p>
+<p>В результате мастером будет создана форма в соответствии с выбранными параметрами и сохранена с указанным именем, затем эта форма будет открыта в заданном режиме. На рис. 5.6 представлена созданная форма, открытая в режиме Формы.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image18/aae7ac2a523a7e3c6ffe15e6057bf5cc.gif" width="374" height="397" alt=""><meta itemprop="width" content="374">
+<meta itemprop="height" content="397"></span></p>
+<p> Рис. 5.6.  Форма &#171;Форма_Товар&#187;, созданная с помощью Мастера форм</p>
+<p>Созданная с помощью мастера форма &#171;Форма_Сотрудники&#187; готова к использованию. Однако можно улучшить ее внешний вид, изменив некоторые параметры оформления. В следующих разделах приведены примеры изменения формы в режиме Конструктора.</p>
+<p> Режимы работы с формами </p>
+<p>Работа с формами Access 2002 может происходить в пяти режимах: в режиме Формы, в режиме Таблицы, в режиме Конструктора, в режиме Сводной таблицы и в режиме Сводной диаграммы. Выбрать режим работы можно либо с помощью кнопки  Вид  (View) на панели инструментов текущего режима работы с формой (например,  Конструктор форм  (Form Design) — одна из таких панелей), либо с помощью соответствующей команды меню  Вид  (View).</p>
+<p> Режим Формы  является &#171;рабочим&#187; для пользователя базы данных. В этом режиме осуществляются просмотр и редактирование записей, удаление записей или добавление новых. Таким способом пользователь работает с таблицей или запросом, являющимися источниками данных для формы. Чаще всего пользователи приложений Access 2002 работают с формами именно в этом режиме. В этом же режиме по умолчанию открывается форма из окна базы данных. Если форма была открыта в другом режиме, то для перехода в режим Формы выберите команду  Вид, Режим формы  (View, Form View) или нажмите на стрелку, расположенную справа от кнопки  Вид  (View) на панели инструментов и в открывшемся списке выберите элемент</p>
+<p> Режим формы  (Form View). На рис. 5.6 показана форма, создание которой описано в предыдущем разделе, открытая в режиме Формы.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image21/bdc6b1a173123bbf5da23e40c504f078.gif" width="523" height="271" alt=""><meta itemprop="width" content="523">
+<meta itemprop="height" content="271"></span></p>
+<p> Рис. 5.7.  Форма &#171;Форма_Товар&#187; в режиме Таблицы</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image14/7aca6d571e173c348eb1ab213401e029.gif" width="471" height="447" alt=""><meta itemprop="width" content="471">
+<meta itemprop="height" content="447"></span></p>
+<p> Рис. 5.8.  Форма &#171;Форма_Товар&#187; в режиме Конструктора</p>
+<p>Для пользователя может оказаться удобным работать с формой в режиме Таблицы. В этом режиме, как и в режиме Формы, можно просматривать и редактировать, добавлять и удалять записи в таблице или запросе, являющемся источником данных для формы. Однако в этом режиме не применяются параметры форматирования элементов управления. Чтобы перейти в режим Таблицы, выберите команду  Вид, Режим таблицы  (View, Datasheet View) или нажмите на стрелку, расположенную справа от кнопки  Вид  (View) панели инструментов и в открывшемся списке выберите элемент  Режим таблицы  (Datasheet View). На рис 5.7 показана форма, создание которой описано в предыдущем разделе, открытая в режиме Таблицы.</p>
+<p>В любое время можно настроить различные свойства формы, изменить ее внешний вид, структуру и функциональность, работая с ней в режиме Конструктора. Этим режимом обычно пользуются разработчики. Чтобы перейти в режим Конструктора, выберите команду  Вид, Конструктор  (View, Design View) или нажмите на стрелку, расположенную справа от кнопки Вид (View) на панели инструментов, и в открывшемся списке выберите элемент  Конструктор  (Design View). На рис. 5.8 показана форма, создание которой описано в предыдущем разделе, открытая в режиме Конструктора.</p>
+<p>Разработчики и пользователи Access могут работать с формой еще в двух новых режимах, появившихся в версии Access 2002: в режиме Сводной таблицы или режиме Сводной диаграммы. Но эти режимы мы рассмотрим в  части If  книги.</p>
+<p> Печать формы </p>
+<p>Форма, так же как и таблица, запрос или отчет базы данных Access, может служить документом для печати. Напечатать форму можно, находясь в любом режиме работы с ней, например в режиме Таблицы или режиме Формы. При этом внешний вид печатаемой формы будет соответствовать текущему режиму. Команды печати и способ настройки параметров печати точно такие же, как при печати таблиц и отчетов Access или, например, документов Word. Это стандартные команды меню  Файл  (File):  Параметры страницы  (Page Setup),  Предварительный просмотр  (Print Preview) и  Печать  (Print), а также кнопки на панели инструментов текущего режима работы с формой и панели инструментов  Предварительный просмотр  (Print Preview). Печать формы, как и других объектов базы данных, можно выполнить и программным путем с помощью процедуры на VBA или макроса  (о программировании речь пойдет в части II книги). </p>
+<p>Чтобы увидеть, как форма будет выглядеть при печати, следует перейти в режим предварительного просмотра. Для этого выберите команду  Файл, Предварительный просмотр  (File, Print Preview) или нажмите кнопку  Предварительный просмотр  (Print Preview) на панели инструментов. Чтобы вернуться в прежний режим работы с формой, снова выберите команду меню  Файл, Предварительный просмотр  или нажмите кнопку  Закрыть  (Close) на панели инструментов. Наконец, можно нажать на стрелку справа от кнопки  Вид  (View) на панели инструментов и выбрать один из режимов для дальнейшей работы с формой.</p>
+<p> Режим Конструктора </p>
+<p>Разработку структуры формы, того, как она будет выглядеть в режиме Таблицы и режиме Формы, можно выполнить только в  режиме Конструктора.  В этом режиме можно изменить источник данных для формы, количество отображаемых полей, внешний вид формы и элементов управления, добавить или удалить элементы управления, настроить их свойства.</p>
+<p>Панель инструментов  Панель элементов  (Toolbox) (см. рис. 5.8), отображаемая в режиме Конструктора, позволяет создавать элементы управления, при этом некоторые элементы управления можно создавать с помощью Мастера элементов, осуществляющего пошаговое руководство этим процессом.</p>
+<p>К форме можно применить один из предлагаемых Access стилей оформления для быстрой и качественной настройки ее внешнего вида. Более того, Access 2002 позволяет создавать свои собственные стили оформления и применять их к другим формам. Все это выполняется с помощью диалогового окна  Автоформат  (Auto Format), которое описано  в разд. &#171;Применение автоформата&#187; данной главы. </p>
+<p>Чтобы создать пустую форму, не пользуясь автоматическим созданием форм и Мастером форм, в окне базы данных щелкните по ярлыку  Формы  (Forms), нажмите кнопку  Создать  (New) на панели в окне базы данных, в появившемся диалоговом окне  Новая форма  (New Form) выделите элемент  Конструктор  (Design View) и нажмите кнопку  ОК.  То же самое можно сделать, просто дважды щелкнув по ярлыку  Создание формы в режиме конструктора  (Create form in Design view), находящемуся перед списком существующих форм в базе данных.</p>
+<p>Можно использовать созданную ранее форму &#171;Форма_Товар&#187; для проведения экспериментов, связанных с изменением внешнего вида формы. Однако не стоит сохранять измененную форму, чтобы не испортить ее первоначальный вид. Или прежде чем проводить эксперименты, создайте копию исходной формы.</p>
+<p> Окно приложения в режиме Конструктора </p>
+<p>Откройте форму &#171;Форма_Товар&#187; в режиме Конструктора (см. рис. 5.8).</p>
+<p>При работе в режиме Конструктора форм используются следующие элементы окна приложения.</p>
+<ul>
+<li>Панель инструментов  Панель элементов  (Toolbox). При переходе в режим Конструктора на экране отображается эта панель инструментов, предназначенная для добавления в форму новых элементов управления. Использование панели элементов описано далее в этой главе. Здесь мы обсудим другие особенности работы с формой в режиме Конструктора, а панель элементов можно закрыть. Для этого нажмите кнопку  Панель элементов  (Toolbox) на панели инструментов  Конструктор форм  (Form Design) или нажмите кнопку  Закрыть  (Close) — это кнопка с изображением крестика в правом верхнем углу панели инструментов.</li>
+</ul>
+<p>Замечание</p>
+<p>Панель элементов появляется на экране всякий раз при переходе в режим Конструктора. Если закрыть эту панель инструментов, в следующий раз она не появится. Тогда, чтобы отобразить ее, нажмите кнопку Панель элементов на панели инструментов Конструктор форм или выберите команду Вид, Панели инструментов (View, Toolbars), а затем установите флажок Панель элементов (Toolbox).</p>
+<ul>
+<li>Панель инструментов  Конструктор форм  (Form Design). Основные команды, меню, используемые в режиме Конструктора форм, продублированы в виде кнопок на панели инструментов  Конструктор форм.  (Назначение кнопок этой панели инструментов подробно описано в разд. &#171;Панель инструментов  Конструктор форм&#187; данной главы.) </li>
+<li>Панель инструментов  Формат (форма/отчет)  (Formatting (Form/Report)) предназначена для форматирования выделенных элементов управления. Форматирование элемента управления включает такие действия, как задание цвета фона и рамок, задание стиля и цвета текста.  (Назначение кнопок этой панели инструментов  описано в разд. &#171;Панель инструментов<a href="/glava-sozdanie-i-pechat-otchetov">  Формат (форма/отчет)&#171;</a>этой главы.) </li>
+<li>Вертикальная и горизонтальная линейки предназначены для разметки формы по заданным размерам и выделения нескольких соседних элементов управления, лежащих в одном вертикальном или горизонтальном сегменте макета формы от одной отметки на линейке до другой.</li>
+<li>Правая граница макета формы позволяет задать ширину формы. Чтобы изменить ширину формы, перетащите правую границу макета формы с помощью мыши вправо или влево. На рис. 5.8 правая граница макета формы находится слева от панели инструментов  Панель элементов. </li>
+<li>Нижняя граница макета формы позволяет определить высоту формы. Чтобы изменить высоту формы, перетащите нижнюю границу макета формы с помощью мыши вниз или вверх. На рис. 5.8 нижняя граница макета формы совпадает с нижней границей примечания формы.</li>
+<li>Вертикальная и горизонтальная полосы прокрутки позволяют просматривать части формы, оказавшиеся за границами экрана в режиме Конструктора.</li>
+</ul>
+<p> Структура формы </p>
+<p>Структура формы такова: макет формы состоит из разделов. Любая форма может включать следующие разделы:</p>
+<ul>
+<li>раздел  Заголовок формы  (Form Header) определяет верхнюю часть формы. Этот раздел добавляется в форму вместе с разделом примечания формы. В область заголовка формы можно поместить текст, графику и другие элементы управления. При печати многостраничной формы раздел заголовка отображается только на первой странице;</li>
+<li>раздел  Верхний колонтитул  (Page Header) определяет верхний колонтитул страницы при печати формы. Этот раздел добавляется в форму вместе с разделом, определяющим нижний колонтитул страницы, и отображается только когда форма открыта в режиме Предварительного просмотра. При печати многостраничной формы верхний колонтитул отображается вверху каждой страницы;</li>
+<li>раздел  Область данных  (Detail) определяет основную часть формы, содержащую данные, полученные из источника. Данный раздел может содержать элементы управления, отображающие данные из таблиц и запросов, а также неизменяемые данные, например надписи. При печати многостраничной формы этот раздел отображается на каждой странице;</li>
+<li>раздел  Нижний колонтитул  (Page Footer) определяет нижний колонтитул страницы при печати формы. Этот раздел добавляется в форму вместе с разделом, определяющим верхний колонтитул страницы. Он отображается только когда форма открыта в режиме Предварительного просмотра. При печати многостраничной формы нижний колонтитул отображается внизу каждой страницы;</li>
+<li>раздел  Примечание формы  (Form Footer) определяет нижнюю часть формы. Этот раздел добавляется в форму вместе с разделом заголовка формы. При печати многостраничной формы примечание формы будет отображено только внизу последней страницы.</li>
+</ul>
+<p>Разделы формы в режиме Конструктора представлены на рис. 5.9. Чтобы надписи, обозначающие разделы формы, были лучше видны, мы скрыли сетку, облегчающую разметку формы (сетка видна на рис. 5.8), с помощью команды меню  Вид, Сетка  (View, Grid).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image16/90b9956a718fb9e888a184e0790ddb06.gif" width="490" height="407" alt=""><meta itemprop="width" content="490">
+<meta itemprop="height" content="407"></span></p>
+<p> Рис. 5.9.  Разделы формы Access</p>
+<p>Из всех перечисленных разделов обязательным является только раздел области данных. Высоту области любого раздела формы можно изменить с помощью мыши, перетаскивая нижнюю часть раздела вверх или вниз.</p>
+<p>Замечание</p>
+<p>Хотя форма, изображенная на рис. 5.8, имеет оба раздела заголовка и примечания формы, эти области не отображаются в режиме Формы, поскольку оба раздела имеют нулевую высоту. При создании новой пустой формы при помощи Конструктора форм разделы заголовка и примечания не добавляются.</p>
+<p>Для добавления или удаления разделов заголовка и примечания формы выберите команду  Вид, Заголовок/примечание формы  (View, Form Header/Footer). Если форма уже содержит эти разделы, то команда  Заголовок/примечание формы  будет отмечена флажком. Для удаления разделов заголовка и примечания формы сбросьте этот флажок.</p>
+<p>Для добавления или удаления разделов верхнего и нижнего колонтитулов страницы выберите команду  Вид, Колонтитулы  (View, Page Header/Footer). Если форма уже содержит эти разделы, то команда  Колонтитулы  будет отмечена флажком. Для удаления разделов верхнего и нижнего колонтитула страницы сбросьте этот флажок.</p>
+<p>Замечание</p>
+<p>Если разделы заголовка и примечания формы или разделы верхнего и нижнего колонтитулов содержат текст либо другие элементы управления формы, то перед попыткой удалить эти разделы будет отображено диалоговое окно, предупреждающее об удалении содержимого заголовка и примечания.</p>
+<p>Высоту раздела формы можно изменить, перетаскивая границу раздела при помощи мыши. Для этого поместите указатель мыши над границей раздела так, чтобы он принял вид горизонтальной черты с двумя вертикальными стрелками. Нажмите левую кнопку мыши и перетащите границу раздела для получения нужного размера.</p>
+<p>Высота раздела области данных определяется вертикальным размером окна формы, а также размером заголовка и примечания формы. Для изменения высоты раздела области данных переместите его нижнюю границу при помощи мыши вверх (для уменьшения высоты) или вниз (для увеличения). В режиме Формы вертикальная полоса прокрутки в окне формы появляется только для просмотра раздела области данных.</p>
+<p> Панель инструментов  Конструктор форм  </p>
+<p>Панель инструментов  Конструктор форм  (Form Design) в Access 2002 содержит кнопки, предназначенные для разработки форм. На рис. 5.10 изображена панель инструментов  Конструктор форм,  а в табл. 5.1 приведены описания кнопок этой панели инструментов и соответствующие им команды меню.</p>
+<p> <span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image03/1f26e8925ec5ab132c0472683a45bda2.gif" width="314" height="74" alt=""><meta itemprop="width" content="314">
+<meta itemprop="height" content="74"></span> Рис. 5.10.  Панель инструментов  Конструктор форм </p>
+<table class="table_common" width="600">
+<tbody>
+<tr class="header">
+<td width="150">Кнопка</td>
+<td width="150">Команда меню</td>
+<td>Описание</td>
+</tr>
+<tr class="one">
+<td>Вид (View), элемент списка Режим формы (Form View)</td>
+<td>Вид, Режим формы (View, Form View)</td>
+<td>Отображение формы в режиме Формы. Чтобы открыть форму в режиме Таблицы, нажмите стрелку справа от кнопки и в появившемся списке выделите элемент Режим таблицы (Datasheet View)</td>
+</tr>
+<tr class="two">
+<td>Сохранить (Save)</td>
+<td>Файл, Сохранить (File, Save)</td>
+<td>Сохранение активной формы</td>
+</tr>
+<tr class="one">
+<td>Найти (Search)</td>
+<td>Файл, Найти (File, Search)</td>
+<td>Отобразить панель поиска документов Microsoft Office</td>
+</tr>
+<tr class="two">
+<td>Печать (факс) (Print (Fax))</td>
+<td></td>
+<td>Печать или отправка по факсу содержимого активной формы с текущими параметрами печати без открытия диалогового окна Печать (Print)</td>
+</tr>
+<tr class="one">
+<td>Предварительный просмотр (Print Preview)</td>
+<td>Файл, Предварительный просмотр (File, Print Preview)</td>
+<td>Предварительный просмотр формы перед печатью. Форма может быть напечатана из окна предварительного просмотра</td>
+</tr>
+<tr class="two">
+<td>Вырезать (Cut)</td>
+<td>Правка, Вырезать (Edit, Cut)</td>
+<td>Удаление выделенных объектов из формы в буфер обмена Windows</td>
+</tr>
+<tr class="one">
+<td>Копировать (Сору)</td>
+<td>Правка, Копировать (Edit, Copy)</td>
+<td>Копирование выделенных объектов формы в буфер обмена</td>
+</tr>
+<tr class="two">
+<td>Вставить (Paste)</td>
+<td>Правка, Вставить (Edit, Paste)</td>
+<td>Вставка содержимого буфера обмена в форму</td>
+</tr>
+<tr class="one">
+<td>Формат по образцу (Format Painter)</td>
+<td></td>
+<td>Копирование параметров форматирования из одного выделенного объекта в другой такого же типа</td>
+</tr>
+<tr class="two">
+<td>Отменить (Undo)</td>
+<td>Правка, Отменить (Edit, Undo)</td>
+<td>Отмена последнего действия</td>
+</tr>
+<tr class="one">
+<td>Вернуть (Redo)</td>
+<td>Правка, Вернуть (Edit, Redo)</td>
+<td>Повторить выполнение последнего отмененного действия</td>
+</tr>
+<tr class="two">
+<td>Добавление гиперссылки (Insert Hyperlink)</td>
+<td>Вставка, Гиперссылка (Insert, Hyperlink)</td>
+<td>Вставка в форму гиперссылки</td>
+</tr>
+<tr class="one">
+<td>Список полей (Field List)</td>
+<td>Вид, Список полей (View, Field List)</td>
+<td>Вывод списка полей, содержащихся в базовом источнике записей (запросе или таблице) основной формы</td>
+</tr>
+<tr class="two">
+<td>Панель элементов (Toolbox)</td>
+<td>Вид, Панель элементов (View, Toolbox)</td>
+<td>Отображение или скрытие панели элементов</td>
+</tr>
+<tr class="one">
+<td>Автоформат (AutoFormat)</td>
+<td>Формат, Автоформат (Format, AutoFormat)</td>
+<td>Выбор заранее определенных форматов для форм, включая такие характеристики, как сроновый рисунок для форм и шрифты для элементов управления</td>
+</tr>
+<tr class="two">
+<td>Программа (Code)</td>
+<td>Вид, Программа (View, Code)</td>
+<td>Открытие модуля процедур обработки событий формы в окне редактора VBA</td>
+</tr>
+<tr class="one">
+<td>Свойства (Properties)</td>
+<td>Вид, Свойства (View, Properties)</td>
+<td>Открытие окон свойств выделенных объектов: формы, раздела (например, верхнего или нижнего колонтитула), а также элементов управления</td>
+</tr>
+<tr class="two">
+<td>Построить (Build)</td>
+<td></td>
+<td>Вызов Построителя для выделенного элемента или свойства в форме, если Построитель есть</td>
+</tr>
+<tr class="one">
+<td>Окно базы данных (Database Window)</td>
+<td>Окно, 1 (Window, 1)</td>
+<td>Отображение окна базы данных</td>
+</tr>
+<tr class="two">
+<td>Новый объект (New Object)</td>
+<td></td>
+<td>Создание нового объекта базы данных. Чтобы выбрать тип создаваемого объекта, нажмите стрелку справа от кнопки</td>
+</tr>
+<tr class="one">
+<td>Справка по Microsoft Access (Microsoft Access Help)</td>
+<td>Справка, Справка по Microsoft Access (Help, Microsoft Access Help)</td>
+<td>Вызов Помощника и получение справки по Microsoft Access 2002</td>
+</tr>
+</tbody>
+</table>
+<p> Таблица 5.1.  Кнопки панели инструментов  Конструктор форм </p>
+<p> Панель инструментов  Формат (форма/отчет)  </p>
+<p>Кнопки и раскрывающиеся списки, облегчающие выбор параметров форматирования (цвета, шрифта, толщины линий и т. п.), расположены на отдельной панели инструментов, которая называется  Формат (форма/отчет)  (Formatting (Form/Report)). Эта панель инструментов применяется для форматирования элементов как форм, так и отчетов.</p>
+<p>Функции кнопок, используемых для форматирования текста, аналогичны функциям кнопок, которые можно увидеть на панелях инструментов Microsoft Word. Раскрывающийся список  Объект  (Object) отображает имя выделенного элемента управления формы и позволяет быстро выделить другой объект в форме, выбрав его имя в списке. По умолчанию для элементов управления форм используется такой же шрифт, как для таблиц и запросов. В раскрывающемся списке  Шрифт  (Font), можно выбрать любой из установленных на компьютере шрифтов. В раскрывающемся списке  Размер  (Font Size) можно выбрать нужный размер шрифта или ввести его значение (в пунктах).</p>
+<p>На рис. 5.11 изображена панель форматирования, а в табл. 5.2 приведены названия и функции кнопок, предназначенных для форматирования текста элементов управления, а также значение соответствующих свойств элемента управления.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image27/f4e54fd8fe51484cc24e362c3bd26b48.gif" width="350" height="72" alt=""><meta itemprop="width" content="350">
+<meta itemprop="height" content="72"></span></p>
+<p> Рис. 5.11.  Панель инструментов  Формат (форма/отчет) </p>
+<table class="table_common" width="600">
+<tbody>
+<tr class="header">
+<td width="150">Кнопка</td>
+<td width="150">Свойство и значение</td>
+<td>Описание</td>
+</tr>
+<tr class="one">
+<td>Объект (Object)</td>
+<td>Имя (Name) = = &lt;имя объекта&gt;</td>
+<td>Имя выделенного объекта</td>
+</tr>
+<tr class="two">
+<td>Шрифт (Font)</td>
+<td>Шрифт (Font Name) = = &lt;имя шрифта&gt;</td>
+<td>Шрифт текста в элементе</td>
+</tr>
+<tr class="one">
+<td>Размер (Font Size)</td>
+<td>Размер шрифта (Font Size) = &lt;число&gt;</td>
+<td>Размер шрифта текста в элементе</td>
+</tr>
+<tr class="two">
+<td>Полужирный (Bold)</td>
+<td>Насыщенность (Font Weight) = Полужирный (Semi-bold)</td>
+<td>Форматирование текста выделенного элемента управления полужирным шрифтом</td>
+</tr>
+<tr class="one">
+<td>Курсив (Italic)</td>
+<td>Курсив (Font Italic) = Да (Yes)</td>
+<td>Форматирование текста выделенного элемента управления курсивом</td>
+</tr>
+<tr class="two">
+<td>Подчеркнутый (Underline)</td>
+<td>Подчеркнутый (Font Underline) = Да (Yes)</td>
+<td>Делает текст элемента управления подчеркнутым</td>
+</tr>
+<tr class="one">
+<td>По левому краю (Align Left)</td>
+<td>Выравнивание текста (Text Align) = По левому краю (Left)</td>
+<td>Выравнивание текста по левому краю</td>
+</tr>
+<tr class="two">
+<td>По центру (Center)</td>
+<td>Выравнивание текста (Text Align) = По центру (Center)</td>
+<td>Выравнивание текста по центру</td>
+</tr>
+<tr class="one">
+<td>По правому краю (Align Right)</td>
+<td>Выравнивание текста (Text Align) = По правому краю (Right)</td>
+<td>Выравнивание текста по правому краю</td>
+</tr>
+<tr class="two">
+<td>Цвет заливки/фона (Fill/Back Color)</td>
+<td>Цвет фона (Back Color) = = &lt;номер&gt;</td>
+<td>Открывает палитру, содержащую образцы цветов для фона выделенного обьекта или раздела формы</td>
+</tr>
+<tr class="one">
+<td>Цвет текста (Font/Fore Color)</td>
+<td>Цвет текста (Fore Color) = = &lt;номер&gt;</td>
+<td>Открывает палитру, содержащую образцы цветов текста выделенного элемента управления формы</td>
+</tr>
+<tr class="two">
+<td>Цвет линии/границы (Line/Border Color)</td>
+<td>Цвет границы (Border Color) = &lt;номер&gt;</td>
+<td>Открывает палитру, содержащую образцы цветов границы выделенного элемента управления формы</td>
+</tr>
+<tr class="one">
+<td>Толщина линии/границы (Line/Border Width)</td>
+<td>Ширина границы (Border Width) = &lt;ширина&gt;</td>
+<td>Открывает палитру образцов ширины границы для выделенного элемента управления. Ширина границы может быть установлена сверхтонкой или толщиной от 1 до 6 пунктов</td>
+</tr>
+<tr class="two">
+<td>Оформление (Special Effect)</td>
+<td>Оформление (Special Effect) = &lt;оформление&gt;</td>
+<td>Открывает панель стилей оформления элементов управления, предназначенных для оформления выделенного обьекта. Можно выбрать обычное представление элемента управления, с тенью, приподнятое, утопленное, вдавленное или рельефное</td>
+</tr>
+</tbody>
+</table>
+<p> Таблица 5.2.  Кнопки на панели инструментов  Формат (форма/отчет) </p>
+<p> Параметры работы с формами </p>
+<p>При создании новых форм используются параметры, заданные с помощью диалогового окна  Параметры  (Options). Для отображения окна параметров выберите команду  Сервис, Параметры  (Tools, Options) и в появившемся диалоговом окне раскройте вкладку  Формы и отчеты  (Forms/Reports) (рис. 5.12). С помощью этой вкладки можно задать имя существующей формы (в текстовом поле  Шаблон формы  (Form template)), которая будет использована в качестве образца оформления новых форм, исключая формы, созданные с помощью Мастера форм. Можно также задать способ выделения объектов в форме или отчете, выбрав соответствующий элемент в группе  Выделение объектов  (Selection behavior), и еще назначить использование по умолчанию процедур VBA для обработки событий форм, элементов управления или отчетов, установив флажок  Всегда использовать процедуры обработки событий  (Always use event procedure).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image15/8a183a203703e5c5a3a498c09d81508b.gif" width="550" height="345" alt=""><meta itemprop="width" content="550">
+<meta itemprop="height" content="345"></span></p>
+<p> Рис. 5.12.  Вкладка  Формы и отчеты  диалогового окна  Параметры </p>
+<p> Основные элементы управления </p>
+<p>В этом разделе мы рассмотрим наиболее простые и часто используемые элементы управления: текстовое поле, надпись, поле со списком, переключатель, выключатель и флажок. Формы с вкладками и многостраничные формы будут подробно рассмотрены <a href="https://taurion.ru/access/9">в гл. 9</a> . </p>
+<p>Чтобы сделать форму более понятной и легко читаемой, в нее добавляют&#8217;заголовки, подписи или пояснения. Этот текст является неизменяемым и создается с помощью элемента управления  Надпись  (Label).</p>
+<p>Для отображения, ввода или изменения в форме текстовых данных, например примечаний, используют текстовые поля, которые создаются с помощью элемента управления  Поле  (Text Box).</p>
+<p>Текстовые поля позволяют вводить произвольные значения (хотя можно ограничить множество допустимых значений для поля, задав с помощью окна свойств текстового поля, например, маску ввода или правило проверки введенного значения). Чтобы предоставить пользователю выбор из определенного набора значений, вместо текстовых полей применяют такие элементы управления, как флажки, переключатели, выключатели, объединенные в группы однотипных элементов, а также списки.</p>
+<p>Группа (рис. 5.13) тоже представляет собой элемент управления, который имеет название  Группа переключателей  (Option group). С каждым элементом управления в группе сопоставляется уникальное число, однозначно определяющее данный элемент в группе, и это число сохраняется в качестве значения свойства  Значение  (Option Value) элемента управления. Отдельно стоящий элемент управления типа  Флажки  (Check box),  Переключатели  (Option button) или  Выключатели  (Toggle button), не включенный в группу подобных элементов, определяет значение логического типа: Да (Yes) или Нет (No), В данном случае вместо значения Да допускается использовать значение  Истина  (True) или любое положительное число, а вместо значения Нет — значение  Ложь  (False) или ноль. Элементы управления  Флажки  (Check box),  Переключатели  (Option button),  Выключатели  (Toggle button) и  Группа переключателей  (Option group) имеют свойство  Значение по умолчанию  (Default Value), позволяющее задать первоначальное состояние элемента управления или группы. Для отдельного элемента управления в качестве значения этого свойства используется значение логического типа, а для группы — число, сопоставленное с одним из элементов группы (с тем элементом, который будет выбран в группе по умолчанию).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image18/a997aae559d3fc6f28cc998367885343.gif" width="469" height="313" alt=""><meta itemprop="width" content="469">
+<meta itemprop="height" content="313"></span></p>
+<p> Рис. 5.13.  Отдельные флажки, переключатели, выключатели и группы элементов</p>
+<p>Кроме групп элементов, для предоставления выбора значения какого-либо параметра из заданного набора можно использовать элементы управления  Список  (List Box) или  Поле со списком  (Combo Box). Ввести значение в поле со списком можно двумя способами: ввести значение в поле или выбрать значение в раскрывающемся списке.</p>
+<p>Когда требуется выбрать одно из нескольких возможных значений, пользователю намного удобнее работать со списком или группой элементов, чем с текстовым полем. Во-первых, чтобы сделать выбор, пользователю не нужно вводить значение полностью, а достаточно лишь щелкнуть кнопкой мыши, чтобы выделить нужный элемент. Во-вторых, нет необходимости помнить все допустимые при выборе значения, поскольку они явно перечислены в элементах группы или списка. Поэтому, чтобы сделать интерфейс приложения более удобным для пользователя, используйте в формах группы или списки вместо текстовых полей всегда, когда нужно обеспечить выбор одного из нескольких значений. А также используйте отдельные флажки, выключатели или переключатели вместо текстовых полей, когда требуется предоставить пользователю выбор между альтернативами &#171;да&#187; — &#171;нет&#187; для заданных параметров.</p>
+<p> Создание и удаление элементов управления </p>
+<p>Access 2002 предоставляет два простых метода создания элементов управления: с помощью панели инструментов  Панель элементов  (Toolbox) и с помощью кнопки  Список полей  (Field List). Кроме того, при создании элементов управления с помощью панели элементов можно воспользоваться Мастером элементов, позволяющим пройти шаг за шагом процесс создания более сложных элементов управления, например таких как списки, поля со списком и группы элементов управления.</p>
+<p> Создание элементов управления с помощью панели элементов </p>
+<p>Надпись — самый простой для использования тип элементов управления панели элементов. Для добавления надписи в какой-либо раздел формы:</p>
+<ol>
+<li>На панели элементов нажмите кнопку  Надпись  (Label). Когда указатель мыши попадет в активную область формы, он примет вид крестика со значком элемента управления  Надпись.  Центр крестика определяет позицию верхнего левого угла элемента управления  Надпись. </li>
+<li>Поместите указатель мыши в виде крестика в область нужного раздела формы. Нажмите левую кнопку мыши и, удерживая ее, перетащите указатель мыши в нижний правый угол надписи (рис. 5.14).Вместе с перемещением указателя мыши будет изменяться и контур надписи. Число строк и количество символов текущего типа шрифта, которые может отобразить надпись, выводятся в строке состояния.</li>
+<li>При достижении элементом управления  Надпись  нужных размеров отпустите левую кнопку мыши. Если надпись будет иметь размеры, превышающие область того раздела, к которому она добавляется, то область раздела формы будет увеличена для того, чтобы надпись поместилась целиком.</li>
+<li>Внутри контура надписи появится текстовый курсор. Введите нужный текст. Если, создав надпись, не ввести в нее хотя бы одного символа, то после следующего щелчка кнопкой мыши этот элемент управления исчезнет.</li>
+</ol>
+<p>После добавления элемента управления для его перемещения и изменения размеров используются угловой маркер перемещения и маркеры изменения размеров. Положение углового маркера перемещения определяет значения свойств элемента управления  От левого края  (Left) и  От верхнего края  (Тор). Маркеры изменения размеров устанавливают значения свойств элемента управления  Ширина  (Width) и  Высота  (Height).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image01/034bf57c48b001c7fd66309c9bc212bf.gif" width="490" height="407" alt=""><meta itemprop="width" content="490">
+<meta itemprop="height" content="407"></span></p>
+<p> Рис. 5.14.  Добавление в форму элемента управления  Надпись </p>
+<p>Для добавления большинства других типов элементов управления (выключателей, переключателей, флажков) в форму используется процесс, описанный выше. Некоторые кнопки панели элементов, например  Список  (List Box) или  Поле со списком  (Combo Box), при создании элемента управления вызывают Мастер элементов, если кнопка  Мастера  (Control Wizards) нажата.</p>
+<p>Чтобы создать элемент управления  Список  с помощью мастера:</p>
+<ol>
+<li>На панели элементов нажмите кнопку  Мастера  (Control Wizards), если она еще не нажата.</li>
+<li>На панели элементов нажмите кнопку  Список  (List Box). Когда указатель мыши попадет в активную область формы, он примет вид крестика со значком элемента управления  Список.  Центр крестика определяет позицию верхнего левого угла элемента управления  Список. </li>
+<li>Поместите указатель мыши в виде крестика в область нужного раздела формы. Нажмите левую кнопку мыши и, удерживая ее, перетащите указатель мыши в нижний правый угол списка.Вместе с перемещением указателя мыши будет изменяться и контур списка. Число строк и количество символов текущего типа шрифта, которые может отобразить список, выводятся в строке состояния.</li>
+<li>При достижении элементом управления  Список  нужных размеров отпустите левую кнопку мыши. Появится первое диачоговое окно Мастера списков. В этом диалоговом окне выберите переключатель  Объект &#171;список&#187; будет использовать  значения из таблицы или запроса  (I want the list box to look up the values in a table or query). Нажмите кнопку  Далее  (Next). Появится второе диалоговое окно Мастера списков (рис. 5.15).
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image08/453b730e9b6a7cdb6de345e3627d354c.gif" width="486" height="341" alt=""><meta itemprop="width" content="486">
+<meta itemprop="height" content="341"></span></p>
+<p> Рис. 5.15.  Второе диалоговое окно Мастера списков</p>
+<p>Замечание</p>
+<p>Список может также содержать набор фиксированных значений, который мастер предоставит возможность перечислить, или список значений одного из полей таблицы или запроса, являющегося для формы базовым.</p>
+<p>Совет</p>
+<p>Довольно часто при разработке формы для ускорения процесса перехода по большому количеству записей возникает потребность в создании специального поля со списком, при выборе элемента, в котором в форме будет отображаться соответствующая запись из источника данных. В Access 2002 с помощью мастера можно создать список или поле со списком специально для поиска нужной записи в форме. Для этого следует выбрать соответствующий переключатель в первом диалоговом окне мастера такого элемента: например для списка — Поиск записи в форме на основе значения, которое содержит список (Find a record on my form based on the value I selected in my list box). Этот переключатель отображается в случае, если для формы задан источник записей: таблица или запрос. В режиме Формы выделение элемента в этом списке будет приводить к переходу на соответствующую запись в форме. Переход реализуется с помощью процедуры обработки события После обновления (After Update), созданной мастером.</p>
+</li>
+<li>Во втором диалоговом окне Мастера списков нужно указать таблицу или запрос, значения из которого должны появляться в списке. Выделите в списке нужную-таблицу или запрос и нажмите кнопку  Далее  (Next). Появится третье диалоговое окно мастера (рис. 5.16).
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image26/f1cd53b799b0ebca3504792dd23291e7.gif" width="486" height="341" alt=""><meta itemprop="width" content="486">
+<meta itemprop="height" content="341"></span></p>
+<p> Рис. 5.16.  Третье диалоговое окно Мастера списков</p>
+</li>
+<li>В этом диалоговом окне нужно определить, какие поля таблицы (в нашем примере — таблицы &#171;Типы&#187; (Categories)) будут отображаться в списке. Чаще всего в списке должно отображаться одно поле, значение из которого будет выбираться пользователем, но необходимо включить в список еще и ключевое поле, т. к. именно его значение будет использовано в качестве значения данного элемента управления. В нашем примере полей всего два. Поэтому достаточно нажать кнопку &#171;&gt;&gt;&#187;, чтобы переместить их из списка доступных полей в список выбранных. Затем нажмите кнопку Далее (Next).</li>
+<li>В следующем диалоговом окне (рис. 5.17) отображаются выбранные поля, причем поле &#171;КодТипа&#187; (CategorylD), которое показывать пользователю не нужно, скрыто. Если ключевое поле содержит нужную пользователю информацию, его можно отобразить в списке (список может содержать два и более полей). Для этого достаточно сбросить флажок  Скрыть ключевой столбец (рекомендуется)  (Hide key column). Перемещая с помощью мыши правую границу столбцов, можно задать ширину столбцов. Чтобы настроить ширину столбца по ширине самого длинного значения, достаточно подвести указатель мыши к правой границе столбца и дважды щелкнуть левой кнопкой. Нажмите кнопку  Далее  (Next).</li>
+<li>Если для формы задан источник записей: таблица или запрос, появится пятое диалоговое окно Мастера списков, представленное на рис. 5.18 (иначе отобразится сразу последнее диалоговое окно Мастера списка, описанное в следующем шаге). В этом диалоговом окне нужно указать, требуется ли сохранить выбранное значение списка в поле источника данных формы. Если требуется (как в нашем примере), выберите переключатель  Сохранить в поле  (Store that value in this field). Тогда в раскрывающемся списке справа отобразятся все поля источника данных формы. В нашем примере этим источником данных является таблица &#171;Типы&#187; и из списка нужно получить значение поля &#171;КодТипа&#187;, поэтому необходимо выбрать в раскрывающемся списке имя поля &#171;КодТипа&#187;. После этого нажмите кнопку  Далее  (Next). Появится последнее диалоговое окно Мастера списков.
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image15/8410eba7d649e071314836173d0abaa9.gif" width="486" height="341" alt=""><meta itemprop="width" content="486">
+<meta itemprop="height" content="341"></span></p>
+<p> Рис. 5.17.  Четвертое диалоговое окно Мастера списков</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image06/3a75667498b10354b4a2658bd06c40a8.gif" width="486" height="341" alt=""><meta itemprop="width" content="486">
+<meta itemprop="height" content="341"></span></p>
+<p> Рис. 5.18.  Пятое диалоговое окно Мастера списков</p>
+</li>
+<li>В последнем диалоговом окне можно указать название, которое будет использоваться в качестве метки для создаваемого списка. Чтобы после создания списка получить справку по возможностям его настройки, установите флажок, расположенный внизу диалогового окна.</li>
+<li>Для завершения процесса создания списка нажмите кнопку  Готово  (Finish).</li>
+</ol>
+<p>При создании таких элементов управления без помощи Мастера элементов свойства создаваемых элементов нужно настраивать вручную с помощью окна свойств элемента управления. Чтобы открыть окно свойств какого-либо элемента управления формы, выделите его и нажмите кнопку  Свойства  (Properties) на панели инструментов  Конструктор форм  (Form Design) либо дважды щелкните по элементу управления. На рис. 5.19 изображено окно свойств списка.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image02/1263621aa93853064b93cc9fd00c73d1.gif" width="364" height="407" alt=""><meta itemprop="width" content="364">
+<meta itemprop="height" content="407"></span></p>
+<p> Рис. 5.19.  Окно свойств списка</p>
+<p> Cоздание элементов управления с помощью кнопки Список полей </p>
+<p>Еще одним достаточно простым и удобным способом создания элементов управления является использование списка полей.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image01/011712c536ad6acb9049b696245303fb.gif" width="354" height="527" alt=""><meta itemprop="width" content="354">
+<meta itemprop="height" content="527"></span></p>
+<p> Рис. 5.20.  Список полей в режиме Конструктора формы &#171;Форма_Товар&#187;</p>
+<p>Чтобы создать элемент управления, связанный с каким-либо полем источника данных разрабатываемой формы:</p>
+<ol>
+<li>На панели инструментов  Конструктор форм  (Form Design) нажмите кнопку  Список полей  (Field List). Появится всплывающее окно, содержащее поля из источника данных формы (рис. 5.20).</li>
+<li>В открывшемся окне выделите нужное поле и с помощью мыши перетащите его в область одного из разделов формы. В форме появится выбранное поле с меткой, содержащей название поля таблицы или запроса. Теперь его можно перемещать и форматировать стандартными методами, используемыми для модификации элементов управления.</li>
+</ol>
+<p> Удаление элементов формы </p>
+<p>Чтобы удалить из формы какой-либо элемент управления:</p>
+<ol>
+<li>Выделите элемент управления, щелкнув по нему левой кнопкой мыши.</li>
+<li>Нажмите клавишу <strong>&lt;Del&gt;</strong> или выберите команду  Правка, Удалить  (Edit, Delete).</li>
+</ol>
+<p>Чтобы сразу удалить несколько элементов управления, выделите их, как описано в  разд. &#171;Выделение и перемещение нескольких элементов управления&#187;,  и нажмите клавишу <strong>&lt;Del&gt;</strong> или выберите команду  Правка, Удалить  (Edit, Delete).</p>
+<p> Выделение формы и элементов управления и отображение окна свойств </p>
+<p>Значения свойств всей формы, ее разделов и каждого элемента управления в форме задаются в окнах свойств соответствующих элементов. Для отображения на экране окна свойств формы, раздела или элемента управления выделите его и нажмите кнопку  Свойства  (Properties) на панели инструментов  Конструктор форм  (Form Design) или выберите команду  Свойства  (Properties) в контекстном меню.</p>
+<p>Выделение формы или элемента управления выполняется следующим образом:</p>
+<ul>
+<li> Форма.  Щелкните левой кнопкой мыши по области формы, находящейся справа от вертикальной линии, позволяющей устанавливать правое поле формы; либо щелкните левой кнопкой мыши по квадратику в верхнем левом углу окна Конструктора формы, где пересекаются вертикальная и горизонтальная линейки; либо выберите команду  Правка, Выделить форму  (Edit, Select Form). Чтобы быстро выделить форму и открыть окно свойств, дважды щелкните левой кнопкой мыши по квадратику в верхнем левом углу окна Конструктора формы. Окно свойств формы позволяет установить значения свойства всей формы.</li>
+<li> Разделы заголовка формы, примечания формы, разделы верхнего и нижнего колонтитулов.  Щелкните левой кнопкой мыши по области заголовка формы, примечания формы либо верхнего или нижнего колонтитулов.</li>
+<li> Раздел области данных.  Щелкните левой кнопкой мыши по области данных. Установка значений свойств раздела области данных происходит так же, как и установка свойств раздела заголовка формы, но новые значения будут применены только к разделу области данных.</li>
+<li> Элемент управления.  Щелкните по элементу управления левой кнопкой мыши или выделите с помощью мыши прямоугольную область формы, в которую попадает один или несколько элементов управления, которые нужно выделить. Способ выделения зависит от установленных параметров, которые были описаны  в разд. &#171;Параметры работы с формами&#187; данной главы:  область выделения должна либо пересекать выделяемые элементы, либо полностью их охватывать. Еще один способ выделения отдельного элемента управления — выбрать имя выделяемого элемента в раскрывающемся списке  Объект  (Object) панели инструментов  Формат (форма/отчет)  (Formatting (Form/Report)), в котором отображаются имена всех элементов управления в форме. При выделении элемента управления вокруг него появляется рамка с маркером перемещения (в левом верхнем углу) и маркерами изменения размеров (рис. 5.21).</li>
+</ul>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image03/1678926afa6c264d110ef662a39e8044.gif" width="339" height="420" alt=""><meta itemprop="width" content="339">
+<meta itemprop="height" content="420"></span></p>
+<p> Рис. 5.21.  Выделенный элемент управления с именем  Примечание </p>
+<p>Замечание</p>
+<p>Текстовые поля, флажки, переключатели и кнопки имеют связанные с ними метки. При выделении таких элементов управления и метка и элемент управления выделяются одновременно.</p>
+<p> Задание последовательности перехода для элементов управления в форме </p>
+<p>При работе с формой переход от одного элемента управления к другому осуществляется с помощью мыши или клавиатуры. Чтобы перейти к следующему элементу управления, щелкните по нему левой кнопкой мыши или нажмите клавишу &lt;Таb&gt;. Чтобы вернуться к предыдущему элементу управления, щелкните по нему или нажмите комбинацию клавиш &lt;Slrift&gt;+&lt;Tab&gt;. С помощью мыши можно сразу перейти к любому элементу управления в форме. С помощью клавиатуры переход от одного элемента управления к другому осуществляется только в заданной последовательности. По умолчанию последовательность перехода определяется порядком создания элементов управления в режиме Конструктора. Изменить эту последовательность позволяет диалоговое окно  Последовательность перехода  (Tab Order).</p>
+<p>Чтобы отобразить это диалоговое окно в режиме Конструктора формы, выберите команду  Вид, Последовательность перехода  (View, Tab Order) или щелкните правой кнопкой мыши по форме и выберите в контекстном меню команду  Последовательность перехода  (Tab Order). В этом диалоговом окне отображается список всех элементов управления в форме. Чтобы изменить последовательность перехода, нужно изменить порядок следования элементов в списке, перетаскивая элементы списка с помощью мыши. Перетаскивать нужно, щелкнув по серому квадратику слева от названия поля и удерживая нажатой левую кнопку мыши.</p>
+<p> Перемещение и изменение размеров элементов управления </p>
+<p>При разработке формы, даже созданной с помощью Мастера, наверняка потребуется изменить расположение и размеры элементов управления. Можно изменить размеры и местоположение отдельного элемента, а можно настроить сразу несколько элементов так, чтобы они были одинакового размера и чтобы были расположены на форме ровно и на равном расстоянии друг от друга. От этого форма сразу приобретет привлекательный вид, и работать с ней будет намного удобнее.</p>
+<p> Перемещение и изменение размеров одного элемента управления </p>
+<p>Перемещение и изменение размеров элемента управления производится следующим образом.</p>
+<ul>
+<li>Чтобы переместить элемент управления (вместе с его меткой), поместите указатель мыши в любую точку на границе выделенного элемента управления, отличную от маркеров изменения размеров. Когда указатель мыши находится в этой области, предназначенной для перемещения элемента управления, он превращается в инструмент перемещения и меняет свой вид на изображение руки. Нажмите левую кнопку мыши и, не отпуская ее, перетащите элемент управления на новое место. При перетаскивании элемента управления его граница перемещается одновременно с указателем мыши. Когда элемент управления окажется на нужном месте, отпустите левую кнопку мыши.</li>
+</ul>
+<p>Замечание</p>
+<p>Если элемент управления не имеет связанной с ним метки, его можно перетаскивать также за маркер перемещения, находящийся в левом верхнем углу элемента управления.</p>
+<ul>
+<li>Если нужно переместить элемент управления отдельно от связанной с ним метки, его следует перетаскивать за маркер перемещения, находящийся в левом верхнем углу элемента управления. Указатель мыши, помещенный над маркером перемещения, примет вид руки с вытянутым вверх указательным пальцем. Щелкните по маркеру перемещения и, удерживая нажатой левую кнопку мыши, перетащите элемент управления на новое место, а затем отпустите кнопку мыши.</li>
+<li>Чтобы изменить ширину и высоту элемента управления, поместите указатель мыши над одним из трех угловых маркеров изменения размера выделенного элемента управления так, чтобы он превратился в наклонную двустороннюю стрелку. Нажмите левую кнопку мыши и, удерживая ее нажатой, перетащите границу элемента управления, а затем отпустите кнопку мыши.</li>
+<li>Чтобы изменить только высоту (или только ширину) выделенного элемента управления, поместите указатель мыши над верхним или нижним (левым или правым) маркером изменения размера выделенного элемента управления так, чтобы он превратился в вертикальную (горизонтальную) двустороннюю стрелку. Нажмите левую кнопку мыши и, удерживая ее нажатой, перетащите границу элемента управления, а затем отпустите левую кнопку мыши.</li>
+</ul>
+<p>Есть еще один способ изменения размеров выделенного элемента управления: с помощью команд меню  Формат, Размер, По размеру данных  (Format, Size, To Fit) и  Формат, Размер, По узлам сетки  (Format, Size, To Grid). С помощью первой команды можно автоматически изменить размеры элемента в соответствии с размером отображаемых в нем данных. К примеру, для текстового поля меняется размер по вертикали в зависимости от заданного размера шрифта для текста. Вторая команда выполняет автоматическое изменение размеров и положения элемента так, чтобы его границы лежали на ближайших линиях, соединяющих узлы сетки. Действие этой команды заметно, если элементы имеют такие размеры, что их границы лежат между узлами сетки, например, когда первоначальные размеры элементов устанавливались при отключенном режиме выравнивания элементов по сетке (о выравнивании по сетке рассказано в следующих разделах).</p>
+<p> Выделение и перемещение нескольких элементов управления </p>
+<p>Выделение нескольких элементов управления позволяет задавать для них общие свойства, перемещать их и изменять их размеры одновременно. Отображение окна свойств для нескольких выделенных элементов производится так же, как и для одного выделенного элемента, как было описано  в разд. &#171;Выделение формы и элементов управления и отображение окна свойств&#187; данной главы. </p>
+<p>Для выделения нескольких элементов управления одновременно можно Использовать один из следующих способов.</p>
+<ul>
+<li>При помощи мыши нарисуйте область выделения вокруг группы элементов управления, как показано на рис. 5.22. Группа элементов управления окажется выделенной.</li>
+</ul>
+<p>Замечание</p>
+<p>Access позволяет выделить все элементы управления, которые хотя бы частично попадают в область выделения. Такой способ выделения объектов отличается от способа выделения, применяемого во многих графических редакторах, в которых для выделения объекта необходимо, чтобы тот целиком попал в область выделения. Данный способ выделения объектов, используемый Access по умолчанию, можно изменить для того, чтобы выделять объект только в том случае, если он целиком попадает в область выделения. Для этого выберите команду Сервис, Параметры (Tools, Options), раскройте вкладку Формы и отчеты (Forms/Reports) и выберите переключатель охват (Fully Enclosed) (см. рис. 5.12).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image06/385b0698c961840f23f64445d9f02f86.gif" width="339" height="420" alt=""><meta itemprop="width" content="339">
+<meta itemprop="height" content="420"></span></p>
+<p> Рис. 5.22.  Область выделения, заданная с помощью мыши</p>
+<ul>
+<li>Щелкните левой кнопкой мыши по одному элементу управления, чтобы выделить его и, удерживая нажатой клавишу &lt;Shift&gt;, выделите остальные элементы управления.</li>
+<li>Чтобы отменить выделение одного из элементов управления в выделенной группе, нажмите клавишу &lt;Shift&gt; и, удерживая ее нажатой, щелкните левой кнопкой по этому элементу управления. Для отмены выделения всей группы элементов управления щелкните левой кнопкой мыши по любой пустой (не содержащей объектов) области формы.</li>
+</ul>
+<p>Теперь можно переместить выделенную группу элементов управления, зацепив указателем мыши границу одного из них и перетащив всю группу на новое место.</p>
+<p>Замечание</p>
+<p>При выделении или отмене выделения элемента управления со связанной меткой вместе с выделением элемента управления устанавливается или отменяется выделение метки.</p>
+<p> Выравнивание одного элемента управления по сетке </p>
+<p>В окне Конструктора форм может быть отображена сетка, состоящая из линий толщиной в один пиксел, которые проводятся через каждое деление горизонтальной и вертикальной линеек окна Конструктора форм (то есть через сантиметр). Чтобы отобразить сетку, выберите команду  Вид, Сетка  (View, Grid). Соответствующая команда меню будет отмечена галочкой. Чтобы отменить отображение сетки, снова выберите команду  Вид, Сетка.  Отметка с команды меню  Сетка  будет снята.</p>
+<p>Если сетка видна, то с ее помощью можно выровнять элементы управления по горизонтали или по вертикали. Даже если сетка не видна, элементы управления можно &#171;привязать к сетке&#187;, выбрав команду  Формат, Привязать к сетке  (Format, Snap to Grid). Если привязка к сетке включена, то команда меню  Привязать к сетке  отмечена галочкой. Если перемещать элемент управления при включенной привязке к сетке, то левый верхний угол объекта будет двигаться дискретно по узлам сетки. Аналогично изменение размеров элемента управления в этом режиме будет происходить дискретно по узлам сетки.</p>
+<p>Замечание</p>
+<p>Если команда привязки элементов формы к сетке включена, то для перемещения или изменения размеров элемента управления без привязки к сетке нажмите и удерживайте клавишу &lt;Ctrl&gt; в процессе перемещения или изменения размеров элемента управления.</p>
+<p>Есть еще один способ выравнивания отдельного элемента управления по сетке: выделите его и выберите команду  Формат, Выровнять, По узлам сетки  (Format, Align, То Grid). В этом случае элемент управления автоматически переместится так, чтобы его левый верхний угол находился в ближайшем узле сетки.</p>
+<p>По умолчанию сетка отображается во всех новых формах.</p>
+<p>Расстояние между узлами сетки определяется двумя параметрами: густотой сетки по горизонтали (координата X) и по вертикали (координата Y). Густота узлов сетки задается числом, которое означает количество равных частей, на которые будет разделен каждый сантиметр сетки в данном направлении (по вертикали или по горизонтали). Допустимой является густота узлов величиной от 1 до 64 делений на сантиметр. В случае, если густота узлов сетки превышает 10 узлов на сантиметр, узлы сетки не отображаются на экране, т. к. они слишком мало отстоят друг от друга. Чтобы изменить густоту узлов сетки:</p>
+<ol>
+<li>Выберите команду  Правка, Выделить форму  (Edit, Select Form).</li>
+<li>На панели инструментов  Конструктор форм  (Form Design) нажмите кнопку  Свойства  (Properties). Появится окно свойств формы.</li>
+<li>В окне свойств формы раскройте вкладку  Макет  (Format) и при помощи полосы прокрутки найдите свойства  Число делений по X  (Grid X) и  Число делений по Y  (Grid Y).</li>
+<li>Измените значение свойств  Число делений по X и Число делений по Y на  10.</li>
+</ol>
+<p> Выравнивание и изменение размеров нескольких элементов управления </p>
+<p>Чтобы выровнять один или несколько элементов управления по сетке или относительно друг друга, выделите выравниваемые элементы, выберите команду  Формат, Выровнять  (Format, Align), а затем:</p>
+<ul>
+<li>для выравнивания элементов управления по узлам сетки выберите команду  По узлам сетки  (То Grid);</li>
+<li>для выравнивания выделенных элементов управления, расположенных в столбец, так, чтобы их левые края находились на одной вертикальной линии, выберите команду  По левому краю  (Left);</li>
+<li>для выравнивания выделенных элементов управления, расположенных в столбец, так, чтобы их правые края находились на одной вертикальной линии, выберите команду  По правому краю  (Right);</li>
+<li>для выравнивания выделенных элементов управления, расположенных в строку, по их верхней границе выберите команду  По верхнему краю  (Тор);</li>
+<li>для выравнивания выделенных элементов управления, расположенных в строку, по их нижним границам выберите команду  По нижнему краю  (Bottom).</li>
+</ul>
+<p>У выровненной по одной из вертикальных и горизонтальных сторон группы элементов сразу станет заметной разница в размерах, в частности, если одно поле немного короче другого. Если поля содержат данные разной длины, например номер телефона и адрес, то такая разница в размере обоснована. Но если поля содержат однотипную информацию одинаковой длины, просто необходимо сделать их одинакового размера, чтобы форма выглядела аккуратно. Для выравнивания размеров нескольких элементов выделите их любым описанным ранее способом, а затем выберите одну из команд меню  Формат, Размер  (Format, Size):</p>
+<ul>
+<li>команды  По размеру данных  (То Fit) и  По узлам сетки  (То Grid), как уже говорилось  в разд. &#171;Перемещение и изменение размеров одного элемента управления&#187; данной главы,  позволяют автоматически изменить размеры выделенных элементов в зависимости от размера содержимого или по линиям сетки соответственно;</li>
+<li>команда  По самому высокому  (То Tallest) предназначена для того, чтобы сделать вертикальный размер всех выделенных элементов равным размеру самого высокого (по вертикали) элемента;</li>
+<li>команда  По самому низкому  (То Shortest) служит для того, чтобы сделать вертикальный размер всех выделенных элементов равным размеру самого низкого (по вертикали) элемента;</li>
+<li>с помощью команды  По самому широкому  (То Widest) горизонтальный размер всех выделенных элементов делается равным размеру самого широкого (по горизонтали) элемента;</li>
+<li>команда  По самому узкому  (То Narrowest) позволяет сделать горизонтальный размер всех выделенных элементов равным размеру самого узкого (по горизонтали) элемента.</li>
+</ul>
+<p>Чтобы настроить расстояния между несколькими вертикально расположенными (в один &#171;столбец&#187;) элементами управления, выделите их и выберите одну из команд меню  Формат, Интервал по вертикали  (Format, Vertical Spacing):</p>
+<ul>
+<li> Сделать равным  (Make Equal), чтобы сделать равными расстояния в данном направлении между всеми выделенными элементами;</li>
+<li> Увеличить  (Increase), чтобы увеличить расстояние между элементами на размер одного деления сетки в этом направлении. Если было выделено три или более элементов, расстояния сначала автоматически выравниваются;</li>
+<li> Уменьшить  (Decrease), чтобы уменьшить расстояние между элементами. Эта команда за одно действие изменяет расстояние на ту же величину, что и команда  Увеличить. </li>
+</ul>
+<p>Аналогичным образом можно настроить расстояния между несколькими горизонтально расположенными (в одну &#171;строку&#187;) элементами управления, выделив их и воспользовавшись командами меню  Формат, Интервал по горизонтали  (Format, Horizontal Spacing).</p>
+<p>Не пожалейте немного времени на выравнивание элементов управления. Вы увидите, что выполнить это можно быстро и просто, а ваша форма примет профессиональный вид.</p>
+<p> Изменение взаимного расположения и группировка элементов управления </p>
+<p>При работе с формой в режиме Конструктора, перетаскивая элементы, можно случайно поместить один элемент так, что он пересечется с другим элементом, т. е. накроет его сверху целиком или закроет какую-то его часть. Это нежелательный эффект, и скорее всего вы захотите разъединить элементы или удалить один из них. Если один из элементов находится под другим, то говорят, что он расположен &#171;на заднем плане&#187;, а другой элемент, соответственно, — &#171;на переднем плане&#187;. При выделении элемента, частично накрытого другим, он временно оказывается на переднем плане.</p>
+<p>Если элемент управления был полностью накрыт другим, то его никак не получится выделить с помощью мыши, т. к. щелчком в области его расположения будет выделяться тот элемент, что находится сверху. Чтобы получить доступ к элементу, закрытому другим элементом, можно отодвинуть верхний элемент или переместить его на задний план. Для этого выделите этот элемент, а затем выберите команду  Формат, На задний план  (Format, Send to Back). Чтобы переместить выделенный элемент на передний план, выберите команду  Формат, На передний план  (Format, Bring to Front).</p>
+<p>Таким же образом можно перемещать на передний или задний план сразу несколько выделенных элементов. По умолчанию порядок перекрывания одного элемента другим, т. е. то, какой из элементов окажется сверху, определяется порядком создания элементов: новый элемент всегда накроет старый (созданный ранее). Этот порядок изменяется командами перемещения элементов с переднего на задний план и наоборот.</p>
+<p>В режиме Конструктора можно объединить несколько элементов в группу, выделив их и выбрав команду  Формат, Группировать  (Format, Group). Тогда можно будет выделить всю группу одним щелчком внутри нее. При выделении всей группы вокруг нее отображается охватывающий прямоугольник с маркерами перемещения и изменения размеров. Потянув кнопкой мыши за маркер изменения размера группы, можно изменить относительные размеры сразу всех элементов в группе. Перетаскиванием за рамку или маркер перемещения группы можно всю группу элементов сразу поместить на новое место. Тем не менее в выделенной группе каждый элемент по-прежнему можно выделить и работать с ним отдельно от других элементов группы.</p>
+<p>Чтобы отменить группировку элементов, выделите группу и выберите команду  Формат, Разгруппировать  (Format, Ungroup).</p>
+<p>Замечание</p>
+<p>Обращаем ваше внимание на то, что, упоминая группу элементов, чаще всего имеют в виду группу выделенных элементов, а не сгруппированные элементы. Хотя в большинстве случаев работа с группой элементов и сгруппированными элементами одинакова.</p>
+<p> Копирование, вставка и удаление элементов управления </p>
+<p>Все стандартные команды работы с буфером обмена Windows применимы и для элементов управления. Выделенный элемент управления или группу элементов управления можно удалить или скопировать в буфер обмена, а затем вставить в форму и надлежащим образом разместить. В Access для работы с буфером обмена используются стандартные сочетания клавиш Windows:</p>
+<ul>
+<li>&lt;Ctrl&gt;+&lt;X&gt; — для перемещения выделенных элементов управления в буфер обмена с удалением их из формы;</li>
+<li>&lt;Ctrl&gt;+&lt;C&gt; — для копирования выделенных элементов управления в буфер обмена;</li>
+<li>&lt;Ctrl&gt;+&lt;V&gt; — для вставки содержимого буфера обмена.</li>
+</ul>
+<p>Традиционные сочетания клавиш &lt;Shift&gt;+&lt;Del&gt;, &lt;Ctrl&gt;+&lt;Ins&gt; и &lt;Shift&gt;+&lt;Ins&gt; выполняют те же самые операции.</p>
+<p>Чтобы удалить элемент управления, выделите его и нажмите клавишу &lt;Del&gt;. Если случайно была удалена метка, связанная с элементом управления, то выделите другую метку, скопируйте ее в буфер обмена, затем выделите элемент управления, с которым нужно связать метку, и вставьте ее из буфера обмена.</p>
+<p> Изменение надписей </p>
+<p>Для изменения надписей или меток элементов управления можно использовать стандартные приемы редактирования. Если поместить указатель мыши в пределах границ выделенной метки или надписи и щелкнуть левой кнопкой мышки, появится текстовый курсор, используемый для вставки и удаления текста. Текст элемента управления можно выделить, удерживая нажатой клавишу <strong>&lt;Shift&gt;</strong> и перемещая курсор при помощи клавиш &lt;&lt;-&gt; и &lt;-&gt;&gt;. Все операции работы с буфером обмена Windows применимы и для текста элементов управления.</p>
+<p>Аналогичным способом, щелкнув внутри текстового поля, чтобы отобразить текстовый курсор, можно редактировать текст, отображаемый внутри поля. Это не просто текст, а имя присоединенного поля источника данных. Если ввести имя несуществующего поля источника данных или допустить ошибку при редактировании, то при переходе в режим Формы или режим Таблицы в этом текстовом поле будет отображаться сообщение об ошибке: iName?. Самый простой способ исправить эту ошибку — удалить данное поле (с помощью клавиши <strong>&lt;DeI&gt;</strong>) и создать новое, перетащив на форму поле источника данных, которое нужно присоединить к текстовому полю, из окна Список полей (Field List), как было описано  в разд. &#171;Создание элементов управления с помощью кнопки Список полей&#187; данной главы. </p>
+<p> Изменение типа элемента управления </p>
+<p>Если при разработке формы вдруг возникла необходимость заменить текстовое поле раскрывающимся списком, вы можете сделать это, просто выделив имеющийся элемент управления и выбрав команду  Формат, Преобразовать элемент в, Поле со списком  (Format, Change To, Combo Box). Также просто можно преобразовать любой из девяти наиболее часто применяющихся типов элементов управления в подобный ему элемент управления другого типа с помощью команды меню  Формат, Преобразовать элемент в.  Девяти типам элементов соответствуют девять команд этого меню:  Поле  (Text Box),  Надпись  (Label),  Список  (List Box),  Поле со списком  (Combo Box),  Флажок  (Check Box),  Выключатель  (Toggle Box),  Переключатель  (Option Button),  Изображение  (Image) и  Кнопка  (Command Button).</p>
+<p>Конечно, для элемента данного типа возможно преобразование в элемент не любого из названных девяти типов, а только в элемент похожего типа. Очевидно, что текстовое поле не преобразовать в переключатель, зато его можно преобразовать в надпись, список или поле со списком. В меню будут доступны соответствующие команды. При преобразовании сохраняются значения общих свойств элементов обоих типов.</p>
+<p> Оформление формы и ее элементов </p>
+<p>Если форма создавалась &#171;с нуля&#187; в режиме Конструктора или с помощью мастера без применения красивого  автоформата,  она и ее элементы окрашены в непритязательные черно-белые тона. Чтобы сделать форму более привлекательной, выделить на общем фоне какие-то важные элементы, вы можете изменить цвет фона формы и цвета ее элементов, выбрать оформление рамок для элементов управления, задать подходящий шрифт, его цвет и размер для текста надписей и других элементов. Параметры форматирования задаются с помощью панели инструментов  Формат (форма/отчет)  (Formatting (Form/Report)) и с помощью окна свойств формы или ее элементов. В настоящем разделе мы расскажем о том, как это рделать.</p>
+<p>Внимание</p>
+<p>Если форма будет печататься на принтере, не увлекайтесь цветовым оформлением формы: печать фонового рисунка, темного фона формы и ее элементов потребует значительных затрат расходных материалов, да эти изыски и ни к чему для &#171;твердой копии&#187; формы, поскольку на бумаге важнее сами данные, а не их оформление. Для печати лучше всего выбрать белый фон для формы и ее элементов, не очень жирные рамки для элементов и шрифт обычной толщины для текста. Если же форма имеет хорошее цветовое оформление, которое важно сохранить для интерактивной работы, печатайте ее в режиме Таблицы.</p>
+<p> Применение автоформата </p>
+<p>В Access есть замечательное средство, позволяющее практически в одно действие оформить всю форму сразу, включая ее элементы, которое получило название  автоформат  (AutoFormat). Автоформат — это набор параметров оформления формы и ее элементов, который можно применить для форматирования формы. В составе Access 2002 есть несколько встроенных автоформатов, но пользователю также предоставляется возможность создать собственные.</p>
+<p>Чтобы применить к форме, открытой в режиме Конструктора, один из имеющихся автоформатов:</p>
+<ol>
+<li>Выделите всю форму, например, выбрав команду  Правка, Выделить форму  (Edit, Select Form).
+<p>Замечание</p>
+<p>Если вы хотите применить автоформат только к отдельным элементам формы, то выделите их, а не всю форму (в предыдущих разделах мы уже рассказали о том, как выделить один или несколько элементов управления на форме).</p>
+</li>
+<li>Выберите команду  Формат, Автоформат  (Format, AntoFormat) или нажмите кнопку  Автоформат  (AutoFormat) на панели инструментов  Конструктор форм  (Form Design). Появится диалоговое окно  Автоформат  (AutoFormat) (рис. 5.23).</li>
+<li>Выделите в списке автоформатов тот, который нужно применить к форме. В правой половине диалогового окна отображается эскиз выбранного в списке автоформата.</li>
+<li>Нажмите кнопку  ОК. </li>
+</ol>
+<p>Замечание</p>
+<p>Можно применить к форме только часть автоформата, исключив применение таких параметров автоформата, как шрифт, цвет и оформление границ элементов управления. Для этого, прежде чем нажимать кнопку ОК в диалоговом окне Автоформат, нажмите кнопку Параметры (Options). В раскрывшейся нижней части диалогового окна сбросьте флажки для тех параметров формата, которые вы хотели бы оставить в текущей форме прежними: шрифт ( Font), цвет (Color) или границы (Border).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image05/2e916c5d7fe928364a76ab78c0ace952.gif" width="501" height="332" alt=""><meta itemprop="width" content="501">
+<meta itemprop="height" content="332"></span></p>
+<p> Рис. 5.23.  Диалоговое окно Автоформат</p>
+<p>Чтобы создать собственный автоформат, необходимо оформить в требующемся стиле любую форму, котррая послужит образцом для создания автоформата:</p>
+<ol>
+<li>Откройте форму образец  п  режиме Конструктора</li>
+<li>Добавьте на эту форму элементы управления различных типов, если их на ней нет, и отформатируйте их и саму форму так, как должны быть оформлены и другие формы с помощью создаваемого вами автоформата.</li>
+<li>Когда такая форма будет готова, выберите команду  Формат, Автоформат  и в открывшемся диалоговом окне нажмите кнопку  Настройка  (Customize). Появится диалоговое окно  Настройка автоформата  (Customize AutoFormat).</li>
+<li>Выберите переключатель  создание нового стиля на основе стиля объекта: &lt;имя текущей формы&gt;  (Create a new AutoFormat based on the Form &lt;имя текущей формы&gt;) и нажмите кнопку  ОК. </li>
+<li>В небольшом появившемся диалоговом окне введите имя нового автоформата, например Мой стиль. Нажмите кнопку  ОК. </li>
+<li>Нажмите кнопку  ОК,  чтобы применить только что созданный автоформат к текущей форме, или кнопку  Закрыть  (Close), чтобы просто закрыть диалоговое окно  Автоформат. </li>
+</ol>
+<p>Таким образом будет создан новый автоформат с именем &#171;Мой стиль&#187; на основе формата открытой в данный момент формы. Этот автоформат появится в списке рядом с другими автоформатами Access.</p>
+<p>Чтобы удалить ставший ненужным автоформат, выделите его в списке в диалоговом окне  Автоформат  и нажмите кнопку  Настройка.  Выберите переключатель  удаление стиля &lt;имя автоформата&gt;  (Delete &lt;имя автоформата&gt;). Если же требуется всего лишь обновить параметры выбранного автоформата на основе формата текущей формы, выберите в этом диалоговом окне переключатель  обновление стиля &lt;имя автоформата&gt; с атрибутами объекта: &lt;имя текущей формы&gt;  (Update &lt;имя автофор-мата&gt; with values from the Form &lt;имя текущей формы&gt;) и нажмите кнопку OK, a затем — кнопку  Закрыть,  чтобы закрыть диалоговое окно  Автоформат. </p>
+<p>Замечание</p>
+<p>Access 2002 не запрашивает подтверждение на удаление автоформата, поэтому убедитесь в правильности выбора удаляемого автоформата перед тем, как нажать кнопку ОК.</p>
+<p> Изменение цвета фона формы и ее элементов </p>
+<p>Основным параметром, определяющим внешний вид формы, является цвет ее фона. Поэтому при выборе цвета фона необходимо руководствоваться тем, для каких целей предназначена разрабатываемая форма и как в дальнейшем планируется ее использовать. Напомним, что для форм, выводимых на печать, лучше использовать менее яркие цвета, поскольку цветной фон или фон с рисунком потребуют больших затрат на расходные материалы для принтера.</p>
+<p>Цвет фона раздела формы или ее элемента определяется значением свойства  Цвет фона  (Back Color). В форме, созданной с помощью Мастера форм, фон всех ее разделов зависит от стиля оформления, выбранного при ее создании. Например, к форме &#171;Форма_Сотрудники&#187; был применен автоформат  Стандартный  (Standard), который задает светло-серый цвет фона.</p>
+<p>Чтобы изменить цвет фона раздела формы или ее элемента:</p>
+<ol>
+<li>Выделите раздел или элемент формы, цвет фона которого нужно изменить, щелкнув левой кнопкой мыши по пустой области внутри раздела (заголовка, области данных или примечания) либо по элементу формы (например, по метке, списку или полю).</li>
+<li>На панели инструментов  Формат (форма/отчет)  (Formatting (Form/Report)) нажмите стрелку справа от кнопки  Цвет заливки/фона  (Fill/Back Color). Появится палитра цветов.</li>
+<li>Выберите в палитре нужный цвет.</li>
+</ol>
+<p>Заметим, что цвет фона раздела формы в Access устанавливается независимо от цвета фона других разделов. Поэтому, чтобы поменять цвет всех разделов, нужно задать новый цвет для каждого раздела отдельно.</p>
+<p>Цвет фона раздела формы не влияет на цвет фона элементов управления, находящихся в нем. Для каждого элемента управления также можно выбрать свой цвет фона и цвет шрифта. Для меток элементов управления обычно задан прозрачный цвет фона, т. е. в качестве фона метки используется та часть фона раздела формы, которую она занимает. По умолчанию для текстовых полей используется белый цвет фона, поэтому цвет текстовых полей (и содержащихся в них данных) контрастен цвету фона формы.</p>
+<p>Можно задать прозрачный цвет фона не только меткам, но и таким элементам управления, как текстовые поля и раскрывающиеся списки. Для этого выделите элемент управления одного из упомянутых типов, а затем в списке  Цвет заливки/фона  выберите элемент  Прозрачный  (Transparent). Заметим, что применение прозрачного цвета фона ко всему разделу формы не разрешено. Л задание прозрачного фона текстовому полю или раскрывающемуся списку приведет к следующему эффекту: в режиме Формы цвет данного элемента управления станет прозрачным, когда этот элемент не будет активным, т. е. когда фокус (точка ввода) будет находиться в другом элементе. Когда же точка ввода будет помещена в данное текстовое поле или раскрывающийся список, он приобретет непрозрачный цвет фона, который был задан ему ранее. Пример такого отображения полей можно наблюдать в форме &#171;Заказы клиентов&#187; (Customer Orders) демонстрационной базы данных &#171;Борей&#187; (это поля &#171;Название&#187; (Company Name) и &#171;Страна&#187; (Country)). Дело в том, что значение &#171;прозрачный&#187; соответствует на самом деле не свойству элемента  Цвет фона  (Back Color), а свойству  Тип фона  (Back Style). Тип фона элемента может принимать одно из двух значений:  Обычный  (Normal) (когда потеря фокуса элементом не изменяет его цвет) или  Прозрачный  (Transparent).</p>
+<p> Изменение фонового рисунка формы </p>
+<p>В качестве фона формы Access 2002 позволяет задавать не только гладкие цвета, но и растровые рисунки, хранящиеся в разнообразных графических форматах, таких как WMF и BMP. В комплект поставки Access 2002 входит несколько растровых рисунков, которые хранятся в папке Microsoft OfficeOfficelOBitmapsStyles.</p>
+<p>Чтобы задать фоновый рисунок для формы:</p>
+<ol>
+<li>В режиме Конструктора выделите всю форму. Для этого щелкните левой кнопкой мыши по квадратику в верхнем левом углу окна Конструктора формы, где пересекаются вертикальная и горизонтальная линейки. После выделения формы в месте пересечения линеек появится черный квадратик.</li>
+<li>На панели инструментов  Конструктор форм  (Form Design) нажмите кнопку  Свойства  (Properties). Появится окно свойств формы (рис. 5.24).<span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image20/b46942ecfe5a6259999f7a13bb361d37.gif" width="382" height="524" alt=""><meta itemprop="width" content="382">
+<meta itemprop="height" content="524"></span>
+<p> Рис. 5.24.  Окно свойств формы</p>
+</li>
+<li>Раскройте вкладку  Макет  (Format) в окне свойств формы и с помощью полосы прокрутки переместитесь в копец списка свойств, где находится свойство  Рисунок  (Picture).
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image17/98b751efd878422a0170fd928c7ff4cf.gif" width="550" height="336" alt=""><meta itemprop="width" content="550">
+<meta itemprop="height" content="336"></span></p>
+<p> Рис. 5.25.  Диалоговое окно  Выбор рисунка </p>
+</li>
+<li>В поле свойства  Рисунок  введите путь и имя файла рисунка либо воспользуйтесь Построителем: поместите точку ввода в поле  Рисунок,  затем нажмите кнопку  Построить  (Build), которая появится справа от поля в виде маленького квадрата с изображением многоточия на нем, после чего откроется диалоговое окно  Выбор рисунка  (Insert Picture) (рис. 5.25), с помощью которого можно найти и указать необходимый файл рисунка. Это диалоговое окно является стандартным диалоговым окном открытия файлов в Windows. После того как файл рисунка будет найден, выделите его название, а затем нажмите кнопку  ОК.  Access отобразит путь и имя файла в поле свойства  Рисунок. </li>
+<li>Чтобы закрыть окно свойств формы, нажмите кнопку  Закрыть  (Close) вверху окна.</li>
+</ol>
+<p>В отличие от цветов фона, фоновый рисунок распространяется на все разделы формы. Чтобы удалить фоновый рисунок, просто удалите содержимое текстового поля свойства  Рисунок. </p>
+<p>Кроме того, с помощью свойств, сгруппированных на вкладке  Макет  окна свойств формы, можно настроить отображение фонового рисунка. Свойство  Тип рисунка  (Picture Type) определяет метод, используемый Access для присоединения рисунка к форме. Выберите в раскрывающемся списке этого свойства элемент  Внедренный  (Embedded), если предполагается распространение приложения между пользователями и форма не должна использовать внешних файлов, которые могут быть перемещены или удалены. Если же имеется много форм, использующих один и тот же фоновый рисунок, то в раскрывающемся списке выберите элемент  Связанный  (Linked), что позволит уменьшить использование дискового пространства путем включения фонового рисунка в форму при помощи связи с файлом рисунка.</p>
+<p>С помощью свойства  Масштабы рисунка  (Picture Size Mode) можно определить размеры фонового рисунка. Для вывода рисунка в исходных размерах, в раскрывающемся списке этого свойства выберите элемент  Фрагмент  (Clip). При выборе значения  Вписать в рамку  (Stretch) рисунок растягивается или сжимается по горизонтали и по вертикали до размеров формы; при этом возможно изменение пропорций рисунка. Выбор значения  По размеру рамки  (Zoom) приведет к растяжению или сжатию рисунка с сохранением пропорций до максимально возможных размеров, при которых не происходит обрезка рисунка.</p>
+<p>Чтобы определить положение фонового рисунка, выберите один из следующих элементов раскрывающегося списка свойства  Выравнивание рисунка  (Picture Alignment):  Сверху слева  (Top Left),  Сверху справа  (Top Right),  По центру  (Center),  Снизу слева  (Bottom Left),  Снизу справа  (Bottom Right) либо  По центру формы  (Form Center).</p>
+<p>Замечание</p>
+<p>Чтобы фоновый рисунок центрировался относительно формы, а не окна формы, установите для свойства  Выравнивание рисунка  значение  По центру формы, а не По центру. </p>
+<p>Если свойство  Мозаичное заполнение  (Picture Tiling) имеет значение Да (Yes), то в окне формы или во всей форме (в зависимости от значения свойства  Выравнивание рисунка)  выводится повторяющееся изображение рисунка.</p>
+<p>После изменения значения свойства результат этого изменения немедленно отображается в форме.</p>
+<p> Форматирование элементов формы </p>
+<p>Кроме оформления фона формы, в Access можно легко отформатировать и отдельные&#8217;элементы управления: изменить цвет текста, ширину, цвет и стиль границы элемента формы.</p>
+<p>Изменить внешний вид границы можно с помощью окна свойств элемента управления. Выделите элемент управления, который необходимо изменить, щелкнув по нему левой кнопкой мыши, а затем нажмите кнопку  Свойства  (Properties) на панели инструментов  Конструктор форм  (Form Design). В открывшемся окне свойств раскройте вкладку Макет (Format) и с помощью полосы прокрутки найдите свойства, отвечающие за оформление текста и рамок. Выбор значений для большей части свойств рамок элементов управления осуществляется при помощи раскрывающихся списков. Для определения значения свойства, определяющего цвет какого-либо параметра, необходимо ввести число, представляющее нужный цвет в системе обозначения цветов в Windows, что достаточно сложно. Поэтому для задания цвета элемента управления проще воспользоваться соответствующей кнопкой панели инструментов  Формат (форма/отчет). </p>
+<p>В табл. 5.3 приведены названия и возможные значения свойств границ элементов управления, которые можно установить в окне свойств элемента управления.</p>
+<table class="table_common" width="600">
+<tbody>
+<tr class="header">
+<td width="150">Свойство</td>
+<td width="150">Описание</td>
+<td>Возможные значения</td>
+</tr>
+<tr class="one">
+<td>Тип границы (Border Style)</td>
+<td>Определяет вид линий, образующих границу элемента управления формы</td>
+<td>Отсутствует (Transparent); Сплошная (Solid); Штриховая (Dashes); Пунктирная (Short Dashes); Точечная (Dots); Редкото-чечная (Sparse Dots); Штрих-пунктирная (Dash Dot); Штрих-точечная (Dash Dot Dot)</td>
+</tr>
+<tr class="two">
+<td>Цвет границы (Border Color)</td>
+<td>Указывает цвет границы</td>
+<td>Номер цвета</td>
+</tr>
+<tr class="one">
+<td>Ширина границы (Border Width)</td>
+<td>Определяет ширину границы</td>
+<td>Сверхтонкая (Hairline) или толщиной от 1 до 6 пунктов</td>
+</tr>
+</tbody>
+</table>
+<p> Таблица 5.3.  Значения свойств границ элемента управления</p>
+<p>Хотя все параметры форматирования элемента управления формы можно установить в окне свойств, все же более удобным и наглядным способом настройки элемента управления является использование панели инструментов  Формат (форма/отчет)  (Formatting (Form/Report)).</p>
+<p>Чтобы изменить цвет текста, а также цвет или ширину границы, используя кнопки этой панели инструментов, сначала выделите элемент управления, параметры которого необходимо изменить, а затем щелкните по стрелке, расположенной справа от соответствующей кнопки панели инструментов  Формат (форма/отчет),  например кнопки  Цвет текста  (Font/Fore Color). В появившейся палитре выберите нужный цвет или ширину границы для элемента управления.</p>
+<p>Обратите внимание на то, что изменить цвета текста и границы (свойства  Цвет текста  (Fore Color) и  Цвет линии/границы  (Line/Border Color)) можно только у элементов управления формы. При выделенном каком-либо разделе формы кнопки  Цвет  текста и Цвет линии/границы  панели инструментов  Формат (форма/отчет)  недоступны. По умолчанию в качестве цвета текста и цвета границы элементов управления используется черный цвет. Выбор цвета границы элемента управления осуществляется с помощью кнопки  Цвет линии/границы  на панели инструментов  Формат (форма/отчет). </p>
+<p>С помощью кнопки  Оформление  (Special Effects) панели инструментов  Формат (форма/отчет)  можно создавать специальные эффекты отображения элементов управления, например приподнятые или &#171;утопленные&#187; текстовые поля. Чтобы определить ширину границы элементов управления, воспользуйтесь кнопкой  Толщина Линии/границы  (Line/Border Width). Функции всех кнопок панели инструментов  Формат (форма/отчет)  были описаны в табл. 5.2 этой главы.</p>
+<p> Копирование формата элемента управления </p>
+<p>Предположим, вы потратили какое-то время на форматирование одного элемента управления, добились желаемого эффекта и теперь хотите также отформатировать еще один элемент. Не торопитесь повторять все уже проделанные действия по форматированию, просто выполните следующую элементарную процедуру:</p>
+<ol>
+<li>Выделите элемент управления, который уже отформатирован по вашему вкусу.</li>
+<li>Нажмите кнопку  Формат по образцу  (Format Painter) на панели инструментов  Конструктор форм  (Form Design).</li>
+<li>Поместите указатель мыши над элементом управления, который нужно отформатировать по имеющемуся образцу. Указатель мыши примет вид инструмента ко пирования формата (изображение малярной кисти).</li>
+<li>Щелкните левой кнопкой мыши.</li>
+</ol>
+<p>В результате произойдет автоматическое копирование формата: новый элемент управления будет отформатирован по образцу предыдущего элемента управления, причем скопированы будут только те параметры форматирования, применение которых возможно для данного типа элемента управления.</p>
+<p>Чтобы отформатировать по образцу сразу несколько элементов управления, следует после выделения элемента, имеющего необходимый формат, щелкнуть дважды по кнопке  Формат по образцу.  Включится режим копирования формата. После этого нужно подряд щелкать левой кнопкой мыши по всем элементам управления, которые требуется отформатировать. Чтобы закончить данную операцию, нажмите на эту кнопку  (Формат по образцу)  еще раз или нажмите клавишу &lt;Esc&gt;.</p>
+<p>Такая процедура в несколько раз ускорит процесс форматирования элементов управления. Есть еще один способ ускорить форматирование элементов. Чтобы все новые элементы некоторого типа, создаваемые в текущей форме, автоматически приобретали необходимые параметры форматирования, выделите элемент управления этого типа, который послужит образцом формата, и выберите команду  Формат, Задать стандартные свойства  (Format, Set Control Defaults).</p>
+<p> Условное форматирование элементов формы </p>
+<p>До сих пор мы говорили о статическом задании параметров форматирования элементов формы. Но Access предоставляет также инструментарий и для динамического изменения форматирования элементов управления при работе с формой в режиме Формы или режиме Таблицы в зависимости or выполнения некоторых условий. Это средство&#187; называется  формат по условию.  Для тогo чтобы применить данное средстно, откройте форму в режиме Конструктора выделите необходимый элемент управления и выберите команду  Формат, Условное форматирование  (Format, Conditional Formatting), Появится диалоговое окно  Условное форматирование  (Conditional Foi-matting) (рис. 5.26). Это диалоговое окно позволяет задать от одного до трех условий, от выполнения которых зависит формат элемента управления. Условия могут быть ipex чипов:</p>
+<ul>
+<li>значение элемента управления некоторым образом сравнивается с константой или со значением выражения;</li>
+<li>задается логическое выражение, значение которого  (Истина  (True)) определяет, выполнилось ли условие;</li>
+<li>условием в данном случае может служить событие получения фокуса данным элементом управления.</li>
+</ul>
+<p>Тип условия задается выбором соответствующею элемента в самом левом раскрывающемся списке в группе параметров условия в диалоговом окне. Таких элементов списка, соответственно, три:  Значение ноля  (Field Value Is),  Выражение  (Is Expression) и  Фокус в поле  (Field Has Focus).</p>
+<p>Операндами выражений здесь могут быть ссылки на другие поля формы в том виде, как они обычно указываются в выражениях Access, и даже вызовы функций VBA. Если заданное условие выполнено, то .иемепг форматируется определенным для этого условия образом. Если ни одно из заданных условии не выполнилось, элемент форматируется в соответствии с форматом по умолчанию, который устанавливается в самой верхней части диалогового окна.</p>
+<p>Чтобы добавить новое условие, нажмите кнопку  Добавить &gt;&gt;  (Add &gt;&gt;) в нижней части диалогового окна. Чтобы удалить некоторые условия, нажмите кнопку  Удалить  (Delete) и установите флажки напротив условий, которые требуется удалить.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image16/8f8550e28ca51fb802992c6798710aeb.gif" width="580" height="295" alt=""><meta itemprop="width" content="580">
+<meta itemprop="height" content="295"></span></p>
+<p> Рис. 5.26.  Диалоговое окно  Условное форматирование </p>
+<p>Задать параметры форматирования элемента управления в диалоговом окне  Условное форматирование  для случаев выполнения условий и случая форматирования по умолчанию позволяют кнопки, аналогичные кнопкам форматирования на панели инструментов  Формат (форма/отчет).  После задания всех параметров форматирования нажмите кнопку  ОК. </p>
+<p>Средство форматирования по условию очень удобно применять, например, для отображения денежных сумм, т. к. легко будет заметить выделенные особым стилем цифры той суммы, что вышла за пределы допустимого интервала.</p>
+<p>Например, откройте в режиме Конструктора форму &#171;Подчиненная форма заказов&#187; (Orders Subform) демонстрационной базы данных &#171;Борей&#187; и разверните ее на весь экран с помощью маленькой кнопки  Развернуть  (Maximize) в правом верхнем углу окна формы. Выделите поле &#171;Отпускная цена&#187; (ExtendedPrice) и отобразите диалоговое окно  Условное форматирование.  В самом левом раскрывающемся списке в группе параметров  Условие 1  (Condition 1) выберите элемент  Значение поля  (Field Value Is), в следующем раскрывающемся списке выберите элемент  больше  (greater then) и в следующем текстовом поле введите константу или выражение, например 5* [Цена] (или 5*UnitPrice — для английской версии). В списке цветов кнопки  Цвет текста  (Font/Fore Color) в группе параметров  Условие 1  данного диалогового окна выберите красный цвет. Нажмите кнопку ОК.</p>
+<p>Это значит, что если полная стоимость заказа продукта превысит пятикратную цену продукта, т. е. когда продукт заказан в количестве свыше пяти, значение поля &#171;Отпускная цена&#187; выделится шрифтом красного цвета. Это мы сможем наблюдать, открыв в режиме Формы форму &#171;Заказы&#187; (Orders), подчиненную форму которой мы редактировали в данном примере.</p>
+<p>Замечание</p>
+<p>Вычисление условий может потребовать некоторого времени, поэтому отображение форматирования тех элементов, для которых условие выполнилось, может произойти с небольшой задержкой.</p>
+<p> Использование дополнительных цветов </p>
+<p>Стандартные палитры, отображаемые в списке кнопки настройки какого-либо цвета, предоставляют выбор, хотя и из большого, но все же ограниченного набора цветов. Может случиться так, что ни один из этих цветов не подойдет для раздела формы или элемента управления. В такой ситуации Access 2002 позволяет создавать свои собственные цвета:</p>
+<ol>
+<li>В окне свойств элемента формы на вкладке  Макет  (Format) щелкните левой кнопкой мыши по одному из полей свойств, задающих цвет:  Цвет фона  (Back Color),  Цвет текста  (Fore Color) или  Цвет границы  (Border Color).</li>
+<li>Нажмите кнопку  Построить  (Build), появляющуюся рядом с текстовым полем соответствующего свойства. Появится диалоговое окно  Цвет  (Color), в котором можно выбрать один из 48 цветов. Если среди этих цветов есть нужный, то выделите его, а затем нажмите кнопку  ОК.  При этом выбранный цвет будет принят в качестве значения соответствующего свойства, а диалоговое окно  Цвет  будет закрыто. Если все же необходимо создать свой цвет, то перейдите к третьему шагу.</li>
+<li>Нажмите кнопку  Определить цвет  (Define Custom Colors). Диалоговое окно  Цвет  развернется для отображения схемы определения цвета (рис. 5.27).
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image26/edb05c763224ebb53dae18e9383cfad3.gif" width="471" height="329" alt=""><meta itemprop="width" content="471">
+<meta itemprop="height" content="329"></span></p>
+<p> Рис. 5.27.  Развернутое диалоговое окно  Цвет </p>
+</li>
+<li>При помощи мыши выберите нужный цвет, щелкнув в любом месте матрицы определения цвета (большого прямоугольника, отображающего весь спектр). Затем отрегулируйте яркость, передвигая бегунок вдоль полосы, расположенной справа от матрицы определения цвета.Если хотите точно задать цвет, введите тройку его числовых параметров:  Оттенок/Контрастность/Яркость  (Hue, Saturation, Luminosity) или  Красный/Зеленый/Синий  (Red, Green, Blue). Параметр оттенок может принимать значение в интервале от 0 до 239, а параметры контрастность и яркость — в интервале от 0 до 240. Каждый из параметров  Красный/Зеленый/Синий  может принимать значение в интервале от 0 до 255.</li>
+<li>Нажмите кнопку  Добавить в набор  (Add to Custom Colors). Новый цвет будет добавлен в один из 16 элементов набора  Дополнительные цвета  (Custom Colors). Можно было предварительно (перед выбором нового цвета) щелкнуть по одной из клеток в наборе  Дополнительные цвета,  чтобы поместить новый цвет именно в эту клетку.</li>
+<li>Выделите созданный цвет и нажмите кнопку ОК. При этом номер заданного цвета будет принят в качестве значения соответствующего свойства, а диалоговое окно  Цвет  будет закрыто.</li>
+</ol>
+<p>Замечание</p>
+<p>При создании форм, предназначенных для ввода данных, рекомендуется использовать не очень яркие цвета, которые не приводят к повышенному утомлению глаз и не мешают воспринимать данные.</p>
+<p> Сохранение формы </p>
+<p>Для сохранения только что созданной или отредактированной формы, открытой в режиме Конструктора, выберите команду  Файл, Сохранить  (File, Save) или нажмите кнопку  Сохранить  (Save) на панели инструментов  Конструктор форм  (Form Design). Если форма была создана и сохраняется в первый раз, появится диалоговое окно  Сохранение  (Save As) с полем для ввода имени новой формы Имя формы (Form Name) (рис. 5.28). Введите имя новой формы и нажмите кнопку  ОК. </p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image22/c816b1f8ae446acb527119268dddc235.gif" width="335" height="112" alt=""><meta itemprop="width" content="335">
+<meta itemprop="height" content="112"></span></p>
+<p> Рис. 5.28.  Диалоговое окно  Сохранение </p>
+<p>При работе в режиме Конструктора для сохранения ранее созданной формы под тем же именем достаточно просто нажать кнопку  Сохранить  (Save) на панели инструментов  Конструктор форм  (Form Design).</p>
+<p>Форма Access 2002 может быть сохранена в трех форматах: в формате формы, в формате отчета и в формате страницы доступа к данным. Чтобы сохранить форму в одном из этих форматов:</p>
+<ol>
+<li>Выберите команду  Файл, Сохранить как  (File, Save As). Появится диалоговое окно  Сохранение  (Save As), изображенное на рис. 5.29.
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image13/702ae8287aa1a4b3ad5842ab68b97a86.gif" width="351" height="162" alt=""><meta itemprop="width" content="351">
+<meta itemprop="height" content="162"></span></p>
+<p> Рис. 5.29.  Диалоговое окно команды  Сохранить как </p>
+</li>
+<li>При необходимости в поле ввода укажите новое название сохраняемой формы.</li>
+<li>В раскрывающемся списке  Как  (As) выберите элемент  Форма  (Form),  Отчет  (Report) или  Страница доступа к данным  (Data Access Page).</li>
+<li>Нажмите кнопку  ОК. </li>
+</ol>
+<p>Форма, сохраненная как страница, помещается в список объектов  Страницы  (Pages), отображаемый в окне базы данных. В дальнейшем эту страницу можно использовать в документах Интернета. Форма, сохраненная как отчет, помещается в список объектов  Отчеты  (Reports), отображаемый в окне базы данных. Форма, сохраненная как форма, остается в списке объектов  Формы  (Forms) базы данных и в дальнейшем -может использоваться по назначению, т. е. для ввода и редактирования записей таблицы или запроса.</p>
+<p> Режим Формы </p>
+<p>Как уже не раз отмечалось, основной целью простых форм является добавление новых записей, удаление записей или редактирование данных в одной или более таблицах, являющихся источником данных для формы. В этом разделе описаны способы добавления, редактирования и удаления записей таблицы с помощью форм.</p>
+<p>Добавление, удаление и редактирование записей с помощью формы происходит при работе с ней в  режиме Формы  или в  режиме Таблицы.  Все же режим Формы более функционален по сравнению с режимом Таблицы. Работа с формой в режиме Таблицы ничем не отличается от работы с обычными таблицами Access  (см. главу 2).  А вот в режиме Формы представление и автоматическая обработка данных отличаются более широкими возможностями. В этой главе мы расскажем об основных приемах работы в режиме Формы. Специальные возможности этого режима, включающие автоматическую обработку введенных данных с помощью процедур обработки событий и вычисляемых полей, рассмотрены в  части 11  книги  (см. главу 9). </p>
+<p> Окно приложения при работе в режиме  Формы  </p>
+<p>Чтобы открыть форму в режиме Формы:</p>
+<ul>
+<li>если форма закрыта, в окне базы данных дважды щелкните по ее названию;</li>
+<li>если форма открыта в режиме Конструктора, выберите элемент  Режим формы  (Form View) в списке кнопки Вид (View) на панели инструментов  Конструктор форм  (Form Design).</li>
+</ul>
+<p>После перехода в режим Формы появится панель инструментов  Режим формы  (Form View), содержащая кнопки, функции которых приведены в табл. 5.4. Сама панель представлена на рис. 5.30.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image12/6d3600f69c80ad78e71de5f3066c9f51.gif" width="392" height="46" alt=""><meta itemprop="width" content="392">
+<meta itemprop="height" content="46"></span></p>
+<p> Рис. 5.30.  Панель инструментов  Режим формы </p>
+<table class="table_common" width="600">
+<tbody>
+<tr class="header">
+<td width="150">Кнопка</td>
+<td width="150">Команда меню</td>
+<td>Описание</td>
+</tr>
+<tr class="one">
+<td>Вид (View)</td>
+<td>Вид, Конструктор форм (View, Form Design)</td>
+<td>Переход в режим Конструктора или другой режим</td>
+</tr>
+<tr class="two">
+<td>Сохранить (Save)</td>
+<td>Файл, Сохранить (File, Save)</td>
+<td>Сохранение структуры формы</td>
+</tr>
+<tr class="one">
+<td>Найти (Search)</td>
+<td>Файл, Найти (File, Search)</td>
+<td>Отобразить панель поиска документов Microsoft Office</td>
+</tr>
+<tr class="two">
+<td>Печать (факс) (Print (Fax))</td>
+<td></td>
+<td>Печать или отправка по факсу содержимого активной формы с текущими параметрами печати без открытия диалогового окна Печать (Print)</td>
+</tr>
+<tr class="one">
+<td>Предварительный просмотр (Print Preview)</td>
+<td>Файл, Предварительный просмотр (File, Print Preview)</td>
+<td>Предварительный просмотр формы перед печатью</td>
+</tr>
+<tr class="two">
+<td>Орфография (Spelling)</td>
+<td>Сервис, Орфография (Tools, Spelling)</td>
+<td>Проверка орфографии в выделенном поле</td>
+</tr>
+<tr class="one">
+<td>Вырезать (Cut)</td>
+<td>Правка, Вырезать (Edit, Cut)</td>
+<td>Удаление выделенных объектов из формы в буфер обмена</td>
+</tr>
+<tr class="two">
+<td>Копировать (Сору)</td>
+<td>Правка, Копировать (Edit, Copy)</td>
+<td>Копирование выделенных обьектов из формы в буфер обмена</td>
+</tr>
+<tr class="one">
+<td>Вставить (Paste)</td>
+<td>Правка, Вставить (Edit, Paste)</td>
+<td>Вставка содержимого буфера обмена в форму</td>
+</tr>
+<tr class="two">
+<td>Отменить ввод (Undo typing)</td>
+<td>Правка, Отменить ввод (Edit, Undo typing)</td>
+<td>Отмена последнего изменения записи</td>
+</tr>
+<tr class="one">
+<td>Добавление гиперссылки (Insert Hyperlink)</td>
+<td>Вставка, Гиперссылка (Insert, Hyperlink)</td>
+<td>Вставка в форму гиперссылки</td>
+</tr>
+<tr class="two">
+<td>Сортировка по возрастанию (Sort Ascending)</td>
+<td>Записи, Сортировка, Сортировка по возрастанию (Records, Sort, Ascending)</td>
+<td>Сортировка таблицы по возрастающим значениям текущего поля</td>
+</tr>
+<tr class="one">
+<td>Сортировка по убыванию (Sort Descending)</td>
+<td>Записи, Сортировка, Сортировка по убыванию (Records, Sort, Descending)</td>
+<td>Сортировка таблицы по убывающим значениям текущего поля</td>
+</tr>
+<tr class="two">
+<td>Фильтр по выделенному (Filter by Selection)</td>
+<td>Записи, Фильтр, Фильтр по выделенному (Records, Filter, Filter by Selection)</td>
+<td>Фильтрация записей по выделенному фрагменту</td>
+</tr>
+<tr class="one">
+<td>Изменить фильтр (Filter by Form)</td>
+<td>Записи, Фильтр, Изменить фильтр (Records, Filter, Filter by Form)</td>
+<td>Фильтрация записей на основании критерия отбора, введенного в поля формы</td>
+</tr>
+<tr class="two">
+<td>Применение фильтра (Apply Filter)</td>
+<td>Записи, Применить фильтр (Records, Apply Filter/Sort) или Записи, Удалить фильтр (Records, Remove Filter/Sort)</td>
+<td>Применение фильтра. Чтобы удалить фильтр, нажмите эту кнопку еще раз</td>
+</tr>
+<tr class="one">
+<td>Найти (Find)</td>
+<td>Правка, Найти (Edit, Find)</td>
+<td>Поиск вхождения заданной подстроки в выделенном поле или во всех полях таблицы. Отображает на экране диалоговое окно Поиск</td>
+</tr>
+<tr class="two">
+<td>Новая запись (New Record)</td>
+<td>Правка, Перейти, Новая запись (Edit, Go To, New Record) или Вставка, Новая запись (Insert, New Record)</td>
+<td>Переход на новую пустую запись в конце формы</td>
+</tr>
+<tr class="one">
+<td>Удалить запись (Delete Record)</td>
+<td>Правка, Удалить запись (Edit, Delete Record)</td>
+<td>Удаление текущей записи</td>
+</tr>
+<tr class="two">
+<td>Свойства (Properties)</td>
+<td>Вид, Свойства (View, Properties)</td>
+<td>Открытие окна свойств выделенного элемента управления</td>
+</tr>
+<tr class="one">
+<td>Окно базы данных (Database Window)</td>
+<td>Окно, 1 (Window, 1)</td>
+<td>Отображение окна базы данных</td>
+</tr>
+<tr class="two">
+<td>Новый объект (New Object)</td>
+<td></td>
+<td>Отображение списка типов новых объектов базы данных, которые можно создать</td>
+</tr>
+<tr class="one">
+<td>Справка по Microsoft Access (Microsoft Access Help)</td>
+<td>Справка, Справка по Microsoft Access (Help, Microsoft Access Help)</td>
+<td>Вызов помощника и получение справки Access 2002</td>
+</tr>
+</tbody>
+</table>
+<p> Таблица 5.4.  Кнопки панели инструментов  Режим формы </p>
+<p>Кнопка  Печать (факс)  (Print (Fax)) позволяет напечатать или отправить по факсу содержимое формы, используя параметры печати по умолчанию и не открывая диалогового окна  Печать  (Print). Чтобы изменить какие-либо параметры печати, выберите команду  Файл, Печать  (File, Print) и установите нужные параметры в открывшемся диалоговом окне печати.</p>
+<p>Чтобы проверить орфографию содержимого какого-либо поля, выделите все содержимое данного поля и нажмите кнопку  Орфография  (Spelling). Чтобы проверить орфографию во всех полях всех записей формы, нажмите кнопку  Орфография,  ничего предварительно не выделяя.</p>
+<p>Использование кнопки  Найти  (Find) в режиме Формы аналогично ее использованию в режиме Таблицы. В появляющееся при нажатии этой кнопки диалоговое окно  Поиск и замена  (Find and Replace) вводится искомое слово, например имя, фамилия или название улицы, а после получения результатов поиска Access отображает первую найденную запись.</p>
+<p>Использование кнопок  Сортировка по возрастанию  (Sort Ascending),  Сортировка по убыванию  (Sort Descending),  Фильтр по выделенному  (Filter by Selection) и  Изменить фильтр  (Filter by Form) аналогично их использованию в режиме Таблицы. Заметим, что сортировка, определенная в форме, заменяет критерий сортировки запроса, используемого в качестве источника данных (в случае, если форма основана на запросе, а не непосредственно на одной или нескольких таблицах).</p>
+<p> Добавление записи </p>
+<p>В формах, так же как и в таблицах, предусмотрена  пустая запись,  которая предназначена для добавления новых записей в таблицу. Эта пустая запись, как и в таблице, отображается в форме после всех заполненных записей. К этой записи можно перейти, пролистав в форме все записи с помощью кнопок перехода по записям или с помощью специальной кнопки перехода на новую запись. После ввода данных в эту запись и ее сохранения данные автоматически попадают в таблицу.</p>
+<p>При добавлении новой записи в таблицу с помощью формы необходимо, переместившись на пустую запись, заполнить поля этой формы в соответствии с правилами, определенными разработчиком формы. Перемещение между полями формы, используемыми для ввода и редактирования данных, происходит аналогично тому, как это делается в запросах и таблицах, за исключением того, что клавиши перемещения курсора вверх и вниз перемещают курсор между полями, а не между записями. Для сохранения введенных значений нажмите комбинацию клавиш &lt;Shift&gt;+&lt;Enter&gt;.</p>
+<p>Замечание</p>
+<p>Чтобы можно было добавлять новые записи в таблицу в режиме Формы, свойство  Разрешить добавление  (Allow Additions) должно иметь значение Да (Yes). Значение этого свойства можно изменить, используя окно&#8217;свойств формы в режиме Конструктора.</p>
+<p>Чтобы добавить новую запись в таблицу с помощью формы:</p>
+<ol>
+<li>Откройте форму. Перейдите в режим Формы, если форма была открыта в другом режиме. Для этого нажмите кнопку Вид (View) панели инструментов текущего режима и выберите из списка режимов элемент  Режим формы  (Form View). В текстовых полях формы появятся значения полей первой записи таблицы или запроса, являющегося источником данных формы. Access помещает точку вставки в первое поле формы.
+<p>Замечание</p>
+<p>Редактирование полей для формы разрешено в тех же случаях, что и для таблицы или запроса, являющегося источником данных формы, т. е. до тех пор, пока это не будет запрещено в свойстве формы Разрешить изменение (Allow Edits).</p>
+</li>
+<li>Перейдите к пустой записи, предназначенной для ввода новых данных. Для этого нажмите кнопку  Новая запись  (New Record) на панели инструментов  Режим формы  (Form View) либо маленькую кнопку  Новая запись  (New Record), расположенную в нижней части окна формы.
+<p>Замечание</p>
+<p>Чтобы отменить создание новой записи после нажатия кнопки  Новая запись  на панели инструментов, просто нажмите кнопку перехода к предыдущей записи.</p>
+</li>
+<li>При переходе на новую запись все текстовые поля и другие элементы управления в форме станут пустыми, кроме тех, значение которых определено по умолчанию. Access помещает точку вставки в первое поле формы. Для перемещения точки вставки к следующему полю нажмите клавишу &lt;Enter&gt; или клавишу &lt;Таb&gt;. Чтобы вернуться к предыдущему полю, нажмите комбинацию клавиш &lt;-Shift&gt;+&lt;Tab&gt; или используйте клавиши управления курсором для перемещения между полями. Можно, конечно, переходить от поля к полю с помощью одинарного щелчка левой кнопкой по нужному элементу управления.</li>
+<li>В поля формы введите требуемые значения, используя стандартные методы редактирования. В текстовые поля введите нужные значения, а в раскрывающихся списках или полях со списками с помощью мыши выберите необходимые элементы, так же как это делается в стандартных диалоговых окнах Windows.</li>
+<li>После завершения ввода данных Access сохранит их в памяти, но не добавит новую запись в таблицу. Для добавления записи в таблицу нажмите комбинацию клавиш &lt;Shift&gt;+&lt;Enter&gt; или выберите команду  Записи, Сохранить запись  (Records, Save Record).</li>
+<li>Для добавления нескольких записей повторите шаги с 2 по 5.</li>
+</ol>
+<p>Чтобы запретить добавление записей в таблицу с помощью формы:</p>
+<ol>
+<li>Откройте форму в режиме Конструктора.</li>
+<li>Выделите всю форму.</li>
+<li>На панели инструментов  Конструктор форм  (Form Design) нажмите кнопку  Свойства  (Properties).</li>
+<li>В появившемся окне свойств формы (рис. 5.31) раскройте вкладку Данные (Data).
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image20/baeb7fcfd07482c52fe04f56b73c5f61.gif" width="391" height="273" alt=""><meta itemprop="width" content="391">
+<meta itemprop="height" content="273"></span></p>
+<p> Рис. 5.31.  Вкладка  Данные  диалогового окна свойств формы</p>
+</li>
+<li>На этой вкладке в раскрывающемся списке свойства  Разрешить добавление  (Allow Additions) выберите элемент  Нет  (No).</li>
+<li>Закройте окно свойств и сохраните форму.</li>
+</ol>
+<p>Теперь кнопка  Новая запись  (New Records), как на панели инструментов  Режим формы  (Form View), так и внизу окна формы, будет заблокирована, и добавление новых записей в таблицу с помощью формы будет невозможно.</p>
+<p>Чтобы при добавлении новой записи какое-либо поле формы имело заранее заданное значение:</p>
+<ol>
+<li>Откройте форму в режиме Конструктора.</li>
+<li>Выделите нужное поле, щелкнув по нему левой кнопкой мыши.</li>
+<li>На панели инструментов  Конструктор форм  (Form Design) нажмите кнопку  Свойства  (Properties).</li>
+<li>В появившемся окне свойств поля (рис. 5.32) раскройте вкладку  Данные  (Data).
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image10/55408eaacc041e8d40f189dcfcda7a8b.gif" width="391" height="273" alt=""><meta itemprop="width" content="391">
+<meta itemprop="height" content="273"></span></p>
+<p> Рис. 5.32.  Вкладка  Данные  диалогового окна свойств текстового поля</p>
+</li>
+<li>На этой вкладке в текстовое поле свойства  Значение по умолчанию  (Default Value) введите нужное значение.</li>
+<li>Закройте окно свойств и сохраните форму.</li>
+</ol>
+<p>Теперь в каждой новой записи выделенное вами поле будет иметь по умчанию введенное значение. Это значение можно изменять в новой записи, если свойство  Блокировка  (Locked) данного поля имеет значение Нет (No). Подробнее об этом рассказано в следующем разделе.</p>
+<p> Изменение записи </p>
+<p>Редактирование существующих записей аналогично доблению новых записей. Однако прежде чем приступить к редактированию записи, ее нужно найти. Для этих целей можно воспользоваться кнопками перехода по записям (кнопками навигации), расположенными в нижней части окна формы (рис. 5.33). Эти кнопки выполняют те же функции, что и аналогичные кнопки в таблицах и запросах. В текстовом поле, находящемся между кнопками навигации, отображается порядковый номер текущей записи. Чтобы отобразить нужную запись с известным номером, просто введите номер в это поле и нажмите клавишу &lt;Enter&gt;. Самая левая кнопка навигации и симметричная ей правая кнопка навигации позволяют перейти на первую или последнюю запись таблицы или запроса, являющегося источником данных для основной формы. Вторая слева и симметричная ей справа кнопка навигации позволяют переходить, соответственно, к предыдущей или последующей записям.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image05/2d6bfa3101a46a38e987f2107e26e83c.gif" width="415" height="416" alt=""><meta itemprop="width" content="415">
+<meta itemprop="height" content="416"></span></p>
+<p> Рис. 5.33.  Кнопки навигации в нижней части окна формы</p>
+<p>Если вы не знаете порядкового номера нужной записи, то для ее поиска можно использовать кнопку  Найти  (Find) панели инструментов  Режим формы  (Form View). Если необходимо, чтобы записи были упорядочены по значению какого-либо поля, выделите его, а затем нажмите кнопку  Сортировка по возрастанию  (Sort Ascending) или  Сортировка по убыванию  (Sort Descending) на панели инструментов  Режим формы. </p>
+<p>Найдите нужную запись с помощью описанных выше методов и приступайте к ее редактированию. Перемещение между текстовыми полями, используемыми для редактирования данных, в форме происходит аналогично тому, как это делается в запросах и таблицах, за исключением того, что клавиши перемещения курсора вверх и вниз перемещают курсор между полями, а не между записями. В текстовые поля введите нужные значения, используя стандартные методы редактирования, а в раскрывающихся списках или полях со списками с помощью мыши выберите необходимые элементы так же, как и в стандартных диалоговых окнах Windows. Для сохранения введенных значений нажмите комбинацию клавиш &lt;Shift&gt;+&lt;Enter&gt;.</p>
+<p>Чтобы запретить редактирование записи таблицы с помощью формы:</p>
+<ol>
+<li>Откройте форму в режиме Конструктора.</li>
+<li>Выделите всю форму.</li>
+<li>На панели инструментов  Конструктор форм  (Form Design) нажмите кнопку Свойства (Properties).</li>
+<li>В появившемся окне свойств формы раскройте вкладку  Данные  (Data) (см. рис. 5.31).</li>
+<li>На этой вкладке в раскрывающемся списке свойства  Разрешить изменение  (Allow Edits) выберите элемент Нет (No).</li>
+<li>Закройте окно свойств и сохраните форму.</li>
+</ol>
+<p>Теперь редактирование записей, содержащихся в таблице, с помощью формы будет невозможно. Однако, если свойство формы  Разрешить добавление  (Allow Additions) имеет значение Да (Yes), то с помощью этой формы можно не только просматривать записи таблицы, но и добавлять новые.</p>
+<p>Чтобы запретить редактирование какого-либо конкретного поля записи:</p>
+<ol>
+<li>Откройте форму в режиме Конструктора.</li>
+<li>Выделите нужное поле, щелкнув по нему левой кнопкой мыши.</li>
+<li>На панели инструментов  Конструктор форм  (Form Design) нажмите кнопку Свойства (Properties).</li>
+<li>В появившемся окне свойств поля раскройте вкладку  Данные  (Data) (см. рис. 5.32).</li>
+<li>На этой вкладке в раскрывающемся списке свойства  Блокировка  (Locked) выберите элемент Да (Yes).</li>
+<li>Закройте окно свойств и сохраните форму.</li>
+</ol>
+<p>Если необходимо запретить редактирование нескольких полей записи, то повторите описанную выше процедуру для всех полей. Теперь значения указанных вами полей нельзя будет изменить, а в новых записях нельзя будет ввести в них значение.</p>
+<p>Замечание</p>
+<p>Чтобы какое-либо поле формы имело заранее заданное значение, которое нельзя было бы изменить, укажите для этого поля формы нужное значение в свойстве Значение по умолчанию (Default Value) и установите значение свойства Блокировка (Locked) равным Да (Yes).</p>
+<p> Отмена изменения записи </p>
+<p>Access не внесет в таблицу изменения до тех пор, пока не будет выделена другая запись или не будет сохранена отредактированная новая запись, например с помощью команды  Записи, Сохранить запись  (Records, Save Records) или комбинации клавиш &lt;Shift&gt;+&lt;Enter&gt;. Последнее сохранение записи можно отменить, если сразу же после сохранения записи в таблице нажать кнопку  Отменить ввод  (Undo typing) на панели инструментов  Режим формы  (Form View) или выбрать команду  Правка, Отменить ввод  (Edit, Undo typing).</p>
+<p> Удаление записи </p>
+<p>Для удаления текущей записи в форме перейдите на нее с помощью кнопок навигации и нажмите кнопку  Удалить запись  (Delete Record) на панели инструментов  Режим формы  (Form View) или выберите команду  Правка, Удалить запись  (Edit, Delete Record) либо щелкните по области выделения записи, находящейся слева от области данных формы (рис. 5.34), а затем нажмите клавишу &lt;Del&gt;. Если текущая запись не имеет подчиненных записей в связанных таблицах или разрешено каскадное удаление записей, ее удаление возможно. В этом случае появится диалоговое окно, запрашивающее подтверждение удаления записи. Подтвердите удаление записи, нажав кнопку Да (Yes).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image07/3d3d0f36fee0b12be08504276e235179.gif" width="470" height="332" alt=""><meta itemprop="width" content="470">
+<meta itemprop="height" content="332"></span></p>
+<p> Рис. 5.34.  Область выделения записи в форме</p>
+<p>В противном случае при попытке удалить запись будет отображено другое сообщение, предупреждающее о том, что невозможно удалить запись, т. к. она содержит связанные с ней записи в других таблицах, с указанием таблицы, содержащей связанные записи. Это следствие использования средства Access, обеспечивающего автоматическую поддержку целостности данных  (см. разд. &#171;Обеспечение целостности данных&#187; в гл. 2).  В данном случае, прежде чем удалить такую запись, необходимо сначала удалить все записи, связанные с ней, из других таблиц.</p>
+<p> Выводы </p>
+<p>Итак, основной целью форм является создание удобного интерфейса для ввода и изменения данных в одной или более таблицах, являющихся источниками данных формы. В этой главе были даны основные понятия, касающиеся форм, пройден весь путь от создания простой формы до ее использования для ввода данных. Кроме того, были подробно рассмотрены способы перемещения, изменения размеров и редактирования элементов управления формы. По нашему мнению, этих сведений достаточно, чтобы начать создавать несложные формы в Access 2002. Для получения дополнительной информации, касающейся создания многотабличных и многостраничных форм, обратитесь к  гл. 9,  которая является логическим продолжением этой главы.</p>
+<!-- toc empty -->	</div>
+<!-- .entry-content -->
+
+</article>
+
+
+
+
+
+
+
+
+
+<div class="social-buttons">
+<span class="social-button social-button--vkontakte main" data-social="vkontakte"><span>Поделиться в ВКонтакте</span></span><span class="social-button social-button--telegram " data-social="telegram"></span><span class="social-button social-button--odnoklassniki " data-social="odnoklassniki"></span><span class="social-button social-button--whatsapp " data-social="whatsapp"></span><span class="social-button social-button--viber " data-social="viber"></span>
+</div>
+
+<!--noindex-->
+<div class="author-box">
+    <div class="author-info">
+        <div class="author-box__ava">
+                    </div>
+
+        <div class="author-box__body">
+            <div class="author-box__author">
+                Автор А. Днепров            </div>
+            <div class="author-box__description">
+                <p>Обучаю основам работы с офисными программами.</p>
+            </div>
+
+            
+        </div>
+    </div>
+</div>
+<!--/noindex-->
+    <meta itemprop="author" content="А. Днепров">
+<meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/glava-sozdanie-form-dlya-vvoda-dannyh" content="Глава 5. Создание форм для ввода данных">
+    <meta itemprop="dateModified" content="2024-09-30">
+<div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+<div class="related-posts">
+<div class="related-posts__header">Вам также может понравиться</div>
+<div class="post-cards post-cards--vertical">
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/kak-sdelat-massovuyu-zamenu-formul"><img width="311" height="230" src="/image04/2408fadbc9163d5aa4994580cfc152cd.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/kak-sdelat-massovuyu-zamenu-formul">Как сделать массовую замену формул</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/kak-udalit-lishnie-i-pustye-stranitsy-v-excel">Как удалить лишние и пустые страницы в Excel</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/preobrazovanie-teksta-v-tablitsu"><img width="345" height="122" src="/image14/7a0043c9bf012cc129b22376cfebb2a9.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/preobrazovanie-teksta-v-tablitsu">Преобразование текста в таблицу</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/kak-delat-skrinshoty-s-vysokim-razresheniem-v-windows">Как делать скриншоты с высоким разрешением в Windows 11/10</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/osobennosti-raboty-s-mnogostranichny"><img width="213" height="230" src="/image13/6f8f9694c11ee322ff9d3675b0b8ba07.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/osobennosti-raboty-s-mnogostranichny">13.1 Особенности работы с многостраничными документами</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/kak-sdelat-izmeneniya-vnutri-yacheyki-p"><img width="345" height="93" src="/image27/f6550fd3bdfdfdbe500536441d5d252e.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/kak-sdelat-izmeneniya-vnutri-yacheyki-p">Как сделать изменения внутри ячейки. Принудительный перенос</a></div>
+    </div>
+</div>
+</div>
+            </main><!-- #main -->
+        </div>
+<!-- #primary -->
+
+        
+    
+
+    </div>
+<!--.site-content-inner-->
+
+    
+</div>
+<!--.site-content-->
+
+    
+    
+
+<div class="site-footer-container">
+
+    
+
+    <footer id="colophon" class="site-footer full" itemscope itemtype="http://schema.org/WPFooter">
+        <div class="site-footer-inner fixed">
+
+            
+            
+<div class="footer-bottom">
+    <div class="footer-info">
+        <div class="footer-copyright">© 2024 Самоучитель справочник по офисным программам. <a href="/o-nas" rel="nofollow">О нас | Контакты</a> | <a href="/map" rel="nofollow">Карта сайта</a>
+</div>
+        <div class="footer-under-copyright"></div>
+	        </div>
+
+    </div>
+        </div>
+    </footer><!--.site-footer-->
+</div>
+
+
+            <button type="button" class="scrolltop js-scrolltop" data-mob="on"></button>
+    
+                    <div class="top-line js-top-line">
+            <div class="top-line-inner fixed">
+
+                <div class="top-line__title">Глава 5. Создание форм для ввода данных</div>
+<div class="top-line__like"><span class="btn-fb-like btn-top-like social-button--vkontakte" data-social="vkontakte"><span>Поделиться в ВКонтакте</span></span></div>
+<div class="top-line__post">
+<div class="top-line__post_thumbnail"><a href="/kak-sohranit-skrinshot-v-formate-pdf"></a></div>
+<div class="top-line__post_title"><a href="/kak-sohranit-skrinshot-v-formate-pdf">Как сохранить скриншот в формате PDF</a></div>
+</div>            </div>
+        </div>
+    
+</div>
+<!-- #page -->
+
+<script>var pseudo_links = document.querySelectorAll(".pseudo-clearfy-link");for (var i=0;i<pseudo_links.length;i++ ) { pseudo_links[i].addEventListener("click", function(e){   window.open( e.target.getAttribute("data-uri") ); }); }</script><script>document.addEventListener("copy", (event) => {var pagelink = "\nИсточник: /glava-sozdanie-form-dlya-vvoda-dannyh";event.clipboardData.setData("text", document.getSelection() + pagelink);event.preventDefault();});</script><script type="text/javascript" id="yelly-scripts-js-extra">
+/* <![CDATA[ */
+var settings_array = {"rating_text_average":"среднее","rating_text_from":"из","lightbox_display":"1"};
+var wps_ajax = {"url":"\/wp-admin\/admin-ajax.php","nonce":"e4ca9d4bd8"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="/js/scripts.min.js" id="yelly-scripts-js"></script>
+
+
+
+<div class="image-hover-social-buttons" style="display: none;">
+<div class="social-button social-button--vkontakte js-share-link" data-uri="https://vk.com/share.php?url=%2Fglava-sozdanie-form-dlya-vvoda-dannyh"></div>
+<div class="social-button social-button--telegram js-share-link" data-uri="https://t.me/share/url?url=%2Fglava-sozdanie-form-dlya-vvoda-dannyh&text=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+5.+%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5+%D1%84%D0%BE%D1%80%D0%BC+%D0%B4%D0%BB%D1%8F+%D0%B2%D0%B2%D0%BE%D0%B4%D0%B0+%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85"></div>
+<div class="social-button social-button--odnoklassniki js-share-link" data-uri="https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&service=odnoklassniki&st.shareUrl=%2Fglava-sozdanie-form-dlya-vvoda-dannyh"></div>
+<div class="social-button social-button--whatsapp js-share-link" data-uri="whatsapp://send?url=%2Fglava-sozdanie-form-dlya-vvoda-dannyhtext=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+5.+%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5+%D1%84%D0%BE%D1%80%D0%BC+%D0%B4%D0%BB%D1%8F+%D0%B2%D0%B2%D0%BE%D0%B4%D0%B0+%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85"></div>
+<div class="social-button social-button--viber js-share-link" data-uri="viber://forward?url=%2Fglava-sozdanie-form-dlya-vvoda-dannyhtext=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+5.+%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5+%D1%84%D0%BE%D1%80%D0%BC+%D0%B4%D0%BB%D1%8F+%D0%B2%D0%B2%D0%BE%D0%B4%D0%B0+%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85"></div>
+</div>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(93345646, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/93345646" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>

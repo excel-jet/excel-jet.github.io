@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<title>Глава 14. Настройка пользовательского интерфейса — learn-office</title>
+	<meta name="description" content="Настройка пользовательского интерфейса Для того чтобы создать приложение Access, требуется решить две важнейшие задачи: спроектировать эффективную">
+	<link rel="canonical" href="/glava-nastroyka-polzovatelskogo-i">
+	<meta property="og:locale" content="ru_RU">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Глава 14. Настройка пользовательского интерфейса — learn-office">
+	<meta property="og:description" content="Настройка пользовательского интерфейса Для того чтобы создать приложение Access, требуется решить две важнейшие задачи: спроектировать эффективную">
+	<meta property="og:url" content="/glava-nastroyka-polzovatelskogo-i">
+	<meta property="og:site_name" content="Excel-jet">
+	<meta property="article:published_time" content="2024-07-14T11:25:52+00:00">
+	<meta property="og:image" content="/image02/0e22ddc1814aafbbd3cebb59cdc42acb.gif">
+	<meta property="og:image:width" content="580">
+	<meta property="og:image:height" content="364">
+	<meta property="og:image:type" content="image/gif">
+	<meta name="author" content="А. Днепров">
+
+
+<style id="wp-block-library-theme-inline-css" type="text/css">.wp-block-audio :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio :where(figcaption){color:#ffffffa6}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed :where(figcaption){color:#ffffffa6}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:#ffffffa6}:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table :where(figcaption){color:#ffffffa6}.wp-block-video :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video :where(figcaption){color:#ffffffa6}.wp-block-video{margin:0 0 1em}:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}</style>
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 19.5px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36.5px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--normal: 22px;--wp--preset--font-size--huge: 49.5px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="google-fonts-css" href="https://fonts.googleapis.com/css?family=Roboto%3A400%2C400i%2C700&#038;subset=cyrillic&#038;display=swap" media="all">
+<link rel="stylesheet" id="yelly-style-css" href="/css/style.min.css" media="all">
+
+<style>.pseudo-clearfy-link { color: #008acf; cursor: pointer;}.pseudo-clearfy-link:hover { text-decoration: none;}</style>
+<link rel="preload" href="/fonts/icomoon.ttf" as="font" crossorigin>
+    <style>.scrolltop{width:50px}.scrolltop:before{content:"\21d1"}.entry-content a, .entry-content a:visited, .spanlink, .comment-reply-link, .pseudo-link, .widget_calendar a, .widget_recent_comments a, .child-categories ul li a{color:#0000ff}.child-categories ul li a{border-color:#0000ff}a:hover, a:focus, a:active, .spanlink:hover, .top-menu ul li>span:hover, .main-navigation ul li a:hover, .main-navigation ul li span:hover, .footer-navigation ul li a:hover, .footer-navigation ul li span:hover, .comment-reply-link:hover, .pseudo-link:hover, .child-categories ul li a:hover{color:#1e73be}.top-menu>ul>li>a:before, .top-menu>ul>li>span:before{background:#1e73be}.child-categories ul li a:hover, .post-box--no-thumb a:hover{border-color:#1e73be}.post-box--card:hover{box-shadow: inset 0 0 0 1px #1e73be}.post-box--card:hover{-webkit-box-shadow: inset 0 0 0 1px #1e73be}@media (min-width: 768px){body{background-attachment: scroll}}body{font-size:17px;}@media (max-width: 991px){.widget-area{display: block; margin: 0 auto}}</style>
+    <!-- Yandex.RTB -->
+<script>window.yaContextCb=window.yaContextCb||[]</script>
+<script src="https://yandex.ru/ads/system/context.js" async></script>	
+</head>
+<body class="post-template-default single single-post postid-801 single-format-standard wp-embed-responsive sidebar-right">
+<div id="page" class="site">
+    <a class="skip-link screen-reader-text" href="#content">Перейти к контенту</a>
+
+    
+    
+    <div class="search-screen-overlay js-search-screen-overlay"></div>
+    <div class="search-screen js-search-screen">
+        
+<form role="search" method="get" class="search-form" action="/">
+    <label>
+        <span class="screen-reader-text">Search for:</span>
+        <input type="search" class="search-field" placeholder="Поиск..." value="" name="s">
+    </label>
+    <button type="submit" class="search-submit"></button>
+</form>    </div>
+
+    
+
+<header id="masthead" class="site-header full" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="site-header-inner fixed">
+
+        <div class="humburger js-humburger">
+<span></span><span></span><span></span>
+</div>
+
+        
+<div class="site-branding">
+
+    <div class="site-branding__body"><div class="site-title"><a href="/">Excel-jet</a></div></div>
+</div>
+<!-- .site-branding -->
+
+    
+    <nav id="site-navigation" class="main-navigation full">
+        <div class="main-navigation-inner fixed">
+            <div class="menu-menyu-container"><ul id="header_menu" class="menu">
+<li id="menu-item-6695" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-6695">
+<a href="/excel">Excel</a>
+<ul class="sub-menu">
+	<li id="menu-item-6709" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6709"><a href="/excel/functions">Функции</a></li>
+</ul>
+</li>
+<li id="menu-item-6697" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6697"><a href="/microsoft-word">Word</a></li>
+<li id="menu-item-6696" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6696"><a href="/powerpoint">PowerPoint</a></li>
+<li id="menu-item-6698" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6698"><a href="/outlook">Outlook</a></li>
+</ul></div>        </div>
+    </nav><!-- #site-navigation -->
+
+    
+<div class="header-search"><span class="search-icon js-search-icon"></span></div>    </div>
+</header><!-- #masthead -->
+
+
+
+    
+    
+    <div id="content" class="site-content fixed">
+
+        
+        <div class="site-content-inner">
+    
+        
+        <div id="primary" class="content-area" itemscope itemtype="http://schema.org/Article">
+            <main id="main" class="site-main">
+
+                
+<article id="post-801" class="article-post post-801 post type-post status-publish format-standard has-post-thumbnail  category-excel">
+
+    
+        
+        <header class="entry-header"><h1 class="entry-title" itemprop="headline">Глава 14. Настройка пользовательского интерфейса</h1></header>
+        
+        
+        
+    
+    
+    <div class="entry-meta">
+<span class="entry-time"><span class="entry-label">Время чтения</span> 42 мин.</span><span class="entry-date"><span class="entry-label">Опубликовано</span> <time itemprop="datePublished" datetime="2024-07-14">14.07.2024</time></span>
+</div>
+	<div class="entry-content" itemprop="articleBody">
+		<p>Настройка пользовательского интерфейса</p>
+<p>Для того чтобы создать приложение Access, требуется решить две важнейшие задачи: спроектировать эффективную структуру таблиц и их взаимосвязей (модель данных) и обеспечить удобный пользовательский интерфейс. О том, как эффективно спроектировать базу данных, мы рассказали в гл. 2, первые главы книги были посвящены разработке основных объектов Access: форм, отчетов, страниц доступа к данным. Чтобы создать единое целое из набора отдельных объектов базы данных, используются макросы и процедуры VBA, разработка которых рассматривалась в гл. 11 и 13. Для того чтобы приложение было законченным, применяются дополнительные элементы, такие как специальное меню команд или заменяющая его Главная кнопочная форма, панели инструментов, контекстное меню, а если вы любите пользоваться клавиатурой и готовы запомнить десятка полтора комбинаций клавиш, нужно создать клавиши быстрого вызова.</p>
+<p>Данная глава будет посвящена тому, как придать законченный вид приложению. В ней мы рассмотрим следующие вопросы:</p>
+<ul>
+<li>Как настроить параметры среды Access?</li>
+<li>Какие существуют способы запуска приложения и как обеспечить выполнение начальных действий при запуске?</li>
+<li>Зачем и как создать Главную кнопочную форму приложения?</li>
+<li>Как создать и настроить меню и инструментальные панели, как их «прятать» и показывать в нужный момент?</li>
+<li>Как назначить меню и панели инструментов формам, отчетам и элементам управления?</li>
+</ul>
+<p>Настройка параметров приложения Access</p>
+<p>В данном разделе мы хотим рассказать о настройке параметров среды Access. При установке Microsoft Access они получают значения, определенные по умолчанию, однако в процессе разработки приложения вы можете переустановить их таким образом, чтобы они соответствовали особенностям конкретного приложения и были удобны для его пользователей.</p>
+<p>Большинство параметров Access настраивается с помощью диалогового окна Параметры (Options), которое отображается при выборе команды Сервис, Параметры (Tools, Options). Все эти параметры сгруппированы по своему назначению и размещены на нескольких вкладках. На некоторые из этих параметров и вкладок мы ссылались в предыдущих главах книги (например, в гл. 11).</p>
+<p>На рис. 14.1 представлена вкладка Вид (View) окна Параметры (Options) со значениями параметров, установленными по умолчанию.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" decoding="async" src="/image02/0e22ddc1814aafbbd3cebb59cdc42acb.gif" alt="" width="580" height="364"><meta itemprop="width" content="580">
+<meta itemprop="height" content="364"></span></p>
+<p>Рис. 14.1. Диалоговое окно Параметры</p>
+<p>Эта вкладка содержит следующие группы параметров.</p>
+<ul>
+<li>Группа параметров Отображать (Show) задает внешний вид среды Access. Флажки в этой группе позволяют скрыть или показать строку состояния (Status bar), область задач при запуске (Startup Task Pane ), ярлыки для создания новых объектов в окне База данных (New object shortcart), системные объекты и скрытые объекты. При установленном флажке окна в панели задач (Use taskbar for each document) на панели задач в нижней части экрана отображаются значки открытых объектов базы данных: форм, отчетов, запросов. Если вы не хотите загромождать панель задач, сбросьте этот флажок.</li>
+<li>Группа параметров Конструктор макросов (Show in macro design) позволяет показать дополнительные столбцы в окне Конструктора макросов: имена макросов и условия (см. разд. <a href="/glava-rabota-s-makrosami">«Создание групп макросов»</a> гл. 11).</li>
+<li>В группу Открывать объекты в окне базы данных (Click options in database window) входит очень полезный на наш взгляд переключатель, который позволяет открывать объекты из окна базы данных не только по двойному щелчку мыши, но и по одинарному — это гораздо удобнее.</li>
+</ul>
+<p>Следующая вкладка Общие (General) (рис. 14.2) содержит ряд действительно общих параметров.</p>
+<ul>
+<li>Группа Границы печатного поля (Print Margins) позволяет установить значения полей, применяемые по умолчанию при печати любого объекта базы данных. Их можно изменить для конкретного объекта с помощью команды Файл, Параметры страницы (File, Page Setup) (см. разд. <a href="/glava-rabota-s-tablitsami">«Печать таблицы»</a> гл. 2).</li>
+</ul>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" decoding="async" src="/image07/40936c2dde7c9c1b0bdf65992c46a96f.gif" alt="" width="580" height="364"><meta itemprop="width" content="580">
+<meta itemprop="height" content="364"></span></p>
+<p>Рис. 14.2. Вкладка Общие диалогового окна Параметры</p>
+<ul>
+<li>Два флажка в группе Формат года из четырех цифр (Use four-year digit formatting) позволяют задать формат отображения дат в текущей базе данных и во всех базах данных, работающий под управлением Access. По умолчанию во всех датах показываются две цифры года.</li>
+<li>Группа флажков Автозамена имен (Name AutoCorrect) обеспечивает возможность при изменении пользователем имени таблицы или поля корректно изменить все ссылки на эту таблицу или поле во всех связанных объектах — очень полезная функция, не забудьте о ней, т. к. изменить имя таблицы или поля иногда нужно, а самим исправить все ссылки на него — задача не из легких.</li>
+<li>Несколько независимых флажков определяют следующие параметры:
+<ul>
+<li>указать, какое количество последних имен файлов MDB будет сохраняться и отображаться в списке в меню Файл (File);</li>
+<li>выполнять или не выполнять звуковое сопровождение событий в приложении;</li>
+<li>нужно ли сжимать базу данных при закрытии. Известно, что при интенсивной работе базы данных MDB-файлы имеют очень неприятную тенденцию быстро увеличиваться в размере. Вы можете установить флажок Сжимать при закрытии (Compact on close), и тогда файл будет сжиматься каждый раз при выходе из приложения;</li>
+<li>флажок Удалить личные сведения из файла (Remove Personal Information), будучи установленным, позволяет прятать персональную информацию на вкладке Документ (Summery) диалогового окна свойств базы данных (меню Файл, Свойства (File, Properties)).</li>
+</ul>
+</li>
+<li>Поле Рабочий каталог (Default Database Folder) определяет папку, которая отображается по умолчанию в диалоговых окнах при открытии и сохранении файлов баз данных. Обычно это папка Мои документы (My documents) в Windows 98 или Личная (Personal) в Windows NT.</li>
+<li>Поле со списком Порядок сортировки базы данных (New database sort order) имеет по умолчанию значение General (Универсальный). Это означает, что порядок сортировки в создаваемых базах данных будет определяться региональными стандартами, установленными с помощью Панели управления (Control Panel) в операционной системе компьютера, на котором была создана база данных (Windows NT или Windows 95/98). Вы можете изменить порядок сортировки, изменив значение в этом поле. Но обращаем ваше внимание, что значение этого поля определяет порядок сортировки в новой базе, т. е. оно должно быть установлено перед тем, как создается новая база. Изменение этого поля не меняет порядок сортировки в уже созданной базе данных. Для того чтобы изменить порядок сортировки в уже существующей базе данных, нужно выполнить ее сжатие.</li>
+<li>На этой же вкладке есть кнопка, которая позволяет открыть диалоговое окно, в котором можно изменить цвет и вид гиперссылок (рис.14.3).</li>
+</ul>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image13/776fca2dcd8b4018d11e38312cc7e3b4.gif" alt="" width="480" height="347"><meta itemprop="width" content="480">
+<meta itemprop="height" content="347"></span></p>
+<p>Рис. 14.3. Окно Параметры веб-документа</p>
+<p>Вкладка Правка и поиск (Edit/Find) содержит параметры, которые используются при поиске, фильтрации и редактировании записей (рис. 14.4).</p>
+<ul>
+<li>Группа флажков Поиск и замена по умолчанию (Default Find/Replace Behavior) определяет стратегию поиска данных в таблицах Access, которая принята по умолчанию:
+<ul>
+<li>флажок поле — целиком (Fast search) означает, что поиск будет вестись в текущем поле и на полное совпадение значения поля с образцом;</li>
+<li>флажок везде — любая часть (General search) обеспечивает поиск по всем полям и поиск вхождения искомой строки в значение поля;</li>
+<li>флажок поле — с начала (Start of field search) означает поиск в текущем поле на совпадение образца с первыми символами значения поля.</li>
+</ul>
+</li>
+</ul>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image05/2e37d0b1363104cc4886290ee8d55929.gif" alt="" width="580" height="364"><meta itemprop="width" content="580">
+<meta itemprop="height" content="364"></span></p>
+<p>Рис. 14.4. Вкладка Правка и поиск диалогового окна Параметры</p>
+<ul>
+<li>Группа флажков Подтверждение (Confirm) позволяет отключить при необходимости вывод на экран предупреждающих сообщений при изменении и удалении объектов и данных. Это эквивалент макрокоманды Установить Сообщения (SetWarnings) со значением аргумента Ложь (False). Однако будьте внимательны, т. к. забыв их потом снова включить, можно случайно испортить готовые формы, отчеты или изменить данные нежелательным образом.</li>
+<li>Группа параметров Параметры фильтра по умолчанию &lt;…&gt; (Filter By Form Defaults) определяет поведение системы при установке фильтра. Флажки в группе Отображать список значений (Show list of values in) позволяют определить, когда в окне задания фильтра будут появляться списки для выбора критериев. Они могут появляться в индексированных полях локальной таблицы, в неиндексированных полях локальной таблицы и в полях внешней таблицы. Специальное поле ввода позволяет указать максимальное количество элементов, которые могут содержать отображаемые списки значений. Если количество элементов в списке превышает указанный предел, такой список отображаться не будет (см. разд. «Сортировка, поиск и фильтрация данных» гл. 2).</li>
+</ul>
+<p>На вкладке Клавиатура (Keyboard) расположены параметры, которые определяют возможные перемещения курсора при вводе и редактировании данных в формах (рис. 14.5). По умолчанию определены следующие перемещения:</p>
+<ul>
+<li>переход при нажатии клавиши &lt;Enter&gt; — следующее поле;</li>
+<li>переход по клавише со стрелкой вправо — следующее поле;</li>
+<li>поведение при входе в поле — выделить все поле; .</li>
+<li>останов на первом/последнем поле — нет (флажок сброшен). Вы можете настроить эти параметры удобным для вас образом.</li>
+</ul>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image24/db4945093079fa9a9c9d677d7cea2171.gif" alt="" width="580" height="364"><meta itemprop="width" content="580">
+<meta itemprop="height" content="364"></span></p>
+<p>Рис. 14.5. Вкладка Клавиатура диалогового окна Параметры</p>
+<p>На вкладке Режим таблицы (Datasheet) (рис. 14.6) находятся параметры, которые определяют вид таблиц: тип и размер шрифта, цвета символов и фона, наличие, отсутствие и цвет сетки, специальные эффекты оформления сетки, ширину столбцов. Это те параметры, которые заданы по умолчанию для всех таблиц. При желании их можно изменить для конкретной таблицы с помощью команд меню Формат (Format).</p>
+<p>Параметры на вкладке Формы и отчеты (Forms/Reports) позволяют задать некоторые общие для форм и отчетов значения (рис. 14.7).</p>
+<ul>
+<li>Можно задать шаблоны, которые используются по умолчанию для форм и отчетов. В качестве шаблона может быть использовано имя формы или отчета, которые оформлены в нужном стиле. Тогда все вновь создаваемые формы и отчеты будут сразу создаваться в вашем стиле, что позволит существенно сократить время разработки интерфейса. Правда, эти параметры относятся только к формам и отчетам, создаваемым без помощи мастеров.</li>
+<li>Группа Выделение объектов (Selection Behavior) определяет, как выполняется операция выделения объектов в режиме Конструктора форм и отчетов. По умолчанию выделяются все объекты, которые даже частично попадают в область выделения. Если выбрать переключатель охват (Fully enclosed), то будут выделены только те объекты, которые попадут в эту область целиком. Когда элементы управления в форме или отчете расположены очень плотно, лучше использовать первый переключатель — пересечение (Partially enclosed).</li>
+</ul>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image22/c6e65cbc8ee3619831fcd3ca262eee26.gif" alt="" width="580" height="364"><meta itemprop="width" content="580">
+<meta itemprop="height" content="364"></span></p>
+<p>Рис. 14.6. Вкладка Режим таблицы диалогового окна Параметры</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image15/8a0c88a7ebe27d2ccd65431d806c50ec.gif" alt="" width="580" height="364"><meta itemprop="width" content="580">
+<meta itemprop="height" content="364"></span></p>
+<p>Рис. 14.7. Вкладка Формы и отчеты диалогового окна Параметры</p>
+<ul>
+<li>Флажок Всегда использовать процедуры обработки событий (Always use event procedures) позволяет избежать появления диалогового окна Построитель (Choose Builder). Обычно это окно появляется, когда пользователь назначает обработчик события в окне свойств формы, отчета или элемента управления. По умолчанию этот флажок сброшен. Если вы для обработки событий не используете макросов, можно его установить.</li>
+</ul>
+<p>Следующая вкладка Страницы (Pages) содержит параметры, касающиеся страниц доступа к данным (рис. 14.8).</p>
+<ul>
+<li>Первая группа параметров Стандартные свойства конструктора (Default Designer Properties) касается Конструктора (Designer). Вы можете задать расстояние между разделом и полями страницы, цвет текущей строки, стили для заголовков и примечаний разделов.</li>
+<li>Вторая группа — Стандартные свойства БД или проекта (Default Database/Project. Properties). Вы можете установить флажок и определить папку, в которой по умолчанию будут сохраняться файлы страниц, и файл, содержащий параметры подключения страницы к базе данных (см. гл. 12).</li>
+</ul>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image16/90c0074c3de35d25f962106af8f43e30.gif" alt="" width="580" height="364"><meta itemprop="width" content="580">
+<meta itemprop="height" content="364"></span></p>
+<p>Рис. 14.8. Вкладка Страницы диалогового окна Параметры</p>
+<p>Вкладка Другие (Advanced) объединяет параметры, определяющие функционирование приложения в многопользовательском режиме или в режиме «клиент-сервер» (рис. 14.9). Назначение этих параметров будет объяснено ниже (см. гл. 16 и 17).</p>
+<p>Кроме того, вы можете определить используемый по умолчанию формат файла базы данных: Access 2000 или Access 2002. По умолчанию создаваемые файлы базы данных будут иметь формат Access 2000. Это позволяет использовать их как в Access 2000, так и в Access 2002. Файлы, имеющие новый формат (Access 2002), доступны только в Access 2002.</p>
+<ul>
+<li>Параметр Аргументы командной строки (Command-line Arguments) позволяет задать параметры командной строки, которые будут переданы приложению Microsoft Access при запуске.</li>
+<li>Группа переключателей Режим открытия по умолчанию (Default open mode) позволяет задать режим доступа к открываемой базе данных — монопольный (Exclusive) или многопользовательский (Shared).</li>
+</ul>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image15/89d61d48da15421859235ca66545d731.gif" alt="" width="580" height="364"><meta itemprop="width" content="580">
+<meta itemprop="height" content="364"></span></p>
+<p>Рис. 14.9. Вкладка Другие диалогового окна Параметры</p>
+<p>Специальная вкладка Международные (International) (рис. 14.10) позволяет задать параметры, учитывающие использование языков, в которых текст пишется не слева направо, как мы привыкли, а справа налево, и календарь не григорианский, а юлианский. Можно, например, установить эти параметры таким образом, что если в одном предложении содержатся и арабский и европейский тексты, то при перемещении по арабскому тексту курсор будет перемещаться справа налево, а при перемещении по европейскому (русскому, английскому и т. д.) тексту — слева направо. Изменение же календаря рекомендуется делать сразу, как только создан новый файл базы данных, и потом этот параметр не менять.</p>
+<p>Параметры, связанные с проверкой орфографии и автозамены, теперь тоже вынесены на отдельную вкладку Орфография (Spelling) (рис. 14.11). Это те же параметры, которые используются функцией проверки орфографии в Microsoft Word. Вы можете вызвать эту функцию, нажав кнопку &lt;F7&gt; в текстовом поле таблицы, запроса или формы.</p>
+<ul>
+<li>По умолчанию в поле Язык словаря (Dictionary Language) установлен словарь, соответствующий региональным установкам на вашем компьютере. Нужный словарь вы можете выбрать из списка в этом поле.</li>
+</ul>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image02/133dd9aa203dfe3831063b4501162bc3.gif" alt="" width="580" height="364"><meta itemprop="width" content="580">
+<meta itemprop="height" content="364"></span></p>
+<p>Рис. 14.10. Вкладка Международные диалогового окна Параметры</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image08/461052b4d24c16c02abe8cc685d07522.gif" alt="" width="580" height="364"><meta itemprop="width" content="580">
+<meta itemprop="height" content="364"></span></p>
+<p>Рис. 14.11. Вкладка Орфография диалогового окна Параметры</p>
+<ul>
+<li>В поле Добавлять слова в (Add Words to) можно определить файл, который будет содержать ваш собственный словарь.</li>
+<li>Несколько флажков позволяют указать, какие слова нужно игнорировать в процессе проверки правописания.</li>
+</ul>
+<p>Кнопка Параметры автозамены (AutoCorrect Options) открывает диалоговое окно, в котором задаются параметры автозамены (рис. 14.12).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image19/aed92e8db82b80a92214f2f33ca99441.gif" alt="" width="453" height="375"><meta itemprop="width" content="453">
+<meta itemprop="height" content="375"></span></p>
+<p>Рис. 14.12. Диалоговое окно Автозамена</p>
+<p>Назначение параметров Автозамены ясно из их названий. Автозамена используется в данном случае для выполнения следующих функций.</p>
+<ul>
+<li>Автоматическое исправление опечаток при вводе данных в текстовые поля. Исправление производится путем замены слова в левом столбце списка словом в правом столбце. По умолчанию этот список достаточно длинный. Данная функция будет эффективно использоваться, если вы настроите список таким образом, чтобы он включал в себя типичные опечатки для конкретного пользователя.</li>
+<li>Автоматическая замена при вводе определенных сочетаний обычных символов специальными символами.</li>
+<li>Автоматическое исправление типичных ошибок ввода, связанных с неправильным нажатием клавиш &lt;Shift&gt; и &lt;Caps LockX Возможные исправления определяются флажками в верхней части диалогового окна Автозамена (AutoCorrect). Чтобы пополнить список Автозамены, необходимо ввести заменяемое сочетание букв в поле заменять (Replace), а заменяющее слово или словосочетание — в поле на (With) и затем нажать кнопку Добавить (Add). На последней вкладке Таблицы и запросы (Tables/Queries) размещены две группы параметров (рис. 14.13).</li>
+<li>Группа параметров Конструктор таблиц (Table design) определяет свойства поля, устанавливаемые по умолчанию при добавлении нового поля в таблицу: тип поля, размер для текстового и числового полей. Обратите внимание на поле Автоиндекс при импорте и создании (Autolndex on Import/Create), в котором перечисляются через точку с запятой некоторые слова. Дело в том, что когда одно из этих слов встречается в имени вновь создаваемого поля. Конструктор таблиц автоматически строит индекс по этому полю. Таким образом, если вы будете придерживаться определенных правил при наименовании полей таблиц, например все ключевые поля будете обозначать именами с суффиксом id, то ваша работа по созданию индексов для таблиц заметно упростится.</li>
+</ul>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image27/f80c49fe9995b4eecf0689ddc782d5fd.gif" alt="" width="580" height="364"><meta itemprop="width" content="580">
+<meta itemprop="height" content="364"></span></p>
+<p>Рис. 14.13. Вкладка Таблицы и запросы окна Параметры</p>
+<ul>
+<li>Группа параметров Конструктор запросов (Query design) определяет вид и режим работы Конструктора запросов. В нем можно по умолчанию выводить имена таблиц, к которым относятся выбранные поля, показывать все поля из базовых таблиц или только включенные в бланк запроса, автоматически объединять таблицы, т. е. считать их связанными, когда в них имеются поля с одинаковыми именами и одно из них является ключевым. Здесь же можно определить права, предоставляемые по умолчанию другим пользователям для выполнения запроса.</li>
+</ul>
+<p><strong>Замечание</strong></p>
+<p>В диалоговое окно Параметры (Options) не включены параметры, определяющие работу в редакторе VBA и Редакторе сценариев. Они задаются в среде этих средств разработки (см. разд. «Создание сценариев Visual Basic с помощью Редактора сценариев» гл. 12 и гл. 13).</p>
+<p><strong>Замечание</strong></p>
+<p>Все параметры, устанавливаемы в окне Параметры (Options), могут изменяться динамически в процессе выполнения программы VBA с помощью метода SetOption объекта Application. Кроме того, можно прочитать значение любого из этих параметров с помощью метода GetOption того же объекта.</p>
+<p>Настройка параметров запуска</p>
+<p>Существует два способа задать действия, выполняемые приложением при запуске, и ряд параметров, влияющих на работу приложения: установка параметров запуска в специальном диалоговом окне и создание макроса «AutoExec». Создание и назначение макроса «AutoExec» уже рассматривалось (см. разд. <a href="/glava-rabota-s-makrosami">«Запуск макроса при открытии базы данных»</a> гл. 11).</p>
+<p>В данном разделе мы будем рассматривать установку параметров запуска. Для этого выберите команду Сервис, Параметры запуска (Tools, Startup). На экране появляется диалоговое окно Параметры запуска (Startup) (рис. 14.14).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image02/0ccfb762e60236a51271aed7b1169804.gif" alt="" width="543" height="271"><meta itemprop="width" content="543">
+<meta itemprop="height" content="271"></span></p>
+<p>Рис. 14.14. Диалоговое окно Параметры запуска</p>
+<p>В диалоговом окне Параметры запуска (Startup) можно задать:</p>
+<ul>
+<li>значок и заголовок вашего приложения, которые будут отображаться в главном окне приложения и на панели задач вместо стандартного значка и заголовка «Microsoft Access». Значок должен быть задан в файле с расширением ico, а выбрать данный файл можно с помощью кнопки Построителя. Этот же значок может быть использован во всех формах и отчетах, для чего необходимо установить флажок Значок форм и отчетов (Use as Form and Report Icon). Эти параметры вступают в силу сразу после закрытия диалогового окна Параметры запуска (Startup);</li>
+<li>меню, которое будет появляться при запуске вместо стандартного меню Access и определять основные функции приложения;</li>
+<li>форму или страницу, которая будет появляться на экране при открытии базы данных;</li>
+<li>специальное контекстное меню, которое будет заменять встроенные контекстные меню во всех окнах приложения, кроме тех, с которыми связаны другие контекстные меню.</li>
+</ul>
+<p>Флажки Окно базы данных (Display Database Window) и Строка состояния (Display Status Bar) позволяют скрывать при запуске окно базы данных и строку состояния.</p>
+<p>Следующая группа флажков позволяет запретить пользователям вносить изменения в разработанное приложение. Пока вы разрабатываете приложение, все эти флажки установлены, но когда вы будете передавать его пользователям, целесообразно сбросить флажки Полный набор меню Access (Allow Full Menus), Встроенные панели инструментов (Allow Built-in Toolbars) и Изменение панелей инструментов/меню (Allow Toolbar/Menu Changes). Вместо стандартных меню и панелей инструментов можно предоставить пользователям свои собственные меню и панели инструментов или использовать встроенные сокращенные меню, не допускающие пользователя к конструкторам. Чтобы пользователь не мог получить доступ к полным меню через специальную комбинацию клавиш &lt;Ctrl&gt;+&lt;Fll&gt; или к окну базы данных с помощью клавиши &lt;F11&gt;, нужно еще сбросить флажок Специальные клавиши Access (Use Access Special Keys). Если этот флажок сброшен, пользователь не сможет также открыть окно с текстом программ с помощью комбинаций клавиш &lt;Ctrl&gt;+&lt;G&gt; или &lt;Ctrl&gt;+&lt;Break&gt;. Но при этом он может все-таки попасть в текст программы, если произойдет ошибка, которая не перехвачена в коде программы.</p>
+<p><strong>Замечание</strong></p>
+<p>Все эти параметры вступают в силу только после следующего запуска приложения.</p>
+<p>Существует возможность обойти параметры запуска и макрос «AutoExec», для чего необходимо запускать приложение с нажатой клавишей &lt;Shift&gt;. Но если все эти установки можно обойти, то возникает вопрос: есть ли смысл во всех запретах, задаваемых в этих параметрах? Ответ — есть. С помощью макроса или процедуры VBA можно установить свойство объекта Database, которое называется AllowBypassKey. Это свойство позволяет включать и отключать возможность обхода параметров. Это свойство можно задать в программе УВА.или макросе. Пример такой программы вы можете увидеть в справке Access, если в предметном указателе произведете поиск по ключевому слову AllowBypassKey.</p>
+<p><strong>Замечание</strong></p>
+<p>Все параметры запуска, задаваемые в диалоговом окне Параметры запуска (Startup), могут быть установлены также с помощью программы VBA, т. к. все они являются свойствами объекта Database.</p>
+<p>Запуск приложения с параметрами командной строки</p>
+<p>При запуске Access можно прямо в командной строке указать ряд параметров, которые будут влиять на работу приложения. Список этих параметров приведен в табл. 14.1.</p>
+<table class="table_common zebra" width="700">
+<tbody>
+<tr>
+<td>Параметр</td>
+<td>Описание</td>
+</tr>
+<tr>
+<td>Имя файла</td>
+<td>Указывается файл базы данных (с расширением mdb) или файл проекта (с расширением adp), который будет открываться.</td>
+</tr>
+<tr>
+<td>/excl</td>
+<td>Заданная база данных открывается в режиме монопольного доступа. Параметр нельзя применять к файлу проекта (файлу adp).</td>
+</tr>
+<tr>
+<td>/rо</td>
+<td>Заданная база данных открывается в режиме «только для чтения». Параметр нельзя применять к файлу проекта.</td>
+</tr>
+<tr>
+<td>/user имя пользователя</td>
+<td>Задается идентификатор пользователя. Параметр нельзя применять к файлу проекта.</td>
+</tr>
+<tr>
+<td>/pwd пароль</td>
+<td>Задается пароль пользователя. Параметр нельзя применять к файлу проекта.</td>
+</tr>
+<tr>
+<td>/profile конфигурация</td>
+<td>При запуске Access будут использоваться параметры, заданные в указанной конфигурации вместо стандартных параметров в реестре Windows.</td>
+</tr>
+<tr>
+<td>/compact имя файла</td>
+<td>Указывается имя результирующего файла, который получится в результате сжатия и восстановления файла базы данных или проекта, заданного в первом параметре. Если имя файла в данном параметре пропущено, то результирующий файл создается с тем же именем. После выполнения операции Access закрывается. Если в качестве имени файла в первом параметре указан файл проекта Access, то сжимается именно этот файл, а не файл базы данных.</td>
+</tr>
+<tr>
+<td>/repair</td>
+<td>Выполняется восстановление указанного в первом параметре файла. Этот параметр оставлен только для совместимости с более ранними версиями Access, т. к. начиная с версии Access 2000, операции сжатия и восстановления объединены (см. предыдущий параметр). Параметр нельзя применить к файлу проекта.</td>
+</tr>
+<tr>
+<td>/convert имя файла</td>
+<td>Задает операцию преобразования файла базы данных, созданного в предыдущих версиях Access, в формат, установленный по умолчанию (Access 2000 или Access 2002). Указывается имя результирующего файла. Имя исходного файла задается в первом параметре команд- ной строки. Параметр нельзя применять к файлу проекта.</td>
+</tr>
+<tr>
+<td>/х имя макроса</td>
+<td>Позволяет выполнить при запуске Access указанный макрос.</td>
+</tr>
+<tr>
+<td>/список значений</td>
+<td>Список значений представляет собой аргументы, которые передаются программе. Эти аргументы потом можно получить с помощью функции Command. Этот параметр должен быть последним в командной строке. Вместо него можно использовать просто символ точки с запятой.</td>
+</tr>
+<tr>
+<td>/nostartup</td>
+<td>При запуске Access не будет отображаться область задач в правой части окна приложения.</td>
+</tr>
+<tr>
+<td>/wrkgrp имя файла</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Таблица 14.1. Параметры командной строки</p>
+<p>Как видно из приведенной таблицы, используя параметры командной строки, можно не только запустить Microsoft Access, но и сразу загрузить файл базы данных или проекта, выполнить сжатие и восстановление файла, преобразовать файл базы данных, созданный в одной из предыдущих версий Microsoft Access, в нужный формат. Параметры командной строки могут быть использованы для того, чтобы применить параметры настройки, отличные от стандартных.</p>
+<p>Командный интерфейс приложения</p>
+<p>Интерактивное управление приложением осуществляется посредством командного интерфейса. Командный интерфейс приложения Access обеспечивает возможность выбора пользователем для выполнения команд Access или действий, реализованных программно в виде макросов или процедур VBA. Есть несколько способов организации командного интерфейса приложения. Можно создать специальную строку меню или Главную кнопочную форму, чтобы предоставить пользователю удобное средство выбора действий, которые нужно выполнить в приложении. Команды следует группировать в меню или на страницах кнопочной формы по своему назначению так, чтобы пользователю было интуитивно ясно, где должна находиться определенная команда и в каких случаях следует ее выполнять.</p>
+<p>Использование кнопочной формы</p>
+<p>Обычно для работы с приложением создают специальную форму, которая носит название Главная кнопочная форма (Main Switchboard) и содержит кнопки, позволяющие выбирать основные функции или подсистемы приложения. Такую форму можно создать, как обычно, с помощью Конструктора форм, а можно использовать специальный мастер, который называется Диспетчер кнопочных форм (Swithboard Manager). В базе данных «Борей» создана Главная кнопочная форма (Main Switchboard) без применения мастера. Давайте посмотрим, как аналогичную форму создать с помощью Диспетчера кнопочных форм.</p>
+<p>Выберите команду меню Сервис, Служебные программы, Диспетчер кнопочных форм (Tools, Database Utilities, Swithboard Manager).</p>
+<p>Поскольку база данных не содержит кнопочных форм (по крайней мере, известных мастеру), выдается диалоговое окно, запрашивающее, нужно ли создавать кнопочную форму. Нажмите кнопку Да (Yes).</p>
+<p>Теперь мастером создается таблица «Элементы кнопочной формы» (Switchboard Items) и кнопочная форма (Switchboard), которые мы рассмотрим позднее. После этого появляется диалоговое окно со списком страниц кнопочной формы (рис. 14.15).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image22/c7fe410c5315b75adcdf1de4c239cad0.gif" alt="" width="478" height="331"><meta itemprop="width" content="478">
+<meta itemprop="height" content="331"></span></p>
+<p>Рис. 14.15. Диалоговое окно Диспетчер кнопочных форм</p>
+<p>В этом окне перечисляются все страницы кнопочной формы (их может быть несколько). Пока создана только одна страница, и мы видим ее в списке. Чтобы создать на ней нужные кнопки, нажмите кнопку Изменить (Edit). Открывается диалоговое окно Изменение страницы кнопочной формы (Edit Switchboard Page) (рис. 14.16), содержащее список элементов формы.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image07/404d171fd019d7b25c1814a0926591df.gif" alt="" width="439" height="257"><meta itemprop="width" content="439">
+<meta itemprop="height" content="257"></span></p>
+<p>Рис. 14.16. Диалоговое окно Изменение страницы кнопочной формы</p>
+<p>В этом окне можно добавлять, изменять и удалять элементы выбранной страницы формы. Можно также менять порядок их размещения на странице (с помощью кнопок Вниз (Move down) и Вверх (Move up)).</p>
+<p>В поле Название кнопочной формы (Swithboard Name) мы можем изменить стандартное название, если это необходимо. Список элементов формы пока пуст и доступна только одна кнопка Создать (New). Чтобы создать первый элемент, нажмите данную кнопку. Появляется диалоговое окно Изменение элемента кнопочной формы (Edit Switchboard Item) (рис. 14.17).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image28/fe29b1beabacd522578e9d8429ba47c4.gif" alt="" width="486" height="125"><meta itemprop="width" content="486">
+<meta itemprop="height" content="125"></span></p>
+<p>Рис. 14.17. Изменение элемента кнопочной формы</p>
+<p>В поле Текст (Text) введите наименование создаваемой кнопки, например Товары. Второе поле Команда (Command) позволяет определить действие, которое будет» выполняться после нажатия данной кнопки. Список этих действий представлен на рис. 14.17. Их всего 8. Это может быть открытие формы в режиме добавления записей или редактирования, открытие отчета, запуск макроса или процедуры VPA, запуск мастера для редактирования кнопочной формы, переход к другой кнопочной форме и .выход из приложения. Выберем, например, Открыть форму для измения (Open Form in Edit Mode). Тогда в следующем поле нужно ввести имя открываемой формы «Список товаров» (Products) (рис. 14.18) и нажать кнопку ОК.</p>
+<p><strong>Замечание</strong></p>
+<p>Название последнего поля в форме на рис. 14.18 изменяется в зависимости от выбранной команды во втором поле. Если выбранное в списке действие не требует задания аргумента, третье поле вообще исчезает.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image25/e5022d84c8c83b5684da09b1b796b3d4.gif" alt="" width="486" height="204"><meta itemprop="width" content="486">
+<meta itemprop="height" content="204"></span></p>
+<p>Рис. 14.18. Диалоговое окно Изменение элемента кнопочной формы</p>
+<p>Аналогично добавим кнопки для других объектов приложения: «Типы» (Categories), «Поставщики» (Suppliers), «Заказы» (Orders). Создадим кнопку Отчеты, которая будет открывать форму «Отчеты о продажах» (Sales Reports Dialog) и кнопку выхода из приложения Выход. Закроем диалоговое окно Изменение страницы кнопочной формы (Edit Switchboard Page), нажав кнопку Закрыть (Close).</p>
+<p>Количество кнопок на одной странице формы ограничено числом 8. Это не значит, что их нельзя создать больше, просто это придется делать вручную. Однако есть другой способ преодолеть это ограничение. Если число действий, которые хотелось бы разместить на кнопки, превышает 8, можно сгруппировать часть действий на отдельной странице кнопочной формы. Для примера давайте создадим еще одну страницу нашей кнопочной формы и разместим на ней кнопки действий с клиентами. Для этого в диалоговом окне Диспетчер кнопочных форм (Switchboard Manager) нажмите кнопку Создать (New). В появившемся диалоговом окне (рис. 14.19) введите имя новой страницы Клиенты и нажмите кнопку ОК.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image07/3b4d605b332923962f4801320725592b.gif" alt="" width="348" height="106"><meta itemprop="width" content="348">
+<meta itemprop="height" content="106"></span></p>
+<p>Рис. 14.19. Диалоговое окно ввода имени новой страницы</p>
+<p>Далее в редакторе страниц уже известным способом создадим элементы: Клиенты, Наклейки для клиентов, Телефоны клиентов, Заказы клиентов, которые открывают соответствующие формы. Не забудьте создать кнопку, которая позволит вернуться в Главную кнопочную форму (Main Switchboard). Для этого нужно связать с ней команду Перейти к кнопочной форме (Go to Switchboard) (рис. 14.20). Закройте это окно, чтобы вернуться к диалоговому окну Диспетчер кнопочных форм (Switchboard Manager). В списке страниц у вас должны появиться две страницы.</p>
+<p>Теперь нужно отредактировать первую страницу — добавить к ней элемент, с помощью которого можно будет перейти на вторую страницу. Для этого выделите в списке страницу Главная кнопочная форма (Main Switchboard) и нажмите кнопку Изменить (Edit). В окне редактора страниц добавьте новый элемент Клиенты, также используя команду Перейти к кнопочной форме (Go to Switchboard).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image06/3658d98b95e7334fbc45fcf41896e795.gif" alt="" width="486" height="125"><meta itemprop="width" content="486">
+<meta itemprop="height" content="125"></span></p>
+<p>Рис. 14.20. Добавление ссылки на главную страницу кнопочной формы</p>
+<p>Теперь обе страницы оказались связанными. Можно закрыть окно мастера и посмотреть, что у нас получилось, открыв форму «Кнопочная форма» (Switchboard). Должно появиться окно, похожее на то, что представлено на рис. 14.21.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image13/77e0825b1378c1e54113bddad3199bb2.gif" alt="" width="497" height="406"><meta itemprop="width" content="497">
+<meta itemprop="height" content="406"></span></p>
+<p>Рис. 14.21. Главная кнопочная форма</p>
+<p>Вы можете проверить, как действуют кнопки. Например, если нажать кнопку Клиенты, содержание формы изменится, и вы увидите вторую страницу формы. Форма выглядит не слишком привлекательно, но теперь вы можете перейти в режим Конструктора и оформить ее внешний вид, применив все средства Конструктора.</p>
+<p>Открыв эту форму в режиме Конструктора, вы не увидите ее элементов, форма кажется совсем пустой. Однако, если вы откроете модуль, связанный с этой формой, то увидите достаточно большой объем кода, который и организует работу формы должным образом. Причем для этого используется информация, хранящаяся в специальной таблице, о которой мы упоминали в начале раздела: Switchboard Items (Элементы кнопочной формы). Вы увидите эту таблицу в списке Таблицы (Tables) окна База данных (Database). В этом случае она будет выглядеть примерно так, как показано на рис. 14.22.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image12/6888c1501f16999851120160a34d7feb.gif" alt="" width="270" height="108"><meta itemprop="width" content="270">
+<meta itemprop="height" content="108"></span></p>
+<p>Рис. 14.22. Таблица «Элементы кнопочной формы»</p>
+<p>Первый столбец содержит идентификатор страницы, второй — номер элемента на странице. Этот номер определяет порядок, в котором будут располагаться элементы на странице. Третий столбец содержит текст, появляющийся справа от кнопки. Последние два столбца определяют команду, связанную с элементом: код команды (как мы помним, их <img src="/image45/smilies/cool.png" alt="8)" class="wp-smiley" style="height: 1em; max-height: 1em;"> и ее аргумент. Код 0 соответствует специальному элементу, который задает заголовок страницы и определяет ее начало.</p>
+<p>Таким образом, с помощью Диспетчера кнопочных форм (Switchboard Manager) можно создать иерархическую систему страниц кнопочной формы, которая может быть альтернативой обычному иерархическому меню. Правда, в отличие от меню эта форма не видна постоянно на экране, она может закрываться другими формами. Если вы хотите обеспечить возможность пользователю открывать сразу несколько форм и отчетов, вам придется сделать кнопку на панели инструментов, которая позволяла бы в любой момент отобразить Главную кнопочную форму (Main Switchboard).</p>
+<p>Создание и изменение панелей команд</p>
+<p>Если мы вас не убедили создавать кнопочные формы для управления вашим приложением, вам придется создать для него меню. Это более привычный способ организации действий пользователя.</p>
+<p>Альтернативой меню, а чаще дополнением к нему, являются панели инструментов. Во всяком случае, если при разработке вы чаще пользуетесь кнопками на панелях инструментов, чем командами меню, вам наверняка захочется создать такие же удобные кнопки для пользователя и дать возможность осуществлять операции с помощью полезных стандартных кнопок.</p>
+<p>Для этого существует очень удобное средство, которое называется панели команд (Command bars). Панели команд — это объекты Microsoft Office, которые обеспечивают стандартный способ организации взаимодействия пользователя с приложением Microsoft Office. Они бывают трех типов:</p>
+<ul>
+<li>строка меню (Menu Bar);</li>
+<li>контекстное меню (Popup);</li>
+<li>панели инструментов (Toolbar).</li>
+</ul>
+<p>В своем приложении вы можете использовать как стандартные панели команд Access, настроив их нужным образом, так и специальные пользовательские панели команд. Обычно в стандартных панелях команд удаляют лишние кнопки, чтобы пользователь не мог что-либо испортить в приложении, либо нужные кнопки со стандартных панелей переносят на пользовательские панели инструментов. Общие правила создания и функционирования панелей команд различных типов позволяют легко переносить кнопки с панелей инструментов в строки меню и обратно. Как и в самом Access, вы можете создать панели команд, которые относятся к приложению в целом, появляются при запуске приложения и .остаются на экране в течение всего сеанса работы с приложением. С другой стороны, панели команд можно связать с конкретной формой или отчетом, и они будут появляться на экране только тогда, когда открыта данная форма или отчет, для чего необходимо только установить значения соответствующих свойств формы или отчета: Строка меню (Menu Bar), Панель инструментов (Toolbar), Контекстное меню (Popup).</p>
+<p>Создание и изменение панелей команд любого типа выполняется в режиме настройки, который может быть вызван либо с помощью команды меню Вид, Панели инструментов, Настройка (View, Toolbars, Customize), либо из контекстного меню, которое выводится на экран после щелчка правой кнопкой мыши в области панелей команд приложения.</p>
+<p>Создание меню в Access</p>
+<p>Для создания меню в Access проделайте следующие действия:</p>
+<ol>
+<li>Откройте окно Настройка (Customize), например, щелкнув правой кнопкой мыши по панели инструментов и выбрав команду Настройка (Customize). Таким способом осуществляется переход в режим настройки панелей команд.</li>
+<li>По умолчанию открывается вкладка Панели инструментов (Toolbars). Если у вас открылась другая вкладка, раскройте именно эту вкладку. Пока в списке на этой вкладке отображаются только стандартные панели команд. К этому списку нужно добавить новую панель команд типа Строка меню (Menu Bar). Нажмите кнопку Создать (New).</li>
+<li>В диалоговом окне, запрашивающем имя создаваемой панели команд, введите название: Главное меню (рис. 14.23) и нажмите кнопку ОК.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image08/4a36fe1b705a2ae78e31dedeb7d19fde.gif" alt="" width="270" height="108"><meta itemprop="width" content="270">
+<meta itemprop="height" content="108"></span></p>
+<p>Рис. 14.23. Создание новой панели команд</p>
+<ol start="4">
+<li>Появится маленькая пустая панель, которая по умолчанию является панелью инструментов. Чтобы превратить ее в строку меню, необходимо изменить ее тип. Для этого выделите элемент Главное меню в списке на вкладке Панели инструментов (Toolbars) (он добавляется в конец списка) и нажмите кнопку Свойства (Properties). Откроется диалоговое окно Свойства панели инструментов Properties (рис. 14.24).</li>
+<li>В раскрывающемся списке тип (Туре) выберите значение Строка меню (Menu Bar).</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image18/aac59af4e742d984963693c296ef2f4b.gif" alt="" width="315" height="261"><meta itemprop="width" content="315">
+<meta itemprop="height" content="261"></span></p>
+<p>Рис. 14.24. Диалоговое окно Свойства панели инструментов</p>
+<p>Кроме типа, для данной панели команд можно задать еще ряд свойств:</p>
+<ul>
+<li>закрепление (Docking). Можно задать расположение панели команд на экране: в любом месте, только по горизонтали, только по вертикали или вообще запретить его изменять.</li>
+<li>отображение в меню (Show on Toolbars Menu). Установите этот флажок, если вы хотите, чтобы название этой панели команд отображалось в списке, появляющемся при выполнении команды меню Вид, Панели инструментов (View, Toolbars).</li>
+<li>настройка (Allow Customizing). Сброс этого флажка запретит изменение данной панели команд.</li>
+<li>изменение размера (Allow Resizing). Если этот флажок не установлен, изменение размеров данной панели команд будет не возможно.</li>
+<li>перемещение (Allow Moving). Сбросьте этот флажок, если нужно запретить перемещение панели команд по экрану.</li>
+<li>отображение и скрытие (Allow Showing/Hiding). Когда этот флажок сброшен, пользователь не будет иметь возможности скрывать и снова отображать панель команд на экране.</li>
+</ul>
+<p>Сейчас мы не будем менять установленные по умолчанию значения и, изменив только тип, закроем это окно.</p>
+<p>Пока наша строка меню пустая. Теперь в нее можно добавить меню — списки команд, раскрывающиеся при выборе меню в строке меню или на панели инструментов. Чтобы добавить меню на панель команд:</p>
+<ol>
+<li>Раскройте вкладку Команды (Commands) в диалоговом окне Настройка (Customize).</li>
+<li>Выделите в списке Категории (Categories) значение Новое меню (New Menu).</li>
+<li>Перетащите элемент Новое меню (New Menu) из списка Команды (Commands) на новую панель.</li>
+</ol>
+<p>Теперь вы увидите на ней элемент Новое меню (New Menu) (рис. 14.25).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image18/a90fae832caa2f935d15e060191b8305.gif" alt="" width="542" height="347"><meta itemprop="width" content="542">
+<meta itemprop="height" content="347"></span></p>
+<p>Рис. 14.25. Создание пользовательского меню</p>
+<p>Изменить название созданного меню можно в окне свойств. Для этого необходимо щелкнуть правой кнопкой мыши по меню и выбрать в контекстном меню команду Свойства (Properties). Появится диалоговое окно Свойства элемента Главное меню (Control Properties) (рис. 14.26).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image21/c2accb6f93baf02aa35f73399da6860e.gif" alt="" width="341" height="373"><meta itemprop="width" content="341">
+<meta itemprop="height" content="373"></span></p>
+<p>Рис. 14.26. Диалоговое окно Свойства элемента Главное меню</p>
+<p>В этом окне можно задать следующие значения:</p>
+<ul>
+<li>В поле подпись (Caption) введите название меню: Клиенты.</li>
+<li>В поле всплывающее сообщение (ScreenTip) можно ввести текст всплывающей подсказки.</li>
+<li>Поле действие (On Action) следует оставить пустым. Обычно оно определяет действие, выполняемое при выборе данного элемента панели команд. При выборе меню Клиенты должен раскрываться список команд данного меню. Это будет выполняться автоматически, т. к. в качестве элемента строки меню мы добавили меню.</li>
+<li>Поле стиль (Style) позволяет определить вид элемента панели команд, в данном случае — меню. Раскрывающийся список имеет следующие значения:
+<ul>
+<li>По умолчанию (Default Style) — на элементе меню выводятся одновременно значок и надпись;</li>
+<li>Только текст (всегда) (Text only (Always)) — и на элементе меню и на кнопке выводится только надпись;</li>
+<li>Только текст (в меню) (Text only (In Menus)) — выводится надпись на элементе меню и значок на кнопке;</li>
+<li>Рисунок и текст (Image and Text) — и на элементе меню и на кнопке выводится как значок, так и надпись.</li>
+</ul>
+</li>
+<li>Два поля — файл справки (Help File) и идентификатор справки (HelpContextlD) — позволяют связать с данным элементом панели команд раздел из справочной системы приложения, который будет отображаться при нажатии клавиши &lt;F1&gt;, если данный элемент выделен.</li>
+<li>Поле параметр (Parameter) связано с полем действие (On Action) и определяет значение аргумента функции, если в поле действие (On Action) определен вызов функции. В данном случае оно тоже остается пустым.</li>
+<li>В поле дополнительные сведения (Tag) можно ввести информацию, которая может быть доступна из процедуры VBA.</li>
+<li>Установленный флажок Создать группу (Begin a Group) означает, что данный элемент панели команд является началом группы и слева от него (в этом случае в строке меню) будет отображаться разделительная линия.</li>
+</ul>
+<p>Закройте окно Свойства элемента меню и будем добавлять в меню команды. Для этого можно использовать ту же вкладку Команды (Commands) диалогового окна Настройка (Customize). Выбрав категорию, а затем команду из выбранной категории, можно перетащить ее в данное меню. Например:</p>
+<ol>
+<li>Выберите категорию Все формы (All Forms).</li>
+<li>Перетащите в меню те формы, которые мы использовали при создании кнопочной формы в предыдущем разделе: «Клиенты» (Customers), «Наклейки для клиентов» (Customer Label Dialog), «Телефоны клиентов» (Customer Phone List), «Заказы клиентов» (Customer Orders) (рис. 14.27).</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image09/4f3b2ec711e246f1190a0fe2cc09d078.gif" alt="" width="542" height="367"><meta itemprop="width" content="542">
+<meta itemprop="height" content="367"></span></p>
+<p>Рис. 14.27. Добавление команд в меню</p>
+<p>Совет</p>
+<p>Перед тем как перетаскивать первую команду в меню, щелкните по нему правой кнопкой — около него отобразится маленькая серая панель пустого меню. Туда и нужно перетащить первую команду. При перетаскивании остальных команд место вставки помечается горизонтальной линией. Новая команда размещается под этой линией. При вставке меню в строку меню место вставки помечается вертикальной линией. Новое меню размещается справа от этой линии.</p>
+<p>Чтобы добавить в строку меню следующее меню со списком команд, нужно снова выбрать на вкладке Команды (Commands) диалогового окна Настройка (Customize) категорию Новое меню (New Menu), затем элемент Новое меню (New Menu) и перетащить его в данное меню, поместив его справа от первого элемента. Чтобы изменить вид меню или подменю, щелкните по соответствующему элементу правой кнопкой мыши. Можно использовать команды появившегося при этом контекстного меню или открыть окно Свойства элемента (Control Properties).</p>
+<p>Удаление меню выполняется очень просто. Достаточно в режиме настройки панелей команд перетащить соответствующий элемент в пустую область окна Microsoft Access. Аналогично можно перетаскивать подменю и команды меню из одних меню в другие, также можно команду меню превратить в кнопку на панели инструментов и наоборот. Поскольку меню и панели инструментов являются разными типами одного объекта — панели команд, на панели инструментов можно размещать меню, а в строку меню можно добавлять кнопки.</p>
+<p><strong>Замечание</strong></p>
+<p>Выполнять все описанные действия можно только в режиме настройки панелей команд, т. е. при открытом окне Настройка (Customize).</p>
+<p>Чтобы окончательно придать меню профессиональный вид (как в стандартном меню Access), необходимо каждому меню и команде меню назначить клавиши доступа. Буквы, соответствующие этим клавишам, выделяются в названии элемента подчеркиванием. Клавиши доступа используются следующим образом. Для того чтобы раскрыть меню, нужно при нажатой клавише &lt;Alt&gt; нажать клавишу, соответствующую подчеркнутой букве в названии этого меню. Например, комбинация клавиш &lt;Alt&gt;+«Ф» (&lt;Alt&gt;+&lt;F&gt;) раскрывает меню Файл (File). Далее, чтобы выбрать команду меню, достаточно просто нажать клавишу, соответствующую подчеркнутой букве в названии команды.</p>
+<p>Чтобы указать символ, который будет определять клавишу доступа, нужно в имени команды (в поле подпись (Caption) окна свойств элемента меню) вставить перед этим символом знак &amp;, например «&amp;Товары». При этом в разных командах одного меню должны быть использованы обязательно разные символы, определяющие клавиши доступа, хотя в разных меню символы могут совпадать.</p>
+<p>Создание и изменение панелей инструментов</p>
+<p>Для того чтобы обеспечить быстрый доступ к наиболее часто используемым формам, отчетам или макросам, можно создать специальные кнопки, которые помещаются либо на панель инструментов, либо непосредственно в меню. Создать эти кнопки очень просто:</p>
+<ol>
+<li>Закройте окно Настройка (Customize).</li>
+<li>Раскройте список форм в окне базы данных приложения «Борей», выделите форму «Товары» (Products) и перетащите ее в строку меню, которое мы только что создали. В строке меню появится кнопка со значком и названием формы (рис. 14.28), при нажатии которой открывается форма «Товары» (Products).</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image03/19bc7bf07180a37686bdca3046eefd24.gif" alt="" width="511" height="406"><meta itemprop="width" content="511">
+<meta itemprop="height" content="406"></span></p>
+<p>Рис. 14.28. Добавление кнопки в строку меню</p>
+<p>Как видите, в одной строке меню могут размещаться как подчиненные меню, так и кнопки. Точно так же можно добавить кнопку в одну из стандартных панелей инструментов. Если таких кнопок, которые нужно создать для вызова различных функций приложения, много, лучше создать отдельную панель инструментов, в которую включить все эти кнопки, а также полезные кнопки со стандартных панелей инструментов.</p>
+<p>Создается пользовательская панель инструментов аналогично строкам меню:</p>
+<ol>
+<li>Снова откройте окно Настройка (Customize), щелкнув правой кнопкой мыши в области панелей команд окна приложения.</li>
+<li>В появившемся диалоговом окне раскройте вкладку Панели инструментов (Toolbars).</li>
+<li>Нажмите кнопку Создать (New).</li>
+<li>В появившемся диалоговом окне введите имя новой панели инструментов Мои макросы и нажмите кнопку ОК. Появится пустая панель инструментов.</li>
+<li>В данном случае не нужно менять ее тип (по умолчанию создается именно панель инструментов), раскройте вкладку Команды (Commands).</li>
+<li>Выберите в списке Категории (Categories) значение Все макросы (All Macros), а в списке Команды (Commands) найдите макрос «Менеджеры по продажам».</li>
+<li>Перетащите этот макрос с помощью мыши на пустую панель инструментов.</li>
+</ol>
+<p>Вы можете изменить внешний вид данной кнопки. Для этого в диалоговом окне Настройка (Customize) нажмите кнопку Изменить выделенный объект (Modify Selection) или щелкните правой кнопкой мыши по только что созданной кнопке. Отобразится контекстное меню, представленное на рис. 14.29. При этом режим отображения кнопки помечен как Значок и текст (Image and Text). Но можно поместить на кнопке только значок, или только текст. Если вы хотите изменить текст на кнопке, введите этот текст в поле Имя (Name) (по умолчанию в этом поле отображается имя макроса).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image20/b5f35e40bb6c5c4b4d6ffe2f0076ea64.gif" alt="" width="269" height="219"><meta itemprop="width" content="269">
+<meta itemprop="height" content="219"></span></p>
+<p>Рис. 14.29. Контекстное меню</p>
+<p>Вы можете поместить на кнопку другой значок, выбрав понравившуюся картинку на специальной панели. Для отображения набора стандартных значков выделите в контекстном меню команду Выбрать значок для кнопки (Change Button Image) и щелкните по понравившемуся значку. Если же ни одна из картинок не подходит, можно выбрать наиболее близкий по оформлению значок, а потом исправить его в специальном редакторе (рис. 14.30). Чтобы открыть окно Редактор кнопок (Button Editor), выберите в контекстном меню команду Изменить значок на кнопке (Edit Button Image).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image13/6fa1f6c90394859083204fcb0fe27ddd.gif" alt="" width="367" height="335"><meta itemprop="width" content="367">
+<meta itemprop="height" content="335"></span></p>
+<p>Рис. 14.30. Редактор кнопок для изменения значка на кнопке</p>
+<p>Наконец, можно просто скопировать понравившийся вам значок с другой кнопки. Чтобы скопировать значок с одной кнопки на другую:</p>
+<ol>
+<li>Откройте диалоговое окно Настройка (Customize) и выделите ту кнопку на панели инструментов, с которой нужно скопировать значок.</li>
+<li>Нажмите кнопку Изменить выделенный объект (Modify Selection) в диалоговом окне Настройка (Customize).</li>
+<li>Выберите в контекстном меню команду Копировать значок на кнопке (Сору Button Image).</li>
+<li>Выделите кнопку, значок которой нужно изменить.</li>
+<li>Нажмите кнопку Изменить выделенный объект (Modify Selection) в диалоговом окне Настройка (Customize).</li>
+<li>Выберите в контекстном меню команду Вставить значок для кнопки (Past Button Image).</li>
+</ol>
+<p>С помощью диалогового окна свойств кнопки можно изменить текст всплывающей подсказки и задать клавиши быстрого вызова.</p>
+<p>Чтобы изменить текст всплывающей подсказки для кнопки на панели инструментов:</p>
+<ol>
+<li>В режиме настройки выделите кнопку на панели инструментов. В диалоговом окне Настройка (Customize) нажмите кнопку Изменить выделенный объект (Modify Selection).</li>
+<li>Выберите в контекстном меню команду Свойства (Properties). Появится диалоговое окно свойств кнопки.</li>
+<li>Введите желаемый текст в поле Всплывающая подсказка (ScreenTip).</li>
+</ol>
+<p>На созданной вами панели инструментов можно разместить любые другие .полезные кнопки, не только кнопки для запуска макросов. Когда создание панели инструментов закончено, вы можете переместить ее на свободное место в верхней части экрана (или поместить у любой другой границы экрана).</p>
+<p>Создание и удаление контекстных меню</p>
+<p>Контекстное меню — это меню специального вида, которые появляются при нажатии правой кнопки мыши. Обычно контекстные меню создаются на последнем этапе разработки приложения. Создание контекстных меню очень похоже на создание обычных строк меню. Только в окне Свойства панели инструментов (Toolbar Properties) (см. рис. 14.24) в раскрывающемся списке Тип (Туре) должно быть выбрано значение Контекстное меню (Popup). При этом пользователь получает предупреждение, что данное контекстное меню исчезнет с экрана. Чтобы посмотреть или изменить контекстные меню, нужно выбрать (установить флажок) Контекстные меню (Shortcut Menus) в списке панелей команд на вкладке Панели инструментов (Toolbars) диалогового окна настройки панелей команд. Тогда на экране появится панель контекстных меню. Создаваемые пользователем контекстные меню отображаются в меню Настраиваемый (Custom) (рис. 14.31).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image23/cfef5a3db4e985cbd1198b2d258b849d.gif" alt="" width="554" height="400"><meta itemprop="width" content="554">
+<meta itemprop="height" content="400"></span></p>
+<p>Рис. 14.31. Панель контекстных меню</p>
+<p>Добавлять команды в контекстное меню нужно точно так же, как в обычное меню. Чтобы удалить контекстное меню:</p>
+<ol>
+<li>Удалите все команды из этого меню, перетаскивая их по очереди на свободное место в окне Microsoft Access.</li>
+<li>Раскройте вкладку Панели инструментов (Toolbars) в диалоговом окне Настройка (Customize) и нажмите кнопку Свойства (Properties).</li>
+<li>В раскрывающемся списке Выбранная панель (Selected toolbar) выберите нужное контекстное меню.</li>
+<li>В раскрывающемся списке Тип (Туре) выберите элемент Панель инструментов (Toolbar), чтобы изменить тип удаляемого объекта, и нажмите кнопку Закрыть (Close).</li>
+<li>Выделите в списке Панели инструментов (Toolbars) соответствующее название панели команд и нажмите кнопку Удалить (Delete).</li>
+</ol>
+<p>Связывание строк меню, панелей инструментов и контекстных меню с формами и отчетами</p>
+<p>Созданные строки меню, контекстные меню и панели инструментов можно связывать с формами и отчетами. Для этого необходимо определить соответствующие свойства формы или отчета. Список этих свойств для формы показан на рис. 14.32. Есть аналогичные свойства и у отчета (кроме параметров, определяющих контекстное меню).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image19/b14d874b648effa3d2f757fa74c52ed6.gif" alt="" width="341" height="373"><meta itemprop="width" content="341">
+<meta itemprop="height" content="373"></span></p>
+<p>Рис. 14.32. Свойства формы</p>
+<p>Свойство Контекстные меню (Shortcut Menu) позволяет разрешить или запретить вывод на экран контекстного меню для этой формы. Причем, если специальное контекстное меню в поле Контекстное меню (Shortcut Menu Bar) не указано, а поле Контекстные меню (Shortcut Menu) имеет значение Да (Yes), то при щелчке правой кнопкой мыши по этой форме будет выводиться стандартное контекстное меню.</p>
+<p>Следует еще отметить, что контекстное меню может быть связано не только с формой, но и с элементом формы, т. к. элемент управления имеет свойство Контекстное меню (Shortcut Menu Bar) на вкладке Другие (Others) (рис. 14.33).</p>
+<p><strong>Замечание</strong></p>
+<p>Все изложенные выше способы изменения меню и панелей инструментов можно применять также к встроенным меню и панелям инструментов Access, настраивая их нужным образом. Если требуется создать новую панель инструментов, которая была бы доступнаво всех базах данных, с которыми вы работаете, используйте встроенные панели инструментов Служебная программа 1 (Utility 1) и Служебная программа 2 (Utility 2) (они отличаются от создаваемых вами панелей инструментов тем, что доступны не только в том приложении, в котором вы их создали).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image28/fcf2f14d0c771d088653601a9f4e5861.gif" alt="" width="343" height="449"><meta itemprop="width" content="343">
+<meta itemprop="height" content="449"></span></p>
+<p>Рис. 14.33. Свойства элемента управления формы</p>
+<p>Изменение меню и панелей инструментов с помощью VBA</p>
+<p>Изложение возможностей создания и настройки меню и панелей инструментов было бы не полным, если бы мы ничего не сказали о возможностях программного управления этими объектами. Такие возможности понадобятся вам, если нужно, например:</p>
+<ul>
+<li>сделать недоступным меню, команду меню или кнопку на панели инструментов;</li>
+<li>скрыть или показать меню, команду меню или кнопку панели инструментов;</li>
+<li>скрыть или показать строку меню или панель инструментов.</li>
+</ul>
+<p>Чаще всего приходится изменять панели команд, разрешая или запрещая доступ к отдельным их элементам — командам меню или кнопкам. Это может быть связано либо с разграничениями прав доступа, либо с невозможностью в текущей ситуации выполнить определенную команду. Для доступа к панелям команд и их элементам используется семейство CommandBars объектной модели Microsoft Office. Ссылка на конкретную строку меню или панель инструментов создается стандартным способом: с помощью оператора set. Ниже приведен пример функции, которая позволяет изменить значение свойства Доступ (Enabled) элемента панели команд.</p>
+<p>Function SetEnabled (barName As String, index As Integer, state As Boolean) Dim cbar As Object Set cbar = CornmandBars (barName) cbar.Controls (index) .Enabled = state SetEnabled = True End Function</p>
+<p>В качестве параметров в функцию передаются имя панели команд barName, индекс элемента панели index и значение свойства state.</p>
+<p>Переменная cbar будет содержать ссылку на нужную панель (обращение к объекту семейства CommandBars в данном случае выполняется по имени объекта).</p>
+<p>Семейство Controls содержит все элементы панели. Для доступа к конкретному элементу используется индекс, соответствующий номеру элемента в семействе. В отличие от других семейств объектной модели VBA в семействе Controls элементы нумеруются не с нуля, а с единицы. Это означает, что для ссылки на первый элемент семейства необходимо использовать выражение CommandBar .Controls (1) вместо ожидаемого CommandBar. Controls (0).</p>
+<p>Аналогичная функция может быть использована для того, чтобы скрыть или показать отдельные меню или кнопки на панели команд, только изменяться должно свойство Visible того же самого семейства Controls:</p>
+<p>Function SetEnabled (barName As String, index As Integer, state As Boolean) Dim cbar As Object Set cbar = CommandBars(barName) cbar.Controls(index).Visible = state SetEnabled = True End Function</p>
+<p>Созданные вами меню и панели инструментов должны в нужное время появляться на экране. В большинстве случаев это обеспечивается тем, что создается одна общая строка меню и одна общая панель инструментов, которые выводятся на экран при запуске приложения и заменяются в нужное время меню и панелями инструментов, связанными с формами и отчетами (если, конечно, вы отключили встроенные меню и панели инструментов Access, задав соответствующие параметры запуска).</p>
+<p>Тем не менее, существует возможность программно управлять выводом на экран строк меню и панелей инструментов.</p>
+<p>Чтобы задать свою собственную строку меню в качестве главной строки меню в приложении, можно либо изменить параметр Строка меню (Menu Bar) в окне Параметры запуска (Startup), либо установить свойство MenuBar объекта Application (см. разд. <a href="/glava-programmirovanie-v-access">«Объектная модель Microsoft Access»</a> гл. 13):</p>
+<p>Application.MenuBar = «Главное меню»</p>
+<p>Для того чтобы показывать или прятать панели инструментов в процессе работы программы, можно использовать макрокоманду ПанельИнструментов (ShowToolbar). Эта макрокоманда имеет два аргумента: имя панели инструментов и значение Показать (Show) (рис. 14.34).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image06/33d4d808bb146625971e13bfc88271ff.gif" alt="" width="542" height="347"><meta itemprop="width" content="542">
+<meta itemprop="height" content="347"></span></p>
+<p>Рис. 14.34. Макрокоманда ПанельИнструментов</p>
+<p>Поле Показать (Show) на панели аргументов макроса позволяет определить три значения:</p>
+<ul>
+<li>Да (Yes) — панель инструментов будет всегда отображаться на экране;</li>
+<li>В обычном режиме (Where Appropriate) — панель инструментов будет отображаться только при необходимости, данный режим используется для встроенных панелей инструментов;</li>
+<li>Нет (No) — панель инструментов будет скрыта.</li>
+</ul>
+<p>Вместо макроса можно использовать метод showToolbar объекта DoCmd. Пример, приведенный на рис. 14.34, может быть выражен в коде VBA следующим образом:</p>
+<p>DoCmd ShowToolbar «Главное меню», acToolbarYes,</p>
+<p>где AcToolbarYes — встроенная константа.</p>
+<p>Выводы</p>
+<p>Очень важно обеспечить приложение удобным интерфейсом. Access позволяет снабдить базу данных всеми необходимыми элементами интерфейса — меню и панелями инструментов, формами для ввода данных, комбинациями клавиш для быстрого вызова макросов и т. д. Все это делает работу с базой данных удобной и придает приложению законченный вид.</p>
+<p>В предыдущих главах мы рассказали, как создаются разнообразные объекты базы данных, предназначенные для хранения и обработки данных. Материал этой главы поможет в разработке интерфейса базы данных Access для работы с ее объектами.</p>
+<!-- toc empty -->	</div>
+<!-- .entry-content -->
+
+</article>
+
+
+
+
+
+
+
+
+
+<div class="social-buttons">
+<span class="social-button social-button--vkontakte main" data-social="vkontakte"><span>Поделиться в ВКонтакте</span></span><span class="social-button social-button--telegram " data-social="telegram"></span><span class="social-button social-button--odnoklassniki " data-social="odnoklassniki"></span><span class="social-button social-button--whatsapp " data-social="whatsapp"></span><span class="social-button social-button--viber " data-social="viber"></span>
+</div>
+
+<!--noindex-->
+<div class="author-box">
+    <div class="author-info">
+        <div class="author-box__ava">
+                    </div>
+
+        <div class="author-box__body">
+            <div class="author-box__author">
+                Автор А. Днепров            </div>
+            <div class="author-box__description">
+                <p>Обучаю основам работы с офисными программами.</p>
+            </div>
+
+            
+        </div>
+    </div>
+</div>
+<!--/noindex-->
+    <meta itemprop="author" content="А. Днепров">
+<meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/glava-nastroyka-polzovatelskogo-i" content="Глава 14. Настройка пользовательского интерфейса">
+    <meta itemprop="dateModified" content="2024-07-14">
+<div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+<div class="related-posts">
+<div class="related-posts__header">Вам также может понравиться</div>
+<div class="post-cards post-cards--vertical">
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/kak-sdelat-massovuyu-zamenu-formul"><img width="311" height="230" src="/image04/2408fadbc9163d5aa4994580cfc152cd.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/kak-sdelat-massovuyu-zamenu-formul">Как сделать массовую замену формул</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/kak-udalit-lishnie-i-pustye-stranitsy-v-excel">Как удалить лишние и пустые страницы в Excel</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/preobrazovanie-teksta-v-tablitsu"><img width="345" height="122" src="/image14/7a0043c9bf012cc129b22376cfebb2a9.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/preobrazovanie-teksta-v-tablitsu">Преобразование текста в таблицу</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/kak-delat-skrinshoty-s-vysokim-razresheniem-v-windows">Как делать скриншоты с высоким разрешением в Windows 11/10</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/osobennosti-raboty-s-mnogostranichny"><img width="213" height="230" src="/image13/6f8f9694c11ee322ff9d3675b0b8ba07.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/osobennosti-raboty-s-mnogostranichny">13.1 Особенности работы с многостраничными документами</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/kak-sdelat-izmeneniya-vnutri-yacheyki-p"><img width="345" height="93" src="/image27/f6550fd3bdfdfdbe500536441d5d252e.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/kak-sdelat-izmeneniya-vnutri-yacheyki-p">Как сделать изменения внутри ячейки. Принудительный перенос</a></div>
+    </div>
+</div>
+</div>
+            </main><!-- #main -->
+        </div>
+<!-- #primary -->
+
+        
+    
+
+    </div>
+<!--.site-content-inner-->
+
+    
+</div>
+<!--.site-content-->
+
+    
+    
+
+<div class="site-footer-container">
+
+    
+
+    <footer id="colophon" class="site-footer full" itemscope itemtype="http://schema.org/WPFooter">
+        <div class="site-footer-inner fixed">
+
+            
+            
+<div class="footer-bottom">
+    <div class="footer-info">
+        <div class="footer-copyright">© 2024 Самоучитель справочник по офисным программам. <a href="/o-nas" rel="nofollow">О нас | Контакты</a> | <a href="/map" rel="nofollow">Карта сайта</a>
+</div>
+        <div class="footer-under-copyright"></div>
+	        </div>
+
+    </div>
+        </div>
+    </footer><!--.site-footer-->
+</div>
+
+
+            <button type="button" class="scrolltop js-scrolltop" data-mob="on"></button>
+    
+                    <div class="top-line js-top-line">
+            <div class="top-line-inner fixed">
+
+                <div class="top-line__title">Глава 14. Настройка пользовательского интерфейса</div>
+<div class="top-line__like"><span class="btn-fb-like btn-top-like social-button--vkontakte" data-social="vkontakte"><span>Поделиться в ВКонтакте</span></span></div>
+<div class="top-line__post">
+<div class="top-line__post_thumbnail"><a href="/sohranenie-dokumenta-na-diske-i-ego-z"><img width="100" height="70" src="/image01/00bb57a457e0ee94a715d60a0d453ae6.jpg" class="attachment-yelly_square size-yelly_square wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="top-line__post_title"><a href="/sohranenie-dokumenta-na-diske-i-ego-z">6.1 Сохранение документа на диске и его загрузка в CorelDRAW</a></div>
+</div>            </div>
+        </div>
+    
+</div>
+<!-- #page -->
+
+<script>var pseudo_links = document.querySelectorAll(".pseudo-clearfy-link");for (var i=0;i<pseudo_links.length;i++ ) { pseudo_links[i].addEventListener("click", function(e){   window.open( e.target.getAttribute("data-uri") ); }); }</script><script>document.addEventListener("copy", (event) => {var pagelink = "\nИсточник: /glava-nastroyka-polzovatelskogo-i";event.clipboardData.setData("text", document.getSelection() + pagelink);event.preventDefault();});</script><script type="text/javascript" id="yelly-scripts-js-extra">
+/* <![CDATA[ */
+var settings_array = {"rating_text_average":"среднее","rating_text_from":"из","lightbox_display":"1"};
+var wps_ajax = {"url":"\/wp-admin\/admin-ajax.php","nonce":"e4ca9d4bd8"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="/js/scripts.min.js" id="yelly-scripts-js"></script>
+
+
+
+<div class="image-hover-social-buttons" style="display: none;">
+<div class="social-button social-button--vkontakte js-share-link" data-uri="https://vk.com/share.php?url=%2Fglava-nastroyka-polzovatelskogo-i"></div>
+<div class="social-button social-button--telegram js-share-link" data-uri="https://t.me/share/url?url=%2Fglava-nastroyka-polzovatelskogo-i&text=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+14.+%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0+%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%BE%D0%B3%D0%BE+%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D1%84%D0%B5%D0%B9%D1%81%D0%B0"></div>
+<div class="social-button social-button--odnoklassniki js-share-link" data-uri="https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&service=odnoklassniki&st.shareUrl=%2Fglava-nastroyka-polzovatelskogo-i"></div>
+<div class="social-button social-button--whatsapp js-share-link" data-uri="whatsapp://send?url=%2Fglava-nastroyka-polzovatelskogo-itext=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+14.+%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0+%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%BE%D0%B3%D0%BE+%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D1%84%D0%B5%D0%B9%D1%81%D0%B0"></div>
+<div class="social-button social-button--viber js-share-link" data-uri="viber://forward?url=%2Fglava-nastroyka-polzovatelskogo-itext=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+14.+%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0+%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%BE%D0%B3%D0%BE+%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D1%84%D0%B5%D0%B9%D1%81%D0%B0"></div>
+</div>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(93345646, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/93345646" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>

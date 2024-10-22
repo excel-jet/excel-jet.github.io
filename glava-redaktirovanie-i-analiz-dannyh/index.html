@@ -1,0 +1,1663 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<title>Глава 8. Редактирование и анализ данных с помощью запросов &#8212; learn-office</title>
+	<meta name="description" content="Редактирование и анализ данных с помощью запросов В первой части книги мы познакомили вас с одним из важнейших объектов базы данных Access — запросами.">
+	<link rel="canonical" href="/glava-redaktirovanie-i-analiz-dannyh">
+	<meta property="og:locale" content="ru_RU">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Глава 8. Редактирование и анализ данных с помощью запросов &#8212; learn-office">
+	<meta property="og:description" content="Редактирование и анализ данных с помощью запросов В первой части книги мы познакомили вас с одним из важнейших объектов базы данных Access — запросами.">
+	<meta property="og:url" content="/glava-redaktirovanie-i-analiz-dannyh">
+	<meta property="og:site_name" content="Excel-jet">
+	<meta property="article:published_time" content="2024-10-14T15:41:19+00:00">
+	<meta property="og:image" content="/image08/43d1ad3c8fd7ea56961fe2a0981a265e.gif">
+	<meta property="og:image:width" content="185">
+	<meta property="og:image:height" content="282">
+	<meta property="og:image:type" content="image/gif">
+	<meta name="author" content="А. Днепров">
+
+
+<style id="wp-block-library-theme-inline-css" type="text/css">.wp-block-audio :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio :where(figcaption){color:#ffffffa6}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed :where(figcaption){color:#ffffffa6}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:#ffffffa6}:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table :where(figcaption){color:#ffffffa6}.wp-block-video :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video :where(figcaption){color:#ffffffa6}.wp-block-video{margin:0 0 1em}:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}</style>
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 19.5px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36.5px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--normal: 22px;--wp--preset--font-size--huge: 49.5px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="google-fonts-css" href="https://fonts.googleapis.com/css?family=Roboto%3A400%2C400i%2C700&#038;subset=cyrillic&#038;display=swap" media="all">
+<link rel="stylesheet" id="yelly-style-css" href="/css/style.min.css" media="all">
+
+<style>.pseudo-clearfy-link { color: #008acf; cursor: pointer;}.pseudo-clearfy-link:hover { text-decoration: none;}</style>
+<link rel="preload" href="/fonts/icomoon.ttf" as="font" crossorigin>
+    <style>.scrolltop{width:50px}.scrolltop:before{content:"\21d1"}.entry-content a, .entry-content a:visited, .spanlink, .comment-reply-link, .pseudo-link, .widget_calendar a, .widget_recent_comments a, .child-categories ul li a{color:#0000ff}.child-categories ul li a{border-color:#0000ff}a:hover, a:focus, a:active, .spanlink:hover, .top-menu ul li>span:hover, .main-navigation ul li a:hover, .main-navigation ul li span:hover, .footer-navigation ul li a:hover, .footer-navigation ul li span:hover, .comment-reply-link:hover, .pseudo-link:hover, .child-categories ul li a:hover{color:#1e73be}.top-menu>ul>li>a:before, .top-menu>ul>li>span:before{background:#1e73be}.child-categories ul li a:hover, .post-box--no-thumb a:hover{border-color:#1e73be}.post-box--card:hover{box-shadow: inset 0 0 0 1px #1e73be}.post-box--card:hover{-webkit-box-shadow: inset 0 0 0 1px #1e73be}@media (min-width: 768px){body{background-attachment: scroll}}body{font-size:17px;}@media (max-width: 991px){.widget-area{display: block; margin: 0 auto}}</style>
+    <!-- Yandex.RTB -->
+<script>window.yaContextCb=window.yaContextCb||[]</script>
+<script src="https://yandex.ru/ads/system/context.js" async></script>	
+</head>
+<body class="post-template-default single single-post postid-1287 single-format-standard wp-embed-responsive sidebar-right">
+<div id="page" class="site">
+    <a class="skip-link screen-reader-text" href="#content">Перейти к контенту</a>
+
+    
+    
+    <div class="search-screen-overlay js-search-screen-overlay"></div>
+    <div class="search-screen js-search-screen">
+        
+<form role="search" method="get" class="search-form" action="/">
+    <label>
+        <span class="screen-reader-text">Search for:</span>
+        <input type="search" class="search-field" placeholder="Поиск..." value="" name="s">
+    </label>
+    <button type="submit" class="search-submit"></button>
+</form>    </div>
+
+    
+
+<header id="masthead" class="site-header full" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="site-header-inner fixed">
+
+        <div class="humburger js-humburger">
+<span></span><span></span><span></span>
+</div>
+
+        
+<div class="site-branding">
+
+    <div class="site-branding__body"><div class="site-title"><a href="/">Excel-jet</a></div></div>
+</div>
+<!-- .site-branding -->
+
+    
+    <nav id="site-navigation" class="main-navigation full">
+        <div class="main-navigation-inner fixed">
+            <div class="menu-menyu-container"><ul id="header_menu" class="menu">
+<li id="menu-item-6695" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-6695">
+<a href="/excel">Excel</a>
+<ul class="sub-menu">
+	<li id="menu-item-6709" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6709"><a href="/excel/functions">Функции</a></li>
+</ul>
+</li>
+<li id="menu-item-6697" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6697"><a href="/microsoft-word">Word</a></li>
+<li id="menu-item-6696" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6696"><a href="/powerpoint">PowerPoint</a></li>
+<li id="menu-item-6698" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6698"><a href="/outlook">Outlook</a></li>
+</ul></div>        </div>
+    </nav><!-- #site-navigation -->
+
+    
+<div class="header-search"><span class="search-icon js-search-icon"></span></div>    </div>
+</header><!-- #masthead -->
+
+
+
+    
+    
+    <div id="content" class="site-content fixed">
+
+        
+        <div class="site-content-inner">
+    
+        
+        <div id="primary" class="content-area" itemscope itemtype="http://schema.org/Article">
+            <main id="main" class="site-main">
+
+                
+<article id="post-1287" class="article-post post-1287 post type-post status-publish format-standard has-post-thumbnail  category-excel">
+
+    
+        
+        <header class="entry-header"><h1 class="entry-title" itemprop="headline">Глава 8. Редактирование и анализ данных с помощью запросов</h1></header>
+        
+        
+        
+    
+    
+    <div class="entry-meta">
+<span class="entry-time"><span class="entry-label">Время чтения</span> 88 мин.</span><span class="entry-date"><span class="entry-label">Опубликовано</span> <time itemprop="datePublished" datetime="2024-10-14">14.10.2024</time></span>
+</div>
+	<div class="entry-content" itemprop="articleBody">
+		<p>Редактирование и анализ данных с помощью запросов </p>
+<p>В первой части книги мы познакомили вас с одним из важнейших объектов базы данных Access — запросами. При этом рассматривался только один вид запросов — запросы на выборку данных из таблиц. Microsoft Access, однако, позволяет не только выбирать нужные данные, но и изменять их с помощью специальных запросов. Такие запросы называютсязапросами на изменение(Action Query). Существует четыре типа запросов на изменение.</p>
+<ul>
+<li>Запросы на создание таблицы(Make-Table Query) создают таблицы на основе данных, содержащихся в результирующем множестве запроса. Чаще всего этот тип используется для экспорта информации в другие приложения. Кроме того, запросы на создание таблицы удобно применять для копирования таблиц в другую базу данных. В некоторых случаях с их помощью можно повысить быстродействие форм и отчетов, базирующихся на одном сложном запросе.</li>
+<li>Запросы на добавление записей(Append Query) позволяют добавить в таблицу создаваемые запросом записи.</li>
+<li>Запросы на обновление(Update Query) изменяют значения полей в записях таблицы, отобранных с помощью запроса.</li>
+<li>Запросы на удаление(Delete Query) удаляют из таблицы записи, соответствующие результирующему множеству запроса.</li>
+</ul>
+<p>Если таблицы содержат большое количество данных, важно не только извлечь нужные данные, но и как-то обработать их, т. е. представить в виде, удобном для анализа. В предыдущих версиях Access для этого существовал специальный вид запросов — перекрестные запросы. В Access 2002 для анализа данных можно применять сводные таблицы — мощное и удобное средство анализа, уже давно прекрасно зарекомендовавшее себя в Microsoft Excel. Сводные данные можно теперь представить не только в табличном, но и в графическом виде с помощью сводных диаграмм.</p>
+<p>Более простым способом обработки результирующих данных запроса является группировка и вычисление различных итоговых значений. Это можно сделать прямо в запросе на выборку, определив поля для группировки и используя статистические функции.</p>
+<p>И наконец, для создания запросов можно использовать специальный язык — Jet SQL, т. е. диалект языка структурированных запросов, который используется ядром базы данных Access — процессором обработки данных Jet.</p>
+<p>Итак, в этой главе описывается:</p>
+<ul>
+<li>Использование запросов для обновления данных, добавления и удаления записей в таблицах</li>
+<li>Перекрестные запросы</li>
+<li>Создание таблиц с помощью запросов</li>
+<li>Сводные таблицы и диаграммы</li>
+<li>Типичные конструкции SQL при формировании различных типов запросов</li>
+</ul>
+<p> Создание таблиц с помощью запроса </p>
+<p>С помощью этого вида запроса вы можете выбрать нужные данные из уже существующей таблицы с помощью обычного запроса на выборку, а затем поместить их в новую таблицу, структура которой определяется структурой записей результирующего множества запроса. Таким образом, процесс создания таблицы с помощью запроса состоит из трех шагов:</p>
+<ol>
+<li>Создать запрос на выборку.</li>
+<li>Преобразовать запрос на выборку в запрос на изменение, задав параметры размещения новой таблицы.</li>
+<li>Выполнить запрос на изменение, тем самым поместив отобранные записи в новую таблицу.</li>
+</ol>
+<p>Созданию различных запросов на выборку мы уделили достаточно внимания  в гл. 4. Оставшиеся два этапа описаны ниже на примере запроса на выборку &#171;Холодные клиенты&#187;, созданного в базе данных &#171;Борей&#187; при описании внешнего соединения  в гл. 4. </p>
+<ol>
+<li>Откройте запрос &#171;Холодные клиенты&#187; в режиме Конструктора, выделив его имя в списке запросов в окне базы данных и нажав кнопку  Конструктор  (Design).</li>
+<li>Добавьте в бланке запроса критерий выборки: Is Null в столбце &#171;КодЗаказа&#187;.</li>
+<li>Сбросьте флажок  Вывод на экран (Output) для этого поля.</li>
+</ol>
+<p>Замечание</p>
+<p>Это нужно сделать, чтобы поле не попало в новую таблицу. Поле &#171;КодЗаказа&#187; в таблице &#171;Заказы&#187; определено как Счетчик и не может иметь значение Null. Это свойство наследуется новой таблицей, поэтому если флажок не сбросить, то при выполнении запроса будет выдаваться сообщение об ошибке.</p>
+<p> Преобразование запроса на выборку в запрос на изменение </p>
+<p>Чтобы создать таблицу из результатов запроса, использовавшегося для отбора записей в связанных таблицах, его нужно преобразовать из запроса на выборку в запрос на изменение. Для этого:</p>
+<ol>
+<li>Выберите команду меню  Запрос, Создание таблицы (Query, Make Table) [  Меню  Запрос доступно только в режиме Конструктора запроса. ] или щелкните по стрелке на кнопке  Тип запроса (Query Type) на панели инструментов и выберите из списка тип  Создание таблицы (Make-Table Query). Диалоговое окно  Создание таблицы (Make Table) показано на рис. 8.1.</li>
+<li>В текстовом поле  имя таблицы (Table Name) введите описательное имя для новой таблицы, например: список холодных клиентов.</li>
+</ol>
+<p>Внимание</p>
+<p>В базе данных Access не должно быть таблицы и запроса с одинаковыми именами.</p>
+<p>В этом диалоговом окне можно определить также, где должна быть создана таблица — в текущей базе данных (переключатель  в текущей базе данных (Current Database) выбран по умолчанию) или в другой базе данных. В последнем случае нужно выбрать переключатель  в другой базе данных (Another Database) и ввести имя этой базы данных.</p>
+<ol start="3">
+<li>Нажмите кнопку  ОК.  Запрос на выборку преобразуется в запрос на создание таблицы.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" decoding="async" src="/image08/43d1ad3c8fd7ea56961fe2a0981a265e.gif" width="185" height="282" alt=""><meta itemprop="width" content="185">
+<meta itemprop="height" content="282"></span></p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" decoding="async" src="/image10/5a3d764e0ca05f7006ee5eb769e9b993.gif" width="467" height="181" alt=""><meta itemprop="width" content="467">
+<meta itemprop="height" content="181"></span></p>
+<p> Рис. 8.1. Диалоговое окно  Создание таблицы</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image17/994dfde19db8a58c7c8302ab501aab19.gif" width="537" height="449" alt=""><meta itemprop="width" content="537">
+<meta itemprop="height" content="449"></span></p>
+<p> Рис. 8.2. Запрос на изменение в окне базы данных</p>
+<ol start="4">
+<li>Нажмите стрелку на кнопке  Вид  (View) панели инструментов и выберите из списка элемент  SQL View (Режим SQL). Вы увидите инструкцию SQL, которая генерируется автоматически, когда вы в графическом режиме создаете запрос. Она отличается от обычной инструкции SELECT тем, что содержит еще одно предложение INTO&#8230;</li>
+<li>Сохраните и закройте запрос. Теперь в окне базы данных ему соответствует другой значок, который сопровождается восклицательным знаком (рис. 8.2), это означает, что запрос является запросом на изменение.</li>
+</ol>
+<p> Выполнение запроса на изменение </p>
+<p>Выполнение запроса на изменение приведет к появлению новой таблицы с запися&#8212;ми, которые будут идентичны результирующему набору записей того запроса на изменение, который был создан на первом этапе.</p>
+<p>Для выполнения запроса:</p>
+<ol>
+<li>Запустите запрос двойным щелчком мышки на его имени в окне базы данных (см. рис. 8.2). При этом он не отображает результирующий набор записей в режиме таблицы, как это делает запрос на выборку, а выполняет нужное действие. Перед его выполнением появляется сообщение, которое предупреждает, что в новую таблицу будут внесены изменения.[  Хотя таблица еще не создана. ]</li>
+</ol>
+<p>Внимание</p>
+<p>Одно из важных правил во время работы с запросами на изменение — нужно обязательно создавать резервную копию таблицы, в которую вносятся изменения. Дело в том, что исправления, внесенные запросами на изменение, необратимы, к тому же часто нелегко обнаружить записи, измененные ошибочным запросом.</p>
+<ol start="2">
+<li>Подтвердите выполнение операции, нажав кнопку Да (Yes). Появится второе сообщение, показывающее число записей, которые будут помещены в новую таблицу в результате выполнения запроса (рис. 8.3).</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image20/b4ac2be3db6b9434d6a550eb69aaa637.gif" width="476" height="121" alt=""><meta itemprop="width" content="476">
+<meta itemprop="height" content="121"></span></p>
+<p> Рис. 8.3. Предупреждающее сообщение о числе новых записей</p>
+<ol start="3">
+<li>Нажмите кнопку  Да (Yes). Поскольку запрос запускается впервые, будет создана новая таблица &#171;Список холодных клиентов&#187;.</li>
+<li>Щелкните по ярлыку  Таблицы  (Tables) в окне базы данных и убедитесь, что в /t. списке появилось новое название таблицы (рис. 8.4).</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image12/6b26ee297e2e2e26572dcacfdf2a7969.gif" width="537" height="449" alt=""><meta itemprop="width" content="537">
+<meta itemprop="height" content="449"></span></p>
+<p> Рис. 8.4. Новая таблица в окне базы данных</p>
+<ol start="5">
+<li>Дважды щелкните мышью по значку этой таблицы, чтобы ее открыть. Она содержит те же данные, что и запрос на создание таблицы в режиме Таблицы (рис. 8.5).</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image03/189cd027b2f31655dc73a6aa67278f6b.gif" width="498" height="229" alt=""><meta itemprop="width" content="498">
+<meta itemprop="height" content="229"></span></p>
+<p> Рис. 8.5. Таблица, созданная при помощи запроса</p>
+<p>Запрос на создание таблицы может использоваться многократно для создания временных таблиц, при этом каждый раз будет создаваться новая таблица и удаляться старая.</p>
+<p> Создание запросов на добавление данных </p>
+<p>Поэтому сначала создается запрос на выборку данных, в результат которого включаются те поля, которые должны составлять добавляемые записи, а также поля, в которых устанавливаются критерии отбора записей.</p>
+<p>В качестве примера мы рассмотрим запрос, который будет выбирать из базы данных все заказы за 1996 год и переносить их в другую таблицу так, чтобы таблица &#171;Заказы&#187; (Orders) содержала только актуальные данные. Для этого сначала создадим таблицу, которая будет хранить устаревшие данные:</p>
+<ol>
+<li>Раскройте список таблиц в окне базы данных и выделите таблицу &#171;Заказы&#187; (Orders).</li>
+<li>Скопируйте таблицу в буфер обмена, нажав комбинацию клавиш &lt;Ctrl&gt;+&lt;C&gt;.</li>
+<li>Вставьте таблицу из буфера обмена, нажав комбинацию клавиш &lt;Ctrl&gt;+&lt;V&gt;. Появляется диалоговое окно  Вставка таблицы  (Paste Table As).</li>
+<li>В группе  Параметры вставки (Paste Options) выберите переключатель  Только структура (Structure Only).</li>
+<li>В поле  имя таблицы (Table Name) введите строку: Заказы (архив). Нажмите кнопку  ОК или клавишу &lt;Enter&gt;.</li>
+</ol>
+<p>В списке появляется новая таблица, пока пустая, т. к. мы скопировали только структуру таблицы &#171;Заказы&#187; (Orders). Теперь создадим запрос на добавление, который позволит перенести в новую таблицу данные из таблицы &#171;Заказы&#187;.</p>
+<ol>
+<li>Раскройте список таблиц в окне базы данных и выделите в нем таблицу &#171;Заказы&#187;.</li>
+<li>Щелкните левой кнопкой мыши по стрелке на кнопке  Новый объект  (New Object) инструментальной панели и выберите из раскрывшегося списка элемент Запрос (Query). В диалоговом окне Новый запрос (New Query) выберите значение  Конструктор (Design View). Появляется окно Конструктора запроса с таблицей &#171;Заказы&#187; в верхней части.</li>
+<li>Сначала создайте запрос на выборку нужных записей. Перетащите из списка полей таблицы &#171;Заказы&#187; все поля в строку бланка запроса  Поле  (Field).</li>
+<li>В строке  Условие отбора (Criteria) столбца &#171;ДатаРазмещения&#187; введите выражение Between 101.01.961 And 131.12.961</li>
+<li>Запустите запрос на выборку, чтобы проверить, правильно ли отобраны записи. Оказались отобранными 152 записи.</li>
+<li>Выберите команду  Запрос, Добавление (Query, Append) или щелкните левой кнопкой мыши по стрелке на кнопке  Тип запроса (Query Type) и выберите из списка элемент  Добавление (Append Query). Появляется диалоговое окно  Добавление (Append), аналогичное диалоговому окну  Создание таблицы (Make Table) (рис. 8.6).</li>
+<li>В поле  имя таблицы (Table Name) необходимо выбрать из списка имя таблицы, в которую будут добавляться записи. В данном случае по умолчанию в нем указана таблица &#171;Заказы (архив)&#187;, которую мы только что создали. Нажмите кнопку  ОК.  (Если бы таблица, в которую нужно добавить записи, находилась в другой базе данных, необходимо было бы выбрать переключатель  в другой базе данных (Another Database) и затем в поле  имя файла (File Name) указать имя файла MDB, который содержит требуемую таблицу.)</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image13/74d989ca22f3ae3743b5e511ed4073bd.gif" width="467" height="181" alt=""><meta itemprop="width" content="467">
+<meta itemprop="height" content="181"></span></p>
+<p> Рис. 8.6. Диалоговое окно  Добавление</p>
+<ol start="8">
+<li>В бланке запроса на добавление появляется дополнительная строка  Добавление  (Append To), содержащая названия полей таблицы, в которую добавляются записи (рис. 8.7). В данном случае названия полей запроса и названия полей таблицы совпадают, поэтому по умолчанию вся эта строка заполнена. Если имена полей не совпадают, необходимо выбрать из раскрывающегося списка в строке  Добавление (Append To) имя поля результирующей таблицы, соответствующего полю в исходной таблице.</li>
+<li>Нажмите кнопку  Запуск (Run), чтобы выполнить запрос. Прежде чем новые записи будут добавлены в таблицу, Access выдает сообщение о числе записей, которые предполагается добавить. Вы можете нажать кнопку Да (Yes), и только после этого записи будут добавлены. Если вы нажмете кнопку  Нет (No), вставка записей будет отменена.</li>
+</ol>
+<p>Замечание</p>
+<p>Если записи добавляются в таблицу, которая уже непуста, то наиболее часто встречающейся ошибкой при выполнении этого запроса является попытка вставить записи, у которых значение первичного ключа совпадает с ключами уже имеющихся в ней записей. Такие записи вставлены не будут, будет только выдано сообщение об их количестве.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image25/e78d94cd3dc70646aa74a0c6b1839d1e.gif" width="510" height="342" alt=""><meta itemprop="width" content="510">
+<meta itemprop="height" content="342"></span></p>
+<p> Рис. 8.7. Бланк запроса на добавление</p>
+<ol start="10">
+<li>Сохраните запрос в базе данных, присвоив ему имя Копирование заказов. Обратите внимание на значок в списке запросов, соответствующий запросу на добавление. Как и в любом запросе на изменение, он содержит восклицательный знак, но отличается от значка запроса на создание таблицы.</li>
+</ol>
+<p> Создание запросов на обновление таблиц </p>
+<p>Запросы на обновление используются главным образом для того, чтобы внести изменения сразу в большое количество записей с помощью одного запроса. Классическим примером такого запроса является изменение цены в таблице &#171;Товары&#187; (Products) на некоторый постоянный коэффициент, например можно увеличить цену одной из категорий товара на 20%. Чтобы создать такой запрос:</p>
+<ol>
+<li>Раскройте список таблиц, щелкнув мышью по ярлыку  Таблицы  (Tables) окна базы данных.</li>
+<li>Выделите таблицу &#171;Товары&#187; (Products). Щелкните левой кнопкой мыши по стрелке на кнопке  Новый объект  (New Object) на панели инструментов и выберите из списка значение  Запрос (Query). Появится окно Конструктора запросов с таблицей &#171;Товары&#187; в верхней части. Перенесите в бланк запроса поля &#171;Цена&#187; и &#171;КодТипа&#187;.</li>
+<li>Введите условие отбора записей: например, в столбец &#171;КодТипа&#187; введите значение 1.</li>
+<li>Выполните запрос, чтобы убедиться, что отбираются все записи, содержащие напитки.</li>
+<li>Теперь изменим запрос, превратив его в запрос на обновление. Для этого выполните команду меню  Запрос, Обновление  (Query, Update). Изменяется заголовок запроса и появляется дополнительная строка  Обновление (Update To). При этом исчезают строки  Сортировка (Sort) и  Вывод на экран (Show) (рис. 8.8).</li>
+<li>Теперь нужно в строку  Обновление  (Update To) ввести выражение, по которому будет вычисляться новая цена: [Цена]* 0, 2. В других случаях можно вводить константу, например, если нужно поменять дату во многих записях на текущую.</li>
+<li>Теперь можно выполнить запрос. Для этого нажмите кнопку  Запуск (Run) на панели инструментов. Так же, как и при добавлении записей в таблицу, Access выдаёт сообщение о количестве обновляемых записей и запрашивает подтверждение на обновление. Вы можете подтвердить обновление записей или отвергнуть.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image03/1cc037a9dad71081cd044abfde543870.gif" width="480" height="348" alt=""><meta itemprop="width" content="480">
+<meta itemprop="height" content="348"></span></p>
+<p> Рис. 8.8. Запрос на обновление записей</p>
+<p>Совет</p>
+<p>Прежде чем выполнять запрос на обновление, щелкните левой кнопкой мыши по стрелке на кнопке  Вид (View) и выберите  Режим таблицы (Datasheet View). Вы увидите все записи, которые будут обновлены, хотя данные в обновляемых полях будут еще старые. И только убедившись, что отобраны нужные записи, можно выполнять запрос.</p>
+<p>В приведенном примере изменялись значения в поле, которое не является первичным ключом в таблице &#171;Товары&#187; (Products). Особый случай возникает, когда требуется обновить значение первичного ключа в таблице. Если эта таблица связана отношением &#171;один-ко-многим&#187; с другими таблицами, то при изменении первичного ключа записи должны одновременно измениться значения внешних ключей во всех связанных записях подчиненных таблиц. Access обеспечивает выполнение такого изменения автоматически, т. к. поддерживает каскадное обновление записей. При определении связи между таблицами можно установить флажок  каскадное обновление связанных полей  (Cascade Update Related Fields). </p>
+<p>Если такой флажок установлен, то при изменении значения первичного ключа в главной таблице Access автоматически выполняет специальный запрос, с помощью которого обновляются внешние ключи всех связанных записей в подчиненной таблице.</p>
+<p>Убедиться в том, как работает такой запрос, можно на примере таблиц &#171;Сотрудники&#187; (Employees) и &#171;Заказы&#187; (Orders). Для этого нам придется сначала сделать копии этих таблиц и установить связь между ними:</p>
+<ol>
+<li>Раскройте список таблиц в окне базы данных и выделите таблицу &#171;Сотрудники&#187;.</li>
+<li>Скопируйте таблицу в буфер обмена, нажав комбинацию клавиш <strong>&lt;Ctrl&gt;+&lt;C&gt;</strong>.</li>
+<li>Вставьте таблицу из буфера обмена, нажав комбинацию клавиш <strong>&lt;Ctrl&gt;+&lt;V&gt;</strong>. Появится диалоговое окно  Вставка таблицы  (Paste Table As).</li>
+<li>В поле  Имя таблицы (Table Name) введите строку: Сотрудники (копия). Оставьте предлагаемое по умолчанию значение переключателя в группе  Параметры вставки (Paste Options). Нажмите кнопку  ОК или клавишу <strong>&lt;Enter&gt;</strong>. В списке появится новая таблица.</li>
+<li>Выполните шаги 1—4 для таблицы &#171;Заказы&#187;, создав таблицу &#171;Заказы (копия)&#187;.</li>
+<li>Для выполнения примера нам придется немного изменить таблицу &#171;Заказы (копия)&#187;. Поле &#171;КодСотрудника&#187; в таблице &#171;Заказы&#187; является полем подстановки, т. е. хотя в этом поле содержатся коды сотрудников, при отображении таблицы в этом поле показываются фамилия и имя сотрудника. Мы можем временно удалить поле подстановки, чтобы видеть результаты каскадного обновления данного поля. Для этого достаточно открыть таблицу &#171;Заказы (копия)&#187; в режиме Конструктора, выделить строку &#171;КодСотрудника&#187;, раскрыть в панели  Свойства поля  (Field Properties) вкладку  Подстановка (Lookup) и установить значение свойства  Тип источника строк (Row Source Type) равным  Поле (Text box). Сохраните изменение.</li>
+<li>Еще одно изменение потребуется ввести в таблицу &#171;Сотрудники (копия)&#187;. Поле &#171;КодСотрудника&#187; в ней имеет тип  Счетчик  (AutoNumber), поэтому Access не позволит изменить значение в этом поле. Откройте эту таблицу в режиме Конструктора и замените тип данных для поля &#171;КодСотрудника&#187; на  Числовой  (Number).</li>
+<li>Теперь нужно установить связи между новыми таблицами. Нажмите кнопку  Схема данных (Relationships) на панели инструментов для вывода окна  Схема данных (Relationships).</li>
+<li>Нажмите кнопку  Очистить макет (Clear Layout), чтобы очистить окно схемы данных. Подтвердите свое намерение в окне сообщения, нажав кнопку  Да (Yes).</li>
+<li>Добавьте таблицы &#171;Сотрудники (копия)&#187; и &#171;Заказы (копия)&#187; с помощью диалогового окна  Добавление таблицы  (Show Table). Для этого нажмите соответствующую кнопку на панели инструментов.</li>
+<li>Чтобы установить связь &#171;один-ко-многим&#187; между таблицами, перетащите поле &#171;КодСотрудника&#187; таблицы &#171;Сотрудники (копия)&#187; в соответствующее поле таблицы &#171;Заказы (копия)&#187;. Появится диалоговое окно  Изменение связей  (Edit Relationship).</li>
+<li>В этом окне необходимо установить флажки  Обеспечение целостности данных  (Enforce Referential Integrity) и  каскадное обновление связанных полей (Cascade Update Related Fields) (рис. 8.9). Нажмите кнопку ОК.</li>
+<li>Закройте окно  Схема данных  (Relationships).</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image21/bebb7f4c6219d684e29a53ef100514a1.gif" width="407" height="256" alt=""><meta itemprop="width" content="407">
+<meta itemprop="height" content="256"></span></p>
+<p> Рис. 8.9. Диалоговое окно  Изменение связей</p>
+<p>Для выполнения каскадного обновления:</p>
+<ol>
+<li>Откройте таблицы &#171;Сотрудники (копия)&#187; и &#171;Заказы (копия)&#187; и разместите их на экране так, чтобы были видны обе таблицы (рис 8.10).</li>
+<li>Отсортируйте таблицу &#171;Заказы (копия)&#187; по столбцу &#171;Сотрудник&#187;. Для этого выделите данный столбец, щелкнув левой кнопкой мыши по его заголовку, и нажмите кнопку  Сортировка по возрастанию  (Sort Ascending) на панели инструментов.</li>
+<li>Измените значение в столбце &#171;Код сотрудника&#187; первой записи таблицы &#171;Сотрудники (копия)&#187;, введя число 10, и нажмите клавишу <strong>&lt;Ф&gt;</strong>, чтобы перейти к следующей записи. Изменение кода сразу же будет отображено в столбце &#171;Сотрудник&#187; таблицы &#171;Заказы (копия)&#187;.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image05/2bc05a150ac1d833867666c74450028e.gif" width="545" height="371" alt=""><meta itemprop="width" content="545">
+<meta itemprop="height" content="371"></span></p>
+<p> Рис. 8.10. Каскадное обновление записей</p>
+<p> Создание запросов на удаления записей </p>
+<p>Запросы на удаление записей позволяют отобрать требуемые записи и удалить их за один прием. Принцип создания такого запроса аналогичен созданию запроса на обновление, однако, удаляя записи из связанных таблиц, необходимо помнить о том, что при этом не должна нарушаться целостность данных.</p>
+<p>Если две таблицы связаны отношением &#171;один-ко-многим&#187;, нельзя удалять записи из таблицы &#171;один&#187; если в таблице &#171;многие&#187; присутствуют соответствующие им записи. Сначала должны быть удалены записи в таблице &#171;многие&#187; и только потом — соответствующие им записи в таблице &#171;один&#187;. Для того чтобы упростить этот процесс, Access позволяет при определении связей между таблицами установить флажок  каскадное удаление связанных записей  (Cascade Delete Related Records). Такой флажок установлен, например, для связи таблиц &#171;Заказы&#187; (Orders) и &#171;Заказано&#187; (Order Details). Действительно, если требуется удалить из базы данных какой-то заказ, должны быть удалены не только запись об этом заказе в таблице &#171;Заказы&#187;, но ч все позиции данного заказа в таблице &#171;Заказано&#187;.</p>
+<p>Для создания запроса на удаления мы воспользуемся уже имеющимся запросом на добавление записей &#171;Копирование заказов&#187;.</p>
+<ol>
+<li>Откройте этот запрос в режиме Конструктора.</li>
+<li>Чтобы преобразовать запрос на добавление в запрос на удаление записей, выберите команду  Запрос, Удаление (Query, Delete Query). В бланке запроса появится строка  Удаление (Delete) (рис. 8.11). В первом столбце строки  Удаление (Delete) показывается значение  Из (From), которое указывает, что будут удаляться записи из таблицы &#171;Заказы&#187;. Во втором столбце строки  Удаление  (Delete) вы видите значение  Условие (Where), что указывает на использование этого столбца для определения критерия отбора удаляемых записей.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image25/e70824ed35f601d20dc73f9ce3de3eaf.gif" width="468" height="300" alt=""><meta itemprop="width" content="468">
+<meta itemprop="height" content="300"></span></p>
+<p> Рис. 8.11. Запрос на удаление записей из таблицы &#171;Заказы&#187;</p>
+<ol start="3">
+<li>Нажмите кнопку  Запуск  (Run). Выводятся сообщение с приглашением подтвердить удаление записей и информация о количестве записей, которые будут удалены. Их будет столько же, сколько было отобрано в соответствующем запросе на добавление. В этот момент еще можно отменить удаление, для чего достаточно нажать кнопку  Нет (No) в окне сообщения. Нажмите кнопку  Да (Yes), подтверждая удаление. Будут удалены все заказы за 1996 год из таблицы &#171;Заказы&#187; (Orders) и все позиции заказов из таблицы &#171;Заказано&#187; (Order Details). Вы можете убедиться в этом, если откроете таблицу &#171;Заказано&#187;.</li>
+<li>Сохраните запрос, дав ему имя: Удаление заказов.</li>
+</ol>
+<p>Однако такое каскадное удаление записей не всегда возможно. Например, для рассмотренной нами в предыдущем разделе связи таблиц &#171;Сотрудники&#187; и &#171;Заказы&#187; нельзя устанавливать флажок  каскадное удаление связанных записей  (Cascade Delete Related Records), т. к. удаление записи о сотруднике из таблицы &#171;Сотрудники&#187; не должно повлечь за собой удаление всех его заказов. Если вы попытаетесь удалить какую-либо запись о сотруднике и в таблице &#171;Заказы&#187; (Orders) окажутся заказы, принятые этим сотрудником, Access выдаст сообщение об ошибке (рис. 8.12).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image20/b57e634a82be4ad6780430522fda8d1f.gif" width="185" height="282" alt=""><meta itemprop="width" content="185">
+<meta itemprop="height" content="282"></span></p>
+<p> Рис. 8.12. Запрос на удаление</p>
+<p>Замечание</p>
+<p>Для того чтобы выполнялась автоматическая проверка целостности данных, не забудьте для всех связей в базе данных установить флажок  Обеспечение целостности данных (Enforce Referential Integrity).</p>
+<p> Анализ данных с помощью запросов </p>
+<p>Еще одной функцией запросов Access является анализ данных, которые распределены по разным таблицам. Анализ данных может выполняться с помощью:</p>
+<ul>
+<li>перекрестных запросов, которые позволяют выполнить некоторую обработку таблиц с целью получения сводных данных;</li>
+<li>статистических функций, которые позволяют выполнять различного рода расчеты;</li>
+<li>мастеров, которые позволяют отыскать в таблице повторяющиеся записи и записи, для которых отсутствуют подчиненные записи в связанной таблице;</li>
+<li>сводных таблиц и сводных диаграмм — аналогов соответствующих средств Excel.</li>
+</ul>
+<p> Перекрестные запросы </p>
+<p> Перекрестные запросы — это запросы, в которых происходит статистическая обработка данных, результаты которой выводятся в виде таблицы, очень похожей на сводную таблицу Excel. Перекрестные запросы обладают следующими достоинствами:</p>
+<ul>
+<li>возможностью обработки значительного объема данных и вывода их в формате, который очень хорошо подходит для автоматического создания графиков и диаграмм;</li>
+<li>простотой и скоростью разработки сложных запросов с несколькими уровнями детализации.</li>
+</ul>
+<p>Однако они имеют и недостатки — например, нельзя сортировать таблицу результатов по значениям, содержащимся в столбцах, т. к. в подавляющем большинстве случаев одновременное упорядочивание данных в столбцах по всем строкам невозможно. При этом вы можете задать сортировку по возрастанию или по убыванию для заголовков строк.</p>
+<p>Перекрестные запросы удобны для представления данных в виде таблицы, но т. к такая таблица часто имеет разное количество столбцов, на них довольно сложно строить отчеты. Создание отчета на базе перекрестного запроса будет рассматриваться  в гл. 13.</p>
+<p>В качестве примера сформируем два перекрестных запроса к базе данных &#171;Борей&#187; для вывода ежемесячных продаж товара (по его коду) и ежеквартальных продаж товара (по его типу). Подобные таблицы, содержащие итоги, которые подводятся через определенные промежутки времени, например через каждый месяц или квартал, обычно используются в качестве данных для графиков.</p>
+<p>В описываемой ниже пошаговой процедуре создания перекрестного запроса показано, как можно пользоваться выражениями для создания новых вычисляемых полей в запросах.</p>
+<p>Итак, мы будем создавать перекрестный запрос, в котором в строках выводятся товары, а в столбцах — соответствующие им ежемесячные объемы продаж. Для этого:</p>
+<ol>
+<li>Создайте новый запрос в режиме Конструктора и добавьте в него таблицы &#171;Товары&#187; (Products), &#171;Заказы&#187; (Orders) и &#171;Заказано&#187; (Order Details).</li>
+<li>Перетащите поля &#171;КодТовара&#187; (ProductlD) и &#171;Марка&#187; (ProductName) таблицы &#171;Товары&#187;, а затем поле &#171;ДатаРазмещения&#187; (OrderedDate) таблицы &#171;Заказы&#187; в первые три столбца бланка запроса.</li>
+<li>Выберите команду меню  Запрос, Перекрестный (Query, Crosstab Query). Заголовок окна запроса  Запрос1:на выборку (Query1:Select Query) изменится на  Запрос!перекрестный запрос (Queryl:Crosstab Query). Кроме того, в бланк запроса будут добавлены строки  Перекрестная таблица (Crosstab) и  Групповая операция (Total), в которую во всех столбцах автоматически вводится операция  Группировка (Group By).</li>
+<li>Выберите в списке ячейки  Перекрестная таблица столбца &#171;КодТовара&#187; значение  Заголовки строк  (Row Heading). Выполните то же самое для столбца &#171;Марка&#187;. Эти столбцы являются требуемыми заголовками строк перекрестной таблицы.</li>
+<li>Выберите в списке ячейки  Групповая операция столбца &#171;ДатаРазмещения&#187; значение  Условие  (Where). В ячейке  Условие отбора (Criteria) этого столбца введите выражение &lt;=#31.12.97# And &gt;=#01.01.97# для вывода в перекрестной таблице данных за 1997 год.</li>
+<li>Установите курсор в ячейку  Поле  (Field) следующего (пустого) столбца и введите выражение:Объем продаж: Sum([Количество]*[Заказано].[Цена])
+<p>Это будет поле, значение которого вычисляется с помощью описанного выражения, а название поля — &#171;Объем продаж&#187;. В выражении используются поля из таблиц, которые включены в запрос, однако обратите внимание, что сами поля в результат запроса не включены. Это означает, что при создании вычисляемого поля в выражение можно включать ссылки не только на поля самого запроса, но и на поля, которые не включаются в результат запроса. Важно, чтобы они были в исходных таблицах. При ссылке на поле &#171;Цена&#187; в выражении мы указали еще имя таблицы &#171;Заказано&#187;, а при ссылке на поле &#171;Количество&#187; не указывали. Указать имя таблицы пришлось потому, что поле с именем &#171;Цена&#187; присутствует и в таблице &#171;Товары&#187; и в таблице &#171;Заказано&#187;. Если не указать в выражении имени таблицы, Access не сможет определить, из какой таблицы брать значения, поэтому при выполнении запроса выдаст сообщение об ошибке, как это представлено на рис. 8.13.</p>
+</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image21/c224dcd260195b181c3a5db0464f73da.gif" width="485" height="134" alt=""><meta itemprop="width" content="485">
+<meta itemprop="height" content="134"></span></p>
+<p> Рис. 8.13. Сообщение об ошибке в выражении вычисляемого поля</p>
+<blockquote>
+<p>Выберите в ячейке  Групповая операция (Total) того же столбца значение  Выражение (Expression), а затем в ячейке  Перекрестная таблица — значение  Значение (Value). В столбце &#171;Объем продаж&#187; вычисляется общий объем заказов на каждый товар, который будет подставляться в ячейки результирующей таблицы запроса.</p>
+</blockquote>
+<ol start="7">
+<li>Установите курсор в ячейку  Поле  (Field) следующего (пустого) столбца и введите выражение Format([ДатаРазмещения];&#187;mmm&#187;). Функция Format О в данном случае будет возвращать три первые буквы месяца от значения даты в столбце &#171;ДатаРазмещения&#187;. С помощью этой функции мы создали еще одно вычисляемое поле в запросе, причем после окончания ввода этого выражения Access автоматически создает имя этого поля &#171;Выражение!&#187; (Exprl). Так происходит всякий раз, когда мы не определяем имя вычисляемого поля. Выберите из списка в ячейке  Перекрестная таблица  этого столбца значение  Заголовки столбцов (Column Heading) (рис. 8.14). Это означает, что данный столбец запроса будет преобразован в процессе выполнения запроса в строку, содержащую заголовки столбцов результирующей таблицы.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image04/2001debd951094b290903d286279ea1e.gif" width="487" height="318" alt=""><meta itemprop="width" content="487">
+<meta itemprop="height" content="318"></span></p>
+<p> Рис. 8.14. Перекрестный запрос в режиме Конструктора</p>
+<ol start="8">
+<li>Нажмите кнопку  Запуск (Run). Появится результирующее множество записей, представленное на рис. 8.15.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image15/83e8f56a32fdb55b31064d2dc72e24e5.gif" width="509" height="320" alt=""><meta itemprop="width" content="509">
+<meta itemprop="height" content="320"></span></p>
+<p> Рис. 8.15. Результирующее множество перекрестного запроса</p>
+<p>Стоит обратить внимание, что выведенная перекрестная таблица обладает одним недостатком: расположение столбцов определяется алфавитным порядком их заголовков, а не хронологической очередностью. Избежать этой неприятности можно. Для этого необходимо задать порядок сортировки заголовков столбцов. В следующем разделе мы покажем, как это можно сделать.</p>
+<p> Использование фиксированных заголовков столбцов в перекрестных запросах </p>
+<p>Для того чтобы в построенном запросе вывести столбцы в порядке календарной очередности месяцев, нужно задать фиксированные заголовки столбцов:</p>
+<ol>
+<li>Переключитесь в режим Конструктора и выведите на экран свойства запроса. Для этого нажмите кнопку  Свойства  (Properties) на панели инструментов и щелкните левой кнопкой мыши на свободном поле панели, в которой отображаются таблицы запроса. В диалоговом окне свойств запроса выводится свойство  Заголовки столбцов (Column Headings), которое имеется только у перекрестных запросов.</li>
+<li>Введите краткие названия каждого месяца года в поле свойства  Заголовки столбцов  (рис. 8.16). Необходимо воспроизвести названия так, как они возвращаются функцией Format () и выглядят при стандартном отображении заголовков столбцов (см. рис. 8.15), в противном случае, данные для неправильно заданных месяцев не отображаются. Названия требуется заключить в кавычки и разделить символом точки с запятой. Пробелы не нужны. По завершении ввода названий всех 12 месяцев закройте окно свойств.</li>
+<li>Перейдите в режим просмотра SQL (рис. 8.17). Обратите внимание на использование выражений в вычисляемых полях и критерии запроса, а также ключевых слов TRANSFORM И PIVOT. Инструкция SQL содержит операцию TRANSFORM, в которой определяются данные, содержащиеся в таблице. В операции PIVOT задаются заголовки столбцов.</li>
+</ol>
+<p>После ключевого слова IN указываются, если они есть, фиксированные названия столбцов.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image02/142c68458440ad1455aae08fa9680424.gif" width="406" height="295" alt=""><meta itemprop="width" content="406">
+<meta itemprop="height" content="295"></span></p>
+<p> Рис. 8.16. Задание значения свойства  Заголовки столбцов</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image02/14c44ad1405e831d1ec5884a72bd0e4c.gif" width="296" height="175" alt=""><meta itemprop="width" content="296">
+<meta itemprop="height" content="175"></span></p>
+<p> Рис. 8.17. Перекрестный запрос на SQL</p>
+<p>Замечание</p>
+<p>В ANSI SQL слова TRANSFORM и PIVOT не являются зарезервированными словами, а ключевое слово IN интерпретируется по-разному в Access и ANSI SQL. Обратите также внимание на формат даты в инструкции SQL: сначала пишется номер месяца, а потом число месяца, разделителем является косая черта, и все выражение содержится между значками #. Именно в таком формате должны быть всегда написаны даты в предложении SQL, хотя, как вы видели, в бланке запроса можно писать даты в привычном нам европейском формате. Нужное преобразование Конструктор выполняет автоматически.</p>
+<ol start="4">
+<li>Нажмите кнопку  Запуск  (Run) для вывода результатов запроса. Теперь заголовки столбцов перекрестной таблицы соответствуют календарной последовательности (рис. 8.18).</li>
+<li>Выберите команду  Файл, Сохранить как  (File, Save As) и сохраните запрос под именем &#171;Ежемесячная выручка от продаж в 1997 году&#187;.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image23/d4c373b20afe3e8ba8065bcaa0e299fb.gif" width="405" height="235" alt=""><meta itemprop="width" content="405">
+<meta itemprop="height" content="235"></span></p>
+<p> Рис. 8.18. Перекрестная таблица с фиксированными заголовками столбцов</p>
+<p> Изменение уровня детализации в запросе </p>
+<p>Для создания удобного для анализа представления или наглядного графика можно сократить число строк и столбцов в результатах построенного запроса. С этой целью создадим перекрестный запрос, который выводит ежеквартальную выручку от продаж по типам товаров. Чтобы создать такой запрос:</p>
+<ol>
+<li>Добавьте в уже созданный запрос таблицу &#171;Типы&#187; (Categories).</li>
+<li>Замените столбцы &#171;КодТовара&#187; и &#171;Марка&#187; в запросе столбцами &#171;КодТипа&#187; и &#171;Категория&#187; таблицы &#171;Типы&#187;. Для этого сначала удалите лишние столбцы, а затем перенесите нужные столбцы в бланк заказа. В ячейках  Перекрестная таблица  (Crosstab) обоих столбцов выберите значение  Заголовки строк (Row Heading) (рис. 8.19).</li>
+<li>Измените выражение в столбце  Выражение! (Expl) Format([ДатаРазмещения];&#187;&#187;&#187;Квартал &#171;&#187;q&#187;) , которое определяет заголовки столбцов &#171;Квартал 1&#187;, &#171;Квартал 2&#187;, &#171;Квартал 3&#187;, &#171;Квартал 4&#187;. Несколько кавычек требуется для указания того, что слово Квартал и пробел рассматриваются как строка, a q — как формат.</li>
+<li>Откройте бланк свойств и очистите содержимое свойства  Заголовки столбцов  (Column Headings), а затем закройте бланк. Если не удалить фиксированные заголовки, то в перекрестной таблице не будет данных. Чтобы ускорить работу запроса, можно задать в поле свойства  Заголовки столбцов четыре фиксированных названия: &#171;Квартал 1&#187;, &#171;Квартал 2&#187;, &#171;Квартал 3&#187;, &#171;Квартал 4&#187;.</li>
+<li>Нажмите кнопку  Запуск  (Run) для вывода результатов запроса (рис. 8.20).</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image15/845b5bfa46f536d7ee3788b4a03389de.gif" width="509" height="320" alt=""><meta itemprop="width" content="509">
+<meta itemprop="height" content="320"></span></p>
+<p> Рис. 8.19. Запрос для вывода выручки от продаж по типам товаров</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image22/c7ade87ddc17ce282cb4308af9303360.gif" width="429" height="130" alt=""><meta itemprop="width" content="429">
+<meta itemprop="height" content="130"></span></p>
+<p> Рис. 8.20. Перекрестная таблица с итогами по кварталам</p>
+<p> Статистические функции для выполнения расчетов </p>
+<p> Статистические функции используются в запросах главным образом для вычисления всевозможных итоговых значений, например для числового поля таблицы можно вычислить среднее значение или сумму значений для всех или отобранных записей, можно посчитать количество записей, возвращаемых запросом.</p>
+<p>Статистические функции, которые можно использовать в запросах Access, входят в состав Access SQL. Описание этих функций, а также типов полей, к которым они могут быть применены, приведено в табл. 8.1.</p>
+<table class="table_common" width="600">
+<tbody>
+<tr class="header">
+<td width="150">Функция</td>
+<td width="150">Типы полей</td>
+<td>Описание</td>
+</tr>
+<tr class="one">
+<td>Avg()</td>
+<td>Все типы полей, исключая Текстовый (Text), Поле Memo (Memo) и Поле объекта OLE (OLE Object).</td>
+<td>Вычисляет арифметическое среднее набора чисел, содержащихся в указанном поле запроса</td>
+</tr>
+<tr class="two">
+<td>Count ( )</td>
+<td>Все типы полей</td>
+<td>Вычисляет количество непустых записей, возвращаемых запросом</td>
+</tr>
+<tr class="one">
+<td>First ( )</td>
+<td>Все типы полей</td>
+<td>Возвращает значение поля из первой записи результирующего набора</td>
+</tr>
+<tr class="two">
+<td>Last ()</td>
+<td>Все типы полей</td>
+<td>Возвращает значение поля из последней записи результирующего набора</td>
+</tr>
+<tr class="one">
+<td>Max()</td>
+<td>Все типы полей, исключая Текстовый, Поле Memo и Поле объекта OLE</td>
+<td>Возвращает максимальное значение из набора, содержащегося в указанном поле</td>
+</tr>
+<tr class="two">
+<td>Min()</td>
+<td>Все типы полей, исключая Текстовый, Поле Memo и Поле объекта OLE</td>
+<td>Возвращает минимальное значение из набора, содержащегося в указанном поле</td>
+</tr>
+<tr class="one">
+<td>StDev() StDevP()</td>
+<td>Все типы полей, исключая Текстовый, Поле Memo и Поле объекта OLE</td>
+<td>Возвращают смещенное и несмещенное значение среднеквадратичного отклонения, вычисляемого по набору значений, содержащихся в указанном поле</td>
+</tr>
+<tr class="two">
+<td>Sum( )</td>
+<td>Все типы полей, исключая Текстовый, Поле Memo и Поле объекта OLE</td>
+<td>Возвращает сумму набора значений, содержащихся в заданном поле</td>
+</tr>
+<tr class="one">
+<td>Var() VarP ( )</td>
+<td>Все типы полей, исключая Текстовый, Поле Memo и Поле объекта OLE</td>
+<td>Возвращают значение смещенной и не смещенной дисперсии, вычисляемой по набору значений, содержащихся в указанном поле</td>
+</tr>
+</tbody>
+</table>
+<p>Перечисленных функций обычно достаточно для решения большинства задач. Тем не менее, при необходимости пользователь может самостоятельно написать функцию на языке VBA, которая будет выполнять сложные статистические, научные или инженерные расчеты над данными, и использовать эту функцию в запросах.</p>
+<p>Замечание</p>
+<p>Все статистические функции Access SQL поддерживаются стандартом ANSI SQL, но не все из них поддерживаются другими СУБД. Например, не все серверные базы данных поддерживают функции StDev(), StDevP(), Var () и VarP (). Поэтому, если вы планируете в дальнейшем перенести свою базу данных на сервер, прежде чем использовать эти функции, нужно убедиться, поддерживаются ли они сервером. Иначе потом придется изменять все объекты, в которых встречаются эти функции.</p>
+<p>Использование статистических функций для расчета итоговых значений тесно связано с применением групповых операций в запросе. Групповые операции позволяют задать группы, для которых выполняются вычисления. Ниже мы приведем примеры таких расчетов как на всем множестве записей, так и на подмножествах, выбранных по условиям запроса.</p>
+<p> Вычисления на всем диапазоне записей </p>
+<p>Первый запрос, который мы предлагаем построить, должен ответить на вопрос: &#171;Сколько заказов и на какую сумму разместил каждый клиент?&#187;. Для этого нам придется построить многотабличный запрос. Воспользуемся уже существующим в базе данных &#171;Борей&#187; запросом &#171;Сведения о заказах&#187; (Oreder Details Extended), а также таблицами &#171;Клиенты&#187; (Customers) и &#171;Заказы&#187; (Orders):</p>
+<ol>
+<li>Создайте новый запрос и добавьте в него таблицы &#171;Клиенты&#187;, &#171;Заказы&#187; и запрос &#171;Сведения о заказах&#187;.</li>
+<li>Перетащите в бланк заказа поле &#171;Название&#187; из таблицы &#171;Клиенты&#187;, поле &#171;КодЗаказа&#187; из таблицы &#171;Заказы&#187;, а затем поле &#171;Отпускная цена&#187; из запроса &#171;Сведения о заказах&#187;.</li>
+<li>Нажмите кнопку  Групповые операции (Totals) на панели инструментов. В бланк запроса добавляется строка  Групповая операция (Total), содержащая по умолчанию в каждой ячейке операцию  Группировка (Group By).</li>
+<li>Теперь нужно в строке  Групповая операция (Total) задать необходимые статистические функции. Для поля &#171;Название&#187; оставьте значение  Группировка  (Group By), для поля &#171;КодЗаказа&#187; выберите из списка функцию count, а для поля &#171;Отпускная цена&#187; — Sum (рис. 8.21).</li>
+<li>Нажмите кнопку  Запуск (Run) на панели инструментов, чтобы посмотреть результаты запроса. Вы получите таблицу, которая содержит список клиентов, и для каждого клиента указывается количество заказов, которое он сделал, и общая сумма этих заказов (рис. 8.22).</li>
+<li>Закройте запрос, сохранив era под именем &#171;Итоги по клиентам&#187;.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image18/a75192fd69358f4ee8db093672858f02.gif" width="511" height="412" alt=""><meta itemprop="width" content="511">
+<meta itemprop="height" content="412"></span></p>
+<p> Рис. 8.21. Использование статистических функций в запросе</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image04/24642bbedc0eec7244e0c2d9854ca07b.gif" width="499" height="248" alt=""><meta itemprop="width" content="499">
+<meta itemprop="height" content="248"></span></p>
+<p> Рис. 8.22. Запрос &#171;Итоги по клиентам&#187;</p>
+<p> Вычисления на выделенных записях таблицы </p>
+<p>В предыдущем примере расчеты производились над всеми имеющимися в таблице &#171;Заказы&#187; (Orders) записями. Однако часто требуется выполнить вычисления над определенным набором данных и, основываясь на них, составить статистику. Для этого нужно добавить в запрос условия для выборки нужного набора записей. Например, мы можем изменить предыдущий запрос таким образом, чтобы получить данные не по всем клиентам, а только по тем, которые находятся в Германии. Для этого:</p>
+<ol>
+<li>Откройте запрос &#171;Итоги по клиентам&#187;, который мы построили в предыдущем разделе, в режиме Конструктора.</li>
+<li>Перетащите поле &#171;Страна&#187; (Country) из таблицы &#171;Клиенты&#187; (Customers) в бланк запроса. В строке  Групповая операция  (Total) для этого поля появляется элемент  Группировка (Group by).</li>
+<li>Замените элемент  Группировка (Group by) на элемент  Условие (Where), выбрав его из списка (рис. 8.23). При этом автоматически сбрасывается флажок (Show) в данном столбце. Это означает, что в результат запроса поле &#171;Страна&#187; не попадет. Если вы попытаетесь установить этот флажок, то при выполнении запроса будет выведено сообщение об ошибке (рис. 8.24). Действительно, если мы хотим, чтобы поле &#171;Страна&#187; отобразилось в результате запроса, его нужно добавить в бланк запроса второй раз, при этом в строке  Групповая операция  (Total) данного столбца нужно оставить элемент  Группировка (Group by) и установить флажок  Вывод на экран (Show).</li>
+<li>Введите слово Германия в ячейку  Условие отбора  (Criteria) первого столбца &#171;Страна&#187; (того, который не выводится на экран).</li>
+<li>Выберите команду  Вид, Режим SQL  (View, SQL View) или щелкните по стрелке на кнопке Вид (View) и выберите значение  Режим SQL (SQL View) для вывода инструкции SQL. Она будет выглядеть следующим образом: SELECT Клиенты.Название, Count(Заказы.КодЗаказа) AS [CountOfKoд3a каза], Sum([Сведения о заказах].ОтпускнаяЦена) AS [SumOfОтпускная Цена], Клиенты.Страна, Клиенты.Страна FROM Клиенты INNER JOIN ([Сведения о заказах] INNER JOIN Заказы ON [Сведения о заказах].КодЗаказа = Заказы.КодЗаказа) ON Клиенты.КодКлиента = Заказы.КодКлиента WHERE (((Клиенты.Страна)=&#187;Германия&#187;)) GROUP BY Клиенты.Название, Клиенты.Страна;В ней используются две статистические функции— Count () и Sum () — и предложение WHERE, содержащее условие отбора записей.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image15/8412e5cfeeaa060b4341a17baf485b9d.gif" width="513" height="406" alt=""><meta itemprop="width" content="513">
+<meta itemprop="height" content="406"></span></p>
+<p> Рис. 8.23. Задание условия отбора записей в запросе &#171;Итоги по клиентам&#187;</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image10/56687a789213c38b259c9c9704610dc2.gif" width="494" height="115" alt=""><meta itemprop="width" content="494">
+<meta itemprop="height" content="115"></span></p>
+<p> Рис. 8.24. Сообщение об ошибке при попытке отобразить поле, для которого задано условие</p>
+<ol start="6">
+<li>Измените это предложение, заменив названия полей, в которых ведутся расчеты: AS [Число заказов]  вместо  AS [CountOfКодЗаказа], AS [Общая сумма]  вместо AS [Sum()£ОтпускнаяЦена].</li>
+<li>Нажмите на панели инструментов кнопку  Запуск  (Run) для вывода результата. Результирующий набор записей представлен на рис. 8.25.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image09/4bbb73a304bdbe8098c3e6f6d49fa1f3.gif" width="504" height="213" alt=""><meta itemprop="width" content="504">
+<meta itemprop="height" content="213"></span></p>
+<p> Рис. 8.25. Результаты запроса &#171;Итоги по клиентам по городам&#187;</p>
+<p>Статистические функции можно использовать также в вычисляемых полях запроса. Например, для создания запроса &#171;Итоги по клиентам&#187; мы могли бы нместо запроса &#171;Сведения о заказах&#187; использовать прямо таблицу &#171;Заказано&#187;. На рис. 8.26 показано вычисляемое поле &#171;Стоимость&#187;. В выражение для этого поля включена функция Sum ():</p>
+<p>Стоимость: Sum(CCur([Заказано].[Цена]*[Количество]*(1-[Скидка])/100) *100)</p>
+<p>Тогда в строке  Групповая операция (Total) для этого столбца должен быть выбран элемент  Выражение (Expression). При использовании группировки по полю &#171;КодЗаказа&#187;, поле &#171;Стоимость&#187; будет содержать общую стоимость заказа.</p>
+<p>Можно создать и другое вычисляемое поле:</p>
+<p>Стоимость: CCur([Заказано].[Цена]*[Количество]*(1-[Скидка])/100) *100,</p>
+<p>а функцию Sum () использовать в строке  Групповая операция (Total). Оба варианта будут правильны.</p>
+<p>Можно изменить этот запрос таким образом, чтобы посчитать общее число клиентов, заказов и общую сумму всех заказов. В этом случае результатом запроса будет одна строка, содержащая итоговые значения по всем полям. К сожалению, нельзя построить запрос, результатом которого была бы таблица, содержащая как детальные, так и итоговые данные, как это обычно бывает в таблицах Excel. Такое представление данных можно организовать только в сводных таблицах.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image05/301c65e20eecf360ba80bd4852d7585e.gif" width="514" height="407" alt=""><meta itemprop="width" content="514">
+<meta itemprop="height" content="407"></span></p>
+<p> Рис. 8.26. Использование статистической функции в выражении для вычисляемого поля</p>
+<p>Внимание</p>
+<p>Статистические функции при вычислениях не обрабатывают записи, которые имеют значение Null в том поле, к которому они применяются. Поэтому нужно быть осторожным при использовании функции Count (). Она будет считать только те записи, которые не содержат пустых значений. Если нужно сосчитать все записи в результирующем наборе или группе, используйте функцию Nz (&lt;имя поля&gt;), которая преобразует пустое значение в 0, и только потом суммируйте.</p>
+<p> Отбор повторяющихся записей и записей без подчиненных </p>
+<p>Типичной операцией, которую приходится выполнять в базе данных, является поиск дубликатов, т. е. повторяющихся записей в таблице. Например, можно выяснить, не встречается ли в таблице &#171;Клиенты&#187; (Customers) одна и та же фирма несколько раз. При этом необходимо сначала определить, какие записи считать дубликатами. В данном случае дубликатами мы будем считать организации с одинаковыми названиями и адресами. Можно создать запрос, который найдет все такие записи. Для этого проще всего воспользоваться соответствующим мастером:</p>
+<ol>
+<li>Раскройте список запросов в окне базы данных и нажмите кнопку  Создать  (New). В диалоговом окне  Новый запрос  (New Query) выберите из списка элемент  Повторяющиеся записи  (Find Duplicates Query Wizard). Появится диалоговое окно мастера поиска повторяющихся записей (рис. 8.27).</li>
+<li>Выберите из списка таблицу &#171;Клиенты&#187; (Customers) (по умолчанию в окне отображается именно список таблиц, но можно установить флажок и получить список запросов или таблиц и запросов вместе).</li>
+<li>Следуйте указаниям мастера (они подробно описаны в диалоговых окнах), и в результате вы получите запрос, который в режиме Конструктора может выглядеть так, как представлено на рис. 8.28.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image25/e153deac409730b9cf649e371c254148.gif" width="534" height="369" alt=""><meta itemprop="width" content="534">
+<meta itemprop="height" content="369"></span></p>
+<p> Рис. 8.27.  Диалоговое окно Мастера поиска повторяющихся записей</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image27/fb01d3ffee7b5e888c3567c0b9c1ca71.gif" width="466" height="354" alt=""><meta itemprop="width" content="466">
+<meta itemprop="height" content="354"></span></p>
+<p> Рис. 8.28.  Запрос, отбирающий повторяющиеся записи в таблице &#171;Клиенты&#187;</p>
+<ol start="4">
+<li>Данный запрос имеет сложное выражение в строке  Условие отбора  (Criteria) поля &#171;Название&#187;:In (SELECT [Название] FROM [Клиенты] As Tmp GROUP BY [Название],[Адрес] HAVING Count(*)&gt;l And [Адрес] = [Клиенты].[Адрес])
+<p>Это выражение включает еще один запрос. Такой запрос называется  подчиненным  запросом  (подробнее о подчиненных запросах см. разд. &#171;Создание подчиненных запросов&#187; в конце данной главы).  Чтобы посмотреть, как полностью выглядит инструкция SQL, соответствующая этому запросу, нужно перейти в режим SQL.</p>
+</li>
+</ol>
+<p>Совет</p>
+<p>Мы рекомендуем при работе с запросами в режиме Конструктора чаще открывать окно  Режим SQL  (SQL View). Изучая, как Access создает инструкции SQL, можно постепенно выучить этот язык. Правда, помните, что в данном случае мы имеем дело с диалектом стандартного языка SQL — Access SQL. Ниже мы расскажем, чем он отличается от стандартного языка SQL (см. разд. &#171;Сравнение ANSI и Jet SQL&#187; данной главы).</p>
+<p>Такой поиск разумно выполнять также в таблицах, которые экспортированы из другой среды, например Excel. Эти таблицы могут содержать дублирующие записи, которые нужно найти и удалить. Для удаления дубликатов можно воспользоваться процедурой, которая описана в справке Access в разделе  Работа с запросами, Работа с запросами на изменение, Удаление повторяющихся записей из таблицы. </p>
+<p>Еще один мастер позволяет найти все записи в главной таблице, которые не имеют связанных записей в подчиненной таблице (обратной ситуации быть не должно, если вы правильно установили флажки, обеспечивающие целостность данных)  (см. также разд. &#171;Обеспечение целостности данных&#187;<a href="https://taurion.ru/access/2">гл. 2</a>). </p>
+<p>Чтобы создать запрос, который покажет всех клиентов, которые не имеют заказов:</p>
+<ol>
+<li>Раскройте список запросов в окне базы данных и нажмите кнопку  Создать  (New). В диалоговом окне  Новый запрос  (New Query) выберите из списка элемент  Записи без подчиненных  (Find Unmatched Query Wizard). Появится диалоговое окно  Поиск записей, не имеющих подчиненных  (Find Unmatched Query Wizard), аналогичное окну  Поиск повторяющихся записей  (см. рис. 8.27).</li>
+<li>Выберите из списка таблицу &#171;Клиенты&#187; (Customers).</li>
+<li>Следуйте указаниям мастера, в результате чего вы получите запрос, который в режиме Конструктора может выглядеть так, как представлено на рис. 8.29.</li>
+</ol>
+<p>В бланке запроса в столбце &#171;КодКлиента&#187; задано условие — Is Null. Это означает, что выбираются все клиенты, код которых отсутствует в таблице &#171;Заказы&#187; (Orders). Вы можете использовать это условие всякий раз, когда нужно отыскать записи, у которых одно из полей пусто.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image01/0b2d708af66558eec197c2ad1daaee55.gif" width="497" height="318" alt=""><meta itemprop="width" content="497">
+<meta itemprop="height" content="318"></span></p>
+<p> Рис. 8.29.  Запрос для поиска записей, не имеющих подчиненных записей</p>
+<p> Сводные таблицы </p>
+<p> Сводная таблица — это еще одно удобное средство для анализа данных. Они позволяют превратить обычную таблицу или результирующее множество запроса, содержащее большое число записей и непригодное для анализа, в компактную таблицу, включающую только итоговые данные. Причем, в отличие от перекрестных запросов, структура сводной таблицы легко трансформируется, позволяя просматривать данные в различных разрезах и с различной степенью детализации, что и требуется для анализа. Кроме того, данные, представленные в табличной форме, могут быть легко преобразованы в графическую форму с помощью сводных диаграмм, что делает их еще более наглядными.</p>
+<p>Замечание</p>
+<p>Режим Сводная таблица может быть применен и к таблице, и к запросу, и к форме. Но, на наш взгляд, он наиболее применим именно к запросу, который обычно объединяет данные из нескольких таблиц и эти данные нужно иметь возможность представить в удобном для анализа виде.</p>
+<p> Создание сводной таблицы </p>
+<p>Для того чтобы продемонстрировать возможности сводных таблиц, рассмотрим запрос &#171;Счета&#187; (Invoices). Раскройте список запросов и откройте этот запрос в режиме Таблицы. Вы увидите таблицу, которая содержит свыше двух тысяч записей и более двух десятков полей. Теперь попробуем представить этот запрос в виде сводной таблицы.</p>
+<ol>
+<li>Щелкните по стрелке на кнопке  Вид (View) панели инструментов и выберите из списка элемент  Сводная таблица (PivotTable View). На экране появится макет будущей таблицы, который состоит из четырех областей. Каждая область имеет надпись, которая показывает, какие данные должны в ней помещаться (рис. 8.30).</li>
+<li>Чтобы удобнее было создавать таблицу, необходимо отобразить на экране список полей запроса. Этот список показывается в специальном окне  Список полей сводной таблицы (PivotTable Field List) (рис. 8.30, справа). Если он не виден на вашем экране, нажмите кнопку  Поля (Field List) на панели инструментов. Теперь требуется просто перетащить мышью поля в соответствующие области таблицы.</li>
+<li>Найдите в списке поле &#171;Страна&#187; (Country) и переместите его в верхнюю область таблицы, которая называется  областью фильтра.  После этого вы сможете фильтровать данные в таблице по странам клиентов. В сводной таблице появляется еще одно измерение — глубина — благодаря которому вы можете просматривать и анализировать данные по странам. Каждый срез таблицы будет отображать данные по выбранной стране.</li>
+<li>Выделите в списке полей поле &#171;Марка&#187; (ProductName) и перетащите его в крайнюю левую область. Эта область называется  областью строк  и будет содержать список всех товаров, на которые были выписаны счета. Заметьте, что этот список по умолчанию упорядочивается по наименованию товара и последней строкой является строка &#171;Общие итоги&#187; (Grand Total), содержащая общий итог по всем строкам таблицы.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image08/44a02f7e1e469b447c61a634a79a5d15.gif" width="527" height="474" alt=""><meta itemprop="width" content="527">
+<meta itemprop="height" content="474"></span></p>
+<p> Рис. 8.30. Макет сводной таблицы</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image03/1bd0d4994c6c4afb0fd008d11aada242.gif" width="522" height="442" alt=""><meta itemprop="width" content="522">
+<meta itemprop="height" content="442"></span></p>
+<p> Рис. 8.31. Запрос &#171;Счета&#187; в режиме сводной таблицы</p>
+<ol start="5">
+<li>Чтобы определить столбцы таблицы, переместите поле &#171;Дата размещения по месяцам&#187; (OrderDate By Month) в область столбцов, которая имеет надпись  Перетащите сюда поля столбцов  (Drop Column Fields Here), В таблице появятся три столбца, которые будут содержать данные по годам — это самый верхний уровень группировки, — и один итоговой столбец &#171;Общие итоги&#187; (Grand Total).</li>
+<li>Мы определили заголовки строк и столбцов таблицы, теперь остается определить, что будет отображаться в самой таблице. Переместитесь в самую большую область таблицы — поле &#171;Отпускная цена&#187; (ExtendedPrice). Таблица приобретет вид, представленный на рис. 8.31. По умолчанию в ней отображаются все данные по всем товарам и странам.</li>
+</ol>
+<p>Когда таблица отображается в режиме Сводная таблица, в верхней части окна приложения видна специальная панель инструментов  Сводные таблицы (Pivot Table). Эта панель инструментов представлена на рис. 8.32.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image24/d7278b99934a208f01ba5e80db5a2b8e.gif" width="369" height="74" alt=""><meta itemprop="width" content="369">
+<meta itemprop="height" content="74"></span></p>
+<p> Рис. 8.32. Панель инструментов  Сводные таблицы</p>
+<p>Краткое описание кнопок этой панели приведено в табл. 8.2.[  Как и в других случаях, в таблице представлены те кнопки, которые используются только в данном режиме. ] В дальнейших разделах этой главы мы познакомимся с большинством функций, связанных с этими кнопками.</p>
+<table class="table_common" width="600">
+<tbody>
+<tr class="header">
+<td width="150">Кнопка</td>
+<td width="150">Команда меню</td>
+<td>Описание</td>
+</tr>
+<tr class="one">
+<td>Автофильтр (AutoFilter)</td>
+<td>Сводная таблица, Автофильтр (PivotTable, AutoFilter)</td>
+<td>Устанавливает и сбрасывает фильтры</td>
+</tr>
+<tr class="two">
+<td>Показать верхние и нижние элементы (Show Top/Bottom Items)</td>
+<td>Сводная таблица, Показать верхние и нижние элементы (PivotTable, Show Top/Bottom Items)</td>
+<td>Устанавливает фильтр, отображая заданное число первых или последних строк в&#8217; отсортированной таблице</td>
+</tr>
+<tr class="one">
+<td>Автовычисления (AutoCalc)</td>
+<td>Сводная таблица, Автовычисления (PivotTable, AutoCalc)</td>
+<td>Позволяет вычислить промежуточные итоги по каждой группе записей</td>
+</tr>
+<tr class="two">
+<td>Итоги (Subtotal)</td>
+<td>Сводная таблица, Итоги (PivotTable, Subtotal)</td>
+<td>Позволяет отображать или скрывать итоговые столбцы или строки</td>
+</tr>
+<tr class="one">
+<td>Вычисляемые итоги и поля (Calculated Total and Fields)</td>
+<td>Сводная таблица, Вычисляемые итоги и поля (PivotTable, Calculated Total and Fields)</td>
+<td>Позволяет задать формулы для расчета как специальных полей, так и итоговых данных</td>
+</tr>
+<tr class="two">
+<td>Отобразить как (Show As)</td>
+<td>Сводная таблица, Отобразить как (PivotTable, Show As)</td>
+<td>Позволяет отображать итоговые значения в процентах относительно общего итога по столбцу, строке или родительскому элементу на оси столбца или строки</td>
+</tr>
+<tr class="one">
+<td>Свернуть (Collapse)</td>
+<td>Сводная таблица, Свернуть (PivotTable, Collapse)</td>
+<td>Уменьшает на один шаг уровень детализации отображаемых данных в выделенной области таблицы</td>
+</tr>
+<tr class="two">
+<td>Развернуть (Expand)</td>
+<td>Сводная таблица, Развернуть (PivotTable, Expand)</td>
+<td>Увеличивает на один шаг уровень детализации отображаемых данных в выделенной области таблицы</td>
+</tr>
+<tr class="one">
+<td>Скрыть подробности (Hide Details)</td>
+<td>Сводная таблица, Скрыть подробности (PivotTable, Hide Details)</td>
+<td>Позволяет скрыть детальные данные и оставить только подытоги и итоги</td>
+</tr>
+<tr class="two">
+<td>Подробности (Show Details)</td>
+<td>Сводная таблица, Подробности (PivotTable, Show Details)</td>
+<td>Отображает все данные в строках или столбцах таблицы</td>
+</tr>
+<tr class="one">
+<td>Обновить (Refresh)</td>
+<td>Сводная таблица, Обновить (PivotTable, Refresh)</td>
+<td>Обновляет сводную таблицу, выполняя повторный запрос к базе данных</td>
+</tr>
+<tr class="two">
+<td>Экспорт в Microsoft Excel (Export to Microsoft Excel)</td>
+<td>Сводная таблица, Экспорт в Microsoft Excel (PivotTable, Export to Microsoft Excel)</td>
+<td>Обеспечивает экспорт сводной таблицы в интерактивный сводный отчет Microsoft Excel</td>
+</tr>
+<tr class="one">
+<td>Список полей (Field List)</td>
+<td>Вид, Список полей (Field List)</td>
+<td>Отображает диалоговое окно со списком полей таблицы</td>
+</tr>
+</tbody>
+</table>
+<p> Таблица 8.2. Описание кнопок панели инструментов  Сводные таблицы</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image06/371937a92f3c524721fd21bc1eb0db6e.gif" width="497" height="425" alt=""><meta itemprop="width" content="497">
+<meta itemprop="height" content="425"></span></p>
+<p> Рис. 8.33. Отображение итоговых данных в режиме сводной таблицы</p>
+<p>Определим итоговые столбцы.</p>
+<ol>
+<li>Щелкните левой кнопкой мыши на заголовке столбца &#171;Отпускная цена&#187; (ExtendedPrice) — все столбцы (кроме итогового) окажутся выделенными. Теперь щелкните по кнопке  Автовычисления  (AutoCalc) на панели инструментов и выберите из списка имя функции — Sum(). Появляется дополнительная строка для каждого товара, содержащая итоговое значение по каждому товару за год, а в итоговом столбце будет отображена итоговая цифра продаж каждого товара по всем годам.</li>
+<li>Теперь можно скрыть детальные данные, оставив только итоговые. Нажмите кнопку  Скрыть подробности (Hide Details) на панели инструментов.</li>
+</ol>
+<p>Окончательный вид таблицы представлен на рис. 8.33.</p>
+<p> Фильтрация данных сводной таблицы </p>
+<p>Сейчас в таблице отображаются данные о продажах по всем товарам и всем странам. Она напоминает результат перекрестного запроса, но далее вы убедитесь, как легко можно с ней манипулировать, отображая в ней разные данные. Например, она может быть очень легко изменена когда требуется посмотреть выборочно данные по отдельной стране или странам и некоторым товарам, т. е. по тем полям, которые отображаются в области фильтра, области строк и области столбцов.</p>
+<p>Справа от названия каждого из этих полей видна небольшая стрелка вниз. Щелкните по этой стрелке в поле &#171;Страна&#187; (Country) в области фильтра. Появится небольшое окно со списком значений поля, которые присутствуют в исходных данных. По умолчанию у каждой страны установлен флажок (рис. 8.34).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image25/e044e7cac35c801dd142c0a773a4525b.gif" width="182" height="216" alt=""><meta itemprop="width" content="182">
+<meta itemprop="height" content="216"></span></p>
+<p> Рис. 8.34. Выпадающий список значений поля</p>
+<p>Сбросьте флажок у первой строки — Все (Аll), щелкнув по нему мышкой. Все флажки одновременно сбросятся. Затем установите его только у одной страны, например Бельгия, и нажмите кнопку  ОК. Теперь ваша таблица отображает данные только по Бельгии. Под названием поля &#171;Страна&#187; (Country) отображается название выбранной страны.</p>
+<p>Если нужно отобразить данные сразу для нескольких стран (но не всех), просто установите в списке значений флажки у этих стран. Данные в таблице опять изменятся, только, к сожалению, не видно, какие страны участвуют в выборке — под названием поля в области фильтра указывается просто  несколько элементов (Multiple Items).</p>
+<p>Однако таблицу можно настроить таким образом, чтобы она не позволяла делать множественный выбор в полях фильтра.[  Слово &#171;полях&#187; мы употребили не случайно, т. к. в этой области может быть несколько полей.  ]</p>
+<p>Для этого:</p>
+<ol>
+<li>Нажмите кнопку  Свойства (Properties) на панели инструментов. При этом область фильтра с полем &#171;Страна&#187; должна быть выделенной. Появится диалоговое окно  Свойства  (Properties), которое отображает свойства поля &#171;Страна&#187;. Оно содержит несколько вкладок.</li>
+<li>Раскройте вкладку  Фильтр и группировка  (Filter and Group) и сбросьте флажок  Разрешить выделять несколько элементов в области фильтра (Allow selecting multiple items when in filter area) (рис. 8.35).</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image09/4c943e5872bb837e025960806a733106.gif" width="377" height="322" alt=""><meta itemprop="width" content="377">
+<meta itemprop="height" content="322"></span></p>
+<p> Рис. 8.35. Диалоговое окно  Свойства</p>
+<ol start="3">
+<li>Раскройте список значений поля &#171;Страна&#187; (Country). Теперь в списке значений полей отсутствуют флажки, и вы можете выбрать только одну страну (рис. 8.36).</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image12/6edad17ae5164241b2c8156d00ed7e97.gif" width="182" height="197" alt=""><meta itemprop="width" content="182">
+<meta itemprop="height" content="197"></span></p>
+<p> Рис. 8.36. Окно значений поля с отключением множественного выбора</p>
+<p>Теперь рассмотрим, как можно фильтровать отображаемые в таблице данные по значениям поля &#171;Марка&#187; (ProductName), которое находится в области строк.</p>
+<p>Раскройте список значений поля, щелкнув по стрелке справа от названия поля. Сбросьте флажок  Все (Аll) и установите флажки напротив нужных товаров. Нажмите кнопку  ОК. Таблица стала намного короче, а в названии столбца появился значок фильтра (рис. 8.37).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image25/e48719aa6b2c06b4f8a0ac828ed64cdf.gif" width="557" height="431" alt=""><meta itemprop="width" content="557">
+<meta itemprop="height" content="431"></span></p>
+<p> Рис. 8.37. Сводная таблица с фильтром по товарам</p>
+<p>Чтобы сбросить установленный фильтр, нажмите кнопку  Автофильтр (AutoFilter) на панели инструментов. Обратите внимание, что при этом сбрасываются все фильтры, в том числе установленные в области фильтра. Последний установленный фильтр сохраняется, и если вы нажмете эту кнопку еще раз, то снова увидите отфильтрованные данные.</p>
+<p>Можно установить фильтр и другими способами. Например, можно отобразить только те товары, которые принесли больше всего или меньше всего дохода. Проще всего для этого воспользоваться специальной кнопкой на панели инструментов.</p>
+<ol>
+<li>Сначала сбросьте все установленные фильтры, т. к. в противном случае фильтр будет накладываться на уже отфильтрованные данные.</li>
+<li>Выделите столбец &#171;Марка&#187;, щелкнув по его заголовку.</li>
+<li>Нажмите кнопку  Показать верхние и нижние элементы (Show Top/Bottom Items) на панели инструментов и выберите из списка элемент  Показать только верхний элемент (Show Only the Top) и затем в поле  Элементы — 10, как изображено на рис. 8.38. В таблице будет показано 10 строк, содержащих максимальное значение в поле &#171;Общие итоги&#187; (Grand Total).</li>
+</ol>
+<p>Чтобы убрать этот фильтр, достаточно нажать ту же кнопку еще раз и выбрать элемент  Показать все (Show All).</p>
+<p>Кнопка  Показать верхние и нижние элементы (Show Top/Bottom Items) позволяет фильтровать данные, основываясь на значениях в области детальных и итоговых данных. Более гибко устанавливать фильтр можно, задавая значения в окне  Свойства (Properties).</p>
+<ol>
+<li>Выделите область строк, щелкнув мышью по имени поля &#171;Марка&#187;, затем раскройте вкладку  Фильтр и группировка  (Filter and Group) окна  Свойства (Properties). Верхняя часть этой вкладки содержит поля, относящиеся к фильтрации данных в таблице, а нижняя — к группировке.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image24/d76a2e9ce214eaa70747f5cf7dfe0a28.gif" width="447" height="84" alt=""><meta itemprop="width" content="447">
+<meta itemprop="height" content="84"></span></p>
+<p> Рис. 8.38. Товары — лидеры продаж</p>
+<ol start="2">
+<li>По умолчанию в таблице отображаются  все значения (All items). Выберите из списка в поле  Отображать (Display the) значение  первые (Тор). В поле  Элементы (Items) можно указать, какое количество значений выводить, а в поле  На основе (Based on) — на основе какого поля отбирать записи. В списке предлагается на выбор два варианта: либо по значениям в поле &#171;Сумма &#171;Отпускная цена&#187;&#187; (Sum of ExtendedPrice), либо по порядку в исходном запросе. Во втором случае будут выведены строки с первыми по алфавиту названиями товаров, как показано на рис. 8.39.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image02/14e87d3c72269ed4bb2704c51969952a.gif" width="487" height="426" alt=""><meta itemprop="width" content="487">
+<meta itemprop="height" content="426"></span></p>
+<p> Рис. 8.39. Фильтр для первых элементов сводной таблицы</p>
+<p> Изменение сводной таблицы </p>
+<p>Сводные таблицы предназначены только для чтения, данные в них нельзя изменять. Но зато пользователь может очень легко трансформировать сводную таблицу: добавлять новые строки и столбцы, менять их местами, изменять названия полей и уровень детализации отображаемых данных.</p>
+<p>В каждой области таблицы может размещаться не одно, а несколько полей данных. Чтобы добавить неиспользованные поля запроса в сводную таблицу, просто перетащите их мышью в нужную область.</p>
+<p>Например, можно добавить в область фильтра поле &#171;Клиенты. Название&#187; (CompanyName), что позволит фильтровать данные не только по странам, но и по клиентам. Перетащите поле &#171;Клиенты. Название&#187; (CompanyName) из списка полей в область фильтра и поместите его рядом с полем &#171;Страна&#187; (Country). Устанавливая флажки против нужных клиентов, вы сможете получать сводные данные по счетам для каждого клиента.</p>
+<p>Чтобы удалить поле строки, столбца или фильтра из таблицы, перетащите его мышью за пределы сводной таблицы (при этом рядом с курсором появится изображение креста). Поле исчезнет из таблицы.</p>
+<p>Вы можете легко поменять местами поля из области фильтра и из области столбцов или строки поменять местами со столбцами. Переместите поле &#171;Клиенты.Название&#187; (CompanyName) в область столбцов, а поле &#171;Годы&#187; (Year) — в область фильтра. Теперь в столбцах таблицы будут отображаться данные по продажам для каждого клиента (рис. 8.40), а, используя поле &#171;Дата размещения по месяцам&#187; (Order Date By Month), вы сможете фильтровать эти данные.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image23/ce4de761ecafb48eeffa8cd62f59b72c.gif" width="506" height="409" alt=""><meta itemprop="width" content="506">
+<meta itemprop="height" content="409"></span></p>
+<p> Рис. 8.40. Отображение в сводной таблице данных по клиентам</p>
+<p>Совет</p>
+<p>При переносе полей обращайте внимание на форму указателя мыши. Когда он попадает в одну из областей таблицы — строк, столбцов, данных или фильтра — его форма меняется, и по ней можно определить, когда следует отпускать кнопку мыши.</p>
+<p> Сортировка в сводной таблице </p>
+<p>В отличие от аналогичных таблиц в перекрестном запросе, данные в сводной таблице легко сортировать. Для этого используются стандартные кнопки  Сортировать по возрастанию (Sort Ascending) и  Сортировать по убыванию (Sort Descending) на панели инструментов.</p>
+<p>Нужно выделить поле, по которому вы хотите отсортировать данные, и нажать соответствующую кнопку на панели инструментов. Если выделить поле в области строк, то данные будут отсортированы в порядке возрастания или убывания значений этого поля (в нашем примере названия товаров будут отсортированы в алфавитном порядке). Если выделить поле в области столбцов, то столбцы в таблице будут отсортированы в порядке возрастания значений в заголовках столбцов (в данном примере клиенты будут выведены в алфавитном порядке). Если выделить область детальных и итоговых данных таблицы, то она будет отсортирована в порядке возрастания (или убывания) значений в столбце &#171;Общие итоги&#187; (Grand Total).</p>
+<p> Изменение уровня детализации </p>
+<p>Вернемся к первоначальному виду таблицы, когда в столбцах отображались данные по годам (см. рис. 8.33). Рассмотрим, как можно изменить уровень детализации данных, выводимых в сводной таблице.</p>
+<p>Обратите внимание, что в наименованиях поля столбцов справа виден маркер развертывания (значок плюса в квадратике). Это означает, что в данный момент отображаются данные самого верхнего уровня детализации.</p>
+<ol>
+<li>Щелкните по этому маркеру в столбце, соответствующем 1997 году. Появится еще одна строка в заголовке, и вместо одного столбца отобразятся пять: четыре соответствуют кварталам, а последний столбец представляет собой итог за год (рис. 8.41). Поскольку крайний правый столбец таблицы содержит общий итог по всем годам, то данные в этом столбце будут представлять собой промежуточный итог  Итоги (Total). Маркер у цифр года изменился: появился значок минуса в квадратике. Его можно использовать потом для того, чтобы снова &#171;свернуть&#187; данные. Справа от поля &#171;Годы&#187; (Year) появилось еще одно поле — &#171;Кварталы&#187; (Quarters).</li>
+<li>Слева в заголовке кварталов также виден маркер развертывания. Щелкнув по нему, вы можете дальше развернуть данные и просматривать данные по месяцам. Но если вы хотите развернуть данные сразу по всем кварталам, воспользуйтесь специальной кнопкой на панели инструментов. Выделите поле &#171;Кварталы&#187; (Quarters) и нажмите кнопку &#171;Развернуть&#187; (Expand) на панели инструментов. Число столбцов в таблице увеличится и для каждого месяца будет отведен отдельный столбец. Кроме того, будут отображаться промежуточные итоги по кварталам и годам.</li>
+</ol>
+<p>Замечание</p>
+<p>Обратите внимание, что, выполняя все эти операции, мы не создавали никаких вычисляемых полей. Так, Access 2002 умеет работать с данными типа  Дата (Date/Time).</p>
+<ol start="3">
+<li>Если вы хотите теперь снова свернуть таблицу и отобразить только верхний уровень иерархии, выделите поле &#171;Годы&#187; (Year), щелкнув по его названию, и нажмите кнопку  Свернуть  (Collapse) на панели инструментов. Таблица вновь приобретет первоначальный вид.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image06/33810bfcd17b0e6d890d90140800de1e.gif" width="580" height="435" alt=""><meta itemprop="width" content="580">
+<meta itemprop="height" content="435"></span></p>
+<p> Рис. 8.41. Детализация данных по столбцам сводной таблицы</p>
+<p>Для того чтобы отображать или скрывать детальные данные, можно использовать также маленькие кнопочки с изображением знаков плюса и минуса, находящиеся у каждого значения поля, как в строках, так и в столбцах.</p>
+<ol>
+<li>Подведите указатель мыши к кнопке со знаком плюс в строке с названием первого товара. Появится подсказка  Показать/скрыть детали  (Show/Hide Details). Нажмите эту кнопку. Строка расширится, и в ней будут выведены как детальные данные по всем счетам, в которых участвовал этот товар, так и итоговые данные за год (рис. 8.42). Это как раз тот режим, который не удается получить, если воспользоваться группировкой в обычных запросах на выборку.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image25/e55cdf57a5240560263d33b01c25b54a.gif" width="161" height="63" alt=""><meta itemprop="width" content="161">
+<meta itemprop="height" content="63"></span></p>
+<p> Рис. 8.42. Итоговые данные по строкам сводной таблицы</p>
+<ol start="2">
+<li>Чтобы снова скрыть детальные данные, нажмите кнопку со знаком минус.</li>
+<li>Чтобы отобразить детальные данные сразу по всем строкам, выделите весь столбец с наименованиями товаров и нажмите кнопку  Подробности  (Show Details) на панели инструментов.</li>
+<li>Чтобы снова скрыть детальные данные по всем строкам, нажмите кнопку  Скрыть подробности (Hide Details) на панели инструментов.</li>
+</ol>
+<p>Аналогично отображаются и скрываются данные и для столбцов таблицы.</p>
+<p>Детализация данных может быть изменена также при добавлении новых полей в область строк или столбцов. Например, можно добавить в область строк поле &#171;Категория&#187; (Category) и сгруппировать все товары по категориям.</p>
+<p>Поле &#171;Категория&#187; отсутствует в исходном запросе &#171;Счета&#187; (Invoices), поэтому сначала нужно перейти в режим Конструктора, добавить к запросу таблицу &#171;Типы&#187; (Categories), затем добавить в бланк запроса поле &#171;Категория&#187; (CategoryName) из этой таблицы и снова вернуться в режим сводной таблицы. В списке полей появится новое поле. Далее необходимо осуществить следующие действия.</p>
+<ol>
+<li>Перетащите поле &#171;Категория&#187; (CategoryName) из списка полей в область строк, поместив его перед полем &#171;Марка&#187; (ProductName). Сводная таблица приобретет вид, показанный на рис. 8.43. Теперь в левой части таблицы — два поля, причем все товары автоматически сгруппировались по категориям. Последняя строка в каждой категории представляет собой промежуточный итог продаж по категории.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image20/b4aa2bd8f95c597c0ccc121d911d95d4.gif" width="576" height="445" alt=""><meta itemprop="width" content="576">
+<meta itemprop="height" content="445"></span></p>
+<p> Рис. 8.43. Добавление поля в область строк</p>
+<ol start="2">
+<li>Выделите поле &#171;Категория&#187; (CategoryName) и нажмите кнопку  Свернуть  (Collapse) на панели инструментов. Таблица быстро перестроится и будет иметь вид, приведенный на рис. 8.44. Маркеры развертывания справа указывают на то, что представлен верхний уровень детализации, и данные могут быть детализированы.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image10/564bf7e4e449601c807a8a2929a28e7b.gif" width="530" height="421" alt=""><meta itemprop="width" content="530">
+<meta itemprop="height" content="421"></span></p>
+<p> Рис. 8.44. Отображение товаров, сгруппированных по категориям</p>
+<p> Общие и промежуточные итоги </p>
+<p>Как вы уже убедились, при создании сводной таблицы Microsoft Access автоматически добавляет общие итоги для строк и столбцов. Кроме того, если в области строки или столбца содержится больше одного поля, то выводятся и промежуточные итоги. Вы научились скрывать детальные данные, отображая в таблице только итоговые. Но можно скрывать при желании и итоговые данные, оставляя в таблице только детальные. Кроме того, для расчета итоговых значений можно использовать несколько функций, а не только суммирование, как это было показано в приведенном выше примере. И, наконец, для расчета итоговых значений можно создавать и добавлять в таблицу вычисляемые поля. Об этих возможностях и будет рассказано в данном разделе.</p>
+<p>Чтобы скрыть общий итог по строкам, необходимо выделить крайнее левое поле в области строк (в нашем примере &#171;Категория&#187; (CategoryName)) и нажать кнопку  Итоги  (Subtotal) на панели инструментов. Аналогично, чтобы скрыть общий итог по всем столбцам, нужно выделить самое левое поле в области столбцов и нажать ту же кнопку. На рис. 8.45 показана таблица нашего примера со скрытыми значениями общих итогов.</p>
+<p>Чтобы снова отобразить общий итог, опять выделите нужное поле и нажмите эту кнопку второй раз.</p>
+<p>Если вы выделите любое другое поле в области строк или столбцов и нажмете кнопку  Итоги  (Subtotal), будут скрыты промежуточные итоги для этого поля.</p>
+<p>Для создания итоговых значений мы использовали команду  Автовычисления  (AutoCalc). Эта команда в зависимости от типа данных в поле, по которому подводятся итоги, сама выбирает подходящую функцию. Например, если поле числового типа, обычно используется функция Sum (), если текстового — Count (). Вообще говоря, для расчета итоговых значений можно использовать почти те же статистические функции, что и при группировке в запросах на выборку. Список этих функций приведен в табл. 8.1  (см. разд. &#171;Статистические функции для выполнения расчетов&#187; выше в этой главе).  В данном случае отсутствуют только функции First () и Last ().</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image05/3197c4da47d1d825b17e511e6712ed3e.gif" width="571" height="347" alt=""><meta itemprop="width" content="571">
+<meta itemprop="height" content="347"></span></p>
+<p> Рис. 8.45.  Сводная таблица со скрытыми общими итогами</p>
+<p>Например, если сводная таблица содержит данные с оценками по всем предметам учеников в школьном классе, то итоговым значением, скорее всего, будет средний бал, для вычисления которого можно использовать функцию Avg (). В одной сводной таблице может быть представлено несколько типов итоговых значений. Например, в нашей таблице можно в качестве итоговых значений отображать не только общие суммы, вырученные за проданные товары, но и количество выписанных счетов. Для того чтобы добавить еще одно итоговое поле, выделите поле &#171;Марка&#187; (ProductName) в области строк и нажмите кнопку  Автовычисления  (AntoCalc). Выберите из списка функцию Count (). Через несколько секунд в сводной таблице для каждого года будет отображено два столбца:</p>
+<ul>
+<li>&#171;Сумма &#171;Отпускная цена&#187;&#187; (Sum of ExpendingPrice);</li>
+<li>&#171;Количество значений &#171;Марка&#187;&#187; (Count of ProductName).</li>
+</ul>
+<p>Но второй столбец с итоговыми значениями может быть отображен и по-другому — в виде строки. Для этого:</p>
+<ol>
+<li>Выделите столбец &#171;Количество значений &#171;Марка&#187;&#187; (Count of ProductName) (одновременно будут выделены все столбцы данного типа).</li>
+<li>Откройте диалоговое окно  Свойства  (Properties) и раскройте вкладку Отчет (Report).</li>
+<li>В группе  Отображать итоги в  (Display total as) установите переключатель  заголовках строк  (Row headings). Таблица будет трансформирована и примет вид, представленный на рис. 8.46.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image03/18b77361ebeecf66268729ffb12572f3.gif" width="394" height="415" alt=""><meta itemprop="width" content="394">
+<meta itemprop="height" content="415"></span></p>
+<p> Рис. 8.46.  Сводная таблица с несколькими итоговыми полями</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image21/c2b85d0c7401a47520f37c312d47829d.gif" width="407" height="101" alt=""><meta itemprop="width" content="407">
+<meta itemprop="height" content="101"></span></p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image24/d818f6db236fbf6c56681479d8be99b8.gif" width="381" height="373" alt=""><meta itemprop="width" content="381">
+<meta itemprop="height" content="373"></span></p>
+<p> Рис. 8.47.  Создание вычисляемого поля</p>
+<p>Для отображения итоговых значений могут быть использованы также вычисляемые поля. Для добавления вычисляемого поля нажмите кнопку  Итоги и вычисляемые поля  (Calculated Total and Fields) на панели инструментов и выберите из раскрывшегося меню значение  Создание вычисляемого итога  (Create Calculated Total). В области данных появятся дополнительные строки или столбцы, и будет открыта вкладка  Вычисление  (Calculated) диалогового окна  Свойства  (Properties) (рис. 8.47).</p>
+<p>Вы должны ввести имя нового поля в поле Имя (Name), а формулу для расчета значения — в большое поле, расположенное ниже. Если для составления выражения нужно сослаться на какое-то поле, выберите имя этого поля в списке в нижней части вкладки и нажмите кнопку  Добавить ссылку на  (Insert Reference to). Когда выражение будет готово, нажмите кнопку  Изменить  (Change).</p>
+<p>Аналогично можно добавить вычисляемое поле и в детальные данные таблицы, хотя в этом случае вычисляемое поле можно создать и в исходном запросе.</p>
+<p> Форматирование сводной таблицы </p>
+<p>Для форматирования полей сводной таблицы используется диалоговое окно Свойства (Properties). Можно задать формат для полей области фильтра, строк, столбцов и детальных данных. Для этого сначала нужно выделить поле, а затем раскрыть вкладку  Формат (Format) диалогового окна свойств. Эта вкладка показана на рис. 8.48.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image17/9e35dd05846d8a4cfa1281a7486eeddd.gif" width="377" height="322" alt=""><meta itemprop="width" content="377">
+<meta itemprop="height" content="322"></span></p>
+<p> Рис. 8.48. Диалоговое окно  Свойства сводной таблицы, вкладка  Формат</p>
+<p>Из этого рисунка видно, что для поля можно определить:</p>
+<ul>
+<li>тип, размер и цвет используемого шрифта;</li>
+<li>способ выравнивания данных в поле;</li>
+<li>цвет фона;</li>
+<li>ширину столбца.</li>
+</ul>
+<p>Если в области данных отображаются числовые поля, даты или время,-то можно задать формат отображения данных в этих полях — либо выбрать из списка стандартный формат, либо задать нужный формат с помощью маски. Используйте для этого поле  Число (Number).</p>
+<p>Кроме того, можно задать формат заголовков полей сводной таблицы, для чего предназначена вкладка  Заголовки (Caption) (рис. 8.49).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image08/44bdc4e5b87a29879161fa311dc3e380.gif" width="377" height="322" alt=""><meta itemprop="width" content="377">
+<meta itemprop="height" content="322"></span></p>
+<p> Рис. 8.49. Диалоговое окно  Свойства сводной таблицы, вкладка  Заголовки</p>
+<p>В поле  Заголовок (Caption) можно задать текст, который будет отображен в названии поля, и затем формат этого текста.</p>
+<p> Сводные диаграммы </p>
+<p>Для того чтобы отображение данных было еще более наглядным, можно использовать сводные диаграммы. Сводная диаграмма строится автоматически на основе уже созданной сводной таблицы, но может также строиться и самостоятельно, на основе исходной таблицы или запроса. Когда диаграмма построена, ее можно перестраивать, перетаскивая поля, аналогично тому, как это делается в сводных таблицах.</p>
+<p> Создание сводной диаграммы </p>
+<p>Создать диаграмму на основе сводной таблицы очень просто. Переключитесь в режим  Сводная диаграмма (PivotChart View), и на экране появится сводная диаграмма, примерно такая, как на рис. 8.50.</p>
+<p>Как и сводная таблица, она имеет поле фильтра — &#171;Страна&#187; (Country), которое отображается в левом верхнем углу экрана, поля строк и столбцов, которые здесь отображаются справа и снизу. Эта сводная диаграмма тесно связана с таблицей. Если вы переключитесь в режим сводной таблицы и измените ее структуру, это изменение будет отображено и на сводной диаграмме, и наоборот, если сейчас изменить структуру сводной диаграммы, то это изменение появится и на сводной таблице, когда вы вновь переключитесь в тот режим.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image06/3472c3a151cdad3a165a3f865837e802.gif" width="453" height="461" alt=""><meta itemprop="width" content="453">
+<meta itemprop="height" content="461"></span></p>
+<p> Рис. 8.50. Сводная диаграмма, построенная на основе сводной таблицы</p>
+<p>Но можно создать диаграмму и непосредственно на базе запроса или таблицы. При этом одновременно будет создаваться и сводная таблица. Сводная таблица и сводная диаграмма — это две формы представления одних и тех же данных.</p>
+<p>В качестве примера предлагается построить сводную диаграмму для запроса &#171;Продажи по сотрудникам и странам&#187; (Employee Sales by Country).</p>
+<ol>
+<li>Откройте этот запрос в режиме Конструктора.</li>
+<li>Запрос имеет два параметра:  [Начальная дата] и [Конечная дата], которые используются для фильтрации данных. Для сводной диаграммы эти параметры не нужны, поэтому сначала удалите выражение из строки  Условие отбора (Criteria), затем откройте диалоговое окно  Параметры (Query Parameters)  (см. разд. &#171;Запросы с параметрами&#187;<a href="https://taurion.ru/access/4">гл. 4</a>)  и удалите оба параметра.</li>
+<li>Щелкните по стрелке на кнопке  Вид (View) панели инструментов и выберите из меню пункт  Сводная диаграмма (PivotChart View). Появится окно, основную часть которого занимает область отображения диаграммы (рис. 8.51), ограниченная осями координат и размеченная линиями сетки. Кроме этого, видны область фильтра, которая играет ту же роль и расположена так же, как и в сводной таблице, область категорий и область рядов, которые соответствуют строкам и столбцам сводной таблицы. В область категорий переносятся поля, значения которых должны откладываться по оси X (горизонтальной), а в область рядов — поля, каждое значение которых соответствует одной серии точек или столбцов на диаграмме (в зависимости от типа диаграммы). Эти поля соответствуют полям столбцов на сводной диаграмме. В область данных помещаются поля, значения которых будут отображаться по оси Y (вертикальной) диаграммы.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image23/d14541bff0e6016708ada2226b108e72.gif" width="519" height="520" alt=""><meta itemprop="width" content="519">
+<meta itemprop="height" content="520"></span></p>
+<p> Рис. 8.51. Макет сводной диаграммы</p>
+<ol start="4">
+<li>Перетащите из списка полей в область фильтра поле &#171;Страна&#187; (Country), в область категорий — поля &#171;Фамилия&#187; (Last Name) и &#171;Имя&#187; (First Name), в область рядов — поле &#171;Дата исполнения по месяцам&#187; (Shipped Date By Month). Следите, как будет меняться область диаграммы.[  Если вы не видите диалоговое окно со списком полей, щелкните по кнопке  Список полей (Fields List) панели инструментов.  ]</li>
+<li>Перенесите поле &#171;СуммаПродаж&#187; (Sale Amount) в область данных — и диаграмма готова. Нажмите кнопку  Добавить легенду  (Show Legend), чтобы отобразить легенду, после чего вы получите диаграмму, представленную на рис. 8.52.</li>
+<li>Можно еще ввести надписи у осей диаграммы. Щелкните по надписи  Название оси  (Axis Title) под осью X. Выведите на экран окно  Свойства (Properties) и раскройте вкладку  Формат (Format). Введите в поле  Заголовок (Caption): Сотрудники. Аналогично введите надпись Объем продаж для оси Y.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image16/918b371196555c8addba20e2d0d66268.gif" width="578" height="453" alt=""><meta itemprop="width" content="578">
+<meta itemprop="height" content="453"></span></p>
+<p> Рис. 8.52. Сводная диаграмма</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image10/57debb299018123b2347b166cc4a7d94.gif" width="501" height="376" alt=""><meta itemprop="width" content="501">
+<meta itemprop="height" content="376"></span></p>
+<p> Рис. 8.53. Сводная таблица &#171;Продажи по сотрудникам и странам&#187;</p>
+<p>Замечание</p>
+<p>Каи уже говорилось выше, одновременно со сводной диаграммой создается и сводная &#8212; таблица.</p>
+<ol start="7">
+<li>Щелкните по стрелке на кнопке Вид (View) и переключитесь в режим сводной таблицы. Вы увидите сводную таблицу, показанную на рис. 8.53.</li>
+</ol>
+<p> Изменение вида диаграммы </p>
+<p>Так же, как и сводная таблица, сводная диаграмма является очень гибкой, и ее можно легко трансформировать, добавляя и удаляя поля, перемещая их из одной области в другую. Кроме того, можно изменить тип диаграммы, например, превратить ее из гистограммы в график (рис. 8.54). В этом случае каждая ломаная линия соответствует серии столбцов на столбчатой диаграмме. Каждая линия выделяется своим цветом и видом точек. Легенда описывает, какому значению поля &#171;Годы&#187; (Year) соответствует каждая линия.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image24/d8acab3fd8126344e5dddff2b9a40360.gif" width="510" height="490" alt=""><meta itemprop="width" content="510">
+<meta itemprop="height" content="490"></span></p>
+<p> Рис. 8.54. Диаграмма в виде графика</p>
+<p>Для того чтобы изменить тип диаграммы, щелкните мышью в любом месте области диаграммы и убедитесь, что эта область выделена. Тогда становится доступна кнопка  Тип диаграммы (Chart Type) на панели инструментов (рис. 8.55). Нажмите эту кнопку. В диалоговом окне  Свойства (Properties) раскроется вкладка Тип (Туре). На ней представлены все типы диаграмм, которые могут быть построены. Выберите нужный тип из списка, а затем подтип справа и остановитесь на том типе, который вам больше нравится.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image26/ec30cc2794e7ce0194f099c330375a79.gif" width="377" height="392" alt=""><meta itemprop="width" content="377">
+<meta itemprop="height" content="392"></span></p>
+<p> Рис. 8.55. Изменение типа сводной диаграммы</p>
+<p>Можно очень легко поменять местами поля рядов и категорий. Для этого достаточно нажать кнопку  По строке или по столбцу (By Row/By Column) на панели инструментов. И диаграмма мгновенно трансформируется (рис. 8.56). Остальные кнопки панели инструментов, такие как  Свернуть (Collapse),  Развернуть (Expand),  Автовычисления (AutoCalc), работают так же, как и в сводной таблице.</p>
+<p>Можно поворачивать диаграмму по часовой или против часовой стрелки. Для этого, выделив область диаграммы, необходимо открыть вкладку  Общие (General) диалогового окна  Свойства (Properties) и использовать четыре кнопки:  Отразить справа налево (Flip Horizontal),  Отразить сверху вниз (Flip Vertical),  Повернуть на 90° по часовой стрелке  (Rotate Clockwise) и  Повернуть на 90° против часовой стрелки  (Rotate Counter Clockwise).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image13/754d77534a43681a641665b5059188c2.gif" width="377" height="410" alt=""><meta itemprop="width" content="377">
+<meta itemprop="height" content="410"></span></p>
+<p> Рис. 8.56. Трансформация сводной диаграммы</p>
+<p> Форматирование элементов сводной диаграммы </p>
+<p>Форматирование элементов сводной диаграммы выполняется с помощью различных вкладок диалогового окна  Свойства (Properties):</p>
+<ul>
+<li>для любых надписей на диаграмме можно определить размер, цвет и тип шрифта, место размещения;</li>
+<li>для поля диаграммы можно определить цвет и текстуру заполнения;</li>
+<li>для линии сетки и границ можно указать цвет, тип, а можно их просто убрать;</li>
+<li>для столбиков или линий диаграммы можно определить цвет и тип.</li>
+</ul>
+<p>Мы не будем здесь описывать подробно все возможности форматирования диаграммы (их очень много), поскольку вы сами сможете легко понять, как изменяются параметры в окне  Свойства (Properties), и получать диаграммы, удовлетворяющие самого требовательного начальника.</p>
+<p> Настройка свойств полей в запросе и свойств самого запроса </p>
+<p>По умолчанию поля в запросе наследуют все свойства, которые определены для поля соответствующей таблицы. Однако можно изменить значение этих свойств, и эти изменения будут влиять только на поля в запросе и не будут влиять на поля в исходной таблице.</p>
+<p>К вычисляемому полю в запросе применимы только свойства, заданные в запросе, т. к. данные, отображаемые в вычисляемом поле, не хранятся в исходной таблице. Например, если значение в поле вычисляется путем перемножения чисел, которые не являются целыми, следует установить свойство  Формат (Format) для этого поля. Можно также, вместо того, чтобы устанавливать свойство  Формат, применить функцию Format (&lt;имя поля&gt;, &lt;формат&gt;) или подходящую функцию преобразования типов данных, чтобы получить отображение данных в столбце в требуемом формате.</p>
+<p>Существует несколько способов вывода на экран диалогового окна, содержащего свойства запроса или свойства поля в запросе. Сначала нужно щелкнуть левой кнопкой мыши в нужном столбце или на свободном поле в верхней панели запроса (для вывода свойств самого запроса), затем нажать кнопку  Свойства (Properties) на панели инструментов или выполнить команду  Вид, Свойства (View, Properties). Появится диалоговое окно, содержащее соответствующий список свойств. Кроме того, можно щелкнуть правой кнопкой мыши в столбце бланка запроса и выбрать в контекстном меню команду  Свойства (Properties). Самый быстрый способ вывода окна свойств запроса — это дважды щелкнуть левой кнопкой мыши по свободной области верхней части окна запроса.</p>
+<p>В окне свойств поля можно задать значения четырех свойств:</p>
+<ul>
+<li>свойство  Описание  (Description) позволяет задать текст, который выводится в строке состояния, когда курсор помещается в это поле в результирующем множестве запроса;</li>
+<li>свойство  Формат поля (Format) позволяет задать формат отображения данных в результирующем множестве запроса;</li>
+<li>свойство  Маска ввода (Input Mask) позволяет указать формат для ввода данных, если результирующее множество запроса является обновляемым. Для создания маски ввода, соответствующей типу данных поля, можно нажать кнопку Построителя справа от поля свойства, чтобы запустить Мастер по созданию масок ввода;</li>
+<li>свойство  Подпись  (Caption) позволяет изменить заголовок столбца результирующего множества запроса.</li>
+</ul>
+<p>Каждое из перечисленных свойств соответствует соглашениям о свойствах полей таблиц. Присваивание значения свойству  Подпись (Caption) эквивалентно указанию префикса в строке  Поле (Field) в бланке запроса для этого поля. Значение свойства  Маска ввода (Input Mask) необязательно соответствует значению свойства  Формат поля (Format). Например, поле с типом данных  Дата/время (Date/Time) может иметь средний формат даты для вывода, а в маске ввода можно задать короткий формат.</p>
+<p>Диалоговое окно  Свойства запроса (Query Properties) представлено на рис. 8.57.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image13/721a82515446d4ebf086a056e7622384.gif" width="377" height="410" alt=""><meta itemprop="width" content="377">
+<meta itemprop="height" content="410"></span></p>
+<p> Рис. 8.57. Диалоговое окно  Свойства запроса</p>
+<ul>
+<li>Свойство  Описание (Description) используется, чтобы задать текст, который будет выводиться в строке состояния при отображении результирующего множества запроса.</li>
+<li>Свойство  Режим по умолчанию  (Default View) позволяет указать тот вид, в котором будут представлены результаты запроса при его открытии: таблицы, сводная таблица, сводная диаграмма. То есть теперь вы можете открыть запрос прямо в режиме сводной таблицы или диаграммы.</li>
+<li>Свойство  Вывод всех полей  (Output All Fields) позволяет включить в результирующий набор все поля из всех базовых таблиц запроса. Следует отметить, что при выводе большого количества полей выполнение запроса происходит медленнее, особенно если в результирующем множестве содержится большое количество записей.</li>
+<li>Свойство  Набор значений (Top Values) позволяет указать, какое количество строк из результирующего набора нужно отобразить на экране. По умолчанию это свойство имеет значение  Все (АН), однако, если запрос содержит большое количество записей, чтобы ускорить вывод, можно указать число, которое задает либо количество записей, либо процент записей. В этом случае Access будет выводить информацию на экран сразу, как только найдет заданное количество строк.</li>
+<li>Свойства  Уникальные значения (Unicue Values) и  Уникальные записи (Unique records) позволяют не включать в результирующий набор повторяющиеся записи. Эти свойства мы рассмотрим подробнее  в разд. &#171;Зарезервированные слова DISTINCTROW и DISTINCT&#187; данной главы (см. также разд. &#171;Изменение данных в результирующем множестве запроса&#187;<a href="https://taurion.ru/access/4">гл. 4</a>). </li>
+<li>Свойство  При запуске предоставлять права  (Run Permissions) позволяет ограничить доступ к базовым таблицам других пользователей. Это свойство используется в том случае, если база данных работает в многопользовательском режиме и защищена на уровне пользователей  (см. разд. <a href="/glava-redaktirovanie-i-analiz-dannyh">&#171;Администрирование баз данных Access, защищенных на уровне пользователей&#187;</a>гл. 20).  Оно позволяет дать пользователю дополнительные права по сравнению с теми, что назначены ему при защите базы данных. Для этого данному свойству должно быть присвоено значение  Владельца (Owner&#8217;s). По умолчанию оно имеет значение  Пользователя (User&#8217;s), при этом пользователи не имеют никаких дополнительных прав.</li>
+<li>Свойство  Блокировка записей  (Record Locks) также используется в многопользовательском режиме и позволяет установить разные типы блокировки. По умолчанию это свойство имеет значение  Отсутствует (No Locks). Это означает, что записи не блокируются в процессе их редактирования пользователем. Если данное свойство имеет значение  Изменяемой записи (Edited Records), то когда пользователь редактирует запись, она блокируется и не может быть изменена другим пользователем. Значение  Всех записей (All Records) позволяет блокировать все записи, отобранные запросом, до тех пор, пока пользователь не закроет запрос.  (Подробно о многопользовательском режиме работы и типах блокировок в Access см. разд. &#171;Организация совместного доступа к данным&#187;гл. 16)</li>
+<li>Свойства  База данных-источник (Source Database) и Строка нодключения  источник (Source Connect Str) используются для доступа к внешней базе данных, которая не является присоединенной к текущей. В этом случае они содержат имя и тип внешней базы данных.</li>
+<li>Свойство  Время ожидания ODBC (ODBC Timeout) указывает число секунд, в течение которых Microsoft Access будет повторять попытки выполнения запроса к базе данных, подключенной к текущей базе посредством драйверов ODBC. Если по истечении заданного времени ответа от сервера базы данных не поступает, выдается сообщение об ошибке.</li>
+<li>Свойство  Максимальное число записей  (Max Records) определяет максимальное количество записей, которое возвращается запросом из внешней базы данных.</li>
+<li>Свойство  Тип набора записей (RecordsetType) позволяет определить тип результирующего набора записей. Это свойство может иметь три значения:
+<ul>
+<li> Динамический набор (Dynaset) — если запрос базируется на одной таблице или таблицах, связанных отношением &#171;один-к-одному&#187;, то все поля запроса могут редактироваться, а если таблицы в запросе связаны отношением &#171;один-ко-многим&#187;, то редактироваться данные могут только в таблице на стороне &#171;один&#187;;</li>
+<li> Динамический набор (несогл.) (Dynaset (Inconsistent updates)) — все поля запроса могут редактироваться;</li>
+<li> Статический набор (Snapshot) — ни одно поле запроса не может редактироваться.</li>
+</ul>
+</li>
+<li>Свойство  Фильтр  (Filter) — позволяет задать фильтр, который можно применить к результирующему набору запроса. Значением свойства является строковое выражение, которое создается в соответствии с правилами составления предложения WHERE. Этот фильтр сохраняется вместе с запросом.</li>
+<li>Свойство  Порядок сортировки  (OrderBy) — позволяет задать порядок сортировки записей в результирующем наборе. Значением этого свойства является строковое выражение, содержащее имена полей, перечисленные через запятую.</li>
+<li> Ориентация (Orientation) — позволяет выводить поля запроса как в обычном, так и в обратном порядке. По умолчанию задается тот порядок следования полей, который определен в запрос: &#171;Слева направо&#187; (Left-to-Right).</li>
+</ul>
+<p>Последние пять свойств позволяют задать свойства подчиненной таблицы, если в запросе отображаются записи как главной, так и подчиненной таблиц: имя таблицы, связывающие поля в главной и подчиненной таблицах, высота таблицы и будет ли она по умолчанию отображаться или же будет скрыта.</p>
+<p> Создание запросов SQL </p>
+<p>Все запросы, которые мы рассматривали до сих пор, создавались либо с помощью мастера, либо с помощью Конструктора запросов. Конструктор запросов представляет собой графический инструмент для создания запросов по образцу (QBE — Query By Example). Однако на самом деле любой запрос хранится в базе данных в формате SQL (Structured Query Language — язык структурированных запросов). Основное достоинство этого языка состоит в том, что он является стандартом для большинства реляционных СУБД. SQL имеет унифицированный набор инструкций, которые можно использовать во всех СУБД, поддерживающих этот язык. Действующим на данный момент стандартом языка SQL является принятая Американским национальным институтом стандартов (American National Standards Institute — ANSI) версия SQL-92. Фирмы — разработчики СУБД при реализации языка SQL могут вносить в него расширения, но обязаны реализовать базовый набор команд ASNSI SQL.</p>
+<p>Процессор обработки данных Jet является составной частью Access и выполняет инструкции Access SQL (Jet SQL), который отличается от ANSI SQL существенно (как правило, настольные СУБД, совместимые со стандартом SQL, реализуют не все инструкции ANSI SQL).</p>
+<p>Замечание</p>
+<p>В дальнейшем для обозначения используемого в Access диалекта языка SQL мы будем применять термин Jet SQL. Это будет правильнее, т. к. процессор обработки данных используется не только в приложениях, созданных в среде Access, но и в приложениях, разработанных с помощью Microsoft Visual Basic.</p>
+<p>В данном разделе мы собираемся дать обзор используемого в Access языка SQL и показать, как можно создать запросы, которые невозможно создать с помощью Конструктора запросов.</p>
+<p> Сравнение ANSI и Jet SQL </p>
+<p>Язык Jet SQL почти соответствует стандарту ANSI SQL-89. В реализацию языка SQL для Microsoft Jet  4.x (используемого, начиная с версии Microsoft Access 2000) внесены несколько расширений, которые приближают его к стандарту ANSI SQL-92 и</p>
+<p>Transact-SQL — диалекту языка SQL для Microsoft SQL Server. Для тою чтобы обеспечить совместимость с предыдущими версиями Microsoft Jet, эти расширения можно использовать только в специальном режиме — ANSI SQL-92.</p>
+<p>Замечание</p>
+<p>Режим ANSI SQL-92 доступен только при использования программы Microsoft OLE DB Provider для Jet.</p>
+<p>Все запросы, которые создаются в режиме ANSI SQL-92, помечаются специальным флажком, причем в одной базе данных могут храниться как обычные SQL-запросы, так и запросы, созданные в расширенном синтаксисе.</p>
+<p>Основные различия языков Jet SQL и ANSI SQL состоят в следующем:</p>
+<ul>
+<li>они имеют разные наборы зарезервированных слов и типов данных;</li>
+<li>разные правила применимы к оператору Between. . .And, используемому для определения условий выборки записей;</li>
+<li>подстановочные знаки ANSI и Microsoft Jet, которые используются в операторе Like, взаимно исключают друг друга;</li>
+<li>язык Jet SQL обычно предоставляет пользователю большую свободу, например разрешается группировка и сортировка по выражениям;</li>
+<li>язык Jet SQL позволяет использовать более-сложные выражения.</li>
+</ul>
+<p> Зарезервированные слова Jet SQL </p>
+<p>Приведенные здесь таблицы предназначены для сравнения зарезервированных слов ANSI SQL и Jet SQL.</p>
+<p>Ниже перечисляются зарезервированные слова Jet SQL, которые идентичны зарезервированным словам ANSI SQL (знаком звездочки помечены слова, которые доступны только в режиме ANSI SQL-92):</p>
+<table class="table_common" width="700">
+<tbody>
+<tr>
+<td width="20%">ADD</td>
+<td width="20%">COMMIT*</td>
+<td width="20%">FETCH*</td>
+<td width="20%">MAX</td>
+<td width="20%">ROLLBACK*</td>
+</tr>
+<tr>
+<td>ALL</td>
+<td>CONSTRAINT</td>
+<td>FROM</td>
+<td>MIN</td>
+<td>SELECT</td>
+</tr>
+<tr>
+<td>ALTER</td>
+<td>COUNT</td>
+<td>FOREIGN</td>
+<td>NOT</td>
+<td>SET</td>
+</tr>
+<tr>
+<td>ANY</td>
+<td>CREATE</td>
+<td>GRANT*</td>
+<td>NULL</td>
+<td>SOME</td>
+</tr>
+<tr>
+<td>ALIAS</td>
+<td>CREATE VIEW*</td>
+<td>HAVING</td>
+<td>ON</td>
+<td>TRANSACTION*</td>
+</tr>
+<tr>
+<td>AS</td>
+<td>CURRENT*</td>
+<td>IN</td>
+<td>OR</td>
+<td>UNION</td>
+</tr>
+<tr>
+<td>ASC</td>
+<td>CURSOR*</td>
+<td>INDEX</td>
+<td>ORDER</td>
+<td>UNIQUE</td>
+</tr>
+<tr>
+<td>AUTHORAZATI ON*</td>
+<td>DECLARE*</td>
+<td>INNER</td>
+<td>OUTER</td>
+<td>UPDATE</td>
+</tr>
+<tr>
+<td>AVG</td>
+<td>DELETE</td>
+<td>INSERT</td>
+<td>PARAMETERS</td>
+<td>VALUE</td>
+</tr>
+<tr>
+<td>BEGIN*</td>
+<td>DESC</td>
+<td>INTO</td>
+<td>PRIMARY</td>
+<td>VALUES</td>
+</tr>
+<tr>
+<td>BETWEEN</td>
+<td>DISALLOW</td>
+<td>IS</td>
+<td>PRIVILEGES*</td>
+<td>WHERE</td>
+</tr>
+<tr>
+<td>BY</td>
+<td>DISTINCT</td>
+<td>JOIN</td>
+<td>PROCEDURE</td>
+<td>WORK*</td>
+</tr>
+<tr>
+<td>CHECK*</td>
+<td>DROP</td>
+<td>KEY</td>
+<td>REFERENCES</td>
+<td></td>
+</tr>
+<tr>
+<td>CLOSE*</td>
+<td>DROP VIEW*</td>
+<td>LEFT</td>
+<td>REVOKE*</td>
+<td></td>
+</tr>
+<tr>
+<td>COLUMN</td>
+<td>EXISTS</td>
+<td>LIKE</td>
+<td>RIGHT</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Зарезервированные слова, обозначающие типы данных, не включены в этот список, т. к. соответствие типов данных ANSI SQL и Jet SQL приводится ниже, в табл. 8.6. Большинство операторов сравнения в ANSI SQL и Jet SQL совпадают: =, &lt;, &lt;=, &gt; и =&gt;. Исключение составляет оператор неравенства. Оператору неравенства ! = в ANSI SQL соответствует оператор &lt;&gt; в Jet SQL.</p>
+<p>Как и в ANSI SQL, зарезервированное слово Jet SQL IN может быть использовано для задания списка значений в предложении WHERE или списка, созданного подчиненным запросом. Оператор IN также может использоваться для идентификации таблицы в другой базе данных.</p>
+<p>Хотя в последней версии Jet SQL появились новые инструкции, связанные с обработкой транзакций (раньше они реализовывались с помощью процедур VBA), тем не менее существует отличие в механизме выполнения транзакции от рекомендуемого ANSI SQL:</p>
+<ul>
+<li>автоматический запуск транзакции невозможен. Чтобы начать транзакцию, ее необходимо явно запустить с помощью инструкции BEGIN TRANSACTION;</li>
+<li>допускается пять уровней вложения транзакций. Чтобы запустить вложенную транзакцию, воспользуйтесь инструкцией BEGIN TRANSACTION в контексте существующей транзакции;</li>
+<li>для присоединенных (связанных) таблиц транзакции не поддерживаются.</li>
+</ul>
+<p>В обычном режиме ряд инструкций ANSI SQL не поддерживается, однако их можно реализовать другими средствами Access: меню, кнопками, диалоговыми окнами. В табл. 8.3 приведен список инструкций ANSI SQL и эквивалентные им средства Access.</p>
+<table class="table_common" width="500">
+<tbody>
+<tr class="header">
+<td width="50%">Зарезервированное слово</td>
+<td width="50%">Эквивалент в Access</td>
+</tr>
+<tr class="one">
+<td>AUTHORIZATION</td>
+<td>Диалоговое окно прав доступа</td>
+</tr>
+<tr class="two">
+<td>BEGIN</td>
+<td>Метод Access VBA BeginTrans</td>
+</tr>
+<tr class="one">
+<td>CHECK</td>
+<td>Свойство Условие на значение поля таблицы</td>
+</tr>
+<tr class="two">
+<td>CLOSE</td>
+<td>Кнопка системного меню Закрыть</td>
+</tr>
+<tr class="one">
+<td>COMMIT</td>
+<td>Метод Access VBA CommitTrans</td>
+</tr>
+<tr class="two">
+<td>CREATE VIEW</td>
+<td>Режим конструктора запросов и фильтры</td>
+</tr>
+<tr class="one">
+<td>CURRENT</td>
+<td>Запрос в режиме таблицы, области выделения записи</td>
+</tr>
+<tr class="two">
+<td>CURSOR</td>
+<td>Запрос в режиме таблицы</td>
+</tr>
+<tr class="one">
+<td>DECLARE</td>
+<td>Запрос в режиме таблицы (курсор поддерживается автоматически)</td>
+</tr>
+<tr class="two">
+<td>DROP VIEW</td>
+<td>Режим конструктора запросов</td>
+</tr>
+<tr class="one">
+<td>FETCH</td>
+<td>Поля в форме или отчете</td>
+</tr>
+<tr class="two">
+<td>GRANT, PRIVILEGES, REVOKE</td>
+<td>Диалоговое окно прав доступа</td>
+</tr>
+<tr class="one">
+<td>ROLLBACK</td>
+<td>Метод Access VBA RollbackTrans</td>
+</tr>
+<tr class="two">
+<td>TRANSACTION</td>
+<td>Методы транзакций в Access VBA</td>
+</tr>
+<tr class="one">
+<td>VALUES</td>
+<td>Значения, введенные в таблицы или формы</td>
+</tr>
+<tr class="two">
+<td>WORK</td>
+<td>Метод Access VBA BeginTrans</td>
+</tr>
+</tbody>
+</table>
+<p> Таблица 8.3. Зарезервированные слова ANSI SQL, не поддерживаемые Access SQL</p>
+<p> Функции и операторы Access, используемые вместо ключевых слов ANSI SQL </p>
+<p>Часть зарезервированных слов ANSI SQL заменяется в Jet SQL операторами или функциями. В табл. 8.4 перечислены функции и операторы Jet SQL, которые соответствуют зарезервированным словам ANSI SQL.</p>
+<table class="table_common" width="300">
+<tbody>
+<tr class="header">
+<td width="50%">Access</td>
+<td width="50%">ANSI SQL</td>
+</tr>
+<tr class="one">
+<td>And</td>
+<td>AND</td>
+</tr>
+<tr class="two">
+<td>Avg( )</td>
+<td>AVG()</td>
+</tr>
+<tr class="one">
+<td>Between</td>
+<td>BETWEEN</td>
+</tr>
+<tr class="two">
+<td>Count ( )</td>
+<td>COUNT</td>
+</tr>
+<tr class="one">
+<td>Is</td>
+<td>IS</td>
+</tr>
+<tr class="two">
+<td>Like</td>
+<td>LIKE</td>
+</tr>
+<tr class="one">
+<td>Мах( )</td>
+<td>MAX()</td>
+</tr>
+<tr class="two">
+<td>Min( )</td>
+<td>MIN()</td>
+</tr>
+<tr class="one">
+<td>Not</td>
+<td>NOT</td>
+</tr>
+<tr class="two">
+<td>Null</td>
+<td>NULL</td>
+</tr>
+<tr class="one">
+<td>Or</td>
+<td>OR</td>
+</tr>
+<tr class="two">
+<td>Sum( )</td>
+<td>SUM</td>
+</tr>
+</tbody>
+</table>
+<p> Таблица 8.4. Функции и операторы Access, используемые вместо зарезервированных слов ANSI SQL</p>
+<p>Функция Access IsNull(), возвращающая значение True (-1), если ее аргумент равен лустому значению, и False (0) — в обратном случае, не имеет эквивалента в ANSI SQL и не является заменой модификаторов is Null или is Not Null в предложении WHERE. Кроме того, Jet SQL не поддерживает статистические функции по подмножеству, аргументом которых является любое выражение с параметром DISTINCT, например AVG (DISTINCT имя__поля). В таких случаях требуется использовать параметр DISTINCTROW в инструкции SELECT. Выражения, в которых применяются операторы, такие как, например, And или Or, заключаются в инструкциях Jet SQL в скобки.</p>
+<p>Оператор Between. . .And, который имеет синтаксис</p>
+<p>  &lt;выражение&gt; [NOT] Between &lt;значение_1&gt; And &lt;значение_2&gt; </p>
+<p>по-разному трактуется в языках Jet SQL и ANSI SQL. В языке Jet SQL значение_1 может превышать значение_2; в ANSI SQL значение_1 должно быть меньше или равно значение_2.</p>
+<p> Зарезервированные слова Jet SQL и функции, не входящие в ANSI SQL </p>
+<p>Существует несколько зарезервированных слов Jet SQL, которые не имеют аналогов в ANSI SQL. Это слова:</p>
+<ul>
+<li>DISTINCTROW — позволяет исключить из результирующего множества запроса повторяющиеся строки;</li>
+<li>PIVOT — используется в перекрестных запросах;</li>
+<li>TRANSFORM — создание перекрестного запроса.</li>
+</ul>
+<p>Кроме того, Jet позволяет использовать четыре статистические функции по подмножеству, не включенные в ANSI SQL (табл. 8.5).</p>
+<table class="table_common" width="400">
+<tbody>
+<tr class="header">
+<td width="30%">Функция Access</td>
+<td>Назначение</td>
+</tr>
+<tr class="one">
+<td>StdDev()</td>
+<td>Смещенное значение среднеквадратичного отклонения для выборки</td>
+</tr>
+<tr class="two">
+<td>StdDevP ( )</td>
+<td>Несмещенное значение среднеквадратичного отклонения для выборки</td>
+</tr>
+<tr class="one">
+<td>Var ()</td>
+<td>Значение смещенной дисперсии для выборки</td>
+</tr>
+<tr class="two">
+<td>VarP ( )</td>
+<td>Значение несмещенной дисперсии для выборки</td>
+</tr>
+</tbody>
+</table>
+<p> Таблица 8.5.  Дополнительные статистические функции Access SQL</p>
+<p> Эквивалентные типы данных Jet SQL и ANSI SQL </p>
+<p>В табл. 8.6 перечислены типы данных ANSI SQL, эквивалентные им типы данных языка Jet SQL и допустимые синонимы.</p>
+<table class="table_common" width="600">
+<tbody>
+<tr class="header">
+<td width="20%">Типы данных ANSI SQL</td>
+<td width="20%">Типы данных Jet SQL</td>
+<td width="20%">Синоним</td>
+<td>Примечание</td>
+</tr>
+<tr class="one">
+<td>BIT, BIT VARYING</td>
+<td>BINARY</td>
+<td>VARBINARY, BINARY VARYING BIT VARYING</td>
+<td>He является стандартным типом данных Access</td>
+</tr>
+<tr class="two">
+<td>He поддерживается</td>
+<td>BIT</td>
+<td>BOOLEAN, LOGICAL, LOGICAL1, YESNO</td>
+<td>В Access эквивалентно типу данных Логический</td>
+</tr>
+<tr class="one">
+<td>He поддерживается</td>
+<td>TINYINT</td>
+<td>INTEGER 1, BYTE</td>
+<td>Целое число длиной 1 байт</td>
+</tr>
+<tr class="two">
+<td>He поддерживается</td>
+<td>COUNTER</td>
+<td>AUTOINCREMENT</td>
+<td></td>
+</tr>
+<tr class="one">
+<td>He поддерживается</td>
+<td>MONEY</td>
+<td>CURRENCY</td>
+<td>В Access эквивалентно типу данных Денежный</td>
+</tr>
+<tr class="two">
+<td>DATE, TIME, TIMESTAMP</td>
+<td>DATETIME</td>
+<td>DATE, TIME</td>
+<td>В Access эквивалентно типу данных Дата/Время</td>
+</tr>
+<tr class="one">
+<td>He поддерживается</td>
+<td>UNIQUEIDEN TIFIER</td>
+<td>QUID</td>
+<td></td>
+</tr>
+<tr class="two">
+<td>DECIMAL</td>
+<td>DECIMAL</td>
+<td>NUMERIC, DEC</td>
+<td></td>
+</tr>
+<tr class="one">
+<td>REAL</td>
+<td>REAL</td>
+<td>SINGLE, FLOAT4, IEEESINGLE</td>
+<td>Тип данных Числовой (с плавающей точкой, 4 байта)</td>
+</tr>
+<tr class="two">
+<td>DOUBLE PRECISION, FLOAT</td>
+<td>FLOAT</td>
+<td>DOUBLE, FLOATS, IEEEDOUBLE, NUMBER</td>
+<td>Тип данных Числовой (с плавающей точкой, 8 байтов)</td>
+</tr>
+<tr class="one">
+<td>SMALLINT</td>
+<td>SMALLINT</td>
+<td>SHORT, INTEGER2</td>
+<td>Тип данных Числовой (2 байта)</td>
+</tr>
+<tr class="two">
+<td>INTEGER</td>
+<td>INTEGER</td>
+<td>LONG, INT, INTEGER4</td>
+<td>Тип данных Числовой (длинное целое)</td>
+</tr>
+<tr class="one">
+<td>INTERVAL</td>
+<td>He поддерживается</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="two">
+<td>He поддерживается</td>
+<td>IMAGE</td>
+<td>LONGBINARY, GENERAL, OLEOBJECT</td>
+<td>Тип данных поля объекта OLE</td>
+</tr>
+<tr class="one">
+<td>He поддерживается</td>
+<td>TEXT</td>
+<td>LONGTEXT, LONGCHAR, MEMO, NOTE, NTEXT</td>
+<td>Тип данных Поле Memo</td>
+</tr>
+<tr class="two">
+<td>CHARACTER, CHARACTER VARYING, NATIONAL CHARACTER, NATIONAL CHARACTER VARYING</td>
+<td>CHAR</td>
+<td>TEXT(n), ALPHANUMERIC, CHARACTER, STRING, VARCHAR, CHARACTER VARYING, NCHAR, NATIONAL CHARACTER, NATIONAL CHAR, NATIONAL CHARACTER VARYING, NATIONAL CHAR VARYING</td>
+<td>Тип данных Текстовый</td>
+</tr>
+</tbody>
+</table>
+<p> Таблица 8.6. Эквивалентные типы данных Jet SQL и ANSI SOL</p>
+<p>Реализация SQL процессора Jet  4.x имеет существенные отличия в типах данных от предыдущей версии Jet SQL, а именно:</p>
+<ul>
+<li>тип TIMESTAMP теперь не является синонимом типа DATETIME;</li>
+<li>тип NUMERIC теперь используется как синоним типа DECIMAL, а не FLOAT или DOUBLE, как это было раньше;</li>
+<li>поля типа LONGTEXT и CHAR всегда хранятся в формате представления знаков Unicode, который эквивалентен такому типу данных ANSI SQL, как NATIONAL CHAR;</li>
+<li>если имя типа данных TEXT используется без указания необязательной длины, то создается поле типа LONGTEXT. В результате появляется возможность применять инструкции CREATE TABLE для создания типов данных, совместимых с Microsoft SQL Server;</li>
+<li>если имя типа данных TEXT используется с указанием необязательной длины, например TEXT(25), то тип данных соответствующего поля будет эквивалентен типу CHAR. В результате сохраняется обратная совместимость с большинством приложений, использующих процессор Microsoft Jet, а также согласованность типа данных TEXT (без указания длины) с Microsoft SQL Server;</li>
+<li>тип данных BIT стандарта ANSI SQL не соответствует типу данных BIT языка Jet SQL. Он совпадает с типом данных BINARY. Для типа данных BIT языка Jet SQL нет эквивалентного типа в ANSI SQL.</li>
+</ul>
+<p> Подстановочные знаки при сравнении строк </p>
+<p>В данном случае речь идет о трех подстановочных знаках, приведенных в табл. 8.7.</p>
+<table class="table_common" width="600">
+<tbody>
+<tr class="header">
+<td>Jet SQL</td>
+<td>ANSI SQL</td>
+<td>Примечание</td>
+</tr>
+<tr class="one">
+<td>?</td>
+<td>(подчеркивание)</td>
+<td>Любой одиночный символ</td>
+</tr>
+<tr class="two">
+<td>*</td>
+<td>%</td>
+<td>Произвольное количество символов</td>
+</tr>
+<tr class="one">
+<td>#</td>
+<td>He имеет эквивалента</td>
+<td>Любая цифра от 0 до 9</td>
+</tr>
+<tr class="two">
+<td>[список_знаков]</td>
+<td>Не имеет эквивалента</td>
+<td>Любой одиночный знак, входящий в список знаков</td>
+</tr>
+<tr class="one">
+<td>[! список_знаков]</td>
+<td>Не имеет эквивалента</td>
+<td>Любой одиночный знак, не входящий в список знаков</td>
+</tr>
+</tbody>
+</table>
+<p> Таблица 8.7. Соответствие подстановочных знаков</p>
+<p>Язык SQL Microsoft Jet поддерживает использование в операторе Like как  подстановочных знаков ANSI SQL (_ и #), так и подстановочных знаков ядра Microsoft Jet (? и *). Однако подстановочные знаки ANSI SQL доступны только в режиме ANSI SQL-92, в противном случае они воспринимаются просто как строковые константы. И наоборот, в режиме ANSI SQL-92 подстановочные знаки Jet SQL трактуются как строковые константы. Таким образом, нельзя в одном запросе смешивать эти знаки.</p>
+<p>Ниже перечислены важные правила установления совпадения оператором Like.</p>
+<ul>
+<li>Восклицательный знак (!) в начале списка_знаков означает, что совпадение наступит, если в выражении будет найден любой знак, отсутствующий в списке. Восклицательный знак вне квадратных скобок соответствует самому себе.</li>
+<li>Знак дефиса (-) можно использовать в начале (после восклицательного знака, если он есть) или в конце списка_знаков для установления соответствия с самим собой. В любом другом месте знак дефиса означает диапазон символов ANSI.</li>
+<li>Если указан диапазон знаков, его границы должны следовать в возрастающем порядке (А— Я или 0—100). [А— Я] является правильным образцом, а [Я— А] — неправильным.</li>
+<li>Квадратные скобки ([ ]) игнорируются; они рассматривается как пустая строка ( &#171;&#187;).</li>
+</ul>
+<p> Зарезервированные слова DISTINCTROW и DISTINCT </p>
+<p>Зарезервированные слова DISTINCTROW и DISTINCT в инструкции SELECT Jet SQL позволяют исключить из результирующего множества повторяющиеся строки. Разница между этими словами состоит в том, как при их использовании определяются повторяющиеся записи.</p>
+<p>Если в инструкции SELECT используется слово DISTINCTROW, то для сравнения записей применяются все поля исходной таблицы, независимо от того, какие из этих полей включены в запрос.</p>
+<p>Если в инструкцию SELECT входит слово DISTINCT, то для сравнения записей используются данные в строках результирующего множества запроса, т. е. только те поля, которые включены в запрос.</p>
+<p>Замечание</p>
+<p>Модификаторы могут использоваться не только в инструкции SELECT, но также и в запросах на добавление записей и на создание таблицы.</p>
+<p>Для того чтобы понять, как влияет включение этих слов в запрос на его результат, построим запрос, который будет показывать, какие товары приобрел каждый клиент:</p>
+<ol>
+<li>Создайте новый запрос в базе данных &#171;Борей&#187;. Для этого раскройте список запросов окна базы данных и нажмите кнопку  Создать  (New Query). В списке диалогового окна  Новый запрос (New Query) выделите значение  Конструктор (Design View) и нажмите кнопку ОК.</li>
+<li>Добавьте в запрос таблицы &#171;Клиенты&#187; (Customers), &#171;Заказы&#187; (Orders), &#171;Заказано&#187; (Orders Details) и &#171;Товары&#187; (Products). Access автоматически создает необходимые связи между таблицами.</li>
+<li>Перетащите поле &#171;Название&#187; (CompanyName) из списка полей таблицы &#171;Клиенты&#187; в первый столбец бланка запроса. Выделите ячейку  Сортировка  (Sort) и выберите значение  По возрастанию (Ascending).</li>
+<li>Перетащите поле &#171;Марка&#187; (ProductName) из списка полей таблицы &#171;Товары&#187; (Products) во второй столбец бланка запроса. Задайте в этом столбце также сортировку по возрастанию.</li>
+<li>Нажмите на панели инструментов кнопку  Запуск (Run) для выполнения запроса.</li>
+</ol>
+<p>Вы должны получить результирующее множество, которое содержит 2169 записей. При этом те клиенты, которые не сделали ни одного заказа, в результирующее множество .не попадут, однако клиенты, которые заказывали один и тот же товар несколько раз, могут попасть в таблицу несколько раз. Теперь добавим в инструкцию SQI, SELECT слово DISTINCTROW для зтого:</p>
+<ol>
+<li>Выберите команду меню  Вид, Режим SQL  (View, SQL View) или щелкните по стрелке на кнопке  Вид (View) на панели управления и выберите элемент  Режим SQL (SQL View). Откроется диалоговое окно, в котором выведена инструкция SQL, соответствующая построенному запросу.</li>
+<li>Введите слово DISTINCTROW сразу после слова SELECT. Запрос должен выглядеть гак, как показано на рис. 8.58.</li>
+<li>Нажмите кнопку  Запуск (Run). Результирующее множество запроса будет включать 1695 записей.</li>
+<li>Снова выполните команду  Вид, Режим SQL  (View, SQL Mode) и замените в инструкции SQL СЛОВО DISTINCTRTOW СЛОВОМ DISTINCT.</li>
+<li>Нажмите кнопку  Запуск (Run). Результирующее множество запроса содержит те же 1695 строк, что и при использовании ключевого слова DISTINCTROW.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image25/e4e63bf92106eb11e1973d12890ee220.gif" width="464" height="211" alt=""><meta itemprop="width" content="464">
+<meta itemprop="height" content="211"></span></p>
+<p> Рис. 8.58. Инструкция SQL с модификатором DISTINCTROW</p>
+<p>В данном случае разницы между употреблением этих модификаторов нет (в других случаях может получиться иной результат). Однако при попытке редактировать данные в таблице вы убедитесь, что при использовании модификатора DISTINCT результирующий набор записей получается необновляемым, а модификатор DISTINCTROW допускает изменение данных в результирующем наборе.</p>
+<p>Вместо того чтобы вносить эти модификаторы вручную в режиме SQL, можно просто установить соответствующие свойства запроса. Чтобы открыть диалоговое окно свойств запроса, щелкните правой кнопкой мыши по свободному полю в верхней панели окна Конструктора запроса и выберите из контекстного меню команду Свойства (Properties). Появляется диалоговое окно, представленное на рис. 8.57.</p>
+<p>Два свойства в этом окне определяют использование модификаторов DISTINCTROW и DISTINCT:  Уникальные значения (Unique Values) и  Уникальные записи (Unique Rows). Свойство  Уникальные значения соответствует модификатору DISTINCT, a свойство  Уникальные записи — модификатору DISTINCTROW. Если вы попробуете установить эти значения, то увидите, что Access не позволит установить значения Да (Yes) для обоих свойств. Если одно из них имеет значение  Да (Yes), то для второго автоматически устанавливается значение  Нет (No). Если оба свойства имеют значение  Нет (No), запрос будет включать в результирующий набор все записи.</p>
+<p>Замечание</p>
+<p>Свойство  Уникальные записи имеет смысл только для запроса, который строится по нескольким таблицам. Если запрос имеет только одну таблицу, значение этого свойства игнорируется.</p>
+<p> Использование разделителей и символов SQL </p>
+<p>Разделителями в SQL также являются запятая, точка, точка с запятой и двоеточие. Описанные ниже разделители применяются с небольшими отличиями в ANSI SQL и в Jet SQL. Так в Jet SQL:</p>
+<ul>
+<li>запятые используются для разделения членов списков, например имен полей: Имя, Фамилия, Отчество, [Год рождения}, Адрес, Город, Индекс;</li>
+<li>для задания имен полей, которые содержат недопустимые символы (например, пробелы) применяются квадратные скобки: [Дата размещения];</li>
+<li>если в запрос включены поля нескольких таблиц, то включается полное имя поля, которое состоит из двух частей: имени таблицы и имени поля, между которыми используется разделитель — точка: Заказы. КодЗаказа;</li>
+<li>строки в ANSI SQL заключаются в одиночные кавычки (&#8216;). Строки в Jet SQL можно заключать как в одиночные, так и в двойные кавычки ( &#171;). При использовании инструкций SQL в процедурах VBA рекомендуется ставить одиночные кавычки;</li>
+<li>в конце инструкции Jet SQL обязательно ставится точка с запятой; П в инструкциях Jet SQL нельзя использовать переменные.</li>
+</ul>
+<p>В инструкциях SQL, разбитых на несколько строк, часто встречаются отступы, которые указывают на продолжение предыдущей строки или на фрагмент, связанный с расположенным на предыдущей строке ключевым словом.</p>
+<p> Использование инструкций SQL для создания запросов </p>
+<p>Есть несколько типов запросов, которые невозможно создать с помощью Конструктора запросов. Их можно создать, вводя соответствующую инструкцию в окне SQL. Для этого нужно:</p>
+<ol>
+<li>Создать новый запрос с использованием Конструктора запросов.</li>
+<li>Закрыть диалоговое окно  Добавление таблицы  (Show Table), не добавляя таблиц.</li>
+<li>Выбрать команду  Вид, Режим SQL (View, SQL View) для вывода окна SQL.</li>
+<li>Удалить весь текст, который может быть выведен в окне SQL (обычно по умолчанию ВЫВОДИТСЯ SELECT DISTINCTROW;).</li>
+<li>Ввести в окне инструкцию SQL, используя для ввода новой строки комбинацию клавиш &lt;Ctrl&gt;+&lt;Enter&gt;.</li>
+<li>Нажать на панели инструментов кнопку  Запуск (Run), чтобы вывести результирующее множество записей.</li>
+</ol>
+<p>Ниже рассматриваются запросы, которые могут быть введены только в режиме SQL.</p>
+<p> Создание запросов на объединение записей </p>
+<p>Этот тип запроса позволяет объединить в одном результирующем наборе результаты нескольких запросов, таблиц и инструкций SELECT. Синтаксис этого запроса следующий:</p>
+<p>[TABLE] запрос_1 UNION [ALL] [TABLE] запрос_2 [UNION [ALL] [TABLE] запрос_п [ &#8230; ]],</p>
+<p>где</p>
+<p>запрос_1, запрос_2, &#8230; запрос_п — инструкция SELECT, имя сохраненного запроса или имя сохраненной таблицы, перед которым стоит зарезервированное слово TABLE.</p>
+<p>В каждом аргументе запрос_1 допускается применение предложения GROUP BY или HAVING для группировки возвращаемых данных. В конец последнего аргумента запрос_п можно включить предложение ORDER BY, чтобы отсортировать возвращенные данные. Таким образом, группировка записей может выполняться в каждом из объединяемых запросов или таблиц, а сортировка выполняется только в результирующем множестве записей запроса на объединение. В качестве поля для сортировки нужно указывать имена полей из первого запроса или таблицы, т. к. именно эти имена будут выступать в качестве имен полей в результирующем множестве запроса.</p>
+<p>По умолчанию записи, повторяющиеся в объединяемых таблицах и запросах, не включаются в результирующее множество запроса. Использование предиката ALL в запросе позволяет включить все записи. Кроме того, такие запросы выполняются быстрее.</p>
+<p>Все запросы, включенные в операцию UNION, должны отбирать одинаковое число полей; при этом типы данных и размеры полей не обязаны совпадать. Если число полей не совпадает, выводится сообщение об ошибке.</p>
+<p>Для создания запроса на объединение существует специальная команда меню  Запрос, Запрос SQL, Запрос на объединение (Query, SQL Specific, Union), которая доступна в режиме Конструктора запросов. При выполнении этой команды открывается пустое окно  Режим SQL, в которое нужно ввести инструкцию.</p>
+<p>На рис. 8.59 показана инструкция SQL, содержащая операцию UNION, для запроса &#171;Клиенты и поставщики по городам&#187; (Customers and Suppliers by City), который содержится в базе данных &#171;Борей&#187;. Чтобы открыть окно SQL, откройте список запросов в окне базы данных, выделите запрос &#171;Клиенты и поставщики по городам&#187; и нажмите кнопку  Конструктор  (Design). При этом кнопка и команда меню  Вид, Конструктор (View, Design View) становятся недоступными.</p>
+<p>Результат выполнения запроса на объединение &#171;Клиенты и поставщики по городам&#187; приведен па рис. 8.60.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image01/00fc1c227991e7b8c7d649a83d19a81e.gif" width="489" height="150" alt=""><meta itemprop="width" content="489">
+<meta itemprop="height" content="150"></span></p>
+<p> Рис. 8.59. Запрос на объединение</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image05/29645231d0fa2d621d99bd73dea179d5.gif" width="532" height="221" alt=""><meta itemprop="width" content="532">
+<meta itemprop="height" content="221"></span></p>
+<p> Рис. 8.60. Результирующее множество запроса &#171;Клиенты и поставщики по городам&#187;</p>
+<p> Создание запроса к серверу </p>
+<p>Еще одним типом запроса SQL является запрос к серверу. Он обрабатывается не процессором Jet, как все остальные запросы, а непосредственно передается на сервер базы данных, к которому выполняется обращение, например Microsoft SQL</p>
+<p>Server. Главной особенностью этого запроса является то, что он должен использовать синтаксис языка SQL сервера базы данных (для Microsoft SQL Server это — Transact-SQL). Создается этот запрос аналогично запросу на объединение с помощью команды меню  Запрос, Запрос SQL, К серверу (Query, SQL Specific, Pass-Through). Запросы к серверу применяются в приложениях, имеющих архитектуру &#171;клиент-сервер&#187;.</p>
+<p> Управляющие запросы </p>
+<p>Управляющие запросы относятся к третьему типу запросов, которые создаются в окне  Режим SQL и используют инструкции Jet SQL. Такие запросы позволяют работать с таблицами и индексами — создавать, изменять и удалять таблицы, создавать индексы.</p>
+<p>Инструкции SQL, которые при этом используются, относятся к подмножеству SQL, называющемуся DDL — язык определения данных. Набор этих инструкций в Jet SQL существенно сокращен по сравнению со стандартом ANSI SQL, т. к. многие операции можно выполнить с помощью других средств (команд меню или окна базы данных).</p>
+<p>В обычном режиме можно использовать следующие инструкции SQL:</p>
+<ul>
+<li>CREATE TABLE — создает таблицу;</li>
+<li>CONSTRAINT — создает уникальный индекс, в том числе по первичному ключу, а также применяется для установления отношений между таблицами;</li>
+<li>ALTER TABLE — изменяет структуру таблицы, созданной с помощью инструкции CREATE TABLE;</li>
+<li>DROP — удаляет таблицу из базы данных или удаляет индексы в таблице;</li>
+<li>CREATE INDEX — создает индекс для поля или группы полей.</li>
+</ul>
+<p>В режиме ANSI SQL-92 возможны дополнительно следующие инструкции:</p>
+<ul>
+<li>CREATE PROCEDURE — создает хранимую процедуру; П CREATE VIEW — создает новое представление;</li>
+<li>CREATE USER или GROUP — создает одного или нескольких новых пользователей или группу;</li>
+<li>ADD USER — добавляет одного или нескольких существующих пользователей к существующей группе;</li>
+<li>DROP USER или GROUP — удаляет одного или нескольких существующих пользователей или групп или исключает одного или нескольких существующих пользователей из существующей группы;</li>
+<li>ALTER USER или DATABASE — изменяет пароль существующего пользователя или базы данных;</li>
+<li>GRANT — предоставляет конкретные привилегии существующему пользователю или группе;</li>
+<li>REVOKE — отменяет конкретные привилегии существующего пользователя или группы.</li>
+</ul>
+<p>Замечание</p>
+<p>Запросы данного типа обычно используются в программах на языке Visual Basic для приложений (VBA) тогда, когда нужно выполнить соответствующие операции программно. В противном случае для этого гораздо удобнее и быстрее применять средства пользовательского интерфейса Access.</p>
+<p>В рамках данной книги мы не описываем подробно синтаксис всех инструкций SQL. Заинтересованному читателю рекомендуется обратиться к разделу Справочник Microsoft Jet SQL Справочной системы Access.</p>
+<p> Создание подчиненных запросов </p>
+<p>Инструкции Jet SQL, такие как SELECT, SELECT. .. INTO, INSERT&#8230;INTO, DELETE или UPDATE позволяют для вычисления предиката в предложении WHERE использовать другой запрос. Этот запрос называется  подчиненным запросом.</p>
+<p>Подчиненный запрос включается в главный запрос одним из следующих способов:</p>
+<ul>
+<li>сравнение [ANY | ALL | SOME] (инструкцияSQL);</li>
+<li>выражение [NOT] IN (инструкцияSQR);</li>
+<li>[NOT] EXISTS (инструкцияSQL) ,</li>
+</ul>
+<p>где:</p>
+<p>сравнение — выражение и оператор сравнения, который сравнивает это выражение с результатами подчиненного запроса;</p>
+<p>выражение — выражение, для которого проводится поиск в результирующем наборе записей подчиненного запроса;</p>
+<p>инструкцияSQL — инструкция SELECT, которая представляет подчиненный запрос.</p>
+<p>Предикаты ANY или SOME являются синонимами и используются если в главном запросе нужно выбрать записи, удовлетворяющие сравнению со всеми записями, выбранными в подчиненном запросе. Ниже приведен пример запроса, который выбирает из таблицы &#171;Товары&#187; (Products) все товары, цена которых не ниже, чем цена товаров у конкурентов:</p>
+<p> SELECT * FROM Товары WHERE Товары.Цена &gt; ANY (SELECT ТоварыКонкурентов.Цена FROM ТоварыКонкурентов) </p>
+<p>Предикат ALL используется для выбора в главном запросе только тех записей, которые удовлетворяют сравнению со всеми записями, выбранными в подчиненном запросе. В следующем примере выбираются все заказы, сделанные в 1998 году, стоимость которых ниже стоимости любого заказа, размещенного в 1997 году:</p>
+<p> SELECT DISTINCTROW Заказы.КодЗаказа FROM Заказы WHERE Year(Заказы.ДатаРазмещения) = 1998 AND Заказы.СуммаЗаказа &lt; ALL (SELECT Заказы.СуммаЗаказа FROM Заказы WHERE Year(Заказы.ДатаРазмещения) = 1997); </p>
+<p>Предикат IN используется для выбора в главном запросе только тех записей, которые содержат значения, совпадающие с одним из значений, выбранных подчинен-ным_ запросом. Например, чтобы выбрать клиентов, которые разместили заказы в январе 1998 года, можно написать следующий запрос:</p>
+<p> SELECT * FROM Клиенты WHERE КодКлиента IN (SELECT КодКлиента FROM Заказы WHERE ДатаРазмещения BETWEEN #1/1/98# AND #31/1/98#); </p>
+<p>И наоборот, предикат NOT IN используется для выбора в главном запросе только тех записей, которые содержат значения, не совпадающие ни с одним из значений, отобранных подчиненным запросом.</p>
+<p>Предикат EXISTS используется в логическом выражении для определения того, должен ли подчиненный запрос возвращать какие-либо записи. Например, чтобы выбрать всех поставщиков для товаров в некотором заказе, можно использовать следующую инструкцию SQL:</p>
+<p> SELECT DISTINCTROW Поставщики.Название FROM Поставщики WHERE Exists (SELECT Заказано.КодТовара FROM Заказано WHERE КодЗаказа = 121 AND Заказано.КодТовара = Поставщики.КодТовара); </p>
+<p>В подчиненном запросе можно-использовать псевдонимы таблиц для ссылки на таблицы, перечисленные в предложении FROM, расположенном вне подчиненного запроса. В следующем примере выбираются фамилии и имена сотрудников, чья зарплата равна или больше средней зарплаты сотрудников, имеющих ту же должность. В предыдущем примере можно присвоить таблице &#171;Сотрудники&#187; (Employees) псевдоним Т1, и тогда запрос будет выглядеть следующим образом:</p>
+<p> SELECT DISTINCTROW Поставщики.Название FROM Поставщики As П1 WHERE Exists (SELECT Заказано.КодТовара FROM Заказано WHERE КодЗаказа = 121 AND Заказано.КодТовара = П1.КодТовара); </p>
+<p>Некоторые подчиненные запросы можно использовать в перекрестных запросах как предикаты в предложении WHERE. Подчиненные запросы, применяемые для вывода результатов (в списке SELECT), нельзя применять в перекрестных запросах.</p>
+<p>В отличие от запросов на объединение, подчиненный запрос можно создать в режиме Конструктора. В строке  Условия отбора (Criteria) в качестве условия отбора следует указать, например, зарезервированное слово IN, а затем ввести инструкцию SELECT. А можно сначала создать в режиме Конструктора подчиненный запрос, переключиться в режим SQL, скопировать получившуюся инструкцию SQL в буфер</p>
+<p>обмена, а затем создать главный запрос и скопировать в строку  Условия отбора (Criteria) подчиненный запрос из буфера.</p>
+<p> Выводы </p>
+<p>Запросы являются основой для большинства разрабатываемых в Access форм и отчетов. Во многих случаях запросы создаются и сохраняются в базе данных исключительно для конкретной формы, отчета или страницы. Запросы, которые мы рассмотрели в этой главе, позволяют выполнять множественные изменения в таблицах, анализировать данные разными способами, автоматически сортировать и фильтровать данные.</p>
+<p>Мы говорили о новых режимах, которые появились в Microsoft Access 2002 для просмотра содержимого таблиц и результатов запросов. И хотя сводные таблицы и диаграммы, получаемые в Access, немного отличаются от своих аналогов в Microsoft Excel, тем не менее, это уже большой шаг в усовершенствовании средств для анализа данных.</p>
+<p>В последних разделах главы мы привели описание языка Jet SQL. Возможно, это изложение показалось вам недостаточно полным. Однако применение языка Jet SQL в приложениях Access все-таки является достаточно ограниченным. В большинстве случаев для создания запросов можно использовать графический интерфейс Конструктора запросов. И даже при написании программ на VBA, в которых используются инструкции SQL, можно сначала построить нужный запрос в Конструкторе, а потом просто скопировать его через буфер обмена из окна  Режим SQL Конструктора запросов. Читателю, желающему основательно изучить SQL, мы рекомендуем обратиться к специальной литературе.</p>
+<p>В дальнейших главах нашей книги мы будем рассматривать запросы для создания других объектов Access: форм, отчетов, страниц доступа к данным.</p>
+<!-- toc empty -->	</div>
+<!-- .entry-content -->
+
+</article>
+
+
+
+
+
+
+
+
+
+<div class="social-buttons">
+<span class="social-button social-button--vkontakte main" data-social="vkontakte"><span>Поделиться в ВКонтакте</span></span><span class="social-button social-button--telegram " data-social="telegram"></span><span class="social-button social-button--odnoklassniki " data-social="odnoklassniki"></span><span class="social-button social-button--whatsapp " data-social="whatsapp"></span><span class="social-button social-button--viber " data-social="viber"></span>
+</div>
+
+<!--noindex-->
+<div class="author-box">
+    <div class="author-info">
+        <div class="author-box__ava">
+                    </div>
+
+        <div class="author-box__body">
+            <div class="author-box__author">
+                Автор А. Днепров            </div>
+            <div class="author-box__description">
+                <p>Обучаю основам работы с офисными программами.</p>
+            </div>
+
+            
+        </div>
+    </div>
+</div>
+<!--/noindex-->
+    <meta itemprop="author" content="А. Днепров">
+<meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/glava-redaktirovanie-i-analiz-dannyh" content="Глава 8. Редактирование и анализ данных с помощью запросов">
+    <meta itemprop="dateModified" content="2024-10-14">
+<div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+<div class="related-posts">
+<div class="related-posts__header">Вам также может понравиться</div>
+<div class="post-cards post-cards--vertical">
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/kak-sdelat-massovuyu-zamenu-formul"><img width="311" height="230" src="/image04/2408fadbc9163d5aa4994580cfc152cd.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/kak-sdelat-massovuyu-zamenu-formul">Как сделать массовую замену формул</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/kak-udalit-lishnie-i-pustye-stranitsy-v-excel">Как удалить лишние и пустые страницы в Excel</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/preobrazovanie-teksta-v-tablitsu"><img width="345" height="122" src="/image14/7a0043c9bf012cc129b22376cfebb2a9.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/preobrazovanie-teksta-v-tablitsu">Преобразование текста в таблицу</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/kak-delat-skrinshoty-s-vysokim-razresheniem-v-windows">Как делать скриншоты с высоким разрешением в Windows 11/10</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/osobennosti-raboty-s-mnogostranichny"><img width="213" height="230" src="/image13/6f8f9694c11ee322ff9d3675b0b8ba07.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/osobennosti-raboty-s-mnogostranichny">13.1 Особенности работы с многостраничными документами</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/kak-sdelat-izmeneniya-vnutri-yacheyki-p"><img width="345" height="93" src="/image27/f6550fd3bdfdfdbe500536441d5d252e.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/kak-sdelat-izmeneniya-vnutri-yacheyki-p">Как сделать изменения внутри ячейки. Принудительный перенос</a></div>
+    </div>
+</div>
+</div>
+            </main><!-- #main -->
+        </div>
+<!-- #primary -->
+
+        
+    
+
+    </div>
+<!--.site-content-inner-->
+
+    
+</div>
+<!--.site-content-->
+
+    
+    
+
+<div class="site-footer-container">
+
+    
+
+    <footer id="colophon" class="site-footer full" itemscope itemtype="http://schema.org/WPFooter">
+        <div class="site-footer-inner fixed">
+
+            
+            
+<div class="footer-bottom">
+    <div class="footer-info">
+        <div class="footer-copyright">© 2024 Самоучитель справочник по офисным программам. <a href="/o-nas" rel="nofollow">О нас | Контакты</a> | <a href="/map" rel="nofollow">Карта сайта</a>
+</div>
+        <div class="footer-under-copyright"></div>
+	        </div>
+
+    </div>
+        </div>
+    </footer><!--.site-footer-->
+</div>
+
+
+            <button type="button" class="scrolltop js-scrolltop" data-mob="on"></button>
+    
+                    <div class="top-line js-top-line">
+            <div class="top-line-inner fixed">
+
+                <div class="top-line__title">Глава 8. Редактирование и анализ данных с помощью запросов</div>
+<div class="top-line__like"><span class="btn-fb-like btn-top-like social-button--vkontakte" data-social="vkontakte"><span>Поделиться в ВКонтакте</span></span></div>
+<div class="top-line__post">
+<div class="top-line__post_thumbnail"><a href="/publikatsiya-v-formate-pdf"><img width="100" height="78" src="/image06/35debca03b53382f57a1b1a5c6e4c8ec.jpg" class="attachment-yelly_square size-yelly_square wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="top-line__post_title"><a href="/publikatsiya-v-formate-pdf">13.2 Публикация в формате PDF</a></div>
+</div>            </div>
+        </div>
+    
+</div>
+<!-- #page -->
+
+<script>var pseudo_links = document.querySelectorAll(".pseudo-clearfy-link");for (var i=0;i<pseudo_links.length;i++ ) { pseudo_links[i].addEventListener("click", function(e){   window.open( e.target.getAttribute("data-uri") ); }); }</script><script>document.addEventListener("copy", (event) => {var pagelink = "\nИсточник: /glava-redaktirovanie-i-analiz-dannyh";event.clipboardData.setData("text", document.getSelection() + pagelink);event.preventDefault();});</script><script type="text/javascript" id="yelly-scripts-js-extra">
+/* <![CDATA[ */
+var settings_array = {"rating_text_average":"среднее","rating_text_from":"из","lightbox_display":"1"};
+var wps_ajax = {"url":"\/wp-admin\/admin-ajax.php","nonce":"e4ca9d4bd8"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="/js/scripts.min.js" id="yelly-scripts-js"></script>
+
+
+
+<div class="image-hover-social-buttons" style="display: none;">
+<div class="social-button social-button--vkontakte js-share-link" data-uri="https://vk.com/share.php?url=%2Fglava-redaktirovanie-i-analiz-dannyh"></div>
+<div class="social-button social-button--telegram js-share-link" data-uri="https://t.me/share/url?url=%2Fglava-redaktirovanie-i-analiz-dannyh&text=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+8.+%D0%A0%D0%B5%D0%B4%D0%B0%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5+%D0%B8+%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7+%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85+%D1%81+%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E+%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%BE%D0%B2"></div>
+<div class="social-button social-button--odnoklassniki js-share-link" data-uri="https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&service=odnoklassniki&st.shareUrl=%2Fglava-redaktirovanie-i-analiz-dannyh"></div>
+<div class="social-button social-button--whatsapp js-share-link" data-uri="whatsapp://send?url=%2Fglava-redaktirovanie-i-analiz-dannyhtext=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+8.+%D0%A0%D0%B5%D0%B4%D0%B0%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5+%D0%B8+%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7+%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85+%D1%81+%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E+%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%BE%D0%B2"></div>
+<div class="social-button social-button--viber js-share-link" data-uri="viber://forward?url=%2Fglava-redaktirovanie-i-analiz-dannyhtext=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+8.+%D0%A0%D0%B5%D0%B4%D0%B0%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5+%D0%B8+%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7+%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85+%D1%81+%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E+%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%BE%D0%B2"></div>
+</div>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(93345646, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/93345646" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>

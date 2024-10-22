@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<title>Глава 10. Подготовка составных отчетов &#8212; learn-office</title>
+	<meta name="description" content="Подготовка составных отчетов Одной из важнейших функций, которые обычно предоставляют настольные СУБД, является возможность создания различных отчетов —">
+	<link rel="canonical" href="/glava-podgotovka-sostavnyh-otchetov">
+	<meta property="og:locale" content="ru_RU">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Глава 10. Подготовка составных отчетов &#8212; learn-office">
+	<meta property="og:description" content="Подготовка составных отчетов Одной из важнейших функций, которые обычно предоставляют настольные СУБД, является возможность создания различных отчетов —">
+	<meta property="og:url" content="/glava-podgotovka-sostavnyh-otchetov">
+	<meta property="og:site_name" content="Excel-jet">
+	<meta property="article:published_time" content="2024-07-15T13:07:11+00:00">
+	<meta property="og:image" content="/image11/63c3508e97b8fcfd298c8929c3944d8e.gif">
+	<meta property="og:image:width" content="507">
+	<meta property="og:image:height" content="523">
+	<meta property="og:image:type" content="image/gif">
+	<meta name="author" content="А. Днепров">
+
+
+<style id="wp-block-library-theme-inline-css" type="text/css">.wp-block-audio :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio :where(figcaption){color:#ffffffa6}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed :where(figcaption){color:#ffffffa6}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:#ffffffa6}:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table :where(figcaption){color:#ffffffa6}.wp-block-video :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video :where(figcaption){color:#ffffffa6}.wp-block-video{margin:0 0 1em}:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}</style>
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 19.5px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36.5px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--normal: 22px;--wp--preset--font-size--huge: 49.5px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="google-fonts-css" href="https://fonts.googleapis.com/css?family=Roboto%3A400%2C400i%2C700&#038;subset=cyrillic&#038;display=swap" media="all">
+<link rel="stylesheet" id="yelly-style-css" href="/css/style.min.css" media="all">
+
+<style>.pseudo-clearfy-link { color: #008acf; cursor: pointer;}.pseudo-clearfy-link:hover { text-decoration: none;}</style>
+<link rel="preload" href="/fonts/icomoon.ttf" as="font" crossorigin>
+    <style>.scrolltop{width:50px}.scrolltop:before{content:"\21d1"}.entry-content a, .entry-content a:visited, .spanlink, .comment-reply-link, .pseudo-link, .widget_calendar a, .widget_recent_comments a, .child-categories ul li a{color:#0000ff}.child-categories ul li a{border-color:#0000ff}a:hover, a:focus, a:active, .spanlink:hover, .top-menu ul li>span:hover, .main-navigation ul li a:hover, .main-navigation ul li span:hover, .footer-navigation ul li a:hover, .footer-navigation ul li span:hover, .comment-reply-link:hover, .pseudo-link:hover, .child-categories ul li a:hover{color:#1e73be}.top-menu>ul>li>a:before, .top-menu>ul>li>span:before{background:#1e73be}.child-categories ul li a:hover, .post-box--no-thumb a:hover{border-color:#1e73be}.post-box--card:hover{box-shadow: inset 0 0 0 1px #1e73be}.post-box--card:hover{-webkit-box-shadow: inset 0 0 0 1px #1e73be}@media (min-width: 768px){body{background-attachment: scroll}}body{font-size:17px;}@media (max-width: 991px){.widget-area{display: block; margin: 0 auto}}</style>
+    <!-- Yandex.RTB -->
+<script>window.yaContextCb=window.yaContextCb||[]</script>
+<script src="https://yandex.ru/ads/system/context.js" async></script>	
+</head>
+<body class="post-template-default single single-post postid-592 single-format-standard wp-embed-responsive sidebar-right">
+<div id="page" class="site">
+    <a class="skip-link screen-reader-text" href="#content">Перейти к контенту</a>
+
+    
+    
+    <div class="search-screen-overlay js-search-screen-overlay"></div>
+    <div class="search-screen js-search-screen">
+        
+<form role="search" method="get" class="search-form" action="/">
+    <label>
+        <span class="screen-reader-text">Search for:</span>
+        <input type="search" class="search-field" placeholder="Поиск..." value="" name="s">
+    </label>
+    <button type="submit" class="search-submit"></button>
+</form>    </div>
+
+    
+
+<header id="masthead" class="site-header full" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="site-header-inner fixed">
+
+        <div class="humburger js-humburger">
+<span></span><span></span><span></span>
+</div>
+
+        
+<div class="site-branding">
+
+    <div class="site-branding__body"><div class="site-title"><a href="/">Excel-jet</a></div></div>
+</div>
+<!-- .site-branding -->
+
+    
+    <nav id="site-navigation" class="main-navigation full">
+        <div class="main-navigation-inner fixed">
+            <div class="menu-menyu-container"><ul id="header_menu" class="menu">
+<li id="menu-item-6695" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-6695">
+<a href="/excel">Excel</a>
+<ul class="sub-menu">
+	<li id="menu-item-6709" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6709"><a href="/excel/functions">Функции</a></li>
+</ul>
+</li>
+<li id="menu-item-6697" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6697"><a href="/microsoft-word">Word</a></li>
+<li id="menu-item-6696" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6696"><a href="/powerpoint">PowerPoint</a></li>
+<li id="menu-item-6698" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6698"><a href="/outlook">Outlook</a></li>
+</ul></div>        </div>
+    </nav><!-- #site-navigation -->
+
+    
+<div class="header-search"><span class="search-icon js-search-icon"></span></div>    </div>
+</header><!-- #masthead -->
+
+
+
+    
+    
+    <div id="content" class="site-content fixed">
+
+        
+        <div class="site-content-inner">
+    
+        
+        <div id="primary" class="content-area" itemscope itemtype="http://schema.org/Article">
+            <main id="main" class="site-main">
+
+                
+<article id="post-592" class="article-post post-592 post type-post status-publish format-standard has-post-thumbnail  category-excel">
+
+    
+        
+        <header class="entry-header"><h1 class="entry-title" itemprop="headline">Глава 10. Подготовка составных отчетов</h1></header>
+        
+        
+        
+    
+    
+    <div class="entry-meta">
+<span class="entry-time"><span class="entry-label">Время чтения</span> 39 мин.</span><span class="entry-date"><span class="entry-label">Опубликовано</span> <time itemprop="datePublished" datetime="2024-07-15">15.07.2024</time></span>
+</div>
+	<div class="entry-content" itemprop="articleBody">
+		<p>Подготовка составных отчетов </p>
+<p>Одной из важнейших функций, которые обычно предоставляют настольные СУБД, является возможность создания различных отчетов — документов, содержащих дан&#8212;ные из таблиц базы данных. Отличительной особенностью Microsoft Access является наличие очень мощного генератора отчетов, который позволяет создавать отчеты высокого качества. Наличие мастеров, генерирующих автоматически или при помощи диалога с пользователем самые разнообразные отчеты, значительно облегчает трудоемкий процесс их создания. В <a href="https://taurion.ru/access/6">гл. 6</a> мы уже рассматривали основные вопросы, касающиеся создания отчетов в Access. В этой главе мы поговорим о них более подробно, ориентируясь на профессиональное использование средств Access 2002. В частности, покажем, как с помощью Мастера отчетов или в режиме Конструктора создавать достаточно сложные по структуре отчеты, включающие подчиненные отчеты или имеющие несколько уровней группировки записей. А также обсудим здесь многие другие вопросы о работе с отчетами, не вошедшие  в <a href="https://taurion.ru/access/6">гл. 6</a>.  Мы не будем затрагивать здесь тему программирования на VBA или использования макросов при создании отчетов, оставив ее для рассмотрения в последующих главах  (гл. <a href="https://taurion.ru/access/11">11</a> и <a href="https://taurion.ru/access/13">13</a>),  и покажем, как много можно сделать, -применяя только интерактивные средства, предоставляемые Access. В качестве примеров будут использованы уже готовые отчеты, которые содержатся в учебной базе данных &#171;Борей&#187; (Northwind), или отчеты, созданные на основе таблиц этой базы данных.</p>
+<p>Microsoft Access 2000 и 2002 имеют существенные отличия и преимущества по сравнению с другими наиболее известными СУБД: это главная черта продуктов Microsoft — удобство использования и одновременно мощность продукта — в сочетании с возможностью построения комплексных решений на базе современных технологий, а именно: интеграция баз данных с SQL Server, с другими приложениями Office и публикация интерактивных данных в Web. В Access 2002 средства публикации в Web значительно расширились. Это касается и отчетов: теперь они могут быть преобразованы в формат XML и в интерактивные страницы доступа к данным. Однако это отдельная тема, которая освещена  в гл. 12. </p>
+<p>В настоящей главе рассмотрены следующие вопросы:</p>
+<ul>
+<li>Создание отчетов, включающих подчиненные отчеты</li>
+<li>Создание отчетов на базе перекрестных запросов</li>
+<li>Печать отчета в несколько колонок — в стиле газетных полос</li>
+<li>Способы сортировки и группировки записей в отчете</li>
+<li>Вычисления в отчетах</li>
+<li>Фильтрация данных в отчете</li>
+</ul>
+<p> Создание составных отчетов </p>
+<p>Под составными отчетами в данном случае понимаются отчеты, имеющие сложную структуру: включающие подчиненные отчеты, построенные на базе перекрестных запросов, выводимые на печать в виде нескольких колонок, как это делается, например, в газетах. Ниже будут описаны такие отчеты, их назначение и способы создания.</p>
+<p> Применение подчиненных отчетов </p>
+<p>По аналогии с составными формами, включающими подчиненные формы, можно предположить, что составные отчеты используются также и для печати данных из таблиц, связанных отношением &#171;один-ко-многим&#187;. Однако это не совсем так. В большинстве случаев для отображения данных из связанных таблиц не требуется внедрять подчиненные отчеты  (пример такого отчета см. в разд. &#171;Создание отчета с помощью Мастера отчетов&#187;гл. 6). </p>
+<p>Например, если нужно создать отчет по товарам с разбивкой по категориям товаров, это можно сделать двумя способами:</p>
+<ul>
+<li>в основном отчете выводятся данные о категории товаров, а в подчиненном — о товарах, входящих в категории. И это будет аналогично созданию формы &#171;Категории товаров&#187;, в которую включается подчиненная форма, отображающая данные из таблицы товаров;</li>
+<li>то же самое может быть выполнено без использования подчиненного отчета с помощью группировки товаров по категориям. Отчет в этом случае должен строиться на базе запроса, включающего данные из таблиц &#171;Категории&#187; и &#171;Товары&#187;.</li>
+</ul>
+<p>Тем не менее бывают ситуации, когда использование подчиненного отчета необходимо или предпочтительно. Например:</p>
+<ul>
+<li>Главный отчет представляет собой контейнер, в который включаются один или более подчиненных отчетов из несвязанных таблиц. В этом случае главный отчет может вообще не быть связанным с таблицей или запросом и содержать только надписи и вычисляемые элементы.</li>
+<li>Иногда итоговые данные требуется представить в документе в виде отдельной таблицы наряду с детальными данными. В этом случае просто группировкой записей с итоговыми строками не обойтись, нужно ввести подчиненный отчет, который выведет итоговые данные в требуемом виде.</li>
+<li>Группировка в отчетах Access является очень мощным механизмом, который позволяет получить самые разные способы обработки данных отчета. Однако только при использовании подчиненных отчетов можно создать группы, которые содержат две и более подгруппы данных.</li>
+<li>Главный отчет может содержать, во-первых, несколько подчиненных отчетов и, во-вторых, два уровня вложенности подчиненных отчетов. И, кроме того, на любом уровне вложенности наряду с подчиненным отчетом можно вставить в главный отчет подчиненную форму.</li>
+</ul>
+<p>Основное достоинство подчиненных отчетов состоит в том, что с их помощью можно разместить на странице отчета самую разнообразную информацию в удобном структурированном виде, чего невозможно добиться, если просто создать сложный запрос, включив в него данные из многих таблиц.</p>
+<p>Примеры использования подчиненных отчетов можно найти в списке отчетов учебной базы данных &#171;Борей&#187; (Northwind). На рис. 10.1 представлен отчет &#171;Продажи по типам&#187; (Sales by Category), который содержит один подчиненный отчет и внедренную диаграмму.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" decoding="async" src="/image11/63c3508e97b8fcfd298c8929c3944d8e.gif" width="507" height="523" alt=""><meta itemprop="width" content="507">
+<meta itemprop="height" content="523"></span></p>
+<p> Рис. 10.1.  Отчет, содержащий подчиненный отчет</p>
+<p>Откройте отчет &#171;Продажи по типам&#187; (Sales by Category) в режиме Конструктора. Вы увидите, что подчиненный отчет размещен в разделе заголовка группы &#171;Категория&#187; (CategoryName) (рис. 10.2). Оба отчета, и главный и подчиненный, базируются на одном и том же запросе &#171;Продажи по типам&#187; (Sales by Category), но в главном отчете выводятся данные о категориях — имя категории, а в подчиненном — о товарах, входящих в эту категорию (наименование товара и его цена).</p>
+<p>Выделите элемент управления  Подчиненная форма/отчет  (Subform/siibreport) и посмотрите свойства этого элемента. Вы увидите, что главный и подчиненный отчеты связываются по полю &#171;Категория&#187; (CategoryName). Поскольку и в формах, и в отчетах используется один и тот же элемент управления  Подчиненная форма/отчет,  свойства для связанных полей те же, что и в форме  (см. <a href="https://taurion.ru/access/9">гл. 9</a>). </p>
+<p>Обратите внимание, что в макете подчиненного отчета нет элемента управления, связанного с полем &#171;Категория&#187;, однако, как и при связывании форм, в качестве полей для связи можно использовать поля базового запроса.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" decoding="async" src="/image15/879231d23a71f95ba03a05f152809e97.gif" width="507" height="455" alt=""><meta itemprop="width" content="507">
+<meta itemprop="height" content="455"></span></p>
+<p> Рис. 10.2.  Отчет &#171;Продажи по типам&#187; в режиме Конструктора</p>
+<p>Отчет &#171;Продажи по годам&#187; (Sales by Year) является примером отчета, в котором подчиненный отчет используется для вывода итоговых данных о продажах по кварталам года (рис. 10.3).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image27/f4bbf724cb374c8e35c03c04f00345fc.gif" width="507" height="455" alt=""><meta itemprop="width" content="507">
+<meta itemprop="height" content="455"></span></p>
+<p> Рис. 10.3.  Использование подчиненного отчета для вывода итогов</p>
+<p>Оба отчета, основной и подчиненный, базируются на запросе &#171;Продажи по годам&#187; (Sales by Year), который позволяет выбрать все заказы за указанный период времени (проверяется поле &#171;ДатаИсполнения&#187; (ShippedDate). Запрос включает вычисляемое поле &#171;Год&#187; (Year), которое рассчитывается на основе даты заказа и используется при группировке в отчете, и поле, содержащее итоговую сумму каждого заказа &#171;ПромежуточнаяСумма&#187; (Subtotal).</p>
+<p>Подчиненный отчет &#171;Подчиненный для продаж по годам&#187; (Sales by Year Subreport) содержит несколько вычисляемых элементов:</p>
+<ul>
+<li>ГодНадпись&#187; (YearLabel), который отображается в верхнем левом углу, вычисляется с помощью выражения:  = &#171;Итог за &#187; &amp; [Год] &amp; &#187; г.&#187; (или=[Year] &amp; &#171;Summary&#187;); </li>
+<li>&#171;Квартал&#187; (Quarter), который в качестве источника данных содержит выражение:  =Format([ДатаИсполнения];&#187;q&#187;) (ИЛИ =Format([ShippedDate];&#187;q&#187;)); </li>
+<li>&#171;ПодсчетПромежуточнойСуммы&#187; (CountSubtotal) — количество исполненных заказов, которое вычисляется с помощью статистической функции Count:  =Count([КодЗаказа])  (или  =Count([OrderlD])); </li>
+<li>&#171;КвПромежуточнаяСумма&#187; (QtrSubtotal) — итоговая сумма за квартал, которая вычисляется с помощью выражения:  =Sum([ПромежуточнаяСумма]) <strong>(или</strong> =Sum([Subtotal])). </li>
+</ul>
+<p>Группировка записей выполняется по году и по кварталу. Обратите внимание, что раздел  Область данных  (Detail) отчета пуст, т. е. в отчет выводятся только итоговые значения (рис. 10.4).</p>
+<p>Детальные данные, т. е. все записи из базового запроса, включены в главный отчет.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image22/c86727921cb4d921714598e67743a15a.gif" width="524" height="511" alt=""><meta itemprop="width" content="524">
+<meta itemprop="height" content="511"></span></p>
+<p> Рис. 10.4.  Отчет &#171;Подчиненный для продаж по годам&#187; в режиме Конструктора</p>
+<p> Создание подчиненных отчетов </p>
+<p>Подчиненные отчеты могут создаваться двумя способами:</p>
+<ul>
+<li>с помощью Мастера подчиненной формы/отчета для создания нового подчиненного отчета в существующем отчете;</li>
+<li>путем внедрения уже существующего отчета (или формы) в другой отчет (в этом случае внедряемый отчет становится подчиненным).</li>
+</ul>
+<p>Для того чтобы продемонстрировать, как создаются составные отчеты, мы построим отчет, показывающий квартальные обороты клиентов. Сначала нужно создать запрос, который будет базовым для главного отчета. Этот запрос будет иметь параметр [Отчетный год:] и выбираться будут все клиенты, которые имеют заказы в указанном году (рис. 10.5).</p>
+<p>Этот запрос очень просто создать на основе имеющегося в базе данных &#171;Борей&#187; подобного запроса &#171;Квартальные обороты&#187; (Quarterly Orders):</p>
+<ol>
+<li>Выделите названный запрос в окне базы данных и скопируйте его, используя команды копирования и вставки  Правка, Копировать  (Edit, Copy) и  Правка, Вставить  (Edit, Paste). Дайте ему название &#171;Квартальные обороты клиентов&#187;.</li>
+<li>Откройте его в режиме Конструктора.</li>
+<li>Удалите последнее поле &#171;ДатаРазмещения&#187; (OrderDate) из таблицы полей внизу окна запроса и вместо него вставьте вычисляемое поле: ГодЗаказа: Year (&#171;[ДатаРазмещения]) (для английской версии используйте английское имя поля OrderDate, в качестве имени вычисляемого поля можете задать OrderYear), а в строку  Условие отбора  (Criteria) введите имя параметра запроса [Отчетный год: ]. Сохраните и закройте запрос.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image26/f2a0c70a6020947d0eae8a63ed21353f.gif" width="505" height="382" alt=""><meta itemprop="width" content="505">
+<meta itemprop="height" content="382"></span></p>
+<p> Рис. 10.5.  Базовый запрос для отчета &#171;Квартальные обороты клиентов&#187;</p>
+<p>Теперь создадим отчет на основе только что созданного запроса. Для этого можно воспользоваться Мастером отчетов (Report Wizard)  (см. <a href="https://taurion.ru/access/6">гл. 6</a>). </p>
+<p>Выберите для помещения в отчет поля &#171;Название&#187; (CompanyName), &#171;Город&#187; (City) и &#171;Страна&#187; (Country), отсортируйте записи по полю &#171;Название&#187;, выберите тип отчета  в столбец  (Column) и один из предложенных стилей отчета. В результате вы получите отчет примерно такой, как изображен на рис. 10.6.</p>
+<p>Для того чтобы построить подчиненный отчет, содержащий квартальные обороты клиентов, воспользуемся уже готовым запросом &#171;Квартальные обороты по товарам&#187; (Quarterly Orders by Product), слегка его изменив. А именно, нужно удалить из запроса последнее поле &#171;ДатаРазмещения&#187; (OrderDate), для которого задано лишнее в нашем примере условие выборки. Тогда запрос будет выглядеть так, как это представлено на рис. 10.7. Сохраните его с именем &#171;Квартальные обороты клиентов по товарам&#187;.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image10/5436edb9aebf6c9bdae6e1a99a80923e.gif" width="493" height="543" alt=""><meta itemprop="width" content="493">
+<meta itemprop="height" content="543"></span></p>
+<p> Рис. 10.6.  Главный отчет составного отчета</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image01/04c421f23db2e644fab9db647f7167aa.gif" width="482" height="395" alt=""><meta itemprop="width" content="482">
+<meta itemprop="height" content="395"></span></p>
+<p> Рис. 10.7.  Базовый запрос для подчиненного отчета</p>
+<p>Чтобы создать подчиненный отчет, воспользуемся Мастером подчиненных отчетов. Для этого:</p>
+<ol>
+<li>Откройте отчет &#171;Квартальные обороты клиентов&#187; в режиме Конструктора.</li>
+<li>Выберите элемент управления  Подчиненная форма/отчет  (Subform/Subreport) на  Панели элементов  (Toolbox) и разместите его в разделе  Область данных  (Detail) ниже полей, содержащих данные о клиенте. (Кнопка  Мастера  (Control Wizards) должна быть нажата.)</li>
+<li>В первом диалоговом окне мастера выберите переключатель  Имеющиеся таблицы и запросы  (Use existing Tables and Queries) (рис. 10.8). Нажмите кнопку Далее (Next).</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image19/b34ff613ce4938bb97cd8b14acfe82b3.gif" width="497" height="366" alt=""><meta itemprop="width" content="497">
+<meta itemprop="height" content="366"></span></p>
+<p> Рис. 10.8.  Первое диалоговое окно Мастера подчиненных отчетов</p>
+<ol start="4">
+<li>Во втором диалоговом окне мастера нужно определить, какие поля требуется включить в подчиненный отчет (рис. 10.9). При этом поля в общем случае можно выбирать из нескольких таблиц и запросов. В данном случае нужно в раскрывающемся списке  Таблицы и запросы  (Tables/Query) выбрать запрос &#171;Квартальные обороты клиентов по товарам&#187; (который был создан для этого примера), затем нажать кнопку с двумя стрелками, чтобы включить в подчиненный отчет все поля запроса, и нажать кнопку  Далее  (Next).</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image01/04961dbe97a6fd141993aec75970ef03.gif" width="497" height="366" alt=""><meta itemprop="width" content="497">
+<meta itemprop="height" content="366"></span></p>
+<p> Рис. 10.9.  Второе диалоговое окно Мастера подчиненных отчетов</p>
+<ol start="5">
+<li>В следующем диалоговом окне необходимо определить связь между главным и подчиненными отчетами, если эта связь существует, или выбрать из списка значение  Отсутствует  (None), если вы создаете независимый подчиненный отчет. В данном случае можно выбрать связь в отображенном списке, но нам предложенные варианты не подходят, поэтому выберите переключатель  Самостоятельное определение  (Define my own), чтобы задать эту связь самостоятельно.</li>
+</ol>
+<p><strong>Замечание</strong></p>
+<p>Так как поля в связываемых источниках данных имеют одинаковые типы и названия, Мастер подчиненных отчетов может автоматически связать отчеты по этим полям. Именно такие связи будут предложены в списке возможных вариантов связывания отчетов.</p>
+<ol start="6">
+<li>В диалоговом окне появятся две пары раскрывающихся списков (рис. 10.10). В списках слева отображаются поля главного отчета, а в списках справа — связанные с ними поля подчиненного отчета. Связь может быть задана по одному или нескольким полям. В данном случае требуется задать связь по двум полям, чтобы связать источники данных главного и подчиненного отчетов одновременно и по коду клиента, и по отчетному году. Для этого выберите в раскрывающихся списках слева элементы: &#171;КодКлиента&#187; (CustomerlD) и &#171;ГодЗаказа&#187; (OrderYear), и соответствующие (с такими же именами) элементы в раскрывающихся списках напротив (справа), как представлено на рис. 10.10.</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image19/b0929242d505415c23e065c5686cca65.gif" width="497" height="366" alt=""><meta itemprop="width" content="497">
+<meta itemprop="height" content="366"></span></p>
+<p> Рис. 10.10.  Третье диалоговое окно Мастера подчиненных отчетов</p>
+<p><strong>Замечание</strong></p>
+<p>То, что между главным и подчиненным отчетами установлена связь по полям &#171;КодКлиента&#187; и &#171;ГодЗаказа&#187;, означает, что каждая запись в главном отчете будет связана с набором записей из подчиненного отчета, имеющих соответствующие значения в связанных полях. А поскольку значение года заказа в главном отчете определяется значением параметра запроса [Отчетный год:], то в связанном описанным способом подчиненном отчете будут отобраны только те записи, у которых значение поля &#171;ГодЗаказа&#187; совпадет со значением такого же поля в главном отчете, а значит, и с заданным пользователем значением параметра [Отчетный год: ].</p>
+<ol start="7">
+<li>Определив связь между отчетами, нажмите кнопку  Далее  (Next).</li>
+<li>В последнем диалоговом окне требуется задать имя подчиненного отчета. Вы можете оставить предложенное мастером название &#171;Подчиненный отчет Квартальные обороты клиентов по товарам&#187; и нажать кнопку  Готово  (Finish).</li>
+</ol>
+<p>В результате в главном отчете будет создано поле  Подчиненный отчет  (Subreport). Вам потребуется только настроить высоту и ширину этого поля, удалить его метку, и вы получите отчет, аналогичный изображенному на рис. 10.11.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image05/2fe7da8a2e75645e6622f8dd16873cd1.gif" width="489" height="484" alt=""><meta itemprop="width" content="489">
+<meta itemprop="height" content="484"></span></p>
+<p> Рис. 10.11.  Отчет &#171;Квартальные обороты клиентов&#187;</p>
+<p>В качестве подчиненного отчета может быть использована и форма. Например, отчет, аналогичный только что описанному, можно получить с помощью уже имеющейся в базе данных &#171;Борей&#187; формы &#171;Подчиненная для квартальных оборотов&#187; (Quarterly Orders Subform).</p>
+<p>Для этого:</p>
+<ol>
+<li>Скопируйте данную форму, задав ей новое имя &#171;Подчиненная для квартальных оборотов 2&#187;.</li>
+<li>Откройте полученную копию в режиме Конструктора и замените источник данных на запрос &#171;Квартальные обороты клиентов по товарам&#187;, созданный для предыдущего примера. Сохраните и закройте форму.</li>
+</ol>
+<p><strong>Замечание</strong></p>
+<p>Источник данных для формы доступен в режиме Конструктора в окне свойств формы как свойство Источник записей (Record Source) на вкладке Данные (Data).</p>
+<ol start="3">
+<li>Затем скопируйте созданный ранее отчет &#171;Квартальные обороты клиентов&#187;, задав ему новое имя &#171;Квартальные обороты клиентов 2&#187;, и откройте его в режиме Конструктора.</li>
+<li>Удалите подчиненный отчет и вместо него просто перенесите с помощью мыши созданную форму из окна базы данных в область данных отчета. Автоматически будет создан элемент  Подчиненная форма/отчет  (Subform/Subreport) с именем &#171;Подчиненная для квартальных оборотов&#187;.</li>
+<li>Теперь настройте высоту и ширину созданного элемента и в свойствах подчиненной формы на вкладке  Данные  (Data) определите связующие поля. Для этого нажмите кнопку Построителя справа от свойства  Подчиненные поля  (Link Child Fields) и задайте в появившемся диалоговом окне две пары одноименных связанных полей: &#171;КодКлиента&#187; (CustomerlD) и &#171;ГодЗаказа&#187; (OrderDate), таким же образом, как это было описано в предыдущем примере. Указанные поля запишутся в качестве значений свойств  Подчиненные поля  (Link Child Fields) и  Основные поля  (Link Master Fields).</li>
+</ol>
+<p>В результате вы получите отчет, аналогичный представленному на рис. 10.12.</p>
+<p>Для полноты картины добавим в главный отчет два вычисляемых поля, которые будут показывать, на какую сумму клиент купил товара за год. Оба поля представляют собой текстовые поля, у каждого из которых свойство  Данные  (Control Source) задано выражением. Первое поле формирует надпись с номером отчетного года. Для вычисления значения этого поля используется следующее выражение:</p>
+<p>=&#187;Итоги за &#187; &amp; [Reports]![Квартальные обороты клиентов 2]![Подчиненная для квартальных оборотов].[Report]![ГодЗаказа]</p>
+<p>(для английской версии используйте название поля OrderYear). Второе поле содержит сумму всех заказов клиента за год и вычисляется с помощью следующего выражения:</p>
+<p>=[Подчиненная для квартальных оборотов].Form![Итого]</p>
+<p>(для английской версии используйте название поля Total), т. е. отображает поле &#171;Итого&#187; (Total) из подчиненной формы &#171;Подчиненная для квартальных оборотов&#187;. Отформатируйте созданное поле для отображения в нем денежной суммы в том же виде, как отображаются денежные суммы в подчиненной форме, скопировав значения свойств  Формат поля  (Format) и  Число десятичных знаков  (Decimal Places).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image24/da6548a691a542ae05c5a3d79b2f4238.gif" width="488" height="533" alt=""><meta itemprop="width" content="488">
+<meta itemprop="height" content="533"></span></p>
+<p> Рис. 10.12.  Составной отчет, включающий подчиненную форму</p>
+<p> Перекрестные отчеты </p>
+<p>Перекрестные отчеты строятся на основе перекрестных запросов и содержат итоговые данные  (см. также <a href="https://taurion.ru/access/8">гл. 8</a>). </p>
+<p>В предыдущем разделе мы использовали один из таких перекрестных запросов для создания подчиненного отчета &#171;Квартальные обороты клиентов по товарам&#187;. Аналогично создается и обычный отчет на базе перекрестного запроса. Пример такого отчета приведен на рис. 10.13. Он создан на базе того же самого запроса &#171;Квартальные обороты клиентов по товарам&#187;, но отображает данные в другом разрезе: проданные товары группируются по наименованию, затем по клиентам. Разработать такой отчет не сложно:</p>
+<ol>
+<li>Создайте новый отчет в режиме Конструктора и выберите для него в качестве источника данных запрос &#171;Квартальные обороты клиентов по товарам&#187;.</li>
+<li>Разместите надписи, содержащие заголовки столбцов отчета, в разделе  Верхний колонтитул  (Page Header), а все текстовые поля со значениями — в области данных. (Еще проще создать такой отчет с помощью автоотчета ленточный.)</li>
+<li>Определите в окне  Сортировка и группировка  (Sorting and Grouping) группировку по полям &#171;Марка&#187; (ProductName) и &#171;КодКлиента&#187; (CustomerlD). Для поля &#171;Марка&#187; отобразите заголовок группировки, выбрав значение Да (Yes) в раскрывающемся списке  Заголовок группы  (Group Header). Закройте окно.</li>
+<li>Перенесите текстовое поле &#171;Марка&#187; в отображенный заголовок группы.</li>
+</ol>
+<p><strong>Замечание</strong></p>
+<p>В данном запросе, когда он был создан для примера с подчиненным отчетом, не был задан параметр для выбора только относящихся к указанному отчетному году записей, т. к. записи выбирались на основании связанных данных из главного отчета. Поэтому, чтобы в создаваемом теперь отчете отображались только записи за указанный год, определите выражение с параметром для фильтрации данных в новом отчете: ГодЗака-за = [Отчетный год:] (для английской версии используйте английское имя поля OrderYear) (как задать фильтр, рассказано в разд. <a href="https://taurion.ru/access/10/20">&#171;Фильтрация данных в отчете&#187;</a> этой главы).</p>
+<p>Отчет готов. Такой отчет называется  статическим  перекрестным отчетом, т. к. хотя его источник данных — перекрестный запрос, число столбцов в нем всегда одинаково, заголовки столбцов являются постоянными. Он создается так же, как и обычный отчет, на базе готового запроса.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image14/802ba65ea0eb07a7d3cbe058b32e1091.gif" width="538" height="297" alt=""><meta itemprop="width" content="538">
+<meta itemprop="height" content="297"></span></p>
+<p> Рис. 10.13.  Статический перекрестный отчет</p>
+<p>Более сложной задачей является создание  динамического  перекрестного отчета. Это такой отчет, у которого в качестве источника данных задан перекрестный запрос, и формирующийся этим запросом набор записей может иметь разное количество и разные заголовки столбцов, в зависимости от выполнения некоторых условий. Пример такого запроса приведен на рис. 10.14. Этот отчет показывает выработку сотрудников фирмы по месяцам года. Такой отчет может создаваться ежеквартально, и каждый раз число столбцов в нем будет увеличиваться, пока в конце года не станет равным 14 (12 месяцев плюс итоговый столбец и столбец с фамилиями сотрудников).</p>
+<p>Еще одним примером динамического перекрестного отчета является отчет, в котором показывается, какие товары вы заказали поставщикам, но еще не получили. Такой отчет может представлять собой таблицу, в которой по вертикали отображаются товары, а по горизонтали — поставщики, которым эти товары заказаны. Его можно построить, если число поставщиков ограничено и не очень велико.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image15/87daf8be4e501b17a4f722d001269ea9.gif" width="432" height="460" alt=""><meta itemprop="width" content="432">
+<meta itemprop="height" content="460"></span></p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image09/52a5c29f9dd12826498462e6c3226b80.gif" width="327" height="332" alt=""><meta itemprop="width" content="327">
+<meta itemprop="height" content="332"></span></p>
+<p> Рис. 10.14.  Динамический перекрестный отчет</p>
+<p>Для создания динамических отчетов не обойтись без программирования. В режиме Конструктора отчет о выработке сотрудников выглядит так, как это представлено на рис. 10.15, т. е. он содержит несвязанные с данными надписи и текстовые поля.</p>
+<p>Привязка их к результатам запроса выполняется программным путем в процессе выполнения отчета. Позже мы покажем, как создать программы для такого отчета  (см. разд. <a href="https://taurion.ru/access/13/58">&#171;Создание перекрестного отчета с изменяющимся числом столбцов&#187;</a><a href="https://taurion.ru/access/13">гл. 13</a>). </p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image03/1d74a36331a56316fc2a351d3514e6bc.gif" width="441" height="449" alt=""><meta itemprop="width" content="441">
+<meta itemprop="height" content="449"></span></p>
+<p> Рис. 10.15.  Динамический перекрестный отчет в режиме Конструктора</p>
+<p> Печать отчета в несколько колонок </p>
+<p>Иногда возникает необходимость отобразить данные на листе бумаги в несколько колонок. Это может потребоваться для компактного представления данных в отчете. Пример такого отчета приведен на рис. 10.16 — это отчет &#171;Товары по типам&#187; (Products by Category) из базы данных &#171;Борей&#187; (Northwind). В нем содержатся данные о количестве товаров на складе. Данные о товарах группируются по категориям товаров и отображаются в три колонки.</p>
+<p>Чтобы получить такой отчет, нужно задать определенным образом параметры печати отчета. Эти параметры задаются в диалоговом окне  Параметры страницы  (Page Setup) (рис. 10.17). Для того чтобы вывести это окно, в режиме Конструктора отчета, выберите команду меню  Файл, Параметры страницы  (File, Page Setup). На вкладке  Поля  (Margins) определите ширину полей страницы. Затем раскройте вкладку  Столбцы  (Columns).</p>
+<p>Группа полей  Параметры сетки  (Grid Setting) позволяет определить количество колонок на листе (поле  число столбцов  (Number of Columns)) и расстояние между колонками (поле  столбцов  (Column Spacing)). Поле  интервал строк  (Row Spacing) используется при печати наклеек на конверты.</p>
+<p>Группа полей  Размер столбца  (Column Size) позволяет определить ширину колонки. Если установить флажок  по размеру данных  (Same As Detail), то поля  ширина  (Width) и  высота  (Height) будут установлены равными ширине и высоте раздела  Область данных  (Detail) отчета. Если этот флажок сброшен, то значение поля  ширина  (Width) будет определять ширину колонки (поле  высота  (Height) используется для определения размера наклеек).</p>
+<p>Переключатели в группе  Макет столбца  (Column Layout) определяют ориентацию колонок. В данном случае выбран переключатель  сверху вниз  (Down, then Across), который обеспечивает печать данных в виде газетных полос.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image27/f64edc93392c499701cc17130a818849.gif" width="372" height="441" alt=""><meta itemprop="width" content="372">
+<meta itemprop="height" content="441"></span></p>
+<p> Рис. 10.16.  Отчет в три колонки</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image07/3fdddb0b4bf5b4f616387d8ed4633e47.gif" width="356" height="361" alt=""><meta itemprop="width" content="356">
+<meta itemprop="height" content="361"></span></p>
+<p> Рис. 10.17.  Диалоговое окно  Параметры страницы </p>
+<p> Сортировка и группировка данных </p>
+<p>В отличие от форм отчеты содержат, как правило, большое количество записей, которые для удобства просмотра и анализа должны быть отсортированы и объединены в группы. Рассмотрим возможности, которые предоставляет Access 2002 для группировки и сортировки записей в отчетах. Для этого создадим отчет &#171;Заказы клиентов&#187;, в котором сгруппируем все заказы по клиентам.</p>
+<p> Создание базового запроса &#171;Заказы клиентов&#187; </p>
+<p>Для этого сначала создадим базовый запрос. Объединим в этом запросе таблицы &#171;Клиенты&#187; (Customers) и &#171;Заказы&#187; (Orders) и запрос &#171;Сведения о заказах&#187; (Order Details Extended), как это показано на рис. 10.18.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image13/740e4dd58d94553a5ebb518fcd5813c8.gif" width="475" height="438" alt=""><meta itemprop="width" content="475">
+<meta itemprop="height" content="438"></span></p>
+<p> Рис. 10.18.  Базовый запрос для отчета &#171;Заказы клиентов&#187;</p>
+<p>Включите в запрос следующие поля:</p>
+<ul>
+<li>из таблицы &#171;Клиенты&#187; (Customers): &#171;Название&#187; (CompanyName), &#171;Страна&#187; (Country), &#171;Город&#187; (City);</li>
+<li>из таблицы &#171;Заказы&#187; (Orders): &#171;КодЗаказа&#187; (OrderlD), &#171;ДатаРазмещения&#187; (OrderDate), &#171;ДатаНазначения&#187; (RequiredDate), &#171;ДатаИсполнения&#187; (ShippedDate);</li>
+<li>из запроса &#171;Сведения о заказах&#187; (Order Details Extended): &#171;Марка&#187; (ProductName), &#171;Цена&#187; (UnitPrice), &#171;Количество&#187; (Quantity), &#171;Скидка&#187; (Discount), &#171;ОтпускнаяЦена&#187; (ExtendedPrice).</li>
+</ul>
+<p>Ограничим количество записей в выборке, введя для поля &#171;ДатаРазмещения&#187; (OrderDate) в строку  Условие отбора  (Criteria) Between #01.(H.98# And #31.12 . 98#. Сохраните созданный запрос с именем Заказы клиентов.</p>
+<p>Теперь создайте новый отчет на базе запроса &#171;Заказы клиентов&#187;. Для этого выделите этот запрос в списке запросов окна базы данных и нажмите на стрелку на кнопке</p>
+<p> Новый объект  (New Object) на панели инструментов. Выберите из раскрывающегося списка значение  Отчет  (Report) и затем в диалоговом окне  Новый отчет  (New Report) выберите значение  Конструктор  (Design View).</p>
+<p> Определение условий сортировки и группировки </p>
+<p>Теперь определим структуру отчета, задавая условия группировки и сортировки записей. Эти условия задаются в диалоговом окне  Сортировка и группировка  (Sorting and Grouping), которое появляется при нажатии кнопки с таким же названием на панели инструментов.</p>
+<p>Чтобы создать группу, нужно задать поле отчета, по которому будут группироваться записи, и установить значения свойств  Заголовок группы  (Group Header) и  Примечание группы  (Group Footer) равными Да (Yes). Первый уровень группировки в нашем примере будет определяться полем &#171;Название Клиента&#187; (Company-Name). Выберите это поле из раскрывающегося списка в первой строке окна  Сортировка и группировка  (Sorting and Grouping). Поле справа в этой строке, определяющее порядок сортировки, будет по умолчанию иметь значение  По возрастанию  (Ascending). Установите значения свойств  Заголовок группы  (Group Header) и  Примечание группы  (Group Footer) в Да (Yes). После этого в области выделения первой строки (в окне) появится символ группировки, а в отчете будут отображены два раздела:  Заголовок группы &#8216;Название&#8217;  (CompanyName Header) и  Примечание группы &#8216;Название&#8217;  (CompanyName Footer).</p>
+<p>Второй уровень группировки будет организован по полю &#171;КодЗаказа&#187; (OrderlD). Заполните аналогичным образом его свойства в окне  Сортировка и группировка  (Sorting and Grouping).</p>
+<p>Кроме того, что мы задали два уровня группировки для нашего отчета, можно еще определить порядок сортировки в пределах самой внутренней группы. В третьей строке окна  Сортировка и группировка  (Sorting and Grouping) выберите поле &#171;Марка&#187; (ProductName), чтобы отсортировать товары в заказе по алфавиту. После этого отчет примет вид, показанный на рис. 10.19.</p>
+<p>Уровень группировки по полю &#171;КодЗаказа&#187; оказался вложенным. И таких уровней вложенности в Access 2002 может быть до 10.</p>
+<p>Для каждой группы, кроме свойств  Заголовок группы  (Group Header) и  Примечание группы  (Group Footer), которые позволяют вставлять в отчет дополнительные разделы, можно задать еще три свойства:  Группировка  (Group On),  Интервал  (Group Interval) и  Не разрывать  (Keep Together).</p>
+<p>Свойства  Группировка  (Group On) и  Интервал  (Group Interval) связаны между собой и в совокупности определяют, каким образом мы хотим группировать данные. Значения, которые может принимать свойство  Группировка  (Group On), зависят от типа данных группирующего поля. Обычно данные группируются по каждому значению поля, т. е. каждому значению поля должна соответствовать отдельная группа. Тогда свойство  Группировка  (Group On) должно иметь значение  По полному значению  (Each Value), а значение свойства  Интервал  (Group Interval) должно быть равным 1. В нашем примере для поля &#171;Название&#187; установите эти свойства именно так.</p>
+<p>При группировке по полю с текстовым содержимым допускается начинать новую группу всякий раз, когда изменится первый или несколько первых символов значения поля. В этом случае свойство  Группировка  (Group On) должно иметь значение  По первым знакам  (Prefix Characters), а свойство  Интервал  (Group Interval) будет определять, сколько первых символен должно использоваться для образования новой группы. Если это значение равно 1, то для каждой буквы алфавита будет создана Сдельная группа — это позволяет создавать отчеты типа Предметного указателя в книгах. Примером такого отчета является отчет &#171;Список товаров&#187; (Alphabetical List of Products) в базе данных &#171;Борей&#187; (Northwind).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image24/d8d696f9e0d07f222a576a77cd9d0f28.gif" width="430" height="230" alt=""><meta itemprop="width" content="430">
+<meta itemprop="height" content="230"></span></p>
+<p> Рис. 10.19.  Структура отчета и условия сортировки и группировки</p>
+<p>Для числового поля &#171;КодЗаказа&#187; (OrderID) мы оставляем значение свойства  Группировка  (Group On) равным  По полному значению  (Each Value), как это установлено по умолчанию. Значение свойства  Интервал  (Group Interval) останется равным I, т. к. нам нужно создать отдельную группу для каждого заказа. Однако свойство  Группировка  (Group On) позволяет группировать числовые данные и по диапазонам значений. В этом случае нужно установить значение данного свойства равным  Интервал  (Interval), а значение свойства  Интервал  (Group Interval) равным числу, которое определяет диапазон группировки. Например, если числовое поле содержит возраст человека, то значение 5 свойства  Интервал  (Group Interval) будет определять диапазоны возрастов от 0 до 4, от 5 до 9, от 10 до 14 и т. д.</p>
+<p>Для поля типа Дата/время свойство  Группировка  (Group On) кроме значения по умолчанию  По полному значению  (Each Value) может принимать следующие значения:  По годам  (Year),  По кварталам  (Qtr),  По месяцам  (Month),  По неделям  (Week),  По дням  (Day),  По часам  (Hour),  По минутам  (Minute). Значение свойства  Интервал  (Group Interval) определяет число выбранных единиц измерения в диапазоне. Например, если значение свойства  Группировка  (Group On) установлено равным  По месяцам, а Интервал  (Group Interval) имеет значение 1, то данные будут группирот ваться помесячно.</p>
+<p>Свойство  Не разрывать  (Keep Together) позволяет управлять тем, как группа будет, размещаться на странице. Если группы небольшие, то лучше всего установить значение этого свойства равным  Вся группа  (Whole Group). Тогда при печати отчета вся группа, т. е. заголовок группы, все записи из области данных и примечание группы будут размещаться на одной странице (если вся группа не помещается на текущую страницу, она продолжится со следующей страницы), а каждая следующая группа будет начинаться с новой страницы (если только она не помещается целиком на текущей странице). Если группа может содержать столько данных, что они не поместятся на одной странице, то лучше установить значение этого свойства равным  С первыми данными  (With First Detail). В этом случае заголовок группы размещается на текущей странице, только если на ней помещается также первая строка данных, в противном случае вся группа переносится на следующую страницу.</p>
+<p>Свойство  Не разрывать  (Keep Together) для группы связано с аналогичным свойством раздела отчета. Эти свойства должны быть согласованы. Например, если в группе установлено значение свойства  Не разрывать  (Keep Together) равным  Вся группа  (Whole Group), то значения свойства  Не разрывать  (Keep Together) соответствующих разделов отчета должны иметь значения равными Да (Yes). В противном случае приоритет имеет свойство, заданное в окне  Сортировка и группировка  (Sorting and Grouping).</p>
+<p>Сам отчет также имеет свойство  Неразрывная группа  (Grp Keep Together), которое применяется для отчетов, печатающихся в несколько колонок. Оно действует только для групп, у которых значение свойства  Не разрывать  (Keep Together) установлено равным  Вся группа  (Whole Group) или  С первыми данными  (With First Detail). Если же установлено значение Нет (No), то свойство  Неразрывная группа  (Grp Keep Together) игнорируется. Данное свойство отчета может иметь значения  На странице  (Per Page) и  В столбце  (Per Column). В первом случае группа печатается без разрыва на странице, а во втором — без разрыва в колонке (полосе) отчета.</p>
+<p><strong>Замечание</strong></p>
+<p>В ячейки  Поле/выражение  (Field/Expression) окна  Сортировка и группировка  (Sorting and Grouping) можно вводить не только названия полей, но и выражения, т. е. группировка может выполняться по значению выражения. Ввод выражения начинается со знака равенства (=) так же, как в свойствах форм и отчетов.</p>
+<p> Определение содержимого отчета &#171;Заказы клиентов&#187; </p>
+<p>После того как мы создали структуру отчета, можно начать помещать поля в разделы отчета:</p>
+<ol>
+<li>Выберите команду  Файл, Параметры страницы  (File, Page Setup) и установите в диалоговом окне поля отчета: верхнее, нижнее и левое — размером 2.5 см, правое — 1 см (в полях диалогового окна эти значения задаются в миллиметрах). Затем закройте окно  Параметры страницы  (Page Setup) и перетащите правую границу области данных вправо, установив ширину отчета 17 см.</li>
+<li>В разделе  Заголовок отчета  (Report Header) создайте надпись Заказы клиентов. Установите шрифт надписи Times New Roman Cyr размером 21 пункт. Над надписью добавьте горизонтальную линию шириной 2 пункта от левого до правого края отчета. Высота раздела заголовка отчета в нашем примере составляет 1.6 см.</li>
+</ol>
+<p><strong>Замечание</strong></p>
+<p>Если раздел Заголовок отчета (Report Header) отсутствует в окне Конструктора, выберите команду Вид, Заголовок/примечание отчета (View, Report Header/Footer).</p>
+<ol start="3">
+<li>Раздел  Верхний колонтитул  (Page Header) оставьте пустым и устанавливаем его высоту равной 0.</li>
+</ol>
+<p>Оформим раздел заголовка группы &#171;Название&#187; (CompanyName Header):</p>
+<ol>
+<li>Откройте список полей и перетащите из него в раздел заголовка группы следующие поля: &#171;Название&#187; (CompanyName), &#171;Страна&#187; (Country) и &#171;Город&#187; (City).</li>
+<li>Удалите присоединенные к полям надписи и установите для всех полей шрифт Arial Cyr размером 14 пунктов и прозрачный фон.</li>
+<li>Выделите область этого раздела, разместив элемент  Прямоугольник  (Rectangle), имеющий цвет фона серый и ширину границы 2 пункта, позади текстовых полей (рис. 10.20).</li>
+<li>Сократите высоту раздела так, чтобы его нижний край совпадал с нижней границей прямоугольника.</li>
+</ol>
+<p>Прежде чем размещать остальные поля, определим некоторые стандартные свойства этих полей (то есть свойства, которые будут задаваться по умолчанию для каждого нового создаваемого в отчете текстового поля). Для этого нажмите кнопку  Поле  (Text Box) на панели элементов (Toolbox) и нажмите кнопку  Свойства  (Properties) на панели инструментов  Конструктор отчетов  (Report Design). Откроется окно  &#171;Поле&#187; — стандартные свойства  (Default Text Box). Задайте следующие значения свойств:  Шрифт  (Font Name) — Arial Cyr,  Размер шрифта  (Font Size) — 9,  Насыщенность  (Font Weight) —  обычный  (Normal),  Добавление подписи  (Auto Label) — Да (Yes),  Подписи с двоеточием  (Add Colon) — Пет (No). Закройте окно свойств поля. Затем нажмите кнопку  Надпись  (Label) и установите такие же значения для свойств, определяющих шрифт надписи.</p>
+<p>Перетащите из списка полей в раздел заголовка группы &#171;КодЗаказа&#187; (OrderlD Header) следующие поля: &#171;КодЗаказа&#187; (OrderlD), &#171;ДатаРазмещения&#187; (OrderDate), &#171;ДатаНазначения&#187; (RequiredDate) и &#171;ДатаИсполнения&#187; (ShippedDate). Измените надписи для полей так, как это показано на рис. 10.20. Выделите эти поля, разместив позади них прямоугольник, имеющий ширину границы 2 пункта и тип фона  Прозрачный  (Transparent).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image27/f7a47063287dfd5f236d057fb6850aea.gif" width="476" height="512" alt=""><meta itemprop="width" content="476">
+<meta itemprop="height" content="512"></span></p>
+<p> Рис. 10.20.  Отчет &#171;Заказы клиента&#187; в режиме Конструктора</p>
+<p>Измените стандартное значение свойства  Тип границы  (Border Style) для надписей и текстовых полей, присвоив им значение  Сплошная  (Solid), т. к. все остальные надписи и поля будут окружены рамками.</p>
+<p>Далее перетащите в область данных следующие поля: &#171;Марка&#187; (ProductName), &#171;Цена&#187; (UnitPrice), &#171;Количество&#187; (Quantity), &#171;Скидка&#187; (Discount) и &#171;ОтпускнаяЦена&#187; (ExtendedPrice). Теперь нужно переместить присоединенные к ним надписи в область заголовка группы &#171;КодЗаказа&#187;. Для этого выделите все присоединенные надписи для этих полей и удалите их в буфер обмена (например, с помощью комбинации клавиш &lt;Ctrl&gt;+&lt;X&gt;). Затем выделите раздел  Заголовок группы &#8216;КодЗаказа&#8217;  и вставьте в него надписи из буфера обмена (комбинация клавиш &lt;Ctrl&gt;+&lt;V&gt;). Расположите эти надписи под прямоугольником так, чтобы нижняя граница прямоугольника и верхняя граница рамки надписей совпали. Измените для всех надписей свойство шрифта  Насыщенность  (Font Weight) на  жирный  (Bold) и распределите надписи по ширине отчета так, как это показано на рис. 10.20. Рамки надписей должны плотно примыкать друг к другу. Подтяните нижний край раздела заголовка группы так, чтобы он совпал с нижней границей надписей.</p>
+<p>Разместите поля в области данных так, чтобы они располагались вдоль верхнего края раздела точно под соответствующими надписями. Рамки полей так же, как и рамки надписей, должны плотно примыкать друг к другу. Подтяните нижний край области данных так, чтобы он совпал с нижней границей полей.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image02/0eaccad8affa57e5a47c444e3ca618ef.gif" width="492" height="529" alt=""><meta itemprop="width" content="492">
+<meta itemprop="height" content="529"></span></p>
+<p> Рис. 10.21.  Отчет &#171;Заказы клиентов&#187; в режиме Предварительного просмотра</p>
+<p>В разделе примечания группы &#171;КодЗаказа&#187; (OrderlD Footer) разместите два вычисляемых текстовых поля. Одно из них будет содержать текст, который определяется выражением:</p>
+<p>  =&#187;Итого по заказу &#187; &amp; [КодЗаказа] &amp; &#171;:&#187; </p>
+<p>(для английской версии используйте имя поля OrderID). Второе поле должно содержать итоговую сумму заказа и вычисляется с помощью выражения:</p>
+<p>  =Sum([ОтпускнаяЦена]) </p>
+<p>(для английской версии используйте имя поля ExtendedPrice). У этих полей в нашем примере отсутствуют присоединенные надписи (первое поле играет роль надписи для второго). Поэтому перед их размещением можно соответствующим образом изменить стандартное свойство  Добавление подписи  (Auto Label) для текстового поля. Эти поля также имеют рамки, ширина которых должна быть установлена так, чтобы они примыкали друг к другу у левой границы поля &#171;ОтпускнаяЦена&#187;, находящегося справа в области данных.</p>
+<p>В разделе примечания группы &#171;Название&#187; (CompanyName Footer) выведем итоги продаж по клиенту в целом (по всем его заказам). Эти поля формируются аналогично итоговым полям в группе &#171;КодЗаказа&#187;, т. е. вычисляются согласно выражениям:</p>
+<ul>
+<li>для первого поля: =&#187;Итого по клиенту &#187; &amp; [Марка] &amp; &#171;:&#187;</li>
+<li>для второго поля: =Sum([ОтпускнаяЦена])</li>
+</ul>
+<p>(для английской версии используйте имена полей ProductName и ExtendedPrice соответственно). Чтобы выделить значения этих полей, увеличьте размер шрифта до 11 пунктов и установите насыщенность шрифта —  жирный  (Bold).</p>
+<p>Для созданных полей с итоговыми суммами задайте для свойства  Формат поля  (Format) значение  Денежный  (Currency).</p>
+<p>В итоге вы должны получить отчет, который будет выглядеть при печати так, как представлено на рис. 10.21.</p>
+<p> Настройка печати групп отчета </p>
+<p>Кроме тех свойств групп отчета, которые обсуждались выше, существует еще несколько свойств разделов отчета, которые влияют на представление групп в отчетах. Теперь мы опишем эти свойства.</p>
+<p> Расположение групп в отчетах, имеющих несколько колонок </p>
+<p>При печати отчета в несколько колонок (полос) на любом уровне группировки можно указать, чтобы каждая группа этого уровня всегда начиналась в новой колонке. Примером такого отчета является отчет &#171;Товары по типам&#187; (Products by Category) демонстрационной базы данных &#171;Борей&#187;.</p>
+<p>Для регулировки расположения групп на странице такого отчета используется свойство  Новая строка или столбец  (New Row or Col) раздела заголовка или примечания группы отчета. Установив это свойство равным До  раздела  (Before Section) для заголовка группы, можно заставить Access печатать каждую группу этого уровня группировки в новой колонке или новой полосе. Если значение свойства  Новая строка или столбец  (New Row or Col) установить равным  После раздела  (After Section), то данный раздел отчета печатается в текущей колонке или полосе, а следующий начинается в новой. И наконец, если значение этого свойства для заголовка группы установить равным  До и после раздела  (Before &amp; After), то заголовок группы будет печататься в отдельной колонке или полосе, т. к. следующий за ним раздел данных тоже начнет печататься в новой колонке или полосе.</p>
+<p> Повторение заголовка группы на каждой странице или колонке </p>
+<p>Если группа занимает при печати больше одной страницы или переносится па следующую страницу, можно заставить Access печатать заголовок группы на каждой странице. Для этого используется свойство  Повторение раздела  (Repeat Section) заголовка группы. По умолчанию это свойство имеет значение  Нет  (No).</p>
+<p> Скрытие повторяющихся данных в отчете </p>
+<p>При составлении простых отчетов, содержащих отсортированные данные, могут возникать ситуации, когда в нескольких строках отчета в одном поле повторяются одни и те же данные, например наименование клиента, адрес и пр. Очевидно, что отчет будет выглядеть лучше, если данные в поле не будут повторяться, а будут печататься каждый раз только в первой строке. Каждое поле в области данных отчета имеет свойство  Не выводить повторы  (Hide Dublicates). Если установить это свойство равным Да (Yes) для поля, содержащего повторяющиеся данные, данные повторяться не будут. Для сравнения на рис. 10.22 и 10.23 приводится один и тот же отчет с разными значениями свойства  Не выводить повторы  (Hide Dublicates) для поля &#171;Название&#187; (CompanyName).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image15/85bb5917e82883bd30f666020277e0af.gif" width="492" height="529" alt=""><meta itemprop="width" content="492">
+<meta itemprop="height" content="529"></span></p>
+<p> Рис. 10.22.  Свойство  Не выводить повторы  равно Нет</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image23/cf192075af93568b880dce22502123d5.gif" width="492" height="529" alt=""><meta itemprop="width" content="492">
+<meta itemprop="height" content="529"></span></p>
+<p> Рис. 10.23.  Свойство  Не выводить повторы  равно Да</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image09/5089a94539d8a5192791e21dee9519f2.gif" width="483" height="334" alt=""><meta itemprop="width" content="483">
+<meta itemprop="height" content="334"></span></p>
+<p> Рис. 10.24.  Помещение группирующего поля в область данных отчета</p>
+<p>Если в отчете используется группировка, то не всегда группирующее поле выносится в отдельный раздел (заголовок или примечание группы). Иногда его оставляют в области данных отчета, вынося итоговые значения в раздел примечания группы. В этом случае также используется свойство  Не выводить повторы  (Hide Dublicates), для группирующего поля, чтобы не выводить повторяющиеся значения. Отчет при этом будет выглядеть так, как это показано на рис. 10.24.</p>
+<p> Проведение вычислений </p>
+<p>В гл. 6 и в предыдущих разделах данной главы мы создавали вычисляемые поля в отчетах главным образом для вывода итоговых значений. Сейчас мы покажем еще несколько типов вычисляемых полей, которые применяются для решения типовых задач.</p>
+<p> Создание полей, содержащих сумму с накоплением </p>
+<p>Часто в отчетах требуется создать поле, в котором суммируются значения из всех предыдущих записей. Такое поле представляет собой специальный вид итогового значения.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image08/44e3c6ac14eb3dc7f44d910eeae34fb7.gif" width="436" height="357" alt=""><meta itemprop="width" content="436">
+<meta itemprop="height" content="357"></span></p>
+<p> Рис. 10.25.  Использование полей с накоплением суммы</p>
+<p>Для того чтобы текстовое поле накапливало данные из предыдущих записей, нужно установить для него значение свойства  Сумма с накоплением  (Running Sum) равным либо значению  Для группы  (Over Group), либо Для всего (Over All).</p>
+<p>Значение  Для группы  (Over Group) используется, когда нужно просуммировать значение в пределах одной группы, в следующей группе это значение сбрасывается в О и суммирование начинается вновь.</p>
+<p>Значение  Для всего  (Over All) используется либо в том случае, когда в отчете нет группировки, либо когда нужно получить итоговое значение по всем группам.</p>
+<p>Такое накапливающее поле может быть размещено либо в области данных, и тогда оно будет суммировать данные в каждой записи, либо в области заголовка или примечания группы, тогда оно будет накапливать итоговые значения для всех групп одного уровня. Пример отчета, содержащего поля с накоплением, приведен на рис. 10.25. Первое вычисляемое поле в этом отчете содержит выражение: = [ОтпускнаяЦена] (для английской версии = [ExtendedPrice]) и имеет свойство  Сумма с накоплением  (Running Sum), равное значению  Для группы  (Over Group), второе содержит такое же выражение, но имеет значение данного свойства, равное значению  Для всего  (Over All).</p>
+<p> Вычисление процентов </p>
+<p>Иногда в отчете требуется вывести проценты, которые составляют конкретные значения в общей или частичной итоговой сумме. В отчетах Access можно создавать такие поля. Для этого в области данных создается вычисляемое поле, значение которого определяется выражением типа = [Стоимость ]/ [Общая стоимость], т.е. нужно меньшее значение разделить на большее. Свойство  Формат  (Format) для этого поля нужно установить равным  Процентный  (Percent).</p>
+<p>Если требуется вычислить процент частичной (групповой) суммы от общей суммы или суммы более высокого уровня группировки, нужно создать аналогичное поле в разделе заголовка или примечания соответствующей группы.</p>
+<p>Access обеспечивает возможность таких расчетов за счет того, что отчет формируется в два этапа. На первом этапе вычисляются поля в области данных, итоговые значения для групп и для отчета в целом и определяется длина отчета. Во время второго этапа вычисляются все выражения, которые ссылаются на итоги, рассчитанные во время первого этапа.</p>
+<p>Пример использования полей, содержащих процент от итогового значения, вы можете найти в отчете &#171;Продажи по сотрудникам и странам&#187; (Employee Sales by Country) базы данных &#171;Борей&#187; (Northwind).</p>
+<p> Нумерация записей и подсчет количества записей в отчете </p>
+<p>Свойство  Сумма с накоплением  (Running Sum), которое мы рассматривали выше, может быть использовано еще одним, несколько неожиданным способом. Оно используется для нумерации записей (строк) в отчете. Если форма отчета требует, чтобы строки отчета были пронумерованы, для этого придется создать вычисляемое поле, свойство  Данные  (Control Source) которого определяется выражением: =1, а свойство  Сумма с накоплением  (Running Sum) нужно установить равным  Для всего  (Over All) или  Для группы  (Over Group), если требуется нумерация записей в пределах группы. Тогда при печати отчета значение этого поля будет увеличиваться на единицу для каждой новой записи. Пример нумерации записей описанным образом вы можете увидеть в отчете &#171;Продажи по годам&#187; (Sales by Year) базы данных &#171;Борей&#187; (Northwind).</p>
+<p>Иногда в отчете требуется сосчитать количество записей, содержащихся в каждой группе, например количество заказов у каждого клиента или количество счетов, выписанных сотрудником отдела продаж. Такое значение так же, как и итоговая сумма, обычно выводится в примечании группы. Для того чтобы его отобразить, нужно в области данных создать вычисляемое поле, которое будет содержать номер строки (как это описано выше), и сделать это поле невидимым, т. е. его свойству  Вывод на экран  (Visible) присвоить значение Нет (No). Затем в области примечания группы нужно создать вычисляемое поле, свойство  Данные  (Control Source) которого должно ссылаться на это невидимое поле. Примеры таких полей приводятся на рис. 10.26.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image16/8ec161a3598897448438b5afb4fbf49c.gif" width="339" height="439" alt=""><meta itemprop="width" content="339">
+<meta itemprop="height" content="439"></span></p>
+<p> Рис. 10.26.  Подсчет числа записей в группе</p>
+<p>Если требуется подсчитать общее количество записей в отчете, то тогда просто создается одно вычисляемое поле в разделе заголовка или примечания отчета, у которого свойство  Данные  (Control Source) устанавливается равным выражению =Count(*).</p>
+<p> Объединение текстовых данных и печать условий отбора записей в отчете </p>
+<p>В отчетах чаще, чем в формах, применяются вычисляемые поля, которые представляют собой комбинацию данных из различных полей таблиц или базовых запросов. Типичным примером такого объединения является поле, содержащее фамилию и инициалы человека, хотя в базе данных часто фамилия, имя и отчество хранятся в разных полях. Второй, не менее распространенный случай, когда в одном столбце отчета требуется вывести адрес, который обычно тоже хранится в нескольких отдельных полях таблицы. Часто в одном столбце отчета объединяют данные из нескольких полей таблицы в целях уменьшения ширины отчета. Примеры создания текстовых выражений такого типа приводились ранее  (см. гл. <a href="https://taurion.ru/access/4">4</a>, <a href="https://taurion.ru/access/6">6</a>). </p>
+<p>Еще один типичный случай объединения текстовых полей использовался нами в отчете &#171;Заказы клиентов&#187; (см. рис. 10.21). Это поля, которые выглядят в отчете как надписи (&#171;Итого по заказу &lt;номер&gt;:&#187;, &#171;Итого по клиенту &lt;имя&gt;:&#187;), хотя на самом деле представляют собой комбинацию текстовых строк и значений полей базового запроса.</p>
+<p>Иногда в отчетах нужно вывести условия отбора записей. Для этого также применяют вычисляемые поля, содержащие комбинацию текста и параметров отбора. Пример такого выражения показан на рис. 10.27: в заголовке отчета создано поле, которое вычисляется с помощью, выражения, содержащего ссылки на параметры базового запроса [Начальная дата] и [Конечная дата]. В этом же отчете используются и другие вычисляемые поля, объединяющие текстовые данные из разных полей.</p>
+<p>Аналогично можно написать выражение, которое будет ссылаться на значения полей открытой формы, часто используемой для ввода критериев отбора записей. Примером такой формы, представляющей собой диалоговое окно, может быть форма &#171;Продажи по годам&#187; (Sales by Year Dialog), представленная на рис. 10.28.</p>
+<p>Для того чтобы в заголовке отчета написать интервал дат, заданных в форме &#171;Продажи по годам&#187;, необходимо для источника данных вычисляемого поля использовать выражение: =&#187;Продажи с &#187; &amp; Forms![Продажи по годам]![НачальнаяДата] &amp; &#187; по &#187; &amp; Forms![Продажи по годам]![КонечнаяДата] для английской версии: =&#187;Продажи с &#187; &amp; Forms![Sales by Year Dialog]![BeginningDate] &amp; &#187; no &#187; &amp; Forms![Sales by Year Dialog]![EndingDate]</p>
+<p><strong>Замечание</strong></p>
+<p>Для того чтобы значения таких выражений были правильными, необходимо, чтобы форма, на которую они ссылаются (в данном случае &#171;Продажи по годам&#187;), была открыта в момент загрузки отчета. В противном случае в этих вычисляемых полях будет отображен код ошибки.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image20/b82ac8b1ab35bae04850302ebe3012fb.gif" width="428" height="471" alt=""><meta itemprop="width" content="428">
+<meta itemprop="height" content="471"></span></p>
+<p> Рис. 10.27.  Объединение текстовых строк и полей запроса в отчетах</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image23/d15aa086dd5f1d3f3c014ab159db7c78.gif" width="337" height="261" alt=""><meta itemprop="width" content="337">
+<meta itemprop="height" content="261"></span></p>
+<p> Рис. 10.28.  Диалоговое окно для ввода критериев отбора записей</p>
+<p> Совет </p>
+<p>Если захотите поэкспериментировать с формой &#171;Продажи по годам&#187;, советуем вам временно изменить свойство Модальное (Modal) этой формы на Нет (No), чтобы иметь возможность, в то время как форма открыта, переключиться на отчет, содержащий вычисляемые поля.</p>
+<p> Фильтрация данных в отчете </p>
+<p>Записи в отчетах, так же как и в формах, могут фильтроваться. Для этого существует свойство отчета  Фильтр  (Filter). Значением этого свойства является логическое выражение WHERE инструкции SELECT. Применение фильтра приводит к тому, что, когда для конкретной записи заданное в качестве фильтра логическое выражение принимает значение Истина (True), эта запись отображается, в противном случае — нет. Пример такого выражения представлен на рис. 10.29 (задан интервал дат, в котором должно лежать значение поля &#171;ДатаИсполнения&#187; (ShippedDate)). Для того чтобы фильтр, введенный в диалоговом окне свойств отчета, был применен к записям в отчете, требуется еще установить значение свойства  Фильтр включен  (Filter On) равным Да (Yes). В противном случае он сохраняется, загружается при выполнении отчета, но не применяется. Свойство можно установить либо в диалоговом окне свойств, как это показано на рис. 10.29, либо в макросе или процедуре VBA.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image21/c2991253b596bef55c5d149bff80e93c.gif" width="327" height="332" alt=""><meta itemprop="width" content="327">
+<meta itemprop="height" content="332"></span></p>
+<p> Рис. 10.29.  Свойства  Фильтр и Фильтр включен  в окне свойств отчета</p>
+<p> Выводы </p>
+<p>В данной главе мы привели много примеров отчетов (и уже готовых, и тех, которые вы могли создать сами в процессе изучения материала), которые должны были убедить вас, что Access является не только СУБД, которая будет надежно хранить ваши данные, но и средством, которое позволяет легко и быстро обрабатывать и представлять эти данные в удобном для вас виде. При этом такие сложные обработки данных практически не требуют умения программировать, все можно сделать пользуясь элементарными навыками проведения вычислений, несколькими достаточно простыми правилами работы с элементами управления в Конструкторе и будучи просто аккуратным. Новые средства публикации отчетов в Интернете  (см. гл. 12)  значительно увеличивают ценность этого инструмента, т. к. делают отчеты доступными широкому кругу пользователей, на чьих компьютерах Access не установлен. Мы надеемся, что материалы этой и всех предыдущих глав показали, что Access является прекрасным средством разработки, доступным вдумчивому и упорному пользователю.</p>
+<!-- toc empty -->	</div>
+<!-- .entry-content -->
+
+</article>
+
+
+
+
+
+
+
+
+
+<div class="social-buttons">
+<span class="social-button social-button--vkontakte main" data-social="vkontakte"><span>Поделиться в ВКонтакте</span></span><span class="social-button social-button--telegram " data-social="telegram"></span><span class="social-button social-button--odnoklassniki " data-social="odnoklassniki"></span><span class="social-button social-button--whatsapp " data-social="whatsapp"></span><span class="social-button social-button--viber " data-social="viber"></span>
+</div>
+
+<!--noindex-->
+<div class="author-box">
+    <div class="author-info">
+        <div class="author-box__ava">
+                    </div>
+
+        <div class="author-box__body">
+            <div class="author-box__author">
+                Автор А. Днепров            </div>
+            <div class="author-box__description">
+                <p>Обучаю основам работы с офисными программами.</p>
+            </div>
+
+            
+        </div>
+    </div>
+</div>
+<!--/noindex-->
+    <meta itemprop="author" content="А. Днепров">
+<meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/glava-podgotovka-sostavnyh-otchetov" content="Глава 10. Подготовка составных отчетов">
+    <meta itemprop="dateModified" content="2024-07-15">
+<div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+<div class="related-posts">
+<div class="related-posts__header">Вам также может понравиться</div>
+<div class="post-cards post-cards--vertical">
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/kak-sdelat-massovuyu-zamenu-formul"><img width="311" height="230" src="/image04/2408fadbc9163d5aa4994580cfc152cd.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/kak-sdelat-massovuyu-zamenu-formul">Как сделать массовую замену формул</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/kak-udalit-lishnie-i-pustye-stranitsy-v-excel">Как удалить лишние и пустые страницы в Excel</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/preobrazovanie-teksta-v-tablitsu"><img width="345" height="122" src="/image14/7a0043c9bf012cc129b22376cfebb2a9.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/preobrazovanie-teksta-v-tablitsu">Преобразование текста в таблицу</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/kak-delat-skrinshoty-s-vysokim-razresheniem-v-windows">Как делать скриншоты с высоким разрешением в Windows 11/10</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/osobennosti-raboty-s-mnogostranichny"><img width="213" height="230" src="/image13/6f8f9694c11ee322ff9d3675b0b8ba07.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/osobennosti-raboty-s-mnogostranichny">13.1 Особенности работы с многостраничными документами</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/kak-sdelat-izmeneniya-vnutri-yacheyki-p"><img width="345" height="93" src="/image27/f6550fd3bdfdfdbe500536441d5d252e.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/kak-sdelat-izmeneniya-vnutri-yacheyki-p">Как сделать изменения внутри ячейки. Принудительный перенос</a></div>
+    </div>
+</div>
+</div>
+            </main><!-- #main -->
+        </div>
+<!-- #primary -->
+
+        
+    
+
+    </div>
+<!--.site-content-inner-->
+
+    
+</div>
+<!--.site-content-->
+
+    
+    
+
+<div class="site-footer-container">
+
+    
+
+    <footer id="colophon" class="site-footer full" itemscope itemtype="http://schema.org/WPFooter">
+        <div class="site-footer-inner fixed">
+
+            
+            
+<div class="footer-bottom">
+    <div class="footer-info">
+        <div class="footer-copyright">© 2024 Самоучитель справочник по офисным программам. <a href="/o-nas" rel="nofollow">О нас | Контакты</a> | <a href="/map" rel="nofollow">Карта сайта</a>
+</div>
+        <div class="footer-under-copyright"></div>
+	        </div>
+
+    </div>
+        </div>
+    </footer><!--.site-footer-->
+</div>
+
+
+            <button type="button" class="scrolltop js-scrolltop" data-mob="on"></button>
+    
+                    <div class="top-line js-top-line">
+            <div class="top-line-inner fixed">
+
+                <div class="top-line__title">Глава 10. Подготовка составных отчетов</div>
+<div class="top-line__like"><span class="btn-fb-like btn-top-like social-button--vkontakte" data-social="vkontakte"><span>Поделиться в ВКонтакте</span></span></div>
+<div class="top-line__post">
+<div class="top-line__post_thumbnail"><a href="/razlichiya-versiy-excel"></a></div>
+<div class="top-line__post_title"><a href="/razlichiya-versiy-excel">Версии Excel</a></div>
+</div>            </div>
+        </div>
+    
+</div>
+<!-- #page -->
+
+<script>var pseudo_links = document.querySelectorAll(".pseudo-clearfy-link");for (var i=0;i<pseudo_links.length;i++ ) { pseudo_links[i].addEventListener("click", function(e){   window.open( e.target.getAttribute("data-uri") ); }); }</script><script>document.addEventListener("copy", (event) => {var pagelink = "\nИсточник: /glava-podgotovka-sostavnyh-otchetov";event.clipboardData.setData("text", document.getSelection() + pagelink);event.preventDefault();});</script><script type="text/javascript" id="yelly-scripts-js-extra">
+/* <![CDATA[ */
+var settings_array = {"rating_text_average":"среднее","rating_text_from":"из","lightbox_display":"1"};
+var wps_ajax = {"url":"\/wp-admin\/admin-ajax.php","nonce":"e4ca9d4bd8"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="/js/scripts.min.js" id="yelly-scripts-js"></script>
+
+
+
+<div class="image-hover-social-buttons" style="display: none;">
+<div class="social-button social-button--vkontakte js-share-link" data-uri="https://vk.com/share.php?url=%2Fglava-podgotovka-sostavnyh-otchetov"></div>
+<div class="social-button social-button--telegram js-share-link" data-uri="https://t.me/share/url?url=%2Fglava-podgotovka-sostavnyh-otchetov&text=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+10.+%D0%9F%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BA%D0%B0+%D1%81%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BD%D1%8B%D1%85+%D0%BE%D1%82%D1%87%D0%B5%D1%82%D0%BE%D0%B2"></div>
+<div class="social-button social-button--odnoklassniki js-share-link" data-uri="https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&service=odnoklassniki&st.shareUrl=%2Fglava-podgotovka-sostavnyh-otchetov"></div>
+<div class="social-button social-button--whatsapp js-share-link" data-uri="whatsapp://send?url=%2Fglava-podgotovka-sostavnyh-otchetovtext=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+10.+%D0%9F%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BA%D0%B0+%D1%81%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BD%D1%8B%D1%85+%D0%BE%D1%82%D1%87%D0%B5%D1%82%D0%BE%D0%B2"></div>
+<div class="social-button social-button--viber js-share-link" data-uri="viber://forward?url=%2Fglava-podgotovka-sostavnyh-otchetovtext=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+10.+%D0%9F%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BA%D0%B0+%D1%81%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BD%D1%8B%D1%85+%D0%BE%D1%82%D1%87%D0%B5%D1%82%D0%BE%D0%B2"></div>
+</div>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(93345646, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/93345646" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>

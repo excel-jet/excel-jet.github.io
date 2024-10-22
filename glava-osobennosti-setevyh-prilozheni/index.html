@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<title>Глава 16. Особенности сетевых приложений Access — learn-office</title>
+	<meta name="description" content="Особенности сетевых приложений Access База данных Access может использоваться одним пользователем на локальном компьютере или несколькими пользователями в">
+	<link rel="canonical" href="/glava-osobennosti-setevyh-prilozheni">
+	<meta property="og:locale" content="ru_RU">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Глава 16. Особенности сетевых приложений Access — learn-office">
+	<meta property="og:description" content="Особенности сетевых приложений Access База данных Access может использоваться одним пользователем на локальном компьютере или несколькими пользователями в">
+	<meta property="og:url" content="/glava-osobennosti-setevyh-prilozheni">
+	<meta property="og:site_name" content="Excel-jet">
+	<meta property="article:published_time" content="2024-06-09T23:33:14+00:00">
+	<meta property="og:image" content="/image05/31da05fbfae321e5428fc744aef060f9.gif">
+	<meta property="og:image:width" content="177">
+	<meta property="og:image:height" content="117">
+	<meta property="og:image:type" content="image/gif">
+	<meta name="author" content="А. Днепров">
+
+
+<style id="wp-block-library-theme-inline-css" type="text/css">.wp-block-audio :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio :where(figcaption){color:#ffffffa6}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed :where(figcaption){color:#ffffffa6}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:#ffffffa6}:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table :where(figcaption){color:#ffffffa6}.wp-block-video :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video :where(figcaption){color:#ffffffa6}.wp-block-video{margin:0 0 1em}:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}</style>
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 19.5px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36.5px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--normal: 22px;--wp--preset--font-size--huge: 49.5px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="google-fonts-css" href="https://fonts.googleapis.com/css?family=Roboto%3A400%2C400i%2C700&#038;subset=cyrillic&#038;display=swap" media="all">
+<link rel="stylesheet" id="yelly-style-css" href="/css/style.min.css" media="all">
+
+<style>.pseudo-clearfy-link { color: #008acf; cursor: pointer;}.pseudo-clearfy-link:hover { text-decoration: none;}</style>
+<link rel="preload" href="/fonts/icomoon.ttf" as="font" crossorigin>
+    <style>.scrolltop{width:50px}.scrolltop:before{content:"\21d1"}.entry-content a, .entry-content a:visited, .spanlink, .comment-reply-link, .pseudo-link, .widget_calendar a, .widget_recent_comments a, .child-categories ul li a{color:#0000ff}.child-categories ul li a{border-color:#0000ff}a:hover, a:focus, a:active, .spanlink:hover, .top-menu ul li>span:hover, .main-navigation ul li a:hover, .main-navigation ul li span:hover, .footer-navigation ul li a:hover, .footer-navigation ul li span:hover, .comment-reply-link:hover, .pseudo-link:hover, .child-categories ul li a:hover{color:#1e73be}.top-menu>ul>li>a:before, .top-menu>ul>li>span:before{background:#1e73be}.child-categories ul li a:hover, .post-box--no-thumb a:hover{border-color:#1e73be}.post-box--card:hover{box-shadow: inset 0 0 0 1px #1e73be}.post-box--card:hover{-webkit-box-shadow: inset 0 0 0 1px #1e73be}@media (min-width: 768px){body{background-attachment: scroll}}body{font-size:17px;}@media (max-width: 991px){.widget-area{display: block; margin: 0 auto}}</style>
+    <!-- Yandex.RTB -->
+<script>window.yaContextCb=window.yaContextCb||[]</script>
+<script src="https://yandex.ru/ads/system/context.js" async></script>	
+</head>
+<body class="post-template-default single single-post postid-900 single-format-standard wp-embed-responsive sidebar-right">
+<div id="page" class="site">
+    <a class="skip-link screen-reader-text" href="#content">Перейти к контенту</a>
+
+    
+    
+    <div class="search-screen-overlay js-search-screen-overlay"></div>
+    <div class="search-screen js-search-screen">
+        
+<form role="search" method="get" class="search-form" action="/">
+    <label>
+        <span class="screen-reader-text">Search for:</span>
+        <input type="search" class="search-field" placeholder="Поиск..." value="" name="s">
+    </label>
+    <button type="submit" class="search-submit"></button>
+</form>    </div>
+
+    
+
+<header id="masthead" class="site-header full" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="site-header-inner fixed">
+
+        <div class="humburger js-humburger">
+<span></span><span></span><span></span>
+</div>
+
+        
+<div class="site-branding">
+
+    <div class="site-branding__body"><div class="site-title"><a href="/">Excel-jet</a></div></div>
+</div>
+<!-- .site-branding -->
+
+    
+    <nav id="site-navigation" class="main-navigation full">
+        <div class="main-navigation-inner fixed">
+            <div class="menu-menyu-container"><ul id="header_menu" class="menu">
+<li id="menu-item-6695" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-6695">
+<a href="/excel">Excel</a>
+<ul class="sub-menu">
+	<li id="menu-item-6709" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6709"><a href="/excel/functions">Функции</a></li>
+</ul>
+</li>
+<li id="menu-item-6697" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6697"><a href="/microsoft-word">Word</a></li>
+<li id="menu-item-6696" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6696"><a href="/powerpoint">PowerPoint</a></li>
+<li id="menu-item-6698" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6698"><a href="/outlook">Outlook</a></li>
+</ul></div>        </div>
+    </nav><!-- #site-navigation -->
+
+    
+<div class="header-search"><span class="search-icon js-search-icon"></span></div>    </div>
+</header><!-- #masthead -->
+
+
+
+    
+    
+    <div id="content" class="site-content fixed">
+
+        
+        <div class="site-content-inner">
+    
+        
+        <div id="primary" class="content-area" itemscope itemtype="http://schema.org/Article">
+            <main id="main" class="site-main">
+
+                
+<article id="post-900" class="article-post post-900 post type-post status-publish format-standard has-post-thumbnail  category-excel">
+
+    
+        
+        <header class="entry-header"><h1 class="entry-title" itemprop="headline">Глава 16. Особенности сетевых приложений Access</h1></header>
+        
+        
+        
+    
+    
+    <div class="entry-meta">
+<span class="entry-time"><span class="entry-label">Время чтения</span> 63 мин.</span><span class="entry-date"><span class="entry-label">Опубликовано</span> <time itemprop="datePublished" datetime="2024-06-10">10.06.2024</time></span>
+</div>
+	<div class="entry-content" itemprop="articleBody">
+		<p>Особенности сетевых приложений Access</p>
+<p>База данных Access может использоваться одним пользователем на локальном компьютере или несколькими пользователями в сети. Использование базы данных в сети имеет ряд особенностей. Чтобы подготовить базу данных для использования в сети, необходимо выполнить специальную настройку среды Access, параметров базы данных и ее объектов и реализовать особенности общего доступа к данным в программном коде приложения. Об этом и пойдет речь в настоящей главе.</p>
+<p>В этой главе обсуждаются и вопросы разработки, и вопросы работы с сетевыми приложениями Access 2002. Среди них:</p>
+<ul>
+<li>Предоставление общего доступа к данным и объектам базы данных Access</li>
+<li>Защита совместно используемых баз данных</li>
+<li>Программный доступ к базам данных с помощью интерфейса DAO</li>
+</ul>
+<p>Способы совместного использования баз данных</p>
+<p>Базы данных Microsoft Access могут использоваться одновременно несколькими пользователями в сети. Предоставить общий доступ к базе данных можно несколькими способами:</p>
+<ul>
+<li>поместив базу данных в общую папку в сети;</li>
+<li>опубликовав в сети таблицы базы данных;</li>
+<li>обеспечив подключение к базе данных через Интернет;</li>
+<li>с помощью репликации;</li>
+<li>с помощью SQL Server.</li>
+</ul>
+<p>Совместное использование базы данных</p>
+<p>Чтобы предоставить совместный доступ к базе данных Access, поместите ее на файловый сервер или в общую папку на рабочей станции. Это самый простой метод обеспечения совместного доступа к базе данных и всем ее объектам: формам, отчетам, запросам, макросам и модулям. Он подходит, если нужно, чтобы все пользователи могли использовать одни и те же объекты базы данных одинаковым способом.</p>
+<p>Поместив базу данных в общую папку на файловом сервере или рабочей станции, убедитесь в том, что установлен параметр, определяющий открытие базы данных по умолчанию в режиме совместного доступа. Об установке этого параметра рассказано в разд. «Режимы работы с базой данных в сети» этой главы.</p>
+<p>Для работы с базой данных в сети необходимо выполнить локальную или сетевую установку Access либо установить исполняемую версию Access.</p>
+<p>Совместное использование только данных</p>
+<p>Можно предоставить совместный доступ в сети лишь к таблицам в базе данных Access. Для этого необходимо разделить базу данных на файл объектов данных и файл объектов приложения. Разделение базы данных с помощью мастера описано в гл. 19.</p>
+<p>После разделения базы данных поместите файл объектов данных на файловый сервер или в общую папку на рабочей станции, чтобы предоставить общий доступ к таблицам, а файл объектов приложений — на компьютер пользователя в виде локальной копии. В этом случае производительность базы данных будет несколько выше, чем при совместном доступе ко всей базе данных, поскольку по сети будут передаваться только данные из таблиц. При этом отдельный пользователь может настроить формы, отчеты и прочие объекты из файла объектов приложения в соответствии со своими индивидуальными потребностями. Эти изменения не отразятся на остальных пользователях, которые используют свои локальные копии файла объектов приложения.</p>
+<p>Совместное использование объектов базы данных через Интернет</p>
+<p>Объекты базы данных можно предоставить в совместное использование через Интернет, создав на их основе страницы HTML следующих видов:</p>
+<ul>
+<li>статические страницы HTML</li>
+<li>генерируемые сервером страницы HTML</li>
+<li>страницы доступа к данным</li>
+<li>документы в формате XML</li>
+</ul>
+<p>Страницы HTML можно отобразить в программе просмотра Интернета, такой как Internet Explorer. (О работе с базами данных Access через Интернет см. гл. 12.)</p>
+<p>Совместная работа с базой данных с помощью репликации</p>
+<p>Портфельная репликация Windows позволяет использовать для работы с файлом (в том числе с базой данных) два компьютера: например, компьютер в офисе и переносной компьютер. Можно создавать реплики (специальные копии) базы данных Access для хранения на разных компьютерах и синхронизировать изменения в них. Аналогично несколько пользователей могут работать со своими копиями — репликами базы данных, которые могут быть синхронизированы по сети, с помощью удаленного доступа к сети или через Интернет. Репликация баз данных Access описана в гл. 18.</p>
+<p>Совместный доступ к базе данных с помощью SQL Server</p>
+<p>Если в сети организации установлена СУБД SQL Server, ее можно использовать для совместной работы с базой данных Access. Для этого необходимо создать клиент-серверное приложение на основе базы данных Access. В результате станут доступны мощные средства СУБД SQL Server. Можно преобразовать существующую базу данных Access в клиент-серверное приложение с помощью мастера (гл. 19) или создать новое приложение в архитектуре «клиент-сервер» (гл. 17).</p>
+<p>Режимы работы с базой данных в сети</p>
+<p>База данных может быть открыта пользователем в сети в одном из четырех режимов.</p>
+<ul>
+<li>Открытие в режиме общего доступа. База данных открывается для чтения и записи. Другие пользователи тоже могут открыть базу данных (в любом режиме).</li>
+<li>Открытие в режиме монопольного доступа. База данных открывается для чтения и записи. Другие пользователи не смогут открыть базу данных, пока она не будет закрыта пользователем, открывшим ее в режиме-монопольного доступа.</li>
+<li>Открытие в режиме общего доступа только для чтения. База данных открывается только для чтения. Другие пользователи тоже могут открыть базу данных (в любом режиме).</li>
+<li>Открытие в режиме монопольного доступа только для чтения. База данных открывается только для чтения. Другие пользователи не смогут открыть базу данных, пока она не будет закрыта пользователем, открывшим ее в режиме монопольного доступа.</li>
+</ul>
+<p>Можно указать режим открытия базы данных, используемый по умолчанию:</p>
+<ol>
+<li>Откройте базу данных.</li>
+<li>Выберите команду Сервис, Параметры (Tools, Options). Появится диалоговое окно Параметры (Options).</li>
+<li>Раскройте вкладку Другие (Advanced).</li>
+<li>В группе Режим открытия по умолчанию (Default open mode) выберите переключатель общий доступ (Shared) или монопольный доступ (Exclusive).</li>
+</ol>
+<p>Заданный режим открытия по умолчанию действует только на локальном компьютере и не влияет на режим, используемый по умолчанию для открытия базы данных пользователями других компьютеров.</p>
+<p>Кроме того, независимо от установленного режима по умолчанию, пользователь может открыть базу данных в любом режиме, указав его следующим способом:</p>
+<ol>
+<li>Выберите команду Файл, Открыть (File, Open). Появится диалоговое окно Открытие файла базы данных (Open).</li>
+<li>Щелкните по стрелке, находящейся справа от кнопки Открыть (Open). Раскроется список всех возможных режимов открытия базы данных (рис. 16.1).</li>
+<li>Выберите в списке элемент, соответствующий требуемому режиму открытия базы данных:
+<ul>
+<li>Открыть (Open) — режим общего доступа для чтения и записи;</li>
+<li>Открыть для чтения (Open Read-Only) — режим общего доступа, открыть только для чтения;</li>
+<li>Монопольно (Open Exclusive) — режим монопольного доступа;</li>
+<li>Монопольно для чтения (Open Exclusive Read-Only) — режим монопольного доступа, открыть только для чтения.</li>
+</ul>
+</li>
+</ol>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" decoding="async" src="/image05/31da05fbfae321e5428fc744aef060f9.gif" alt="" width="177" height="117"><meta itemprop="width" content="177">
+<meta itemprop="height" content="117"></span></p>
+<p>Рис. 16.1. Список режимов открытия базы данных</p>
+<p><strong>Замечание</strong></p>
+<p>Можно запретить определенным пользователям сети открывать базу данных, защищенную на уровне пользователей, в монопольном режиме, для чего необходимо удалить права этих пользователей на монопольный доступ к базе данных. (Об установке прав доступа рассказано в гл. 20.)</p>
+<p>Если база данных (файл с расширением mdb) открывается в режиме общего доступа, Microsoft Access создает файл блокировок с таким же именем, как база данных, но с расширением Idb, который располагается в той же папке, где хранится файл базы данных. В файле блокировок сохраняется имя компьютера (например, MYCOMP) и регистрационное имя пользователя базы данных (например, Admin) для каждого пользователя, открывшего базу данных для совместного использования. Файл блокировок используется Microsoft Access во время совместной работы пользователей с файлом базы данных. Этот файл автоматически удаляется после того, как последний пользователь закроет базу данных.</p>
+<p><strong>Замечание</strong></p>
+<p>Иногда в результате сбоев файл блокировок не удаляется автоматически. В этом случае его следует удалить самостоятельно, иначе файл баз данных будет заблокирован и пользователи не смогут открыть базу данных.</p>
+<p>Пример сетевого приложения</p>
+<p>Рассмотрим в качестве примера сетевого приложения Access приложение «Игра в доминирование». Далее в этой главе на данном примере будут проиллюстрированы основные особенности разработки и использования сетевых приложений.</p>
+<p>Демонстационный пример сетевого приложения «Игра в доминирование» был разработан еще в предыдущей версии Access 2000, и для иллюстрации этой главы в новом издании он был сохранен полностью. Тому есть две причины. Во-первых, в новой версии Access 2002 реализована полноценная поддержка формата баз данных предыдущей версии. Во-вторых, в новой версии Access 2002 не появилось особых новшеств, касающихся совместной работы с приложениями Access в сети. Основным новшеством в этом аспекте является введение широкой поддержки формата XML, в который могут быть преобразованы практически все виды объектов базы данных и проектов Access 2002. Но формат XML не является частью баз данных. Скорее, его можно назвать альтернативным представлением данных в универсальном формате для их использования в Web в масштабах глобальных и корпоративных сетей. (Об XML подробно рассказано в гл. 12.)</p>
+<p>Рассмотрим здесь кратко, в чем заключается суть приложения «Игра в доминирование». Общая идея в реализации этого приложения является типичным примером проектирования сетевых приложений.</p>
+<p>Правила игры</p>
+<p>«Игра в доминирование» — это состязание между несколькими игроками за захват максимальной части игрового поля. Поле состоит из клеток. Каждая клетка может быть занята одним из игроков на некоторых определенных игрой условиях. Чтобы занять некоторый участок поля, игрок делает ход. Ход может быть принят или отвергнут, в зависимости от того, занята ли эта или смежные клетки другим игроком в соответствии с принятыми правилами. Все игроки имеют общий доступ к полю и стремятся занять клетки одновременно. За занятые клетки игроку присуждаются очки. Кто успеет набрать большее число очков, тот и победитель.</p>
+<p>Сетевое решение в реализации архитектуры приложения</p>
+<p>Даже из столь абстрактного описания логики игры можно сделать выводы о том, что архитектура приложения должна представлять собой несколько компонентов, взаимодействующих между собой в сети. Вот основные характеристики задачи, которые являются аргументами в пользу сетевого решения:</p>
+<ul>
+<li>у приложения несколько пользователей, работающих с общими данными (игровым полем), т. е. в задаче требуется многопользовательский доступ к общим данным;</li>
+<li>всю задачу можно разделить на относительно независимые подзадачи (ход игрока, решение о принятии или непринятии хода, ведение счета очков т. п.), которые могут выполняться параллельно или последовательно (по очереди);</li>
+<li>каждая из выделенных подзадач — это отдельный компонент приложения;</li>
+<li>каждый компонент может выполняться на отдельном вычислительном узле в сети, при этом некоторые компоненты могут быть объединены на одном узле сети, т. е. приложение может быть распределено по узлам сети.</li>
+</ul>
+<p>Таким образом, наше приложение имеет многокомпонентную, или так называемую многоуровневую архитектуру. Для таких задач типичным решением бывает обычно двух- или трехуровневая архитектура, когда приложение состоит из двух или трех типов взаимодействующих компонентов, среди которых выделяются: «обслуживающие» и «потребляющие» компоненты (серверы и клиенты). Серверный компонент может обслуживать от одного до нескольких клиентов одновременно. При необходимости вводят третий тип компонента — «промежуточный» серверный компонент между клиентским компонентом и основным серверным компонентом, чтобы разгрузить слишком нагруженный логикой обработки данных основной серверный компонент.</p>
+<p><strong>Замечание</strong></p>
+<p>Большее количество уровней встречается реже, обычно в области специализированных сетевых и коммуникационных задач.</p>
+<p>Описанную архитектуру называют клиент-серверной. Наше приложение имеет такую архитектуру. Его разделение на компоненты выглядит следующим образом:</p>
+<ul>
+<li>Серверный компонент — игровое поле, которое является общим ресурсом приложения, вместе с управляющим этим ресурсом звеном игры — сервером игры. Сервер принимает и обрабатывает заявки от клиентов.</li>
+<li>Клиентский компонент — это отдельный игрок, который посылает серверу заявки на использование общего ресурса (поля игры), и получает ответ.</li>
+</ul>
+<p>Access предоставляет две возможности для реализации приложений с такой архитектурой:</p>
+<ul>
+<li>в виде сетевых баз данных (одна или несколько связанных баз данных, размешенных в сети);</li>
+<li>в виде проектов баз данных, соединенных с данными на SQL Server (о клиент-серверной архитектуре в приложениях, связанных с SQL Server, см. гл. 17).</li>
+</ul>
+<p><strong>Замечание</strong></p>
+<p>Сетевое приложение Access может состоять и из одного компонента, не разделенного на части клиент и сервер, — одной базы данных с разрешенным общим доступом. Но это не эффективное решение.</p>
+<p>В этой главе мы говорим о первом способе — сетевых базах данных.</p>
+<p>Сетевое приложение Access «Игра в доминирование» должно будет обслуживать нескольких игроков — разных пользователей в сети. Предположим, пользователи работают в одноранговой сети. Рабочие станции пользователей, принимающих участие в игре, можно разделить на две категории: клиенты и серверы. На сервере выполняется ядро игры — управляющий компонент приложения. На клиентских рабочих станциях устанавливается компонент, предоставляющий пользователю интерфейс для участия в игре. Таким образом, приложение «Игра в доминирование» представляет собой распределенную базу данных Access с архитектурой «клиент-сервер», которая может быть использована даже в одноранговой сети. Все участники одной игры подключаются к одному серверу по схеме «звезда» (рис. 16.2).</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" fetchpriority="high" decoding="async" src="/image15/87972169d2e4211cad3c1be2fb0acf63.gif" alt="" width="506" height="420"><meta itemprop="width" content="506">
+<meta itemprop="height" content="420"></span></p>
+<p>Рис. 16.2. Архитектура приложения «Игра в доминирование»</p>
+<p>Многопользовательский доступ к данным требует организации распределения этого доступа между пользователями и обеспечения защиты этих данных в соответствии.с правами пользователей. Все эти особенности сетевых приложений реализованы в нашем примере, а методы их реализации описаны в данной главе.</p>
+<p>Организация совместного доступа к данным и объектам</p>
+<p>В сети доступ к одним и тем же объектам могут одновременно получить сразу несколько пользователей. Общий доступ к данным отличается от монопольного. Например, совместная правка записей в таблице/запросе или изменение структуры объекта базы данных может привести к возникновению конфликтов при сохранении изменений в источнике. В Microsoft Access существуют стандартные механизмы для поддержания совместного доступа к данным и объектам базы данных в сети и разрешения конфликтов, возникающих при сохранении изменений.</p>
+<p>Общий доступ к базе данных означает:</p>
+<ul>
+<li>совместный просмотр и изменение данных,</li>
+<li>совместный просмотр и изменение объектов.</li>
+</ul>
+<p>Совместный просмотр и изменение данных</p>
+<p>Предположим, база данных открыта в режиме общего доступа несколькими пользователями в сети. При этом несколько пользователей могут одновременно работать с одним и тем же набором записей. При попытке изменить определенную запись, в то время как ее редактирует другой пользователь или она удалена другим пользователем, возникает конфликт совместного доступа к источнику данных.</p>
+<p>При совместном доступе к базе данных Microsoft Access помогает отследить состояние записи во время ее правки и позволяет убедиться в том, что используемые данные были обновлены. В тот момент, когда несколько пользователей пытаются одновременно изменить одну и ту же запись, Access отображает сообщение, позволяющее разрешить возникший конфликт. Например, при попытке сохранить изменения в записи, заблокированной в этот момент другим пользователем, отображается сообщение с именем этого пользователя.</p>
+<p>Access помогает отследить состояние записи, отображая специальный символ в области выделения текущей записи. Возможные символы приведены в табл. 16.1.</p>
+<table class="table_common zebra" width="700">
+<tbody>
+<tr>
+<td>Символ</td>
+<td>Значение</td>
+</tr>
+<tr>
+<td><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image09/4fa971329285e7743d57c10e028ce103.gif" alt="" width="23" height="22"><meta itemprop="width" content="23">
+<meta itemprop="height" content="22"></span></td>
+<td>Данная запись является текущей и в настоящий момент еще не была изменена.</td>
+</tr>
+<tr>
+<td><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image08/44c8dd0cb7f6259d862cefde6d610483.gif" alt="" width="20" height="19"><meta itemprop="width" content="20">
+<meta itemprop="height" content="19"></span></td>
+<td>Данная запись заблокирована другим пользователем. Ее нельзя изменить. При попытке внести изменения выдается звуковой сигнал</td>
+</tr>
+<tr>
+<td><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image14/810e9984a8042bdc9d8f1900656573d1.gif" alt="" width="19" height="19"><meta itemprop="width" content="19">
+<meta itemprop="height" content="19"></span></td>
+<td>Запись изменена, но изменения еще не сохранены в источнике данных. В этом случае другие пользователи не видят текущих изменений в данной записи. Если запись заблокирована, другие пользователи не смогут ее изменить. Для того чтобы освободить запись и сделать ее доступной для других пользователей, следует сохранить или отменить внесенные изменения</td>
+</tr>
+</tbody>
+</table>
+<p>Таблица 16.1. Значок, обозначающий состояния текущей записи</p>
+<p>Методы управления блокировками записей</p>
+<p>Пока один пользователь редактирует запись, Access позволяет автоматически запретить другим пользователям изменять ее до тех пор, пока первый пользователь не закончит ее правку. Предоставление одному пользователю исключительного права доступа к записи называется блокировкой.</p>
+<p>Существует три параметра блокировки записей в базе данных Access.</p>
+<ul>
+<li>Отсутствует (No Locks). Изменяемая запись не блокируется. При попытке сохранить измененную запись, которую в это же время изменил другой пользователь, на экране появляется сообщение, предлагающее следующие возможности: сохранить данный вариант записи, уничтожив изменения, внесенные другим пользователем; скопировать свою, измененную запись в буфер обмена; отказаться от собственных изменений. Этот параметр позволяет изменять записи в любое время, но при внесении изменений разными пользователями могут возникать конфликты.</li>
+<li>Изменяемой записи (Edited Records). Microsoft Access блокирует изменяемую в данный момент запись, не позволяя изменять ее другим пользователям. Заблокированными могут оказаться также записи, расположенные рядом на диске. Если другой пользователь попытается изменить заблокированную запись, в его объекте в режиме Таблицы появится маркер заблокированной записи (перечеркнутый круг— третий значок в табл. 16.1). Данный параметр гарантирует завершение всех начатых изменений. Это хороший выбор, если конфликты совместного доступа к записи с другими пользователями возникают редко.</li>
+<li>Всех записей (All Records). Microsoft Access блокирует все записи формы или объекта в режиме Таблицы (и базовых таблиц) на весь период их открытия, поэтому другие пользователи не могут изменить или заблокировать записи. Этот параметр накладывает слишком жесткие ограничения. Его следует использовать только в тех случаях, когда есть уверенность, что конкретно вы имеете приоритетное право на изменение записей.</li>
+</ul>
+<p><strong>Замечание</strong></p>
+<p>При редактировании данных из присоединенных таблиц SQL Server через ODBC применяются параметры блокировки записей этого сервера, а установленный параметр блокировки в Access игнориуется, будто выбран параметр «отсутствие блокировки».</p>
+<p>Чтобы установить параметр блокировки записей в сети, используемый по умолчанию:</p>
+<ol>
+<li>Выберите команду Сервис, Параметры (Tools, Options). Появится диалоговое окно Параметры (Options).</li>
+<li>Раскройте вкладку Другие (Advanced) (рис. 16.3).</li>
+<li>В группе Блокировка по умолчанию (Default record locking) выберите необходимый переключатель.</li>
+</ol>
+<p>Существует возможность выбора одного из двух уровней блокировки:</p>
+<ul>
+<li>Блокировка записей. Блокируется только редактируемая запись.</li>
+<li>Блокировка страниц. Блокируется страница памяти на диске, которая может содержать несколько соседних записей (4 Кбайт памяти на страницу).</li>
+</ul>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image26/f1e18243fea385803fbd1076ad67bc34.gif" alt="" width="580" height="364"><meta itemprop="width" content="580">
+<meta itemprop="height" content="364"></span></p>
+<p>Рис. 16.3. Вкладка Другие диалогового окна Параметры</p>
+<p>Чтобы задать уровень блокировки, используемый по умолчанию, установите флажок Блокировка записей при открытии БД (Open databases using record-level locking) на вкладке Другие (Advanced) диалогового окна Параметры (Options) если нужна блокировка на уровне записей, или сбросьте этот флажок если нужна блокировка на уровне страниц.</p>
+<p><strong>Замечание</strong></p>
+<p>Установленный параметр начнет действовать, когда база данных будет открыта заново с помощью команды Файл, Открыть (File, Open), а не с помощью списка последних использованных файлов.</p>
+<p>Внимание</p>
+<p>Блокировка на уровне записей действует только при доступе к данным через формы, страницы таблиц и запросов или с помощью объекта Recordset. Данный режим не влияет на выполнение запросов и инструкций SQL.</p>
+<p>Предотвращение конфликтов при блокировке записей в сети</p>
+<p>Следующие четыре параметра помогают избежать конфликтов при блокировке записей в сети:</p>
+<ul>
+<li>Период обновления (Refresh interval). Этот параметр задает число секунд, по истечении которых Microsoft Access автоматически обновляет записи в объекте в режиме Таблицы или в режиме Формы. При обновлении текущего объекта в режимах Таблицы или Формы отображаются изменения в существующих записях, причем записи не сортируются заново, не добавляются новые и не убираются с экрана удаленные записи. Для того чтобы увидеть эти изменения, необходимо выполнить операцию обновления данных, например с помощью комбинации клавиш &lt;Shift&gt;+&lt;F9&gt;.</li>
+<li>Период повтора обновления (Update retry interval). Этот параметр задает число миллисекунд, по истечении которых Microsoft Access автоматически пытается сохранить измененную запись, заблокированную другим пользователем.</li>
+<li>Число повторов обновления (Number of update retries). Этот параметр задает число попыток сохранения измененной записи, заблокированной другим пользователем.</li>
+<li>Период обновления ODBC (ODBC refresh interval). Этот параметр задает интервал времени в секундах, после которого Microsoft Access автоматически обновляет записи, доступ к которым осуществляется по протоколу ODBC. Для того чтобы увидеть эти изменения, необходимо выполнить операцию обновления данных, например с помощью комбинации клавиш &lt;Shift&gt;+&lt;F9&gt;.</li>
+</ul>
+<p>Значения этих параметров устанавливаются в диалоговом окне Параметры (Options) на вкладке Другие (Advanced). Подробное описание этих параметров есть в справочной системе Access.</p>
+<p>Отображение обновленных данных</p>
+<p>Существует несколько способов отображения на экране обновленных данных, полученных из источника данных, совместно используемого в сети несколькими пользователями. Эти способы позволяют увидеть изменения, которые были выполнены другими пользователями, после того как отображенные на экране данные получены из источника.</p>
+<p>Обновление данных можно выполнить следующими способами.</p>
+<ul>
+<li>Работая с таблицей, формой или отчетом в режиме Таблицы, Сводной таблицы или Сводной диаграммы или с формой в режиме Формы, выберите команду Записи, Обновить (Records, Refresh). В результате отображаются изменения в существующих записях. Новые записи не добавляются, удаленные записи с экрана не убираются.</li>
+<li>Для периодического обновления данных в режиме Таблицы или Формы установите необходимые значения параметра Период обновления (Refresh interval) и прочих параметров, описанных в разд. <a href="/glava-osobennosti-setevyh-prilozheni">«Предотвращение конфликтов при блокировке записей в сети»</a> этой главы.</li>
+<li>Чтобы выполнить повторную загрузку данных из источника (работая с объектом базы данных в режиме Таблицы, Сводной таблицы, Сводной диаграммы или Формы), нажмите комбинацию клавиш <strong>&lt;Shift&gt;+&lt;F9&gt;</strong>.</li>
+<li>Для отображения обновленных данных в форме можно создать кнопку, вызывающую макрос, содержащий макрокоманду ОбновитьОбъект (Refresh), или процедуру VBA, вызывающую метод Refresh объекта Form.</li>
+<li>Для повторной загрузки данных, отображаемых в элементе управления, создайте макрос, содержащий макрокоманду Обновление (Requery), в качестве значения аргумента Имя элемента (Control Name) укажите имя обновляемого элемента управления. Чтобы обновить данные в форме, оставьте поле, задающее значение аргумента Имя элемента (Control Name), пустым.</li>
+<li>Для повторной загрузки записей, отображаемых в форме или элементе управления, добавьте в процедуру VBA, назначенную форме или элементу управления, вызов метода Requery объекта Form или Control.</li>
+<li>Для обновления данных, отображаемых в режиме Просмотра страницы, щелкните по странице доступа к данным правой кнопкой мыши и в контекстном меню выберите команду Обновить (Refresh) или нажмите клавишу &lt;F5&gt;. Если при этом не были сохранены изменения, появится сообщение о том, что внесенные изменения будут утеряны. Чтобы предотвратить потерю изменений в текущей записи, нажмите кнопку Отмена (Cancel). Если загрузка обновленных данных продолжается длительное время, нажмите клавишу &lt;Esc&gt;. На странице может быть расположен элемент управления Сводная таблица (PivotTable). Этот элемент имеет собственный метод Refresh.</li>
+<li>Чтобы обновить данные в объекте базы данных, открытом в режиме Сводной таблицы или Сводной диаграммы, нажмите кнопку Обновить (Refresh) на панели инструментов Сводные таблицы (PivotTable) или Сводная диаграмма (PivotChart).</li>
+</ul>
+<p>Совместное изменение объектов</p>
+<p>Внесение изменений в объекты базы данных при работе в сети характеризуется следующими особенностями.</p>
+<ul>
+<li>Хотя допускается изменение базы данных во время работы с ней других пользователей, лучше создать макеты большинства объектов до того, как другие пользователи получат возможность открыть базу данных в сети. Для того чтобы при внесении серьезных изменений в структуру базы данных запретить другим пользователям доступ к этой базе данных, следует при открытии базы данных выбрать режим Монопольно (Open Exclusive) в диалоговом окне Открытие файла базы данных (Open). Если же вы открыли базу данных в режиме общего доступа и начинаете изменять структуру данных, то при условии, что в этот момент вы — единственный пользователь этой базы данных, Access 2002 автоматически временно переведет вашу базу данных в монопольный режим. Так что другие пользователи не смогут открыть эту базу данных, пока вы не закончите работу с изменениями структуры объектов. После этого база данных автоматически возвращается в режим общего доступа. Но если в такой момент вы — не единственный пользователь базы данных, то Access разрешит внести лишь незначительные изменения в дизайн объектов, например настройки печати.</li>
+<li>Если другой пользователь открыл таблицу или просматривает данные в запросах, формах или отчетах, для которых эта таблица является источником данных, изменять структуру этой таблицы нельзя. Появляется сообщение, что таблица доступна только для чтения.</li>
+<li>Если объекты зависят друг от друга, обновляйте их все одновременно, чтобы другие пользователи не начали работать с несогласованными версиями объектов.</li>
+</ul>
+<p>Например, при добавлении полей в форму следует до обновления формы добавить поля в базовый запрос.</p>
+<ul>
+<li>Если вы внесли изменения в запрос, форму или отчет, открытый другими пользователями, им придется закрыть и снова открыть измененный объект, чтобы получить его обновленную версию. В модулях VBA другие пользователи не могут выполнить измененные процедуры Function или Sub, пока не закроют и снова не откроют базу данных.</li>
+<li>Страницы доступа к данным при изменении ведут себя по-другому. Хотя для создания, переименования, перемещения и удаления страниц доступа к данным требуется открыть базу данных в режиме монопольного доступа (поскольку это затрагивает содержимое базы данных), изменение самой страницы не потребует этого, т. к. сама страница хранится отдельно от базы данных в файле HTML.</li>
+</ul>
+<p>Совместное использование страниц доступа к данным</p>
+<p>Со страницами доступа к данным могут работать несколько пользователей в сети. Страницы могут быть отображены с помощью программы просмотра Интернета или в сообщении электронной почты. Для этого источник данных для страницы — базу данных Access или SQL Server — требуется поместить в общую папку на рабочей станции или на сервере сети.</p>
+<p>В приложении «Игра в доминирование» для отображения текущего состояния игрового поля в момент инициализации новой игры создается страница доступа к данным «Игровое поле», которая сохраняется в той же папке, что и приложение «Сервер игры». Эта папка должна быть доступна в сети, чтобы игроки — пользователи приложения «Клиент игры» — могли подключиться к игре и просмотреть страницу «Игровое поле» с помощью программы Internet Explorer.</p>
+<p>Если база данных, являющаяся источником данных для страницы, будет перемещена в другое место, необходимо соответствующим образом изменить параметры соединения страницы с источником данных. Для этого при работе со страницей в режиме Конструктора в окне Список полей (Field List) нажмите кнопку Свойства подключения для страницы (Page connection properties). В появившемся диалоговом окне на вкладке Соединение (Connection) введите в поле ввода, предназначенное для указания источника данных, имя и полный путь к базе данных в соответствии с соглашением об именах UNC. Укажите имя сетевого ресурса, а не имя подключенного сетевого диска, поскольку оно может измениться.</p>
+<p>Имя ресурса в формате UNC состоит из четырех частей: имени сервера ресурсов, имени общей папки на сервере, пути к ресурсу и имени ресурса:</p>
+<p>\servernamesharepathfilename.</p>
+<p>Чтобы изменить путь к странице доступа к данным, указанный в ярлыке страницы в базе данных Access, в окне базы данных щелкните по ярлыку страницы доступа к данным правой кнопкой мыши и в контекстном меню выберите команду Сцойства (Properties). Откроется окно свойств ярлыка, введите в поле ввода путь к файлу страницы (файлу HTML). Рекомендуем указывать относительные пути в таких случаях. Например, для страниц, хранящихся в той же папке, что и база данных, укажите только имя файла страницы без абсолютного пути к ней. Например: Обзор товapoв.htm</p>
+<p>Хотя источником данных для страницы может быть только база данных Access или SQL Server, можно организовать доступ через страницу к данным других форматов, используя связанные таблицы в базах данных Access.</p>
+<p><strong>Замечание</strong></p>
+<p>Защита совместно используемых страниц доступа к данным описана в справочной системе Access. Для максимальной защиты страницы доступа к данным поместите базу данных, которая является источником данных для нее, на тот же Web-сервер, на котором хранится эта страница.</p>
+<p>Организация обмена данными между компонентами сетевого приложения</p>
+<p>Существует несколько способов обмена данными между компонентами приложения по сети:</p>
+<ul>
+<li>с помощью связанных таблиц;</li>
+<li>с помощью запросов;</li>
+<li>с помощью программирования на VBA.</li>
+</ul>
+<p>Использование запросов и связанных таблиц подробно рассмотрено в других главах этой книги. Мы остановимся на программном доступе к базам данных с использованием интерфейса DАО. (Об установлении связи с таблицами см. гл. 3, об использовании запросов см. гл. 8.)</p>
+<p>Программирование с использованием интерфейса DАО</p>
+<p>Объекты доступа к данным (DАО, Data Access Object) — это иерархия объектов, обеспечивающая доступ к структуре базы данных и ее содержимому. В программах Visual Basic пользователь имеет возможность использовать объектный интерфейс DАО для выполнения следующих задач:</p>
+<ul>
+<li>осуществления доступа к данным в локальных и удаленных базах данных Access и внешних источниках;</li>
+<li>управления базой данных и ее объектами;</li>
+<li>изменения структуры таблиц и схемы данных;</li>
+<li>управления системой защиты;</li>
+<li>создания, настройки и синхронизации реплик.</li>
+</ul>
+<p>Интерфейс DАО использует рабочие области двух видов:</p>
+<ul>
+<li>Рабочая область ядра Jet. Обеспечивает доступ к базам данных процессора обработки данных Jet, источникам данных ODBC и источникам данных ISAM для % доступа к базам данных в других форматах (например, к базам данных Lotus 1-2-3). Рабочая область Jet используется для доступа к источникам данных с помощью процессора Jet.</li>
+<li>Рабочая область ODBCDirect. Обеспечивает доступ к источникам данных ODBC напрямую, не используя процессор Jet.</li>
+</ul>
+<p>Для рабочей области Jet и для рабочей области ODBCDirect существуют две разные объектные модели DАО. Они приведены в гл. 13.</p>
+<p>Реализация модулей VBA для обмена данными между компонентами приложения «Игра в доминирование» основана на применении интерфейса DАО с использованием рабочей области ядра Jet. Поэтому в дальнейших примерах основное внимание уделено приемам программирования на DАО, применимым в рабочей области ядра Jet. Сведения о рабочей области ODBCDirect можно найти в справочной системе Access 2002.</p>
+<p>В следующих разделах мы рассмотрим некоторые аспекты программирования с использованием DАО. Подробную информацию об интерфейсе DАО можно найти в справочной системе Access.</p>
+<p>Внимание</p>
+<p>В Access 2002 по умолчанию к программному проекту базы данных подключена библиотека Microsoft ActiveX Data Objects 2.1 Library. Чтобы использовать в процедурах VBA объекты доступа к данным, нужно обязательно отключить эту библиотеку и подключить библиотеку Microsoft DАО 3.6 Object Library. О подключении библиотек к программному проекту рассказано в гл. 13.</p>
+<p>Создание и использование рабочей области</p>
+<p>Обе иерархии объектов DАО: для рабочей области Jet и для рабочей области ODBCDirect — начинаются с объекта DBEngine. Этот объект содержит свойства и методы, позволяющие управлять рабочими областями. Свойство DefaultType объекта DBEngine позволяет определять или устанавливать тип рабочей области, создаваемой по умолчанию.</p>
+<p>Объект DBEngine в качестве свойства содержит семейство Workspaces всех открытых рабочих областей. Можно выбрать элемент этого семейства, указав индекс или имя, чтобы получить доступ к конкретной рабочей области (программа 16.1).</p>
+<p>Чтобы создать новую рабочую область ядра Jet или рабочую область ODBCDirect, используют метод CreateWorkspace (программа 16.2) объекта DBEngine с соответствующим параметром. Метод CreateWorkspace возвращает ссылку на объект типа workspace и имеет следующие параметры (табл. 16.2):</p>
+<p>Workspace CreateWorkspace(&lt;имя&gt;, &lt;пользователь&gt;, &lt;пароль&gt;, &lt;тип&gt;)</p>
+<table class="table_common zebra" width="700">
+<tbody>
+<tr>
+<td height="17"><strong>Параметр </strong></td>
+<td><strong>Тип </strong></td>
+<td><strong>Описание </strong></td>
+</tr>
+<tr>
+<td height="17">&lt;пользователь&gt;</td>
+<td>String</td>
+<td>Имя пользователя, который будет владельцем создаваемой рабочей области. Определяет значение свойства UserName объекта Workspace</td>
+</tr>
+<tr>
+<td height="17">&lt;пароль&gt;</td>
+<td>String</td>
+<td>Пароль пользователя. Он необходим для создания рабочей области. Пароль может включать до 14 символов. Это могут быть любые символы, кроме символа ASCII с кодом 0 (Null). Определяет значение свойства Password объекта Workspace</td>
+</tr>
+<tr>
+<td height="17">&lt;тип&gt;</td>
+<td>&lt;константа&gt;</td>
+<td>Необязательный параметр. Задает тип создаваемой рабочей области. В качестве значения можно использовать константу dbUseJet для создания рабочей области ядра Jet или константу dbUseODBC для создания рабочей области ODBCDirect. По умолчанию создается рабочая область того типа, который задан значением свойства DefaultType объекта DBEngine</td>
+</tr>
+<tr>
+<td height="17">&lt;имя&gt;</td>
+<td>String</td>
+<td>Уникальное имя создаваемой рабочей области. Определяет значение свойства Name объекта Workspace</td>
+</tr>
+</tbody>
+</table>
+<p>Таблица 16.2. Параметры метода CreateWorkspace</p>
+<p>Несколько рабочих областей разных типов могут быть открыты одновременно. В момент создания рабочей области начинается сеанс работы с ней. После выполнения всех необходимых действий в рабочей области нужно завершить сеанс, закрыв рабочую область с помощью метода Close объекта Workspace.</p>
+<p>Программа 16.1. Использование рабочей области Jet, открытой по умолчанию</p>
+<p>Dim ws As Workspace Dim db As Database Set ws = DBEngine.Workspaces(0) &#8216; Выбрали рабочую область &#8216; Открываем базу данных: Set db = ws.OpenDatabase (&#171;DominationGameServer.mdb&#187;) &#8216; Код использования базы данных &#8230; db.Close &#8216; Закрыли базу данных Set db = Nothing &#8216; Очистили объектную переменную &#8216; (!) Плохой код: &#8216; рабочая область, открытая по умолчанию, будет закрыта &#8216; ws.Close &#8216; Set ws = Nothing</p>
+<p>Программа 16.2. Создание рабочей области Jet</p>
+<p>Dim ws As Workspace Dim db As Database &#8216; Создаем рабочую область: Set ws = CreateWorkspace(&#171;&#187;, &#171;Флинт&#187;, &#171;пиастры&#187;, dbUseJet) &#8216; Открываем базу данных: Set db = ws.OpenDatabase(&#171;DominationGameServer.mdb&#187;) &#8216; Код использования базы данных &#8230; db.Close &#8216; Закрыли базу данных ws. Close &#171;&#8216; &#8216; Закрыли рабочую область Set db = Nothing &#187; &#8216; Очищаем объектные Set ws = Nothing &#8216; переменные Открытие источника данных</p>
+<p>Чтобы открыть базу данных, используйте существующий объект Database или создайте новый. Объект Database представляет собой базу данных Jet (файл MDB), базу данных ISAM или источник данных ODBC, подключенный через Jet.</p>
+<p>Доступ к текущей базе данных осуществляется с помощью объекта типа Database, возвращаемого методом CurrentDb объекта Application (который представляет приложение Access). Метод CurrentDb входит в набор глобальных методов, поэтому для его вызова можно использовать сокращенную ссылку без префикса Application с точкой (программа 16.3).</p>
+<p>Открыть существующую базу данных можно двумя способами:</p>
+<ul>
+<li>с помощью метода OpenDatabase объекта Workspace. В этом случае база данных будет открыта в заданной рабочей области;</li>
+<li>с помощью метода OpenDatabase объекта DBEngine. В этом случае база данных будет открыта в рабочей области, используемой по умолчанию.</li>
+</ul>
+<p>Метод OpenDatabase объекта DBEngine входит в набор глобальных методов, поэтому при использовании сокращенной ссылки на этот метод без явного указания объекта (DBEngine или Workspace) используется метод объекта DBEngine. Метод OpenDatabase возвращает ссылку на созданный объект Database и имеет следующие параметры (табл. 16.3): Database OpenDatabase(&lt;имя&gt;, &lt;параметры&gt;, &lt;режим&gt;, &lt;соединение&gt;)</p>
+<table class="table_common zebra" width="700">
+<tbody>
+<tr>
+<td><strong>Параметр </strong></td>
+<td><strong>Тип </strong></td>
+<td><strong>Обязательный или нет </strong></td>
+<td><strong>Описание </strong></td>
+</tr>
+<tr>
+<td>&lt;имя&gt;</td>
+<td>String</td>
+<td>Обязательный</td>
+<td>Имя файла существующей базы данных (возможно, включая полный путь с указанием имени диска или сетевого ресурса) или имя источника данных ODBC (DSN)</td>
+</tr>
+<tr>
+<td>&lt;параметры&gt;</td>
+<td>Variant</td>
+<td>Необязательный</td>
+<td>Используется для задания специальных параметров базы данных. Например, в рабочей области Jet применяется значение True, если нужно открыть базу данных в режиме монопольного доступа, или значение False, если нужно открыть базу данных в режиме общего доступа. Значение False устанавливается по умолчанию. Параметры, используемые в рабочей области ODBCDirect, описаны в справочной системе Access</td>
+</tr>
+<tr>
+<td>&lt;режим&gt;</td>
+<td>Variant (подтип Boolean)</td>
+<td>Необязательный</td>
+<td>Задается значение True, если нужно открыть базу данных только для чтения, или значение False, если нужно открыть базу данных для чтения и записи. По умолчанию используется значение False</td>
+</tr>
+<tr>
+<td>&lt;соединение&gt;</td>
+<td>Variant (подтип String)</td>
+<td>Необязательный</td>
+<td>Строка соединения (connection string). Используется для указания параметров соединения с источником данных, включая пароль</td>
+</tr>
+</tbody>
+</table>
+<p>Таблица 16.3. Параметры метода OpenDatabase</p>
+<p>Аналогично создать и открыть новую базу данных можно: D с помощью метода CreateDatabase объекта Workspace; П с помощью метода CreateDatabase объекта DBEngine. Глобальным является метод CreateDatabase объекта DBEngine.</p>
+<p>Метод CreateDatabase создает новый объект Database, добавляет его в семейство Databases открытых баз данных в рабочей области, сохраняет базу данных на диске и возвращает открытый объект Database. Этот метод используется только в рабочей области ядра Microsoft Jet. Метод CreateDatabase имеет следующие параметры (табл. 16.4):</p>
+<p>Database CreateDatabase (&lt;имя&gt;, &lt;порядок&gt;, &lt;параметры&gt;)</p>
+<p><strong>Замечание</strong></p>
+<p>В программе на VBA для ссылки на метод CreateDatabase объекта DBEngine можно использовать сокращенную ссылку или указать префикс DBEngine с точкой. А для ссылки на метод объекта Workspace необходимо указать конкретную рабочую область, например:</p>
+<p>&#8216; Использование метода объекта DBEngine: Set dbl = CreateDatabase(&#8230;) Set db2 = DBEngine.CreateDatabase(&#8230;) &#8216; Использование метода объекта Workspace: Set db3 = Workspaces(0).CreateDatabase(&#8230;)</p>
+<p>&nbsp;</p>
+<table class="table_common zebra" width="700">
+<tbody>
+<tr>
+<td><strong>Параметр </strong></td>
+<td><strong>Тип </strong></td>
+<td><strong>Обязательный или нет </strong></td>
+<td><strong>Описание </strong></td>
+</tr>
+<tr>
+<td>&lt;порядок&gt;</td>
+<td>Variant</td>
+<td>Обязательный</td>
+<td>Строковое выражение, опреде-(подтип ляющее порядок символов, кото-String) рый будет использоваться в операциях сравнения и сортировки в создаваемой базе данных. Допускается также создание пароля для нового объекта Database путем слияния строки пароля (начинающейся с символов «;pwd=») с константой в аргументе &lt;порядок&gt;, например: DbLangCyrillic &amp; » ; р»го&gt;=МойПароль «</td>
+</tr>
+<tr>
+<td>&lt;параметры&gt;</td>
+<td>&lt;константы&gt;</td>
+<td>Необязательный</td>
+<td>Константа или комбинация констант, которая определяет один или несколько параметров: версию формата данных и режим шифрования или дешифрования базы данных во время сжатия. Константы приведены в справке Access</td>
+</tr>
+<tr>
+<td>&lt;имя&gt;</td>
+<td>String</td>
+<td>Обязательный</td>
+<td>Имя файла создаваемой базы данных. Следует указать полный путь и имя файла, например «С: dbl .mdb» или «\serverlshareldirldbl». Если пользователь не указывает расширение имени, автоматически добавляется расширение mdb. Данный метод позволяет создавать только файлы mdb.</td>
+</tr>
+</tbody>
+</table>
+<p>Таблица 16.4. Параметры метода CreateDatabase</p>
+<p>Чтобы получить доступ к данным в открытой одним из перечисленных способов базе данных, необходимо открыть набор записей. Набор записей может представлять собой все записи таблицы или часть записей таблицы, удовлетворяющих указанному условию, или результат выборки из нескольких таблиц. Чтобы открыть набор записей в базе данных, используйте метод OpenRecordset объекта Database (см. программу 16.3). Этот метод возвращает ссылку на созданный объект Recordset и имеет следующие параметры (табл. 16.5):</p>
+<p>Recordset OpenRecordset(&lt;источник&gt;,&lt;тип&gt;, &lt;параметры&gt;, &lt;блокировки&gt;)</p>
+<p><strong>Замечание</strong></p>
+<p>С помощью метода OpenRecordset в базе данных можно открыть связанную таблицу (точно так же, как и таблицу, хранящуюся в базе данных), указав ее имя.</p>
+<table class="table_common zebra" width="700">
+<tbody>
+<tr>
+<td><strong>Параметр </strong></td>
+<td><strong>Тип </strong></td>
+<td><strong>Обязательный или нет </strong></td>
+<td><strong>Описание </strong></td>
+</tr>
+<tr>
+<td>&lt;источник&gt;</td>
+<td></td>
+<td></td>
+<td>String Обязательный Источник записей для нового объекта Recordset. В качестве источника записей можно указать имя таблицы или запроса, а также инструкцию SQL, которая возвращает записи.</td>
+</tr>
+<tr>
+<td>&lt;тип&gt;</td>
+<td>&lt;константа&gt;</td>
+<td>Необязательный</td>
+<td>Константа, указывающая тип открываемого объекта Recordset. Эти константы приведены в табл. 16.6.</td>
+</tr>
+<tr>
+<td>&lt;параметры&gt;</td>
+<td>&lt;константы&gt;</td>
+<td>Необязательный</td>
+<td>Произвольная комбинация определенных констант, задающих характеристики нового объекта Recordset. Эти константы приведены в справочной системе Access.</td>
+</tr>
+<tr>
+<td>&lt;блокировки&gt;</td>
+<td>&lt;константа&gt;</td>
+<td>Необязательный</td>
+<td>Константа, определяющая тип блокировки объекта Recordset. Возможные константы перечислены в справке Access.</td>
+</tr>
+</tbody>
+</table>
+<p>Таблица 16.5. Параметры метода OpenRecordset</p>
+<table class="table_common zebra" width="700">
+<tbody>
+<tr>
+<td><strong>Константа </strong></td>
+<td><strong>Тип набора записей </strong></td>
+</tr>
+<tr>
+<td>DbOpenTable</td>
+<td>Открытие табличного обьекта Recordset (только в рабочей области ядра Microsoft Jet)</td>
+</tr>
+<tr>
+<td>DbOpenDynaset</td>
+<td>Открытие объекта Recordset типа динамического набора записей, аналогичного указателю ключевого набора записей ODBC</td>
+</tr>
+<tr>
+<td>DbOpenDynamic</td>
+<td>Открытие обьекта Recordset динамического типа, аналогичного динамическому указателю ODBC (только в рабочей области ODBCDirect)</td>
+</tr>
+<tr>
+<td>DbOpenSnapshot</td>
+<td>Открытие объекта Recordset типа статического набора записей, аналогичного указателю статического набора записей ODBC</td>
+</tr>
+<tr>
+<td>DbOpenForwardOnly</td>
+<td>Открытие объекта Recordset типа статического набора записей с последовательным доступом</td>
+</tr>
+</tbody>
+</table>
+<p>Таблица 16.6. Константы, определяющие тип набора записей</p>
+<p>Далее приведен пример открытия таблицы, взятый из программного кода сервера приложения «Игра в доминирование» (программа 16.3).</p>
+<p>Программа 16.3. Открытие таблицы в текущей базе данных</p>
+<p>Dim db As Database Dim rs As Recordset &#8216; Получаем доступ к текущей базе данных: Set db = CurrentDb &#8216; Открываем таблицу сообщений для игрока (это связанная таблица): Set rs = db.OpenRecordset(&#171;Сообщения&#187;, dbOpenDynaset) &#8216; Код использования таблицы &#8230; . rs.Close &#8216; Закрыли таблицу Set rs = Nothing &#8216; Очистили объектные переменные Set db = Nothing Программное изменение структуры и схемы данных</p>
+<p>Для изменения схемы данных создан язык определения данных (DDL, Data-Definition Language). Инструкции на языке DDL позволяют выполнять действия по изменению схемы данных и структуры объектов данных, например:</p>
+<ul>
+<li>создавать и удалять таблицы;</li>
+<li>добавлять и удалять из таблиц поля и индексы;</li>
+<li>создавать и удалять связи между таблицами.</li>
+</ul>
+<p>В интерфейсе DАО имеется набор специальных объектов, который является интерфейсом для доступа к средствам DDL. Таким образом, с помощью объектов DАО можно управлять структурой таблиц и схемой данных, не составляя самих инструкций на языке DDL.</p>
+<p>Следующий пример программного кода (программа 16.4) взят из процедуры initGame сервера приложения «Игра в доминирование». Этот пример иллюстрирует использование инструкций на языке DDL для удаления таблицы со старой структурой и создания новой таблицы с заданной структурой. Аналогичные действия можно выполнить, пользуясь объектно-ориентированным интерфейсом DАО. Целью этой процедуры является изменение структуры таблицы «ПолеИгрок», поэтому, вообще говоря, можно было бы изменить набор полей этой таблицы с помощью инструкции DDL ALTER TABLE. Эта инструкция позволяет удалить или добавить в таблицу поле или составной индекс. Удаление и добавление полей в таблицу средствами DDL через интерфейс DАО представлено в программе 16.5.</p>
+<p><strong>Замечание</strong></p>
+<p>Необходимо помнить о том, что изменение структуры связанных таблиц запрещено. Поэтому в примере (программы 16.4 и 16.5) для доступа к таблице «ПолеИгрок» открывается база данных DominationGame.mdb, в которой сохранена эта таблица, а не используется текущая база данных DominationGameServer.mdb, в которой установлена связь с этой таблицей.</p>
+<p>Программа 16.4. Удаление и создание таблицы с помощью инструкций DDL</p>
+<p>Dim db As Database Dim fieldSize As Long, i As Long Dim strDDL As String &#8216; Узнаем линейный размер игрового поля, выраженный в клетках fieldSize = CLng(get_parameter(&#171;РазмерПоля&#187;)) &#8216; Открываем базу данных, в которой хранится нужная таблица Set db = OpenDatabase(CurrentProject.Path &amp; &#171;DominationGame.mdb&#187;) &#8216; Удалить старую таблицу &#171;ПолеИгрок&#187; strDDL = &#171;DROP TABLE ПолеИгрок;&#187; &#8216; Если таблица не существует, удаление вызовет ошибку On Error GoTo the_next_2 db.Execute strDDL the_next_2: On Error GoTo 0 &#8216; Создать новую таблицу &#171;ПолеИгрок&#187; strDDL = &#171;CREATE TABLE ПолеИгрок (&#187; For i = 1 To fieldSize &#8212; 1 strDDL = strDDL &amp; get_column_name(i) &amp; &#187; TEXT(20), &#187; Next i strDDL = strDDL &amp; get_column_name(fieldSize) &amp; &#187; TEXT(20) );&#187; db.Execute strDDL &#8216; Прочие действия &#8230; db.Close</p>
+<p>Программа 16.5. Изменение структуры таблицы с помощью интерфейса DАО</p>
+<p>Dim db As Database Dim fieldSize As Long, i As Long Dim strSQL As String Dim fid As Field &#8216; Узнаем линейный размер игрового поля, выраженный в клетках fieldSize = CLng(get_parameter(&#171;РазмерПоля&#187;)) &#8216; Открываем базу данных, в которой хранится нужная таблица Set db = OpenDatabase(CurrentProject.Path &amp; &#171;DominationGame.mdb&#187;) &#8216; Удалить старые записи в таблице &#171;ПолеИгрок&#187; StrSQL = &#171;DELETE * FROM ПолеИгрок;&#187; db.Execute strSQL &#8216; Удалить старые поля в таблице &#171;ПолеИгрок&#187; For i = 1 То db.TableDefs(&#171;ПолеИгрок&#187;).Fields.Count db.TableDefs(&#171;ПолеИгрок&#187;).Fields.Delete get_column_name(i) Next i &#8216; &#8216;Создать новые поля в таблице &#171;ПолеИгрок&#187; For i = 1 То fieldSize Set fid = db.TableDefs(&#171;ПолеИгрок&#187;).CreateField( _ get_column_name(i), dbText, 20) db.TableDefs(&#171;ПолеИгрок&#187;).Fields.Append fid Next I &#8216; Прочие действия &#8230; db.Close</p>
+<p>В программе 16.5 проиллюстрировано удаление и добавление полей в таблицу «ПолеИгрок» средствами DDL с использованием интерфейса DАО. Удаление поля производится с помощью метода Delete, в качестве параметра которого указывается имя удаляемого поля. Добавление нового поля производится следующим образом. Создается новый объект Field, обладающий необходимыми характеристиками — заданным именем поля, типом и размером данных. После этого с помощью метода Append созданный объект Field добавляется в семейство Fields объекта TableDef, содержащее все поля таблицы «ПолеИгрок». Аналогично (с помощью DАО) можно выполнить создание и удаление таблиц и индексов.</p>
+<p>Выполнение операций с данными</p>
+<p>Для изменения данных в источнике создан язык структурированных запросов (SQL, Structure Query Language). Инструкции на языке SQL позволяют выполнять действия по изменению данных, например — добавлять, изменять или удалять записи в таблице или запросе, выбирать набор записей из источника, удовлетворяющий заданному условию.</p>
+<p>C помощью объектов DАО можно осуществлять всевозможные манипуляции с данными. Например, такие как:</p>
+<ul>
+<li>получение набора записей из таблицы;</li>
+<li>выполнение запроса SQL для получения набора записей;</li>
+<li>использование запроса, сохраненного в базе данных в виде объекта;</li>
+<li>использование набора методов объекта Recordset, предоставляющего широкие возможности по обработке данных: чтение, анализ и изменение данных без составления инструкций на языке SQL.</li>
+</ul>
+<p>В следующих примерах приведены приемы программного изменения данных в открытом наборе записей (программы 16.6—16.8). Переменная rs соответствует открытому набору записей — объекту типа Recordset.</p>
+<p>Программа 16.6. Добавление записи в таблицу</p>
+<p>&#8216; Добавляем сообщение в таблицу сообщений клиента rs.AddNew &#8216; Создание новой записи rs!ИмяИгрока = playerName &#8216; Запись значения в поле ИмяИгрока rs!Сообщение = message &#8216; Запись значения в поле Сообщение rs.Update &#8216; Сохранение изменений в источнике rs.Bookmark = rs.LastModified &#8216; Перемещение курсора на новую запись</p>
+<p>Программа 16.7. Изменение текущей записи в таблице</p>
+<p>&#8216; Увеличиваем счет игрока, сделавшего ход &#8216; Делаем текущей запись, содержащую данные для нужного игрока rs.FindFirst &#171;[ИмяИгрока] = &#8216;&#187; &amp; newPlayer &amp; &#171;&#8216;&#187; rs.Edit &#8216; Переводим запись в режим правки rs!Счет = rs!Счет + newCount &#8216; Изменяем значение поля Счет rs.Update &#8216; Сохраняем изменения rs.Bookmark = rs.LastModified &#8216; Делаем измененную запись текущей</p>
+<p>Программа 16.8. Удаление текущей записи в таблице</p>
+<p>playerQueryCode = rs!КодЗаявки &#8216; Сохраняем параметры заявки playerTrial = rs!Значение &#8216; во временных переменных rs.Delete &#8216; и удаляем заявку из таблицы</p>
+<p>Для перемещения по записям используются методы Move, MoveFirst, MoveNext, MovePrev, MoveLast объекта Recordset. Метод MoveLast перемещает курсор на последнюю запись в наборе, что приводит к загрузке в набор всех записей. После этого можно прочитать значение свойства Count объекта Recordset. Оно будет соответствовать общему количеству записей в наборе.</p>
+<p><strong>Замечание</strong></p>
+<p>Удаление записей и объектов из базы данных приводит к тому, что файл базы данных становится фрагментированным и место, занимаемое им на диске, используется нерационально. Чтобы дефрагментировать файл базы данных, используют процедуру сжатия. Ее можно выполнить с помощью команды Сервис, Служебные программы, Сжать и восстановить базу данных (Tools, Database Utilities, Compact and Repair Database) или программно — с помощью метода CompactDatabase объекта DBEngine. Можно также установить флажок Сжимать при закрытии (Compact on Close) в диалоговом окне Параметры (Options) (команда Сервис, Параметры (Tools, Options), вкладка Общие (General)), чтобы сжатие базы данных проводилось автоматически при ее закрытии. Подробнее процедура сжатия описана в гл. 20.</p>
+<p>Программная синхронизация доступа к данным</p>
+<p>При одновременном доступе нескольких пользователей к одной и той же записи в источнике данных могут возникнуть конфликты. Например, конфликты могут возникать при выполнении метода Update или Delete объекта Recordset и метода OpenDatabase объекта Workspace или DBEngine. Предотвращение конфликтов зависит от настройки Access, касающейся методов блокировки записей, режима доступа к базе данных, периодов обновления данных. Об установке этих параметров мы уже говорили в разд. «Организация совместного доступа к данным и объектам» этой главы. Более подробную информацию можно найти в справочной системе Access.</p>
+<p>При программном доступе к совместно используемым базам данных необходимо организовать собственную обработку ошибок, появляющихся при попытке выполнить операции, которые могут привести к возникновению конфликтов. В приложении «Игра в доминирование» используется метод блокировки на уровне записей, блокируются изменяемые записи. В этом случае при возникновении конфликта самым простым решением является ожидание момента, когда заблокированная запись будет освобождена другим пользователем. Этот подход достаточно просто реализовать в процедуре на VBA, используя оператор Resume для повторного выполнения действия через некоторый интервал времени (сделав паузу). Назовем этот способ синхронизацией доступа к данным.</p>
+<p>Рассмотрим в качестве примера синхронизации функцию отправки сервером сообщения одному из игроков (программа 16.9). Вспомогательная функция doPause, позволяющая сделать паузу в работе приложения на заданное количество секунд, приведена в программе 16.10.</p>
+<p>Программа 16.9. Синхронизация записи изменений в источнике данных</p>
+<p>&#8216; Послать сообщение подключенному игроку Public Sub SendMessage(message As String, playerName As String) . &#8216; Объявления локальных объектных переменных: Dim db As Database Dim rs As Recordset Dim counter As Integer &#8216; Определяем собственную обработку ошибок: On Error GoTo errHandler Set db = CurrentDb &#8216; Открываем таблицу сообщений для игрока: Set rs = db.OpenRecordset(&#171;Сообщения&#187;, dbOpenDynaset) On Error GoTo 0 &#8216; Добавляем сообщение в таблицу сообщений клиента: rs.AddNew rs!ИмяИгрока = playerName rs!Сообщение = message &#8216; Обработка ошибок, возникающих при совместном доступе &#8216; к источнику данных: On Error GoTo tryAgain rs.Update On Error GoTo 0 rs.Bookmark = rs.LastModified &#8216; Закрываем открытые объекты: closeAHHandler: rs.Close endHandler: &#8216; Очищаем объектные переменные, т. к. они больше не используются: Set rs = Nothing Set db = Nothing &#8216; Завершаем работу: Exit Sub &#8216; Синхронизация: tryAgain: counter = counter + 1 If counter &lt; 400 Then doPause 5 Resume End If Обработка ошибок: errHandler: Dim errMsg As String errMsg = &#171;Ошибка: &#187; &amp; Err.Number &amp; vbCrLf &amp; _ &#171;Источник: &#187; &amp; Err.Source &amp; vbCrLf &amp; _ vbCrLf &amp; Err.Description MsgBox errMsg, vbCritical, ERR_TITLE Resume endHandler End Sub</p>
+<p>Программа 16.10. Сделать паузу на заданное количество секунд в работе приложения</p>
+<p>Public Sub doPause(seconds As Integer) Dim var_timeStart, var_timeCurrent Dim ftimeOut As Boolean var_timeStart = Time() &#8216; Время начала паузы Do &#8216; Передать управление другим процессам операционной системы DoEvents var_timeCurrent = Time() &#8216; Текущее системное время ftimeOut = _ CDate(var timeCurrent &#8212; var timeStart) &gt;= CDate(TimeSerial(0, 0, seconds)) Loop Until ftimeOut End Sub Выполнение транзакций</p>
+<p>Транзакцией называется операция обмена данными между клиентом и сервером. Методы объекта Workspace, использующиеся для выполнения транзакций, представлены в табл. 16.7.</p>
+<table class="table_common zebra" width="700">
+<tbody>
+<tr>
+<td><strong>Метод </strong></td>
+<td><strong>Описание </strong></td>
+</tr>
+<tr>
+<td>BeginTrans</td>
+<td>Обозначает начало транзакции. Транзакции могут быть вложенными</td>
+</tr>
+<tr>
+<td>CommitTrans</td>
+<td>Обозначает конец транзакции. В этот момент все изменения сохраняются в источнике без возможности их отмены</td>
+</tr>
+<tr>
+<td>RollBack</td>
+<td>Завершение транзакции и отмена результата ее выполнения. Записи в источнике возвращаются в прежнее состояние, отмеченное командой BeginTrans</td>
+</tr>
+</tbody>
+</table>
+<p>Таблица 16.7. Методы объекта Workspace для выполнения транзакций</p>
+<p>Все базы данных, открытые в рабочей области, имеют общую область действия транзакций. Это значит, что действие методов BeginTrans, CommitTrans и RollBack объекта Workspace распространяется на все базы данных в семействе Databases объекта Workspace.</p>
+<p>Рассмотрим пример программы на VBA с использованием механизма выполнения транзакций (программа 16.11). В приложении «Игра в доминирование» механизм транзакций не используется.</p>
+<p>Программа 16.11. Применение механизма транзакций</p>
+<p>Sub ResetCount () Dim ws As Workspace Dim db As Database Dim rs As Recordset Dim flnTrans As Boolean On Error GoTo errHandler ;.. flnTrans = False &#8216; Транзакция еще не началась Set ws = DBEngine.Workspaces(0) Set db = CurrentDb Set rs = db.OpenRecordset(&#171;Игроки&#187;, dbOpenTable) ws.BeginTrans &#8216; Начало транзакции flnTrans = True &#8216; Транзакция началась rs.MoveFirst Do Until rs.EOF rs.Edit rs!Счет = 0 rs.Update rs.MoveNext Loop If MsgBox(&#171;Сохранить сделанные изменения?&#187;, _ vbQuestion + vbYesNo, &#171;Вопрос&#187;) = vbYes Then ws.CommitTrans &#8216; Сохранить изменения Else ws.Rollback &#8216; Отменить изменения End If exitHandle: rs.Close Set db = Nothing Set ws = Nothing Exit Sub errHandler: MsgBox &#171;Ошибка!&#187; &#8216; Если ошибка возникла в процессе выполнения транзакции, &#8216; отменяем сделанные изменения If flnTrans Then ws.Rollback End If Resume exitHandle End Sub Защита сетевого приложения Access</p>
+<p>Выбор политики защиты и установка защиты — предмет разработки приложения. А настройка схемы защиты приложения в соответствии с текущими потребностями в процессе использования приложения — задача администрирования. Администратор управляет составом пользователей и групп пользователей приложения и предоставляет им необходимые права доступа к объектам приложения по мере необходимости. Разработчик приложения предварительно определяет политику защиты приложения, выполняет установку защиты приложения и подготавливает приложение к использованию — определяет начальный состав пользователей и групп пользователей приложения и выполняет начальное распределение между ними прав доступа к объектам приложения. Таким образом, в процессе установки защиты приложения разработчик, помимо прочих действий, в определенный момент выполняет функции администратора.</p>
+<p>Действия, которые выполняет администратор защищенного приложения, описаны в гл. 20. В этой главе мы расскажем о действиях, выполняемых разработчиком, связанных с установкой защиты и определением политики защиты приложения.</p>
+<p>Определение политики защиты включает решение следующих вопросов:</p>
+<ul>
+<li>какова степень защиты приложения;</li>
+<li>по какому принципу производится выделение групп пользователей;</li>
+<li>по какому принципу организуется разграничение прав доступа между отдельными пользователями и группами;</li>
+<li>какие права доступа необходимо задать по умолчанию.</li>
+</ul>
+<p>Например, разработчик может решить, предоставить ли разрешение другим пользователям просматривать или выполнять запрос без изменения данных или структуры запроса, задать ли права по умолчанию для всех запросов.</p>
+<p>Администратор приложения обладает всеми необходимыми правами для изменения политики защиты приложения, но необходимости в этом не должно возникать. Ведь в задачу разработчика приложения входить выбор наиболее подходящей политики защиты, которая удовлетворяет требованиям, предъявляемым к приложению, и упрощает процесс администрирования.</p>
+<p>Защита базы данных на уровне пользователей</p>
+<p>Защита на уровне пользователей предназначена для предоставления разным пользователям разного уровня доступа к объектам приложения. Пользователи могут объединяться в группы внутри рабочей группы. Группам, как и пользователям, могут быть назначены определенные права доступа к объектам базы данных.</p>
+<p>Существует два типа прав доступа, предоставляемых пользователю: явные и неявные. Явные права доступа — те, что назначены непосредственной учетной записи пользователя. Неявные права доступа — те, что назначены учетной записи группы, в которую входит этот пользователь. Добавление пользователя в группу приводит к предоставлению пользователю прав, назначенных группе. Удаление пользователя из группы лишает пользователя этих прав.</p>
+<p>Права пользователя на доступ к объекту складываются из его явных и неявных прав. В системе защиты на уровне пользователей Microsoft Access, в отличие от системы защиты на уровне пользователей файловой системы NTFS, применяется политика «наименьших ограничений». Это означает следующее: если пользователю (который может входить в разные группы, обладающие различными правами доступа) назначены и разрешающие и запрещающие права к некоторому объекту базы данных Access, то доступ к объекту пользователю предоставляется.</p>
+<p>Группы пользователей делают управление правами доступа более удобным. Вместо того чтобы каждый раз при введении нового пользователя в рабочую группу прелоетавлять ему все необходимые права к объектам базы данных, можно назначить эти права группе. Тогда процесс предоставления заданных прав доступа сведется к добавлению нового пользователя в эту группу.</p>
+<p>Рабочая группа пользователей базы данных</p>
+<p>Рабочей группой в Access называется группа пользователей сети, совместно использующих одну или несколько баз данных Access. Если база данных защищена на уровне пользователей, в файл рабочей группы (файл с расширением mdw) записываются учетные записи пользователей и групп, входящих в рабочую группу. Пароли пользователей также хранятся в файле рабочей группы. Учетным записям в рабочей группе могут быть назначены права доступа к базе данных и ее объектам — таблицам, запросам, формам, отчетам и макросам. Права доступа сохраняются в защищенной базе данных.</p>
+<p><strong>Замечание</strong></p>
+<p>В ранней версии Access 97 в файле рабочей группы сохранялась также информация о настройках Access, заданных пользователем в окне Параметры (Options). В Access 2000 и Access 2002 эти настройки сохраняются в реестре Windows, в разделах:</p>
+<p>HKEY_CURRENT_USERSoftwareMicrosoft:�ffice9.0AccessSettings, HKEY_CURRENT_USERSoftwareMicrosoftOffice10.0AccessSettings.</p>
+<p>По умолчанию используется стандартный файл рабочей группы SYSTEM.MDW, автоматически созданный при установке Access. Этот файл находится в папке, соответствующей языку локализации Access. Для американской версии используется папка с названием 1033, для русской — 1049, она находится в папке Program FilesMicrosoft OfficeOffice. Создание нового файла рабочей группы и его подключение выполняются с помощью служебной программы Администратор рабочих групп (Workgroup Administrator) (см. гл. 20).</p>
+<p>При установке защиты на уровне пользователей, прежде чем создавать учетные записи пользователей и групп и назначать им права доступа к объектам базы данных, следует подключить соответствующий файл рабочей группы. Можно использовать стандартный файл рабочей группы или создать новый. Не рекомендуется использовать стандартный файл рабочей группы, поскольку любой другой пользователь сможет использовать собственный стандартный файл рабочей группы для доступа к базе данных. Чтобы обеспечить уникальность рабочей группы, необходимо создать с помощью программы Администратор рабочих групп (Workgroup Administrator) новый файл рабочей группы и указать уникальный идентификатор рабочей группы (см. гя. 20).</p>
+<p>Встроенные учетные записи Access</p>
+<p>В любой рабочей группе пользователей базы данных Microsoft Access существуют стандартные учетные записи:</p>
+<ul>
+<li>пользователь Admin;</li>
+<li>группа Admins;</li>
+<li>группа Users.</li>
+</ul>
+<p>Их нельзя удалить, но можно изменить права доступа, назначенные им по умолчанию.</p>
+<p>Пользователь Admin по умолчанию включен и в группу Users, и в группу Admins. Любой добавляемый в рабочую группу пользователь автоматически включается в группу Users. Эта группа представляет собой всех пользователей Access. Никакой пользователь не может быть удален из группы Users.</p>
+<p>Группа Admins представляет собой группу администраторов всех баз данных, используемых рабочей группой. Этой группе автоматически предоставляются полные права на доступ к этим базам данных. В каждый момент времени группа Admins должна содержать, по крайней мере, одну учетную запись пользователя.</p>
+<p>Пользователь Admin представляет собой администратора всех баз данных Access. Однако, используя конкретный файл рабочей группы для защиты конкретной базы данных, пользователя Admin можно удалить из группы Admins и назначить ему и группе Users ограниченные права доступа к объектам защищаемой базы данных. Таким образом, база данных становится защищенной от доступа с помощью учетной записи Admin, используемой по умолчанию.</p>
+<p>Права доступа к объектам конкретной базы данных, назначенные пользователю Admin и группе Users, остаются прежними при подключении любого файла рабочей группы. А права доступа, назначенные группе Admins, зависят от файла рабочей группы, подключенного к базе данных в данный момент. Например, защита базы данных сервера приложения «Игра в доминирование» проведена при подключении специально созданного для этого файла рабочей группы Domination.mdw. Группе Admins назначены максимальные права доступа ко всем объектам этой базы данных. Если открыть названную базу данных с использованием стандартного файла рабочей группы System.mdw, у группы Admins не будет никаких прав на объекты этой базы данных.</p>
+<p>Внимание</p>
+<p>При установке защиты необходимо помнить о сохранении прав доступа, назначенных встроенным учетным записям Admin и Users при подключении стандартного файла рабочей группы Access, чтобы сделать систему защиты базы данных неуязвимой.</p>
+<p>Административные права доступа</p>
+<p>Административные права предоставляют полный доступ к объектам и/или базе данных, а также разрешение на изменение прав доступа других пользователей и групп. Административными правами обладают:</p>
+<ul>
+<li>все пользователи группы Admins;</li>
+<li>владельцы объектов;</li>
+<li>пользователи, которым явно предоставлены административные права доступа.</li>
+</ul>
+<p>Даже если в определенный момент пользователь не может выполнить какую-либо операцию из-за отсутствия прав доступа, он может иметь разрешение назначить себе эти права. Такими пользователями являются пользователи группы Admins рабочей группы базы данных и владельцы объектов.</p>
+<p>Только пользователи группы Admins рабочей группы базы данных могут изменять параметры защиты с помощью команд меню Сервис, Защита (Tools, Security) или с помощью Мастера защиты на уровне пользователей.</p>
+<p>Право на владение объектами базы данных</p>
+<p><strong> Владельцем </strong> называется учетная запись пользователя, имеющего контроль над базой данных или ее объектом. По умолчанию владельцем объекта или базы данных является пользователь, создавший их (то есть пользователь, зарегистрированный при открытии базы данных). Учетная запись группы не может быть владельцем базы данных, но может быть владельцем ее объекта. В этом случае все пользователи данной группы являются владельцами этого объекта. Владелец объекта или базы данных обладает исключительными правами, которых его нельзя лишить. Даже если ему не предоставлены определенные права доступа, он может их вернуть, изменив права доступа к объекту или базе данных для себя и других пользователей. Владелец базы данных всегда может открыть ее.</p>
+<p>Пользователи, которые имеют разрешение на изменение прав доступа к объекту, могут изменить его владельца с помощью диалогового окна Разрешения (User and Group Permissions), как описано в гл. 20, или воссоздав данный объект его копированием, импортом или экспортом в другую базу данных (см. разд. «Предоставление права на владение объектами базы данных»гл. 20).</p>
+<p><strong>Замечание</strong></p>
+<p>Копирование, импорт и экспорт запросов, у которых для свойства При запуске предоставляются права (Run Permissions) установлено значение Владельцы (Owner’s), не приводит к изменению их владельцев. Изменение владельца запроса возможно только в том случае, если это свойство имеет значение Пользователи (User’s).</p>
+<p>Защита базы данных на уровне пользователя с помощью мастера позволяет легко изменить владельца базы данных и ее объектов, поскольку при этом создается новая база данных, в которую импортируются все объекты из исходной базы данных.</p>
+<p>Установка системы защиты на уровне пользователей</p>
+<p>Рассмотрим систему защиты приложения «Игра в доминирование». Напомним, что приложение «Игра в доминирование» состоит из клиентской и серверной частей, реализованных в виде отдельных баз данных Access. В серверной базе данных хранится информация о текущем состоянии игры. Игроки, обращающиеся к серверу через клиентские приложения, имеют ограниченные права доступа к объектам серверной базы данных. Эти ограничения необходимы, чтобы игроки имели равные возможности в игре и не могли повлиять на состояние игры недопустимым образом. Поэтому необходима специальная защита серверной части приложения по схеме защиты на уровне пользователей. В то же время, нет особой необходимости в специальной защите клиентской части приложения. Можно разрешить любому пользователю сети- воспользоваться приложением-клиентом, чтобы подключиться к приложению «Игра в доминирование». Однако, чтобы пользователь клиентского приложения мог зарегистрироваться на сервере, он должен иметь учетную запись Р единой рабочей группе пользователей приложения. Таким образом, необходимо создать один файл . рабочей группы, содержащий информацию обо всех участниках Игры в доминирование, который необходимо использовать для работы как с серверной, так и с клиентской частью приложения. Так мы и поступили — создали файл Domination.mdw.</p>
+<p>Рассмотрим основные этапы установки защиты сетевого приложения Access на примере защиты приложения «Игра в доминирование».</p>
+<p><strong>Замечание</strong></p>
+<p>Прежде чем приступить к защите собственного приложения Access, сделайте копию системного файла SYSTEM.MDW и копию пока не защищенного приложения. Это необходимо, поскольку удивительно легко заблокировать приложение от себя самого. Системный файл рабочих групп, использующийся в Access 2002 по умолчанию, находится в папке, относительный путь к которой указан в реестре Windows, в разделах:</p>
+<p>HKEY_CURRENT_USERSoftwareMicrosoft�fficeUO.0AccessJet 4.0EnginesSystemDB</p>
+<p>HKEY_USERS.DEFAULTSoftwareMicrosof t:�ffice10.0AccessJet 4.0EnginesSystemDB</p>
+<p>Процесс установки защиты на уровне пользователей для любой базы данных Access можно разделить на следующие этапы:</p>
+<ul>
+<li>создание файла рабочей группы и подключение его к приложению Access;</li>
+<li>назначение владельца базы данных и его объектов;</li>
+<li>создание учетных записей групп и пользователей в рабочей группе;</li>
+<li>назначение прав доступа к объектам базы данных пользователям и группам.</li>
+</ul>
+<p>Для защиты очередного приложения необязательно требуется создание нового файла рабочей группы. Хорошим стилем является создание и использование одного файла рабочей группы для ряда приложений Access, с которыми работает одна и та же группа пользователей, например сотрудники одного отдела.</p>
+<p>В следующих разделах описаны все действия, связанные с установкой защиты на уровне пользователей. Их можно выполнить самостоятельно средствами Access или с помощью Мастера защиты баз данных Access. Мастер предлагает пользователю выполнить последовательность шагов, соответствующих перечисленным этапам установки защиты. Мастер защиты очень удобен в использовании как для начинающих пользователей, так и для профессионалов, поэтому рассмотрим сначала способ установки защиты с помощью мастера, а затем поговорим о прочих средствах Access, позволяющих настроить систему защиты базы данных на уровне пользователей.</p>
+<p>Использование Мастера защиты</p>
+<p>Процедура установки защиты базы данных Access на уровне пользователей автоматизирована, ее можно выполнить с помощью Мастера защиты базы данных, однако воспользоваться им смогут только пользователи группы Admins.</p>
+<p>Чтобы защитить базу данных на уровне пользователей с помощью мастера:</p>
+<ol>
+<li>Откройте базу данных, которую требуется защитить.</li>
+<li>Выберите команду Сервис, Защита, Мастер (Tools, Security, User-Level Security Wizard).</li>
+<li>Следуйте инструкциям мастера.</li>
+</ol>
+<p>Мастер защиты базы данных на уровне пользователей позволяет создать или изменить существующий файл рабочей группы (рис. 16.4). Рекомендуется создать новый файл рабочей группы и не использовать системный файл рабочей группы System, mdw. Для того чтобы изменить существующий файл рабочей группы (для защиты базы данных), необходимо зарегистрироваться с именем любого пользователя (кроме пользователя Admin), обладающего административными правами доступа к базе данных. Если зарегистрироваться с именем пользователя Admin, который по умолчанию включен в группу Admins и обладает административными правами, с помощью Мастера защиты можно будет только создать новый файл рабочей группы и нельзя будет изменить существующий.</p>
+<p><span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" loading="lazy" decoding="async" src="/image06/345e7910ba74b8b62e2c57be37970b74.gif" alt="" width="534" height="415"><meta itemprop="width" content="534">
+<meta itemprop="height" content="415"></span></p>
+<p>Рис. 16.4. Первое диалоговое окно Мастера защиты базы данных</p>
+<p>Мастер защиты позволяет:</p>
+<ul>
+<li>выбрать объекты базы данных, которые требуется защитить;</li>
+<li>указать пароль для защиты программного кода на VBA;</li>
+<li>выбрать группы из списка групп с типичными правами доступа;</li>
+<li>предоставить ограниченные права доступа группе Users;</li>
+<li>создать учетные записи пользователей;</li>
+<li>определить вхождение пользователей в группы..</li>
+</ul>
+<p>Мастер создает новую защищенную базу данных и импортирует в нее все объекты исходной базы данных, сохраняя резервную копию незащищенной базы данных с прежним именем (по умолчанию), но с расширением bak вместо mdb. После завершения работы мастера на экране отображается отчет о защите базы данных, содержащий всю указанную в окнах мастера информацию, необходимую для восстановления файла рабочей группы. Этот отчет рекомендуется распечатать или сохранить в формате снимка отчета, чтобы по сохраненной информации потом можно было восстановить файл рабочей группы в случае его повреждения (см. разд. «Создание и восстановление файла рабочей группы» гл. 20 и разд. <a href="/glava-sozdanie-i-pechat-otchetov">«Снимки отчетов»</a> гл. 6).С помощью мастера в файл рабочей группы Domination.mdw, созданный для «Игры в доминирование», были добавлены учетные записи пользователей, перечисленные в табл. 16.8.</p>
+<table class="table_common zebra" width="700">
+<tbody>
+<tr>
+<td><strong>Имя пользователя </strong></td>
+<td><strong>Пароль </strong></td>
+<td><strong>Код пользователя </strong></td>
+<td><strong>Группы, в которые входит пользователь </strong></td>
+</tr>
+<tr>
+<td>Флинт</td>
+<td>пиастры</td>
+<td>Adk j 7uLn61 8 4 FTAwopW</td>
+<td>Admins, Users</td>
+</tr>
+<tr>
+<td>Джим</td>
+<td>без пароля</td>
+<td>jAv06BLSS2d6KnN5X80</td>
+<td>Users</td>
+</tr>
+<tr>
+<td>Ливси</td>
+<td>без пароля</td>
+<td>4yF3yNprLXhlzmS3iBC</td>
+<td>Users</td>
+</tr>
+<tr>
+<td>Треллони</td>
+<td>без пароля</td>
+<td>QfnFceqtWpVTbWRnSOq</td>
+<td>Users</td>
+</tr>
+<tr>
+<td>Admin</td>
+<td>game</td>
+<td>&lt;уже существовал&gt;</td>
+<td>Users</td>
+</tr>
+</tbody>
+</table>
+<p>Таблица 16.8. Пользователи приложения «Игра в доминирование»</p>
+<p>Мастер защищает все выбранные на определенном этапе объекты базы данных, отбирает у группы Users все разрешения на доступ к этим объектам либо оставляет данной группе заданные ограниченные права доступа, а затем зашифровывает базу данных. Межтабличные связи и любые связанные таблицы воссоздаются в защищенной базе данных.</p>
+<p>С этого момента только пользователи, входящие в группу Admins, учетные записи которых сохранены в файле рабочей группы, созданном или присоединенном с помощью мастера, будут иметь полный доступ к защищенным объектам в базе данных. А текущий пользователь, обладающий административными правами, становится владельцем базы данных и всех ее объектов. Для того чтобы управлять доступом к защищенным объектам, следует предоставить соответствующие разрешения учетным записям пользователей и/или групп.</p>
+<p>Если понадобится изменить параметры защиты, Мастер защиты можно использовать неоднократно. Еще раз отметим, что для применения Мастера защиты необходимо обладать административными правами доступа к базе данных.</p>
+<p>Создание и подключение файла рабочей группы</p>
+<p>Подключение файла рабочей группы Domination.mdw можно провести двумя способами: с помощью программы Администратор рабочих групп (Workgroup Administrator) или с помощью параметра командной строки /wrkgrp. В первом случае файл рабочей группы присоединяется к Access и используется для всех баз данных, открывавмых в нем. Во втором случае файл рабочей группы присоединяется к конкретной базе данных и не используется для других баз данных, открываемых в Access. Второй способ намного удобнее, если требуется параллельно работать и с защищенными, и с незащищенными базами данных на одном компьютере или если используются разные файлы рабочих групп для разных защищенных баз данных. Создание и подключение файла рабочей группы Domination. mdw описано в разд. «Использование файла рабочей группы»гл. 20.</p>
+<p>Снятие защиты на уровне пользователей</p>
+<p>Бывают ситуации, когда необходимо снять защиту базы данных на уровне пользователей. Это требуется, например, чтобы сделать базу данных доступной всем или если администрирование базы данных с течением времени стало затруднительным из-за резкого увеличения числа пользователей и возникла необходимость перераспределить пользователей по группам, назначив им права доступа по новой схеме.</p>
+<p>Снятие защиты на уровне пользователей может выполнить только пользователь, обладающий административными правами. Процедура снятия защиты на уровне пользователей включает в себя два этапа.</p>
+<ul>
+<li>Предоставление группе Users полных прав на доступ к объектам базы данных.</li>
+<li>Изменение владельца базы данных — предоставление права владения пользователю Admin.</li>
+</ul>
+<p>Итак, чтобы снять защиту базы данных на уровне пользователей:</p>
+<ol>
+<li>Откройте защищенную базу данных.</li>
+<li>Зарегистрируйтесь с именем пользователя, являющегося администратором рабочей группы (администраторы рабочей группы входят в группу Admins).</li>
+<li>Предоставьте группе Users полные права на доступ ко всем объектам базы данных.</li>
+<li>Закройте базу данных и Access. На этом первый этап заканчивается.</li>
+<li>Запустите Access.</li>
+<li>Создайте новую базу данных и зарегистрируйтесь как пользователь Admin.</li>
+<li>Импортируйте в новую базу данных все объекты из защищенной базы данных.</li>
+<li>Если текущий файл рабочей группы будет использоваться в дальнейшем, удалите пароль пользователя Admin. В этом нет необходимости, если в дальнейшем будет применяться стандартный файл рабочей группы System. mdw, созданный при установке Access.</li>
+</ol>
+<p><strong>Замечание</strong></p>
+<p>Теперь защита базы данных полностью снята. Любой пользователь Access сможет использовать базу данных и получить полный доступ к ее объектам: таблицам, запросам, формам, отчетам и макросам. Эти права доступа действуют для любого файла рабочей группы, поскольку учетная запись Admin везде одинаковая. Текущий файл рабочей группы, подключенный к Access в момент создания новой базы данных (шаг 6), определяет группу Admins администраторов новой базы данных.</p>
+<p>Создание учетных записей</p>
+<p>Управление учетными записями, как и назначение прав доступа, является задачей администрирования защищенной базы данных, хотя, помимо управления учетными записями, существует достаточно широкий спектр других задач, за выполнение которых отвечает администратор. О задачах администрирования рассказано в гл. 20.</p>
+<p>Назначение прав доступа</p>
+<p>С помощью системы защиты на уровне пользователя можно ограничить доступ к базе данных и отдельным ее объектам (таблицам, запросам, формам, отчетам и макросам).</p>
+<p>В Access 97 можно было назначить также права для доступа к модулям VBA. В Access 2000 и Access 2002 защита модулей не входит в систему защиты на уровне пользователей. Защита программного проекта VBA выполняется отдельно. О том, как это сделать, рассказывается в разд. «Защита программного кода на VBA» данной главы (а о защите страниц доступа к данным — в разд. «Совместное использование страниц доступа к данным» этой же главы).</p>
+<p>Способ установки прав доступа к базе данных (и ее объектам), защищенной на уровне пользователей, описан в разд. «Назначение прав доступа к объектам базы данных»гл. 20, поскольку это является не только задачей разработки, но и задачей администрирования.</p>
+<p>Права доступа в приложении «Игра в доминирование»</p>
+<p>Обратимся к системе защиты приложения «Игра в доминирование». Серверная база данных содержит объекты, которые будут совместно использоваться в сети несколькими игроками. Необходимо обеспечить защищенность этих объектов в такой степени, которая позволит игрокам принять участие в игре и при этом не вмешиваться в ход игры. Клиентская база данных содержит объекты, которые будут использоваться одним игроком, имеющим собственную копию этой базы данных или открывшим базу данных клиента в режиме общего доступа. Взаимодействие с серверной базой данных осуществляется через интерфейс DАО с помощью процедур на VBA. Поэтому в клиентской базе данных имеет смысл защитить код на VBA и предоставить всем пользователям права, достаточные для использования объектов базы данных на уровне игрока. Таким образом, необходимо предоставить необходимые права группе Users и защитить проект VBA, как описано в разд. «Защита программного кода на VBA» данной главы.</p>
+<p>Ограничение разрешений для встроенных учетных записей Access</p>
+<p>Чтобы закрыть доступ к объектам базы данных посторонним пользователям, зарегистрированным с помощью стандартной учетной записи Admin:</p>
+<ol>
+<li>Подключите необходимый файл рабочей группы или создайте новый, как описано в разд. «Использование файла рабочей группы» в гл. 20.</li>
+</ol>
+<p><strong>Замечание</strong></p>
+<p>Для того чтобы обеспечить полную защиту вашей базы данных, не используйте стандартный файл рабочей группы System. mdw, создаваемый при установке Microsoft Access. Следует удостовериться, что файл рабочей группы, определяющий рабочую группу, к которой вы присоединяетесь, был создан с уникальным кодом рабочей группы, или, если это не так, следует создать новую рабочую группу.</p>
+<ol start="2">
+<li>Активизируйте диалоговое окно Вход (Logon), предназначенное для регистрации пользователя. Это диалоговое окно появляется в момент открытия базы данных, если регистрация пользователя требует ввода непустого пароля. В Microsoft Access по умолчанию для регистрации пользователя используется стандартная учетная запись Admin. Поэтому, чтобы активизировать диалоговое окно Вход (Logon), необходимо задать непустой пароль для учетной записи пользователя Admin. Установка пароля пользователя описана в разд. разд. «Управление учетными записями»гл. 20.</li>
+<li>Создайте учетную запись пользователя-администратора. Необходимо добавить эту учетную запись в стандартную группу Admins. Создание учетной записи пользователя описано в разд. «Управление учетными записями»гл. 20.</li>
+<li>Закройте Microsoft Access и откройте базу данных снова. Когда появится диалоговое окно Вход (Logon), зарегистрируйтесь с именем нового администратора.</li>
+<li>Удалите пользователя Admin из группы Admins.</li>
+</ol>
+<p><strong>Замечание</strong></p>
+<p>Если владельцем объектов в защищаемой базе данных должен быть пользователь, не входящий в группу администраторов, создайте для него учетную запись, снова перезапустите Access и зарегистрируйтесь с именем этого пользователя при открытии базы данных. Этот пользователь должен, по крайней мере, обладать правами Чтение данных (Read data) и Чтение макета (Read design) для всех объектов базы данных, которые требуется защитить.</p>
+<p>Защита программного кода на VBA</p>
+<p>Защитить программный проект VBA можно с помощью пароля:</p>
+<ol>
+<li>Откройте окно редактора Visual Basic, например с помощью комбинации клавиш &lt;Alt&gt;+&lt;Fll&gt;.</li>
+<li>Выберите команду Сервис, Свойства &lt;Имя программного проекта&gt; (Tools, &lt;Project name&gt; Properties). Появится диалоговое окно свойств программного проекта.</li>
+<li>Откройте вкладку Защита (Protection) и введите пароль в поле Пароль (Password) и Подтверждение пароля (Confirm password). Этот пароль будет требоваться при попытке отобразить диалоговое окно свойств проекта.</li>
+<li>Если необходимо защитить проект от просмотра, установите флажок Запретить просмотр программного кода (Lock project for viewing). Это значит, что введенный пароль будет также использован для защиты программного проекта от просмотра.</li>
+<li>Нажмите кнопку ОК.</li>
+</ol>
+<p>Установленные параметры начнут действовать только при следующем открытии базы данных.</p>
+<p>Есть другой способ защиты программного кода приложения Access — можно создать файл, содержащий откомпилированную версию программного проекта и всех объектов базы данных (файл с расширением mde) или проекта Access (файл с расширением ade). Открыв этот файл, пользователи могут использовать все созданные в нем объекты, изменять данные и выполнять макросы и процедуры VBA, но не будут иметь возможности изменить структуру объектов или программный код. Такой файл имеет намного меньший размер по сравнению с исходным файлом базы данных или проекта. Права доступа и прочие обстоятельства, необходимые пользователю для возможности создания файла mde или ade, приведены в справочной системе Access 2002.</p>
+<p>Внимание</p>
+<p>Создать файл МОЕ или ADE можно только на основе базы данных или проекта Access в формате Access 2002. Если ваша база данных (или проект) сохранена в формате Access 2000, потребуется сначала преобразовать ее в формат Access 2002 (см. гл. 19).</p>
+<p>Чтобы создать файл МDЕ на основе базы данных в формате Access 2002:</p>
+<ol>
+<li>Откройте Access 2002, но не открывайте базу данных или проект Access.</li>
+<li>Выберите команду Сервис, Служебные программы, Создать MDE-файл (Tools, Database Utilities, Make MDE File).</li>
+<li>Появится диалоговое окно База данных для сохранения как MDE (Database to Save as MDE). В раскрывающемся списке Тип файлов (Files of type) выберите элемент Базы данных Microsoft Access (Microsoft Access Databases). Затем укажите папку и имя файла исходной базы данных (файла с расширением mdb) и нажмите кнопку Создать MDE (Make MDE).</li>
+<li>Появится диалоговое окно Сохранение файла MDE под именем (Save MDE As). Укажите папку и введите имя целевого файла в формате MDE. ;</li>
+<li>Нажмите кнопку Сохранить (Save).</li>
+</ol>
+<p>Чтобы создать файл ADE на основе проекта в формате Access 2002:</p>
+<ol>
+<li>Откройте Access 2002, но не открывайте базу данных или проект Access.</li>
+<li>Выберите команду Сервис, Служебные программы, Создать MDE-файл (Tools, Database Utilities, Make MDE File).</li>
+<li>Появится диалоговое окно База данных для сохранения как MDE (Database to Save as MDE). В раскрывающемся списке Тип файлов (Files of type) выберите элемент Проекты Access (Microsoft Access Projects). Затем укажите папку и имя файла исходного проекта Access 2002 (файла с расширением adp) и нажмите кнопку Создать MDE (Make MDE).</li>
+<li>Появится диалоговое окно Сохранение файла ADE под именем (Save ADE As). Укажите папку и введите имя целевого файла в формате ADE.</li>
+<li>Нажмите кнопку Сохранить (Save).</li>
+</ol>
+<p>Выводы</p>
+<p>В этой главе были рассмотрены особенности совместной работы с базами данных Access в сети. Было рассказано о том, чем общий доступ отличается от монопольного, как настроить параметры среды Access и базы данных для предотвращения конфликтов, возникающих при совместном изменении данных, каковы особенности изменения структуры объектов сетевой базы данных, как предоставить данные и объекты в совместное использование и, вместе с тем, обеспечить безопасность приложения, в частности описано использование системы защиты на уровне пользователей.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<!-- toc empty -->	</div>
+<!-- .entry-content -->
+
+</article>
+
+
+
+
+
+
+
+
+
+<div class="social-buttons">
+<span class="social-button social-button--vkontakte main" data-social="vkontakte"><span>Поделиться в ВКонтакте</span></span><span class="social-button social-button--telegram " data-social="telegram"></span><span class="social-button social-button--odnoklassniki " data-social="odnoklassniki"></span><span class="social-button social-button--whatsapp " data-social="whatsapp"></span><span class="social-button social-button--viber " data-social="viber"></span>
+</div>
+
+<!--noindex-->
+<div class="author-box">
+    <div class="author-info">
+        <div class="author-box__ava">
+                    </div>
+
+        <div class="author-box__body">
+            <div class="author-box__author">
+                Автор А. Днепров            </div>
+            <div class="author-box__description">
+                <p>Обучаю основам работы с офисными программами.</p>
+            </div>
+
+            
+        </div>
+    </div>
+</div>
+<!--/noindex-->
+    <meta itemprop="author" content="А. Днепров">
+<meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="/glava-osobennosti-setevyh-prilozheni" content="Глава 16. Особенности сетевых приложений Access">
+    <meta itemprop="dateModified" content="2024-06-10">
+<div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+<meta itemprop="name" content="Excel-jet">
+<meta itemprop="telephone" content="+7 (812) 409-35-51">
+<meta itemprop="address" content="/">
+</div>
+<div class="related-posts">
+<div class="related-posts__header">Вам также может понравиться</div>
+<div class="post-cards post-cards--vertical">
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/kak-sdelat-massovuyu-zamenu-formul"><img width="311" height="230" src="/image04/2408fadbc9163d5aa4994580cfc152cd.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/kak-sdelat-massovuyu-zamenu-formul">Как сделать массовую замену формул</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/kak-udalit-lishnie-i-pustye-stranitsy-v-excel">Как удалить лишние и пустые страницы в Excel</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/preobrazovanie-teksta-v-tablitsu"><img width="345" height="122" src="/image14/7a0043c9bf012cc129b22376cfebb2a9.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/preobrazovanie-teksta-v-tablitsu">Преобразование текста в таблицу</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related post-card--thumbnail-no">
+    <div class="post-card__title"><a href="/kak-delat-skrinshoty-s-vysokim-razresheniem-v-windows">Как делать скриншоты с высоким разрешением в Windows 11/10</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/osobennosti-raboty-s-mnogostranichny"><img width="213" height="230" src="/image13/6f8f9694c11ee322ff9d3675b0b8ba07.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/osobennosti-raboty-s-mnogostranichny">13.1 Особенности работы с многостраничными документами</a></div>
+    </div>
+
+<div class="post-card post-card--vertical post-card--related">
+    <div class="post-card__thumbnail"><a href="/kak-sdelat-izmeneniya-vnutri-yacheyki-p"><img width="345" height="93" src="/image27/f6550fd3bdfdfdbe500536441d5d252e.jpg" class="attachment-yelly_small size-yelly_small wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="post-card__title"><a href="/kak-sdelat-izmeneniya-vnutri-yacheyki-p">Как сделать изменения внутри ячейки. Принудительный перенос</a></div>
+    </div>
+</div>
+</div>
+            </main><!-- #main -->
+        </div>
+<!-- #primary -->
+
+        
+    
+
+    </div>
+<!--.site-content-inner-->
+
+    
+</div>
+<!--.site-content-->
+
+    
+    
+
+<div class="site-footer-container">
+
+    
+
+    <footer id="colophon" class="site-footer full" itemscope itemtype="http://schema.org/WPFooter">
+        <div class="site-footer-inner fixed">
+
+            
+            
+<div class="footer-bottom">
+    <div class="footer-info">
+        <div class="footer-copyright">© 2024 Самоучитель справочник по офисным программам. <a href="/o-nas" rel="nofollow">О нас | Контакты</a> | <a href="/map" rel="nofollow">Карта сайта</a>
+</div>
+        <div class="footer-under-copyright"></div>
+	        </div>
+
+    </div>
+        </div>
+    </footer><!--.site-footer-->
+</div>
+
+
+            <button type="button" class="scrolltop js-scrolltop" data-mob="on"></button>
+    
+                    <div class="top-line js-top-line">
+            <div class="top-line-inner fixed">
+
+                <div class="top-line__title">Глава 16. Особенности сетевых приложений Access</div>
+<div class="top-line__like"><span class="btn-fb-like btn-top-like social-button--vkontakte" data-social="vkontakte"><span>Поделиться в ВКонтакте</span></span></div>
+<div class="top-line__post">
+<div class="top-line__post_thumbnail"><a href="/kak-sohranyaya-znachenie-ili-formulu-v-yach"><img width="100" height="45" src="/image09/4b3a80dfa04be513a2621a3bf19a4107.jpg" class="attachment-yelly_square size-yelly_square wp-post-image" alt="" decoding="async" loading="lazy"></a></div>
+<div class="top-line__post_title"><a href="/kak-sohranyaya-znachenie-ili-formulu-v-yach">Как сохраняя значение или формулу в ячейке, изменить ее формат по образцу другой ячейки</a></div>
+</div>            </div>
+        </div>
+    
+</div>
+<!-- #page -->
+
+<script>var pseudo_links = document.querySelectorAll(".pseudo-clearfy-link");for (var i=0;i<pseudo_links.length;i++ ) { pseudo_links[i].addEventListener("click", function(e){   window.open( e.target.getAttribute("data-uri") ); }); }</script><script>document.addEventListener("copy", (event) => {var pagelink = "\nИсточник: /glava-osobennosti-setevyh-prilozheni";event.clipboardData.setData("text", document.getSelection() + pagelink);event.preventDefault();});</script><script type="text/javascript" id="yelly-scripts-js-extra">
+/* <![CDATA[ */
+var settings_array = {"rating_text_average":"среднее","rating_text_from":"из","lightbox_display":"1"};
+var wps_ajax = {"url":"\/wp-admin\/admin-ajax.php","nonce":"e4ca9d4bd8"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="/js/scripts.min.js" id="yelly-scripts-js"></script>
+
+
+
+<div class="image-hover-social-buttons" style="display: none;">
+<div class="social-button social-button--vkontakte js-share-link" data-uri="https://vk.com/share.php?url=%2Fglava-osobennosti-setevyh-prilozheni"></div>
+<div class="social-button social-button--telegram js-share-link" data-uri="https://t.me/share/url?url=%2Fglava-osobennosti-setevyh-prilozheni&text=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+16.+%D0%9E%D1%81%D0%BE%D0%B1%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8+%D1%81%D0%B5%D1%82%D0%B5%D0%B2%D1%8B%D1%85+%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9+Access"></div>
+<div class="social-button social-button--odnoklassniki js-share-link" data-uri="https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&service=odnoklassniki&st.shareUrl=%2Fglava-osobennosti-setevyh-prilozheni"></div>
+<div class="social-button social-button--whatsapp js-share-link" data-uri="whatsapp://send?url=%2Fglava-osobennosti-setevyh-prilozhenitext=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+16.+%D0%9E%D1%81%D0%BE%D0%B1%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8+%D1%81%D0%B5%D1%82%D0%B5%D0%B2%D1%8B%D1%85+%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9+Access"></div>
+<div class="social-button social-button--viber js-share-link" data-uri="viber://forward?url=%2Fglava-osobennosti-setevyh-prilozhenitext=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0+16.+%D0%9E%D1%81%D0%BE%D0%B1%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8+%D1%81%D0%B5%D1%82%D0%B5%D0%B2%D1%8B%D1%85+%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9+Access"></div>
+</div>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(93345646, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/93345646" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>
