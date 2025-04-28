@@ -69,7 +69,7 @@ function initFloatingAds() {
 
         const floatContainer = document.createElement("div");
         floatContainer.id = "ya-float-ads";
-        floatContainer.style.cssText = "position:fixed;top:95px;right:0;z-index:9999;background:#fff;border:1px solid #ccc;border-radius:4px;box-shadow:0 2px 10px rgba(0,0,0,0.15);";
+        floatContainer.style.cssText = "position:fixed;top:95px;right:0;z-index:9999;max-width:480px;background:#fff;border:1px solid #ccc;border-radius:4px;box-shadow:0 2px 10px rgba(0,0,0,0.15);";
         floatContainer.innerHTML = '<div id="ya-close" style="cursor:pointer;padding:0;margin:0;border-bottom:1px solid #ccc;">' +
                     '<svg width="60" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">' +
                     '<path d="M10.485 6.06A8 8 0 0118.246 0h23.508a8 8 0 017.76 6.06l3.728 14.91A4 4 0 0057.123 24H60 0h2.877a4 4 0 003.88-3.03l3.728-14.91z" fill="#D1D6E0"></path>' +
