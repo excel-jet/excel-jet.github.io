@@ -1,9 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     const isMobile = window.innerWidth < 768;
     const isHomePage = window.location.pathname === "/" || 
-                       window.location.pathname === "/index.html" || 
-                       window.location.href.includes("category");
-    
+                       window.location.pathname === "/index.html";
     if (isMobile) {
         window.yaContextCb.push(() => {
             Ya.Context.AdvManager.render({
@@ -63,7 +61,6 @@ function insertContentAds() {
 }
 
 function initFloatingAds() {
-    let shownCount = 0;
     const showInterval = 31000;
     
     function showFloatingAd() {
@@ -91,8 +88,6 @@ function initFloatingAds() {
                 renderTo: "yandex_rtb_R-A-15276962-2"
             });
         });
-        
-        shownCount++;
     }
     setTimeout(showFloatingAd, 2000);
     setInterval(showFloatingAd, showInterval);
