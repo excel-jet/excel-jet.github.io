@@ -1,95 +1,88 @@
 document.addEventListener("DOMContentLoaded", function() {
-    if (!window.yaContextCb) {
-        const e = document.createElement("script");
-        e.textContent = "window.yaContextCb = window.yaContextCb || [];",
-        document.head.appendChild(e);
-
-        const t = document.createElement("script");
-        t.src = "https://yandex.ru/ads/system/context.js";
-        t.async = true;
-        document.head.appendChild(t);
+    const isMobile = window.innerWidth < 768;
+    const isHomePage = window.location.pathname === "/" || 
+                       window.location.pathname === "/index.html" || 
+                       window.location.href.includes("category");
+    
+    if (isMobile) {
+        window.yaContextCb.push(() => {
+            Ya.Context.AdvManager.render({
+                blockId: "R-A-15276962-5",
+                type: "floorAd",
+                platform: "touch"
+            });
+        });
     }
-
+    
     window.yaContextCb.push(() => {
         Ya.Context.AdvManager.render({
-            blockId: "R-A-15276962-5",
-            type: "floorAd",
-            platform: "touch"
-        });
-    });
-
-    window.yaContextCb.push(() => {
-        Ya.Context.AdvManager.render({
-            blockId: "R-A-15276962-3",
+            blockId: isMobile ? "R-A-15276962-3" : "R-A-15276962-4",
             type: "fullscreen",
-            platform: "touch"
+            platform: isMobile ? "touch" : "desktop"
         });
     });
-
-    window.yaContextCb.push(() => {
-        Ya.Context.AdvManager.render({
-            blockId: "R-A-15276962-4",
-            type: "fullscreen",
-            platform: "desktop"
-        });
-    });
+    
+    insertContentAds();
+    
+    if (!isMobile && !isHomePage) {
+        initFloatingAds();
+    }
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    const e = document.querySelector('div.entry-content[itemprop="articleBody"]');
-    if (!e) return;
+function insertContentAds() {
+    const content = document.querySelector('div.entry-content[itemprop="articleBody"]');
+    if (!content) return;
 
-    const t = e.querySelectorAll("p");
-    if (t.length === 0) return;
+    const paragraphs = content.querySelectorAll("p");
+    if (paragraphs.length === 0) return;
 
-    let n = [0];
-    for (let e = 7; e < t.length && n.length < 8; e += 7) {
-        n.push(e);
+    let positions = [0];
+    for (let i = 7; i < paragraphs.length && positions.length < 8; i += 7) {
+        positions.push(i);
     }
 
-    n.forEach((n, o) => {
-        const r = `yandex_rtb_R-A-15276962-1-${o + 1}`,
-              d = document.createElement("div");
+    positions.forEach((position, index) => {
+        const renderTo = `yandex_rtb_R-A-15276962-1-${index + 1}`;
+        const adContainer = document.createElement("div");
 
-        d.id = r;
-        d.style.margin = "5px";
+        adContainer.id = renderTo;
+        adContainer.style.margin = "5px";
 
-        const a = t[n];
-        if (a && a.parentNode) {
-            a.parentNode.insertBefore(d, a.nextSibling);
+        const paragraph = paragraphs[position];
+        if (paragraph && paragraph.parentNode) {
+            paragraph.parentNode.insertBefore(adContainer, paragraph.nextSibling);
         }
 
         window.yaContextCb.push(() => {
             Ya.Context.AdvManager.render({
                 blockId: "R-A-15276962-1",
-                renderTo: r
+                renderTo: renderTo
             });
         });
     });
-});
+}
 
-document.addEventListener("DOMContentLoaded", function() {
-    if (window.innerWidth < 768 || window.location.pathname === "/" || window.location.pathname === "/index.html" || window.location.href.includes("category")) {
-        return;
-    }
+function initFloatingAds() {
+    let shownCount = 0;
+    const showInterval = 31000;
+    
+    function showFloatingAd() {
+        const existingAd = document.getElementById("ya-float-ads");
+        if (existingAd) existingAd.remove();
 
-    function r() {
-        const e = document.getElementById("ya-float-ads");
-        if (e) e.remove();
+        const floatContainer = document.createElement("div");
+        floatContainer.id = "ya-float-ads";
+        floatContainer.style.cssText = "position:fixed;top:95px;right:0;z-index:9999;background:#fff;border:1px solid #ccc;border-radius:4px;box-shadow:0 2px 10px rgba(0,0,0,0.15);";
+        floatContainer.innerHTML = '<div id="ya-close" style="cursor:pointer;padding:0;margin:0;border-bottom:1px solid #ccc;">' +
+                    '<svg width="60" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+                    '<path d="M10.485 6.06A8 8 0 0118.246 0h23.508a8 8 0 017.76 6.06l3.728 14.91A4 4 0 0057.123 24H60 0h2.877a4 4 0 003.88-3.03l3.728-14.91z" fill="#D1D6E0"></path>' +
+                    '<path d="M24.793 6.793a1 1 0 000 1.414L28.586 12l-3.793 3.793a1 1 0 001.414 1.414L30 13.414l3.793 3.793a1 1 0 001.414-1.414L31.414 12l3.793-3.793a1 1 0 00-1.414-1.414L30 10.586l-3.793-3.793a1 1 0 00-1.414 0z" fill="#575C66"></path>' +
+                    '</svg></div><div id="yandex_rtb_R-A-15276962-2" style="padding:0;margin:0;"></div>';
 
-        const t = document.createElement("div");
-        t.id = "ya-float-ads";
-        t.style.cssText = "position:fixed;top:95px;right:0;z-index:9999;background:#fff;border:1px solid #ccc;border-radius:4px;box-shadow:0 2px 10px rgba(0,0,0,0.15);";
-        t.innerHTML = '<div id="ya-close" style="cursor:pointer;padding:0;margin:0;background:#fff;border-bottom:1px solid #ccc;">' +
-                      '<svg width="60" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">' +
-                      '<path d="M10.485 6.06A8 8 0 0118.246 0h23.508a8 8 0 017.76 6.06l3.728 14.91A4 4 0 0057.123 24H60 0h2.877a4 4 0 003.88-3.03l3.728-14.91z" fill="#D1D6E0"></path>' +
-                      '<path d="M24.793 6.793a1 1 0 000 1.414L28.586 12l-3.793 3.793a1 1 0 001.414 1.414L30 13.414l3.793 3.793a1 1 0 001.414-1.414L31.414 12l3.793-3.793a1 1 0 00-1.414-1.414L30 10.586l-3.793-3.793a1 1 0 00-1.414 0z" fill="#575C66"></path>' +
-                      '</svg></div><div id="yandex_rtb_R-A-15276962-2" style="padding:0;margin:0;"></div>';
-
-        document.body.appendChild(t);
+        document.body.appendChild(floatContainer);
 
         document.getElementById("ya-close").onclick = function() {
-            t.remove();
+            floatContainer.remove();
         };
 
         window.yaContextCb.push(() => {
@@ -98,8 +91,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 renderTo: "yandex_rtb_R-A-15276962-2"
             });
         });
+        
+        shownCount++;
     }
-
-    r();
-    setInterval(r, 31000);
-});
+    setTimeout(showFloatingAd, 2000);
+    setInterval(showFloatingAd, showInterval);
+}
