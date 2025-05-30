@@ -34,8 +34,8 @@ function insertContentAds() {
     const paragraphs = content.querySelectorAll("p");
     if (paragraphs.length === 0) return;
 
-    let positions = [0];
-    for (let i = 7; i < paragraphs.length && positions.length < 8; i += 7) {
+    let positions = [1];
+    for (let i = 8; i < paragraphs.length && positions.length < 6; i += 8) {
         positions.push(i);
     }
 
@@ -44,7 +44,7 @@ function insertContentAds() {
         const adContainer = document.createElement("div");
 
         adContainer.id = renderTo;
-        adContainer.style.margin = "5px";
+        adContainer.style.margin = "6px";
 
         const paragraph = paragraphs[position];
         if (paragraph && paragraph.parentNode) {
@@ -90,5 +90,5 @@ function initFloatingAds() {
         });
     }
     setTimeout(showFloatingAd, 2000);
-    setInterval(showFloatingAd, showInterval);
+    //setInterval(showFloatingAd, showInterval);
 }
