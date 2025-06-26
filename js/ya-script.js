@@ -82,12 +82,13 @@ function initFloatingAds() {
             floatContainer.remove();
         };
 
-        window.yaContextCb.push(() => {
+        /*window.yaContextCb.push(() => {
             Ya.Context.AdvManager.render({
                 blockId: "R-A-15276962-2",
                 renderTo: "yandex_rtb_R-A-15276962-2"
             });
-        });
+        });*/
+        <a href="https://t.me/ptncode" target="_blank"><img src="https://raw.githubusercontent.com/excel-jet/excel-jet.github.io/refs/heads/main/image45/tgchannel.png"></a>
     }
     setTimeout(showFloatingAd, 2000);
     //setInterval(showFloatingAd, showInterval);
