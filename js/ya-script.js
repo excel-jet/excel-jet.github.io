@@ -62,7 +62,7 @@ function insertContentAds() {
 
 function initFloatingAds() {
     const showInterval = 31000;
-    
+
     function showFloatingAd() {
         const existingAd = document.getElementById("ya-float-ads");
         if (existingAd) existingAd.remove();
@@ -70,27 +70,38 @@ function initFloatingAds() {
         const floatContainer = document.createElement("div");
         floatContainer.id = "ya-float-ads";
         floatContainer.style.cssText = "position:fixed;top:95px;right:0;z-index:9999;max-width:480px;background:#fff;border:1px solid #ccc;border-radius:4px;box-shadow:0 2px 10px rgba(0,0,0,0.15);";
-        floatContainer.innerHTML = '<div id="ya-close" style="cursor:pointer;padding:0;margin:0;border-bottom:1px solid #ccc;">' +
-                    '<svg width="60" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">' +
-                    '<path d="M10.485 6.06A8 8 0 0118.246 0h23.508a8 8 0 017.76 6.06l3.728 14.91A4 4 0 0057.123 24H60 0h2.877a4 4 0 003.88-3.03l3.728-14.91z" fill="#D1D6E0"></path>' +
-                    '<path d="M24.793 6.793a1 1 0 000 1.414L28.586 12l-3.793 3.793a1 1 0 001.414 1.414L30 13.414l3.793 3.793a1 1 0 001.414-1.414L31.414 12l3.793-3.793a1 1 0 00-1.414-1.414L30 10.586l-3.793-3.793a1 1 0 00-1.414 0z" fill="#575C66"></path>' +
-                    '</svg></div><div id="yandex_rtb_R-A-15276962-2" style="padding:0;margin:0;"></div><a href="https://t.me/ptncode" target="_blank">
-        <img src="https://raw.githubusercontent.com/excel-jet/excel-jet.github.io/refs/heads/main/image45/tgchannel.png" style="max-width:100%;">
-    </a>';
+
+        floatContainer.innerHTML = `
+            <div id="ya-close" style="cursor:pointer;padding:0;margin:0;border-bottom:1px solid #ccc;">
+                <svg width="60" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.485 6.06A8 8 0 0118.246 0h23.508a8 8 0 017.76 6.06l3.728 14.91A4 4 0 0057.123 24H60 0h2.877a4 4 0 003.88-3.03l3.728-14.91z" fill="#D1D6E0"></path>
+                    <path d="M24.793 6.793a1 1 0 000 1.414L28.586 12l-3.793 3.793a1 1 0 001.414 1.414L30 13.414l3.793 3.793a1 1 0 001.414-1.414L31.414 12l3.793-3.793a1 1 0 00-1.414-1.414L30 10.586l-3.793-3.793a1 1 0 00-1.414 0z" fill="#575C66"></path>
+                </svg>
+            </div>
+            <div id="yandex_rtb_R-A-15276962-2" style="padding:0;margin:0;"></div>
+            <a href="https://t.me/ptncode" target="_blank">
+                <img src="https://raw.githubusercontent.com/excel-jet/excel-jet.github.io/refs/heads/main/image45/tgchannel.png" style="width:100%;display:block;">
+            </a>
+        `;
 
         document.body.appendChild(floatContainer);
 
-        document.getElementById("ya-close").onclick = function() {
+        document.getElementById("ya-close").onclick = function () {
             floatContainer.remove();
         };
 
-        /*window.yaContextCb.push(() => {
+        /*
+        window.yaContextCb = window.yaContextCb || [];
+        window.yaContextCb.push(() => {
             Ya.Context.AdvManager.render({
                 blockId: "R-A-15276962-2",
                 renderTo: "yandex_rtb_R-A-15276962-2"
             });
-        });*/ 
+        });
+        */
     }
+
     setTimeout(showFloatingAd, 2000);
-    //setInterval(showFloatingAd, showInterval);
+    // setInterval(showFloatingAd, showInterval); // Можно включить повторное отображение
 }
+
