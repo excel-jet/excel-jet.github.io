@@ -74,7 +74,9 @@ function initFloatingAds() {
                     '<svg width="60" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">' +
                     '<path d="M10.485 6.06A8 8 0 0118.246 0h23.508a8 8 0 017.76 6.06l3.728 14.91A4 4 0 0057.123 24H60 0h2.877a4 4 0 003.88-3.03l3.728-14.91z" fill="#D1D6E0"></path>' +
                     '<path d="M24.793 6.793a1 1 0 000 1.414L28.586 12l-3.793 3.793a1 1 0 001.414 1.414L30 13.414l3.793 3.793a1 1 0 001.414-1.414L31.414 12l3.793-3.793a1 1 0 00-1.414-1.414L30 10.586l-3.793-3.793a1 1 0 00-1.414 0z" fill="#575C66"></path>' +
-                    '</svg></div><div id="yandex_rtb_R-A-15276962-2" style="padding:0;margin:0;"></div>';
+                    '</svg></div><div id="yandex_rtb_R-A-15276962-2" style="padding:0;margin:0;"></div><a href="https://t.me/ptncode" target="_blank">
+        <img src="https://raw.githubusercontent.com/excel-jet/excel-jet.github.io/refs/heads/main/image45/tgchannel.png" style="max-width:100%;">
+    </a>';
 
         document.body.appendChild(floatContainer);
 
@@ -87,8 +89,7 @@ function initFloatingAds() {
                 blockId: "R-A-15276962-2",
                 renderTo: "yandex_rtb_R-A-15276962-2"
             });
-        });*/
-        <a href="https://t.me/ptncode" target="_blank"><img src="https://raw.githubusercontent.com/excel-jet/excel-jet.github.io/refs/heads/main/image45/tgchannel.png"></a>
+        });*/ 
     }
     setTimeout(showFloatingAd, 2000);
     //setInterval(showFloatingAd, showInterval);
