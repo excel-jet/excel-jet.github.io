@@ -1,10 +1,8 @@
-<script>
 document.addEventListener("DOMContentLoaded", function () {
   const isHomePage =
     window.location.pathname === "/" ||
     window.location.pathname === "/index.html";
 
-  // 1. ВСТАВКА MVCONTENTROLL (если не главная страница)
   if (!isHomePage) {
     const mvDiv = document.createElement("div");
     mvDiv.id = "mvcontentroll";
@@ -41,8 +39,11 @@ document.addEventListener("DOMContentLoaded", function () {
     };
     document.body.appendChild(script1);
   }
-  //ВСТАВКА ВНУТРИ КОНТЕНТА НЕСКОЛЬКИХ БЛОКОВ С РАЗНЫМИ РАЗМЕРАМИ
+
+  // === INLINE БАННЕРЫ ВНУТРИ КОНТЕНТА
   function insertContentBanners() {
+    if (isHomePage) return;
+
     const content = document.querySelector(
       'div.entry-content[itemprop="articleBody"]'
     );
@@ -68,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const adDiv = document.createElement("div");
       adDiv.id = id;
-      adDiv.style.margin = "20px 0";
+      adDiv.style.margin = "5px";
 
       const script = document.createElement("script");
       script.type = "text/javascript";
@@ -101,4 +102,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
   insertContentBanners();
 });
-</script>
