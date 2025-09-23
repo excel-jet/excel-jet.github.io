@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     window.location.pathname === "/" ||
     window.location.pathname === "/index.html";
 
+  // === MVCONTENTROLL (на всех страницах, кроме главной)
   if (!isHomePage) {
     const mvDiv = document.createElement("div");
     mvDiv.id = "mvcontentroll";
@@ -40,8 +41,8 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.appendChild(script1);
   }
 
-  // === INLINE БАННЕРЫ ВНУТРИ КОНТЕНТА
-  function insertContentBanners() {
+  // === INLINE БАННЕРЫ SURFE.PRO
+  function insertSurfeBanners() {
     if (isHomePage) return;
 
     const content = document.querySelector(
@@ -52,53 +53,38 @@ document.addEventListener("DOMContentLoaded", function () {
     const paragraphs = content.querySelectorAll("p");
     if (paragraphs.length === 0) return;
 
-    const sizes = [
-      [300, 250],
-      [336, 280],
-      [728, 90],
-    ];
-
     let positions = [1];
     for (let i = 8; i < paragraphs.length && positions.length < 3; i += 8) {
       positions.push(i);
     }
 
     positions.forEach((position, index) => {
-      const id = `banner-inline-${index}`;
-      const [w, h] = sizes[index % sizes.length];
+      const bannerContainer = document.createElement("div");
+      bannerContainer.style.margin = "5px";
 
-      const adDiv = document.createElement("div");
-      adDiv.id = id;
-      adDiv.style.margin = "5px";
+      // Вставляем скрипт Surfe.pro только один раз на страницу
+      if (index === 0) {
+        const surfeScript = document.createElement("script");
+        surfeScript.src = "//static.surfe.pro/js/net.js";
+        document.head.appendChild(surfeScript);
+      }
 
-      const script = document.createElement("script");
-      script.type = "text/javascript";
-      script.text = `
-        (() => {
-          const script = document.createElement("script");
-          script.src = "https://cdn1.moe.video/p/b.js";
-          script.onload = () => {
-            addBanner({
-              element: '#${id}',
-              placement: 11823,
-              width: '${w}px',
-              height: '${h}px',
-              advertCount: 0,
-              background: 'none',
-              deviceMode: 'all',
-            });
-          };
-          document.body.appendChild(script);
-        })();
-      `;
+      const ins = document.createElement("ins");
+      ins.className = "surfe-be";
+      ins.setAttribute("data-sid", "415955");
+
+      const triggerScript = document.createElement("script");
+      triggerScript.innerHTML = "(adsurfebe = window.adsurfebe || []).push({});";
+
+      bannerContainer.appendChild(ins);
+      bannerContainer.appendChild(triggerScript);
 
       const paragraph = paragraphs[position];
       if (paragraph && paragraph.parentNode) {
-        paragraph.parentNode.insertBefore(adDiv, paragraph.nextSibling);
-        paragraph.parentNode.insertBefore(script, adDiv.nextSibling);
+        paragraph.parentNode.insertBefore(bannerContainer, paragraph.nextSibling);
       }
     });
   }
 
-  insertContentBanners();
+  insertSurfeBanners();
 });
