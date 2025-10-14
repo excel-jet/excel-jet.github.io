@@ -121,27 +121,84 @@
 <span class="entry-time"><span class="entry-label">Время чтения</span> 1 мин.</span><span class="entry-date"><span class="entry-label">Опубликовано</span> <time itemprop="datePublished" datetime="2024-07-14">14.07.2024</time></span>
 </div>
 	<div class="entry-content" itemprop="articleBody">
-		<p>Для того, чтобы возвести число в степень используется значок ^.</p>
-<p>Он находится на кнопке 6 в верхнем ряду чисел на клавиатуре.</p>
-<p>Выбирается он в английской раскладке.</p>
-<p>Итак, возведем число 5 в степень 2.</p>
-<p>Активизируем ячейку, в которой хотим создать формулу, и пишем в ней БЕЗ ПРОБЕЛОВ соответствующие знаки или активизируем соответствующие ячейки (в случае, если значения находятся в ячейках) в следующем порядке:</p>
-<p class="formula">= 5 ^ 2 ENTER</p>
-<p>Получаем:</p>
+<p>В Microsoft Excel для выполнения математических операций, в том числе и возведения числа в степень, используются специальные символы и формулы. Одним из таких символов является <strong>знак возведения в степень</strong> &mdash; <code>^</code> (так называемый "крышечка" или "каре").</p>
+<p>Если вам нужно быстро выполнить подобные расчёты вне Excel или проверить результат, воспользуйтесь удобным онлайн-сервисом <a href="https://math-calc.github.io/vozvedenie-v-stepen/" target="_blank" rel="noopener noreferrer">калькулятор возведения в степень</a>.</p>
+<h2>Где находится символ <code>^</code>?</h2>
+<p>Символ <code>^</code>:</p>
+<ul>
+<li>
+Находится на клавише с цифрой <strong>6</strong> в верхнем ряду клавиатуры.
+</li>
+<li>
+Чтобы его ввести, необходимо переключиться на <strong>английскую раскладку клавиатуры</strong>.
+</li>
+<li>
+Для ввода символа нажмите <strong>Shift + 6</strong>.
+</li>
+</ul>
+<h2>Синтаксис формулы возведения в степень</h2>
+<p>В Excel все формулы начинаются со знака равенства <code>=</code>, а операция возведения в степень записывается следующим образом:</p>
+<code>=основание ^ показатель_степени
+</code>
+<h3>Пример: возводим 5 в степень 2</h3>
+<p>Допустим, вы хотите возвести число 5 во вторую степень (то есть получить 25). Вот как это делается шаг за шагом:</p>
+<ol>
+<li>
+Активизируйте ячейку, в которую вы хотите ввести формулу.
+</li>
+<li>
+Введите формулу:
+<code>=5^2
+</code>
+</li>
+<li>
+Нажмите <strong>Enter</strong>.
+</li>
+<li>
+В результате в ячейке появится число <strong>25</strong>.
+</li>
+</ol>
 <p align="center"><img decoding="async" src="/image09/517de3984a7e2a0bb6c64fc794824f0a.jpg" alt=""></p>
+<h2>Использование ячеек вместо чисел</h2>
+<p>Excel позволяет использовать значения из других ячеек в формулах. Это особенно удобно, если вы работаете с таблицами и данными, которые могут меняться.</p>
+<p><strong>Пример:</strong></p>
+<ul>
+<li>
+В ячейке A1 &mdash; число 5
+</li>
+<li>
+В ячейке B1 &mdash; число 2
+</li>
+</ul>
+<p>Чтобы возвести значение из ячейки A1 в степень значения из ячейки B1, в любой другой ячейке введите:</p>
+<code>= A1 ^ B1
+</code>
+<p>Нажмите <strong>Enter</strong> &mdash; Excel автоматически рассчитает результат (в данном случае: 25).</p>
+<h3>На заметку</h3>
+<ul>
+<li>
+Если вы введёте неправильный синтаксис или пропустите знак <code>=</code>, Excel не распознает вашу запись как формулу.
+</li>
+<li>
+Формула <code>=5^2</code> эквивалентна функции <code>=POWER(5, 2)</code> &mdash; обе дают одинаковый результат.
+</li>
+<li>
+<p>Можно использовать отрицательные и дробные степени, например:</p>
+<ul>
+<li>
+<code>=4^-1</code> даст результат <code>0.25</code> (обратное значение)
+</li>
+<li>
+<p><code>=9^0.5</code> даст <code>3</code> (квадратный корень из 9)</p>
+</li>
+</ul>
+</li>
+</ul>
+
 <!-- toc empty -->	</div>
 <!-- .entry-content -->
 
 </article>
-
-
-
-
-
-
-
-
-
 <div class="social-buttons">
 <span class="social-button social-button--vkontakte main" data-social="vkontakte"><span>Поделиться в ВКонтакте</span></span><span class="social-button social-button--telegram " data-social="telegram"></span><span class="social-button social-button--odnoklassniki " data-social="odnoklassniki"></span><span class="social-button social-button--whatsapp " data-social="whatsapp"></span><span class="social-button social-button--viber " data-social="viber"></span>
 </div>
@@ -292,4 +349,5 @@ var wps_ajax = {"url":"\/wp-admin\/admin-ajax.php","nonce":"e4ca9d4bd8"};
 <!-- /Yandex.Metrika counter -->
 <script defer src="/js/ya-script.js"></script>
 </body>
+
 </html>
