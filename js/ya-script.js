@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
     wrapper.appendChild(bannerLink);
     bannerLink.appendChild(bannerImg);
     wrapper.style.position = 'fixed';
-    wrapper.style.top = '200px';
+    wrapper.style.top = '100px';
     wrapper.style.right = '2px';
     wrapper.style.zIndex = '1000';
     wrapper.style.display = 'block';
