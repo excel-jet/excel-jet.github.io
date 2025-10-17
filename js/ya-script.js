@@ -87,4 +87,24 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   insertSurfeBanners();
-});
+  if (window.innerWidth > 1024) {
+    const bannerLink = document.createElement('a');
+    bannerLink.href = 'https://t.me/ii_nejrosetbot?start=ref954291600';
+    bannerLink.target = '_blank';
+
+    const bannerImg = document.createElement('img');
+    bannerImg.src = 'https://github.com/excel-jet/excel-jet.github.io/blob/main/image45/banner1.png';
+    bannerImg.alt = 'ИИ помощник';
+    bannerImg.style.width = '300px';
+    bannerImg.style.height = '111px';
+    bannerImg.style.display = 'block';
+    const wrapper = document.createElement('div');
+    wrapper.appendChild(bannerLink);
+    bannerLink.appendChild(bannerImg);
+    wrapper.style.position = 'fixed';
+    wrapper.style.top = '200px';
+    wrapper.style.right = '2px';
+    wrapper.style.zIndex = '1000';
+    wrapper.style.display = 'block';
+    document.body.appendChild(wrapper);
+  }});
