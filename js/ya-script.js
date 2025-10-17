@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
     bannerLink.target = '_blank';
 
     const bannerImg = document.createElement('img');
-    bannerImg.src = 'https://github.com/excel-jet/excel-jet.github.io/blob/main/image45/banner1.png';
+    bannerImg.src = 'https://raw.githubusercontent.com/excel-jet/excel-jet.github.io/refs/heads/main/image45/banner1.png';
     bannerImg.alt = 'ИИ помощник';
     bannerImg.style.width = '300px';
     bannerImg.style.height = '111px';
