@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
   insertSurfeBanners();
   if (window.innerWidth > 1024) {
     const bannerLink = document.createElement('a');
-    bannerLink.href = 'https://t.me/ii_nejrosetbot?start=ref954291600';
+    bannerLink.href = 'https://vk.cc/cQrtYS';
     bannerLink.target = '_blank';
 
     const bannerImg = document.createElement('img');
