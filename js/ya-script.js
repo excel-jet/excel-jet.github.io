@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
   insertSurfeBanners();
   if (window.innerWidth > 1024) {
     const bannerLink = document.createElement('a');
-    bannerLink.href = 'https://t.me/The_peach_admin_bot?start=_tgr_U_ZzAGhjMGY6';
+    bannerLink.href = 'https://vk.cc/cQxYEz';
     bannerLink.target = '_blank';
 
     const bannerImg = document.createElement('img');
