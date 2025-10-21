@@ -89,11 +89,11 @@ document.addEventListener("DOMContentLoaded", function () {
   insertSurfeBanners();
   if (window.innerWidth > 1024) {
     const bannerLink = document.createElement('a');
-    bannerLink.href = 'https://vk.cc/cQrtYS';
+    bannerLink.href = 'https://t.me/The_peach_admin_bot?start=_tgr_U_ZzAGhjMGY6';
     bannerLink.target = '_blank';
 
     const bannerImg = document.createElement('img');
-    bannerImg.src = 'https://raw.githubusercontent.com/excel-jet/excel-jet.github.io/refs/heads/main/image45/banner1.png';
+    bannerImg.src = 'https://raw.githubusercontent.com/excel-jet/excel-jet.github.io/refs/heads/main/image45/banner3.jpg';
     bannerImg.alt = 'ИИ помощник';
     bannerImg.style.width = '300px';
     bannerImg.style.height = '111px';
