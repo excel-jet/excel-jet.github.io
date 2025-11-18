@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Профессиональный онлайн редактор таблиц с полной совместимостью с Excel. Бесплатное создание, редактирование и сохранение таблиц в формате XLSX.">
+    <meta name="keywords" content="таблицы онлайн, excel редактор, эксель редактор, создание таблиц, редактирование таблиц">
+    <title>Таблица эксель онлайн бесплатно - создание и редактирование</title>
+    <link rel="canonical" href="/">
+    <meta property="og:title" content="Таблица эксель онлайн бесплатно - создание и редактирование">
+    <meta property="og:description" content="Онлайн редактор таблиц с поддержкой Excel. Создавайте и редактируйте таблицы XLSX бесплатно.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://excel-jet.github.io/">
+    <link rel="stylesheet" href="https://unpkg.com/x-data-spreadsheet@1.1.5/dist/xspreadsheet.css">
+    <script src="https://unpkg.com/x-data-spreadsheet@1.1.5/dist/xspreadsheet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script>window.yaContextCb=window.yaContextCb||[]</script>
+<script src="https://yandex.ru/ads/system/context.js" async></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+            overflow: hidden;
+            height: 100vh;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        
+        .main-content {
+            flex: 1;
+            display: flex;
+            overflow: hidden;
+        }
+        
+        .editor-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        #x-spreadsheet-demo {
+            flex: 1;
+            border: none;
+        }
+        
+        .footer {
+            background: #34495e;
+            color: white;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .footer-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        
+        .btn:hover {
+            background: #2980b9;
+        }
+        
+        .help-btn {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 6px 10px;
+        }
+        
+        .help-btn:hover {
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .file-input {
+            display: none;
+        }
+        
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+        
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal {
+            background: white;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 85vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transform: translateY(20px);
+            transition: transform 0.3s;
+        }
+        
+        .modal-overlay.active .modal {
+            transform: translateY(0);
+        }
+        
+        .modal-header {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #2c3e50;
+            color: white;
+            border-radius: 8px 8px 0 0;
+        }
+        
+        .modal-title {
+            font-size: 20px;
+            font-weight: 600;
+        }
+        
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+        }
+        
+        .modal-content {
+            padding: 25px;
+        }
+        
+        .help-section {
+            margin-bottom: 30px;
+        }
+        
+        .help-section h2 {
+            color: #2c3e50;
+            margin: 0 0 15px 0;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .help-section p {
+            margin-bottom: 15px;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .help-section ul {
+            margin: 10px 0 15px 20px;
+        }
+        
+        .help-section li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 12px;
+            margin: 15px 0;
+        }
+        
+        .feature-card {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 6px;
+            border-left: 4px solid #3498db;
+            font-size: 14px;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 20px;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .footer-link {
+            color: #3498db;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+        
+        .footer-link:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+        
+        .author-info {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .footer {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            
+            .footer-left {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            .btn {
+                padding: 6px 12px;
+                font-size: 13px;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .footer {
+                padding: 10px 15px;
+            }
+            
+            .modal-content {
+                padding: 20px;
+            }
+            
+            .modal-header {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="main-content">
+            <div class="editor-container">
+                <div id="x-spreadsheet-demo"></div>
+            </div>
+        </div>
+        
+        <footer class="footer">
+            <div class="footer-left">
+                <input type="file" id="file-input" class="file-input" accept=".xlsx, .xls">
+                <button class="btn" id="open-btn">
+                    <span>📂</span> Открыть XLSX
+                </button>
+                <button class="btn" id="save-btn">
+                    <span>💾</span> Сохранить XLSX
+                </button>
+                <button class="btn help-btn" id="help-btn">
+                    <span>❓</span> Справка
+                </button>
+            </div>
+        </footer>
+    </div>
+    
+    <div class="modal-overlay" id="help-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h1 class="modal-title">Таблица эксель</h1>
+                <button class="close-btn" id="close-modal">&times;</button>
+            </div>
+            <div class="modal-content">
+                <div class="help-section">
+                    
+                    <p>Наш онлайн редактор эксель предоставляет профессиональные инструменты для работы с электронными таблицами. Редактор разработан с учетом потребностей пользователей, которым требуется быстрый и удобный доступ к базовым функциям работы с табличными данными.</p>
+
+                </div>
+                
+                <div class="help-section">
+                    <h2>Основные возможности</h2>
+                    <div class="feature-grid">
+                        <div class="feature-card">Создание и редактирование таблиц</div>
+                        <div class="feature-card">Форматирование ячеек и текста</div>
+                        <div class="feature-card">Математические формулы</div>
+                        <div class="feature-card">Сортировка данных</div>
+                        <div class="feature-card">Совместимость с XLSX/XLS</div>
+                        <div class="feature-card">Автосохранение таблицы в браузере</div>
+                        <div class="feature-card">Работа с excel файлами без регистрации</div>
+                        <div class="feature-card">Поддержка формул Эксель</div>
+                    </div>
+                </div>
+                
+                <div class="help-section">
+                    <h2>Совместимость с Excel</h2>
+                    <p>Редактор обеспечивает полную совместимость с форматами Microsoft Excel. Вы можете открывать файлы XLSX и XLS, редактировать их и сохранять обратно в исходном формате. Поддерживаются основные функции и форматирование.</p>
+                </div>
+                
+                <div class="help-section">
+                    <h2>Безопасность данных</h2>
+                    <p>Все данные обрабатываются локально в вашем браузере. Файлы не загружаются на внешние серверы, что гарантирует конфиденциальность вашей информации. Для начала работы с таблицами не требуется регистрация или предоставление личных данных.</p>
+                </div>
+                
+                <div class="help-section">
+                    <h2>Как использовать</h2>
+                    <ul>
+                        <li>Нажмите "Открыть XLSX" для загрузки существующего файла</li>
+                        <li>Или начните создавать новую таблицу с чистого листа</li>
+                        <li>Используйте панель инструментов для форматирования</li>
+                        <li>Вводите формулы, начиная со знака "="</li>
+                        <li>Для сохранения нажмите "Сохранить XLSX"</li>
+                        <li>Все изменения автоматически сохраняются в браузере</li>
+                        <li>Чтобы распечатать таблицу нажмите Ctrl+P</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    
+                    <a href="/o-nas/" class="footer-link" rel="nofollow">О нас | Контакты</a>
+                    <a href="/map/" class="footer-link">Карта сайта</a>
+                    <a href="/contacts" class="footer-link">Контакты</a>
+                    <a href="https://excel-jet.github.io/excel/" class="footer-link">excel</a>
+                  <a href="https://excel-jet.github.io/microsoft-word/" class="footer-link">word</a>
+                  <a href="https://excel-jet.github.io/powerpoint/" class="footer-link">powerpoint</a>
+                  <a href="https://excel-jet.github.io/outlook/" class="footer-link">outlook</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function stox(wb) {
+            var out = [];
+            wb.SheetNames.forEach(function (name) {
+                var o = { name: name, rows: {} };
+                var ws = wb.Sheets[name];
+                if(!ws || !ws["!ref"]) return;
+                var range = XLSX.utils.decode_range(ws['!ref']);
+                range.s = { r: 0, c: 0 };
+                var aoa = XLSX.utils.sheet_to_json(ws, {
+                    raw: false,
+                    header: 1,
+                    range: range
+                });
+
+                aoa.forEach(function (r, i) {
+                    var cells = {};
+                    r.forEach(function (c, j) {
+                        cells[j] = { text: c };
+
+                        var cellRef = XLSX.utils.encode_cell({ r: i, c: j });
+
+                        if ( ws[cellRef] != null && ws[cellRef].f != null) {
+                            cells[j].text = "=" + ws[cellRef].f;
+                        }
+                    });
+                    o.rows[i] = { cells: cells };
+                });
+
+                o.merges = [];
+                (ws["!merges"]||[]).forEach(function (merge, i) {
+                    if (o.rows[merge.s.r] == null) {
+                        o.rows[merge.s.r] = { cells: {} };
+                    }
+                    if (o.rows[merge.s.r].cells[merge.s.c] == null) {
+                        o.rows[merge.s.r].cells[merge.s.c] = {};
+                    }
+
+                    o.rows[merge.s.r].cells[merge.s.c].merge = [
+                        merge.e.r - merge.s.r,
+                        merge.e.c - merge.s.c
+                    ];
+
+                    o.merges[i] = XLSX.utils.encode_range(merge);
+                });
+
+                out.push(o);
+            });
+
+            return out;
+        }
+
+        function xtos(sdata) {
+            var out = XLSX.utils.book_new();
+            sdata.forEach(function (xws) {
+                var ws = {};
+                var rowobj = xws.rows;
+                var minCoord = { r: 0, c: 0 }, maxCoord = { r: 0, c: 0 };
+                for (var ri = 0; ri < rowobj.len; ++ri) {
+                    var row = rowobj[ri];
+                    if (!row) continue;
+
+                    Object.keys(row.cells).forEach(function (k) {
+                        var idx = +k;
+                        if (isNaN(idx)) return;
+
+                        var lastRef = XLSX.utils.encode_cell({ r: ri, c: idx });
+                        if (ri > maxCoord.r) maxCoord.r = ri;
+                        if (idx > maxCoord.c) maxCoord.c = idx;
+
+                        var cellText = row.cells[k].text, type = "s";
+                        if (!cellText) {
+                            cellText = "";
+                            type = "z";
+                        } else if (!isNaN(Number(cellText))) {
+                            cellText = Number(cellText);
+                            type = "n";
+                        } else if (cellText.toLowerCase() === "true" || cellText.toLowerCase() === "false") {
+                            cellText = Boolean(cellText);
+                            type = "b";
+                        }
+
+                        ws[lastRef] = { v: cellText, t: type };
+
+                        if (type == "s" && cellText[0] == "=") {
+                            ws[lastRef].f = cellText.slice(1);
+                        }
+
+                        if (row.cells[k].merge != null) {
+                            if (ws["!merges"] == null) ws["!merges"] = [];
+
+                            ws["!merges"].push({
+                                s: { r: ri, c: idx },
+                                e: {
+                                    r: ri + row.cells[k].merge[0],
+                                    c: idx + row.cells[k].merge[1]
+                                }
+                            });
+                        }
+                    });
+                }
+                ws["!ref"] = minCoord ? XLSX.utils.encode_range({
+                    s: minCoord,
+                    e: maxCoord
+                }) : "A1";
+
+                XLSX.utils.book_append_sheet(out, ws, xws.name);
+            });
+
+            return out;
+        }
+
+        const xs = x_spreadsheet('#x-spreadsheet-demo', {
+            showToolbar: true,
+            showGrid: true,
+            showContextmenu: true,
+            view: {
+                height: () => document.documentElement.clientHeight - 60,
+                width: () => document.documentElement.clientWidth,
+            },
+            row: {
+                len: 50,
+                height: 25,
+            },
+            col: {
+                len: 20,
+                width: 100,
+                indexWidth: 60,
+                minWidth: 60,
+            }
+        });
+        
+        xs.loadData([
+            {
+                name: 'Лист1',
+                rows: {
+                    0: {
+                        cells: {
+                            0: { text: 'Добро пожаловать в редактор таблиц' },
+                        },
+                    },
+                    1: {
+                        cells: {
+                            0: { text: 'Название', style: 0 },
+                            1: { text: 'Количество', style: 0 },
+                            2: { text: 'Цена', style: 0 },
+                            3: { text: 'Сумма', style: 0 },
+                        },
+                    },
+                    2: {
+                        cells: {
+                            0: { text: 'Товар 1' },
+                            1: { text: '5' },
+                            2: { text: '100' },
+                            3: { text: '=B3*C3' },
+                        },
+                    },
+                    3: {
+                        cells: {
+                            0: { text: 'Товар 2' },
+                            1: { text: '3' },
+                            2: { text: '250' },
+                            3: { text: '=B4*C4' },
+                        },
+                    },
+                    4: {
+                        cells: {
+                            0: { text: 'Товар 3' },
+                            1: { text: '2' },
+                            2: { text: '500' },
+                            3: { text: '=B5*C5' },
+                        },
+                    },
+                    5: {
+                        cells: {
+                            0: { text: 'Итого:', style: 0 },
+                            3: { text: '=SUM(D3:D5)' },
+                        },
+                    },
+                },
+                styles: [
+                    {
+                        bgcolor: '#f4f5f8',
+                        color: '#2c3e50',
+                        border: {
+                            top: ['thin', '#3498db'],
+                            bottom: ['thin', '#3498db'],
+                            right: ['thin', '#3498db'],
+                            left: ['thin', '#3498db'],
+                        },
+                    },
+                ],
+            },
+        ]).change((cdata) => {
+            localStorage.setItem('spreadsheet-data', JSON.stringify(xs.getData()));
+        });
+        
+        const savedData = localStorage.getItem('spreadsheet-data');
+        if (savedData) {
+            xs.loadData(JSON.parse(savedData));
+        }
+        
+        document.getElementById('open-btn').addEventListener('click', () => {
+            document.getElementById('file-input').click();
+        });
+        
+        document.getElementById('file-input').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+            
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const data = new Uint8Array(e.target.result);
+                    const workbook = XLSX.read(data, {type: 'array'});
+                    const sheetData = stox(workbook);
+                    xs.loadData(sheetData);
+                    alert('Файл успешно загружен!');
+                } catch (error) {
+                    alert('Ошибка при загрузке файла: ' + error.message);
+                }
+            };
+            reader.readAsArrayBuffer(file);
+        });
+        
+        document.getElementById('save-btn').addEventListener('click', () => {
+            try {
+                const data = xs.getData();
+                const workbook = xtos(data);
+                XLSX.writeFile(workbook, 'таблица.xlsx');
+            } catch (error) {
+                alert('Ошибка при сохранении файла: ' + error.message);
+            }
+        });
+        
+        const helpModal = document.getElementById('help-modal');
+        const helpBtn = document.getElementById('help-btn');
+        const closeModal = document.getElementById('close-modal');
+        
+        helpBtn.addEventListener('click', () => {
+            helpModal.classList.add('active');
+        });
+        
+        closeModal.addEventListener('click', () => {
+            helpModal.classList.remove('active');
+        });
+        
+        helpModal.addEventListener('click', (e) => {
+            if (e.target === helpModal) {
+                helpModal.classList.remove('active');
+            }
+        });
+        
+        window.addEventListener('resize', () => {
+            xs.reRender();
+        });
+    </script>
+ <!-- Yandex.Metrika counter -->
+<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(93345646, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/93345646" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<script defer src="/js/ya-script.js"></script> 
+</body>
+</html>
