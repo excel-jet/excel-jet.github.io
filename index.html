@@ -236,22 +236,18 @@
             font-size: 14px;
             color: #666;
         }
-        
-
-        
 @media (max-width: 768px) {
     .footer {
         flex-direction: column;
         gap: 12px;
         text-align: center;
-        padding: 12px 15px;
-        padding-bottom: 20px;
+        padding: 12px 15px 20px;
     }
 
     .footer-left {
         width: 100%;
         justify-content: center;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         gap: 10px;
     }
 
@@ -261,6 +257,7 @@
         font-size: 14px;
         width: auto;
         text-align: center;
+        white-space: nowrap;
     }
 
     body {
@@ -270,20 +267,20 @@
 
 @media (max-width: 480px) {
     .footer {
-        padding: 15px;
-        padding-bottom: 22px;
+        padding: 15px 15px 22px;
     }
 
     .btn,
     .help-btn {
-        width: 100%;
-        max-width: 260px;
-        margin: 0 auto;
+        width: auto;
+        max-width: none;
+        margin: 0;
     }
 
     .footer-left {
-        flex-direction: column;
-        gap: 12px;
+        flex-direction: row;
+        gap: 10px;
+        flex-wrap: nowrap;
     }
 }
     </style>
@@ -511,62 +508,13 @@
             {
                 name: 'Лист1',
                 rows: {
-                    0: {
+                    20: {
                         cells: {
-                            0: { text: 'Добро пожаловать в редактор таблиц' },
-                        },
-                    },
-                    1: {
-                        cells: {
-                            0: { text: 'Название', style: 0 },
-                            1: { text: 'Количество', style: 0 },
-                            2: { text: 'Цена', style: 0 },
-                            3: { text: 'Сумма', style: 0 },
-                        },
-                    },
-                    2: {
-                        cells: {
-                            0: { text: 'Товар 1' },
-                            1: { text: '5' },
-                            2: { text: '100' },
-                            3: { text: '=B3*C3' },
-                        },
-                    },
-                    3: {
-                        cells: {
-                            0: { text: 'Товар 2' },
-                            1: { text: '3' },
-                            2: { text: '250' },
-                            3: { text: '=B4*C4' },
-                        },
-                    },
-                    4: {
-                        cells: {
-                            0: { text: 'Товар 3' },
-                            1: { text: '2' },
-                            2: { text: '500' },
-                            3: { text: '=B5*C5' },
-                        },
-                    },
-                    5: {
-                        cells: {
-                            0: { text: 'Итого:', style: 0 },
-                            3: { text: '=SUM(D3:D5)' },
+                            0: { text: 'создано в редакторе https://excel-jet.github.io/' },
                         },
                     },
                 },
-                styles: [
-                    {
-                        bgcolor: '#f4f5f8',
-                        color: '#2c3e50',
-                        border: {
-                            top: ['thin', '#3498db'],
-                            bottom: ['thin', '#3498db'],
-                            right: ['thin', '#3498db'],
-                            left: ['thin', '#3498db'],
-                        },
-                    },
-                ],
+                
             },
         ]).change((cdata) => {
             localStorage.setItem('spreadsheet-data', JSON.stringify(xs.getData()));
