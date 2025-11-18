@@ -266,19 +266,53 @@
             }
         }
         
-        @media (max-width: 480px) {
-            .footer {
-                padding: 10px 15px;
-            }
-            
-            .modal-content {
-                padding: 20px;
-            }
-            
-            .modal-header {
-                padding: 15px;
-            }
-        }
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+        padding: 12px 15px;
+        padding-bottom: 20px;
+    }
+
+    .footer-left {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .btn,
+    .help-btn {
+        padding: 10px 18px;
+        font-size: 14px;
+        width: auto;
+        text-align: center;
+    }
+
+    body {
+        overflow-y: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 15px;
+        padding-bottom: 22px;
+    }
+
+    .btn,
+    .help-btn {
+        width: 100%;
+        max-width: 260px;
+        margin: 0 auto;
+    }
+
+    .footer-left {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
     </style>
 </head>
 <body>
@@ -359,11 +393,10 @@
                     
                     <a href="/o-nas/" class="footer-link" rel="nofollow">О нас | Контакты</a>
                     <a href="/map/" class="footer-link">Карта сайта</a>
-                    <a href="/contacts" class="footer-link">Контакты</a>
                     <a href="https://excel-jet.github.io/excel/" class="footer-link">excel</a>
-                  <a href="https://excel-jet.github.io/microsoft-word/" class="footer-link">word</a>
-                  <a href="https://excel-jet.github.io/powerpoint/" class="footer-link">powerpoint</a>
-                  <a href="https://excel-jet.github.io/outlook/" class="footer-link">outlook</a>
+                    <a href="https://excel-jet.github.io/microsoft-word/" class="footer-link">word</a>
+                    <a href="https://excel-jet.github.io/powerpoint/" class="footer-link">powerpoint</a>
+                    <a href="https://excel-jet.github.io/outlook/" class="footer-link">outlook</a>
                 </div>
             </div>
         </div>
@@ -640,6 +673,5 @@
    });</script>
 <noscript><div><img src="https://mc.yandex.ru/watch/93345646" style="position:absolute; left:-9999px;" alt=""></div></noscript>
 <!-- /Yandex.Metrika counter -->
-<script defer src="/js/ya-script.js"></script> 
 </body>
 </html>
