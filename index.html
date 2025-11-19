@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Профессиональный онлайн редактор таблиц с полной совместимостью с Excel. Бесплатное создание, редактирование и сохранение таблиц в файл в формате XLSX.">
+    <meta name="description" content="Профессиональный онлайн редактор таблиц с полной совместимостью с Excel. Бесплатное создание, редактирование и сохранение таблиц в формате XLSX.">
     <meta name="keywords" content="таблицы онлайн, excel редактор, эксель редактор, создание таблиц, редактирование таблиц">
-    <title>Таблица эксель онлайн бесплатно - создание и редактирование Excel файлов</title>
+    <title>Таблица эксель онлайн бесплатно - создание и редактирование</title>
     <link rel="canonical" href="/">
-    <meta property="og:title" content="Таблица эксель онлайн бесплатно - создание и редактирование Excel файлов">
+    <meta property="og:title" content="Таблица эксель онлайн бесплатно - создание и редактирование">
     <meta property="og:description" content="Онлайн редактор таблиц с поддержкой Excel. Создавайте и редактируйте таблицы XLSX бесплатно.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://excel-jet.github.io/">
@@ -23,36 +23,43 @@
             box-sizing: border-box;
         }
         
-        body {
+        html, body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             background: #f8f9fa;
             color: #333;
             line-height: 1.6;
             overflow: hidden;
             height: 100vh;
+            width: 100vw;
+            position: fixed;
         }
         
         .container {
             display: flex;
             flex-direction: column;
             height: 100vh;
+            width: 100vw;
+            overflow: hidden;
         }
         
         .main-content {
             flex: 1;
             display: flex;
             overflow: hidden;
+            min-height: 0;
         }
         
         .editor-container {
             flex: 1;
             display: flex;
             flex-direction: column;
+            overflow: hidden;
         }
         
         #x-spreadsheet-demo {
             flex: 1;
             border: none;
+            overflow: hidden;
         }
         
         .footer {
@@ -63,12 +70,30 @@
             justify-content: space-between;
             align-items: center;
             position: relative;
+            flex-shrink: 0;
         }
         
         .footer-left {
             display: flex;
             align-items: center;
             gap: 15px;
+        }
+
+        .footer-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .yandex-ad-container {
+            max-height: 90px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        #yandex_rtb_R-A-10604802-1 {
+            max-height: 90px;
+            overflow: hidden;
         }
         
         .btn {
@@ -83,6 +108,7 @@
             gap: 6px;
             font-size: 14px;
             transition: background 0.2s;
+            white-space: nowrap;
         }
         
         .btn:hover {
@@ -126,6 +152,7 @@
             transition: left 0.3s ease;
             z-index: 1000;
             padding-top: 60px;
+            overflow-y: auto;
         }
 
         .mobile-menu.active {
@@ -296,8 +323,8 @@
         }
 
         @media (max-width: 768px) {
-            body {
-                overflow-y: auto;
+            html, body {
+                overflow: hidden;
             }
 
             .footer {
@@ -316,6 +343,10 @@
             .mobile-menu,
             .mobile-menu-overlay {
                 display: block;
+            }
+
+            .yandex-ad-container {
+                display: none;
             }
 
             .feature-grid {
@@ -350,6 +381,11 @@
                 <button class="btn help-btn" id="help-btn">
                     <span>❓</span> Справка
                 </button>
+            </div>
+            <div class="footer-right">
+                <div class="yandex-ad-container">
+                    <div id="yandex_rtb_R-A-10604802-1"></div>
+                </div>
             </div>
         </footer>
     </div>
@@ -670,6 +706,14 @@
         window.addEventListener('resize', () => {
             xs.reRender();
         });
+    </script>
+    <script>
+        window.yaContextCb.push(() => {
+            Ya.Context.AdvManager.render({
+                "blockId": "R-A-10604802-1",
+                "renderTo": "yandex_rtb_R-A-10604802-1"
+            })
+        })
     </script>
     <script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
    m[i].l=1*new Date();
