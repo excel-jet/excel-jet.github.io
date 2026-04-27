@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
         advertCount: 50,
         slot: "page",
         sound: "onclick",
-        deviceMode: "all",
+        deviceMode: "mobile",
         background: "none",
         fly: {
           mode: "always",
